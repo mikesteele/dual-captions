@@ -8,7 +8,7 @@ var youtubePlayerCaptionContainerClass = 'caption-window';
 // Google Translate 
 var GOOGLE_TRANSLATE_API_KEY = ''; // Add your Google Translate API key
 var googleTranslateUrl = `https://translation.googleapis.com/language/translate/v2?key=${GOOGLE_TRANSLATE_API_KEY}`;
-var targetLanguage = 'en';
+var secondSubtitleLanguage = 'en';
 
 /* --- */
 
@@ -54,7 +54,7 @@ var translate = (textToTranslate, callback) => {
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(JSON.stringify({
     'q': textToTranslate,
-    'target': targetLanguage
+    'target': secondSubtitleLanguage
   }));
   xhr.onreadystatechange = function() {
     if (this.readyState != 4) return;
