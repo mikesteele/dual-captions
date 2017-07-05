@@ -23,21 +23,25 @@ if (!youtubePlayer) {
       if (mutation.target.classList.contains(youtubePlayerCaptionClass) & mutation.addedNodes.length > 0) {
         var currentCaptionStyle = mutation.target.querySelector('span').style.cssText;
         var newlyAddedCaption = mutation.addedNodes[0];
-        translate(newlyAddedCaption.textContent, translation => {
-          var translatedCaptionElement = document.createElement('span');
-          translatedCaptionElement.classList.add(youtubePlayerCaptionClass);
-          translatedCaptionElement.style.cssText = currentCaptionStyle;
-          translatedCaptionElement.innerHTML = translation;
-          if (document.getElementsByClassName(youtubePlayerCaptionContainerClass)) { 
-            // 
-            // It's possible that the response from Google Translate took too long 
-            // and the caption container has already been removed from the DOM.
-            // If so, we shouldn't try adding the translation.
-            //
-            var captionWindowElement = document.getElementsByClassName(youtubePlayerCaptionContainerClass)[0];
-            captionWindowElement.appendChild(document.createElement('br'));
-            captionWindowElement.appendChild(translatedCaptionElement);
-          };
+        translate(newlyAddedCaption.textContent, (err, translation) => {
+          if (!err) {
+            var translatedCaptionElement = document.createElement('span');
+            translatedCaptionElement.classList.add(youtubePlayerCaptionClass);
+            translatedCaptionElement.style.cssText = currentCaptionStyle;
+            translatedCaptionElement.innerHTML = translation;
+            if (document.getElementsByClassName(youtubePlayerCaptionContainerClass)) {
+              //
+              // It's possible that the response from Google Translate took too long
+              // and the caption container has already been removed from the DOM.
+              // If so, we shouldn't try adding the translation.
+              //
+              var captionWindowElement = document.getElementsByClassName(youtubePlayerCaptionContainerClass)[0];
+              captionWindowElement.appendChild(document.createElement('br'));
+              captionWindowElement.appendChild(translatedCaptionElement);
+            };
+          } else {
+            console.log(err);
+          }
         });
       };
     });
@@ -60,7 +64,9 @@ var translate = (textToTranslate, callback) => {
     if (this.readyState != 4) return;
     if (xhr.status === 200) {
       var response = JSON.parse(this.responseText);
-      callback(response.data.translations[0]['translatedText']);
+      callback(null, response.data.translations[0]['translatedText']);
+    } else {
+      callback(`Google Translate returned a bad status code: ${xhr.status}`, null);
     }
   }
 }
