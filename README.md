@@ -20,10 +20,11 @@ Open issues:
 Future features:
 
 - Add bookmarklet to allow for easier execution of the script.
+- Add ability to choose second subtitle language outside of script.
 
 ### Usage
 
-This script requires a Google Translate API key. Sign up for one <a href="https://console.cloud.google.com/apis/">here</a> and add it to `index.js`. Run the body of index.js on YouTube video page.
+This script requires a Google Cloud Translation API key. Sign up for one <a href="https://console.cloud.google.com/apis/">here</a> and add it to `index.js`. Run the body of index.js on YouTube video page.
 
 I intend to make a bookmarklet in a future version to make this easier to execute.
 
