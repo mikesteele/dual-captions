@@ -59,8 +59,8 @@ var translate = (textToTranslate, callback) => {
   xhr.onreadystatechange = function() {
     if (this.readyState != 4) return;
     if (xhr.status === 200) {
-      var data = JSON.parse(this.responseText);
-      callback(data.data.translations[0]['translatedText']);
+      var response = JSON.parse(this.responseText);
+      callback(response.data.translations[0]['translatedText']);
     }
   }
 }
