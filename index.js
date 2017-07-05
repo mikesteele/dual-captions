@@ -27,17 +27,17 @@ if (!youtubePlayer) {
           var translatedCaptionElement = document.createElement('span');
           translatedCaptionElement.classList.add(youtubePlayerCaptionClass);
           translatedCaptionElement.style.cssText = currentCaptionStyle;
-	      translatedCaptionElement.innerHTML = translation;
-		  if (document.getElementsByClassName(youtubePlayerCaptionContainerClass)) { 
-		  	// 
-		  	// It's possible that the response from Google Translate took too long 
-		  	// and the caption container has already been removed from the DOM.
-		  	// If so, we shouldn't try adding the translation.
-		  	//
-			var captionWindowElement = document.getElementsByClassName(youtubePlayerCaptionContainerClass)[0];
-			captionWindowElement.appendChild(document.createElement('br'));
-			captionWindowElement.appendChild(translatedCaptionElement);
-	      };
+          translatedCaptionElement.innerHTML = translation;
+          if (document.getElementsByClassName(youtubePlayerCaptionContainerClass)) { 
+            // 
+            // It's possible that the response from Google Translate took too long 
+            // and the caption container has already been removed from the DOM.
+            // If so, we shouldn't try adding the translation.
+            //
+            var captionWindowElement = document.getElementsByClassName(youtubePlayerCaptionContainerClass)[0];
+            captionWindowElement.appendChild(document.createElement('br'));
+            captionWindowElement.appendChild(translatedCaptionElement);
+          };
         });
       };
     });
