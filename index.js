@@ -1,7 +1,7 @@
 /* Settings */
 
 // YouTube
-var youtubePlayer = document.getElementById('player');
+var youtubePlayer = document.getElementById('movie_player');
 var youtubePlayerCaptionClass = 'captions-text';
 var youtubePlayerCaptionContainerClass = 'caption-window';
 
