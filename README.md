@@ -19,6 +19,7 @@ Open issues:
 
 Future features:
 
+- Use https://github.com/matheuss/google-translate-api (free) instead of Cloud Translation API. 
 - Add bookmarklet to allow for easier execution of the script.
 - Add ability to choose second subtitle language outside of script.
 
