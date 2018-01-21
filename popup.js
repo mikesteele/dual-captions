@@ -45,6 +45,14 @@ function showButton(buttonType) {
   });
 }
 
+function changeFromLang(lang) {
+  chrome.tabs.executeScript(null, {code: `window.setFromLanguage('${lang}')`});
+}
+
+function changeToLang(lang) {
+  chrome.tabs.executeScript(null, {code: `window.setToLanguage('${lang}')`});
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   getValueInStorage('DUAL_CAPTIONS-librariesLoaded', (librariesLoaded) => {
     if (!librariesLoaded) {
@@ -69,4 +77,15 @@ document.addEventListener('DOMContentLoaded', function() {
     startObserver();
     showButton('on-button');
   });
+  document.getElementById('from-select').addEventListener('change', (e) => {
+    var target = e.target;
+    changeFromLang(target.options[target.selectedIndex].value);
+    // TODO - Persist choice to storage to show correct dropdown when reshown
+  });
+  document.getElementById('to-select').addEventListener('change', (e) => {
+    var target = e.target;
+    changeToLang(target.options[target.selectedIndex].value);
+    // TODO - Persist choice to storage to show correct dropdown when reshown
+  });
+
 });
