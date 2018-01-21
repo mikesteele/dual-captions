@@ -1,55 +1,42 @@
 <!doctype html>
 <html>
   <head>
-    <title>Set Page Color Popup</title>
+    <title>Dual Captions</title>
     <style>
     body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
       margin: 0px;
       padding: 0px;
       background: white;
+      width: 200px;
+      height: 100px;
     }
-
-    div:first-child {
-      margin-top: 0px;
+    label, select {
+      display: block;
     }
-
-    div {
-      cursor: pointer;
-      text-align: center;
-      padding: 1px 3px;
-      font-family: sans-serif;
-      font-size: 0.8em;
-      width: 100px;
-      margin-top: 1px;
-      background: #cccccc;
-    }
-    div:hover {
-      background: #aaaaaa;
-    }
-    #red {
-      border: 1px solid red;
-      color: red;
-    }
-    #blue {
-      border: 1px solid blue;
-      color: blue;
-    }
-    #green {
-      border: 1px solid green;
-      color: green;
-    }
-    #yellow {
-      border: 1px solid yellow;
-      color: yellow;
+    select {
+      margin-bottom: 10px;
     }
     </style>
     <script src="popup.js"></script>
   </head>
   <body>
-    <div id="red">red</div>
-    <div id="blue">blue</div>
-    <div id="green">green</div>
-    <div id="yellow">yellow</div>
+    <div>
+      <label for="from-select">From:</label>
+      <select id="from-select" name="from-select">
+        <option value="en">Detect Language</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+      </select>
+      <label for="to-select">To:</label>
+      <select id="to-select" name="to-select">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+      </select>
+    </div>
   </body>
 </html>
