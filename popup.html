@@ -4,15 +4,12 @@
     <title>Dual Captions</title>
     <style>
     body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       overflow: hidden;
       margin: 0px;
       padding: 0px;
       background: white;
       width: 200px;
-      height: 100px;
+      height: 400px;
     }
     label, select {
       display: block;
@@ -20,14 +17,64 @@
     select {
       margin-bottom: 10px;
     }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .on-off-button {
+      width: 100px;
+      font-size: 20px;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+      filter: none;
+    }
+
+    .on-off-button:hover {
+      filter: brightness(1.1);
+    }
+
+    .on-off-button.on {
+      background: #2ecc71;
+    }
+
+    .on-off-button.off, .on-off-button.load {
+      background: #95a5a6;
+    }
+
+    .header {
+      width: 100%;
+      background: darkgray;
+      color: white;
+      text-align: center;
+    }
+    .divider {
+      width: 100%;
+      border-top: 1px solid black;
+    }
     </style>
     <script src="popup.js"></script>
   </head>
   <body>
-    <div>
+    <div class="header">Dual Captions</div>
+    <div class="container">
+      <div>
+      <div id="on-button" class="on-off-button on" hidden>
+        ON
+      </div>
+      <div id="off-button" class="on-off-button off" hidden>
+        OFF
+      </div>
+      <div id="load-button" class="on-off-button load">
+        LOAD
+      </div>
+      <div class="divider"></div>
       <label for="from-select">From:</label>
       <select id="from-select" name="from-select">
-        <option value="en">Detect Language</option>
+        <option value="auto">Detect Language</option>
         <option value="fr">French</option>
         <option value="de">German</option>
       </select>
@@ -37,6 +84,7 @@
         <option value="fr">French</option>
         <option value="de">German</option>
       </select>
+    </div>
     </div>
   </body>
 </html>
