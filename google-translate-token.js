@@ -11,6 +11,7 @@
  * Everything between 'BEGIN' and 'END' was copied from the url above.
  */
 
+
 // TODO: rename lol shouldn't be the name of the _actual_ got module 
 // TODO: remove (url) param, this is only for getting the translate page
 // TODO: fix the spacing of this file
@@ -129,7 +130,8 @@ function updateTKK() {
     });
 }
 
-function get(text) {
+window.token = {};
+window.token.get = function(text) {
     return updateTKK().then(function () {
         var tk = sM(text);
         tk = tk.replace('&tk=', '');
