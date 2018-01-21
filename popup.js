@@ -4,12 +4,10 @@
 
 
 function click(e) {
-  chrome.tabs.executeScript(null, {file: "google-translate-token.js"}, function() {
-    chrome.tabs.executeScript(null, {code: `window.token.get('Uhh does this work?').then(e => { alert(JSON.stringify(e)) })`}, function() {
-      chrome.tabs.executeScript(null, {file: "querystring-encode.js"}, function() {
-        chrome.tabs.executeScript(null, {file: "google-translate-api.js"}, function() {
-          chrome.tabs.executeScript(null, {file: `index.js`});
-        });
+  chrome.tabs.executeScript(null, {file: "lib/google-translate-token.js"}, function() {
+    chrome.tabs.executeScript(null, {file: "lib/querystring-encode.js"}, function() {
+      chrome.tabs.executeScript(null, {file: "lib/google-translate-api.js"}, function() {
+        chrome.tabs.executeScript(null, {file: "lib/dual-captions.js"});
       });
     });
   });
