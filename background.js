@@ -1,6 +1,6 @@
 // Tell pop-up to re-inject libraries if tab changes status/url 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
-  if (changeInfo.url || changeInfo.status) {
+  if (changeInfo.status) {
     setValueInStorage(`DUAL_CAPTIONS-librariesLoaded-${tabId}`, false);
   }
 });
