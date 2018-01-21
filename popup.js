@@ -4,9 +4,10 @@
 
 
 function click(e) {
-  chrome.tabs.executeScript(null,
-      {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
-  window.close();
+  chrome.tabs.executeScript(null, {file: "google-translate-token.js"}, function() {
+    chrome.tabs.executeScript(null, {code: `get("Mike").then(e => { alert(e)}).catch(e => { alert(e) })`});
+  });
+
 }
 
 document.addEventListener('DOMContentLoaded', function () {

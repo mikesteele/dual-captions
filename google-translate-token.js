@@ -23,7 +23,9 @@ function got(url) {
     xhr.onreadystatechange = function() {
       if (this.readyState != 4) return;
       if (xhr.status === 200) {
-        resolve(this.responseText);
+        resolve({
+          body: this.responseText
+        });
       } else {
         reject(`Google Translate returned a bad status code: ${xhr.status}`);
       } 
@@ -90,9 +92,7 @@ var wr = function(a) {
 // END
 /* eslint-enable */
 
-var window = {
-    TKK: '0'
-};
+window.TKK = '0';
 
 function updateTKK() {
     return new Promise(function (resolve, reject) {
