@@ -7,7 +7,7 @@ const BUTTON_IDS = ['load-button', 'on-button', 'off-button'];
  *
  */
 const SUPPORTED_LANGAUGES = {
-  'auto': 'Detect Language',
+  'auto': '- Detect Language -',
   'af': 'Afrikaans',
   'sq': 'Albanian',
   'am': 'Amharic',
@@ -195,6 +195,14 @@ function stopObserver() {
   });
 }
 
+function navigateToIssuesPage() {
+  return new Promise((resolve, _) => {
+    chrome.tabs.executeScript(null, {code: `window.location.replace("https://github.com/mikesteele/dual-captions/issues")`}, () => {
+      resolve();
+    });
+  });
+}
+
 function setListeners() {
   return new Promise((resolve, _) => {
     document.getElementById('load-button').addEventListener('click', () => {
@@ -224,6 +232,14 @@ function setListeners() {
     toLangaugeSelect.addEventListener('change', (e) => {
       setToLanguage(toLangaugeSelect.options[toLangaugeSelect.selectedIndex].value)
         .then(() => {});
+    });
+    const reportBugsLink = document.getElementById('report-bugs-link');
+    reportBugsLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigateToIssuesPage()
+        .then(() => {
+          window.close();
+        });
     });
     resolve();
   });
