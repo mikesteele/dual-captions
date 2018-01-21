@@ -4,7 +4,7 @@ function loadLibraries() {
       chrome.tabs.executeScript(null, {file: "lib/google-translate-api.js"}, function() {
         chrome.tabs.executeScript(null, {file: "lib/dual-captions.js"}, function() {
           setValueInStorage('DUAL_CAPTIONS-librariesLoaded', true, function() {
-
+            //
           });
         });
       });
@@ -12,12 +12,19 @@ function loadLibraries() {
   });
 }
 
+function stopObserver() {
+  chrome.tabs.executeScript(null, {code: `window.stopObserver()`});
+}
+
+function startObserver() {
+  chrome.tabs.executeScript(null, {code: `window.startObserver()`});
+}
+
 function getValueInStorage(key, callback) {
   chrome.storage.local.get(key, function(obj) {
     callback(obj[key]);
   });
 }
-
 
 function setValueInStorage(key, value, callback) {
   let obj = {};
@@ -55,13 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   document.getElementById('on-button').addEventListener('click', () => {
-    // TODO
-    // 1. Stop observer
+    stopObserver();
     showButton('off-button');
   });
   document.getElementById('off-button').addEventListener('click', () => {
-    // TODO
-    // 1. Restart observer
+    startObserver();
     showButton('on-button');
   });
 });

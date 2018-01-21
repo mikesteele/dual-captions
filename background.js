@@ -2,6 +2,7 @@
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
   if (changeInfo.url || changeInfo.status) {
     setValueInStorage('DUAL_CAPTIONS-librariesLoaded', false);
+    // TODO: Use tabId to make tab-specific
   }
 });
 
