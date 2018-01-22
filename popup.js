@@ -6,8 +6,9 @@ const BUTTON_IDS = ['load-button', 'on-button', 'off-button'];
  * List from https://github.com/matheuss/google-translate-api/blob/master/languages.js
  *
  */
-const SUPPORTED_LANGAUGES = {
+const SUPPORTED_LANGUAGES = {
   'auto': '- Detect Language -',
+  'en': 'English',
   'af': 'Afrikaans',
   'sq': 'Albanian',
   'am': 'Amharic',
@@ -29,7 +30,6 @@ const SUPPORTED_LANGAUGES = {
   'cs': 'Czech',
   'da': 'Danish',
   'nl': 'Dutch',
-  'en': 'English',
   'eo': 'Esperanto',
   'et': 'Estonian',
   'tl': 'Filipino',
@@ -115,7 +115,7 @@ const SUPPORTED_LANGAUGES = {
 };
 
 function getActiveTabId() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, _) => {
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
       const activeTab = tabs[0];
       if (activeTab) {
@@ -131,7 +131,7 @@ function getActiveTabId() {
 }
 
 function initializeButton() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, _) => {
     Promise.all([
       getValueInStorage(`DUAL_CAPTIONS-librariesLoaded-${activeTabId}`),
       getValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`)
@@ -153,19 +153,32 @@ function initializeButton() {
 }
 
 function initializeSelects() {
-  return new Promise((resolve, reject) => {
-    const fromLangaugeSelect = document.getElementById('from-select');
-    const toLangaugeSelect = document.getElementById('to-select');
-    for (lang in SUPPORTED_LANGAUGES) {
+  return new Promise((resolve, _) => {
+    const fromLanguageSelect = document.getElementById('from-select');
+    const toLanguageSelect = document.getElementById('to-select');
+    for (lang in SUPPORTED_LANGUAGES) {
       let option = document.createElement('option');
       option.value = lang;
-      option.label = SUPPORTED_LANGAUGES[lang];
-      fromLangaugeSelect.appendChild(option);
+      option.label = SUPPORTED_LANGUAGES[lang];
+      fromLanguageSelect.appendChild(option);
       if (option.value !== 'auto') {
-        toLangaugeSelect.appendChild(option.cloneNode());
+        toLanguageSelect.appendChild(option.cloneNode());
       }
     }
-    resolve();
+    Promise.all([
+      getValueInStorage(`DUAL_CAPTIONS-fromLanguage-${activeTabId}`),
+      getValueInStorage(`DUAL_CAPTIONS-toLanguage-${activeTabId}`)
+    ]).then(values => {
+      const fromLanguage = values[0];
+      const toLanguage = values[1];
+      if (fromLanguage) {
+        fromLanguageSelect.value = fromLanguage;
+      }
+      if (toLanguage) {
+        toLanguageSelect.value = toLanguage;
+      }
+      resolve();
+    });
   });
 }
 
@@ -223,14 +236,14 @@ function setListeners() {
           showButton('on-button');
         });
     });
-    const fromLangaugeSelect = document.getElementById('from-select');
-    fromLangaugeSelect.addEventListener('change', (e) => {
-      setFromLanguage(fromLangaugeSelect.options[fromLangaugeSelect.selectedIndex].value)
+    const fromLanguageSelect = document.getElementById('from-select');
+    fromLanguageSelect.addEventListener('change', (e) => {
+      setFromLanguage(fromLanguageSelect.options[fromLanguageSelect.selectedIndex].value)
         .then(() => {});
     });
-    const toLangaugeSelect = document.getElementById('to-select');
-    toLangaugeSelect.addEventListener('change', (e) => {
-      setToLanguage(toLangaugeSelect.options[toLangaugeSelect.selectedIndex].value)
+    const toLanguageSelect = document.getElementById('to-select');
+    toLanguageSelect.addEventListener('change', (e) => {
+      setToLanguage(toLanguageSelect.options[toLanguageSelect.selectedIndex].value)
         .then(() => {});
     });
     const reportBugsLink = document.getElementById('report-bugs-link');
@@ -307,5 +320,5 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(initializeButton)
     .then(initializeSelects)
     .then(setListeners)
-    .catch(() => {}); // TODO
+    .catch(() => {});
 });
