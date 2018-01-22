@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Dual Captions</title>
+    <style>
+    body {
+      overflow: hidden;
+      margin: 0px;
+      padding: 0px;
+      background: white;
+      width: 200px;
+    }
+    label, select {
+      display: block;
+    }
+    select {
+      margin-bottom: 10px;
+    }
+    #to-select {
+      margin: 0px;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .on-off-button {
+      width: 100px;
+      font-size: 20px;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+      filter: none;
+      margin-top: 10px;
+    }
+
+    .on-off-button:hover {
+      filter: brightness(1.1);
+    }
+
+    .on-off-button.on {
+      background: #2ecc71;
+    }
+
+    .on-off-button.off, .on-off-button.load {
+      background: #95a5a6;
+    }
+
+    .header {
+      width: 100%;
+      background: darkgray;
+      color: white;
+      text-align: center;
+    }
+
+    .divider {
+      width: 100%;
+      border-top: 1px solid lightgrey;
+      margin: 10px 0px;
+    }
+
+    #issues {
+      margin-bottom: 10px;
+    }
+
+    select:focus {
+      outline: none;
+    }
+    </style>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div class="header">Dual Captions</div>
+    <div class="container">
+      <div class="container">
+        <div id="on-button" class="on-off-button on" hidden>
+          ON
+        </div>
+        <div id="off-button" class="on-off-button off" hidden>
+          OFF
+        </div>
+        <div id="load-button" class="on-off-button load">
+          LOAD
+        </div>
+        <div class="divider"></div>
+        <label for="from-select">First Caption Language</label>
+        <select id="from-select" name="from-select"></select>
+        <label for="to-select">Second Caption Language</label>
+        <select id="to-select" name="to-select"></select>
+        <div class="divider"></div>
+        <div id="issues">Any issues? Report bugs <a id="report-bugs-link" href="">here</a>.</div>
+      </div>
+    </div>
+  </body>
+</html>
