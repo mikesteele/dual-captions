@@ -35,7 +35,6 @@
       color: white;
       cursor: pointer;
       filter: none;
-      margin-top: 10px;
     }
 
     .on-off-button:hover {
@@ -44,16 +43,17 @@
 
     .on-off-button.on {
       background: #2ecc71;
+      border-bottom: 5px solid #27ae60;
     }
 
     .on-off-button.off, .on-off-button.load {
       background: #95a5a6;
+      border-bottom: 5px solid #7f8c8d;
     }
 
     .header {
       width: 100%;
-      background: darkgray;
-      color: white;
+      margin-top: 10px;
       text-align: center;
     }
 
@@ -65,21 +65,77 @@
 
     #issues {
       margin-bottom: 10px;
+      text-align: center;
     }
 
     select:focus {
       outline: none;
+    }
+
+    .step-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .step-number {
+      height: 100%;
+      margin: 0px 5px;
+    }
+
+    .step-number span {
+      background: #95a5a6;
+      color: white;
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex-grow: 1;
+      line-height: 18px;
+    }
+
+    .step-content .step-1 {
+      width: 140px;
+    }
+
+    .cc-button {
+      background: black;
+      padding: 2px;
+      color: white;
+      border-radius: 2px;
     }
     </style>
     <script src="popup.js"></script>
   </head>
   <body>
     <div class="header">Dual Captions for YouTube</div>
+    <div class="divider"></div>
     <div class="container">
       <div class="container">
-        <div>1. Turn on captions for this video on YouTube page.</div>
+        <div class="step-container">
+          <div class="step-number">
+            <span>1</span>
+          </div>
+          <div class="step-content">
+            <div class="step-1">On the video, click on the <span class="cc-button">CC</span> button to start captions.</div>
+          </div>
+        </div>
         <div class="divider"></div>
-        <div>2.</div>
+        <div class="step-container">
+          <div class="step-number">
+            <span>2</span>
+          </div>
+          <div class="step-content">
         <div id="on-button" class="on-off-button on" hidden>
           ON
         </div>
@@ -87,16 +143,28 @@
           OFF
         </div>
         <div id="load-button" class="on-off-button load">
-          LOAD
+          START
+        </div>
+      </div>
         </div>
         <div class="divider"></div>
-        <div>3. Select language preferences:</div>
-        <label for="from-select">Video Language</label>
-        <select id="from-select" name="from-select"></select>
-        <label for="to-select">Second Caption Language</label>
-        <select id="to-select" name="to-select"></select>
+        <div class="step-container">
+          <div class="step-number">
+            <span>3</span>
+          </div>
+          <div class="step-content">
+            <div class="step-3">
+              <label for="from-select">Video Language</label>
+              <select id="from-select" name="from-select"></select>
+              <label for="to-select">Second Caption Language</label>
+              <select id="to-select" name="to-select"></select>
+            </div>
+          </div>
+        </div>
         <div class="divider"></div>
-        <div id="issues">Any issues? Report bugs <a id="report-bugs-link" href="">here</a>.</div>
+        <div class="step-content">
+          <div id="issues">Captions may have a small delay.<br/>Report a bug <a id="report-bugs-link" href="">here</a>.</div>
+        </div>
       </div>
     </div>
   </body>
