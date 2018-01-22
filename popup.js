@@ -142,9 +142,9 @@ function initializeButton() {
         showButton('load-button');
       } else {
         if (captionsOn) {
-          showButton('off-button');
-        } else {
           showButton('on-button');
+        } else {
+          showButton('off-button');
         }
       }
       resolve();
@@ -220,18 +220,21 @@ function setListeners() {
   return new Promise((resolve, _) => {
     document.getElementById('load-button').addEventListener('click', () => {
       loadLibraries()
+        .then(setValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`, true))
         .then(() => {
           showButton('on-button');
         });
     });
     document.getElementById('on-button').addEventListener('click', () => {
       stopObserver()
+        .then(setValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`, false))
         .then(() => {
           showButton('off-button');
         });
     });
     document.getElementById('off-button').addEventListener('click', () => {
       startObserver()
+        .then(setValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`, true))
         .then(() => {
           showButton('on-button');
         });
