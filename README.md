@@ -2,6 +2,15 @@
 
 ![screenshot](https://github.com/mikesteele/dual-captions/blob/master/screenshot.gif)
 
+Above: Dual Captions running on "Basic English Grammar - Have, Has, Had" (https://www.youtube.com/watch?v=Nd4MScADY94)
+
+### Fast Facts
+
+* Targeted at **language learners** who need what the speaker is saying and the translation in user's native language.
+* 100+ languages supported. 🌎
+* Uses Google Translate to translate captions into target language.
+* Free! No API key required.
+
 ### Intro
 
 As someone learning a foreign language, it is helpful for me to see both what the speaker is saying and the translation. 
@@ -9,12 +18,6 @@ As someone learning a foreign language, it is helpful for me to see both what th
 As of January 2018, YouTube can only show captions in one language. 
 
 This Chrome Extension creates a MutationObserver which waits for new caption elements to be added to the DOM. It then translates the text of these captions and adds the translated captions underneath.
-
-### Roadmap
-
-Open issues:
-
-- The translation can come back too late and the caption has already been removed from the DOM. 
 
 ### Usage
 
