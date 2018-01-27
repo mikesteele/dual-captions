@@ -1,7 +1,7 @@
 {
-  "name": "Dual Captions",
+  "name": "Dual Captions for YouTube - Two Language Captions",
   "description": "YouTube add-on to show captions in two languages",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "permissions": [
     "tabs", "http://*/*", "https://*/*", "storage"
   ],
