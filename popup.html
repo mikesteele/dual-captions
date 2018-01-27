@@ -132,7 +132,8 @@
     }
 
     .status {
-      width: 25px;
+      width: 40px;
+      height: 16px;
       display: inline-block;
       color: white;
       padding: 3px;
@@ -151,6 +152,10 @@
     .off.status {
       background: #95a5a6;
     }
+
+    .error.status {
+      background: #f1c40f;
+    }
     </style>
     <script src="popup.js"></script>
   </head>
@@ -161,6 +166,7 @@
         <span>Status: </span>
         <div id="off-status" class="off status">OFF</div>
         <div id="on-status" class="on status hidden">ON</div>
+        <div id="error-status" class="error status hidden">ERROR</div>
       </div>
     </div>
     <div class="divider"></div>
@@ -188,8 +194,10 @@
           </div>
           <div class="step-content">
             <div class="step-2">
-              <label for="to-select">Select language for second captions:</label>
-              <select id="to-select" name="to-select"></select>
+              <label for="language-select">Select language for second captions:</label>
+              <select id="language-select" name="language-select">
+              	<option option value="en" disabled selected></option>
+              </select>
             </div>
           </div>
         </div>

@@ -1,12 +1,15 @@
-let activeTabId;
 /**
+ *
+ * Dual Captions
+ * 
+ */
+
+ /**
  *
  * List from https://github.com/matheuss/google-translate-api/blob/master/languages.js
  *
  */
 const SUPPORTED_LANGUAGES = {
-  'auto': '- Detect Language -',
-  'en': 'English',
   'af': 'Afrikaans',
   'sq': 'Albanian',
   'am': 'Amharic',
@@ -28,6 +31,7 @@ const SUPPORTED_LANGUAGES = {
   'cs': 'Czech',
   'da': 'Danish',
   'nl': 'Dutch',
+  'en': 'English',
   'eo': 'Esperanto',
   'et': 'Estonian',
   'tl': 'Filipino',
@@ -112,92 +116,51 @@ const SUPPORTED_LANGUAGES = {
   'zu': 'Zulu'
 };
 
-function getActiveTabId() {
+
+/**
+ *
+ * Page functions
+ *
+ */
+
+function isDualCaptionsOn() {
   return new Promise((resolve, _) => {
-    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-      const activeTab = tabs[0];
-      if (activeTab) {
-          activeTabId = activeTab.id;
-      } else {
-          activeTabId = 9999;
-          // activeTabId is only used to indentify tab state in chrome.storage.local,
-          // Not used for chrome.tabs.excuteScript()
-      }
-      resolve();
+    chrome.tabs.executeScript({
+      code: 'window.observer && window.observerObserving'
+    }, result => {
+      resolve(result[0]);
     });
   });
 }
 
-function initializeSelects() {
+function getLanguage() {
   return new Promise((resolve, _) => {
-    const fromLanguageSelect = document.getElementById('to-select');
-    const toLanguageSelect = document.getElementById('to-select');
-    for (lang in SUPPORTED_LANGUAGES) {
-      let option = document.createElement('option');
-      option.value = lang;
-      option.label = SUPPORTED_LANGUAGES[lang];
-      fromLanguageSelect.appendChild(option);
-      if (option.value !== 'auto') {
-        toLanguageSelect.appendChild(option.cloneNode());
-      }
-    }
+    chrome.tabs.executeScript({
+      code: 'return window.observerLanguage'
+    }, resolve);
+  });
+}
+
+function setLanguage(language) {
+  return new Promise((resolve, _) => {
+    chrome.tabs.executeScript({
+      code: `window.setLanguage(${language})`
+    }, resolve);
+  });
+}
+
+function getState() {
+  return new Promise((resolve, _) => {
     Promise.all([
-      getValueInStorage(`DUAL_CAPTIONS-fromLanguage-${activeTabId}`),
-      getValueInStorage(`DUAL_CAPTIONS-toLanguage-${activeTabId}`)
+      getLanguage()
+      //
+      // TODO - Eventually add here queries for options like extra space, two colors, etc. 
+      //
     ]).then(values => {
-      const fromLanguage = values[0];
-      const toLanguage = values[1];
-      if (fromLanguage) {
-        fromLanguageSelect.value = fromLanguage;
+      const language = values[0];
+      if (language) {
+        setLanguageSelect(language);
       }
-      if (toLanguage) {
-        toLanguageSelect.value = toLanguage;
-      }
-      resolve();
-    });
-  });
-}
-
-// TODO: Initialize shadows
-
-function showShadow(step) {
-  let shadow = document.querySelector(`.step-shadow[data-step='${step}']`);
-  if (shadow) {
-    shadow.classList.remove('hidden');
-  }
-}
-
-function hideShadow(step) {
-  let shadow = document.querySelector(`.step-shadow[data-step='${step}']`);
-  if (shadow) {
-    shadow.classList.add('hidden');
-  }
-}
-
-function showStatus(status) {
-  let onStatus = document.getElementById('on-status');
-  let offStatus = document.getElementById('off-status');
-
-  if (status === 'on') {
-    offStatus.classList.add('hidden');
-    onStatus.classList.remove('hidden');
-  } else {
-    onStatus.classList.add('hidden');
-    offStatus.classList.remove('hidden');
-  }
-}
-
-function startObserver() {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.startObserver()`}, () => {
-      resolve();
-    });
-  });
-}
-
-function stopObserver() {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.stopObserver()`}, () => {
       resolve();
     });
   });
@@ -211,28 +174,106 @@ function navigateToIssuesPage() {
   });
 }
 
+function loadLibraries() {
+  return new Promise((resolve, _) => {
+    chrome.tabs.executeScript(null, {file: "lib/google-translate-token.js"}, () => {
+      chrome.tabs.executeScript(null, {file: "lib/querystring-encode.js"}, () => {
+        chrome.tabs.executeScript(null, {file: "lib/google-translate-api.js"}, () => {
+          chrome.tabs.executeScript(null, {file: "lib/dual-captions.js"}, resolve);
+        });
+      });
+    });
+  });
+}
+
+/**
+ *
+ * Popup functions
+ *
+ */
+
+function initializeLanguageSelect() {
+  return new Promise((resolve, _) => {
+    const languageSelect = document.getElementById('language-select');
+    for (lang in SUPPORTED_LANGUAGES) {
+      let option = document.createElement('option');
+      option.value = lang;
+      option.label = SUPPORTED_LANGUAGES[lang];
+      languageSelect.appendChild(option);
+    }
+    resolve();
+  });
+}
+
+function showSteps(steps) {
+  steps.forEach(step => {
+    let shadow = document.querySelector(`.step-shadow[data-step='${step}']`);
+    if (shadow) {
+      shadow.classList.add('hidden');
+    }
+  });
+}
+
+function hideSteps(steps) {
+  steps.forEach(step => {
+    let shadow = document.querySelector(`.step-shadow[data-step='${step}']`);
+    if (shadow) {
+      shadow.classList.remove('hidden');
+    }
+  });
+}
+
+function showStatus(status) {
+  let onStatus = document.getElementById('on-status');
+  let offStatus = document.getElementById('off-status');
+  let errorStatus = document.getElementById('error-status');
+
+  if (status === 'on') {
+    errorStatus.classList.add('hidden');
+    offStatus.classList.add('hidden');
+    onStatus.classList.remove('hidden');
+  } else if (status === 'off') {
+    errorStatus.classList.add('hidden');
+    onStatus.classList.add('hidden');
+    offStatus.classList.remove('hidden');
+  } else {
+    onStatus.classList.add('hidden');
+    offStatus.classList.add('hidden');
+    errorStatus.classList.remove('hidden');
+  }
+}
+
+function setLanguageSelect(language) {
+  const languageSelect = document.getElementById('language-select');
+  languageSelect.value = language;
+}
+
 function setListeners() {
   return new Promise((resolve, _) => {
     const loadButton = document.getElementById('load-button');
     loadButton.addEventListener('click', () => {
       loadLibraries()
-        .then(setValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`, true))
-        .then(setValueInStorage(`DUAL_CAPTIONS-stepOneDone-${activeTabId}`, true))
-        .then(() => {
-          showStatus('on');
-          showShadow('step-1');
-          hideShadow('step-2');
-          loadButton.classList.add('disabled');
+        .then(isDualCaptionsOn)
+        .then(isOn => {
+          if (isOn) {
+            showStatus('on');
+            showSteps(['step-2']);
+            hideSteps(['step-1']);
+            loadButton.classList.add('disabled');
+          } else {
+            showStatus('error');
+          }
         });
     }, { once: true });
-    const toLanguageSelect = document.getElementById('to-select');
-    toLanguageSelect.addEventListener('change', (e) => {
-      setToLanguage(toLanguageSelect.options[toLanguageSelect.selectedIndex].value)
+  
+    const languageSelect = document.getElementById('language-select');
+    languageSelect.addEventListener('change', (e) => {
+      setLanguage(languageSelect.options[languageSelect.selectedIndex].value)
         .then(() => {
-          hideShadow('step-3');
-          hideShadow('step-4');
+          showSteps(['step-3', 'step-4']);
         });
     });
+  
     const reportBugsLink = document.getElementById('report-bugs-link');
     reportBugsLink.addEventListener('click', (e) => {
       e.preventDefault();
@@ -241,70 +282,34 @@ function setListeners() {
           window.close();
         });
     });
+
     resolve();
   });
 }
 
-function setFromLanguage(language) {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.setFromLanguage('${language}')`}, () => {
-      setValueInStorage(`DUAL_CAPTIONS-fromLanguage-${activeTabId}`, language)
-        .then(() => {
-          resolve();
-        });
-    });
-  })
-}
-
-function setToLanguage(language) {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.setToLanguage('${language}')`}, () => {
-      setValueInStorage(`DUAL_CAPTIONS-toLanguage-${activeTabId}`, language)
-        .then(() => {
-          resolve();
-        });
-    });
-  })
-}
-
-function loadLibraries() {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {file: "lib/google-translate-token.js"}, () => {
-      chrome.tabs.executeScript(null, {file: "lib/querystring-encode.js"}, () => {
-        chrome.tabs.executeScript(null, {file: "lib/google-translate-api.js"}, () => {
-          chrome.tabs.executeScript(null, {file: "lib/dual-captions.js"}, () => {
-            setValueInStorage(`DUAL_CAPTIONS-librariesLoaded-${activeTabId}`, true)
-              .then(() => {
-                resolve();
-              });
-          });
-        });
-      });
-    });
-  });
-}
-
-function getValueInStorage(key) {
-  return new Promise((resolve, _) => {
-    chrome.storage.local.get(key, function(obj) {
-      resolve(obj[key]);
-    });
-  });
-}
-
-function setValueInStorage(key, value) {
-  return new Promise((resolve, _) => {
-    let obj = {};
-    obj[key] = value;
-    chrome.storage.local.set(obj, () => {
-      resolve();
-    });
-  });
-}
+/**
+ *
+ * Start Dual Captions
+ *
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  getActiveTabId()
-    .then(initializeSelects)
+  initializeLanguageSelect()
     .then(setListeners)
-    .catch(() => {});
+    .then(isDualCaptionsOn)
+    .then(isOn => {
+      if (isOn) {
+        getState()
+          .then(() => {
+            showStatus('on');
+            showSteps(['step-2', 'step-3', 'step-4']);
+            hideSteps(['step-1']);
+          });
+      } else {
+        showStatus('off');
+        showSteps(['step-1']);
+        hideSteps(['step-2', 'step-3', 'step-4']);
+      }
+    });
 });
+
