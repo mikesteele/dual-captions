@@ -131,6 +131,10 @@
       margin-top: 3px;
     }
 
+    .button.hidden {
+      display: none;
+    }
+
     .status {
       width: 40px;
       height: 16px;
@@ -173,7 +177,7 @@
     <div class="container">
       <div class="container">
         <div class="step-container">
-          <div class="step-shadow hidden" data-step="step-1"></div>
+          <div class="step-shadow" data-step="step-1"></div>
           <div class="step-number">
             <span>1</span>
           </div>
@@ -209,9 +213,8 @@
           <div class="step-content">
             <div class="step-3">
               <div>Controls</div>
-              <div class="button">TURN OFF</div>
-              <br/>
-              <div class="button">TURN ON</div>
+              <div id="turn-off-button" class="button hidden">TURN OFF</div>
+              <div id="turn-on-button" class="button">TURN ON</div>
               <br/><br/>
               <div>Options</div>
               <input type="checkbox" name="extra-space"/>

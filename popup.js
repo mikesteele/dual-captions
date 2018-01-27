@@ -133,6 +133,16 @@ function isDualCaptionsOn() {
   });
 }
 
+function isDualCaptionsLoaded() {
+  return new Promise((resolve, _) => {
+    chrome.tabs.executeScript({
+      code: '!!window.observer'
+    }, result => {
+      resolve(result[0]);
+    });
+  });
+}
+
 function getObserverLanguage() {
   return new Promise((resolve, _) => {
     chrome.tabs.executeScript({
@@ -183,6 +193,18 @@ function loadLibraries() {
         });
       });
     });
+  });
+}
+
+function startObserver() {
+  return new Promise((resolve, _) => {
+    chrome.tabs.executeScript(null, {code: `window.startObserver()`}, resolve);
+  });
+}
+
+function stopObserver() {
+  return new Promise((resolve, _) => {
+    chrome.tabs.executeScript(null, {code: `window.stopObserver()`}, resolve);
   });
 }
 
@@ -243,6 +265,19 @@ function showStatus(status) {
   }
 }
 
+function showButton(button) {
+  let turnOnButton = document.getElementById('turn-on-button');
+  let turnOffButton = document.getElementById('turn-off-button');
+
+  if (button === 'turn-on') {
+    turnOffButton.classList.add('hidden');
+    turnOnButton.classList.remove('hidden');
+  } else {
+    turnOnButton.classList.add('hidden');
+    turnOffButton.classList.remove('hidden');
+  }
+}
+
 function setLanguageSelect(language) {
   const languageSelect = document.getElementById('language-select');
   languageSelect.value = language;
@@ -267,19 +302,48 @@ function setListeners() {
     }, { once: true });
   
     const languageSelect = document.getElementById('language-select');
-    languageSelect.addEventListener('change', (e) => {
+    languageSelect.addEventListener('change', e => {
       setObserverLanguage(languageSelect.options[languageSelect.selectedIndex].value)
         .then(() => {
+          showButton('turn-off');
           showSteps(['step-3', 'step-4']);
         });
     });
   
     const reportBugsLink = document.getElementById('report-bugs-link');
-    reportBugsLink.addEventListener('click', (e) => {
+    reportBugsLink.addEventListener('click', e => {
       e.preventDefault();
       navigateToIssuesPage()
         .then(() => {
           window.close();
+        });
+    });
+
+    const turnOffButton = document.getElementById('turn-off-button');
+    turnOffButton.addEventListener('click', e => {
+      stopObserver()
+        .then(isDualCaptionsOn)
+        .then(isOn => {
+          if (isOn) {
+            showStatus('error');
+          } else {
+            showStatus('off');
+            showButton('turn-on');
+          }
+        });
+    });
+
+    const turnOnButton = document.getElementById('turn-on-button');
+    turnOnButton.addEventListener('click', e => {
+      startObserver()
+        .then(isDualCaptionsOn)
+        .then(isOn => {
+          if (isOn) {
+            showStatus('on');
+            showButton('turn-off');
+          } else {
+            showStatus('error');
+          }
         });
     });
 
@@ -296,20 +360,29 @@ function setListeners() {
 document.addEventListener('DOMContentLoaded', () => {
   initializeLanguageSelect()
     .then(setListeners)
-    .then(isDualCaptionsOn)
-    .then(isOn => {
-      if (isOn) {
-        getState()
-          .then(() => {
-            showStatus('on');
-            showSteps(['step-2', 'step-3', 'step-4']);
-            hideSteps(['step-1']);
+    .then(isDualCaptionsLoaded)
+    .then(isLoaded => {
+      if (isLoaded) {
+        hideSteps(['step-1']);
+        showSteps(['step-2', 'step-3', 'step-4']);
+        isDualCaptionsOn()
+          .then(isOn => {
+            if (isOn) {
+              getState()
+                .then(() => {
+                  showStatus('on');
+                  showButton('turn-off');
+                });
+            } else {
+              showStatus('off');
+              showButton('turn-on');
+            }
           });
       } else {
         showStatus('off');
         showSteps(['step-1']);
+        showButton('turn-on');
         hideSteps(['step-2', 'step-3', 'step-4']);
       }
     });
 });
-
