@@ -210,6 +210,16 @@ function stopObserver() {
 
 /**
  *
+ * Browser Action functions
+ *
+ */
+
+function showIcon(iconName) {
+  chrome.browserAction.setIcon({path: `${iconName}.png`});
+}
+
+/**
+ *
  * Popup functions
  *
  */
@@ -254,14 +264,17 @@ function showStatus(status) {
     errorStatus.classList.add('hidden');
     offStatus.classList.add('hidden');
     onStatus.classList.remove('hidden');
+    showIcon('icon-on');
   } else if (status === 'off') {
     errorStatus.classList.add('hidden');
     onStatus.classList.add('hidden');
     offStatus.classList.remove('hidden');
+    showIcon('icon-off');
   } else {
     onStatus.classList.add('hidden');
     offStatus.classList.add('hidden');
     errorStatus.classList.remove('hidden');
+    showIcon('icon-off');
   }
 }
 
