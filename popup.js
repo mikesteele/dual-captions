@@ -1,14 +1,15 @@
-let activeTabId;
-
-const BUTTON_IDS = ['load-button', 'on-button', 'off-button'];
 /**
+ *
+ * Dual Captions
+ * 
+ */
+
+ /**
  *
  * List from https://github.com/matheuss/google-translate-api/blob/master/languages.js
  *
  */
 const SUPPORTED_LANGUAGES = {
-  'auto': '- Detect Language -',
-  'en': 'English',
   'af': 'Afrikaans',
   'sq': 'Albanian',
   'am': 'Amharic',
@@ -30,6 +31,7 @@ const SUPPORTED_LANGUAGES = {
   'cs': 'Czech',
   'da': 'Danish',
   'nl': 'Dutch',
+  'en': 'English',
   'eo': 'Esperanto',
   'et': 'Estonian',
   'tl': 'Filipino',
@@ -114,95 +116,61 @@ const SUPPORTED_LANGUAGES = {
   'zu': 'Zulu'
 };
 
-function getActiveTabId() {
+
+/**
+ *
+ * Page functions
+ *
+ */
+
+function isDualCaptionsOn() {
   return new Promise((resolve, _) => {
-    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-      const activeTab = tabs[0];
-      if (activeTab) {
-          activeTabId = activeTab.id;
-      } else {
-          activeTabId = 9999;
-          // activeTabId is only used to indentify tab state in chrome.storage.local,
-          // Not used for chrome.tabs.excuteScript()
-      }
-      resolve();
+    chrome.tabs.executeScript({
+      code: 'window.observer && window.observerObserving'
+    }, result => {
+      resolve(result[0]);
     });
   });
 }
 
-function initializeButton() {
+function isDualCaptionsLoaded() {
+  return new Promise((resolve, _) => {
+    chrome.tabs.executeScript({
+      code: '!!window.observer'
+    }, result => {
+      resolve(result[0]);
+    });
+  });
+}
+
+function getObserverLanguage() {
+  return new Promise((resolve, _) => {
+    chrome.tabs.executeScript({
+      code: 'window.getObserverLanguage()'
+    }, resolve);
+  });
+}
+
+function setObserverLanguage(language) {
+  return new Promise((resolve, _) => {
+    chrome.tabs.executeScript({
+      code: `window.setObserverLanguage('${language}')`
+    }, resolve);
+  });
+}
+
+function getState() {
   return new Promise((resolve, _) => {
     Promise.all([
-      getValueInStorage(`DUAL_CAPTIONS-librariesLoaded-${activeTabId}`),
-      getValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`)
+      getObserverLanguage()
+      //
+      // TODO - Eventually add here queries for options like extra space, two colors, etc. 
+      //
     ]).then(values => {
-      const librariesLoaded = values[0];
-      const captionsOn = values[1];
-      if (!librariesLoaded) {
-        showButton('load-button');
-      } else {
-        if (captionsOn) {
-          showButton('on-button');
-        } else {
-          showButton('off-button');
-        }
+      const language = values[0];
+      if (language) {
+        setLanguageSelect(language);
       }
-      resolve();
-    });
-  });
-}
-
-function initializeSelects() {
-  return new Promise((resolve, _) => {
-    const fromLanguageSelect = document.getElementById('from-select');
-    const toLanguageSelect = document.getElementById('to-select');
-    for (lang in SUPPORTED_LANGUAGES) {
-      let option = document.createElement('option');
-      option.value = lang;
-      option.label = SUPPORTED_LANGUAGES[lang];
-      fromLanguageSelect.appendChild(option);
-      if (option.value !== 'auto') {
-        toLanguageSelect.appendChild(option.cloneNode());
-      }
-    }
-    Promise.all([
-      getValueInStorage(`DUAL_CAPTIONS-fromLanguage-${activeTabId}`),
-      getValueInStorage(`DUAL_CAPTIONS-toLanguage-${activeTabId}`)
-    ]).then(values => {
-      const fromLanguage = values[0];
-      const toLanguage = values[1];
-      if (fromLanguage) {
-        fromLanguageSelect.value = fromLanguage;
-      }
-      if (toLanguage) {
-        toLanguageSelect.value = toLanguage;
-      }
-      resolve();
-    });
-  });
-}
-
-function showButton(button) {
-  BUTTON_IDS.forEach(buttonId => {
-    if (button === buttonId) {
-      document.getElementById(buttonId).removeAttribute('hidden');
-    } else {
-      document.getElementById(buttonId).setAttribute('hidden', true);
-    }
-  });
-}
-
-function startObserver() {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.startObserver()`}, () => {
-      resolve();
-    });
-  });
-}
-
-function stopObserver() {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.stopObserver()`}, () => {
       resolve();
     });
   });
@@ -216,112 +184,218 @@ function navigateToIssuesPage() {
   });
 }
 
-function setListeners() {
-  return new Promise((resolve, _) => {
-    document.getElementById('load-button').addEventListener('click', () => {
-      loadLibraries()
-        .then(setValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`, true))
-        .then(() => {
-          showButton('on-button');
-        });
-    });
-    document.getElementById('on-button').addEventListener('click', () => {
-      stopObserver()
-        .then(setValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`, false))
-        .then(() => {
-          showButton('off-button');
-        });
-    });
-    document.getElementById('off-button').addEventListener('click', () => {
-      startObserver()
-        .then(setValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`, true))
-        .then(() => {
-          showButton('on-button');
-        });
-    });
-    const fromLanguageSelect = document.getElementById('from-select');
-    fromLanguageSelect.addEventListener('change', (e) => {
-      setFromLanguage(fromLanguageSelect.options[fromLanguageSelect.selectedIndex].value)
-        .then(() => {});
-    });
-    const toLanguageSelect = document.getElementById('to-select');
-    toLanguageSelect.addEventListener('change', (e) => {
-      setToLanguage(toLanguageSelect.options[toLanguageSelect.selectedIndex].value)
-        .then(() => {});
-    });
-    const reportBugsLink = document.getElementById('report-bugs-link');
-    reportBugsLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      navigateToIssuesPage()
-        .then(() => {
-          window.close();
-        });
-    });
-    resolve();
-  });
-}
-
-function setFromLanguage(language) {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.setFromLanguage('${language}')`}, () => {
-      setValueInStorage(`DUAL_CAPTIONS-fromLanguage-${activeTabId}`, language)
-        .then(() => {
-          resolve();
-        });
-    });
-  })
-}
-
-function setToLanguage(language) {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.setToLanguage('${language}')`}, () => {
-      setValueInStorage(`DUAL_CAPTIONS-toLanguage-${activeTabId}`, language)
-        .then(() => {
-          resolve();
-        });
-    });
-  })
-}
-
 function loadLibraries() {
   return new Promise((resolve, _) => {
     chrome.tabs.executeScript(null, {file: "lib/google-translate-token.js"}, () => {
       chrome.tabs.executeScript(null, {file: "lib/querystring-encode.js"}, () => {
         chrome.tabs.executeScript(null, {file: "lib/google-translate-api.js"}, () => {
-          chrome.tabs.executeScript(null, {file: "lib/dual-captions.js"}, () => {
-            setValueInStorage(`DUAL_CAPTIONS-librariesLoaded-${activeTabId}`, true)
-              .then(() => {
-                resolve();
-              });
-          });
+          chrome.tabs.executeScript(null, {file: "lib/dual-captions.js"}, resolve);
         });
       });
     });
   });
 }
 
-function getValueInStorage(key) {
+function startObserver() {
   return new Promise((resolve, _) => {
-    chrome.storage.local.get(key, function(obj) {
-      resolve(obj[key]);
-    });
+    chrome.tabs.executeScript(null, {code: `window.startObserver()`}, resolve);
   });
 }
 
-function setValueInStorage(key, value) {
+function stopObserver() {
   return new Promise((resolve, _) => {
-    let obj = {};
-    obj[key] = value;
-    chrome.storage.local.set(obj, () => {
-      resolve();
-    });
+    chrome.tabs.executeScript(null, {code: `window.stopObserver()`}, resolve);
   });
 }
+
+/**
+ *
+ * Browser Action functions
+ *
+ */
+
+function showIcon(iconName) {
+  chrome.browserAction.setIcon({path: `${iconName}.png`});
+}
+
+/**
+ *
+ * Popup functions
+ *
+ */
+
+function initializeLanguageSelect() {
+  return new Promise((resolve, _) => {
+    const languageSelect = document.getElementById('language-select');
+    for (lang in SUPPORTED_LANGUAGES) {
+      let option = document.createElement('option');
+      option.value = lang;
+      option.label = SUPPORTED_LANGUAGES[lang];
+      languageSelect.appendChild(option);
+    }
+    resolve();
+  });
+}
+
+function showSteps(steps) {
+  steps.forEach(step => {
+    let shadow = document.querySelector(`.step-shadow[data-step='${step}']`);
+    if (shadow) {
+      shadow.classList.add('hidden');
+    }
+  });
+}
+
+function hideSteps(steps) {
+  steps.forEach(step => {
+    let shadow = document.querySelector(`.step-shadow[data-step='${step}']`);
+    if (shadow) {
+      shadow.classList.remove('hidden');
+    }
+  });
+}
+
+function showStatus(status) {
+  let onStatus = document.getElementById('on-status');
+  let offStatus = document.getElementById('off-status');
+  let errorStatus = document.getElementById('error-status');
+
+  if (status === 'on') {
+    errorStatus.classList.add('hidden');
+    offStatus.classList.add('hidden');
+    onStatus.classList.remove('hidden');
+    showIcon('icon-on');
+  } else if (status === 'off') {
+    errorStatus.classList.add('hidden');
+    onStatus.classList.add('hidden');
+    offStatus.classList.remove('hidden');
+    showIcon('icon-off');
+  } else {
+    onStatus.classList.add('hidden');
+    offStatus.classList.add('hidden');
+    errorStatus.classList.remove('hidden');
+    showIcon('icon-off');
+  }
+}
+
+function showButton(button) {
+  let turnOnButton = document.getElementById('turn-on-button');
+  let turnOffButton = document.getElementById('turn-off-button');
+
+  if (button === 'turn-on') {
+    turnOffButton.classList.add('hidden');
+    turnOnButton.classList.remove('hidden');
+  } else {
+    turnOnButton.classList.add('hidden');
+    turnOffButton.classList.remove('hidden');
+  }
+}
+
+function setLanguageSelect(language) {
+  const languageSelect = document.getElementById('language-select');
+  languageSelect.value = language;
+}
+
+function setListeners() {
+  return new Promise((resolve, _) => {
+    const loadButton = document.getElementById('load-button');
+    loadButton.addEventListener('click', () => {
+      loadLibraries()
+        .then(isDualCaptionsOn)
+        .then(isOn => {
+          if (isOn) {
+            showStatus('on');
+            showSteps(['step-2']);
+            hideSteps(['step-1']);
+            loadButton.classList.add('disabled');
+          } else {
+            showStatus('error');
+          }
+        });
+    }, { once: true });
+  
+    const languageSelect = document.getElementById('language-select');
+    languageSelect.addEventListener('change', e => {
+      setObserverLanguage(languageSelect.options[languageSelect.selectedIndex].value)
+        .then(() => {
+          showButton('turn-off');
+          showSteps(['step-3', 'step-4']);
+        });
+    });
+  
+    const reportBugsLink = document.getElementById('report-bugs-link');
+    reportBugsLink.addEventListener('click', e => {
+      e.preventDefault();
+      navigateToIssuesPage()
+        .then(() => {
+          window.close();
+        });
+    });
+
+    const turnOffButton = document.getElementById('turn-off-button');
+    turnOffButton.addEventListener('click', e => {
+      stopObserver()
+        .then(isDualCaptionsOn)
+        .then(isOn => {
+          if (isOn) {
+            showStatus('error');
+          } else {
+            showStatus('off');
+            showButton('turn-on');
+          }
+        });
+    });
+
+    const turnOnButton = document.getElementById('turn-on-button');
+    turnOnButton.addEventListener('click', e => {
+      startObserver()
+        .then(isDualCaptionsOn)
+        .then(isOn => {
+          if (isOn) {
+            showStatus('on');
+            showButton('turn-off');
+          } else {
+            showStatus('error');
+          }
+        });
+    });
+
+    resolve();
+  });
+}
+
+/**
+ *
+ * Start Dual Captions
+ *
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  getActiveTabId()
-    .then(initializeButton)
-    .then(initializeSelects)
+  initializeLanguageSelect()
     .then(setListeners)
-    .catch(() => {});
+    .then(isDualCaptionsLoaded)
+    .then(isLoaded => {
+      if (isLoaded) {
+        hideSteps(['step-1']);
+        showSteps(['step-2', 'step-3', 'step-4']);
+        isDualCaptionsOn()
+          .then(isOn => {
+            if (isOn) {
+              getState()
+                .then(() => {
+                  showStatus('on');
+                  showButton('turn-off');
+                });
+            } else {
+              showStatus('off');
+              showButton('turn-on');
+            }
+          });
+      } else {
+        showStatus('off');
+        showSteps(['step-1']);
+        showButton('turn-on');
+        hideSteps(['step-2', 'step-3', 'step-4']);
+      }
+    });
 });
