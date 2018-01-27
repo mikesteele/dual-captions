@@ -1,6 +1,4 @@
 let activeTabId;
-
-const BUTTON_IDS = ['load-button', 'on-button', 'off-button'];
 /**
  *
  * List from https://github.com/matheuss/google-translate-api/blob/master/languages.js
@@ -130,31 +128,9 @@ function getActiveTabId() {
   });
 }
 
-function initializeButton() {
-  return new Promise((resolve, _) => {
-    Promise.all([
-      getValueInStorage(`DUAL_CAPTIONS-librariesLoaded-${activeTabId}`),
-      getValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`)
-    ]).then(values => {
-      const librariesLoaded = values[0];
-      const captionsOn = values[1];
-      if (!librariesLoaded) {
-        showButton('load-button');
-      } else {
-        if (captionsOn) {
-          showButton('on-button');
-        } else {
-          showButton('off-button');
-        }
-      }
-      resolve();
-    });
-  });
-}
-
 function initializeSelects() {
   return new Promise((resolve, _) => {
-    const fromLanguageSelect = document.getElementById('from-select');
+    const fromLanguageSelect = document.getElementById('to-select');
     const toLanguageSelect = document.getElementById('to-select');
     for (lang in SUPPORTED_LANGUAGES) {
       let option = document.createElement('option');
@@ -182,14 +158,33 @@ function initializeSelects() {
   });
 }
 
-function showButton(button) {
-  BUTTON_IDS.forEach(buttonId => {
-    if (button === buttonId) {
-      document.getElementById(buttonId).removeAttribute('hidden');
-    } else {
-      document.getElementById(buttonId).setAttribute('hidden', true);
-    }
-  });
+// TODO: Initialize shadows
+
+function showShadow(step) {
+  let shadow = document.querySelector(`.step-shadow[data-step='${step}']`);
+  if (shadow) {
+    shadow.classList.remove('hidden');
+  }
+}
+
+function hideShadow(step) {
+  let shadow = document.querySelector(`.step-shadow[data-step='${step}']`);
+  if (shadow) {
+    shadow.classList.add('hidden');
+  }
+}
+
+function showStatus(status) {
+  let onStatus = document.getElementById('on-status');
+  let offStatus = document.getElementById('off-status');
+
+  if (status === 'on') {
+    offStatus.classList.add('hidden');
+    onStatus.classList.remove('hidden');
+  } else {
+    onStatus.classList.add('hidden');
+    offStatus.classList.remove('hidden');
+  }
 }
 
 function startObserver() {
@@ -218,36 +213,25 @@ function navigateToIssuesPage() {
 
 function setListeners() {
   return new Promise((resolve, _) => {
-    document.getElementById('load-button').addEventListener('click', () => {
+    const loadButton = document.getElementById('load-button');
+    loadButton.addEventListener('click', () => {
       loadLibraries()
         .then(setValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`, true))
+        .then(setValueInStorage(`DUAL_CAPTIONS-stepOneDone-${activeTabId}`, true))
         .then(() => {
-          showButton('on-button');
+          showStatus('on');
+          showShadow('step-1');
+          hideShadow('step-2');
+          loadButton.classList.add('disabled');
         });
-    });
-    document.getElementById('on-button').addEventListener('click', () => {
-      stopObserver()
-        .then(setValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`, false))
-        .then(() => {
-          showButton('off-button');
-        });
-    });
-    document.getElementById('off-button').addEventListener('click', () => {
-      startObserver()
-        .then(setValueInStorage(`DUAL_CAPTIONS-captionsOn-${activeTabId}`, true))
-        .then(() => {
-          showButton('on-button');
-        });
-    });
-    const fromLanguageSelect = document.getElementById('from-select');
-    fromLanguageSelect.addEventListener('change', (e) => {
-      setFromLanguage(fromLanguageSelect.options[fromLanguageSelect.selectedIndex].value)
-        .then(() => {});
-    });
+    }, { once: true });
     const toLanguageSelect = document.getElementById('to-select');
     toLanguageSelect.addEventListener('change', (e) => {
       setToLanguage(toLanguageSelect.options[toLanguageSelect.selectedIndex].value)
-        .then(() => {});
+        .then(() => {
+          hideShadow('step-3');
+          hideShadow('step-4');
+        });
     });
     const reportBugsLink = document.getElementById('report-bugs-link');
     reportBugsLink.addEventListener('click', (e) => {
@@ -320,7 +304,6 @@ function setValueInStorage(key, value) {
 
 document.addEventListener('DOMContentLoaded', () => {
   getActiveTabId()
-    .then(initializeButton)
     .then(initializeSelects)
     .then(setListeners)
     .catch(() => {});
