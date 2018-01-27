@@ -133,18 +133,18 @@ function isDualCaptionsOn() {
   });
 }
 
-function getLanguage() {
+function getObserverLanguage() {
   return new Promise((resolve, _) => {
     chrome.tabs.executeScript({
-      code: 'return window.observerLanguage'
+      code: 'window.getObserverLanguage()'
     }, resolve);
   });
 }
 
-function setLanguage(language) {
+function setObserverLanguage(language) {
   return new Promise((resolve, _) => {
     chrome.tabs.executeScript({
-      code: `window.setLanguage(${language})`
+      code: `window.setObserverLanguage('${language}')`
     }, resolve);
   });
 }
@@ -152,7 +152,7 @@ function setLanguage(language) {
 function getState() {
   return new Promise((resolve, _) => {
     Promise.all([
-      getLanguage()
+      getObserverLanguage()
       //
       // TODO - Eventually add here queries for options like extra space, two colors, etc. 
       //
@@ -268,7 +268,7 @@ function setListeners() {
   
     const languageSelect = document.getElementById('language-select');
     languageSelect.addEventListener('change', (e) => {
-      setLanguage(languageSelect.options[languageSelect.selectedIndex].value)
+      setObserverLanguage(languageSelect.options[languageSelect.selectedIndex].value)
         .then(() => {
           showSteps(['step-3', 'step-4']);
         });
