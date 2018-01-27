@@ -208,6 +208,12 @@ function stopObserver() {
   });
 }
 
+function setExtraSpace(value) {
+  return new Promise((resolve, _) => {
+    chrome.tabs.executeScript(null, {code: `window.setExtraSpace(${value})`}, resolve);
+  });
+}
+
 /**
  *
  * Browser Action functions
@@ -358,6 +364,13 @@ function setListeners() {
             showStatus('error');
           }
         });
+    });
+
+
+    const extraSpace = document.getElementById('extra-space');
+    extraSpace.addEventListener('click', e => {
+      setExtraSpace(extraSpace.checked)
+        .then(() => {});
     });
 
     resolve();

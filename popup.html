@@ -160,6 +160,11 @@
     .error.status {
       background: #f1c40f;
     }
+
+    label {
+      cursor: pointer;
+      display: block;
+    }
     </style>
     <script src="popup.js"></script>
   </head>
@@ -217,11 +222,10 @@
               <div id="turn-on-button" class="button">TURN ON</div>
               <br/><br/>
               <div>Options</div>
-              <input type="checkbox" name="extra-space"/>
-              <label for="extra-space">Extra space</label>
-              <br/>
-              <input type="checkbox" name="different-colors"/>
-              <label for="extra-space">Different colors</label>
+              <label>
+                <input id="extra-space" type="checkbox"/>
+                Extra space
+              </label>
             </div>
           </div>
         </div>
