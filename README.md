@@ -1,9 +1,8 @@
 ## dual-captions <br/> YouTube add-on to show captions in 2 languages 💬
 
-![screenshot](https://github.com/mikesteele/dual-captions/blob/master/screenshot.gif)
-
-Above: Dual Captions running on "Basic English Grammar - Have, Has, Had" (https://www.youtube.com/watch?v=Nd4MScADY94)
-
+![screenshot](https://github.com/mikesteele/dual-captions/blob/master/screenshot.png)
+<br/>
+### <a href="https://www.youtube.com/watch?v=pIED1THCitI" target="_blank">Watch video demo</a>
 ### Fast Facts
 
 * Targeted at **language learners** who need what the speaker is saying and the translation in user's native language.
