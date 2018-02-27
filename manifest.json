@@ -17,7 +17,9 @@
       "lib/google-translate-token.js",
       "lib/querystring-encode.js",
       "lib/google-translate-api.js",
-      "lib/dual-captions.js"
+      "lib/config/init.js",
+      "lib/config/youtube.js",
+      "lib/dc-rewrite.js"
     ],
     "matches": [ "https://www.youtube.com/watch?*" ]
    }],
