@@ -13,6 +13,7 @@
   "content_scripts": [ {
     "all_frames": false,
     "js": [
+      "lib/init.js",
       "lib/google-translate-token.js",
       "lib/querystring-encode.js",
       "lib/google-translate-api.js",

@@ -126,7 +126,7 @@ const SUPPORTED_LANGUAGES = {
 function isDualCaptionsOn() {
   return new Promise((resolve, _) => {
     chrome.tabs.executeScript({
-      code: 'window.observer && window.observerObserving'
+      code: 'window.DUAL_CAPTIONS.observer && window.DUAL_CAPTIONS.observerObserving'
     }, result => {
       resolve(result[0]);
     });
@@ -136,7 +136,7 @@ function isDualCaptionsOn() {
 function isDualCaptionsLoaded() {
   return new Promise((resolve, _) => {
     chrome.tabs.executeScript({
-      code: '!!window.observer'
+      code: '!!window.DUAL_CAPTIONS.observer'
     }, result => {
       resolve(result[0]);
     });
@@ -146,7 +146,7 @@ function isDualCaptionsLoaded() {
 function getObserverLanguage() {
   return new Promise((resolve, _) => {
     chrome.tabs.executeScript({
-      code: 'window.getObserverLanguage()'
+      code: 'window.DUAL_CAPTIONS.getObserverLanguage()'
     }, resolve);
   });
 }
@@ -154,7 +154,7 @@ function getObserverLanguage() {
 function setObserverLanguage(language) {
   return new Promise((resolve, _) => {
     chrome.tabs.executeScript({
-      code: `window.setObserverLanguage('${language}')`
+      code: `window.DUAL_CAPTIONS.setObserverLanguage('${language}')`
     }, resolve);
   });
 }
@@ -198,19 +198,19 @@ function loadLibraries() {
 
 function startObserver() {
   return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.startObserver()`}, resolve);
+    chrome.tabs.executeScript(null, {code: `window.DUAL_CAPTIONS.startObserver()`}, resolve);
   });
 }
 
 function stopObserver() {
   return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.stopObserver()`}, resolve);
+    chrome.tabs.executeScript(null, {code: `window.DUAL_CAPTIONS.stopObserver()`}, resolve);
   });
 }
 
 function setExtraSpace(value) {
   return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.setExtraSpace(${value})`}, resolve);
+    chrome.tabs.executeScript(null, {code: `window.DUAL_CAPTIONS.setExtraSpace(${value})`}, resolve);
   });
 }
 
