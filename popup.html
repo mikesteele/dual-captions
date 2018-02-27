@@ -4,239 +4,95 @@
     <title>Dual Captions</title>
     <style>
     body {
-      overflow: hidden;
-      margin: 0px;
-      padding: 0px;
       background: white;
-      width: 200px;
-    }
-    select {
-      display: block;
-      margin-bottom: 10px;
-    }
-    #to-select {
       margin: 0px;
+      overflow: hidden;
+      padding: 0px;
+      width: 250px;
     }
-    .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      width: 100%;
+
+    .all {
+      background: white;
+      height: 150px;
+      width: 250px;
     }
 
     .header {
-      width: 100%;
-      margin: 10px 0px;
-      text-align: center;
-    }
-
-    .header-title {
-      margin-bottom: 10px;
-    }
-
-    #issues {
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    select:focus {
-      outline: none;
-    }
-
-    .step-container {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
       align-items: center;
-      padding: 10px 0px;
-      position: relative;
-      border-top: 1px solid lightgrey;
-    }
-
-    .step-number {
-      height: 100%;
-      margin: 0px 5px;
-      user-select: none;
-    }
-
-    .step-number span {
-      background: #95a5a6;
-      color: white;
-      border-radius: 50%;
-      height: 20px;
-      width: 20px;
+      border-bottom: 1px solid lightgrey;
       display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .step-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       flex-direction: column;
-      flex-grow: 1;
-      line-height: 18px;
+      justify-content: center;
+      padding: 10px;
     }
 
-    .step-content .step-1,
-    .step-content .step-2 {
-      width: 140px;
+    .header span {
+      margin-right: 4px;
     }
 
-    .cc-button {
-      background: black;
-      padding: 2px 4px;
-      color: white;
-      border-radius: 4px;
+    .title {
+      display: flex;
+      font-weight: bold;
+      align-items: center;
+      margin-bottom: 5px;
     }
 
-    .step-shadow {
-      display: none;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background: black;
-      opacity: 0.2;
-      cursor: not-allowed;
-      transition: opacity 0.5s;
+    .language {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid lightgrey;
+      flex-direction: column;
+      justify-content: center;
+      padding: 15px;
     }
 
-    .step-shadow.hidden {
-      opacity: 0;
-      pointer-events: none;
+    .language select {
+      appearance: none;
+      font-size: 16px;
+      margin-top: 5px;
+      width: 200px;
     }
 
-    .center {
+    .label {
       text-align: center;
     }
 
-    .button {
-      display: inline-block;
-      background: #3498db;
-      color: white;
-      padding: 2px 5px;
-      border-top: none;
-      border-bottom: 3px solid #34495e;
-      user-select: none;
+    .globe {
+      height: 24px;
+      width: 24px;
+      transition: 0.25s background linear;
+      background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2%0D%0AZyB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJo%0D%0AdHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5v%0D%0AcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9y%0D%0AZy8yMDAwL3N2ZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIw%0D%0AIDAgNDcuNSA0Ny41IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0Ny41IDQ3LjU7%0D%0AIiB4bWw6c3BhY2U9InByZXNlcnZlIiB2ZXJzaW9uPSIxLjEiIGlkPSJzdmcyIj48bWV0YWRhdGEg%0D%0AaWQ9Im1ldGFkYXRhOCI+PHJkZjpSREY+PGNjOldvcmsgcmRmOmFib3V0PSIiPjxkYzpmb3JtYXQ+%0D%0AaW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PjxkYzp0eXBlIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1%0D%0Acmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiLz48L2NjOldvcms+PC9yZGY6UkRGPjwvbWV0%0D%0AYWRhdGE+PGRlZnMgaWQ9ImRlZnM2Ij48Y2xpcFBhdGggaWQ9ImNsaXBQYXRoMTYiIGNsaXBQYXRo%0D%0AVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBpZD0icGF0aDE4IiBkPSJNIDAsMzggMzgsMzgg%0D%0AMzgsMCAwLDAgMCwzOCBaIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXBQYXRoMjgiIGNs%0D%0AaXBQYXRoVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBpZD0icGF0aDMwIiBkPSJNIDEsMTkg%0D%0AQyAxLDkuMDU5IDkuMDU5LDEgMTksMSBsIDAsMCBjIDkuOTQxLDAgMTgsOC4wNTkgMTgsMTggbCAw%0D%0ALDAgYyAwLDkuOTQxIC04LjA1OSwxOCAtMTgsMTggbCAwLDAgQyA5LjA1OSwzNyAxLDI4Ljk0MSAx%0D%0ALDE5Ii8+PC9jbGlwUGF0aD48L2RlZnM+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMS4yNSwwLDAsLTEu%0D%0AMjUsMCw0Ny41KSIgaWQ9ImcxMCI+PGcgaWQ9ImcxMiI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXBQ%0D%0AYXRoMTYpIiBpZD0iZzE0Ij48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNywxOSkiIGlkPSJnMjAi%0D%0APjxwYXRoIGlkPSJwYXRoMjIiIHN0eWxlPSJmaWxsOiM4OGM5Zjk7ZmlsbC1vcGFjaXR5OjE7Zmls%0D%0AbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmUiIGQ9Im0gMCwwIGMgMCwtOS45NDEgLTguMDU5LC0x%0D%0AOCAtMTgsLTE4IC05Ljk0MSwwIC0xOCw4LjA1OSAtMTgsMTggMCw5Ljk0MSA4LjA1OSwxOCAxOCwx%0D%0AOCBDIC04LjA1OSwxOCAwLDkuOTQxIDAsMCIvPjwvZz48L2c+PC9nPjxnIGlkPSJnMjQiPjxnIGNs%0D%0AaXAtcGF0aD0idXJsKCNjbGlwUGF0aDI4KSIgaWQ9ImcyNiI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xh%0D%0AdGUoNC42Mjc0LDI5Ljk1MjEpIiBpZD0iZzMyIj48cGF0aCBpZD0icGF0aDM0IiBzdHlsZT0iZmls%0D%0AbDojNWM5MTNiO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIiBk%0D%0APSJNIDAsMCBDIC0wLjQ1MSwyLjkzIDIuMTk1LDQuMTU2IDMuNjA3LDQuNDY5IDUuMDE5LDQuNzg0%0D%0AIDYuMzgzLDUuMDkgNi41NCw0LjQ2NCA2LjY5NiwzLjgzNiA2Ljg1MSwzLjAwMyA3LjcxMywzLjMx%0D%0ANiA4LjU3NSwzLjYzIDEwLjc1NiwzLjg3NSAxMS43NzYsNC42NTggMTIuNzk1LDUuNDQxIDE0LjAy%0D%0ALDUuNDQ1IDE1LjA0LDUuMTMxIDE2LjA1OSw0LjgxOCAxOC45MTcsNC45MDQgMTguMjksMy45NjQg%0D%0AMTcuNjYzLDMuMDIzIDE2LjQ2NSwzLjEzNyAxNS44MzksMi4wNCAxNS4yMTIsMC45NDEgMTYuMDEx%0D%0ALDAuMjE0IDE2Ljg3MywwLjIxNCBjIDAuODY1LDAgMS43MDksLTAuMTM1IDIuMjU5LDAuNzI3IDAu%0D%0ANTQ5LDAuODYzIC0wLjM4MiwyLjQ2MyAwLjMyNSwyLjM1NyAwLjcwNiwtMC4xMDYgMS40NzcsLTAu%0D%0AODY2IDIuMDMsLTIuMDQzIDAuNTQ3LC0xLjE3NiAxLjQwOCwtMC40NyAxLjcyMywtMS4xNzYgMC4z%0D%0AMTMsLTAuNzA1IDIuMDQsLTIuMDM5IDEuMTc3LC0xLjgwNCAtMC44NjQsMC4yMzYgLTEuNzI2LDAu%0D%0AMzkyIC0xLjk2MSwtMC40NyAtMC4yMzYsLTAuODYzIDAuMzg5LC0xLjcyNiAtMC4yMzYsLTEuNjQ3%0D%0AIC0wLjYyNywwLjA3OSAtMC44NjEsLTAuMDg5IC0xLjcyNSwtMC4wMDQgLTAuODYyLDAuMDgzIC0x%0D%0ALjMzMywwLjYzMSAtMi4wMzksLTAuNTQ1IC0wLjcwNSwtMS4xNzUgLTEuMjU0LC0xLjk2MSAtMS41%0D%0ANjcsLTIuNTA5IC0wLjMxNSwtMC41NDkgLTAuNzg1LC0wLjg2MSAtMC41NSwtMS45NiAwLjIzNSwt%0D%0AMS4wOTkgLTAuNjI4LC0wLjc4NSAtMC42MjgsMC4xNTYgMCwwLjk0IC0wLjU0OCwxLjA5OCAtMS4y%0D%0ANTMsMC45NDIgLTAuNzA2LC0wLjE1NyAtMS44MDMsLTAuMzEzIC0xLjcyNCwtMS4wOTggMC4wNzcs%0D%0ALTAuNzg0IC0wLjMxNSwtMS43MjUgMC4zMTMsLTIuMzUyIDAuNjI3LC0wLjYyOSAxLjMzLDAuMDc2%0D%0AIDEuNzIzLC0wLjE1OCAwLjM5MywtMC4yMzcgMS41MjUsLTAuMDIzIDEuMTMzLC0wLjQxNiAtMC4z%0D%0AOTMsLTAuMzkxIC0xLjc2LC0wLjg4MSAtMC45NzYsLTEuNTA5IDAuNzg2LC0wLjYyNiAxLjU3OCwt%0D%0AMC44MjkgMS44OTMsLTAuOTA3IDAuMzEzLC0wLjA4IDAuMDYyLDAuNzc0IDEuMDgzLDEuMTY2IDEu%0D%0AMDE3LDAuMzkyIDIuNjA4LDEuMjkgMywwLjU4NCAwLjM5MSwtMC43MDUgMC4zMzgsLTAuNTk1IDEu%0D%0ANzUsLTAuNzUgMS40MSwtMC4xNTYgMS43OSwtMC41ODUgMi40MTcsLTEuOTE3IDAuNjI3LC0xLjMz%0D%0AMyAwLjQ0NiwtMS4xOTIgMS40NjIsLTEuNTgxIDEuMDIxLC0wLjM5MyAxLjY3OCwtMC4yMjIgMC43%0D%0AMzcsLTEuMDg2IC0wLjk0MSwtMC44NiAtMS42NTEsLTAuODE0IC0yLjE5OSwtMS44MzMgLTAuNTUs%0D%0ALTEuMDE3IC0wLjE1MywtMS43MzEgLTEuMjUsLTIuNzUgLTEuMDk4LC0xLjAxOSAtMi4yNDIsLTEu%0D%0AODc2IC0zLjQxNywtMi41ODMgLTAuNjE4LC0wLjM3IC0yLjE2MiwtMi4wNyAtMy4wODMsLTIuNjY3%0D%0AIC0wLjgzNCwtMC41NDEgLTEuMDgzLDAgLTEuMDgzLDAgMCwwIDAuMjU2LDEuNjY3IDAuOTY0LDIu%0D%0AMzcyIDAuNzA0LDAuNzA1IDEuMTA1LDMuMzQ0IDAuODY5LDQuMTI4IC0wLjIzNCwwLjc4MyAtMS4z%0D%0ANiwxLjAyIC0xLjc1LDEuMzMzIC0wLjM5MiwwLjMxMiAtMS40MTcsMS41NDggLTEuNDE3LDIuMzM0%0D%0AIDAsMC43ODQgMS43MSwyLjgwOSAxLjcxLDIuODA5IDAuMjE4LC0xLjA4OCAtMS4wMzksMC4zMjkg%0D%0ALTEuNjI3LDAuNTI0IC0wLjQ3LDAuMTU3IC0xLjU0MiwxLjY1NiAtMi40NTksMS44MTQgLTAuOTE2%0D%0ALDAuMTU5IC0xLjM2MywwLjcgLTIuMDY4LDEuMjUgLTAuNzA2LDAuNTQ5IC0yLjQzMSwxLjMzMiAt%0D%0AMi4zNTMsMi4xOTUgMC4wNzksMC44NjIgLTEuNzI1LDEuNTY4IC0yLjAzOCwxLjU2OCAtMC4zMTQs%0D%0AMCAtMS4wMTksMCAtMS42NDcsMS4wOTggLTAuNjI3LDEuMDk4IC0xLjcyNSwyLjE5NiAtMS40MTEs%0D%0AMi45NzkgMC4zMTMsMC43ODQgMC4zOTIsMS43MjcgMC4yMzQsMi41ODkgQyAzLjA1OCwwLjIzNiAx%0D%0ALjg4MiwwLjU1IDEuNjQ3LDAuMzE1IDEuNDEyLDAuMDc5IDAuMTU4LC0xLjAyIDAsMCIvPjwvZz48%0D%0AL2c+PC9nPjwvZz48L3N2Zz4K");
     }
 
-    .button:hover {
-      background: #66addd;
-      cursor: pointer;
+    .globe:hover {
+      background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2%0D%0AZyB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJo%0D%0AdHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5v%0D%0AcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9y%0D%0AZy8yMDAwL3N2ZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIw%0D%0AIDAgNDcuNSA0Ny41IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0Ny41IDQ3LjU7%0D%0AIiB4bWw6c3BhY2U9InByZXNlcnZlIiB2ZXJzaW9uPSIxLjEiIGlkPSJzdmcyIj48bWV0YWRhdGEg%0D%0AaWQ9Im1ldGFkYXRhOCI+PHJkZjpSREY+PGNjOldvcmsgcmRmOmFib3V0PSIiPjxkYzpmb3JtYXQ+%0D%0AaW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PjxkYzp0eXBlIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1%0D%0Acmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiLz48L2NjOldvcms+PC9yZGY6UkRGPjwvbWV0%0D%0AYWRhdGE+PGRlZnMgaWQ9ImRlZnM2Ij48Y2xpcFBhdGggaWQ9ImNsaXBQYXRoMTYiIGNsaXBQYXRo%0D%0AVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBpZD0icGF0aDE4IiBkPSJNIDAsMzggMzgsMzgg%0D%0AMzgsMCAwLDAgMCwzOCBaIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXBQYXRoMjgiIGNs%0D%0AaXBQYXRoVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBpZD0icGF0aDMwIiBkPSJNIDEsMTkg%0D%0AQyAxLDkuMDU5IDkuMDU5LDEgMTksMSBsIDAsMCBjIDkuOTQxLDAgMTgsOC4wNTkgMTgsMTggbCAw%0D%0ALDAgYyAwLDkuOTQxIC04LjA1OSwxOCAtMTgsMTggbCAwLDAgQyA5LjA1OSwzNyAxLDI4Ljk0MSAx%0D%0ALDE5Ii8+PC9jbGlwUGF0aD48L2RlZnM+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMS4yNSwwLDAsLTEu%0D%0AMjUsMCw0Ny41KSIgaWQ9ImcxMCI+PGcgaWQ9ImcxMiI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXBQ%0D%0AYXRoMTYpIiBpZD0iZzE0Ij48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNywxOSkiIGlkPSJnMjAi%0D%0APjxwYXRoIGlkPSJwYXRoMjIiIHN0eWxlPSJmaWxsOiM4OGM5Zjk7ZmlsbC1vcGFjaXR5OjE7Zmls%0D%0AbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmUiIGQ9Im0gMCwwIGMgMCwtOS45NDEgLTguMDU5LC0x%0D%0AOCAtMTgsLTE4IC05Ljk0MSwwIC0xOCw4LjA1OSAtMTgsMTggMCw5Ljk0MSA4LjA1OSwxOCAxOCwx%0D%0AOCBDIC04LjA1OSwxOCAwLDkuOTQxIDAsMCIvPjwvZz48L2c+PC9nPjxnIGlkPSJnMjQiPjxnIGNs%0D%0AaXAtcGF0aD0idXJsKCNjbGlwUGF0aDI4KSIgaWQ9ImcyNiI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xh%0D%0AdGUoMjguOTM3NSwzNS40Mzc1KSIgaWQ9ImczMiI+PHBhdGggaWQ9InBhdGgzNCIgc3R5bGU9ImZp%0D%0AbGw6IzVjOTEzYjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZSIg%0D%0AZD0ibSAwLDAgYyAtMi4zMDUsMC45NDMgLTMuMzc1LC0xLjkzNyAtNS4yNSwtMS4zNzUgLTEuODc1%0D%0ALDAuNTYzIC00LjM3NSwxLjgxMiAtNiwwLjI1IC0xLjYyNSwtMS41NjMgLTIsLTMgMCwtMi45Mzcg%0D%0AMiwwLjA2MiAzLjM3NSwyLjQzNyA0LjM3NSwxLjQzNyAxLC0xIDAuNzUsLTEuODEyIC0xLjYyNSwt%0D%0AMi4xMjUgLTIuMzc1LC0wLjMxMiAtNC45MzgsLTAuNjg3IC02LjMxMywtMC42ODcgLTEuMzc0LDAg%0D%0ALTEuNjg3LC0wLjgxMyAtMC43NSwtMS42ODggMC45MzgsLTAuODc1IC0wLjU2MiwtMC45MzggLTIu%0D%0AMTI0LC0xLjgxMyAtMS41NjMsLTAuODc1IDAuMzc1LC0xLjI1IDEuNjg3LC0yIDEuMzEyLC0wLjc1%0D%0AIDIuMzEyLDAuMTg4IDIuODc1LDEuNDM4IDAuNTYyLDEuMjUgMi45OCwyLjc1IDMuOTksMi41NjMg%0D%0AMS4wMSwtMC4xODggMS4wMSwtMC42ODggMC44MjIsLTEuNTYzIC0wLjE4NywtMC44NzUgMC43NTEs%0D%0ALTAuNjI1IDAuODEzLDAuMzc1IDAuMDYzLDEgMS4xODgsMS43NSAyLjA2MywxLjgxMyAwLjg3NSww%0D%0ALjA2MiAxLjYyNCwtMS4xODggMC42MjUsLTEuODEzIC0xLC0wLjYyNSAtMiwtMS4xMjUgLTAuNzUs%0D%0ALTEuNDM4IDEuMjUsLTAuMzEyIDIuMTI0LC0xLjkzNyAwLjY4NywtMi42MjUgLTEuNDM3LC0wLjY4%0D%0ANyAtMy45MzgsLTEuMTI1IC01LjA2MywtMC41NjIgLTEuMTI1LDAuNTYyIC0zLjY4NywxLjM3NSAt%0D%0ANC4zNzUsMC45MzcgLTAuNjg3LC0wLjQzNyAtMS4wNjIsLTAuODg5IC0xLjg3NCwtMS4xOTQgLTAu%0D%0AODEzLC0wLjMwNiAtNC4xMjUsLTEuODA2IC00LjE4OCwtMy43NDMgLTAuMDYyLC0xLjkzNyAtMC4x%0D%0AMjUsLTQuMTI1IDEuMTg4LC00LjE4NyAxLjMxMiwtMC4wNjMgNC40OTksMC44MTIgNS40OTksMS42%0D%0AMjUgMSwwLjgxMiAyLjM3NSwwLjYyNSAyLjgxMywtMC4zMTMgMC40MzcsLTAuOTM3IDAuMTI1LC0x%0D%0ALjUgLTAuMzEzLC0zIC0wLjQzNywtMS41IDAuMjg3LC0yLjI1IDAuOTg3LC0zLjU2MiAwLjcwMSwt%0D%0AMS4zMTMgMS4yNjMsLTIuMDYzIDEuMjYzLC0zIDAsLTAuOTM4IDEuMDAxLC0xLjg3NSAyLjUwMSwt%0D%0AMC4zMTMgMS41LDEuNTYzIDIuODc0LDQuNjI1IDMuNDk5LDUuNzUgMC42MjUsMS4xMjUgMS4xMjYs%0D%0AMy42MjUgMS44NzYsNC4xMjUgMC43NSwwLjUgMS45MzcsMS42ODggMS4wNjIsMS41IC0wLjg3NSwt%0D%0AMC4xODcgLTIuNjI1LDAuMDYzIC0zLjA2MywxLjMxMyAtMC40MzcsMS4yNDkgLTIuMzEyLDMuNjI0%0D%0AIC0xLjQzNywzLjg3NCAwLjg3NSwwLjI1IDEuODc1LC0xLjM4OSAyLjI1LC0yLjE2MyAwLjM3NSwt%0D%0AMC43NzQgMC44NzUsLTEuNzExIDEuNjI1LC0xLjk2MSAwLjc1LC0wLjI1IDIuMzc1LDEuNjcyIDIu%0D%0AODc1LDEuOTYxIDAuNSwwLjI4OCAwLjEyNSwxLjQ3NiAtMC44NzUsMS4zNTEgLTEsLTAuMTI1IC0y%0D%0ALjMxMiwwIC0yLjMxMiwwLjYyNSAwLDAuNjI1IDEuMjQ5LDEuNDM3IDIuMjQ5LDEuMjUgMS4wMDEs%0D%0ALTAuMTg4IDEuNzUxLC0wLjUgMi4zNzYsLTEuMjUgMC42MjQsLTAuNzUgMS44NzQsLTIuMTI1IDIu%0D%0AMzc0LC0zIDAuNSwtMC44NzUgMC44NzUsLTEgMS4xMjUsMC41NjIgMC4yNSwxLjU2MyAwLjYyNSwy%0D%0ALjA2MyAwLjg3NiwzLjI1IEMgOC4zMTMsLTExLjEyNSA1LjUsLTIuMjUgMCwwIi8+PC9nPjwvZz48%0D%0AL2c+PC9nPjwvc3ZnPgo=");
     }
 
-    .button:active {
-      border-bottom: none;
-      margin-top: 3px;
-    }
 
-    .button.hidden {
-      display: none;
-    }
-
-    .status {
-      width: 40px;
-      height: 16px;
-      display: inline-block;
-      color: white;
-      padding: 3px;
-      border-radius: 3px;
-      user-select: none;
-    }
-
-    .status.hidden {
-      display: none;
-    }
-
-    .on.status {
-      background: #2ecc71;
-    }
-
-    .off.status {
-      background: #95a5a6;
-    }
-
-    .error.status {
-      background: #f1c40f;
-    }
-
-    label {
-      cursor: pointer;
-      display: block;
-    }
     </style>
     <script src="config/languages.js"></script>
     <script src="popup-rewrite.js"></script>
   </head>
   <body>
-    <div class="header">
-      <div class="header-title">Dual Captions for YouTube</div>
-      <div>
-        <span>Status: </span>
-        <div id="off-status" class="off status">OFF</div>
-        <div id="on-status" class="on status hidden">ON</div>
-        <div id="error-status" class="error status hidden">ERROR</div>
+    <div class="all">
+      <div class="header">
+        <div class="title">
+        <span>Dual Captions</span>
+        <div class="globe"></div>
+        </div>
+        <div>Supports YouTube and Netflix</div>
       </div>
-    </div>
-    <div class="divider"></div>
-    <div class="container">
-      <div class="container">
-        <div class="step-container">
-          <div class="step-shadow" data-step="step-1"></div>
-          <div class="step-number">
-            <span>1</span>
-          </div>
-          <div class="step-content">
-            <div class="step-1">
-              <span>On the video, click on the <span class="cc-button">CC</span> button to start captions.</span>
-              <div class="center">
-                <div id="load-button" class="button">OK</div>
-              </div>
-            </div>
-          </div>
+      <div class="language">
+        <div>
+          <div class="label">Second caption language</div>
+          <select id="language-select" name="language-select">
+            <option option value="en" disabled selected>English</option>
+          </select>
         </div>
-        <div class="divider"></div>
-        <div class="step-container">
-          <div class="step-shadow" data-step="step-2"></div>
-          <div class="step-number">
-            <span>2</span>
-          </div>
-          <div class="step-content">
-            <div class="step-2">
-              <label for="language-select">Select language for second captions:</label>
-              <select id="language-select" name="language-select">
-              	<option option value="en" disabled selected></option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="step-container">
-          <div class="step-shadow" data-step="step-3"></div>
-          <div class="step-number">
-            <span>3</span>
-          </div>
-          <div class="step-content">
-            <div class="step-3">
-              <div>Controls</div>
-              <div id="turn-off-button" class="button hidden">TURN OFF</div>
-              <div id="turn-on-button" class="button">TURN ON</div>
-              <br/><br/>
-              <div>Options</div>
-              <label>
-                <input id="extra-space" type="checkbox"/>
-                Extra space
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="step-container">
-          <div class="step-shadow" data-step="step-4"></div>
-          <div class="step-content">
-            <div id="issues">Captions may have a small delay.<br/>Report a bug <a id="report-bugs-link" href="">here</a>.</div>
-          </div>
+      </div>
+      <div class="language">
+        <div>
+          <div>Rate on the App Store &bull; View Source</div>
         </div>
       </div>
     </div>
