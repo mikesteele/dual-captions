@@ -4,158 +4,22 @@
  * 
  */
 
- /**
- *
- * List from https://github.com/matheuss/google-translate-api/blob/master/languages.js
- *
- */
-const SUPPORTED_LANGUAGES = {
-  'af': 'Afrikaans',
-  'sq': 'Albanian',
-  'am': 'Amharic',
-  'ar': 'Arabic',
-  'hy': 'Armenian',
-  'az': 'Azerbaijani',
-  'eu': 'Basque',
-  'be': 'Belarusian',
-  'bn': 'Bengali',
-  'bs': 'Bosnian',
-  'bg': 'Bulgarian',
-  'ca': 'Catalan',
-  'ceb': 'Cebuano',
-  'ny': 'Chichewa',
-  'zh-cn': 'Chinese Simplified',
-  'zh-tw': 'Chinese Traditional',
-  'co': 'Corsican',
-  'hr': 'Croatian',
-  'cs': 'Czech',
-  'da': 'Danish',
-  'nl': 'Dutch',
-  'en': 'English',
-  'eo': 'Esperanto',
-  'et': 'Estonian',
-  'tl': 'Filipino',
-  'fi': 'Finnish',
-  'fr': 'French',
-  'fy': 'Frisian',
-  'gl': 'Galician',
-  'ka': 'Georgian',
-  'de': 'German',
-  'el': 'Greek',
-  'gu': 'Gujarati',
-  'ht': 'Haitian Creole',
-  'ha': 'Hausa',
-  'haw': 'Hawaiian',
-  'iw': 'Hebrew',
-  'hi': 'Hindi',
-  'hmn': 'Hmong',
-  'hu': 'Hungarian',
-  'is': 'Icelandic',
-  'ig': 'Igbo',
-  'id': 'Indonesian',
-  'ga': 'Irish',
-  'it': 'Italian',
-  'ja': 'Japanese',
-  'jw': 'Javanese',
-  'kn': 'Kannada',
-  'kk': 'Kazakh',
-  'km': 'Khmer',
-  'ko': 'Korean',
-  'ku': 'Kurdish (Kurmanji)',
-  'ky': 'Kyrgyz',
-  'lo': 'Lao',
-  'la': 'Latin',
-  'lv': 'Latvian',
-  'lt': 'Lithuanian',
-  'lb': 'Luxembourgish',
-  'mk': 'Macedonian',
-  'mg': 'Malagasy',
-  'ms': 'Malay',
-  'ml': 'Malayalam',
-  'mt': 'Maltese',
-  'mi': 'Maori',
-  'mr': 'Marathi',
-  'mn': 'Mongolian',
-  'my': 'Myanmar (Burmese)',
-  'ne': 'Nepali',
-  'no': 'Norwegian',
-  'ps': 'Pashto',
-  'fa': 'Persian',
-  'pl': 'Polish',
-  'pt': 'Portuguese',
-  'ma': 'Punjabi',
-  'ro': 'Romanian',
-  'ru': 'Russian',
-  'sm': 'Samoan',
-  'gd': 'Scots Gaelic',
-  'sr': 'Serbian',
-  'st': 'Sesotho',
-  'sn': 'Shona',
-  'sd': 'Sindhi',
-  'si': 'Sinhala',
-  'sk': 'Slovak',
-  'sl': 'Slovenian',
-  'so': 'Somali',
-  'es': 'Spanish',
-  'su': 'Sundanese',
-  'sw': 'Swahili',
-  'sv': 'Swedish',
-  'tg': 'Tajik',
-  'ta': 'Tamil',
-  'te': 'Telugu',
-  'th': 'Thai',
-  'tr': 'Turkish',
-  'uk': 'Ukrainian',
-  'ur': 'Urdu',
-  'uz': 'Uzbek',
-  'vi': 'Vietnamese',
-  'cy': 'Welsh',
-  'xh': 'Xhosa',
-  'yi': 'Yiddish',
-  'yo': 'Yoruba',
-  'zu': 'Zulu'
-};
-
-
 /**
  *
  * Page functions
  *
  */
 
-function isDualCaptionsOn() {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript({
-      code: 'window.DUAL_CAPTIONS.observer && window.DUAL_CAPTIONS.observerObserving'
-    }, result => {
-      resolve(result[0]);
-    });
-  });
-}
-
-function isDualCaptionsLoaded() {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript({
-      code: '!!window.DUAL_CAPTIONS.observer'
-    }, result => {
-      resolve(result[0]);
-    });
-  });
-}
-
-function getObserverLanguage() {
-  return new Promise((resolve, _) => {
-    chrome.tabs.executeScript({
-      code: 'window.DUAL_CAPTIONS.getObserverLanguage()'
-    }, resolve);
-  });
-}
-
 function setObserverLanguage(language) {
   return new Promise((resolve, _) => {
-    chrome.tabs.executeScript({
-      code: `window.DUAL_CAPTIONS.setObserverLanguage('${language}')`
-    }, resolve);
+    chrome.tabs.query({currentWindow: true,active: true}, function(tabs){
+      chrome.tabs.sendMessage(tabs[0].id, {
+        type: 'change-language',
+        info: {
+          lang: language
+        }
+      });
+    });
   });
 }
 
@@ -304,28 +168,11 @@ function setLanguageSelect(language) {
 
 function setListeners() {
   return new Promise((resolve, _) => {
-    const loadButton = document.getElementById('load-button');
-    loadButton.addEventListener('click', () => {
-      loadLibraries()
-        .then(isDualCaptionsOn)
-        .then(isOn => {
-          if (isOn) {
-            showStatus('on');
-            showSteps(['step-2']);
-            hideSteps(['step-1']);
-            loadButton.classList.add('disabled');
-          } else {
-            showStatus('error');
-          }
-        });
-    }, { once: true });
-  
     const languageSelect = document.getElementById('language-select');
     languageSelect.addEventListener('change', e => {
       setObserverLanguage(languageSelect.options[languageSelect.selectedIndex].value)
         .then(() => {
-          showButton('turn-off');
-          showSteps(['step-3', 'step-4']);
+          //
         });
     });
   
@@ -386,29 +233,7 @@ function setListeners() {
 document.addEventListener('DOMContentLoaded', () => {
   initializeLanguageSelect()
     .then(setListeners)
-    .then(isDualCaptionsLoaded)
     .then(isLoaded => {
-      if (isLoaded) {
-        hideSteps(['step-1']);
-        showSteps(['step-2', 'step-3', 'step-4']);
-        isDualCaptionsOn()
-          .then(isOn => {
-            if (isOn) {
-              getState()
-                .then(() => {
-                  showStatus('on');
-                  showButton('turn-off');
-                });
-            } else {
-              showStatus('off');
-              showButton('turn-on');
-            }
-          });
-      } else {
-        showStatus('off');
-        showSteps(['step-1']);
-        showButton('turn-on');
-        hideSteps(['step-2', 'step-3', 'step-4']);
-      }
+        showSteps(['step-1', 'step-2', 'step-3', 'step-4']);
     });
 });
