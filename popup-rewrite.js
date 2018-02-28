@@ -72,6 +72,14 @@ function stopObserver() {
   });
 }
 
+function navigateToGitHubPage() {
+  return new Promise((resolve, _) => {
+    chrome.tabs.executeScript(null, {code: `window.location.replace("https://github.com/mikesteele/dual-captions/")`}, () => {
+      resolve();
+    });
+  });
+}
+
 function navigateToIssuesPage() {
   return new Promise((resolve, _) => {
     chrome.tabs.executeScript(null, {code: `window.location.replace("https://github.com/mikesteele/dual-captions/issues")`}, () => {
@@ -109,11 +117,6 @@ function initializeLanguageSelect() {
   });
 }
 
-function setLanguageSelect(language) {
-  const languageSelect = document.getElementById('language-select');
-  languageSelect.value = language;
-}
-
 function setListeners() {
   return new Promise((resolve, _) => {
     const languageSelect = document.getElementById('language-select');
@@ -133,6 +136,15 @@ function setListeners() {
         });
     });
 
+    const githubLink = document.getElementById('github-link');
+    githubLink.addEventListener('click', e => {
+      e.preventDefault();
+      navigateToGitHubPage()
+        .then(() => {
+          window.close();
+        });
+    });
+
     resolve();
   });
 }
@@ -145,8 +157,5 @@ function setListeners() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initializeLanguageSelect()
-    .then(setListeners)
-    .then(isLoaded => {
-        //showSteps(['step-1', 'step-2', 'step-3', 'step-4']);
-    });
+    .then(setListeners);
 });
