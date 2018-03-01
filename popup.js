@@ -180,15 +180,18 @@ function showStatus(status) {
 
 function setStatus(isOn) {
   const errorContainer = document.getElementById('error-container');
+  const setupContainer = document.getElementById('setup-container');
   const statusContainer = document.getElementById('status-container');
   const languageContainer = document.getElementById('language-container');
   const languageSelect = document.getElementById('language-select');
 
   if (typeof isOn !== 'undefined') {
     errorContainer.classList.add('hidden');
+    setupContainer.classList.remove('hidden');
     statusContainer.classList.remove('hidden');
     languageContainer.classList.remove('hidden');
   } else {
+    setupContainer.classList.add('hidden');
     statusContainer.classList.add('hidden');
     languageContainer.classList.add('hidden');
     errorContainer.classList.remove('hidden');
