@@ -1,0 +1,10 @@
+.player-timedtext-text-container {
+  margin-bottom: 10%;
+  position: initial !important;
+}
+
+.player-timedtext {
+    display: flex !important;
+    justify-content: center;
+    align-items: flex-end;
+}
