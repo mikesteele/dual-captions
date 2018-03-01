@@ -19,7 +19,7 @@
       "lib/google-translate-api.js",
       "lib/config/init.js",
       "lib/config/youtube.js",
-      "lib/dc-rewrite.js"
+      "lib/dual-captions.js"
     ],
     "matches": [ "https://www.youtube.com/watch?*" ]
    }],
