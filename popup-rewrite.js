@@ -33,6 +33,33 @@ function getActiveTabId() {
  *
  */
 
+function isObserverOn() {
+  return new Promise((resolve, _) => {
+    getActiveTabId()
+      .then(tabId => {
+        chrome.tabs.sendMessage(tabId, {
+          type: 'is-on'
+        }, resolve);
+      })
+      .catch(() => {});
+  });
+}
+
+function getObserverLanguage(language) {
+  return new Promise((resolve, _) => {
+    getActiveTabId()
+      .then(tabId => {
+        chrome.tabs.sendMessage(tabId, {
+          type: 'get-language',
+        }, response => {
+          resolve(response);
+        });
+      })
+      .catch(() => {});
+  });
+}
+
+
 function setObserverLanguage(language) {
   return new Promise((resolve, _) => {
     getActiveTabId()
@@ -42,7 +69,9 @@ function setObserverLanguage(language) {
           info: {
             lang: language
           }
-        }, resolve);
+        }, response => {
+          resolve(response);
+        });
       })
       .catch(() => {});
   });
@@ -74,7 +103,7 @@ function stopObserver() {
 
 function navigateToGitHubPage() {
   return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.location.replace("https://github.com/mikesteele/dual-captions/")`}, () => {
+    chrome.tabs.executeScript(null, {code: `window.location.replace('https://github.com/mikesteele/dual-captions/')`}, () => {
       resolve();
     });
   });
@@ -82,7 +111,7 @@ function navigateToGitHubPage() {
 
 function navigateToIssuesPage() {
   return new Promise((resolve, _) => {
-    chrome.tabs.executeScript(null, {code: `window.location.replace("https://github.com/mikesteele/dual-captions/issues")`}, () => {
+    chrome.tabs.executeScript(null, {code: `window.location.replace('https://github.com/mikesteele/dual-captions/issues')`}, () => {
       resolve();
     });
   });
@@ -113,8 +142,57 @@ function initializeLanguageSelect() {
       option.label = SUPPORTED_LANGUAGES[lang];
       languageSelect.appendChild(option);
     }
-    resolve();
+    getObserverLanguage()
+      .then(language => {
+        languageSelect.value = language;
+        resolve();
+      });
   });
+}
+
+function showButton(button) {
+  let onButton = document.getElementById('turn-on-button');
+  let offButton = document.getElementById('turn-off-button');
+
+  if (button === 'on-button') {
+    offButton.classList.add('hidden');
+    onButton.classList.remove('hidden');
+  } else {
+    onButton.classList.add('hidden');
+    offButton.classList.remove('hidden');
+  }
+}
+
+function showStatus(status) {
+  let onStatus = document.getElementById('on-status');
+  let offStatus = document.getElementById('off-status');
+
+  if (status === 'on') {
+    offStatus.classList.add('hidden');
+    onStatus.classList.remove('hidden');
+    //showIcon('icon-on');
+  } else {
+    onStatus.classList.add('hidden');
+    offStatus.classList.remove('hidden');
+    //showIcon('icon-off');
+  }
+}
+
+function setStatus(isOn) {
+  if (isOn) {
+    showStatus('on');
+    showButton('off-button');
+    showIcon('icon-on');
+  } else {
+    showStatus('off');
+    showButton('on-button');
+    showIcon('icon-off');
+  }
+  const languageSelect = document.getElementById('language-select');
+  getObserverLanguage()
+    .then(language => {
+      languageSelect.value = language;
+    });
 }
 
 function setListeners() {
@@ -145,6 +223,26 @@ function setListeners() {
         });
     });
 
+    const turnOffButton = document.getElementById('turn-off-button');
+    turnOffButton.addEventListener('click', e => {
+      e.preventDefault();
+      stopObserver()
+        .then(isObserverOn)
+        .then(isOn => {
+          setStatus(isOn);
+        });
+    });
+
+    const turnOnButton = document.getElementById('turn-on-button');
+    turnOnButton.addEventListener('click', e => {
+      e.preventDefault();
+      startObserver()
+        .then(isObserverOn)
+        .then(isOn => {
+          setStatus(isOn);
+        });
+    });
+
     resolve();
   });
 }
@@ -157,5 +255,9 @@ function setListeners() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initializeLanguageSelect()
-    .then(setListeners);
+    .then(setListeners)
+    .then(isObserverOn)
+    .then(isOn => {
+      setStatus(isOn);
+    });
 });
