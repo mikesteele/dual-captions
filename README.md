@@ -2,7 +2,7 @@
 
 ![screenshot](https://github.com/mikesteele/dual-captions/blob/master/screenshot.gif)
 <br/>
-### <a href="https://www.youtube.com/watch?v=bkx_EsomEfA" target="_blank">Watch video demo</a>
+### <a href="https://www.youtube.com/watch?v=E0QQoeUAIpE" target="_blank">Watch video demo</a>
 ### Fast Facts
 
 * Targeted at **language learners** who need what the speaker is saying and the translation in user's native language.

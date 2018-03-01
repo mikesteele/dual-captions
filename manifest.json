@@ -21,7 +21,7 @@
       "lib/config/youtube.js",
       "lib/dual-captions.js"
     ],
-    "matches": [ "https://www.youtube.com/watch?*" ]
+    "matches": [ "https://www.youtube.com/*" ]
    }],
   "icons": {
     "16": "icon.png",
