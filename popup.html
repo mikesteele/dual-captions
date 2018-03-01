@@ -20,7 +20,7 @@
       text-decoration: underline;
     }
 
-    select:focus {
+    select:focus, a:focus {
       outline: none;
     }
 
@@ -35,6 +35,14 @@
       flex-direction: column;
       justify-content: center;
       padding: 10px;
+    }
+
+    .container.hidden {
+      display: none;
+    }
+
+    #error-container {
+      text-align: center;
     }
 
     .horizontal.container {
@@ -125,6 +133,15 @@
       display: none;
     }
 
+    .warning {
+      flex: none;
+      display: inline-block;
+      margin-right: 15px;
+      width: 16px;
+      height: 16px;
+      background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2%0D%0AZyB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJo%0D%0AdHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5v%0D%0AcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9y%0D%0AZy8yMDAwL3N2ZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIw%0D%0AIDAgNDcuNSA0Ny41IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0Ny41IDQ3LjU7%0D%0AIiB4bWw6c3BhY2U9InByZXNlcnZlIiB2ZXJzaW9uPSIxLjEiIGlkPSJzdmcyIj48bWV0YWRhdGEg%0D%0AaWQ9Im1ldGFkYXRhOCI+PHJkZjpSREY+PGNjOldvcmsgcmRmOmFib3V0PSIiPjxkYzpmb3JtYXQ+%0D%0AaW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PjxkYzp0eXBlIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1%0D%0Acmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiLz48L2NjOldvcms+PC9yZGY6UkRGPjwvbWV0%0D%0AYWRhdGE+PGRlZnMgaWQ9ImRlZnM2Ij48Y2xpcFBhdGggaWQ9ImNsaXBQYXRoMTYiIGNsaXBQYXRo%0D%0AVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBpZD0icGF0aDE4IiBkPSJNIDAsMzggMzgsMzgg%0D%0AMzgsMCAwLDAgMCwzOCBaIi8+PC9jbGlwUGF0aD48L2RlZnM+PGcgdHJhbnNmb3JtPSJtYXRyaXgo%0D%0AMS4yNSwwLDAsLTEuMjUsMCw0Ny41KSIgaWQ9ImcxMCI+PGcgaWQ9ImcxMiI+PGcgY2xpcC1wYXRo%0D%0APSJ1cmwoI2NsaXBQYXRoMTYpIiBpZD0iZzE0Ij48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLjY1%0D%0AMzMsMikiIGlkPSJnMjAiPjxwYXRoIGlkPSJwYXRoMjIiIHN0eWxlPSJmaWxsOiNmZmNjNGQ7Zmls%0D%0AbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmUiIGQ9Im0gMCwwIGMgLTEu%0D%0AODQyLDAgLTIuNjU0LDEuMzM4IC0xLjgwNiwyLjk3MyBsIDE1LjYwOSwzMC4wNTUgYyAwLjg0OCwx%0D%0ALjYzNSAyLjIzOCwxLjYzNSAzLjA4NywwIEwgMzIuNDk5LDIuOTczIEMgMzMuMzQ5LDEuMzM4IDMy%0D%0ALjUzNiwwIDMwLjY5MywwIEwgMCwwIFoiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYu%0D%0ANzY5LDI2LjMzOTgpIiBpZD0iZzI0Ij48cGF0aCBpZD0icGF0aDI2IiBzdHlsZT0iZmlsbDojMjMx%0D%0AZjIwO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIiBkPSJNIDAs%0D%0AMCBDIDAsMS4zMDIgMC45NjEsMi4xMDggMi4yMzIsMi4xMDggMy40NzMsMi4xMDggNC40NjUsMS4y%0D%0ANzEgNC40NjUsMCBsIDAsLTExLjkzOCBjIDAsLTEuMjcxIC0wLjk5MiwtMi4xMDggLTIuMjMzLC0y%0D%0ALjEwOCAtMS4yNzEsMCAtMi4yMzIsMC44MDcgLTIuMjMyLDIuMTA4IEwgMCwwIFogbSAtMC4xODcs%0D%0ALTE4LjI5MyBjIDAsMS4zMzMgMS4wODYsMi40MTggMi40MTksMi40MTggMS4zMzMsMCAyLjQxOSwt%0D%0AMS4wODUgMi40MTksLTIuNDE4IDAsLTEuMzM0IC0xLjA4NiwtMi40MTkgLTIuNDE5LC0yLjQxOSAt%0D%0AMS4zMzMsMCAtMi40MTksMS4wODUgLTIuNDE5LDIuNDE5Ii8+PC9nPjwvZz48L2c+PC9nPjwvc3Zn%0D%0APgo=");
+    }
+
 
     </style>
     <script src="config/languages.js"></script>
@@ -139,7 +156,13 @@
         </div>
         <!-- TODO: <div>Supports YouTube and Netflix</div> -->
       </div>
-      <div class="container">
+      <div id="error-container" class="container">
+        <div class="horizontal container no-border">
+        <span class="warning"></span>
+        Please refresh the page to add Dual Captions.
+        </div>
+      </div>
+      <div id="status-container" class="container hidden">
         <div>
           <span>Status: </span>
           <div id="off-status" class="off status">OFF</div>
@@ -148,7 +171,7 @@
         <div id="turn-off-button" class="button hidden">TURN OFF</div>
         <div id="turn-on-button" class="button">TURN ON</div>
       </div>
-      <div class="language container">
+      <div id="language-container" class="language container hidden">
         <div>
           <div class="label">Second caption language</div>
           <select id="language-select" name="language-select"></select>
@@ -156,7 +179,7 @@
       </div>
       <div class="container no-border">
         <div>
-          <a id="github-link" href="/">Star on GitHub</a> &bull; <a id="report-bugs-link" href="/">Report a bug</a>
+          <a id="github-link" href="/">View on GitHub</a> &bull; <a id="report-bugs-link" href="/">Report a bug</a>
         </div>
       </div>
     </div>
