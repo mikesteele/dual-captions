@@ -1,4 +1,4 @@
-## dual-captions <br/> YouTube add-on to show captions in 2 languages 💬
+## dual-captions <br/> Show captions in 2 languages on YouTube and Netflix 💬
 
 ![screenshot](https://github.com/mikesteele/dual-captions/blob/master/screenshot.gif)
 <br/>
@@ -14,7 +14,7 @@
 
 As someone learning a foreign language, it is helpful for me to see both what the speaker is saying and the translation. 
 
-As of January 2018, YouTube can only show captions in one language. 
+As of March 2018, YouTube and Netflix can only show captions in one language. 
 
 This Chrome Extension creates a MutationObserver which waits for new caption elements to be added to the DOM. It then translates the text of these captions and adds the translated captions underneath.
 
