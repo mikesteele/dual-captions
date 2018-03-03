@@ -1,7 +1,7 @@
 {
-  "name": "Two Language Captions for YouTube",
-  "description": "YouTube add-on to show captions in two languages",
-  "version": "1.1.0",
+  "name": "Two Language Captions for YouTube & Netflix",
+  "description": "Show captions in two languages on Youtube and Netflix",
+  "version": "1.2.0",
   "permissions": [
     "tabs", "http://*/*", "https://*/*", "storage"
   ],
@@ -21,7 +21,7 @@
       "lib/config/youtube.js",
       "lib/dual-captions.js"
     ],
-    "matches": [ "https://www.youtube.com/watch?*" ]
+    "matches": [ "https://www.youtube.com/*" ]
    },{
     "all_frames": false,
     "css": ["lib/config/netflix.css"],
@@ -34,7 +34,7 @@
       "lib/config/netflix.js",
       "lib/dual-captions.js"
     ],
-    "matches": [ "https://www.netflix.com/watch/*" ]
+    "matches": [ "https://www.netflix.com/*" ]
    }],
   "icons": {
     "16": "icon.png",

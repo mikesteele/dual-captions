@@ -20,7 +20,7 @@
       text-decoration: underline;
     }
 
-    select:focus {
+    select:focus, a:focus {
       outline: none;
     }
 
@@ -37,9 +37,24 @@
       padding: 10px;
     }
 
+    .container.hidden {
+      display: none;
+    }
+
+    #error-container {
+      text-align: center;
+    }
+
     .horizontal.container {
       flex-direction: row;
       justify-content: space-around;
+    }
+
+    .vertical.center {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .title {
@@ -125,6 +140,58 @@
       display: none;
     }
 
+    .warning {
+      flex: none;
+      display: inline-block;
+      margin-right: 10px;
+      width: 16px;
+      height: 16px;
+      background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2%0D%0AZyB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJo%0D%0AdHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5v%0D%0AcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9y%0D%0AZy8yMDAwL3N2ZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIw%0D%0AIDAgNDcuNSA0Ny41IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0Ny41IDQ3LjU7%0D%0AIiB4bWw6c3BhY2U9InByZXNlcnZlIiB2ZXJzaW9uPSIxLjEiIGlkPSJzdmcyIj48bWV0YWRhdGEg%0D%0AaWQ9Im1ldGFkYXRhOCI+PHJkZjpSREY+PGNjOldvcmsgcmRmOmFib3V0PSIiPjxkYzpmb3JtYXQ+%0D%0AaW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PjxkYzp0eXBlIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1%0D%0Acmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiLz48L2NjOldvcms+PC9yZGY6UkRGPjwvbWV0%0D%0AYWRhdGE+PGRlZnMgaWQ9ImRlZnM2Ij48Y2xpcFBhdGggaWQ9ImNsaXBQYXRoMTYiIGNsaXBQYXRo%0D%0AVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBpZD0icGF0aDE4IiBkPSJNIDAsMzggMzgsMzgg%0D%0AMzgsMCAwLDAgMCwzOCBaIi8+PC9jbGlwUGF0aD48L2RlZnM+PGcgdHJhbnNmb3JtPSJtYXRyaXgo%0D%0AMS4yNSwwLDAsLTEuMjUsMCw0Ny41KSIgaWQ9ImcxMCI+PGcgaWQ9ImcxMiI+PGcgY2xpcC1wYXRo%0D%0APSJ1cmwoI2NsaXBQYXRoMTYpIiBpZD0iZzE0Ij48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLjY1%0D%0AMzMsMikiIGlkPSJnMjAiPjxwYXRoIGlkPSJwYXRoMjIiIHN0eWxlPSJmaWxsOiNmZmNjNGQ7Zmls%0D%0AbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmUiIGQ9Im0gMCwwIGMgLTEu%0D%0AODQyLDAgLTIuNjU0LDEuMzM4IC0xLjgwNiwyLjk3MyBsIDE1LjYwOSwzMC4wNTUgYyAwLjg0OCwx%0D%0ALjYzNSAyLjIzOCwxLjYzNSAzLjA4NywwIEwgMzIuNDk5LDIuOTczIEMgMzMuMzQ5LDEuMzM4IDMy%0D%0ALjUzNiwwIDMwLjY5MywwIEwgMCwwIFoiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYu%0D%0ANzY5LDI2LjMzOTgpIiBpZD0iZzI0Ij48cGF0aCBpZD0icGF0aDI2IiBzdHlsZT0iZmlsbDojMjMx%0D%0AZjIwO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIiBkPSJNIDAs%0D%0AMCBDIDAsMS4zMDIgMC45NjEsMi4xMDggMi4yMzIsMi4xMDggMy40NzMsMi4xMDggNC40NjUsMS4y%0D%0ANzEgNC40NjUsMCBsIDAsLTExLjkzOCBjIDAsLTEuMjcxIC0wLjk5MiwtMi4xMDggLTIuMjMzLC0y%0D%0ALjEwOCAtMS4yNzEsMCAtMi4yMzIsMC44MDcgLTIuMjMyLDIuMTA4IEwgMCwwIFogbSAtMC4xODcs%0D%0ALTE4LjI5MyBjIDAsMS4zMzMgMS4wODYsMi40MTggMi40MTksMi40MTggMS4zMzMsMCAyLjQxOSwt%0D%0AMS4wODUgMi40MTksLTIuNDE4IDAsLTEuMzM0IC0xLjA4NiwtMi40MTkgLTIuNDE5LC0yLjQxOSAt%0D%0AMS4zMzMsMCAtMi40MTksMS4wODUgLTIuNDE5LDIuNDE5Ii8+PC9nPjwvZz48L2c+PC9nPjwvc3Zn%0D%0APgo=");
+    }
+
+    .cc-button {
+      background: black;
+      padding: 2px 4px;
+      color: white;
+      border-radius: 4px;
+    }
+
+    .step-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px 0px;
+      position: relative;
+    }
+
+    .step-number {
+      height: 100%;
+      margin: 0px 5px;
+      user-select: none;
+    }
+    .step-number span {
+      background: #95a5a6;
+      color: white;
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex-grow: 1;
+      line-height: 18px;
+    }
+    .step-content .step-1,
+    .step-content .step-2 {
+      width: 140px;
+    }
 
     </style>
     <script src="config/languages.js"></script>
@@ -139,16 +206,48 @@
         </div>
         <div>Supports YouTube and Netflix</div>
       </div>
-      <div class="container">
-        <div>
-          <span>Status: </span>
-          <div id="off-status" class="off status">OFF</div>
-          <div id="on-status" class="on status hidden">ON</div>
-        </div><br/>
-        <div id="turn-off-button" class="button hidden">TURN OFF</div>
-        <div id="turn-on-button" class="button">TURN ON</div>
+      <div id="error-container" class="container">
+        <div class="container no-border">
+          <span class="warning"></span><br/>
+          <div>Dual Captions not found on page.</div>
+          <div>Are you on YouTube or Netflix?</div>
+          <div>Please try refreshing the page.</div>
+        </div>
       </div>
-      <div class="language container">
+      <div id="setup-container" class="container hidden">
+        <div class="step-container">
+          <div class="step-number">
+            <span>1</span>
+          </div>
+          <div class="step-content">
+            <div class="step-1">
+              <span>On YouTube:</span><br/>
+              <span>Click on the <span class="cc-button">CC</span> button to start captions.</span>
+              <br/><br/>
+              <span>On Netflix:</span><br/>
+              <span>Click on the <svg viewBox="0 0 24 20" width="20px" height="20px"><path d="M14,16 L0,16 L0,1 L24,1 L24,16 L20,16 L20,20 L14,16 Z M4,6 L4,8 L6,8 L6,6 L4,6 Z M15,10 L15,12 L17,12 L17,10 L15,10 Z M4,10 L4,12 L13,12 L13,10 L4,10 Z M8,6 L8,8 L12,8 L12,6 L8,6 Z M14,6 L14,8 L19,8 L19,6 L14,6 Z"></path></svg> button to start captions.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="status-container" class="container hidden">
+        <div class="step-container">
+          <div class="step-number">
+            <span>2</span>
+          </div>
+          <div class="vertical center step-2">
+            <div>
+              <span>Status: </span>
+              <div id="off-status" class="off status">OFF</div>
+              <div id="on-status" class="on status hidden">ON</div>
+            </div>
+            <br/>
+            <div id="turn-off-button" class="button hidden">TURN OFF</div>
+            <div id="turn-on-button" class="button">TURN ON</div>
+          </div>
+        </div>
+      </div>
+      <div id="language-container" class="language container hidden">
         <div>
           <div class="label">Second caption language</div>
           <select id="language-select" name="language-select"></select>
@@ -156,7 +255,7 @@
       </div>
       <div class="container no-border">
         <div>
-          <a id="github-link" href="/">Star on GitHub</a> &bull; <a id="report-bugs-link" href="/">Report a bug</a>
+          <a id="github-link" href="/">View on GitHub</a> &bull; <a id="report-bugs-link" href="/">Report a bug</a>
         </div>
       </div>
     </div>
