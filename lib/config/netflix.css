@@ -1,10 +1,26 @@
 .player-timedtext-text-container {
   margin-bottom: 10%;
-  position: initial !important;
+  flex: none;
 }
 
 .player-timedtext {
-    display: flex !important;
-    justify-content: center;
-    align-items: flex-end;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
+
+/**
+
+TODO - Remove
+
+Notes for Issue #19:
+
+Netflix Language: Korean
+Subtitle Language: 영어 [CC] (English)
+Second Langauge: Korean
+
+Issue involves position: initial;
+And that Netflix uses two <div>s for the caption
+
+**/
