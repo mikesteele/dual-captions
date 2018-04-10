@@ -1,7 +1,7 @@
 {
-  "name": "Two Language Captions for YouTube & Netflix",
+  "name": "Two Captions for YouTube & Netflix",
   "description": "Show captions in two languages on Youtube and Netflix",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "permissions": [
     "tabs", "http://*/*", "https://*/*", "storage"
   ],
