@@ -1,8 +1,7 @@
 TODO
 ----
 
-- New caption should be centered
+- New caption should be centered [x]
 - Captions in the dual-captions window need to be in order
 - Increase the size of the dual-captions window
 - Change YouTube adapter to use appendToDOM(element)
-
