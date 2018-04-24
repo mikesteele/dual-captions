@@ -1,7 +1,7 @@
 {
   "name": "Two Captions for YouTube",
   "description": "Show captions in two languages on Youtube",
-  "version": "1.2.4.1",
+  "version": "1.2.4.2",
   "permissions": [
     "tabs", "http://*/*", "https://*/*", "storage"
   ],
