@@ -1,0 +1,22 @@
+{
+  "name": "dual-captions",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14",
+    "i18next": "9.0.1",
+    "i18next-browser-languagedetector": "2.0.0",
+    "i18next-xhr-backend": "1.4.3",
+    "react-i18next": "6.0.6",
+    "react-tabs": "^2.2.2",
+    "react-toggle": "^4.0.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
