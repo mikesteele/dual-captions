@@ -3,15 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14",
     "i18next": "9.0.1",
     "i18next-browser-languagedetector": "2.0.0",
     "i18next-xhr-backend": "1.4.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-i18next": "6.0.6",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.0.14",
     "react-tabs": "^2.2.2",
-    "react-toggle": "^4.0.2"
+    "react-toggle": "^4.0.2",
+    "redux": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
