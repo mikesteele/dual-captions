@@ -2,9 +2,9 @@
   "dual-captions": "Two Captions",
   "main": "Main",
   "settings": "Settings",
-  "help": "Help",
-  "sites": "Sites",
+  "supported-sites": "Supported Sites",
   "second-subtitle-language": "Second Subtitle Language",
   "off": "Off",
-  "on": "On"
+  "on": "On",
+  "hint-text": "On the page, start captions. On YouTube, click the CC button. On Netflix, click the TODO button."
 }
