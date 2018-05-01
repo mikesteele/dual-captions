@@ -29,9 +29,23 @@ class App extends Component {
               payload: savedStoreJSON
             })
           }
+        } else {
+          // MS: If no saved store, infer UI language
+          this._inferUILanguage();
         }
       });
+    } else {
+      this._inferUILanguage();
     }
+  }
+
+  _inferUILanguage() {
+    const navigatorLocale = window.navigator.language;
+    const navigatorLanguage = navigatorLocale.split('-')[0];
+    this.props.dispatch({
+      type: 'CHANGE_UI_LANGUAGE',
+      payload: navigatorLanguage
+    });
   }
 
   _onToggleChanged(e) {
@@ -103,8 +117,8 @@ class App extends Component {
                 </TabPanel>
               </Tabs>
               <select onChange={this._onUILanguageSelectChanged.bind(this)}>
-                <option value='en'>English</option>
-                <option value='fr'>French</option>
+                <option value='en' selected={ this.props.uiLanguage === 'en'} >English</option>
+                <option value='fr' selected={ this.props.uiLanguage === 'fr'}>French</option>
               </select>
               <div>Report a bug &bull; View on GitHub</div>
             </div>
