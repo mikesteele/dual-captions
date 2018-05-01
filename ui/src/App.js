@@ -3,7 +3,6 @@ import { I18n } from 'react-i18next';
 import Toggle from 'react-toggle';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { connect } from 'react-redux';
-import logo from './logo.svg';
 import './App.css';
 import 'react-toggle/style.css';
 import 'react-tabs/style/react-tabs.css';
@@ -11,10 +10,28 @@ import 'react-tabs/style/react-tabs.css';
 class App extends Component {
   constructor() {
     super();
+    // TODO - Fix
     this.state = {
       isOn: false,
       tabIndex: 0
     };
+  }
+
+  componentDidMount() {
+    if (window.chrome && window.chrome.storage) {
+      window.chrome.storage.local.get('__DC_store__', result => {
+        const savedStore = result.__DC_store__;
+        if (savedStore) {
+          const savedStoreJSON = JSON.parse(savedStore);
+          if (savedStoreJSON.DC) {
+            this.props.dispatch({
+              type: 'HYDRATE_STORE',
+              payload: savedStoreJSON
+            })
+          }
+        }
+      });
+    }
   }
 
   _onToggleChanged(e) {
@@ -23,8 +40,11 @@ class App extends Component {
     });
   }
 
-  _onUILanguageSelectChanged(i18n, e) {
-    i18n.changeLanguage(e.target.value);
+  _onUILanguageSelectChanged(e) {
+    this.props.dispatch({
+      type: 'CHANGE_UI_LANGUAGE',
+      payload: e.target.value
+    });
   }
 
   _onSecondLanguageSelectChanged(e) {
@@ -33,6 +53,7 @@ class App extends Component {
       payload: e.target.value
     });
   }
+
   render() {
     return (
       <I18n ns='translations'>
@@ -57,7 +78,6 @@ class App extends Component {
                       <div>{ this.state.isOn ? t('on') : t('off') }</div>
                     </label>
                     <label>
-                      <div>Store.secondLanguage = {this.props.secondLanguage}</div> {/* TODO - Remove */}
                       <select onChange={this._onSecondLanguageSelectChanged.bind(this)}>
                         <option value='en'>English</option>
                         <option value='fr'>Français</option>
@@ -82,9 +102,9 @@ class App extends Component {
                   </div>
                 </TabPanel>
               </Tabs>
-              <select onChange={this._onUILanguageSelectChanged.bind(this, i18n)}>
-                <option value="en">English</option>
-                <option value="fr">French</option>
+              <select onChange={this._onUILanguageSelectChanged.bind(this)}>
+                <option value='en'>English</option>
+                <option value='fr'>French</option>
               </select>
               <div>Report a bug &bull; View on GitHub</div>
             </div>

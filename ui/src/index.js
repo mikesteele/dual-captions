@@ -4,11 +4,13 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import './i18n';
 import reducer from './reducer';
+import { storageMiddleware, i18nMiddleware } from './middleware';
 
-const store = createStore(reducer);
+const store = createStore(reducer,
+  applyMiddleware(storageMiddleware, i18nMiddleware)
+);
 
 ReactDOM.render(
   <Provider store={store}>
@@ -16,5 +18,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-registerServiceWorker();
