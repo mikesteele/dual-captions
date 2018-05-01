@@ -7,15 +7,9 @@ import './App.css';
 import 'react-toggle/style.css';
 import 'react-tabs/style/react-tabs.css';
 
+import Header from './components/Header.jsx';
+
 class App extends Component {
-  constructor() {
-    super();
-    // TODO - Fix
-    this.state = {
-      isOn: false,
-      tabIndex: 0
-    };
-  }
 
   componentDidMount() {
     if (window.chrome && window.chrome.storage) {
@@ -37,6 +31,7 @@ class App extends Component {
     } else {
       this._inferUILanguage();
     }
+    // TODO - this._checkIfDCIsRunning();
   }
 
   _inferUILanguage() {
@@ -49,8 +44,9 @@ class App extends Component {
   }
 
   _onToggleChanged(e) {
-    this.setState({
-      isOn: e.target.checked
+    this.props.dispatch({
+      type: 'CHANGE_DC_ON',
+      payload: e.target.checked
     });
   }
 
@@ -68,14 +64,21 @@ class App extends Component {
     });
   }
 
+  _onTabSelected(tabIndex) {
+    this.props.dispatch({
+      type: 'CHANGE_CURRENT_TAB',
+      payload: tabIndex
+    });
+  }
+
   render() {
     return (
       <I18n ns='translations'>
         {
           (t, { i18n }) => (
             <div className='App'>
-              <div>{t('dual-captions')}</div>
-              <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
+              <Header/>
+              <Tabs selectedIndex={this.props.currentTab} onSelect={this._onTabSelected.bind(this)}>
                 <TabList>
                   <Tab>{t('main')}</Tab>
                   <Tab>{t('settings')}</Tab>
@@ -86,13 +89,13 @@ class App extends Component {
                   <div className='page'>
                     <label>
                       <Toggle
-                        defaultChecked={this.state.isOn}
+                        checked={this.props.isOn}
                         icons={false}
                         onChange={this._onToggleChanged.bind(this)} />
-                      <div>{ this.state.isOn ? t('on') : t('off') }</div>
+                      <div>{ this.props.isOn ? t('on') : t('off') }</div>
                     </label>
                     <label>
-                      <select onChange={this._onSecondLanguageSelectChanged.bind(this)}>
+                      <select value={this.props.secondLanguage} onChange={this._onSecondLanguageSelectChanged.bind(this)}>
                         <option value='en'>English</option>
                         <option value='fr'>Français</option>
                       </select>
@@ -116,9 +119,9 @@ class App extends Component {
                   </div>
                 </TabPanel>
               </Tabs>
-              <select onChange={this._onUILanguageSelectChanged.bind(this)}>
-                <option value='en' selected={ this.props.uiLanguage === 'en'} >English</option>
-                <option value='fr' selected={ this.props.uiLanguage === 'fr'}>French</option>
+              <select value={this.props.uiLanguage} onChange={this._onUILanguageSelectChanged.bind(this)}>
+                <option value='en'>English</option>
+                <option value='fr'>French</option>
               </select>
               <div>Report a bug &bull; View on GitHub</div>
             </div>

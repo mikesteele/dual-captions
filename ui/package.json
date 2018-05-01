@@ -12,7 +12,8 @@
     "react-scripts": "1.0.14",
     "react-tabs": "^2.2.2",
     "react-toggle": "^4.0.2",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
