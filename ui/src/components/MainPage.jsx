@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
 import Toggle from 'react-toggle';
+import { turnDCOff, turnDCOn } from '../actions';
 
 import Hint from './Hint.jsx';
 
 class MainPage extends Component {
   _onToggleChanged(e) {
-    this.props.dispatch({
-      type: 'CHANGE_DC_ON',
-      payload: e.target.checked
-    });
+    if (e.target.checked) {
+      this.props.dispatch(turnDCOn());
+    } else {
+      this.props.dispatch(turnDCOff());
+    }
   }
 
   _onSecondLanguageSelectChanged(e) {

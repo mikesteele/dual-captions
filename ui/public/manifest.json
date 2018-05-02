@@ -1,7 +1,7 @@
 {
-  "name": "Two Captions for YouTube & Netflix",
-  "description": "Show captions in two languages on Youtube and Netflix",
-  "version": "1.2.1.1",
+  "name": "Two Captions for YouTube",
+  "description": "Show captions in two languages on Youtube",
+  "version": "1.3.0",
   "permissions": [
     "tabs", "http://*/*", "https://*/*", "storage"
   ],
@@ -10,6 +10,32 @@
       "default_icon": "icon.png",
       "default_popup": "index.html"
   },
+  "content_scripts": [{
+    "all_frames": false,
+    "js": [
+      "content-scripts/init.js",
+      "content-scripts/google-translate-token.js",
+      "content-scripts/querystring-encode.js",
+      "content-scripts/google-translate-api.js",
+      "content-scripts/config/init.js",
+      "content-scripts/config/youtube.js",
+      "content-scripts/dual-captions.js"
+    ],
+    "matches": [ "https://www.youtube.com/*" ]
+   },{
+    "all_frames": false,
+    "css": ["content-scripts/config/netflix.css"],
+    "js": [
+      "content-scripts/init.js",
+      "content-scripts/google-translate-token.js",
+      "content-scripts/querystring-encode.js",
+      "content-scripts/google-translate-api.js",
+      "content-scripts/config/init.js",
+      "content-scripts/config/netflix.js",
+      "content-scripts/dual-captions.js"
+    ],
+    "matches": [ "https://www.netflix.com/*" ]
+   }],
   "icons": {
     "16": "icon.png",
     "48": "icon-48.png",

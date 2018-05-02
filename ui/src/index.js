@@ -6,10 +6,15 @@ import './index.css';
 import App from './App';
 import './i18n';
 import reducer from './reducer';
+import ReduxThunk from 'redux-thunk';
 import { storageMiddleware, i18nMiddleware } from './middleware';
 
 const store = createStore(reducer,
-  applyMiddleware(storageMiddleware, i18nMiddleware)
+  applyMiddleware(
+    ReduxThunk,
+    storageMiddleware,
+    i18nMiddleware
+  )
 );
 
 ReactDOM.render(
