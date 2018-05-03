@@ -15,6 +15,7 @@ const mapStateToProps = function(state) {
 }
 
 const MainPageView = connect(mapStateToProps)(MainPage);
+const SettingsPageView = connect(mapStateToProps)(SettingsPage);
 
 class App extends Component {
   componentDidMount() {
@@ -80,7 +81,7 @@ class App extends Component {
                   <MainPageView/>
                 </TabPanel>
                 <TabPanel>
-                  <SettingsPage/>
+                  <SettingsPageView/>
                 </TabPanel>
                 <TabPanel>
                   <div className='page'>

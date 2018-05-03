@@ -1,9 +1,12 @@
+import config from './config';
+
 const initialState = {
   currentTab: 0,
   DC: true,
   isOn: false,
   secondLanguage: 'en',
-  uiLanguage: 'en'
+  uiLanguage: 'en',
+  settings: config.defaultSettings
 };
 
 export default function reducer(state = initialState, action) {
@@ -21,6 +24,12 @@ export default function reducer(state = initialState, action) {
     case 'CHANGE_CURRENT_TAB':
       return {...state,
         currentTab: action.payload
+      };
+    case 'CHANGE_SETTINGS':
+      return {...state,
+        settings: {...state.settings,
+          ...action.payload
+        }
       };
     case 'CHANGE_UI_LANGUAGE':
       const selectedUILanguage = action.payload || state.uiLanguage;

@@ -6,5 +6,6 @@
   "second-subtitle-language": "Langue des deuxièmes sous-titres",
   "off": "Éteindré",
   "on": "Allumé",
-  "hint-text": "Sur la page, commencer les sous-titres. Sur YouTube, cliquez sur le bouton CC. On Netflix, cliquez sur le bouton TODO."
+  "hint-text": "Sur la page, commencer les sous-titres. Sur YouTube, cliquez sur le bouton CC. On Netflix, cliquez sur le bouton TODO.",
+  "extraSpace": "Espace entre les sous-titres"
 }

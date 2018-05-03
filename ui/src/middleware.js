@@ -19,3 +19,12 @@ export const i18nMiddleware = store => next => action => {
   }
   return result;
 }
+
+export const loggingMiddleware = store => next => action => {
+  let result = next(action);
+  console.log(`---`);
+  console.log('STORE: ', store.getState());
+  console.log('ACTION: ', action);
+  console.log(`---`);
+  return result;
+}

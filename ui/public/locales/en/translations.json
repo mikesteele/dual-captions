@@ -6,5 +6,6 @@
   "second-subtitle-language": "Second Subtitle Language",
   "off": "Off",
   "on": "On",
-  "hint-text": "On the page, start captions. On YouTube, click the CC button. On Netflix, click the TODO button."
+  "hint-text": "On the page, start captions. On YouTube, click the CC button. On Netflix, click the TODO button.",
+  "extraSpace": "Space between captions"
 }

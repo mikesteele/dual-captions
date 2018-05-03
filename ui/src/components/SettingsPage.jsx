@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
-import i18n, { t } from 'i18next';
-import { turnDCOff, turnDCOn } from '../actions';
-import Hint from './Hint.jsx';
-
-const AVAILABLE_SETTINGS = [
-  'extra-space'
-]
+import { t } from 'i18next';
+import config from '../config';
 
 class SettingsPage extends Component {
   _onSettingChecked(setting, e) {
-    if (e.target.checked) {
-      alert(setting);
-    }
+    this.props.dispatch({
+      type: 'CHANGE_SETTINGS',
+      payload: {
+        [setting]: e.target.checked
+      }
+    });
   }
 
   render() {
-    const settings = AVAILABLE_SETTINGS.map(setting => (
-      <label>
-        <input type='checkbox' onChange={this._onSettingChecked.bind(this, setting)}/>
+    const defaultSettings = Object.keys(config.defaultSettings);
+    const settings = defaultSettings.map(setting => (
+      <label key={setting}>
+        <input
+          type='checkbox'
+          checked={this.props.settings[setting]}
+          onChange={this._onSettingChecked.bind(this, setting)}/>
         <span>{t(setting)}</span>
       </label>
     ));
