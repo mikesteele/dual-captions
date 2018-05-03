@@ -16,10 +16,6 @@ class MainPage extends Component {
 
   _onSecondLanguageSelectChanged(e) {
     this.props.dispatch(changeDCLanguage(e.target.value));
-    this.props.dispatch({
-      type: 'CHANGE_SECOND_LANGUAGE',
-      payload: e.target.value
-    });
   }
 
   render() {
