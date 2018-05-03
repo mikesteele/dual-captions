@@ -8,6 +8,7 @@ import 'react-tabs/style/react-tabs.css';
 
 import Header from './components/Header.jsx';
 import MainPage from './components/MainPage.jsx';
+import SettingsPage from './components/SettingsPage.jsx';
 
 const mapStateToProps = function(state) {
   return {...state};
@@ -79,9 +80,7 @@ class App extends Component {
                   <MainPageView/>
                 </TabPanel>
                 <TabPanel>
-                  <div className='page'>
-                    {t('settings')}
-                  </div>
+                  <SettingsPage/>
                 </TabPanel>
                 <TabPanel>
                   <div className='page'>
