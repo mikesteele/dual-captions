@@ -9,6 +9,7 @@ import 'react-tabs/style/react-tabs.css';
 import Header from './components/Header.jsx';
 import MainPage from './components/MainPage.jsx';
 import SettingsPage from './components/SettingsPage.jsx';
+import SupportedSitesPage from './components/SupportedSitesPage.jsx';
 
 const mapStateToProps = function(state) {
   return {...state};
@@ -84,9 +85,7 @@ class App extends Component {
                   <SettingsPageView/>
                 </TabPanel>
                 <TabPanel>
-                  <div className='page'>
-                    {t('supported-sites')}
-                  </div>
+                  <SupportedSitesPage/>
                 </TabPanel>
               </Tabs>
               <select value={this.props.uiLanguage} onChange={this._onUILanguageSelectChanged.bind(this)}>

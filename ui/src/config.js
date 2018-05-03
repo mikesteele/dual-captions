@@ -4,7 +4,11 @@ const config = {
   defaultSettings: {
     extraSpace: false
   },
-  secondLanguages: secondLanguages
+  secondLanguages: secondLanguages,
+  supportedSites: {
+    YouTube: 'stable',
+    Netflix: 'beta'
+  }
 }
 
 export default config;

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-size: 14px;
 }
 
 .react-tabs__tab {
@@ -59,4 +60,41 @@
 
 .hint {
   margin: 16px;
+}
+
+.site-icon {
+  border-radius: 50%;
+  flex: none;
+  display: inline-block;
+  height: 8px;
+  margin-right: 8px;
+  width: 8px;
+}
+
+.site-icon.stable {
+  background: green;
+}
+
+.site-icon.beta {
+  background: gold;
+}
+
+td {
+  border: 1px solid #aaa;
+  padding: 8px;
+  text-align: left;
+  width: 64px;
+}
+
+td > div {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  padding: 8px;
+  width: 80%;
 }
