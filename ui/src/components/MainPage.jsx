@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
 import Toggle from 'react-toggle';
-import { turnDCOff, turnDCOn } from '../actions';
-
+import { changeDCLanguage, turnDCOff, turnDCOn } from '../actions';
+import config from '../config';
 import Hint from './Hint.jsx';
 
 class MainPage extends Component {
@@ -15,6 +15,7 @@ class MainPage extends Component {
   }
 
   _onSecondLanguageSelectChanged(e) {
+    this.props.dispatch(changeDCLanguage(e.target.value));
     this.props.dispatch({
       type: 'CHANGE_SECOND_LANGUAGE',
       payload: e.target.value
@@ -22,6 +23,14 @@ class MainPage extends Component {
   }
 
   render() {
+    const secondLanguagesKeys = Object.keys(config.secondLanguages);
+    const secondLanguages = secondLanguagesKeys.map(language => (
+      <option
+        key={language}
+        value={language}>
+        {config.secondLanguages[language]}
+      </option>
+    ));
     return (
       <I18n namespace='translations'>
       {
@@ -39,8 +48,7 @@ class MainPage extends Component {
               <select
                 value={this.props.secondLanguage}
                 onChange={this._onSecondLanguageSelectChanged.bind(this)}>
-                <option value='en'>English</option>
-                <option value='fr'>Français</option>
+                { secondLanguages }
               </select>
               <div>{t('second-subtitle-language')}</div>
             </label>
