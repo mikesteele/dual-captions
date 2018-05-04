@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
 import { t } from 'i18next';
 import config from '../config';
+import { applyDCSettings } from '../actions';
 
 class SettingsPage extends Component {
   _onSettingChecked(setting, e) {
@@ -11,6 +12,7 @@ class SettingsPage extends Component {
         [setting]: e.target.checked
       }
     });
+    this.props.dispatch(applyDCSettings());
   }
 
   render() {

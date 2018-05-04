@@ -7,9 +7,7 @@ export function changeDCLanguage(language) {
         .then(tabId => {
           window.chrome.tabs.sendMessage(tabId, {
             type: 'change-language',
-            info: {
-              lang: language
-            }
+            payload: language
           }, resolve);
         })
         .then(() => {
@@ -91,6 +89,28 @@ export function turnDCOn(){
   }
 }
 
+export function applyDCSettings() {
+  return function (dispatch, getState) {
+    return new Promise((resolve, _) => {
+      const { settings } = getState();
+      getActiveTabId()
+        .then(tabId => {
+          window.chrome.tabs.sendMessage(tabId, {
+            type: 'change-settings',
+            payload: settings
+          }, resolve);
+        })
+        .catch(() => {
+          console.log(`actions: Can't get active tab ID, am I running locally?`);
+          // TODO - Dispatch 'error' action
+          // Unable to get active tab ID
+          resolve();
+        });
+    });
+  }
+}
+
+// TODO - This isn't an action, move out of here.
 export function isDCOn() {
   return new Promise((resolve, _) => {
     getActiveTabId()
@@ -105,4 +125,5 @@ export function isDCOn() {
       });
   });
 }
+
 

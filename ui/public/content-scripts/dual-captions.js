@@ -1,21 +1,20 @@
 class DualCaptions {
-  /**
-   * Properties
-   * 
-   * observer - MutationObserver
-   * secondLanguage - string
-   */
   constructor() {
     this.isOn = false;
     this.observer = new MutationObserver(this._onMutation.bind(this));
     this.secondLanguage = 'en';
+    this.extraSpace = false;
 
     chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
   }
   _onMessage(message, sender, sendResponse) {
     switch (message.type) {
       case 'change-language':
-      this.secondLanguage = message.info.lang;
+      this.secondLanguage = message.payload;
+      break;
+
+      case 'change-settings':
+      this.extraSpace = message.payload.extraSpace;
       break;
 
       case 'get-language':
@@ -52,7 +51,11 @@ class DualCaptions {
               translatedCaption.innerText = translation.text;
               translatedCaption.setAttribute('__dc-caption__', true);
               translatedCaption = window.DC.config.styleCaptionElement(translatedCaption, mutation, newCaptionOrder);
-              window.DC.config.appendToDOM(translatedCaption, mutation);
+              if (this.extraSpace) {
+                let breakElement = this._createBreakElement();
+                window.DC.config.appendToDOM(breakElement);
+              }
+              window.DC.config.appendToDOM(translatedCaption);
             }
           });
         }
@@ -78,6 +81,25 @@ class DualCaptions {
     } else {
       return false;
     }
+  }
+  /**
+  
+  TODO
+  ----
+
+  Future architecture:
+
+  DC.js - controls MutationObserver, listens to messages, passes mutations to an adaptor, doesn't create elements.
+  Base Adaptor - move _onMutation logic to a method on the adaptor, no need for child adaptors to implement method.
+  Adaptor - creates elements, repositions elements, determines if a mutation should be acted upon, 
+
+  DC shouldn't interact with DOM besides listening for mutations. Base adaptor handles checking the DOM for duplicates, appending elements, etc.
+
+  **/
+  _createBreakElement() {
+    let breakElement = document.createElement('div');
+    breakElement.style.cssText = 'height: 10px';
+    return breakElement;
   }
 }
 

@@ -61,7 +61,7 @@ class NetflixConfig extends DualCaptionsConfig {
   }
 
   // Append the new caption to the DOM
-  appendToDOM(element, mutation) { // TODO - Does this need `mutation`?
+  appendToDOM(element) {
     let dcWindow = this.getDCWindow();
     if (!dcWindow) {
       dcWindow = this.makeDCWindow();
