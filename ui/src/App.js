@@ -11,6 +11,8 @@ import MainPage from './components/MainPage.jsx';
 import SettingsPage from './components/SettingsPage.jsx';
 import SupportedSitesPage from './components/SupportedSitesPage.jsx';
 
+import { updateStoreFromDC } from './actions';
+
 const mapStateToProps = function(state) {
   return {...state};
 }
@@ -29,17 +31,19 @@ class App extends Component {
             this.props.dispatch({
               type: 'HYDRATE_STORE',
               payload: savedStoreJSON
-            })
+            });
           }
+          this.props.dispatch(updateStoreFromDC());
         } else {
           // MS: If no saved store, infer UI language
           this._inferUILanguage();
+          this.props.dispatch(updateStoreFromDC());
         }
       });
     } else {
       this._inferUILanguage();
+      this.props.dispatch(updateStoreFromDC());
     }
-    // TODO - this._checkIfDCIsRunning();
   }
 
   _inferUILanguage() {

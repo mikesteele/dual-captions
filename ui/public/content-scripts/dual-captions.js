@@ -17,6 +17,16 @@ class DualCaptions {
       this.extraSpace = message.payload.extraSpace;
       break;
 
+      case 'get-state':
+      sendResponse({
+        isOn: this.isOn,
+        secondLanguage: this.secondLanguage,
+        settings: {
+          extraSpace: this.extraSpace
+        }
+      });
+      break;
+
       case 'get-language':
       sendResponse(this.secondLanguage);
       break;

@@ -5,10 +5,12 @@ export function changeDCLanguage(language) {
     return new Promise((resolve, _) => {
       getActiveTabId()
         .then(tabId => {
-          window.chrome.tabs.sendMessage(tabId, {
-            type: 'change-language',
-            payload: language
-          }, resolve);
+          return new Promise(_resolve => {
+            window.chrome.tabs.sendMessage(tabId, {
+              type: 'change-language',
+              payload: language
+            }, _resolve);
+          });
         })
         .then(() => {
           dispatch({
@@ -32,9 +34,11 @@ export function turnDCOff(){
     return new Promise((resolve, _) => {
       getActiveTabId()
         .then(tabId => {
-          window.chrome.tabs.sendMessage(tabId, {
-            type: 'stop-observer'
-          }, resolve);
+          return new Promise(_resolve => {
+            window.chrome.tabs.sendMessage(tabId, {
+              type: 'stop-observer'
+            }, _resolve);
+          });
         })
         .then(isDCOn)
         .then(isOn => {
@@ -63,9 +67,11 @@ export function turnDCOn(){
     return new Promise((resolve, _) => {
       getActiveTabId()
         .then(tabId => {
-          window.chrome.tabs.sendMessage(tabId, {
-            type: 'start-observer'
-          }, resolve);
+          return new Promise(_resolve => {
+            window.chrome.tabs.sendMessage(tabId, {
+              type: 'start-observer'
+            }, _resolve);
+          });
         })
         .then(isDCOn)
         .then(isOn => {
@@ -95,10 +101,50 @@ export function applyDCSettings() {
       const { settings } = getState();
       getActiveTabId()
         .then(tabId => {
-          window.chrome.tabs.sendMessage(tabId, {
-            type: 'change-settings',
-            payload: settings
-          }, resolve);
+          return new Promise(_resolve => {
+            window.chrome.tabs.sendMessage(tabId, {
+              type: 'change-settings',
+              payload: settings
+            }, _resolve);
+          });
+        })
+        .catch(() => {
+          console.log(`actions: Can't get active tab ID, am I running locally?`);
+          // TODO - Dispatch 'error' action
+          // Unable to get active tab ID
+          resolve();
+        });
+    });
+  }
+}
+
+export function updateStoreFromDC() {
+  console.log(`actions: Dispatching updateStoreFromDC()`);
+  return function (dispatch) {
+    return new Promise((resolve, _) => {
+      getActiveTabId()
+        .then(tabId => {
+          return new Promise(_resolve => {
+            window.chrome.tabs.sendMessage(tabId, {
+              type: 'get-state',
+            }, _resolve);
+          });
+        })
+        .then(dcState => {
+          console.log(`dcState: `, dcState);
+          // TODO - This would be better as one action... lol
+          dispatch({
+            type: 'CHANGE_DC_ON',
+            payload: dcState.isOn
+          });
+          dispatch({
+            type: 'CHANGE_SECOND_LANGUAGE',
+            payload: dcState.secondLanguage
+          });
+          dispatch({
+            type: 'CHANGE_SETTINGS',
+            payload: dcState.settings
+          });
         })
         .catch(() => {
           console.log(`actions: Can't get active tab ID, am I running locally?`);
@@ -125,5 +171,3 @@ export function isDCOn() {
       });
   });
 }
-
-
