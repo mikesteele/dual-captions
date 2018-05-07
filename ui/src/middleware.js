@@ -1,11 +1,13 @@
 import i18n from 'i18next';
+import config from './config';
 
 export const storageMiddleware = store => next => action => {
   let result = next(action);
   console.debug('Redux: Writing store to chrome.storage.');
   if (window.chrome && window.chrome.storage) {
+    let currentState = store.getState();
     window.chrome.storage.local.set({
-      '__DC_store__': JSON.stringify(store.getState())
+      '__DC_store__': JSON.stringify(currentState)
     });
   }
   return result;

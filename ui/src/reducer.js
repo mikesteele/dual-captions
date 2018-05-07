@@ -3,6 +3,8 @@ import config from './config';
 const initialState = {
   currentTab: 0,
   DC: true,
+  hasError: false,
+  errorType: '',
   isOn: false,
   secondLanguage: 'en',
   uiLanguage: 'en',
@@ -25,6 +27,11 @@ export default function reducer(state = initialState, action) {
       return {...state,
         currentTab: action.payload
       };
+    case 'CHANGE_ERROR':
+      return {...state,
+        hasError: action.payload.hasError,
+        errorType: action.payload.errorType || ''
+      }
     case 'CHANGE_SETTINGS':
       return {...state,
         settings: {...state.settings,

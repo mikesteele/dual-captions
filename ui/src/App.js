@@ -9,6 +9,7 @@ import 'react-tabs/style/react-tabs.css';
 import Header from './components/Header.jsx';
 import MainPage from './components/MainPage.jsx';
 import SettingsPage from './components/SettingsPage.jsx';
+import ErrorPage from './components/ErrorPage.jsx';
 import SupportedSitesPage from './components/SupportedSitesPage.jsx';
 
 import { updateStoreFromDC } from './actions';
@@ -19,6 +20,7 @@ const mapStateToProps = function(state) {
 
 const MainPageView = connect(mapStateToProps)(MainPage);
 const SettingsPageView = connect(mapStateToProps)(SettingsPage);
+const ErrorPageView = connect(mapStateToProps)(ErrorPage);
 
 class App extends Component {
   componentDidMount() {
@@ -92,6 +94,7 @@ class App extends Component {
                   <SupportedSitesPage/>
                 </TabPanel>
               </Tabs>
+              <ErrorPageView/>
               <select value={this.props.uiLanguage} onChange={this._onUILanguageSelectChanged.bind(this)}>
                 <option value='en'>English</option>
                 <option value='fr'>French</option>
