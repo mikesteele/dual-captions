@@ -131,20 +131,26 @@ export function updateStoreFromDC() {
           });
         })
         .then(dcState => {
-          console.log(`dcState: `, dcState);
-          // TODO - This would be better as one action... lol
-          dispatch({
-            type: 'CHANGE_DC_ON',
-            payload: dcState.isOn
-          });
-          dispatch({
-            type: 'CHANGE_SECOND_LANGUAGE',
-            payload: dcState.secondLanguage
-          });
-          dispatch({
-            type: 'CHANGE_SETTINGS',
-            payload: dcState.settings
-          });
+          if (dcState) {
+            // TODO - This would be better as one action... lol
+            dispatch({
+              type: 'CHANGE_DC_ON',
+              payload: dcState.isOn
+            });
+            dispatch({
+              type: 'CHANGE_SECOND_LANGUAGE',
+              payload: dcState.secondLanguage
+            });
+            dispatch({
+              type: 'CHANGE_SETTINGS',
+              payload: dcState.settings
+            });
+          } else {
+            dispatch({
+              type: 'CHANGE_DC_ON',
+              payload: false
+            });
+          }
         })
         .catch(() => {
           console.log(`actions: Can't get active tab ID, am I running locally?`);
