@@ -40,16 +40,23 @@ export function turnDCOff(){
             }, _resolve);
           });
         })
-        .then(isDCOn)
-        .then(isOn => {
-          if (!isOn) {
+        .then(response => {
+          console.log('turnDCOff: response: ', response);
+          if (response.ok) {
             dispatch({
               type: 'CHANGE_DC_ON',
               payload: false
             });
           } else {
-            // TODO - Dispatch 'error' action
-            // Unable to turn on observer
+            if (response.errorType) {
+              dispatch({
+                type: 'CHANGE_ERROR',
+                payload: {
+                  hasError: true,
+                  errorType: response.errorType
+                }
+              });
+            }
           }
         })
         .catch(() => {
@@ -73,16 +80,23 @@ export function turnDCOn(){
             }, _resolve);
           });
         })
-        .then(isDCOn)
-        .then(isOn => {
-          if (isOn) {
+        .then(response => {
+          console.log('turnDCOn: response: ', response);
+          if (response.ok) {
             dispatch({
               type: 'CHANGE_DC_ON',
               payload: true
             });
           } else {
-            // TODO - Dispatch 'error' action
-            // Unable to turn on observer
+            if (response.errorType) {
+              dispatch({
+                type: 'CHANGE_ERROR',
+                payload: {
+                  hasError: true,
+                  errorType: response.errorType
+                }
+              });
+            }
           }
         })
         .catch(() => {

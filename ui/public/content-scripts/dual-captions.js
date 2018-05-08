@@ -11,14 +11,17 @@ class DualCaptions {
     switch (message.type) {
       case 'change-language':
       this.secondLanguage = message.payload;
+      sendResponse({ok: true});
       break;
 
       case 'change-settings':
       this.extraSpace = message.payload.extraSpace;
+      sendResponse({ok: true});
       break;
 
       case 'get-state':
       sendResponse({
+        ok: true,
         isOn: this.isOn,
         secondLanguage: this.secondLanguage,
         settings: {
@@ -28,19 +31,42 @@ class DualCaptions {
       break;
 
       case 'get-language':
-      sendResponse(this.secondLanguage);
+      sendResponse({
+        ok: true,
+        secondLanguage: this.secondLanguage
+      });
       break;
 
       case 'is-on':
-      sendResponse(this.isOn);
+      sendResponse({
+        ok: true,
+        isOn: this.isOn
+      });
       break;
 
       case 'start-observer':
-      this._startObserver();
+      try {
+        this.observer.observe(window.DC.config.getPlayer(), {
+          childList: true,
+          subtree: true
+        });
+        this.isOn = true;
+        sendResponse({
+          ok: true
+        });
+      } catch(err) {
+        sendResponse({
+          ok: false,
+          errorType: 'no-player'
+        });
+      }
       break;
 
       case 'stop-observer':
       this._stopObserver();
+      sendResponse({
+        ok: true
+      });
       break;
     }
   }
@@ -71,13 +97,6 @@ class DualCaptions {
         }
       }
     });
-  }
-  _startObserver() {
-    this.observer.observe(window.DC.config.getPlayer(), {
-      childList: true,
-      subtree: true
-    });
-    this.isOn = true;
   }
   _stopObserver() {
     this.observer.disconnect();
