@@ -42,6 +42,15 @@ export function turnDCOff(){
         })
         .then(response => {
           console.log('turnDCOff: response: ', response);
+          if (!response) {
+            dispatch({
+              type: 'CHANGE_ERROR',
+              payload: {
+                hasError: true,
+                errorType: 'no-dc'
+              }
+            });
+          }
           if (response.ok) {
             dispatch({
               type: 'CHANGE_DC_ON',
@@ -82,6 +91,15 @@ export function turnDCOn(){
         })
         .then(response => {
           console.log('turnDCOn: response: ', response);
+          if (!response) {
+            dispatch({
+              type: 'CHANGE_ERROR',
+              payload: {
+                hasError: true,
+                errorType: 'no-dc'
+              }
+            });
+          }
           if (response.ok) {
             dispatch({
               type: 'CHANGE_DC_ON',

@@ -3,9 +3,10 @@ import config from './config';
 
 export const storageMiddleware = store => next => action => {
   let result = next(action);
-  console.debug('Redux: Writing store to chrome.storage.');
+  console.debug('Middleware: Writing store to chrome.storage.');
   if (window.chrome && window.chrome.storage) {
     let currentState = store.getState();
+    delete currentState.hasError;
     window.chrome.storage.local.set({
       '__DC_store__': JSON.stringify(currentState)
     });
@@ -24,9 +25,9 @@ export const i18nMiddleware = store => next => action => {
 
 export const loggingMiddleware = store => next => action => {
   let result = next(action);
-  console.log(`---`);
-  console.log('STORE: ', store.getState());
-  console.log('ACTION: ', action);
-  console.log(`---`);
+  console.log(`Middleware: ---`);
+  console.log('Middleware: STORE: ', store.getState());
+  console.log('Middleware: ACTION: ', action);
+  console.log(`Middleware: ---`);
   return result;
 }

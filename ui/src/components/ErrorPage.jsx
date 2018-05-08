@@ -5,7 +5,7 @@ import { I18n } from 'react-i18next';
 
 Error types:
 
-'no-dc-error': DC not found on page.
+'no-dc': DC not found on page.
 'no-player': DC couldn't observe because getPlayer didn't return an element.
 
 **/
