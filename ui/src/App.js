@@ -99,7 +99,21 @@ class App extends Component {
                 <option value='en'>English</option>
                 <option value='fr'>French</option>
               </select>
-              <div>Report a bug &bull; View on GitHub</div>
+              <div>
+                <a
+                  href='https://github.com/mikesteele/dual-captions/issues'
+                  rel='noopener noreferrer'
+                  target='_blank'>
+                  Report a bug
+                </a>
+                <span>&bull;</span>
+                <a
+                  href='https://github.com/mikesteele/dual-captions/'
+                  rel='noopener noreferrer'
+                  target='_blank'>
+                  View on GitHub
+                </a>
+              </div>
             </div>
           )
         }

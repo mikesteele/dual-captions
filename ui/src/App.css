@@ -3,6 +3,15 @@
   font-size: 14px;
 }
 
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .react-tabs__tab {
   padding: 4px 12px;
 }
