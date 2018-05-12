@@ -147,6 +147,7 @@ export function applyDCSettings() {
             }, _resolve);
           });
         })
+        .then(resolve)
         .catch(() => {
           console.log(`actions: Can't get active tab ID, am I running locally?`);
           // TODO - Dispatch 'error' action
@@ -190,6 +191,7 @@ export function updateStoreFromDC() {
               payload: false
             });
           }
+          resolve();
         })
         .catch(() => {
           console.log(`actions: Can't get active tab ID, am I running locally?`);
