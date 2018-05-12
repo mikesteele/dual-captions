@@ -1,0 +1,14 @@
+{
+  "dual-captions": "Deux sous-titres",
+  "main": "Acceuil",
+  "settings": "Réglages",
+  "supported-sites": "Sites compatibles",
+  "second-subtitle-language": "Langue des deuxièmes sous-titres",
+  "off": "Éteindré",
+  "on": "Allumé",
+  "hint-text": "Sur la page, commencer les sous-titres. Sur YouTube, cliquez sur le bouton CC. On Netflix, cliquez sur le bouton TODO.",
+  "extraSpace": "Espace entre les sous-titres",
+  "stable": "Stable",
+  "beta": "Bêta",
+  "beta-explanation": "Vous pouvez voir des bugs si vous utilisez cette extension sur les sites bêtas. Aidez-moi en rapportant les bugs sur GitHub."
+}
