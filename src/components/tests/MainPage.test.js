@@ -2,10 +2,8 @@ import React from 'react';
 import sinon from 'sinon';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
-import { changeDCLanguage, turnDCOff, turnDCOn } from '../actions';
 
-import { MainPage } from './MainPage.jsx';
-
+import { MainPage } from '../MainPage.jsx';
 
 let wrapper;
 const dispatchSpy = sinon.spy();

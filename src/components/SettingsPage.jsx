@@ -3,6 +3,7 @@ import { I18n } from 'react-i18next';
 import { t } from 'i18next';
 import config from '../config';
 import { applyDCSettings } from '../actions';
+import { translate } from 'react-i18next';
 
 class SettingsPage extends Component {
   _onSettingChecked(setting, e) {
@@ -23,21 +24,17 @@ class SettingsPage extends Component {
           type='checkbox'
           checked={this.props.settings[setting]}
           onChange={this._onSettingChecked.bind(this, setting)}/>
-        <span>{t(setting)}</span>
+        <span>{this.props.t(setting)}</span>
       </label>
     ));
     return (
-      <I18n namespace='translations'>
-      {
-        (t) => (
-          <div className='page'>
-            { settings }
-          </div>
-        )
-      }
-      </I18n>
+      <div className='page'>
+        { settings }
+      </div>
     )
   }
 }
 
-export default SettingsPage;
+export { SettingsPage };
+export default translate()(SettingsPage);
+

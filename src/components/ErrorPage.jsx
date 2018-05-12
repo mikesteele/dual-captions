@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { I18n } from 'react-i18next';
+import { translate } from 'react-i18next';
 
 /**
 
@@ -23,25 +24,20 @@ class ErrorPage extends Component {
 
   render() {
     return (
-      <I18n namespace='translations'>
-      {
-        (t) => (
-          <div hidden={!this.props.hasError}>
-            <div className='modal'>
-              <span className='alert-icon'></span>
-              <span className='error-text'>{t(this.props.errorType)}</span>
-              <span
-                className='dismiss-icon'
-                onClick={this._onClickDismiss.bind(this)}>
-                x
-              </span>
-            </div>
-          </div>
-        )
-      }
-      </I18n>
+      <div hidden={!this.props.hasError}>
+        <div className='modal'>
+          <span className='alert-icon'></span>
+          <span className='error-text'>{this.props.t(this.props.errorType)}</span>
+          <span
+            className='dismiss-icon'
+            onClick={this._onClickDismiss.bind(this)}>
+            x
+          </span>
+        </div>
+      </div>
     )
   }
 }
 
-export default ErrorPage;
+export { ErrorPage };
+export default translate()(ErrorPage);
