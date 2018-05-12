@@ -12,6 +12,8 @@ import SettingsPage from './components/SettingsPage.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
 import SupportedSitesPage from './components/SupportedSitesPage.jsx';
 
+import { translate } from 'react-i18next';
+
 import { updateStoreFromDC } from './actions';
 
 const mapStateToProps = function(state) {
@@ -73,53 +75,47 @@ class App extends Component {
 
   render() {
     return (
-      <I18n ns='translations'>
-        {
-          (t, { i18n }) => (
-            <div className='App'>
-              <Header/>
-              <Tabs selectedIndex={this.props.currentTab} onSelect={this._onTabSelected.bind(this)}>
-                <TabList>
-                  <Tab>{t('main')}</Tab>
-                  <Tab>{t('settings')}</Tab>
-                  <Tab>{t('supported-sites')}</Tab>
-                </TabList>
-                <TabPanel>
-                  <MainPageView/>
-                </TabPanel>
-                <TabPanel>
-                  <SettingsPageView/>
-                </TabPanel>
-                <TabPanel>
-                  <SupportedSitesPage/>
-                </TabPanel>
-              </Tabs>
-              <ErrorPageView/>
-              <select value={this.props.uiLanguage} onChange={this._onUILanguageSelectChanged.bind(this)}>
-                <option value='en'>English</option>
-                <option value='fr'>French</option>
-              </select>
-              <div>
-                <a
-                  href='https://github.com/mikesteele/dual-captions/issues'
-                  rel='noopener noreferrer'
-                  target='_blank'>
-                  Report a bug
-                </a>
-                <span>&bull;</span>
-                <a
-                  href='https://github.com/mikesteele/dual-captions/'
-                  rel='noopener noreferrer'
-                  target='_blank'>
-                  View on GitHub
-                </a>
-              </div>
-            </div>
-          )
-        }
-      </I18n>
+      <div className='App'>
+        <Header/>
+        <Tabs selectedIndex={this.props.currentTab} onSelect={this._onTabSelected.bind(this)}>
+          <TabList>
+            <Tab>{this.props.t('main')}</Tab>
+            <Tab>{this.props.t('settings')}</Tab>
+            <Tab>{this.props.t('supported-sites')}</Tab>
+          </TabList>
+          <TabPanel>
+            <MainPageView/>
+          </TabPanel>
+          <TabPanel>
+            <SettingsPageView/>
+          </TabPanel>
+          <TabPanel>
+            <SupportedSitesPage/>
+          </TabPanel>
+        </Tabs>
+        <ErrorPageView/>
+        <select value={this.props.uiLanguage} onChange={this._onUILanguageSelectChanged.bind(this)}>
+          <option value='en'>English</option>
+          <option value='fr'>French</option>
+        </select>
+        <div>
+          <a
+            href='https://github.com/mikesteele/dual-captions/issues'
+            rel='noopener noreferrer'
+            target='_blank'>
+            Report a bug
+          </a>
+          <span>&bull;</span>
+          <a
+            href='https://github.com/mikesteele/dual-captions/'
+            rel='noopener noreferrer'
+            target='_blank'>
+            View on GitHub
+          </a>
+        </div>
+      </div>
     );
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default translate()(connect(mapStateToProps)(App));

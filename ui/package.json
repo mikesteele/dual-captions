@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "i18next": "9.0.1",
     "i18next-xhr-backend": "1.4.3",
     "react": "^16.0.0",
@@ -13,7 +16,8 @@
     "react-tabs": "^2.2.2",
     "react-toggle": "^4.0.2",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "sinon": "^5.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
