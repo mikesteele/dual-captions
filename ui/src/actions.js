@@ -17,6 +17,7 @@ export function changeDCLanguage(language) {
             type: 'CHANGE_SECOND_LANGUAGE',
             payload: language
           });
+          resolve();
         })
         .catch(() => {
           console.log(`actions: Can't get active tab ID, am I running locally?`);
@@ -50,12 +51,14 @@ export function turnDCOff(){
                 errorType: 'no-dc'
               }
             });
+            resolve();
           }
           if (response.ok) {
             dispatch({
               type: 'CHANGE_DC_ON',
               payload: false
             });
+            resolve();
           } else {
             if (response.errorType) {
               dispatch({
@@ -66,6 +69,7 @@ export function turnDCOff(){
                 }
               });
             }
+            resolve();
           }
         })
         .catch(() => {
@@ -99,12 +103,14 @@ export function turnDCOn(){
                 errorType: 'no-dc'
               }
             });
+            resolve();
           }
           if (response.ok) {
             dispatch({
               type: 'CHANGE_DC_ON',
               payload: true
             });
+            resolve();
           } else {
             if (response.errorType) {
               dispatch({
@@ -115,6 +121,7 @@ export function turnDCOn(){
                 }
               });
             }
+            resolve();
           }
         })
         .catch(() => {

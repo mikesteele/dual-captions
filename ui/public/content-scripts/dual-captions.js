@@ -1,11 +1,11 @@
 class DualCaptions {
   constructor() {
     this.isOn = false;
-    this.observer = new MutationObserver(this._onMutation.bind(this));
+    this.observer = new window.MutationObserver(this._onMutation.bind(this));
     this.secondLanguage = 'en';
     this.extraSpace = false;
 
-    chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
+    window.chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
   }
   _onMessage(message, sender, sendResponse) {
     switch (message.type) {
