@@ -52,3 +52,5 @@ class DualCaptionsConfig {
     captionWindow.append(element);
   }
 }
+
+window.DualCaptionsConfig = DualCaptionsConfig;
