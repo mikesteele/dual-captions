@@ -26,7 +26,7 @@
     "eject": "react-scripts eject"
   },
   "jest": {
-    "collectCoverageFrom": ["src/*"],
-    "coverageReporters": ["text-summary"]
+    "collectCoverageFrom": ["src/**"],
+    "coverageReporters": ["text"]
   }
 }
