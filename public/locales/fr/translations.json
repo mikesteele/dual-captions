@@ -1,5 +1,5 @@
 {
-  "dual-captions": "Deux sous-titres",
+  "dual-captions": "Deux Sous-titres",
   "main": "Acceuil",
   "settings": "Réglages",
   "supported-sites": "Sites compatibles",
@@ -11,5 +11,7 @@
   "stable": "Stable",
   "beta": "Bêta",
   "beta-explanation": "Vous pouvez voir des bugs si vous utilisez cette extension sur les sites bêtas. Aidez-moi en rapportant les bugs sur GitHub.",
-  "supports": "compatible avec YouTube & Netflix"
+  "supports": "compatible avec YouTube & Netflix",
+  "no-dc": "Deux Sous-titres n'est pas trouvé sur la page. Est-ce que vous êtes sur YouTube ou Netflix? Essayez de rafraîchir.",
+  "no-player": "Le player video n'est pas trouvé sur la page."
 }

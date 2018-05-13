@@ -19,6 +19,13 @@ class DualCaptions {
       sendResponse({ok: true});
       break;
 
+      case 'detect-site':
+      sendResponse({
+        ok: true,
+        site: window.DC.config.site
+      });
+      break;
+
       case 'get-state':
       sendResponse({
         ok: true,

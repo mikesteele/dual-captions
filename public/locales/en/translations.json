@@ -12,5 +12,6 @@
   "beta": "Beta",
   "beta-explanation": "You may see bugs using this extension on sites that are in beta. Please help the project by reporting bugs on GitHub.",
   "no-chrome": "The app is running locally, so Chrome Extension features will not work.",
-  "supports": "supports YouTube & Netflix"
+  "supports": "supports YouTube & Netflix",
+  "no-dc": "Two Captions not found on page. Are you on YouTube or Netflix? Please try refreshing the page."
 }

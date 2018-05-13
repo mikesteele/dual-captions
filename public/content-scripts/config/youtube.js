@@ -1,6 +1,7 @@
 class YouTubeConfig extends DualCaptionsConfig {
   constructor() {
     super();
+    this.site = "youtube";
     this.playerId = "movie_player";
     this.captionWindowClass = "caption-window";
     this.captionClass = "captions-text";

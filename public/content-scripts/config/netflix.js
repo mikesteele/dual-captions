@@ -1,6 +1,7 @@
 class NetflixConfig extends DualCaptionsConfig {
   constructor() {
     super();
+    this.site = 'netflix';
   }
 
   // Returns true if mutation reflects a caption added to the DOM.
