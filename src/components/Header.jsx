@@ -7,10 +7,15 @@ class Header extends Component {
       <I18n namespace='translations'>
       {
         (t) => (
-          <div className='header'>
-            <div className='icon'/>
-            <div className='title'>
-              {t('dual-captions')}
+          <div>
+            <div className='header'>
+              <div className='icon'/>
+              <div className='title'>
+                {t('dual-captions')}
+              </div>
+            </div>
+            <div className='subtitle'>
+              {t('supports')}
             </div>
           </div>
         )

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { I18n } from 'react-i18next';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { connect } from 'react-redux';
 import './App.css';
@@ -10,7 +9,6 @@ import Header from './components/Header.jsx';
 import MainPage from './components/MainPage.jsx';
 import SettingsPage from './components/SettingsPage.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
-import SupportedSitesPage from './components/SupportedSitesPage.jsx';
 
 import { translate } from 'react-i18next';
 
@@ -81,16 +79,12 @@ class App extends Component {
           <TabList>
             <Tab>{this.props.t('main')}</Tab>
             <Tab>{this.props.t('settings')}</Tab>
-            <Tab>{this.props.t('supported-sites')}</Tab>
           </TabList>
           <TabPanel>
             <MainPageView/>
           </TabPanel>
           <TabPanel>
             <SettingsPageView/>
-          </TabPanel>
-          <TabPanel>
-            <SupportedSitesPage/>
           </TabPanel>
         </Tabs>
         <ErrorPageView/>

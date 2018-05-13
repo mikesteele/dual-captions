@@ -1,5 +1,4 @@
 import i18n from 'i18next';
-import config from './config';
 
 export const storageMiddleware = store => next => action => {
   let result = next(action);

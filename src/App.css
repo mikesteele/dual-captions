@@ -43,7 +43,16 @@ a:hover {
   margin-top: 4px;
 }
 
-.header, .footer {
+.header {
+  padding-top: 16px;
+  padding-bottom: 4px;
+}
+
+.subtitle {
+  padding-bottom: 16px;
+}
+
+.footer {
   padding: 16px 0;
 }
 

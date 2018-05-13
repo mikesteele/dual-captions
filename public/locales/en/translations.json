@@ -11,5 +11,6 @@
   "stable": "Stable",
   "beta": "Beta",
   "beta-explanation": "You may see bugs using this extension on sites that are in beta. Please help the project by reporting bugs on GitHub.",
-  "no-chrome": "The app is running locally, so Chrome Extension features will not work."
+  "no-chrome": "The app is running locally, so Chrome Extension features will not work.",
+  "supports": "supports YouTube & Netflix"
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { I18n } from 'react-i18next';
 import Toggle from 'react-toggle';
 import { changeDCLanguage, turnDCOff, turnDCOn } from '../actions';
 import config from '../config';

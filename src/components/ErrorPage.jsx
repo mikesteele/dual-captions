@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { I18n } from 'react-i18next';
 import { translate } from 'react-i18next';
 
 /**

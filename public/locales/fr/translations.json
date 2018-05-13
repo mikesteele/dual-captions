@@ -10,5 +10,6 @@
   "extraSpace": "Espace entre les sous-titres",
   "stable": "Stable",
   "beta": "Bêta",
-  "beta-explanation": "Vous pouvez voir des bugs si vous utilisez cette extension sur les sites bêtas. Aidez-moi en rapportant les bugs sur GitHub."
+  "beta-explanation": "Vous pouvez voir des bugs si vous utilisez cette extension sur les sites bêtas. Aidez-moi en rapportant les bugs sur GitHub.",
+  "supports": "compatible avec YouTube & Netflix"
 }
