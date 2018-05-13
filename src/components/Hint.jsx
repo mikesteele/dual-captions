@@ -37,10 +37,9 @@ class Hint extends Component {
       {
         (t) => (
           <div>
-          <div>{this.state.detectedSite}</div>
-          <div className='hint'>
-            {t('hint-text')}
-          </div>
+            { this.state.detectedSite === 'netflix' && <div>Netflix detected! TODO</div> }
+            { this.state.detectedSite === 'youtube' && <div>YouTube detected! TODO</div> }
+            { this.state.detectedSite === '' && <div>No site detected yet! TODO</div> }
           </div>
         )
       }
