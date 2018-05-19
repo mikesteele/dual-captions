@@ -29,22 +29,40 @@ class MainPage extends Component {
     ));
     return (
       <div className='page'>
-        <Hint/>
-        <label>
-          <Toggle
-            checked={this.props.isOn}
-            icons={false}
-            onChange={this._onToggleChanged.bind(this)} />
-          <div>{ this.props.isOn ? this.props.t('on') : this.props.t('off') }</div>
-        </label>
-        <label>
-          <select
-            value={this.props.secondLanguage}
-            onChange={this._onSecondLanguageSelectChanged.bind(this)}>
-            { secondLanguages }
-          </select>
-          <div>{this.props.t('second-subtitle-language')}</div>
-        </label>
+        <div className='container'>
+          <div class="step-container">
+            <div class="step-number">
+              <span>1</span>
+            </div>
+            <div class="step-content step-1">
+              <Hint/>
+            </div>
+          </div>
+        </div>
+        <div className='container'>
+          <div class="step-container">
+            <div class="step-number">
+              <span>2</span>
+            </div>
+            <div class="step-content step-2">
+              <label>
+                <Toggle
+                  checked={this.props.isOn}
+                  icons={false}
+                  onChange={this._onToggleChanged.bind(this)} />
+                <div>{ this.props.isOn ? this.props.t('on') : this.props.t('off') }</div>
+              </label>
+              <label>
+                <select
+                  value={this.props.secondLanguage}
+                  onChange={this._onSecondLanguageSelectChanged.bind(this)}>
+                  { secondLanguages }
+                </select>
+                <div>{this.props.t('second-subtitle-language')}</div>
+              </label>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

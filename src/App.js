@@ -88,24 +88,28 @@ class App extends Component {
           </TabPanel>
         </Tabs>
         <ErrorPageView/>
-        <select value={this.props.uiLanguage} onChange={this._onUILanguageSelectChanged.bind(this)}>
-          <option value='en'>English</option>
-          <option value='fr'>French</option>
-        </select>
-        <div>
-          <a
-            href='https://github.com/mikesteele/dual-captions/issues'
-            rel='noopener noreferrer'
-            target='_blank'>
-            Report a bug
-          </a>
-          <span>&bull;</span>
-          <a
-            href='https://github.com/mikesteele/dual-captions/'
-            rel='noopener noreferrer'
-            target='_blank'>
-            View on GitHub
-          </a>
+        <div className='footer'>
+          <div>
+            <div className='ui-icon'/>
+            <select value={this.props.uiLanguage} onChange={this._onUILanguageSelectChanged.bind(this)}>
+              <option value='en'>English</option>
+              <option value='fr'>Français</option>
+            </select>
+          </div>
+          <div>
+            <a
+              href='https://github.com/mikesteele/dual-captions/issues'
+              rel='noopener noreferrer'
+              target='_blank'>
+              {this.props.t('report-a-bug')}
+            </a>
+            <a
+              href='https://github.com/mikesteele/dual-captions/'
+              rel='noopener noreferrer'
+              target='_blank'>
+              {this.props.t('view-on-github')}
+            </a>
+          </div>
         </div>
       </div>
     );

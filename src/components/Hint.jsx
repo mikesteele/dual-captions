@@ -36,10 +36,10 @@ class Hint extends Component {
       <I18n namespace='translations'>
       {
         (t) => (
-          <div>
-            { this.state.detectedSite === 'netflix' && <div>Netflix detected! TODO</div> }
-            { this.state.detectedSite === 'youtube' && <div>YouTube detected! TODO</div> }
-            { this.state.detectedSite === '' && <div>No site detected yet! TODO</div> }
+          <div className="hint">
+            { this.state.detectedSite === 'netflix' && <div>{t('netflix-hint')}</div> }
+            { this.state.detectedSite === 'youtube' && <div>{t('youtube-hint')}</div> }
+            { this.state.detectedSite === ''        && <div>{t('generic-hint')}</div> }
           </div>
         )
       }
