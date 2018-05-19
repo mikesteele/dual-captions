@@ -18,5 +18,6 @@
   "youtube-hint": "Sur YouTube, cliquez sur le bouton CC pour commencer les sous-titres.",
   "netflix-hint": "Sur Netflix, commencez les sous-titres.",
   "report-a-bug": "Signaler un bug",
-  "view-on-github": "Voir sur GitHub"
+  "view-on-github": "Voir sur GitHub",
+  "no-player": "Le player vidéo n'est pas trouvé sur la page."
 }
