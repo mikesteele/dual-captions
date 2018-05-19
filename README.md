@@ -20,14 +20,22 @@ This Chrome Extension creates a MutationObserver which waits for new caption ele
 
 ### Usage
 
-Link to Google Chrome Store: https://chrome.google.com/webstore/detail/dual-captions/lpeonmjfimoijceaalocpgjjchocbiap
+Download on the Google Web Store: https://chrome.google.com/webstore/detail/dual-captions/lpeonmjfimoijceaalocpgjjchocbiap
 
-You can load the extension manually by enabling Developer Mode in chrome://extensions. See https://developer.chrome.com/extensions/getstarted#unpacked.
+#### Manual Installation
 
-### Thanks!
+Building the extension locally requires having Node and Yarn installed. See https://nodejs.org/ and https://yarnpkg.com/ for installation steps.
 
-* google-translate-token: https://github.com/matheuss/google-translate-token
-* google-translate-api: https://github.com/matheuss/google-translate-api
+1. Install dependencies and build the extension.
+
+````
+yarn install
+yarn build
+````
+
+2. Load the /build/ directory as an unpacked extension in chrome://extensions
+
+You'll need to enable Developer Mode in chrome://extensions to do this. See https://developer.chrome.com/extensions/getstarted#unpacked for more information.
 
 ### License
 

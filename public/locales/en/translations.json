@@ -1,0 +1,22 @@
+{
+  "dual-captions": "Two Captions",
+  "main": "Main",
+  "settings": "Settings",
+  "supported-sites": "Supported Sites",
+  "second-subtitle-language": "Second Subtitle Language",
+  "off": "Off",
+  "on": "On",
+  "hint-text": "On the page, start captions. On YouTube, click the CC button. On Netflix, click the TODO button.",
+  "extraSpace": "Space between captions",
+  "stable": "Stable",
+  "beta": "Beta",
+  "beta-explanation": "You may see bugs using this extension on sites that are in beta. Please help the project by reporting bugs on GitHub.",
+  "no-chrome": "The app is running locally, so Chrome Extension features will not work.",
+  "supports": "supports YouTube & Netflix",
+  "no-dc": "Two Captions not found on page. Are you on YouTube or Netflix? Please try refreshing the page.",
+  "generic-hint": "On the page, start captions.",
+  "youtube-hint": "On YouTube, click the CC button to start captions.",
+  "netflix-hint": "On Netflix, start captions.",
+  "report-a-bug": "Report a bug",
+  "view-on-github": "View on GitHub"
+}
