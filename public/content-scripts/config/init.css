@@ -1,0 +1,7 @@
+.original-caption {
+  visibility: hidden !important;
+}
+
+.original-caption.translated {
+  visibility: visible !important;
+}

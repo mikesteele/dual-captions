@@ -12,6 +12,10 @@
   },
   "content_scripts": [{
     "all_frames": false,
+    "css": [
+      "content-scripts/config/init.css",
+      "content-scripts/config/netflix.css"
+    ],
     "js": [
       "content-scripts/init.js",
       "content-scripts/google-translate-token.js",
@@ -24,7 +28,10 @@
     "matches": [ "https://www.youtube.com/*" ]
    },{
     "all_frames": false,
-    "css": ["content-scripts/config/netflix.css"],
+    "css": [
+      "content-scripts/config/init.css",
+      "content-scripts/config/netflix.css"
+    ],
     "js": [
       "content-scripts/init.js",
       "content-scripts/google-translate-token.js",

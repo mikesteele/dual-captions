@@ -4,6 +4,7 @@ class DualCaptions {
     this.observer = new window.MutationObserver(this._onMutation.bind(this));
     this.secondLanguage = 'en';
     this.extraSpace = false;
+    this.delayRenderingUntilTranslation = true;
 
     window.chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
   }
@@ -85,6 +86,10 @@ class DualCaptions {
         let newCaption = window.DC.config.getNewCaption(mutation);
         if (newCaption) {
           this.lastCaption = newCaption.innerText;
+          newCaption.classList.add('original-caption');
+          if (!this.delayRenderingUntilTranslation) {
+            newCaption.classList.add('translated');
+          }
           window.DC.translate(this.lastCaption, {
             from: 'auto',
             to: this.secondLanguage
@@ -99,6 +104,7 @@ class DualCaptions {
                 window.DC.config.appendToDOM(breakElement);
               }
               window.DC.config.appendToDOM(translatedCaption);
+              newCaption.classList.add('translated');
             }
           });
         }
