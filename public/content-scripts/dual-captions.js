@@ -17,6 +17,7 @@ class DualCaptions {
 
       case 'change-settings':
       this.extraSpace = message.payload.extraSpace;
+      this.delayRenderingUntilTranslation = message.payload.delayRenderingUntilTranslation;
       sendResponse({ok: true});
       break;
 
