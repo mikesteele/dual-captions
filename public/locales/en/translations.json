@@ -19,5 +19,6 @@
   "netflix-hint": "On Netflix, start captions.",
   "report-a-bug": "Report a bug",
   "view-on-github": "View on GitHub",
-  "no-player": "Video player not found on page. Are you on a video?"
+  "no-player": "Video player not found on page. Are you on a video?",
+  "delayRenderingUntilTranslation": "Delay rendering (Recommended)"
 }

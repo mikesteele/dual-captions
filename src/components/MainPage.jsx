@@ -30,21 +30,21 @@ class MainPage extends Component {
     return (
       <div className='page'>
         <div className='container'>
-          <div class="step-container">
-            <div class="step-number">
+          <div className='step-container'>
+            <div className='step-number'>
               <span>1</span>
             </div>
-            <div class="step-content step-1">
+            <div className='step-content step-1'>
               <Hint/>
             </div>
           </div>
         </div>
         <div className='container'>
-          <div class="step-container">
-            <div class="step-number">
+          <div className='step-container'>
+            <div className='step-number'>
               <span>2</span>
             </div>
-            <div class="step-content step-2">
+            <div className='step-content step-2'>
               <label>
                 <Toggle
                   checked={this.props.isOn}
