@@ -106,6 +106,8 @@ class DualCaptions {
               }
               window.DC.config.appendToDOM(translatedCaption);
               newCaption.classList.add('translated');
+            } else {
+              newCaption.classList.add('translated');
             }
           });
         }
