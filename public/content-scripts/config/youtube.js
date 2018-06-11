@@ -3,7 +3,7 @@ class YouTubeConfig extends DualCaptionsConfig {
     super();
     this.site = "youtube";
     this.playerId = "movie_player";
-    this.captionWindowClass = "caption-window";
+    this.captionWindowClass = "ytp-caption-window-bottom";
     this.captionClass = "captions-text";
   }
 

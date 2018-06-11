@@ -1,5 +1,5 @@
+![build](https://travis-ci.com/mikesteele/dual-captions.svg?branch=master)
 ## dual-captions <br/> Show captions in 2 languages on YouTube and Netflix 💬
-
 ![screenshot](https://github.com/mikesteele/dual-captions-gifs/raw/master/screenshot.gif)
 <br/>
 ### <a href="https://www.youtube.com/watch?v=E0QQoeUAIpE" target="_blank">Watch video demo</a>

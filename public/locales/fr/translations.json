@@ -19,5 +19,6 @@
   "netflix-hint": "Sur Netflix, commencez les sous-titres.",
   "report-a-bug": "Signaler un bug",
   "view-on-github": "Voir sur GitHub",
+  "no-player": "Le player vidéo n'est pas trouvé sur la page.",
   "delayRenderingUntilTranslation": "Retarder le rendu (Recommandé)"
 }
