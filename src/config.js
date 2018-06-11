@@ -2,7 +2,7 @@ import { default as secondLanguages } from './languages';
 
 const config = {
   defaultSettings: {
-  	delayRenderingUntilTranslation: true,
+    delayRenderingUntilTranslation: true,
     extraSpace: false
   },
   secondLanguages: secondLanguages,
