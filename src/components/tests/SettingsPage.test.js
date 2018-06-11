@@ -28,7 +28,7 @@ afterEach(() => {
 
 describe('<SettingsPage />', () => {
   it('should dispatch on setting clicked', () => {
-    wrapper.find('input').simulate('change');
+    wrapper.find('input').first().simulate('change');
     expect(dispatchSpy.called).to.be.true;
   });
 });
