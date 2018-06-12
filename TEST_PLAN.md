@@ -24,6 +24,9 @@ Search "Ted Talk", choose a video with CC. Turn DC on. DC should work. Turn on E
 ##### Delayed rendering
 Search "Ted Talk", choose a video with CC. Turn DC on. DC should work. Turn off delayed rendering. Delayed rendering should be off.
 
+##### Fullscreen
+Making a video fullscreen should not produce additional captions.
+
 #### Multitab tests
 ###### Should read settings from page
 Make two tabs. Load two different Ted Talks with CC. Start DC in both, but make the first tab have "French" subtitles with no extra space, and the second "Spanish" with extra space. Switch between the tabs. Settings should be maintained. Open the popup on each page. The popup should correctly match the page settings. Now turn the second tab off. Switch between tabs. Popup should correctly match the DC status on both pages.
