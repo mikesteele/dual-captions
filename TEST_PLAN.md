@@ -4,11 +4,11 @@ This is a manual test plan for integration testing of dual-captions. It should b
 ### Test Plan tests (meta)
 #### Netflix 
 ##### Top
-Verify that Bleach - English CC has "top" captions. Find "player-timedtext-text-container" in the DOM. It should have a top style.
+Verify that Bleach - English subtitles has "top" captions. Find "player-timedtext-text-container" in the DOM. It should have a top style.
 ##### Bottom - 1
-Verify that Cosmos: A Spacetime Odyssey - Spanish CC has bottom captions. Find "player-timedtext-text-container" in the DOM. It should have a bottom style.
+Verify that Cosmos: A Spacetime Odyssey - Spanish subtitles has bottom captions. Find "player-timedtext-text-container" in the DOM. It should have a bottom style.
 ##### Bottom - 2
-Verify that Cosmos: A Spacetime Odyssey - English \[CC\] has bottom captions. Find "player-timedtext-text-container" in the DOM. It should have a bottom style.
+Verify that Cosmos: A Spacetime Odyssey - English \[CC\] subtitles has bottom captions. Find "player-timedtext-text-container" in the DOM. It should have a bottom style.
 
 ### YouTube
 #### Basic tests
