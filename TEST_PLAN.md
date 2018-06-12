@@ -38,3 +38,5 @@ Open youtube.com/robots.txt. Attempting to turn on DC should give no-player erro
 ### Netflix
 Repeat the YouTube tests. Because Netflix has various subtypes of captions, run the tests on both Cosmos: A Spacetime Odyssey - Spanish CC (bottom), Cosmos: A Spacetime Odyssey - English \[CC\] (CC, top) and Bleach ().
 
+#### Pausing
+Pause a Netflix video. DC should re-render and stay visible as the app displays the video title, etc.
