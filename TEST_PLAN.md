@@ -38,6 +38,12 @@ Open a non-YouTube page. Attempting to turn on DC should give no-dc error.
 ##### no-player
 Open youtube.com/robots.txt. Attempting to turn on DC should give no-player error.
 
+##### image-subtitles
+Open 'Stranger Things' on Netflix. Turn on Traditional Chinese captions. Open DC. DC should have 'image-subtitles' error.
+
+##### automatic-subtitles
+Open a non-CC video on YouTube. Turn on automatic captions. Open DC. DC should have 'automatic-subtitles' error.
+
 ### Netflix
 Repeat the YouTube tests. Because Netflix has various subtypes of captions, run the tests on both Cosmos: A Spacetime Odyssey - Spanish CC (bottom), Cosmos: A Spacetime Odyssey - English \[CC\] (CC, top) and Bleach ().
 
