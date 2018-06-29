@@ -7,6 +7,25 @@ class YouTubeConfig extends DualCaptionsConfig {
     this.captionClass = "captions-text";
   }
 
+  onPopupOpened() {
+    /**
+
+    This sends an alert to the popup that automatic captions (.ytp-caption-window-rollup) aren't supported.
+
+    **/
+    const automaticSubtitles = document.querySelector('.ytp-caption-window-rollup');
+    if (automaticSubtitles) {
+      return {
+        ok: false,
+        errorType: 'automatic-subtitles'
+      }
+    } else {
+      return {
+        ok: true
+      }
+    }
+  }
+
   // Returns true if mutation reflects a caption added to the DOM.
   captionWasAdded(mutation) {
     return mutation.target.classList.contains(this.captionClass) && mutation.addedNodes.length > 0; 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { connect } from 'react-redux';
+import { translate } from 'react-i18next';
+
 import './App.css';
 import 'react-toggle/style.css';
 import 'react-tabs/style/react-tabs.css';
@@ -10,9 +12,7 @@ import MainPage from './components/MainPage.jsx';
 import SettingsPage from './components/SettingsPage.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
 
-import { translate } from 'react-i18next';
-
-import { updateStoreFromDC } from './actions';
+import { updateStoreFromDC, popupOpened } from './actions';
 
 const mapStateToProps = function(state) {
   return {...state};
@@ -24,28 +24,9 @@ const ErrorPageView = connect(mapStateToProps)(ErrorPage);
 
 class App extends Component {
   componentDidMount() {
-    if (window.chrome && window.chrome.storage) {
-      window.chrome.storage.local.get('__DC_store__', result => {
-        const savedStore = result.__DC_store__;
-        if (savedStore) {
-          const savedStoreJSON = JSON.parse(savedStore);
-          if (savedStoreJSON.DC) {
-            this.props.dispatch({
-              type: 'HYDRATE_STORE',
-              payload: savedStoreJSON
-            });
-          }
-          this.props.dispatch(updateStoreFromDC());
-        } else {
-          // MS: If no saved store, infer UI language
-          this._inferUILanguage();
-          this.props.dispatch(updateStoreFromDC());
-        }
-      });
-    } else {
-      this._inferUILanguage();
-      this.props.dispatch(updateStoreFromDC());
-    }
+    this._inferUILanguage();
+    this.props.dispatch(updateStoreFromDC());
+    this.props.dispatch(popupOpened());
   }
 
   _inferUILanguage() {

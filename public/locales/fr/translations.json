@@ -20,5 +20,7 @@
   "report-a-bug": "Signaler un bug",
   "view-on-github": "Voir sur GitHub",
   "no-player": "Le player vidéo n'est pas trouvé sur la page.",
-  "delayRenderingUntilTranslation": "Retarder le rendu (Recommandé)"
+  "delayRenderingUntilTranslation": "Retarder le rendu (Recommandé)",
+  "image-subtitles": "Désolé, des sous-titres en chinois et en japonais sur Netflix ne marchent pas.",
+  "automatic-subtitles": "Désolé, des sous-titres généré automatiquement ne marchent pas. Vous pouvez trouver des videos compatibles avec le filtre 'sous-titres' dans la recherche."
 }
