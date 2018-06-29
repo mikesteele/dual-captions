@@ -53,6 +53,14 @@ class DualCaptions {
       });
       break;
 
+      case 'popup-opened':
+      const response = window.DC.config.onPopupOpened();
+      sendResponse({
+        ok: response.ok,
+        errorType: response.errorType
+      });
+      break;
+
       case 'start-observer':
       try {
         this.observer.observe(window.DC.config.getPlayer(), {

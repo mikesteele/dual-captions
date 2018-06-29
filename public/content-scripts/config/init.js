@@ -1,16 +1,14 @@
 class DualCaptionsConfig {
-  /**
-   *
-   * Properties
-   * 
-   * player - Video player element, captionWindow is a child
-   * captionWindow - Element that contains the captions
-   *
-   */
   constructor() {
     this.player = this.getPlayer();
     this.captionWindow = this.getCaptionWindow();
     this.orderCounter = 0;
+  }
+
+  onPopupOpened() {
+    return {
+      ok: true
+    }
   }
 
   // Returns true if mutation reflects a caption added to the DOM.

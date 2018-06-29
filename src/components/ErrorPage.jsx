@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
 
+import { popupOpened } from '../actions';
+
 /**
 
 Error types:
 
 'no-dc': DC not found on page.
 'no-player': DC couldn't observe because getPlayer didn't return an element.
+'automatic-captions': DC saw automatic captions, which it can't support. (YouTube only)
+'image-captions': DC saw image captions, which it can't support. (Netflix only)
 
 **/
 
 class ErrorPage extends Component {
+
+  componentDidMount() {
+    this.props.dispatch(popupOpened());
+  }
+
   _onClickDismiss() {
     this.props.dispatch({
       type: 'CHANGE_ERROR',

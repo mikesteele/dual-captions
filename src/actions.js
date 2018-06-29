@@ -1,5 +1,36 @@
 import { getActiveTabId } from './utils/chrome.js';
 
+export function popupOpened() {
+  return function (dispatch) {
+    return new Promise((resolve, _) => {
+      getActiveTabId()
+        .then(tabId => {
+          return new Promise(_resolve => {
+            window.chrome.tabs.sendMessage(tabId, {
+              type: 'popup-opened'
+            }, _resolve);
+          });
+        })
+        .then(response => {
+          if (!response.ok && response.errorType) {
+            dispatch({
+              type: 'CHANGE_ERROR',
+              payload: {
+                hasError: true,
+                errorType: response.errorType
+              }
+            });
+          }
+          resolve();
+        })
+        .catch(() => {
+          console.log('actions: Can\'t get active tab ID, am I running locally?');
+          resolve();
+        });
+    });
+  }
+}
+
 export function changeDCLanguage(language) {
   return function (dispatch) {
     return new Promise((resolve, _) => {

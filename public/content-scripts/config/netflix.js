@@ -4,6 +4,26 @@ class NetflixConfig extends DualCaptionsConfig {
     this.site = 'netflix';
   }
 
+  onPopupOpened() {
+    /**
+
+    Chinese and Japanese subtitles use images (.image-based-timed-text) to render, which aren't translatable.
+    This sends an alert to the popup that they aren't supported by DC.
+
+    **/
+    const imageSubtitles = document.querySelector('.image-based-timed-text');
+    if (imageSubtitles) {
+      return {
+        ok: false,
+        errorType: 'image-subtitles'
+      }
+    } else {
+      return {
+        ok: true
+      }
+    }
+  }
+
   // Returns true if mutation reflects a caption added to the DOM.
   captionWasAdded(mutation) {
     const captionWindow = this.getCaptionWindow();
