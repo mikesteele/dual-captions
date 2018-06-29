@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { connect } from 'react-redux';
+import { translate } from 'react-i18next';
+
 import './App.css';
 import 'react-toggle/style.css';
 import 'react-tabs/style/react-tabs.css';
@@ -10,9 +12,7 @@ import MainPage from './components/MainPage.jsx';
 import SettingsPage from './components/SettingsPage.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
 
-import { translate } from 'react-i18next';
-
-import { updateStoreFromDC } from './actions';
+import { updateStoreFromDC, popupOpened } from './actions';
 
 const mapStateToProps = function(state) {
   return {...state};
@@ -26,6 +26,7 @@ class App extends Component {
   componentDidMount() {
     this._inferUILanguage();
     this.props.dispatch(updateStoreFromDC());
+    this.props.dispatch(popupOpened());
   }
 
   _inferUILanguage() {

@@ -15,11 +15,6 @@ Error types:
 **/
 
 class ErrorPage extends Component {
-
-  componentDidMount() {
-    this.props.dispatch(popupOpened());
-  }
-
   _onClickDismiss() {
     this.props.dispatch({
       type: 'CHANGE_ERROR',

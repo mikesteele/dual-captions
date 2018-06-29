@@ -7,12 +7,11 @@ import App from './App';
 import './i18n';
 import reducer from './reducer';
 import ReduxThunk from 'redux-thunk';
-import { storageMiddleware, i18nMiddleware, loggingMiddleware } from './middleware';
+import { i18nMiddleware, loggingMiddleware } from './middleware';
 
 const store = createStore(reducer,
   applyMiddleware(
     ReduxThunk,
-    storageMiddleware,
     i18nMiddleware,
     loggingMiddleware
   )
