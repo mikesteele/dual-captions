@@ -27,7 +27,7 @@ class NetflixConfig extends DualCaptionsConfig {
   // Returns true if mutation reflects a caption added to the DOM.
   captionWasAdded(mutation) {
     const captionWindow = this.getCaptionWindow();
-    return mutation.target === captionWindow && mutation.addedNodes.length > 0; 
+    return mutation.target === captionWindow && mutation.addedNodes.length > 0 && !this._isDCCaption(mutation.addedNodes[0]);
   }
 
   // Get the video player element.

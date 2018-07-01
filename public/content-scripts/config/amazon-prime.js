@@ -1,4 +1,9 @@
 class AmazonPrimeConfig extends DualCaptionsConfig {
+  constructor() {
+    super();
+    this.site = 'amazon';
+  }
+
   getPlayer() {
     return document.getElementById('dv-web-player');
   }
