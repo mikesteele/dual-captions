@@ -41,6 +41,21 @@
       "content-scripts/dual-captions.js"
     ],
     "matches": [ "https://www.netflix.com/*" ]
+   }, {
+    "all_frames": false,
+    "css": [
+      "content-scripts/config/init.css"
+    ],
+    "js": [
+      "content-scripts/init.js",
+      "content-scripts/google-translate-token.js",
+      "content-scripts/querystring-encode.js",
+      "content-scripts/google-translate-api.js",
+      "content-scripts/config/init.js",
+      "content-scripts/config/amazon-prime.js",
+      "content-scripts/dual-captions.js"
+    ],
+    "matches": [ "https://www.amazon.com/*" ]
    }],
   "icons": {
     "16": "icon.png",

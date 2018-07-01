@@ -5,6 +5,14 @@ class DualCaptionsConfig {
     this.orderCounter = 0;
   }
 
+  _isDCCaption(element) {
+    if (element.nodeType !== 1) {
+      return false;
+    }
+    // TODO - return element.hasAttribute('__dc-caption__');
+    return true;
+  }
+
   onPopupOpened() {
     return {
       ok: true
