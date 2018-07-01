@@ -108,30 +108,11 @@ Two things look wrong here: there's no Step 1 text in the popup and we got an er
 
 ## 3. Connect the player to the adaptor
 
-To get a "Step 1" in the popup, the adaptor needs to have a site.
+To connect the player to the adaptor, we need to implement `getPlayer()`, which should return the video player element. Inspecting the Amazon Prime video DOM, I can see that the player has an ID of `dv-web-player`. 
 
 `public/content-scripts/config/amazon-prime.js`
 ```
 class AmazonPrimeConfig extends DualCaptionsConfig {
-  constructor() {
-    super();
-    this.site = 'amazon';
-  }
-}
-
-window.DC.config = new AmazonPrimeConfig();
-```
-
-Next, we need to implement `getPlayer()`, which should return the video player element. Inspecting the Amazon Prime video DOM, the player has an ID of `dv-web-player`. 
-
-`public/content-scripts/config/amazon-prime.js`
-```
-class AmazonPrimeConfig extends DualCaptionsConfig {
-  constructor() {
-    super();
-    this.site = 'amazon';
-  }
-  
   getPlayer() {
     return document.getElementById('dv-web-player');
   }
@@ -139,5 +120,14 @@ class AmazonPrimeConfig extends DualCaptionsConfig {
 
 window.DC.config = new AmazonPrimeConfig();
 ```
+
+Reload the extension in `chrome://extensions` and try to turn on DC again, and you'll see the error has disappeared:
+<img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/screenshot-2.png">
+
+DC was successfully turned on and is observing the video player for changes. But wait, there's only one set of captions...?
+
+## 4. What does a caption look like?
+
+Our Amazon Prime adaptor doesn't know what a caption element looks like, so it can't tell if mutations observed in the player are new captions or not. Captions could have a certain class or they could be children of a certain element. (say, a caption window) 
 
 
