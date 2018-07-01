@@ -79,6 +79,12 @@ class App extends Component {
           </div>
           <div>
             <a
+              href='https://chrome.google.com/webstore/detail/two-captions-for-youtube/lpeonmjfimoijceaalocpgjjchocbiap'
+              rel='noopener noreferrer'
+              target='_blank'>
+              {this.props.t('leave-feedback')}
+            </a>
+            <a
               href='https://github.com/mikesteele/dual-captions/issues'
               rel='noopener noreferrer'
               target='_blank'>

@@ -15,7 +15,9 @@ class Header extends Component {
               </div>
             </div>
             <div className='subtitle'>
-              {t('supports')}
+              {t('supports')} YouTube, Netflix &
+              <br/>
+              Amazon Prime Video
             </div>
           </div>
         )

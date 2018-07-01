@@ -3,6 +3,28 @@ class DualCaptionsConfig {
     this.player = this.getPlayer();
     this.captionWindow = this.getCaptionWindow();
     this.orderCounter = 0;
+    this.site = '';
+  }
+
+  // Prevents the appending of the translation from triggering _onMutation()
+  _isDCCaption(element) {
+    // If it's not an element, it's not a DC caption.
+    if (element.nodeType !== 1) {
+      return false;
+    }
+    if (element.tagName === 'BR') {
+      return true;
+    }
+    if (element.classList.contains('dual-captions-window')) {
+      return true;
+    }
+    if (element.hasAttribute('__dc-caption__')) {
+      return true;
+    }
+    if (element.hasAttribute('__dc-break__')) {
+      return true;
+    }
+    return false;
   }
 
   onPopupOpened() {

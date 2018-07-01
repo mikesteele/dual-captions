@@ -135,23 +135,10 @@ class DualCaptions {
       return false;
     }
   }
-  /**
-  
-  TODO
-  ----
-
-  Future architecture:
-
-  DC.js - controls MutationObserver, listens to messages, passes mutations to an adaptor, doesn't create elements.
-  Base Adaptor - move _onMutation logic to a method on the adaptor, no need for child adaptors to implement method.
-  Adaptor - creates elements, repositions elements, determines if a mutation should be acted upon, 
-
-  DC shouldn't interact with DOM besides listening for mutations. Base adaptor handles checking the DOM for duplicates, appending elements, etc.
-
-  **/
   _createBreakElement() {
     let breakElement = document.createElement('div');
     breakElement.style.cssText = 'height: 10px';
+    breakElement.setAttribute('__dc-break__', true);
     return breakElement;
   }
 }

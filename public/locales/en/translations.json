@@ -1,5 +1,5 @@
 {
-  "dual-captions": "Two Captions",
+  "dual-captions": "Dual Captions",
   "main": "Main",
   "settings": "Settings",
   "supported-sites": "Supported Sites",
@@ -12,15 +12,17 @@
   "beta": "Beta",
   "beta-explanation": "You may see bugs using this extension on sites that are in beta. Please help the project by reporting bugs on GitHub.",
   "no-chrome": "The app is running locally, so Chrome Extension features will not work.",
-  "supports": "supports YouTube & Netflix",
-  "no-dc": "Two Captions not found on page. Are you on YouTube or Netflix? Please try refreshing the page.",
+  "supports": "Supports",
+  "no-dc": "Dual Captions not found on page. Are you on YouTube, Netflix or Amazon Prime Video? Please try refreshing the page.",
   "generic-hint": "On the page, start captions.",
   "youtube-hint": "On YouTube, click the CC button to start captions.",
   "netflix-hint": "On Netflix, start captions.",
+  "amazon-hint": "On Amazon, start captions.",
   "report-a-bug": "Report a bug",
   "view-on-github": "View on GitHub",
   "no-player": "Video player not found on page. Are you on a video?",
   "delayRenderingUntilTranslation": "Delay rendering (Recommended)",
   "image-subtitles": "Sorry, subtitles in Chinese and Japanese on Netflix are not supported at this time. However, Chinese and Japanese captions will work on YouTube.",
-  "automatic-subtitles": "Sorry, automatic subtitles on YouTube are not supported at this time. You can find supported videos by searching YouTube and filtering by 'Subtitles/CC'."
+  "automatic-subtitles": "Sorry, automatic subtitles on YouTube are not supported at this time. You can find supported videos by searching YouTube and filtering by 'Subtitles/CC'.",
+  "leave-feedback": "Give feedback"
 }

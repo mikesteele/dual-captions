@@ -39,6 +39,7 @@ class Hint extends Component {
           <div className="hint">
             { this.state.detectedSite === 'netflix' && <div>{t('netflix-hint')}</div> }
             { this.state.detectedSite === 'youtube' && <div>{t('youtube-hint')}</div> }
+            { this.state.detectedSite === 'amazon'  && <div>{t('amazon-hint')}</div> }
             { this.state.detectedSite === ''        && <div>{t('generic-hint')}</div> }
           </div>
         )

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
 
-import { popupOpened } from '../actions';
-
 /**
 
 Error types:
