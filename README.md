@@ -1,7 +1,14 @@
+## dual-captions <br/> Subtitles in two languages for YouTube, Netflix and Amazon Video
 ![build](https://travis-ci.com/mikesteele/dual-captions.svg?branch=master)
-## dual-captions <br/> Show captions in 2 languages on YouTube and Netflix 💬
-![screenshot](https://github.com/mikesteele/dual-captions-gifs/raw/master/screenshot.gif)
-<br/>
+
+| Netflix  |
+|:--------:|
+| <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/netflix.png"> |
+
+| YouTube      | Amazon        |
+|:-------------:|:-------------:|
+| <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/youtube.png"> | <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/amazon.png"> |
+
 ### <a href="https://www.youtube.com/watch?v=E0QQoeUAIpE" target="_blank">Watch video demo</a>
 ### Fast Facts
 
@@ -13,8 +20,6 @@
 ### Intro
 
 As someone learning a foreign language, it is helpful for me to see both what the speaker is saying and the translation. 
-
-As of March 2018, YouTube and Netflix can only show captions in one language. 
 
 This Chrome Extension creates a MutationObserver which waits for new caption elements to be added to the DOM. It then translates the text of these captions and adds the translated captions underneath.
 
