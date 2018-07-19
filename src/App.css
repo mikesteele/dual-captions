@@ -17,7 +17,7 @@ a:hover {
 }
 .react-tabs__tab:focus {
   box-shadow: none !important;
-  border-color: #aaa !important; 
+  border-color: #aaa !important;
 }
 
 .page {
@@ -215,4 +215,35 @@ table {
 .step-content.step-1,
 .step-content.step-2 {
   width: 250px;
+}
+
+.colors-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  margin-left: 32px;
+}
+
+.colors-container[hidden] {
+  visibility: hidden;
+}
+
+.colors-container span {
+  padding: 8px;
+}
+
+label {
+  user-select: none;
+  cursor: pointer;
+}
+
+.settings-page {
+  align-items: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.settings-page > div {
+  margin-bottom: 8px;
 }

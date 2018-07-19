@@ -2,9 +2,14 @@ class DualCaptions {
   constructor() {
     this.isOn = false;
     this.observer = new window.MutationObserver(this._onMutation.bind(this));
+
+    // Settings
     this.secondLanguage = 'en';
     this.extraSpace = false;
     this.delayRenderingUntilTranslation = true;
+    this.colorSubtitleEnabled = false;
+    this.colorSubtitleBackgroundColor = '#000000';
+    this.colorSubtitleTextColor = '#FFFFFF';
 
     window.chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
   }
@@ -18,6 +23,9 @@ class DualCaptions {
       case 'change-settings':
       this.extraSpace = message.payload.extraSpace;
       this.delayRenderingUntilTranslation = message.payload.delayRenderingUntilTranslation;
+      this.colorSubtitleEnabled = message.payload.colorSubtitleEnabled;
+      this.colorSubtitleBackgroundColor = message.payload.colorSubtitleBackgroundColor;
+      this.colorSubtitleTextColor = message.payload.colorSubtitleTextColor;
       sendResponse({ok: true});
       break;
 
@@ -34,6 +42,10 @@ class DualCaptions {
         isOn: this.isOn,
         secondLanguage: this.secondLanguage,
         settings: {
+          colorSubtitleEnabled: this.colorSubtitleEnabled,
+          colorSubtitleBackgroundColor: this.colorSubtitleBackgroundColor,
+          colorSubtitleTextColor: this.colorSubtitleTextColor,
+          delayRenderingUntilTranslation: this.delayRenderingUntilTranslation,
           extraSpace: this.extraSpace
         }
       });
@@ -108,6 +120,10 @@ class DualCaptions {
               translatedCaption.innerText = translation.text;
               translatedCaption.setAttribute('__dc-caption__', true);
               translatedCaption = window.DC.config.styleCaptionElement(translatedCaption, mutation, newCaptionOrder);
+              if (this.colorSubtitleEnabled) {
+                translatedCaption.style.color = this.colorSubtitleTextColor;
+                translatedCaption.style.backgroundColor = this.colorSubtitleBackgroundColor;
+              }
               if (this.extraSpace) {
                 let breakElement = this._createBreakElement();
                 window.DC.config.appendToDOM(breakElement);
