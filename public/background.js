@@ -15,6 +15,41 @@ captionRequestUrls = {
   }
 }
 
+---
+
+TODO - Notes
+
+Popup requests second language change
+
+DC receives message, asks TranslationProvider if it has lang
+
+If it has it loaded, it sends a response back to the popup to indicate to the user (green dot in dropdown)
+
+If it doesn't have it loaded, it asks TranslationFetcher to try fetching it
+
+TranslationFetcher asks background page for a URL to use to fetch (background page should've intercepted a subtitle URL)
+
+TranslationFetcher error cases:
+* Background page has no URL for this video - did the user turn on subtitles?
+* Fetch caught - reason unknown
+* Response was ok but body is empty - no static captions available for this lang
+
+If fetch is successful, TranslationFetcher passes the body to a TranslationParser
+
+TranslationParser parses the file and loads the translations into TranslationProvider
+
+---
+
+New files
+
+TranslationParser
+TranslationFetcher
+TranslationProvider
+
+New file structure
+
+public/content-scripts/youtube/adapter|provider|fetcher|parser|css?
+
 **/
 
 let captionRequestUrls = {
