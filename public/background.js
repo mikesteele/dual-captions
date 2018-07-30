@@ -2,6 +2,8 @@
 
 TODO
 
+/&v=(\w+)&/g
+
 Should be video specific?
 
 https://www.youtube.com/api/timedtext?expire=1532998159&caps=asr&v=4INdeZ5HYpw&hl=en_US&sparams=asr_langs%2Ccaps%2Cv%2Cxorp%2Cexpire&xorp=True&asr_langs=es%2Cpt%2Cru%2Cko%2Cit%2Cde%2Cfr%2Cnl%2Cja%2Cen&key=yttt1&signature=2E87F5D3FA5E783C30607D39C27E6BEB48F3F21F.3DDF41F633464F2CEA29967B8006416A8B5F7470&lang=es&fmt=srv3
@@ -53,7 +55,7 @@ public/content-scripts/youtube/adapter|provider|fetcher|parser|css?
 **/
 
 let captionRequestUrls = {
-  youtube: null
+  youtube: {}
 }
 
 chrome.webRequest.onBeforeRequest.addListener(
@@ -64,48 +66,29 @@ chrome.webRequest.onBeforeRequest.addListener(
 
 function onBeforeYouTubeCaptionRequest(details) {
   // TODO - Prevent DC triggered calls from being put into object?
-  console.log(`Background - Adding ${details.url} to captionRequestUrls`);
-  captionRequestUrls.youtube = details.url;
-  // TODO - save to video-specific key
-}
-
-/**
-
-The following functions should be in a content script.
-Maybe 'TranslationFetcher'
-
-Background script should only have onBeforeRequest handlers and the captionRequestUrls object.
-Which it sends to the content_scripts on a certain message.
-
-**/
-
-// TODO - Should take language, videoID
-// TODO - Add videoId to DC adapter - window.DC.adapter.videoID
-function fetchLanguage(language) {
-  if (captionRequestUrls.youtube) {
-    const requestUrl = captionRequestUrls.youtube.replace(/lang=[a-z]+/g, `lang=${language}`);
-    console.log(requestUrl);
-    console.log(language);
-    fetch(requestUrl)
-      .then(response => {
-        console.log(response.ok);
-        // TODO - Is it ever not ok?
-        return response.text();
-      })
-      .then(responseText => {
-        if (!responseText) {
-          console.log(`No captions available for ${language}`);
-          // TODO - Maybe expired?
-          // TODO
-        }
-        console.log(responseText);
-      })
-      .catch(err => {
-        console.log('Got err');
-        console.log(err);
-      })
-  } else {
-    console.log('Cant fetch language - no YouTube API call');
-    // TODO - Return { ok: false } - No YouTube caption URL
+  const videoIdPattern = /&v=(\w+)&/g;
+  if (videoIdPattern.test(details.url)) {
+    console.log(videoIdPattern.exec(details.url));
+    // TODO - FIXME - Why is this null? ^
+    const videoId = videoIdPattern.exec(details.url)[1];
+    captionRequestUrls.youtube[videoId] = details.url;
+    console.log(`Background - Adding ${details.url} to captionRequestUrls.youtube.${videoId}`);
   }
 }
+
+function onMessage(message, sender, sendResponse) {
+  switch (message.type) {
+    case 'get-caption-request-urls':
+    sendResponse({
+      ok: true,
+      captionRequestUrls: captionRequestUrls
+    });
+    break;
+
+    default:
+    // TODO - Do I need a default case?
+    break;
+  }
+}
+
+chrome.runtime.onMessage.addListener(onMessage);

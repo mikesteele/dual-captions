@@ -9,10 +9,27 @@ class DualCaptions {
     window.chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
   }
   _onMessage(message, sender, sendResponse) {
+    const provider = window.DC.provider;
+    // TODO - ^ Can be moved out of here?
+
     switch (message.type) {
       case 'change-language':
       this.secondLanguage = message.payload;
-      sendResponse({ok: true});
+      provider.requestLanguage(this.secondLanguage)
+        .then(() => {
+          sendResponse({
+            ok: true,
+            captionsInVideo: true
+          });
+        })
+        .catch(err => {
+          alert(err);
+          console.log(`Couldn't load static translations: ${err}`);
+          sendResponse({
+            ok: true,
+            captionsInVideo: false
+          });
+        })
       break;
 
       case 'change-settings':

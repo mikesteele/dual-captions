@@ -5,6 +5,7 @@ class YouTubeConfig extends DualCaptionsConfig {
     this.playerId = "movie_player";
     this.captionWindowClass = "ytp-caption-window-bottom";
     this.captionClass = "captions-text";
+    this.videoId = '4INdeZ5HYpw'; // FIXME
   }
 
   onPopupOpened() {
@@ -28,7 +29,7 @@ class YouTubeConfig extends DualCaptionsConfig {
 
   // Returns true if mutation reflects a caption added to the DOM.
   captionWasAdded(mutation) {
-    return mutation.target.classList.contains(this.captionClass) && mutation.addedNodes.length > 0; 
+    return mutation.target.classList.contains(this.captionClass) && mutation.addedNodes.length > 0;
   }
 
   // Get the video player element.
@@ -39,7 +40,7 @@ class YouTubeConfig extends DualCaptionsConfig {
   // Get the caption window element.
   getCaptionWindow() {
     return document.querySelector(`.${this.captionWindowClass}:not(.ytp-caption-window-rollup)`);
-    // Automatic captions (.ytp-caption-window-rollup) won't work, so we prevent using them. 
+    // Automatic captions (.ytp-caption-window-rollup) won't work, so we prevent using them.
   }
 
   // Get the new caption element from a mutation record.

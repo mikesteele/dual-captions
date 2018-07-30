@@ -31,6 +31,11 @@
       "content-scripts/google-translate-api.js",
       "content-scripts/config/init.js",
       "content-scripts/config/youtube.js",
+      "content-scripts/init/parser.js",
+      "content-scripts/init/fetcher.js",
+      "content-scripts/youtube/fetcher.js",
+      "content-scripts/youtube/parser.js",
+      "content-scripts/init/provider.js",
       "content-scripts/dual-captions.js"
     ],
     "matches": [ "https://www.youtube.com/*" ]
