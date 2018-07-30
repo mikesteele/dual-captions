@@ -3,8 +3,17 @@
   "description": "Show subtitles in two languages on Youtube and Netflix",
   "version": "1.3.3",
   "permissions": [
-    "tabs", "http://*/*", "https://*/*", "storage"
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "storage",
+    "webRequest"
   ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
   "browser_action": {
       "default_title": "Show dual captions",
       "default_icon": "icon.png",
