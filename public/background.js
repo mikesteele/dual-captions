@@ -1,3 +1,22 @@
+/**
+
+TODO
+
+Should be video specific?
+
+https://www.youtube.com/api/timedtext?expire=1532998159&caps=asr&v=4INdeZ5HYpw&hl=en_US&sparams=asr_langs%2Ccaps%2Cv%2Cxorp%2Cexpire&xorp=True&asr_langs=es%2Cpt%2Cru%2Cko%2Cit%2Cde%2Cfr%2Cnl%2Cja%2Cen&key=yttt1&signature=2E87F5D3FA5E783C30607D39C27E6BEB48F3F21F.3DDF41F633464F2CEA29967B8006416A8B5F7470&lang=es&fmt=srv3
+
+Comes with video key of `v=ID`
+
+captionRequestUrls = {
+  youtube: {
+    <ID>: 'https...',
+    <ID2>: 'https...'
+  }
+}
+
+**/
+
 let captionRequestUrls = {
   youtube: null
 }
@@ -12,6 +31,7 @@ function onBeforeYouTubeCaptionRequest(details) {
   // TODO - Prevent DC triggered calls from being put into object?
   console.log(`Background - Adding ${details.url} to captionRequestUrls`);
   captionRequestUrls.youtube = details.url;
+  // TODO - save to video-specific key
 }
 
 /**
@@ -24,6 +44,8 @@ Which it sends to the content_scripts on a certain message.
 
 **/
 
+// TODO - Should take language, videoID
+// TODO - Add videoId to DC adapter - window.DC.adapter.videoID
 function fetchLanguage(language) {
   if (captionRequestUrls.youtube) {
     const requestUrl = captionRequestUrls.youtube.replace(/lang=[a-z]+/g, `lang=${language}`);
