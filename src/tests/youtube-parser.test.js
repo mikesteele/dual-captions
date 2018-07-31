@@ -17,6 +17,8 @@ it('should correctly parse YouTube captions', done => {
     .catch(err => { console.log(err)});
 });
 
+// TODO - Test for not <timedtext format="3"> ?
+
 it('should gracefully fail with bad XML', done => {
   parser.parse('<eee')
     .then()

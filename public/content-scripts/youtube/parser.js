@@ -10,6 +10,7 @@ class YouTubeTranslationParser extends TranslationParser {
       let captions = [];
       const xml = this.parser.parseFromString(text, 'text/xml');
       const body = xml.querySelector('body');
+      // TODO - Check for <timedtext format="3"> ?
       if (body) {
         for (let i = 0; i < body.childNodes.length; i++) {
           let currentNode = body.childNodes[i];
