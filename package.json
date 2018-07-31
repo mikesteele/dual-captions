@@ -33,8 +33,5 @@
     "coverageReporters": [
       "text"
     ]
-  },
-  "devDependencies": {
-    "jsdom": "^11.12.0"
   }
 }
