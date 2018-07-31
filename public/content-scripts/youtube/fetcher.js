@@ -12,7 +12,7 @@ class YoutubeTranslationFetcher extends TranslationFetcher {
             requestUrl = requestUrl.replace(/lang=[a-z]+/g, `lang=${language}`);
             fetch(requestUrl)
               .then(response => response.text())
-              // TODO - If expired, is response.ok here?
+              // TODO - if !response.ok = REJECT = Expired URL
               .then(responseText => {
                 if (responseText) {
                   // TODO - Should check for responseText.length?
@@ -25,6 +25,7 @@ class YoutubeTranslationFetcher extends TranslationFetcher {
               .catch(err => {
                 reject(`Couldn't fetch captions.`);
                 // TODO - Why?
+                // TODO - Maybe CORS
               });
           } else {
             reject('No caption request URL found for this video. Has the user turned on captions?');

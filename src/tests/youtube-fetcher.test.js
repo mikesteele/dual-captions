@@ -25,6 +25,7 @@ window.chrome.runtime.sendMessage = (details, callback) => {
 
 let fetchResponse = exampleFetch;
 window.fetch = sinon.stub().returns(Promise.resolve({
+  ok: true, // TODO - Test for ok: false
   text: () => {
     return fetchResponse;
   }

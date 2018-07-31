@@ -32,6 +32,15 @@ class YouTubeConfig extends DualCaptionsConfig {
     return mutation.target.classList.contains(this.captionClass) && mutation.addedNodes.length > 0;
   }
 
+  getPlayerCurrentTime() {
+    let player = this.getPlayer();
+    // TODO - Player doesn't point to <video> element directly
+    // TODO - Maybe rename - getPlayer() and getPlayerContainer()
+    if (player) {
+      return player.currentTime;
+    }
+  }
+
   // Get the video player element.
   getPlayer() {
     return document.getElementById(this.playerId);
