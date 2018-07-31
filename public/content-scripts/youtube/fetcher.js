@@ -18,7 +18,7 @@ class YoutubeTranslationFetcher extends TranslationFetcher {
                   // TODO - Should check for responseText.length?
                   resolve(responseText);
                 } else {
-                  reject('No captions for this language');
+                  reject('No captions available for this language');
                   // TODO - If expired, is this case called?
                 }
               })

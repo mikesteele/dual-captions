@@ -1,4 +1,6 @@
+import expect from 'expect';
 import sinon from 'sinon';
+
 import '../../public/content-scripts/init';
 // Create adapter
 import '../../public/content-scripts/config/init';
@@ -17,8 +19,6 @@ window.DC.googleTranslator = {
 
 // Create provider
 import '../../public/content-scripts/init/provider';
-
-import expect from 'expect';
 
 const provider = window.DC.provider;
 

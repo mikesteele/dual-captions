@@ -5,7 +5,7 @@ class TranslationFetcher {
 
   askBackgroundForCaptionRequestUrls() {
     return new Promise((resolve, reject) => {
-      chrome.runtime.sendMessage({
+      window.chrome.runtime.sendMessage({
         type: 'get-caption-request-urls'
       }, response => {
         if (!response || !response.ok || !response.captionRequestUrls) {
