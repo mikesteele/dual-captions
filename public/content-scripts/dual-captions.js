@@ -23,7 +23,7 @@ class DualCaptions {
           });
         })
         .catch(err => {
-          alert(err);
+          alert(err); // TODO - Remove
           console.log(`Couldn't load static translations: ${err}`);
           sendResponse({
             ok: true,

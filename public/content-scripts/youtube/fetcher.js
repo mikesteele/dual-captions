@@ -1,4 +1,4 @@
-class YoutubeTranslationFetcher extends TranslationFetcher {
+class YouTubeTranslationFetcher extends TranslationFetcher {
   constructor() {
     super();
   }
@@ -36,4 +36,4 @@ class YoutubeTranslationFetcher extends TranslationFetcher {
   }
 }
 
-window.DC.fetcher = new YoutubeTranslationFetcher();
+window.DC.fetcher = new YouTubeTranslationFetcher();
