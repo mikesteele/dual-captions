@@ -1,6 +1,7 @@
 class TranslationProvider {
   constructor() {
-    this.translations = {};
+    this.__captions = {};
+    this.translate = this.translate.bind(this);
   }
 
   requestLanguage(language) {
@@ -10,7 +11,7 @@ class TranslationProvider {
     // TODO - ^ Can be moved out of here?
 
     return new Promise((resolve, reject) => {
-      if (this.translations.hasOwnProperty(language)) {
+      if (this.__captions.hasOwnProperty(language)) {
         resolve();
       } else {
         fetcher.fetchCaptions(language, adapter.videoId)
@@ -22,9 +23,40 @@ class TranslationProvider {
     });
   }
 
+  findNearestCaption(translations, currentTime) {
+    const nearestCaption = translations.find(translation => {
+      return currentTime < translation.endTime;
+    });
+    return nearestCaption;
+  }
+
   __loadCaptions(captions, language) {
-    this.translations[language] = captions;
+    this.__captions[language] = captions;
     return Promise.resolve();
+  }
+
+  translate(text, language, currentTime) {
+    return new Promise((resolve, reject) => {
+      const fallbackProvider = window.DC.googleTranslator;
+      // TODO - Can move out of here?
+
+      if (this.__captions.hasOwnProperty(language)) {
+        const nearestCaption = this.findNearestCaption(this.__captions[language], currentTime);
+        if (nearestCaption) {
+          resolve(nearestCaption.text);
+        } else {
+          fallbackProvider
+            .translate(text, language, currentTime)
+            .then(resolve)
+            .catch(reject);
+        }
+      } else {
+        fallbackProvider
+          .translate(text, language, currentTime)
+          .then(resolve)
+          .catch(reject);
+      }
+    });
   }
 }
 

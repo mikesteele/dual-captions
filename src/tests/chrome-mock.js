@@ -5,7 +5,7 @@ import '../../public/content-scripts/config/test';
 import '../../public/content-scripts/dual-captions';
 
 const mockTabs = [{
-  id: 1  
+  id: 1
 }];
 
 window.chrome = {

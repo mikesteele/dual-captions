@@ -1,3 +1,5 @@
+import sinon from 'sinon';
+
 window.chrome = {
   runtime: {
     onMessage: {

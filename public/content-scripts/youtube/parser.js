@@ -2,6 +2,7 @@ class YouTubeTranslationParser extends TranslationParser {
   constructor() {
     super();
     this.parser = new DOMParser();
+    this.parse = this.parse.bind(this);
   }
 
   parse(text) {
