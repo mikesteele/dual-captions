@@ -97,11 +97,12 @@ it('should use Google Translate if selected language is not loaded', done => {
     .catch(err => { console.log(err)});
 });
 
-it('should use Google Translate if selected language is not loaded', done => {
+it('should support loading two languages', done => {
+  provider.__loadCaptions(exampleEnglishCaptions, 'en');
   provider.__loadCaptions(exampleFrenchCaptions, 'fr');
-  provider.translate('Test', 'en', 500)
+  provider.translate('Test', 'fr', 2000)
     .then(translation => {
-      expect(translation).toEqual('Used Google Translate');
+      expect(translation).toEqual('Météo');
       done();
     })
     .catch(err => { console.log(err)});
