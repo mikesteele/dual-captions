@@ -13,6 +13,20 @@ import '../../public/content-scripts/config/youtube';
 
 const adapter = window.DC.config;
 
+const captionsContainer = document.querySelector('.captions-text');
+const newCaption = captionsContainer.firstChild;
+const mockMutationRecord = {
+  addedNodes: [newCaption],
+  attributeName: null,
+  attributeNamespace: null,
+  nextSibling: null,
+  oldValue: null,
+  previousSibling: null,
+  removedNodes: [],
+  target: captionsContainer,
+  type: 'childList'
+};
+
 it('should get player element', () => {
   const player = adapter.getPlayer();
   expect(player.classList.contains('html5-video-player')).toEqual(true);
@@ -34,18 +48,29 @@ it('should correctly appendToDOM', () => {
 });
 
 it('should get new caption from mutation', () => {
-  /**
-  TODO -
-  const mutationRecord = {
-    addedNodes: NodeList [span.original-caption.translated],
-    attributeName: null,
-    attributeNamespace: null,
-    nextSibling: null,
-    oldValue: null,
-    previousSibling: null,
-    removedNodes: NodeList [],
-    target: span.captions-text,
-    type: "childList"
-  }
-  **/
+  const result = adapter.getNewCaption(mockMutationRecord);
+  expect(result).toEqual(newCaption);
+});
+
+it('should correctly indentify captionWasAdded', () => {
+  expect(adapter.captionWasAdded(mockMutationRecord)).toEqual(true);
+
+  // No nodes added
+  expect(adapter.captionWasAdded({
+    ...mockMutationRecord,
+    addedNodes: []
+  })).toEqual(false);
+
+  // Not the right target
+  expect(adapter.captionWasAdded({
+    ...mockMutationRecord,
+    target: adapter.getPlayer()
+  })).toEqual(false);
+});
+
+it('should correctly respond to onPopupOpened', () => {
+  const response = adapter.onPopupOpened();
+  expect(response).toEqual({
+    ok: true
+  });
 });
