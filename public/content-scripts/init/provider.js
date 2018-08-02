@@ -35,7 +35,7 @@ class TranslationProvider {
     // TODO - FIXME - This is not strict enough.
     // TODO - Should let the caption fall through to the fallbackProvider if no caption available
     const nearestCaption = translations.find(translation => {
-      return currentTime < translation.endTime;
+      return Math.abs(currentTime - translation.startTime) < 0.3;
     });
     return nearestCaption;
   }
@@ -52,7 +52,7 @@ class TranslationProvider {
         if (nearestCaption) {
           // TODO - Add back? resolve(nearestCaption.text);
           resolve({
-            text: `${nearestCaption.text} [v]`
+            text: `${nearestCaption.text} ✓`
           });
         } else {
           this.fallbackProvider
