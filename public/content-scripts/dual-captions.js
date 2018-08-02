@@ -23,7 +23,6 @@ class DualCaptions {
           });
         })
         .catch(err => {
-          alert(err); // TODO - Remove
           console.log(`Couldn't load static translations: ${err}`);
           sendResponse({
             ok: true,
@@ -104,6 +103,7 @@ class DualCaptions {
       break;
     }
   }
+
   _onMutation(mutationRecords) {
     mutationRecords.forEach(mutation => {
       let captionWasAdded = window.DC.config.captionWasAdded(mutation);
@@ -116,10 +116,11 @@ class DualCaptions {
           if (!this.delayRenderingUntilTranslation) {
             newCaption.classList.add('translated');
           }
-          window.DC.translate(this.lastCaption, {
-            from: 'auto',
-            to: this.secondLanguage
-          }).then(translation => {
+          window.DC.provider.translate(
+            this.lastCaption,
+            this.secondLanguage,
+            window.DC.config.getPlayerCurrentTime()
+          ).then(translation => {
             if (!this._translationIsInDOM(translation.text)) {
               let translatedCaption = document.createElement('span');
               translatedCaption.innerText = translation.text;
@@ -134,6 +135,8 @@ class DualCaptions {
             } else {
               newCaption.classList.add('translated');
             }
+          }).catch(err => {
+            console.log(err);
           });
         }
       }

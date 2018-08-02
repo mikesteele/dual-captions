@@ -1,6 +1,14 @@
 class TranslationProvider {
   constructor() {
     this.__captions = {};
+    this.fallbackProvider = {
+      translate: (text, language, currentTime) => {
+        return window.DC.translate(text, {
+          from: 'auto',
+          to: language
+        });
+      }
+    };
     this.translate = this.translate.bind(this);
   }
 
@@ -14,7 +22,7 @@ class TranslationProvider {
       if (this.__captions.hasOwnProperty(language)) {
         resolve();
       } else {
-        fetcher.fetchCaptions(language, adapter.videoId)
+        fetcher.fetchCaptions(language, adapter.getVideoId())
           .then(parser.parse)
           .then(captions => this.__loadCaptions(captions, language))
           .then(resolve)
@@ -37,21 +45,21 @@ class TranslationProvider {
 
   translate(text, language, currentTime) {
     return new Promise((resolve, reject) => {
-      const fallbackProvider = window.DC.googleTranslator;
-      // TODO - Can move out of here?
-
-      if (this.__captions.hasOwnProperty(language)) {
+      if (currentTime && this.__captions.hasOwnProperty(language)) {
         const nearestCaption = this.findNearestCaption(this.__captions[language], currentTime);
         if (nearestCaption) {
-          resolve(nearestCaption.text);
+          // TODO - Add back? resolve(nearestCaption.text);
+          resolve({
+            text: `${nearestCaption.text} [v]`
+          });
         } else {
-          fallbackProvider
+          this.fallbackProvider
             .translate(text, language, currentTime)
             .then(resolve)
             .catch(reject);
         }
       } else {
-        fallbackProvider
+        this.fallbackProvider
           .translate(text, language, currentTime)
           .then(resolve)
           .catch(reject);

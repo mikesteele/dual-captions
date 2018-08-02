@@ -5,7 +5,11 @@ class YouTubeConfig extends DualCaptionsConfig {
     this.playerId = "movie_player";
     this.captionWindowClass = "ytp-caption-window-bottom";
     this.captionClass = "captions-text";
-    this.videoId = '4INdeZ5HYpw'; // FIXME
+  }
+
+  getVideoId() {
+    const url = new URL(window.location.href);
+    return url.searchParams.get('v');
   }
 
   onPopupOpened() {
@@ -33,11 +37,14 @@ class YouTubeConfig extends DualCaptionsConfig {
   }
 
   getPlayerCurrentTime() {
-    let player = this.getPlayer();
-    // TODO - Player doesn't point to <video> element directly
-    // TODO - Maybe rename - getPlayer() and getPlayerContainer()
-    if (player) {
-      return player.currentTime;
+    // TODO - Test fetcher to see if it can handle undefined playerCurrentTime
+    const player = this.getPlayer();
+    if (!player) {
+      return;
+    }
+    const video = player.querySelector('video');
+    if (video) {
+      return video.currentTime;
     }
   }
 

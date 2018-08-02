@@ -18,8 +18,10 @@ class YouTubeTranslationParser extends TranslationParser {
             const t = currentNode.getAttribute('t');
             const d = currentNode.getAttribute('d');
             if (t && d) {
-              const tNum = parseInt(t);
-              const dNum = parseInt(d);
+              let tNum = parseInt(t);
+              let dNum = parseInt(d);
+              tNum = tNum / 1000;
+              dNum = dNum / 1000;
               captions.push({
                 startTime: tNum,
                 endTime: tNum + dNum,
