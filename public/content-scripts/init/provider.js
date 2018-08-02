@@ -32,6 +32,8 @@ class TranslationProvider {
   }
 
   findNearestCaption(translations, currentTime) {
+    // TODO - FIXME - This is not strict enough.
+    // TODO - Should let the caption fall through to the fallbackProvider if no caption available
     const nearestCaption = translations.find(translation => {
       return currentTime < translation.endTime;
     });
