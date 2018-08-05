@@ -24,5 +24,6 @@
   "delayRenderingUntilTranslation": "Delay rendering (Recommended)",
   "image-subtitles": "Sorry, subtitles in Chinese and Japanese on Netflix are not supported at this time. However, Chinese and Japanese captions will work on YouTube.",
   "automatic-subtitles": "Sorry, automatic subtitles on YouTube are not supported at this time. You can find supported videos by searching YouTube and filtering by 'Subtitles/CC'.",
-  "leave-feedback": "Give feedback"
+  "leave-feedback": "Give feedback",
+  "useCaptionsFromVideo": "Use captions from video"
 }

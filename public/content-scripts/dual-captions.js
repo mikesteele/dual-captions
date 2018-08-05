@@ -5,6 +5,7 @@ class DualCaptions {
     this.secondLanguage = 'en';
     this.extraSpace = false;
     this.delayRenderingUntilTranslation = true;
+    this.useCaptionsFromVideo = true;
 
     window.chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
   }
@@ -34,6 +35,7 @@ class DualCaptions {
       case 'change-settings':
       this.extraSpace = message.payload.extraSpace;
       this.delayRenderingUntilTranslation = message.payload.delayRenderingUntilTranslation;
+      this.useCaptionsFromVideo = message.payload.useCaptionsFromVideo;
       sendResponse({ok: true});
       break;
 
@@ -119,7 +121,8 @@ class DualCaptions {
           window.DC.provider.translate(
             this.lastCaption,
             this.secondLanguage,
-            window.DC.config.getPlayerCurrentTime()
+            window.DC.config.getPlayerCurrentTime(),
+            this.useCaptionsFromVideo
           ).then(translation => {
             if (!this._translationIsInDOM(translation.text)) {
               let translatedCaption = document.createElement('span');

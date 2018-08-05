@@ -45,9 +45,9 @@ class TranslationProvider {
     return Promise.resolve();
   }
 
-  translate(text, language, currentTime) {
+  translate(text, language, currentTime, useCaptionsFromVideo) {
     return new Promise((resolve, reject) => {
-      if (currentTime && this.__captions.hasOwnProperty(language)) {
+      if (useCaptionsFromVideo && currentTime && this.__captions.hasOwnProperty(language)) {
         const nearestCaption = this.findNearestCaption(this.__captions[language], currentTime);
         if (nearestCaption) {
           // TODO - Add back? resolve(nearestCaption.text);
