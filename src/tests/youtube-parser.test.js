@@ -1,6 +1,7 @@
 import expect from 'expect';
 import exampleFetch from './assets/youtube/fetch';
 import exampleResult from './assets/youtube/result';
+import automaticCaptionsFetch from './assets/youtube/fetch-automatic-subtitles';
 
 import '../../public/content-scripts/init';
 import '../../public/content-scripts/init/parser';
@@ -17,9 +18,16 @@ it('should correctly parse YouTube captions', done => {
     .catch(err => { console.log(err)});
 });
 
-// TODO - Test for not <timedtext format="3"> ?
+it('should reject automatic captions', done => {
+  parser.parse(automaticCaptionsFetch)
+    .then()
+    .catch(err => {
+      expect(err).toEqual('Automatic captions are not supported.');
+      done();
+    });
+});
 
-// TODO - Test for rejecting automatic captions
+// TODO - Test for not <timedtext format="3"> ?
 
 it('should gracefully fail with bad XML', done => {
   parser.parse('<eee')

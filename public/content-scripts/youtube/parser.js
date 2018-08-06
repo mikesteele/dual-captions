@@ -13,8 +13,30 @@ class YouTubeTranslationParser extends TranslationParser {
       // TODO - Check for <timedtext format="3"> ?
       if (body) {
         for (let i = 0; i < body.childNodes.length; i++) {
+          // TODO - Use body.children ?
           let currentNode = body.childNodes[i];
           if (currentNode.tagName === 'p') {
+            if (currentNode.children.length) {
+              /**
+
+              Static caption files look like this:
+
+              <p>This is the caption text</p>
+
+              Automatic caption files look like this:
+
+              <p>
+                <s>This</s>
+                <s>is</s>
+                <s>the</s>
+                <s>caption</s>
+                <s>text</s>
+              </p>
+
+              **/
+              reject('Automatic captions are not supported.');
+              return;
+            }
             const t = currentNode.getAttribute('t');
             const d = currentNode.getAttribute('d');
             if (t && d) {
