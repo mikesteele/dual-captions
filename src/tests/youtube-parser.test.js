@@ -19,6 +19,8 @@ it('should correctly parse YouTube captions', done => {
 
 // TODO - Test for not <timedtext format="3"> ?
 
+// TODO - Test for rejecting automatic captions
+
 it('should gracefully fail with bad XML', done => {
   parser.parse('<eee')
     .then()

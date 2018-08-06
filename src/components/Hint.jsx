@@ -18,6 +18,7 @@ class Hint extends Component {
             window.chrome.tabs.sendMessage(tabId, {
               type: 'detect-site',
             }, _resolve);
+            // TODO - ^ Move to global store to be used in <App/> or <MainPage/>
           });
         })
         .then(response => {
