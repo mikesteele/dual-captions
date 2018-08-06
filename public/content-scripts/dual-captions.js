@@ -16,6 +16,8 @@ class DualCaptions {
     switch (message.type) {
       case 'change-language':
       this.secondLanguage = message.payload;
+      // TODO - requestLanguage() should be called as soon as the popup is loaded 
+      // TODO - And in general, there are probably more cases where it should be tried
       provider.requestLanguage(this.secondLanguage)
         .then(() => {
           sendResponse({
