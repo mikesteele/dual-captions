@@ -54,7 +54,7 @@ it('should exclude captions that are missing time attributes', done => {
       expect([
         {
           startTime: 0,
-          endTime: 7000,
+          endTime: 7,
           text: `I'm OK`
         }
       ]).toEqual(captions);

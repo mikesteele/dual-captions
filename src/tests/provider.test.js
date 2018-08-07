@@ -12,19 +12,25 @@ import '../../public/content-scripts/youtube/fetcher';
 import '../../public/content-scripts/init/parser';
 import '../../public/content-scripts/youtube/parser';
 
-// TODO - This should eventually be just `import '../../public/content-scripts/init/google-translator'
-window.DC.googleTranslator = {
-  translate: sinon.stub().returns(Promise.resolve('Used Google Translate'))
-}
-
-// Create provider
 import '../../public/content-scripts/init/provider';
+
+/**
+
+FIXME
+- Times of example captions should reflect actual caption times
+- Tests should test the buffer room that caption times are given
+
+**/
+
+window.DC.translate = sinon.stub().returns(Promise.resolve({
+  text: 'Used Google Translate'
+}));
 
 const provider = window.DC.provider;
 
 const exampleEnglishCaptions = [
   {
-    startTime: 0,
+    startTime: 10,
     endTime: 7000,
     text: 'Weather Report'
   }, {
@@ -40,7 +46,7 @@ const exampleEnglishCaptions = [
 
 const exampleFrenchCaptions = [
   {
-    startTime: 0,
+    startTime: 10,
     endTime: 7000,
     text: 'Météo'
   }, {
@@ -56,32 +62,35 @@ const exampleFrenchCaptions = [
 
 beforeEach(() => {
   provider.__captions = {};
-  window.DC.googleTranslator.translate.resetHistory();
+  window.DC.translate.resetHistory();
 });
 
 it('findNearestCaption should correctly find nearest caption', () => {
   const captions = exampleEnglishCaptions;
-  expect(provider.findNearestCaption(captions, 500).text).toEqual('Weather Report');
-  expect(provider.findNearestCaption(captions, 8000).text).toEqual('The weather for today is in the high 80s.');
-  expect(provider.findNearestCaption(captions, 13000).text).toEqual('It will likely rain this weekend.');
-  expect(provider.findNearestCaption(captions, 18000).text).toEqual('It will likely rain this weekend.');
+  expect(provider.findNearestCaption(captions, 10).text).toEqual('Weather Report');
+  expect(provider.findNearestCaption(captions, 9000).text).toEqual('The weather for today is in the high 80s.');
+  expect(provider.findNearestCaption(captions, 15000).text).toEqual('It will likely rain this weekend.');
   expect(provider.findNearestCaption(captions, 80000)).toEqual(undefined);
 });
 
 it('should use captions if language is loaded', done => {
   provider.__loadCaptions(exampleEnglishCaptions, 'en');
-  provider.translate('Test', 'en', 500)
+  provider.translate('Test', 'en', 10, true)
     .then(translation => {
-      expect(translation).toEqual('Weather Report');
+      expect(translation).toEqual({
+        text: 'Weather Report ✓'
+      });
       done();
     })
     .catch(err => { console.log(err)});
 });
 
 it('should use Google Translate no languages are loaded', done => {
-  provider.translate('Test', 'en', 500)
+  provider.translate('Test', 'en', 500, true)
     .then(translation => {
-      expect(translation).toEqual('Used Google Translate');
+      expect(translation).toEqual({
+        text: 'Used Google Translate'
+      });
       done();
     })
     .catch(err => { console.log(err)});
@@ -89,20 +98,49 @@ it('should use Google Translate no languages are loaded', done => {
 
 it('should use Google Translate if selected language is not loaded', done => {
   provider.__loadCaptions(exampleFrenchCaptions, 'fr');
-  provider.translate('Test', 'en', 500)
+  provider.translate('Test', 'en', 500, true)
     .then(translation => {
-      expect(translation).toEqual('Used Google Translate');
+      expect(translation).toEqual({
+        text: 'Used Google Translate'
+      });
       done();
     })
     .catch(err => { console.log(err)});
 });
 
+it('should use Google Translate if current time is undefined', done => {
+  provider.__loadCaptions(exampleFrenchCaptions, 'fr');
+  provider.translate('Test', 'fr', undefined, true)
+    .then(translation => {
+      expect(translation).toEqual({
+        text: 'Used Google Translate'
+      });
+      done();
+    })
+    .catch(err => { console.log(err)});
+});
+
+
 it('should support loading two languages', done => {
   provider.__loadCaptions(exampleEnglishCaptions, 'en');
   provider.__loadCaptions(exampleFrenchCaptions, 'fr');
-  provider.translate('Test', 'fr', 2000)
+  provider.translate('Test', 'fr', 10, true)
     .then(translation => {
-      expect(translation).toEqual('Météo');
+      expect(translation).toEqual({
+        text: 'Météo ✓'
+      });
+      done();
+    })
+    .catch(err => { console.log(err)});
+});
+
+it('should use Google Translate if not useCaptionsFromVideo', done => {
+  provider.__loadCaptions(exampleFrenchCaptions, 'fr');
+  provider.translate('Test', 'fr', 10, false)
+    .then(translation => {
+      expect(translation).toEqual({
+        text: 'Used Google Translate'
+      });
       done();
     })
     .catch(err => { console.log(err)});
