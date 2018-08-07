@@ -5,3 +5,4 @@ class TranslationParser {
 }
 
 window.TranslationParser = TranslationParser;
+window.DC.parser = new TranslationParser();

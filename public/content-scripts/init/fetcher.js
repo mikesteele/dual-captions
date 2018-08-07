@@ -19,3 +19,4 @@ class TranslationFetcher {
 }
 
 window.TranslationFetcher = TranslationFetcher;
+window.DC.fetcher = new TranslationFetcher();

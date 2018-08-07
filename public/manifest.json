@@ -52,6 +52,9 @@
       "content-scripts/google-translate-api.js",
       "content-scripts/config/init.js",
       "content-scripts/config/netflix.js",
+      "content-scripts/init/parser.js",
+      "content-scripts/init/fetcher.js",
+      "content-scripts/init/provider.js",
       "content-scripts/dual-captions.js"
     ],
     "matches": [ "https://www.netflix.com/*" ]
@@ -67,6 +70,9 @@
       "content-scripts/google-translate-api.js",
       "content-scripts/config/init.js",
       "content-scripts/config/amazon-prime.js",
+      "content-scripts/init/parser.js",
+      "content-scripts/init/fetcher.js",
+      "content-scripts/init/provider.js",
       "content-scripts/dual-captions.js"
     ],
     "matches": [ "https://www.amazon.com/*" ]
