@@ -27,8 +27,6 @@ it('should reject automatic captions', done => {
     });
 });
 
-// TODO - Test for not <timedtext format="3"> ?
-
 it('should gracefully fail with bad XML', done => {
   parser.parse('<eee')
     .then()
@@ -73,6 +71,26 @@ it('should reject if no captions, even if format is OK', done => {
     .then()
     .catch(err => {
       expect(err).toEqual(`Couldn't parse captions from file`);
+      done();
+    });
+});
+
+// I assume that <timedtext format> is how caption formats are versioned.
+// Though I haven't come across a caption file that didn't have <timedtext format="3">.
+// If YOU do - please feel free to open a PR, adding the caption file to tests/assets/youtube.
+// Like tests/assets/youtube/fetch.js.
+it(`should reject captions that aren't timedtext format='3'`, done => {
+  parser.parse(`
+    <?xml version="1.0" encoding="utf-8" ?>
+    <timedtext format="4">
+      <body>
+        <p t="0" d="7000">Test caption</p>
+      </body>
+    </timedtext>
+  `)
+    .then()
+    .catch(err => {
+      expect(err).toEqual(`Can't parse invalid YouTube caption file`);
       done();
     });
 });
