@@ -1,3 +1,5 @@
+import sinon from 'sinon';
+
 import './mocks';
 import '../../public/content-scripts/init';
 import '../../public/content-scripts/config/init';
@@ -22,6 +24,11 @@ window.chrome = {
       } catch(e) {
         sendResponse(undefined);
       }
+    }
+  },
+  webRequest: {
+    onBeforeRequest: {
+      addListener: sinon.stub()
     }
   }
 };
