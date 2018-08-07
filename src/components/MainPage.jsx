@@ -16,6 +16,8 @@ class MainPage extends Component {
 
   _onSecondLanguageSelectChanged(e) {
     this.props.dispatch(changeDCLanguage(e.target.value));
+    // TODO - Dispatch on initial render?
+    // TODO - Fetch /en/ as soon as possible?
   }
 
   render() {

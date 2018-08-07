@@ -1,8 +1,4 @@
 class TranslationFetcher {
-  constructor() {
-    // TODO - Binds?
-  }
-
   askBackgroundForCaptionRequestUrls() {
     return new Promise((resolve, reject) => {
       window.chrome.runtime.sendMessage({
@@ -12,7 +8,6 @@ class TranslationFetcher {
           reject(`Couldn't get captionRequestUrls from the background.`);
         } else {
           resolve(response.captionRequestUrls);
-          // TODO - Should be response.payload.captionRequestUrls ?
         }
       });
     });

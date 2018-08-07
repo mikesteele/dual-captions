@@ -7,31 +7,25 @@ class DualCaptions {
     this.delayRenderingUntilTranslation = true;
     this.useCaptionsFromVideo = true;
 
+    this.provider = window.DC.provider;
+
     window.chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
   }
   _onMessage(message, sender, sendResponse) {
-    const provider = window.DC.provider;
-    // TODO - ^ Can be moved out of here?
-
     switch (message.type) {
       case 'change-language':
       this.secondLanguage = message.payload;
-      // TODO - requestLanguage() should be called as soon as the popup is loaded 
-      // TODO - And in general, there are probably more cases where it should be tried
-      provider.requestLanguage(this.secondLanguage)
+      sendResponse({
+        ok: true,
+        captionsInVideo: true
+      });
+      this.provider.requestLanguage(this.secondLanguage)
         .then(() => {
-          sendResponse({
-            ok: true,
-            captionsInVideo: true
-          });
+          console.log(`Loaded captions for ${this.secondLanguage}`)
         })
         .catch(err => {
-          console.log(`Couldn't load static translations: ${err}`);
-          sendResponse({
-            ok: true,
-            captionsInVideo: false
-          });
-        })
+          console.log(`Couldn't load translations for ${this.secondLanguage}: ${err}`);
+        });
       break;
 
       case 'change-settings':
@@ -120,7 +114,7 @@ class DualCaptions {
           if (!this.delayRenderingUntilTranslation) {
             newCaption.classList.add('translated');
           }
-          window.DC.provider.translate(
+          this.provider.translate(
             this.lastCaption,
             this.secondLanguage,
             window.DC.config.getPlayerCurrentTime(),

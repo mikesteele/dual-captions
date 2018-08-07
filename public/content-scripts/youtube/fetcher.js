@@ -1,8 +1,4 @@
 class YouTubeTranslationFetcher extends TranslationFetcher {
-  constructor() {
-    super();
-  }
-
   fetchCaptions(language, videoId) {
     return new Promise((resolve, reject) => {
       this.askBackgroundForCaptionRequestUrls()
@@ -10,22 +6,24 @@ class YouTubeTranslationFetcher extends TranslationFetcher {
           if (captionRequestUrls.youtube[videoId]) {
             let requestUrl = captionRequestUrls.youtube[videoId];
             requestUrl = requestUrl.replace(/lang=[a-z]+/g, `lang=${language}`);
+            // TODO - Use URLSearchParams
             fetch(requestUrl)
-              .then(response => response.text())
-              // TODO - if !response.ok = REJECT = Expired URL
+              .then(response => {
+                if (response.ok) {
+                  return response.text();
+                } else {
+                  return Promise.reject('Credentials expired.')
+                }
+              })
               .then(responseText => {
-                if (responseText) {
-                  // TODO - Should check for responseText.length?
+                if (responseText && responseText.length) {
                   resolve(responseText);
                 } else {
                   reject('No captions available for this language');
-                  // TODO - If expired, is this case called?
                 }
               })
               .catch(err => {
                 reject(`Couldn't fetch captions.`);
-                // TODO - Why?
-                // TODO - Maybe CORS
               });
           } else {
             reject('No caption request URL found for this video. Has the user turned on captions?');

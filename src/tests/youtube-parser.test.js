@@ -62,3 +62,17 @@ it('should exclude captions that are missing time attributes', done => {
     })
     .catch(err => { console.log(err)});
 });
+
+it('should reject if no captions, even if format is OK', done => {
+  parser.parse(`
+    <?xml version="1.0" encoding="utf-8" ?>
+    <timedtext format="3">
+      <body></body>
+    </timedtext>
+  `)
+    .then()
+    .catch(err => {
+      expect(err).toEqual(`Couldn't parse captions from file`);
+      done();
+    });
+});

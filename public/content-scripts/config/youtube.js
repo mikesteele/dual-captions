@@ -37,7 +37,6 @@ class YouTubeConfig extends DualCaptionsConfig {
   }
 
   getPlayerCurrentTime() {
-    // TODO - Test fetcher to see if it can handle undefined playerCurrentTime
     const player = this.getPlayer();
     if (!player) {
       return;
