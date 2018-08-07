@@ -7,6 +7,9 @@ import './chrome-mock';
 import '../../public/content-scripts/init/fetcher';
 import '../../public/content-scripts/youtube/fetcher';
 
+// For URLSearchParams
+require('url-polyfill');
+
 const fetcher = window.DC.fetcher;
 const exampleVideoId = '4INdeZ5HYpw';
 

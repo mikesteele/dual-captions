@@ -4,10 +4,9 @@ class YouTubeTranslationFetcher extends TranslationFetcher {
       this.askBackgroundForCaptionRequestUrls()
         .then(captionRequestUrls => {
           if (captionRequestUrls.youtube[videoId]) {
-            let requestUrl = captionRequestUrls.youtube[videoId];
-            requestUrl = requestUrl.replace(/lang=[a-z]+/g, `lang=${language}`);
-            // TODO - Use URLSearchParams
-            fetch(requestUrl)
+            let url = new URL(captionRequestUrls.youtube[videoId]);
+            url.searchParams.set('lang', language);
+            fetch(url.href)
               .then(response => {
                 if (response.ok) {
                   return response.text();
