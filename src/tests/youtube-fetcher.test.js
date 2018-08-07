@@ -28,7 +28,7 @@ window.chrome.runtime.sendMessage = (details, callback) => {
 
 let fetchResponse = exampleFetch;
 window.fetch = sinon.stub().returns(Promise.resolve({
-  ok: true, // TODO - Test for ok: false
+  ok: true,
   text: () => {
     return fetchResponse;
   }
@@ -69,6 +69,22 @@ it('should reject if response is empty', (done) => {
     .then()
     .catch(err => {
       expect(err).toEqual('No captions available for this language');
+      done();
+    });
+});
+
+it('should reject if fetch fails / is expired', (done) => {
+  captionRequestUrls.youtube[exampleVideoId] = 'https://fake';
+  window.fetch = sinon.stub().returns(Promise.resolve({
+    ok: false,
+    text: () => {
+      return fetchResponse;
+    }
+  }));
+  fetcher.fetchCaptions('en', exampleVideoId)
+    .then()
+    .catch(err => {
+      expect(err).toEqual(`Couldn't fetch captions.`);
       done();
     });
 });
