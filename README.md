@@ -14,8 +14,8 @@
 
 * Targeted at **language learners** who need what the speaker is saying and the translation in user's native language.
 * 100+ languages supported. 🌎
-* Uses subtitles from video if available. (YouTube only, Netflix & Amazon support coming)
-* If no subtitles available, it uses Google Translate to translate captions into target language.
+* Uses captions from video if available. (YouTube only, Netflix & Amazon support coming)
+* If second language is unavailable, it uses Google Translate to translate captions into target language.
 * Free! No API key required.
 
 ### Intro

@@ -16,8 +16,7 @@ class DualCaptions {
       case 'change-language':
       this.secondLanguage = message.payload;
       sendResponse({
-        ok: true,
-        captionsInVideo: true
+        ok: true
       });
       this.provider.requestLanguage(this.secondLanguage)
         .then(() => {
