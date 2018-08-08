@@ -21,8 +21,6 @@ export function detectSite() {
   }
 }
 
-// TODO - Test detectSite()
-
 export function popupOpened() {
   return function (dispatch) {
     return new Promise((resolve, _) => {

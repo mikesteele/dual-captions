@@ -67,6 +67,17 @@ class DualCaptions {
       break;
 
       case 'popup-opened':
+      // 1. Request /en/
+      // Future: This should request the initial langauge of the popup
+      this.provider.requestLanguage('en')
+        .then(() => {
+          console.log(`Loaded captions for 'en'`)
+        })
+        .catch(err => {
+          console.log(`Couldn't load translations for 'en': ${err}`);
+        });
+
+      // 2. Tell adapter that the popup was opened 
       const response = window.DC.config.onPopupOpened();
       sendResponse({
         ok: response.ok,
