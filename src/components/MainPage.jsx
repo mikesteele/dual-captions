@@ -37,7 +37,7 @@ class MainPage extends Component {
               <span>1</span>
             </div>
             <div className='step-content step-1'>
-              <Hint/>
+              <Hint detectedSite={this.props.detectedSite}/>
             </div>
           </div>
         </div>

@@ -1,4 +1,27 @@
-import { getActiveTabId } from './utils/chrome.js';
+import { getActiveTabId, sendMessageToActiveTab } from './utils/chrome.js';
+
+export function detectSite() {
+  return function (dispatch) {
+    return new Promise((resolve, _) => {
+      sendMessageToActiveTab({
+        type: 'detect-site'
+      }).then(response => {
+        if (response.ok) {
+          dispatch({
+            type: 'CHANGE_DETECTED_SITE',
+            payload: response.site
+          });
+        }
+        resolve();
+      }).catch(err => {
+        console.log(`actions: Couldn't detect site.`);
+        resolve();
+      });
+    });
+  }
+}
+
+// TODO - Test detectSite()
 
 export function popupOpened() {
   return function (dispatch) {

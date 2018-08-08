@@ -12,3 +12,18 @@ export function getActiveTabId() {
     });
   });
 }
+
+export function sendMessageToActiveTab(message) {
+  return new Promise((resolve, reject) => {
+    getActiveTabId()
+      .then(tabId => {
+        return new Promise(_resolve => {
+          window.chrome.tabs.sendMessage(tabId, message, _resolve);
+        });
+      })
+      .then(resolve)
+      .catch(err => {
+        reject(err);
+      });
+    });
+}

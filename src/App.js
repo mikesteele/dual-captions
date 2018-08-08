@@ -12,7 +12,7 @@ import MainPage from './components/MainPage.jsx';
 import SettingsPage from './components/SettingsPage.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
 
-import { updateStoreFromDC, popupOpened } from './actions';
+import { updateStoreFromDC, popupOpened, detectSite } from './actions';
 
 const mapStateToProps = function(state) {
   return {...state};
@@ -27,6 +27,7 @@ class App extends Component {
     this._inferUILanguage();
     this.props.dispatch(updateStoreFromDC());
     this.props.dispatch(popupOpened());
+    this.props.dispatch(detectSite());
   }
 
   _inferUILanguage() {
@@ -69,6 +70,13 @@ class App extends Component {
           </TabPanel>
         </Tabs>
         <ErrorPageView/>
+        { this.props.detectedSite === 'youtube' && (
+          <div style={{padding: '16px'}}>
+            { /* TODO - Style, change copy */}
+            { /* TODO - Translate */}
+            Check means the caption caption came from the video.
+          </div>
+        )}
         <div className='footer'>
           <div>
             <div className='ui-icon'/>
