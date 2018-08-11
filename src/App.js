@@ -69,12 +69,12 @@ class App extends Component {
             <SettingsPageView/>
           </TabPanel>
         </Tabs>
-        <ErrorPageView/>
         { this.props.detectedSite === 'youtube' && (
           <div style={{padding: '16px'}}>
             {this.props.t('native-subtitles')}
           </div>
         )}
+        <ErrorPageView/>
         <div className='footer'>
           <div>
             <div className='ui-icon'/>

@@ -25,6 +25,6 @@
   "image-subtitles": "Désolé, des sous-titres en chinois et en japonais sur Netflix ne marchent pas.",
   "automatic-subtitles": "Désolé, des sous-titres généré automatiquement ne marchent pas. Vous pouvez trouver des videos compatibles avec le filtre 'sous-titres' dans la recherche.",
   "leave-feedback": "Donner un avis",
-  "useCaptionsFromVideo": "Utiliser les sous-titres du vidéo",
+  "useCaptionsFromVideo": "Utiliser les sous-titres du vidéo (YouTube)",
   "native-subtitles": "Si le vidéo a les sous-titres de la deuxième langue, ✓ signifie que ça vient du vidéo."
 }
