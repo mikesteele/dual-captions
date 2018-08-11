@@ -5,6 +5,9 @@ class DualCaptions {
     this.secondLanguage = 'en';
     this.extraSpace = false;
     this.delayRenderingUntilTranslation = true;
+    this.useCaptionsFromVideo = true;
+
+    this.provider = window.DC.provider;
 
     window.chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
   }
@@ -12,12 +15,22 @@ class DualCaptions {
     switch (message.type) {
       case 'change-language':
       this.secondLanguage = message.payload;
-      sendResponse({ok: true});
+      sendResponse({
+        ok: true
+      });
+      this.provider.requestLanguage(this.secondLanguage)
+        .then(() => {
+          console.log(`Loaded captions for ${this.secondLanguage}`)
+        })
+        .catch(err => {
+          console.log(`Couldn't load translations for ${this.secondLanguage}: ${err}`);
+        });
       break;
 
       case 'change-settings':
       this.extraSpace = message.payload.extraSpace;
       this.delayRenderingUntilTranslation = message.payload.delayRenderingUntilTranslation;
+      this.useCaptionsFromVideo = message.payload.useCaptionsFromVideo;
       sendResponse({ok: true});
       break;
 
@@ -54,6 +67,17 @@ class DualCaptions {
       break;
 
       case 'popup-opened':
+      // 1. Request /en/
+      // Future: This should request the initial langauge of the popup
+      this.provider.requestLanguage('en')
+        .then(() => {
+          console.log(`Loaded captions for 'en'`)
+        })
+        .catch(err => {
+          console.log(`Couldn't load translations for 'en': ${err}`);
+        });
+
+      // 2. Tell adapter that the popup was opened
       const response = window.DC.config.onPopupOpened();
       sendResponse({
         ok: response.ok,
@@ -87,6 +111,7 @@ class DualCaptions {
       break;
     }
   }
+
   _onMutation(mutationRecords) {
     mutationRecords.forEach(mutation => {
       let captionWasAdded = window.DC.config.captionWasAdded(mutation);
@@ -99,10 +124,12 @@ class DualCaptions {
           if (!this.delayRenderingUntilTranslation) {
             newCaption.classList.add('translated');
           }
-          window.DC.translate(this.lastCaption, {
-            from: 'auto',
-            to: this.secondLanguage
-          }).then(translation => {
+          this.provider.translate(
+            this.lastCaption,
+            this.secondLanguage,
+            window.DC.config.getPlayerCurrentTime(),
+            this.useCaptionsFromVideo
+          ).then(translation => {
             if (!this._translationIsInDOM(translation.text)) {
               let translatedCaption = document.createElement('span');
               translatedCaption.innerText = translation.text;
@@ -117,6 +144,8 @@ class DualCaptions {
             } else {
               newCaption.classList.add('translated');
             }
+          }).catch(err => {
+            console.log(err);
           });
         }
       }

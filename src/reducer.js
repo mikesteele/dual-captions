@@ -3,6 +3,7 @@ import config from './config';
 const initialState = {
   currentTab: 0,
   DC: true,
+  detectedSite: 'none',
   hasError: false,
   errorType: '',
   isOn: false,
@@ -42,6 +43,11 @@ export default function reducer(state = initialState, action) {
       const selectedUILanguage = action.payload || state.uiLanguage;
       return {...state,
         uiLanguage: selectedUILanguage
+      };
+    case 'CHANGE_DETECTED_SITE':
+      const detectedSite = action.payload || state.detectSite;
+      return {...state,
+        detectedSite: detectedSite
       };
     case 'HYDRATE_STORE':
       return {...state,

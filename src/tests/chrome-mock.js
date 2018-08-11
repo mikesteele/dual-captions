@@ -1,3 +1,5 @@
+import sinon from 'sinon';
+
 import './mocks';
 import '../../public/content-scripts/init';
 import '../../public/content-scripts/config/init';
@@ -5,7 +7,7 @@ import '../../public/content-scripts/config/test';
 import '../../public/content-scripts/dual-captions';
 
 const mockTabs = [{
-  id: 1  
+  id: 1
 }];
 
 window.chrome = {
@@ -22,6 +24,11 @@ window.chrome = {
       } catch(e) {
         sendResponse(undefined);
       }
+    }
+  },
+  webRequest: {
+    onBeforeRequest: {
+      addListener: sinon.stub()
     }
   }
 };

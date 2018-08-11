@@ -7,6 +7,11 @@ class YouTubeConfig extends DualCaptionsConfig {
     this.captionClass = "captions-text";
   }
 
+  getVideoId() {
+    const url = new URL(window.location.href);
+    return url.searchParams.get('v');
+  }
+
   onPopupOpened() {
     /**
 
@@ -28,7 +33,18 @@ class YouTubeConfig extends DualCaptionsConfig {
 
   // Returns true if mutation reflects a caption added to the DOM.
   captionWasAdded(mutation) {
-    return mutation.target.classList.contains(this.captionClass) && mutation.addedNodes.length > 0; 
+    return mutation.target.classList.contains(this.captionClass) && mutation.addedNodes.length > 0;
+  }
+
+  getPlayerCurrentTime() {
+    const player = this.getPlayer();
+    if (!player) {
+      return;
+    }
+    const video = player.querySelector('video');
+    if (video) {
+      return video.currentTime;
+    }
   }
 
   // Get the video player element.
@@ -39,7 +55,7 @@ class YouTubeConfig extends DualCaptionsConfig {
   // Get the caption window element.
   getCaptionWindow() {
     return document.querySelector(`.${this.captionWindowClass}:not(.ytp-caption-window-rollup)`);
-    // Automatic captions (.ytp-caption-window-rollup) won't work, so we prevent using them. 
+    // Automatic captions (.ytp-caption-window-rollup) won't work, so we prevent using them.
   }
 
   // Get the new caption element from a mutation record.

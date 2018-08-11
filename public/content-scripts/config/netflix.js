@@ -4,6 +4,15 @@ class NetflixConfig extends DualCaptionsConfig {
     this.site = 'netflix';
   }
 
+  // getVideoId & getPlayerCurrentTime are not needed until Netflix native translation support
+  getVideoId() {
+    return 'TODO';
+  }
+
+  getPlayerCurrentTime() {
+    return undefined;
+  }
+
   onPopupOpened() {
     /**
 
