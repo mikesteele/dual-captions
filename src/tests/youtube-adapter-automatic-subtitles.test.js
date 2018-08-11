@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Load DOM from snapshot
-const videoPage = fs.readFileSync(path.resolve(__dirname, './assets/youtube/video-with-automatic-subtitles.html'));
+const videoPage = fs.readFileSync(path.resolve(__dirname, './assets/youtube/video-with-automatic-subtitles.txt'));
 document.body.innerHTML = videoPage;
 
 // Load adapter
