@@ -72,9 +72,7 @@ class App extends Component {
         <ErrorPageView/>
         { this.props.detectedSite === 'youtube' && (
           <div style={{padding: '16px'}}>
-            { /* TODO - Style, change copy */}
-            { /* TODO - Translate */}
-            Check means the caption caption came from the video.
+            {this.props.t('native-subtitles')}
           </div>
         )}
         <div className='footer'>

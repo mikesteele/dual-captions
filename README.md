@@ -20,9 +20,9 @@
 
 ### Intro
 
-As someone learning a foreign language, it is helpful for me to see both what the speaker is saying and the translation. 
+As someone learning a foreign language, it is helpful for me to see both what the speaker is saying and the translation.
 
-This Chrome Extension creates a MutationObserver which waits for new caption elements to be added to the DOM. It then translates the text of these captions and adds the translated captions underneath.
+This Chrome Extension creates a MutationObserver which waits for new caption elements to be added to the DOM. It then translates the text of these captions and adds the translated captions underneath.  If the video has subtitles in the second language, it uses those subtitles as translations and marks them with a ✓. (YouTube only, Netflix & Amazon coming soon)
 
 ### Usage
 

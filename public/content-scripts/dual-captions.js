@@ -77,7 +77,7 @@ class DualCaptions {
           console.log(`Couldn't load translations for 'en': ${err}`);
         });
 
-      // 2. Tell adapter that the popup was opened 
+      // 2. Tell adapter that the popup was opened
       const response = window.DC.config.onPopupOpened();
       sendResponse({
         ok: response.ok,
