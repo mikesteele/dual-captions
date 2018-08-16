@@ -13,9 +13,8 @@ import '../../public/content-scripts/config/netflix';
 
 const adapter = window.DC.config;
 
-/**
-const captionsContainer = document.querySelector('.captions-text');
-const newCaption = captionsContainer.firstChild;
+const captionWindow = adapter.getCaptionWindow();
+const newCaption = captionWindow.firstChild;
 const mockMutationRecord = {
   addedNodes: [newCaption],
   attributeName: null,
@@ -24,10 +23,9 @@ const mockMutationRecord = {
   oldValue: null,
   previousSibling: null,
   removedNodes: [],
-  target: captionsContainer,
+  target: captionWindow,
   type: 'childList'
 };
-**/
 
 it('should get player element', () => {
   const player = adapter.getPlayer();
@@ -36,7 +34,6 @@ it('should get player element', () => {
 
 
 it('should correctly appendToDOM', () => {
-  const captionWindow = adapter.getCaptionWindow();
   expect(captionWindow.children.length).toEqual(1);
   expect(captionWindow.firstChild.classList.contains('player-timedtext-text-container')).toEqual(true);
   // Snapshot initially has one child in caption window, a <player-timedtext-text-container> with the original caption as a child.
@@ -62,7 +59,6 @@ it('should correctly appendToDOM', () => {
   expect(captionWindow.children.length).toEqual(1);
 });
 
-/**
 it('should get new caption from mutation', () => {
   const result = adapter.getNewCaption(mockMutationRecord);
   expect(result).toEqual(newCaption);
@@ -82,12 +78,29 @@ it('should correctly indentify captionWasAdded', () => {
     ...mockMutationRecord,
     target: adapter.getPlayer()
   })).toEqual(false);
+
+  /**
+
+  TODO
+
+  it('shouldn't react to a DC caption being added to DOM')
+
+  const dcCaption = observer.createDcCaption('This is a test');
+  const dcMutationRecord = {
+    ...mockMutationRecord,
+    addedNodes: [dcCaption]
+  }
+  expect(adapter.captionWasAdded(dcMutationRecord)).toEqual(false);
+
+  **/
 });
 
-it('should correctly respond to onPopupOpened', () => {
-  const response = adapter.onPopupOpened();
-  expect(response).toEqual({
-    ok: true
-  });
+it('should correctly _saveOriginalPosition', () => {
+  let testCaption = newCaption.cloneNode(true);
+  // TODO - Why doesn't this work? - expect(testCaption.hasAttribute('__has-original-position__')).toEqual(false);
+  adapter._saveOriginalPosition(testCaption);
+  expect(testCaption.hasAttribute('__original-top__')).toEqual(true);
+  // TODO - Why is this null? - expect(testCaption.getAttribute('__original_top__')).toEqual('76.6063%');
 });
-**/
+
+// TODO - Test makeDcWindow, moveNetflixCaptions, various other helpers
