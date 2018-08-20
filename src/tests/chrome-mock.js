@@ -1,5 +1,8 @@
 import sinon from 'sinon';
 
+
+// FIXME: This file shouldn't create the observer
+
 import './mocks';
 import '../../public/content-scripts/init';
 import '../../public/content-scripts/config/init';
