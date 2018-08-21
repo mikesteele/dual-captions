@@ -13,6 +13,28 @@ const mockTabs = [{
   id: 1
 }];
 
+// TODO - Add tests for this mock
+export class ChromeStorageMock {
+  constructor() {
+    this.mockStorage = {};
+    this.set = this.set.bind(this);
+  }
+
+  set(key, value) {
+    this.mockStorage[key] = value;
+  }
+
+  get(key, callback) {
+    if (this.mockStorage.hasOwnProperty(key)) {
+      callback(this.mockStorage[key]);
+    } else {
+      // TODO - What does chrome do?
+    }
+  }
+}
+
+// TODO - Mock storage
+
 window.chrome = {
   ...window.chrome,
   tabs: {
@@ -33,5 +55,6 @@ window.chrome = {
     onBeforeRequest: {
       addListener: sinon.stub()
     }
-  }
+  },
+  storage: new ChromeStorageMock()
 };

@@ -27,3 +27,16 @@ export function sendMessageToActiveTab(message) {
       });
     });
 }
+
+export function getSavedStore() {
+  return new Promise((resolve, _) => {
+    window.chrome.storage.local.get('__DC_store__', result => {
+      if (result.__DC_store__) {
+        const savedStore = JSON.parse(result.__DC_store__);
+        resolve(savedStore);
+      } else {
+        resolve(); // TODO - Can throw?
+      }
+    });
+  });
+}

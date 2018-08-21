@@ -6,11 +6,13 @@ import { createStore, applyMiddleware } from 'redux';
 import reducer from '../reducer';
 import ReduxThunk from 'redux-thunk';
 import * as actions from '../actions';
+import { storageMiddleware } from '../middleware';
 import chromeMock from './chrome-mock';
 
 const store = createStore(reducer,
   applyMiddleware(
-    ReduxThunk
+    ReduxThunk,
+    storageMiddleware
   )
 );
 
@@ -28,8 +30,15 @@ import '../../public/content-scripts/init/provider';
 import './chrome-mock';
 import '../../public/content-scripts/dual-captions';
 
-const observer = window.DC.DUAL_CAPTIONS;
+import { ChromeStorageMock } from './chrome-mock';
 
+let observer = window.DC.DUAL_CAPTIONS;
+
+beforeEach(() => {
+  // TODO
+  observer = new DualCaptions();
+  window.chrome.storage = new ChromeStorageMock();
+});
 
 /**
 
@@ -60,6 +69,22 @@ it('observer should have settingsAreDefault in state by default', done => {
 Action tests
 
 **/
+
+it('should use DC if settings aren\'t default', done => {
+  window.chrome.storage.mockStorage = {
+    __DC_store__: {
+      secondLanguage: 'it'
+    }
+  };
+  observer.secondLanguage = 'fr';
+  observer.settingsAreDefault = false;
+  store.dispatch(actions.determineSettings())
+    .then(() => {
+      const state = store.getState();
+      expect(state.secondLanguage === 'fr');
+      done();
+    });
+});
 
 /**
 

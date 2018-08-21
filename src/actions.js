@@ -1,4 +1,23 @@
-import { getActiveTabId, sendMessageToActiveTab } from './utils/chrome.js';
+import { getActiveTabId, sendMessageToActiveTab, getSavedStore } from './utils/chrome.js';
+
+
+export function determineSettings() {
+  return function (dispatch) {
+    return new Promise((resolve, _) => {
+      const dcStatePromise = sendMessageToActiveTab({
+        type: 'get-state'
+      });
+      const savedStorePromise = getSavedStore();
+      Promise.all([dcStatePromise, savedStorePromise])
+        .then((dcState, savedStore) => {
+          console.log(dcState, savedStore);
+          // TODO - check for settingsAreDefault, dispatch actions, etc.
+          // TODO - add tests for this action, given certain DC state, storage, etc.
+          resolve();
+        });
+    });
+  }
+}
 
 export function detectSite() {
   return function (dispatch) {
