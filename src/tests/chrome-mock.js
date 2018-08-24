@@ -18,6 +18,7 @@ export class ChromeStorageMock {
   constructor() {
     this.mockStorage = {};
     this.set = this.set.bind(this);
+    this.get = this.get.bind(this);
   }
 
   set(key, value) {
@@ -26,14 +27,14 @@ export class ChromeStorageMock {
 
   get(key, callback) {
     if (this.mockStorage.hasOwnProperty(key)) {
-      callback(this.mockStorage[key]);
+      let result = {};
+      result[key] = this.mockStorage[key];
+      callback(result);
     } else {
-      // TODO - What does chrome do?
+      callback({});
     }
   }
 }
-
-// TODO - Mock storage
 
 window.chrome = {
   ...window.chrome,
@@ -56,5 +57,7 @@ window.chrome = {
       addListener: sinon.stub()
     }
   },
-  storage: new ChromeStorageMock()
+  storage: {
+    local: new ChromeStorageMock()
+  }
 };

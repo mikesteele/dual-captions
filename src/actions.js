@@ -1,6 +1,5 @@
 import { getActiveTabId, sendMessageToActiveTab, getSavedStore } from './utils/chrome.js';
 
-
 export function determineSettings() {
   return function (dispatch) {
     return new Promise((resolve, _) => {
@@ -8,8 +7,10 @@ export function determineSettings() {
         type: 'get-state'
       });
       const savedStorePromise = getSavedStore();
-      Promise.all([dcStatePromise, savedStorePromise])
-        .then((dcState, savedStore) => {
+      Promise.all([
+        dcStatePromise,
+        savedStorePromise
+      ]).then((dcState, savedStore) => {
           console.log(dcState, savedStore);
           // TODO - check for settingsAreDefault, dispatch actions, etc.
           // TODO - add tests for this action, given certain DC state, storage, etc.
