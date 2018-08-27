@@ -15,6 +15,8 @@ const store = createStore(reducer,
   )
 );
 
+const defaultStore = {...store.getState()};
+
 // Create window.DC
 import '../../public/content-scripts/init';
 // Create adapter
@@ -144,28 +146,40 @@ it(`
 it(`
   When:
   - DC settings are default
-  - Saved store
+  - There is a saved store
 
   It should:
   - It should use settings from saved store
   - It should inject settings into DC
   `, done => {
+  // DC settings are default
+  observer.settingsAreDefault = true;
+
+  // There is a saved store
   const mockStore = {
+    ...defaultStore,
     settings: {
+      ...defaultStore.settings,
       extraSpace: true
     }
   };
   window.chrome.storage.local.set('__DC_store__', JSON.stringify(mockStore));
   // FIXME ^ This should use an export of storageMiddleware
 
-  // Sanity test
+  // Sanity tests
+  const initialState = store.getState();
+  expect(initialState.settings.extraSpace !== true).toEqual(true);
   expect(observer.extraSpace !== true).toEqual(true);
+
+  // Test action
   store.dispatch(actions.determineState())
     .then(() => {
       const state = store.getState();
-      // TODO
-      //expect(state.settings.extraSpace).toEqual(true);
-      //expect(observer.extraSpace).toEqual(true);
+      // It should use settings from saved store
+      expect(state.settings.extraSpace).toEqual(true);
+
+      // It should inject settings into DC
+      expect(observer.extraSpace).toEqual(true);
       done();
     }).catch(err => {
       console.log(`Error: ${err}`);

@@ -7,6 +7,9 @@ class DualCaptions {
     this.delayRenderingUntilTranslation = true;
     this.useCaptionsFromVideo = true;
 
+    this.settingsAreDefault = true;
+    // TODO - Change this on settings changed ^
+
     this.provider = window.DC.provider;
 
     window.chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
@@ -44,6 +47,7 @@ class DualCaptions {
       case 'get-state':
       sendResponse({
         ok: true,
+        settingsAreDefault: this.settingsAreDefault,
         isOn: this.isOn,
         secondLanguage: this.secondLanguage,
         settings: {
