@@ -1,5 +1,16 @@
 import { getActiveTabId, sendMessageToActiveTab, getSavedStore } from './utils/chrome.js';
 
+/**
+
+determineSettings()
+-------------------
+This action determines the popup's initial state.
+It does so by checking the observer's state (dcState) and checking chrome.storage for a saved store.
+It will prefer any settings in the observer, falling back to chrome.storage if the observer has default settings.
+Some settings are only saved in chrome.storage, like UI language of the popup, and will be applied seperately if available.
+
+**/
+
 export function determineSettings() {
   return function (dispatch) {
     return new Promise((resolve, _) => {
@@ -32,6 +43,16 @@ export function determineSettings() {
   }
 }
 
+/**
+
+detectSite()
+------------
+
+This action asks the observer for the current site, and changes it in the store.
+The observer gets the current site from the adapter, via adapter.site.
+
+**/
+
 export function detectSite() {
   return function (dispatch) {
     return new Promise((resolve, _) => {
@@ -52,6 +73,17 @@ export function detectSite() {
     });
   }
 }
+
+/**
+
+popupOpened()
+------------
+
+This action sends a message to the observer that the popup was opened.
+The observer relays this message to the adapter, via adapter.onPopupOpened(), which can respond with an error.
+Error cases include detecting automatic captions on YouTube or image captions on Netflix, both of which aren't supported at this time.
+
+**/
 
 export function popupOpened() {
   return function (dispatch) {
@@ -241,6 +273,9 @@ export function applyDCSettings() {
     });
   }
 }
+
+// TODO - What is the purpose of this action after determineSettings() ?
+// TODO - Need to remove tests?
 
 export function updateStoreFromDC() {
   console.log(`actions: Dispatching updateStoreFromDC()`);
