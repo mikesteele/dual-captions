@@ -10,12 +10,23 @@ export function determineSettings() {
       Promise.all([
         dcStatePromise,
         savedStorePromise
-      ]).then((dcState, savedStore) => {
-          console.log(dcState, savedStore);
-          // TODO - check for settingsAreDefault, dispatch actions, etc.
-          // TODO - add tests for this action, given certain DC state, storage, etc.
-          resolve();
-        });
+      ]).then(responses => {
+        const [ dcState, savedStore ] = responses;
+	      if (dcState && !dcState.settingsAreDefault) {
+	        dispatch({
+	          type: 'CHANGE_SECOND_LANGUAGE',
+	          payload: dcState.secondLanguage
+	        });
+	      } else if (savedStore) {
+          dispatch({
+            type: 'CHANGE_SECOND_LANGUAGE',
+            payload: savedStore.secondLanguage
+          });
+	      } else {
+	        console.log('TODO');
+	      }
+        resolve();
+      });
     });
   }
 }

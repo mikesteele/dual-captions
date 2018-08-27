@@ -6,14 +6,12 @@ import { createStore, applyMiddleware } from 'redux';
 import reducer from '../reducer';
 import ReduxThunk from 'redux-thunk';
 import * as actions from '../actions';
-import { storageMiddleware } from '../middleware';
 import chromeMock from './chrome-mock';
 import config from '../config';
 
 const store = createStore(reducer,
   applyMiddleware(
-    ReduxThunk,
-    storageMiddleware
+    ReduxThunk
   )
 );
 
@@ -103,8 +101,6 @@ it(`
     });
 });
 
-/**
-
 it(`
   When:
   - DC settings aren't default
@@ -112,15 +108,21 @@ it(`
 
   It should use DC settings
   `, done => {
+  observer.settingsAreDefault = false;
+  observer.secondLanguage = 'it';
+  // Sanity test
+  expect(observer.secondLanguage !== config.defaultSecondLanguage).toEqual(true);
   store.dispatch(actions.determineSettings())
     .then(() => {
       const state = store.getState();
-      expect(state.secondLanguage).toEqual(config.defaultSecondLanguage);
+      expect(state.secondLanguage).toEqual('it');
       done();
     }).catch(err => {
       console.log(`Error: ${err}`);
     });
 });
+
+/**
 
 it(`
   - DC settings aren't default
@@ -151,5 +153,7 @@ it(`
       console.log(`Error: ${err}`);
     });
 });
+
+TODO - Test if all settings are copied over.
 
 **/
