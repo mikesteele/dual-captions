@@ -12,19 +12,20 @@ export function determineSettings() {
         savedStorePromise
       ]).then(responses => {
         const [ dcState, savedStore ] = responses;
-	      if (dcState && !dcState.settingsAreDefault) {
-	        dispatch({
-	          type: 'CHANGE_SECOND_LANGUAGE',
-	          payload: dcState.secondLanguage
-	        });
-	      } else if (savedStore) {
+        // TODO - Apply settings just in savedStore, like UI language
+        if (dcState && !dcState.settingsAreDefault) {
+          dispatch({
+            type: 'CHANGE_SECOND_LANGUAGE',
+            payload: dcState.secondLanguage
+          });
+        } else if (savedStore) {
           dispatch({
             type: 'CHANGE_SECOND_LANGUAGE',
             payload: savedStore.secondLanguage
           });
-	      } else {
-	        console.log('TODO');
-	      }
+        } else {
+          console.log('TODO');
+        }
         resolve();
       });
     });

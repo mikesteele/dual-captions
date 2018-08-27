@@ -156,4 +156,6 @@ it(`
 
 TODO - Test if all settings are copied over.
 
+TODO - Test for UI settings being saved with/without DC state
+
 **/
