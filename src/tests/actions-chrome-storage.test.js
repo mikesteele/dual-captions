@@ -89,9 +89,8 @@ it(`
 
   It should:
   - It should use the default settings in config module
-  - It should inject the setting to DC? (TODO?)
   `, done => {
-  store.dispatch(actions.determineSettings())
+  store.dispatch(actions.determineState())
     .then(() => {
       const state = store.getState();
       expect(state.secondLanguage).toEqual(config.defaultSecondLanguage);
@@ -106,13 +105,14 @@ it(`
   - DC settings aren't default
   - No saved store
 
-  It should use DC settings
+  It should:
+  - It should use DC settings
   `, done => {
   observer.settingsAreDefault = false;
   observer.secondLanguage = 'it';
   // Sanity test
   expect(observer.secondLanguage !== config.defaultSecondLanguage).toEqual(true);
-  store.dispatch(actions.determineSettings())
+  store.dispatch(actions.determineState())
     .then(() => {
       const state = store.getState();
       expect(state.secondLanguage).toEqual('it');
@@ -139,20 +139,40 @@ it(`
     });
 });
 
+**/
+
 it(`
+  When:
   - DC settings are default
   - Saved store
+
+  It should:
   - It should use settings from saved store
+  - It should inject settings into DC
   `, done => {
-  store.dispatch(actions.determineSettings())
+  const mockStore = {
+    settings: {
+      extraSpace: true
+    }
+  };
+  window.chrome.storage.local.set('__DC_store__', JSON.stringify(mockStore));
+  // FIXME ^ This should use an export of storageMiddleware
+
+  // Sanity test
+  expect(observer.extraSpace !== true).toEqual(true);
+  store.dispatch(actions.determineState())
     .then(() => {
       const state = store.getState();
-      expect(state.secondLanguage).toEqual(config.defaultSecondLanguage);
+      // TODO
+      //expect(state.settings.extraSpace).toEqual(true);
+      //expect(observer.extraSpace).toEqual(true);
       done();
     }).catch(err => {
       console.log(`Error: ${err}`);
     });
 });
+
+/**
 
 TODO - Test if all settings are copied over.
 

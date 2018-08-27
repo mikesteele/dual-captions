@@ -2,7 +2,7 @@ import { getActiveTabId, sendMessageToActiveTab, getSavedStore } from './utils/c
 
 /**
 
-determineSettings()
+determineState()
 -------------------
 This action determines the popup's initial state.
 It does so by checking the observer's state (dcState) and checking chrome.storage for a saved store.
@@ -11,9 +11,12 @@ Some settings are only saved in chrome.storage, like UI language of the popup, a
 
 **/
 
-export function determineSettings() {
+// TODO - Rename dcState => observerState?
+
+export function determineState() {
   return function (dispatch) {
     return new Promise((resolve, _) => {
+      // Get state of observer & a saved store in chrome.storage
       const dcStatePromise = sendMessageToActiveTab({
         type: 'get-state'
       });
@@ -23,21 +26,47 @@ export function determineSettings() {
         savedStorePromise
       ]).then(responses => {
         const [ dcState, savedStore ] = responses;
-        // TODO - Apply settings just in savedStore, like UI language
+        // 1. Chrome.storage settings
+        if (savedStore && savedStore.uiLanguage) {
+          dispatch({
+            type: 'CHANGE_UI_LANGUAGE',
+            payload: savedStore.uiLanguage
+          });
+        }
+
+        // 2. Observer-only settings
+        if (dcState && dcState.hasOwnProperty('isOn')) {
+          dispatch({
+            type: 'CHANGE_DC_ON',
+            payload: dcState.isOn
+          });
+        }
+
+        // 3. All other settings
         if (dcState && !dcState.settingsAreDefault) {
           dispatch({
             type: 'CHANGE_SECOND_LANGUAGE',
             payload: dcState.secondLanguage
           });
+          dispatch({
+            type: 'CHANGE_SETTINGS',
+            payload: dcState.settings
+          });
+          resolve();
         } else if (savedStore) {
           dispatch({
             type: 'CHANGE_SECOND_LANGUAGE',
             payload: savedStore.secondLanguage
           });
+          dispatch({
+            type: 'CHANGE_SETTINGS',
+            payload: savedStore.settings
+          });
+          // TODO - This won't work with secondLanguage - FIXME
+          dispatch(applyDCSettings()).then(resolve);
         } else {
-          console.log('TODO');
+          resolve();
         }
-        resolve();
       });
     });
   }
@@ -320,20 +349,4 @@ export function updateStoreFromDC() {
         });
     });
   }
-}
-
-// TODO - This isn't an action, move out of here.
-export function isDCOn() {
-  return new Promise((resolve, _) => {
-    getActiveTabId()
-      .then(tabId => {
-        window.chrome.tabs.sendMessage(tabId, {
-          type: 'is-on'
-        }, resolve);
-      })
-      .catch(() => {
-        resolve();
-        // TODO - Need reject()?
-      });
-  });
 }
