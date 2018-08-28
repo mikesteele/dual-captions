@@ -443,6 +443,38 @@ it(`
     });
 });
 
+it(`
+  When:
+  - There is a saved store
+
+  It should:
+  - It should not copy over hasError or errorType
+  `, done => {
+  // There is a saved store
+  const mockStore = {
+    ...defaultStore,
+    hasError: true, // This should be ignored if in saved store
+    errorType: 'image-subtitles' // This should be ignored if in saved store
+  };
+  window.chrome.storage.local.set('__DC_store__', JSON.stringify(mockStore));
+  // FIXME ^ This should use an export of storageMiddleware
+
+  // Sanity tests
+  const initialState = store.getState();
+  expect(initialState.hasError).toEqual(false);
+  expect(initialState.errorType).toEqual('');
+
+  // Test action
+  store.dispatch(actions.determineState())
+    .then(() => {
+      const state = store.getState();
+      expect(state.hasError).toEqual(false);
+      expect(state.errorType).toEqual('');
+      done();
+    }).catch(err => {
+      console.log(`Error: ${err}`);
+    });
+});
 
 /**
 

@@ -1,15 +1,19 @@
 export function getActiveTabId() {
   return new Promise((resolve, reject) => {
-    window.chrome.tabs.query({
-      currentWindow: true,
-      active: true
-    }, tabs => {
-      if (tabs && tabs.length > 0) {
-        resolve(tabs[0].id);
-      } else {
-        reject('Could not get active tab ID.');
-      }
-    });
+    if (window.chrome && window.chrome.tabs && window.chrome.tabs.query) {
+      window.chrome.tabs.query({
+        currentWindow: true,
+        active: true
+      }, tabs => {
+        if (tabs && tabs.length > 0) {
+          resolve(tabs[0].id);
+        } else {
+          reject('Could not get active tab ID.');
+        }
+      });
+    } else {
+      reject('window.chrome.tabs.query missing')
+    }
   });
 }
 
@@ -30,19 +34,23 @@ export function sendMessageToActiveTab(message) {
 
 export function getSavedStore() {
   return new Promise((resolve, _) => {
-    window.chrome.storage.local.get('__DC_store__', result => {
-      if (result.__DC_store__) {
-        let savedStore;
-        try {
-          savedStore = JSON.parse(result.__DC_store__);
-          resolve(savedStore);
-        } catch(e) {
-          // TODO - Log 'bad JSON'
+    if (window.chrome && window.chrome.storage && window.chrome.storage.local) {
+      window.chrome.storage.local.get('__DC_store__', result => {
+        if (result.__DC_store__) {
+          let savedStore;
+          try {
+            savedStore = JSON.parse(result.__DC_store__);
+            resolve(savedStore);
+          } catch(e) {
+            // TODO - Log 'bad JSON'
+            resolve();
+          }
+        } else {
           resolve();
         }
-      } else {
-        resolve();
-      }
-    });
+      });
+    } else {
+      resolve();
+    }
   });
 }

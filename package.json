@@ -29,7 +29,8 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**"
+      "src/**",
+      "public/**"
     ],
     "coverageReporters": [
       "text"
