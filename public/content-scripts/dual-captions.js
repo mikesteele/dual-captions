@@ -177,3 +177,4 @@ class DualCaptions {
 }
 
 window.DC.DUAL_CAPTIONS = new DualCaptions();
+window.DualCaptions = DualCaptions;

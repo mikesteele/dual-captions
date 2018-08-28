@@ -62,8 +62,10 @@ export function determineState() {
             type: 'CHANGE_SETTINGS',
             payload: savedStore.settings
           });
-          // TODO - This won't work with secondLanguage - FIXME
-          dispatch(applyDCSettings()).then(resolve);
+          // Inject savedStore settings into observer
+          dispatch(changeDCLanguage(savedStore.secondLanguage))
+            .then(dispatch(applyDCSettings()))
+            .then(resolve);
         } else {
           resolve();
         }
@@ -293,54 +295,6 @@ export function applyDCSettings() {
           });
         })
         .then(resolve)
-        .catch(() => {
-          console.log(`actions: Can't get active tab ID, am I running locally?`);
-          // TODO - Dispatch 'error' action
-          // Unable to get active tab ID
-          resolve();
-        });
-    });
-  }
-}
-
-// TODO - What is the purpose of this action after determineSettings() ?
-// TODO - Need to remove tests?
-
-export function updateStoreFromDC() {
-  console.log(`actions: Dispatching updateStoreFromDC()`);
-  return function (dispatch) {
-    return new Promise((resolve, _) => {
-      getActiveTabId()
-        .then(tabId => {
-          return new Promise(_resolve => {
-            window.chrome.tabs.sendMessage(tabId, {
-              type: 'get-state',
-            }, _resolve);
-          });
-        })
-        .then(dcState => {
-          if (dcState) {
-            // TODO - This would be better as one action... lol
-            dispatch({
-              type: 'CHANGE_DC_ON',
-              payload: dcState.isOn
-            });
-            dispatch({
-              type: 'CHANGE_SECOND_LANGUAGE',
-              payload: dcState.secondLanguage
-            });
-            dispatch({
-              type: 'CHANGE_SETTINGS',
-              payload: dcState.settings
-            });
-          } else {
-            dispatch({
-              type: 'CHANGE_DC_ON',
-              payload: false
-            });
-          }
-          resolve();
-        })
         .catch(() => {
           console.log(`actions: Can't get active tab ID, am I running locally?`);
           // TODO - Dispatch 'error' action

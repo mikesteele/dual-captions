@@ -9,13 +9,8 @@ import * as actions from '../actions';
 import chromeMock from './chrome-mock';
 import config from '../config';
 
-const store = createStore(reducer,
-  applyMiddleware(
-    ReduxThunk
-  )
-);
-
-const defaultStore = {...store.getState()};
+let store;
+let defaultStore;
 
 // Create window.DC
 import '../../public/content-scripts/init';
@@ -36,9 +31,19 @@ import { ChromeStorageMock } from './chrome-mock';
 let observer = window.DC.DUAL_CAPTIONS;
 
 beforeEach(() => {
-  // TODO
-  // TODO - observer = new DualCaptions();
+  // Reset observer
+  // TODO - window.DC.DUAL_CAPTIONS = new DualCaptions();
+
+  // Reset chrome.storage
   window.chrome.storage.local = new ChromeStorageMock();
+
+  // Reset store
+  store = createStore(reducer,
+    applyMiddleware(
+      ReduxThunk
+    )
+  );
+  defaultStore = {...store.getState()};
 });
 
 /**
@@ -46,8 +51,6 @@ beforeEach(() => {
 Sanity tests for observer - can be removed when observer has proper tests.
 
 **/
-
-
 
 it(`
   observer should have in state, by default:
@@ -63,26 +66,14 @@ it(`
   });
 });
 
-/**
-
-TODO
-
-it('observer should have settingsAreDefault in state by default', done => {
-  observer._onMessage({
-    type: 'get-state'
-  }, null, response => {
-    expect(response.settingsAreDefault).toEqual(true);
-    done();
-  });
-});
-**/
+// TODO - Move to beforeEach() ?
+// TODO - Remove?
 
 /**
 
 Action tests
 
 **/
-
 
 it(`
   When:
@@ -124,24 +115,41 @@ it(`
     });
 });
 
-/**
-
 it(`
+  When:
   - DC settings aren't default
-  - Saved store
+  - There is a saved store
+
+  It should
   - It should still use DC settings
   `, done => {
-  store.dispatch(actions.determineSettings())
+  // DC settings aren't default
+  observer.settingsAreDefault = false;
+  observer.secondLanguage = 'es';
+
+  // There is a saved store
+  const mockStore = {
+    ...defaultStore,
+    secondLanguage: 'it'
+  };
+  window.chrome.storage.local.set('__DC_store__', JSON.stringify(mockStore));
+  // FIXME ^ This should use an export of storageMiddleware
+
+  // Sanity tests
+  const initialState = store.getState()
+  expect(initialState.secondLanguage !== 'es').toEqual(true);
+
+  // Test action
+  store.dispatch(actions.determineState())
     .then(() => {
       const state = store.getState();
-      expect(state.secondLanguage).toEqual(config.defaultSecondLanguage);
+      expect(state.secondLanguage).toEqual('es');
       done();
     }).catch(err => {
       console.log(`Error: ${err}`);
     });
 });
 
-**/
 
 it(`
   When:
@@ -186,10 +194,258 @@ it(`
     });
 });
 
+it(`
+  When:
+  - DC settings are default
+  - There is a saved store
+
+  It should:
+  - It should copy all saved store settings to state
+  - It should copy all saved store settings to DC
+  `, done => {
+  // DC settings are default
+  observer.settingsAreDefault = true;
+
+  // There is a saved store
+  const mockStore = {
+    ...defaultStore,
+    secondLanguage: 'ja',
+    uiLanguage: 'fr',
+    settings: {
+      ...defaultStore.settings,
+      useCaptionsFromVideo: false,
+      delayRenderingUntilTranslation: false,
+      extraSpace: true
+    }
+  };
+  window.chrome.storage.local.set('__DC_store__', JSON.stringify(mockStore));
+  // FIXME ^ This should use an export of storageMiddleware
+
+  // Initial state sanity tests
+  const initialState = store.getState();
+  expect(initialState.secondLanguage !== 'ja').toEqual(true);
+  expect(initialState.uiLanguage !== 'fr').toEqual(true);
+  expect(initialState.settings.extraSpace !== true).toEqual(true);
+  expect(initialState.settings.useCaptionsFromVideo !== false).toEqual(true);
+  expect(initialState.settings.delayRenderingUntilTranslation !== false).toEqual(true);
+
+  // Observer sanity tests
+  /**
+
+  TODO
+
+  expect(observer.extraSpace !== true).toEqual(true);
+  expect(observer.useCaptionsFromVideo !== false).toEqual(true);
+  expect(observer.delayRenderingUntilTranslation !== false).toEqual(true);
+  expect(observer.secondLanguage !== 'ja').toEqual(true);
+  **/
+
+  // Test action
+  store.dispatch(actions.determineState())
+    .then(() => {
+      const state = store.getState();
+      // It should use settings from saved store
+      expect(state.secondLanguage).toEqual('ja');
+      expect(state.uiLanguage).toEqual('fr');
+      expect(state.settings.extraSpace).toEqual(true);
+      expect(state.settings.useCaptionsFromVideo).toEqual(false);
+      expect(state.settings.delayRenderingUntilTranslation).toEqual(false);
+
+      // It should inject settings into DC
+      expect(observer.secondLanguage).toEqual('ja');
+      expect(observer.extraSpace).toEqual(true);
+      expect(observer.useCaptionsFromVideo).toEqual(false);
+      expect(observer.delayRenderingUntilTranslation).toEqual(false);
+      done();
+    }).catch(err => {
+      console.log(`Error: ${err}`);
+    });
+});
+
+it(`
+  When:
+  - DC settings are default
+  - There is a saved store
+
+  It should:
+  - It should get UI language from saved store
+  `, done => {
+  // DC settings are default
+  observer.settingsAreDefault = true;
+
+  // There is a saved store
+  const mockStore = {
+    ...defaultStore,
+    uiLanguage: 'fr'
+  };
+  window.chrome.storage.local.set('__DC_store__', JSON.stringify(mockStore));
+  // FIXME ^ This should use an export of storageMiddleware
+
+  // Sanity tests
+  const initialState = store.getState();
+  expect(initialState.uiLanguage !== 'fr').toEqual(true);
+
+  // Test action
+  store.dispatch(actions.determineState())
+    .then(() => {
+      const state = store.getState();
+      // It should use UI language from saved store
+      expect(state.uiLanguage).toEqual('fr');
+      done();
+    }).catch(err => {
+      console.log(`Error: ${err}`);
+    });
+});
+
+it(`
+  When:
+  - DC settings aren't default
+  - There is a saved store
+
+  It should:
+  - It should get UI language from saved store
+  `, done => {
+  // DC settings aren't default
+  observer.settingsAreDefault = false;
+  observer.uiLanguage = 'it';
+  // ^ This setting isn't expected in the observer, so it should be ignored.
+
+  // There is a saved store
+  const mockStore = {
+    ...defaultStore,
+    uiLanguage: 'fr'
+  };
+  window.chrome.storage.local.set('__DC_store__', JSON.stringify(mockStore));
+  // FIXME ^ This should use an export of storageMiddleware
+
+  // Sanity tests
+  const initialState = store.getState();
+  expect(initialState.uiLanguage !== 'fr').toEqual(true);
+
+  // Test action
+  store.dispatch(actions.determineState())
+    .then(() => {
+      const state = store.getState();
+      // It should use UI language from saved store
+      expect(state.uiLanguage).toEqual('fr');
+      done();
+    }).catch(err => {
+      console.log(`Error: ${err}`);
+    });
+});
+
+it(`
+  When:
+  - DC settings aren't default
+  - There is a saved store
+
+  It should:
+  - It should get UI language from saved store
+  `, done => {
+  // DC settings aren't default
+  observer.settingsAreDefault = false;
+  observer.uiLanguage = 'it';
+  // ^ This setting isn't expected in the observer, so it should be ignored.
+
+  // There is a saved store
+  const mockStore = {
+    ...defaultStore,
+    uiLanguage: 'fr'
+  };
+  window.chrome.storage.local.set('__DC_store__', JSON.stringify(mockStore));
+  // FIXME ^ This should use an export of storageMiddleware
+
+  // Sanity tests
+  const initialState = store.getState();
+  expect(initialState.uiLanguage !== 'fr').toEqual(true);
+
+  // Test action
+  store.dispatch(actions.determineState())
+    .then(() => {
+      const state = store.getState();
+      // It should use UI language from saved store
+      expect(state.uiLanguage).toEqual('fr');
+      done();
+    }).catch(err => {
+      console.log(`Error: ${err}`);
+    });
+});
+
+it(`
+  When:
+  - DC settings are default & DC is on
+  - There is a saved store
+
+  It should:
+  - It should detect correctly that DC is on
+  `, done => {
+  // DC settings are default
+  observer.settingsAreDefault = true;
+  observer.isOn = true;
+
+  // There is a saved store
+  const mockStore = {
+    ...defaultStore,
+    isOn: false // This should be ignored if in saved store
+  };
+  window.chrome.storage.local.set('__DC_store__', JSON.stringify(mockStore));
+  // FIXME ^ This should use an export of storageMiddleware
+
+  // Sanity tests
+  const initialState = store.getState();
+  expect(initialState.isOn).toEqual(false);
+
+  // Test action
+  store.dispatch(actions.determineState())
+    .then(() => {
+      const state = store.getState();
+      // It should use isOn from DC
+      expect(state.isOn).toEqual(true);
+      done();
+    }).catch(err => {
+      console.log(`Error: ${err}`);
+    });
+});
+
+it(`
+  When:
+  - DC settings are default & DC is off
+  - There is a saved store
+
+  It should:
+  - It should detect correctly that DC is off
+  `, done => {
+  // DC settings are default
+  observer.settingsAreDefault = true;
+  observer.isOn = false;
+
+  // There is a saved store
+  const mockStore = {
+    ...defaultStore,
+    isOn: true // This should be ignored if in saved store
+  };
+  window.chrome.storage.local.set('__DC_store__', JSON.stringify(mockStore));
+  // FIXME ^ This should use an export of storageMiddleware
+
+  // Sanity tests
+  const initialState = store.getState();
+  expect(initialState.isOn).toEqual(false);
+
+  // Test action
+  store.dispatch(actions.determineState())
+    .then(() => {
+      const state = store.getState();
+      // It should use isOn from DC
+      expect(state.isOn).toEqual(false);
+      done();
+    }).catch(err => {
+      console.log(`Error: ${err}`);
+    });
+});
+
+
 /**
 
-TODO - Test if all settings are copied over.
-
-TODO - Test for UI settings being saved with/without DC state
+TODO - savedStore missing values tests
 
 **/
