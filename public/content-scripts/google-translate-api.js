@@ -50,7 +50,7 @@ window.DC.translate = function(text, opts) {
                 result.raw = res.body;
             }
 
-            var body = eval(res.body);
+            var body = JSON.parse(res.body);
             body[0].forEach(function (obj) {
                 if (obj[0]) {
                     result.text += obj[0];
