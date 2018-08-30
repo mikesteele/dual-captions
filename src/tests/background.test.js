@@ -14,6 +14,14 @@ it('should add new URL to captionRequestUrls', () => {
   expect(background.captionRequestUrls.youtube.WBqnzn77MEE).toEqual(requestUrl);
 });
 
+it(`should remove 'name' param from URL before adding to captionRequestUrls`, () => {
+  const requestUrl = 'https://www.youtube.com/api/timedtext?signature=9529BB94F5A1D370D2FE6310B7B2D4A33B919CBD.B8A53E3782710830C6F5A4DD71F3DA3D2D8D0050&sparams=asr_langs%2Ccaps%2Cv%2Cxorp%2Cexpire&xorp=True&hl=en_US&caps=asr&asr_langs=pt%2Cnl%2Cen%2Cfr%2Cru%2Cit%2Cko%2Cde%2Ces%2Cja&v=JKHUaNAxsTg&key=yttt1&expire=1535682446&lang=de&name=Annotated%20by%20Kai%20Heimpel&fmt=srv3';
+  background._onBeforeYouTubeCaptionRequest({
+    url: requestUrl
+  });
+  expect(background.captionRequestUrls.youtube.JKHUaNAxsTg).toEqual('https://www.youtube.com/api/timedtext?signature=9529BB94F5A1D370D2FE6310B7B2D4A33B919CBD.B8A53E3782710830C6F5A4DD71F3DA3D2D8D0050&sparams=asr_langs%2Ccaps%2Cv%2Cxorp%2Cexpire&xorp=True&hl=en_US&caps=asr&asr_langs=pt%2Cnl%2Cen%2Cfr%2Cru%2Cit%2Cko%2Cde%2Ces%2Cja&v=JKHUaNAxsTg&key=yttt1&expire=1535682446&lang=de&fmt=srv3');
+});
+
 it('should respond correctly to fetcher', done => {
   background._onMessage({
     type: 'get-caption-request-urls'
