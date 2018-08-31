@@ -42,7 +42,7 @@ export function getSavedStore() {
             savedStore = JSON.parse(result.__DC_store__);
             resolve(savedStore);
           } catch(e) {
-            // TODO - Log 'bad JSON'
+            console.log('utils - getSavedStore - Got bad JSON from chrome.storage');
             resolve();
           }
         } else {

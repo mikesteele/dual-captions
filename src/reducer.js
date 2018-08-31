@@ -12,7 +12,6 @@ const initialState = {
   uiLanguage: config.defaultUILanguage,
   settings: config.defaultSettings
 };
-// TODO - ^ Update reducer tests w/ config module?
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {

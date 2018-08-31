@@ -30,7 +30,6 @@ class App extends Component {
       .catch(err => {
         console.log(err);
       });
-      // TODO - Correct order?
   }
 
   _onUILanguageSelectChanged(e) {
