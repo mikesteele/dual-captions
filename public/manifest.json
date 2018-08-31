@@ -1,7 +1,7 @@
 {
   "name": "Two Captions for YouTube, Netflix & Amazon",
   "description": "Show subtitles in two languages on Youtube, Netflix & Amazon Video",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "permissions": [
     "tabs",
     "http://*/*",

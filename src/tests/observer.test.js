@@ -18,11 +18,12 @@ it('should have settingsAreDefault by default', () => {
   expect(observer.settingsAreDefault).toEqual(true);
 });
 
-it('should change settingsAreDefault to false once changing settings', () => {
+it('should change settingsAreDefault to false once changing settings', done => {
   observer._onMessage({
     type: 'change-settings',
     payload: {}
   }, null, response => {
     expect(observer.settingsAreDefault).toEqual(false);
+    done();
   });
 });
