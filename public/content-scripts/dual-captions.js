@@ -74,10 +74,9 @@ class DualCaptions {
 
       case 'popup-opened':
       // 1. Request /en/
-      // Future: This should request the initial langauge of the popup
-      this.provider.requestLanguage('en')
+      this.provider.requestLanguage(this.secondLanguage)
         .then(() => {
-          console.log(`Loaded captions for 'en'`)
+          console.log(`Loaded captions for '${this.secondLanguage}'`)
         })
         .catch(err => {
           console.log(`Couldn't load translations for 'en': ${err}`);
