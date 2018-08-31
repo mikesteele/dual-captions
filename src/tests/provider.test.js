@@ -27,6 +27,9 @@ window.DC.translate = sinon.stub().returns(Promise.resolve({
 }));
 
 const provider = window.DC.provider;
+const fetcher = window.DC.fetcher;
+const parser = window.DC.parser;
+const adapter = window.DC.config;
 
 const exampleEnglishCaptions = [
   {
@@ -145,3 +148,52 @@ it('should use Google Translate if not useCaptionsFromVideo', done => {
     })
     .catch(err => { console.log(err)});
 });
+
+it('should handle switching between videos - requestLanguage', done => {
+  const fetchStub = sinon.stub(fetcher, 'fetchCaptions');
+  const parseStub = sinon.stub(parser, 'parse');
+  const adapterStub = sinon.stub(adapter, 'getVideoId');
+
+  fetchStub.returns(Promise.resolve());
+  parseStub.returns(Promise.resolve([]));
+  adapterStub.returns('test-video-id-1');
+
+  provider.requestLanguage('en')
+    .then(() => {
+      expect(fetcher.fetchCaptions.calledWith('en', 'test-video-id-1'));
+      adapterStub.reset();
+      adapterStub.returns('test-video-id-2');
+      provider.requestLanguage('fr')
+        .then(() => {
+          expect(fetcher.fetchCaptions.calledWith('fr', 'test-video-id-2'));
+          done();
+          fetchStub.restore();
+          adapterStub.restore();
+          parseStub.restore();
+        })
+        .catch(err => {
+          fetchStub.restore();
+          adapterStub.restore();
+          parseStub.restore();
+          console.log(err);
+        });
+    })
+    .catch(err => {
+      fetchStub.restore();
+      adapterStub.restore();
+      parseStub.restore();
+      console.log(err);
+    });
+});
+
+/**
+
+TODO
+
+'should handle switching between videos - translate'
+
+'should handle loading captions for two videos'
+
+'should not return captions for another video'
+
+**/
