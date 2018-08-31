@@ -7,6 +7,8 @@ class DualCaptions {
     this.delayRenderingUntilTranslation = true;
     this.useCaptionsFromVideo = true;
 
+    this.settingsAreDefault = true;
+
     this.provider = window.DC.provider;
 
     window.chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
@@ -28,6 +30,7 @@ class DualCaptions {
       break;
 
       case 'change-settings':
+      this.settingsAreDefault = false;
       this.extraSpace = message.payload.extraSpace;
       this.delayRenderingUntilTranslation = message.payload.delayRenderingUntilTranslation;
       this.useCaptionsFromVideo = message.payload.useCaptionsFromVideo;
@@ -44,10 +47,13 @@ class DualCaptions {
       case 'get-state':
       sendResponse({
         ok: true,
+        settingsAreDefault: this.settingsAreDefault,
         isOn: this.isOn,
         secondLanguage: this.secondLanguage,
         settings: {
-          extraSpace: this.extraSpace
+          extraSpace: this.extraSpace,
+          useCaptionsFromVideo: this.useCaptionsFromVideo,
+          delayRenderingUntilTranslation: this.delayRenderingUntilTranslation
         }
       });
       break;
@@ -68,10 +74,9 @@ class DualCaptions {
 
       case 'popup-opened':
       // 1. Request /en/
-      // Future: This should request the initial langauge of the popup
-      this.provider.requestLanguage('en')
+      this.provider.requestLanguage(this.secondLanguage)
         .then(() => {
-          console.log(`Loaded captions for 'en'`)
+          console.log(`Loaded captions for '${this.secondLanguage}'`)
         })
         .catch(err => {
           console.log(`Couldn't load translations for 'en': ${err}`);
@@ -173,3 +178,4 @@ class DualCaptions {
 }
 
 window.DC.DUAL_CAPTIONS = new DualCaptions();
+window.DualCaptions = DualCaptions;

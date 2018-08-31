@@ -1,5 +1,6 @@
 import config from './config';
 
+// FIXME - This should all come from the config module
 const initialState = {
   currentTab: 0,
   DC: true,
@@ -7,8 +8,8 @@ const initialState = {
   hasError: false,
   errorType: '',
   isOn: false,
-  secondLanguage: 'en',
-  uiLanguage: 'en',
+  secondLanguage: config.defaultSecondLanguage,
+  uiLanguage: config.defaultUILanguage,
   settings: config.defaultSettings
 };
 

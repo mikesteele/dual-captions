@@ -59,21 +59,3 @@ it('should apply settings on applyDCSettings', (done) => {
       done();
     });
 });
-
-it('should update store from DC on updateStoreFromDC', (done) => {
-  // 1. Let's start by setting the popup store to default:
-  const defaultStore = reducer(undefined, {});
-  store.dispatch({
-    type: 'HYDRATE_STORE',
-    payload: defaultStore
-  });
-  assert(store.getState().settings.extraSpace === false);
-
-  // 2. Then, we can restore it from DC
-  console.log('TEST: should update store from DC on updateStoreFromDC');
-  store.dispatch(actions.updateStoreFromDC())
-    .then(() => {
-      assert(store.getState().settings.extraSpace === true);
-      done();
-    });
-});

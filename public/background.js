@@ -23,7 +23,10 @@ class BackgroundPage {
     const videoId = url.searchParams.get('v');
 
     if (videoId) {
-      this.captionRequestUrls.youtube[videoId] = details.url;
+      url.searchParams.delete('name');
+      // ^ 'Named' subtitle requests are not supported at this time.
+      // For more information, see https://github.com/mikesteele/dual-captions/issues/57
+      this.captionRequestUrls.youtube[videoId] = url.href;
       console.log(`Background - Adding ${details.url} to captionRequestUrls.youtube.${videoId}`);
     }
   }

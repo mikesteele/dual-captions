@@ -1,4 +1,93 @@
-import { getActiveTabId, sendMessageToActiveTab } from './utils/chrome.js';
+import { getActiveTabId, sendMessageToActiveTab, getSavedStore } from './utils/chrome.js';
+
+/**
+
+determineState()
+-------------------
+This action determines the popup's initial state.
+It does so by checking the observer's state (dcState) and checking chrome.storage for a saved store.
+It will prefer any settings in the observer, falling back to chrome.storage if the observer has default settings.
+Some settings are only saved in chrome.storage, like UI language of the popup, and will be applied seperately if available.
+
+**/
+
+// TODO - Rename dcState => observerState?
+
+export function determineState() {
+  return function (dispatch) {
+    return new Promise((resolve, _) => {
+      // Get state of observer & a saved store in chrome.storage
+      const dcStatePromise = sendMessageToActiveTab({
+        type: 'get-state'
+      });
+      const savedStorePromise = getSavedStore();
+      Promise.all([
+        dcStatePromise,
+        savedStorePromise
+      ]).then(responses => {
+        const [ dcState, savedStore ] = responses;
+        console.log(`actions - determineState - dcState`);
+        console.log(dcState);
+        console.log(`actions - determineState - savedStore`);
+        console.log(savedStore);
+
+        // 1. Chrome.storage settings
+        if (savedStore && savedStore.uiLanguage) {
+          dispatch({
+            type: 'CHANGE_UI_LANGUAGE',
+            payload: savedStore.uiLanguage
+          });
+        }
+
+        // 2. Observer-only settings
+        if (dcState && dcState.hasOwnProperty('isOn')) {
+          dispatch({
+            type: 'CHANGE_DC_ON',
+            payload: dcState.isOn
+          });
+        }
+
+        // 3. All other settings
+        if (dcState && !dcState.settingsAreDefault) {
+          dispatch({
+            type: 'CHANGE_SECOND_LANGUAGE',
+            payload: dcState.secondLanguage
+          });
+          dispatch({
+            type: 'CHANGE_SETTINGS',
+            payload: dcState.settings
+          });
+          resolve();
+        } else if (savedStore) {
+          dispatch({
+            type: 'CHANGE_SECOND_LANGUAGE',
+            payload: savedStore.secondLanguage
+          });
+          dispatch({
+            type: 'CHANGE_SETTINGS',
+            payload: savedStore.settings
+          });
+          // Inject savedStore settings into observer
+          dispatch(changeDCLanguage(savedStore.secondLanguage))
+            .then(dispatch(applyDCSettings()))
+            .then(resolve);
+        } else {
+          resolve();
+        }
+      });
+    });
+  }
+}
+
+/**
+
+detectSite()
+------------
+
+This action asks the observer for the current site, and changes it in the store.
+The observer gets the current site from the adapter, via adapter.site.
+
+**/
 
 export function detectSite() {
   return function (dispatch) {
@@ -20,6 +109,17 @@ export function detectSite() {
     });
   }
 }
+
+/**
+
+popupOpened()
+------------
+
+This action sends a message to the observer that the popup was opened.
+The observer relays this message to the adapter, via adapter.onPopupOpened(), which can respond with an error.
+Error cases include detecting automatic captions on YouTube or image captions on Netflix, both of which aren't supported at this time.
+
+**/
 
 export function popupOpened() {
   return function (dispatch) {
@@ -208,65 +308,4 @@ export function applyDCSettings() {
         });
     });
   }
-}
-
-export function updateStoreFromDC() {
-  console.log(`actions: Dispatching updateStoreFromDC()`);
-  return function (dispatch) {
-    return new Promise((resolve, _) => {
-      getActiveTabId()
-        .then(tabId => {
-          return new Promise(_resolve => {
-            window.chrome.tabs.sendMessage(tabId, {
-              type: 'get-state',
-            }, _resolve);
-          });
-        })
-        .then(dcState => {
-          if (dcState) {
-            // TODO - This would be better as one action... lol
-            dispatch({
-              type: 'CHANGE_DC_ON',
-              payload: dcState.isOn
-            });
-            dispatch({
-              type: 'CHANGE_SECOND_LANGUAGE',
-              payload: dcState.secondLanguage
-            });
-            dispatch({
-              type: 'CHANGE_SETTINGS',
-              payload: dcState.settings
-            });
-          } else {
-            dispatch({
-              type: 'CHANGE_DC_ON',
-              payload: false
-            });
-          }
-          resolve();
-        })
-        .catch(() => {
-          console.log(`actions: Can't get active tab ID, am I running locally?`);
-          // TODO - Dispatch 'error' action
-          // Unable to get active tab ID
-          resolve();
-        });
-    });
-  }
-}
-
-// TODO - This isn't an action, move out of here.
-export function isDCOn() {
-  return new Promise((resolve, _) => {
-    getActiveTabId()
-      .then(tabId => {
-        window.chrome.tabs.sendMessage(tabId, {
-          type: 'is-on'
-        }, resolve);
-      })
-      .catch(() => {
-        resolve();
-        // TODO - Need reject()?
-      });
-  });
 }
