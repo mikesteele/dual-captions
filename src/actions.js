@@ -26,6 +26,11 @@ export function determineState() {
         savedStorePromise
       ]).then(responses => {
         const [ dcState, savedStore ] = responses;
+        console.log(`actions - determineState - dcState`);
+        console.log(dcState);
+        console.log(`actions - determineState - savedStore`);
+        console.log(savedStore);
+
         // 1. Chrome.storage settings
         if (savedStore && savedStore.uiLanguage) {
           dispatch({

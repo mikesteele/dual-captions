@@ -8,7 +8,6 @@ class DualCaptions {
     this.useCaptionsFromVideo = true;
 
     this.settingsAreDefault = true;
-    // TODO - Change this on settings changed ^
 
     this.provider = window.DC.provider;
 
@@ -31,6 +30,7 @@ class DualCaptions {
       break;
 
       case 'change-settings':
+      this.settingsAreDefault = false;
       this.extraSpace = message.payload.extraSpace;
       this.delayRenderingUntilTranslation = message.payload.delayRenderingUntilTranslation;
       this.useCaptionsFromVideo = message.payload.useCaptionsFromVideo;
@@ -51,7 +51,9 @@ class DualCaptions {
         isOn: this.isOn,
         secondLanguage: this.secondLanguage,
         settings: {
-          extraSpace: this.extraSpace
+          extraSpace: this.extraSpace,
+          useCaptionsFromVideo: this.useCaptionsFromVideo,
+          delayRenderingUntilTranslation: this.delayRenderingUntilTranslation
         }
       });
       break;

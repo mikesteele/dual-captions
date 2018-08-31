@@ -31,9 +31,6 @@ import { ChromeStorageMock } from './chrome-mock';
 let observer = window.DC.DUAL_CAPTIONS;
 
 beforeEach(() => {
-  // Reset observer
-  // TODO - window.DC.DUAL_CAPTIONS = new DualCaptions();
-
   // Reset chrome.storage
   window.chrome.storage.local = new ChromeStorageMock();
 
@@ -61,13 +58,10 @@ it(`
     type: 'get-state'
   }, null, response => {
     expect(response.secondLanguage).toEqual('en');
-    // TODO - expect(response.settingsAreDefault).toEqual(true);
+    expect(response.settingsAreDefault).toEqual(true);
     done();
   });
 });
-
-// TODO - Move to beforeEach() ?
-// TODO - Remove?
 
 /**
 
@@ -203,6 +197,9 @@ it(`
   - It should copy all saved store settings to state
   - It should copy all saved store settings to DC
   `, done => {
+  // FUTURE - This can be removed when observer is reset in beforeEach
+  observer.extraSpace = false;
+
   // DC settings are default
   observer.settingsAreDefault = true;
 
@@ -230,15 +227,10 @@ it(`
   expect(initialState.settings.delayRenderingUntilTranslation !== false).toEqual(true);
 
   // Observer sanity tests
-  /**
-
-  TODO
-
+  expect(observer.secondLanguage !== 'ja').toEqual(true);
   expect(observer.extraSpace !== true).toEqual(true);
   expect(observer.useCaptionsFromVideo !== false).toEqual(true);
   expect(observer.delayRenderingUntilTranslation !== false).toEqual(true);
-  expect(observer.secondLanguage !== 'ja').toEqual(true);
-  **/
 
   // Test action
   store.dispatch(actions.determineState())
@@ -475,9 +467,3 @@ it(`
       console.log(`Error: ${err}`);
     });
 });
-
-/**
-
-TODO - savedStore missing values tests
-
-**/
