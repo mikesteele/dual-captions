@@ -42,7 +42,7 @@ class TranslationProvider {
   }
 
   __loadCaptions(captions, language) {
-    // TODO - Don't load if there's no currentSite
+    // TODO - Don't load if there's no currentSite & add test
     const currentSite = this.adapter.site;
     const videoId = this.adapter.getVideoId();
     if (!this.__captions.hasOwnProperty(currentSite)) {
@@ -56,7 +56,7 @@ class TranslationProvider {
   }
 
   translate(text, language, currentTime, useCaptionsFromVideo) {
-    console.log(this.__captions);
+    console.log(this.__captions); // TODO - Remove
     return new Promise((resolve, reject) => {
       const currentSite = this.adapter.site;
       const videoId = this.adapter.getVideoId();

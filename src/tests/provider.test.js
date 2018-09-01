@@ -185,6 +185,40 @@ it('should handle switching between videos - requestLanguage', done => {
     });
 });
 
+it('should handle switching between videos - translate', done => {
+  // Let's load captions for two videos
+  adapterStub.returns('test-video-id-1');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "This is a caption from video 1"
+  }], 'en');
+  adapterStub.returns('test-video-id-2');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "This is a caption from video 2"
+  }], 'en');
+  adapterStub.returns('test-video-id-1');
+  provider.translate('Test caption', 'en', 1234, true)
+    .then(response1 => {
+      expect(response1.text === 'This is a caption from video 1 ✓').toEqual(true);
+      adapterStub.returns('test-video-id-2');
+      provider.translate('Test caption', 'en', 1234, true)
+        .then(response2 => {
+          expect(response2.text === 'This is a caption from video 2 ✓').toEqual(true);
+          done();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+
 /**
 
 TODO
