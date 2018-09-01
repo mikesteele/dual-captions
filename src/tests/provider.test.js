@@ -31,6 +31,9 @@ const fetcher = window.DC.fetcher;
 const parser = window.DC.parser;
 const adapter = window.DC.config;
 
+const adapterStub = sinon.stub(adapter, 'getVideoId');
+adapterStub.returns('test-video-id');
+
 const exampleEnglishCaptions = [
   {
     startTime: 10,
@@ -152,7 +155,6 @@ it('should use Google Translate if not useCaptionsFromVideo', done => {
 it('should handle switching between videos - requestLanguage', done => {
   const fetchStub = sinon.stub(fetcher, 'fetchCaptions');
   const parseStub = sinon.stub(parser, 'parse');
-  const adapterStub = sinon.stub(adapter, 'getVideoId');
 
   fetchStub.returns(Promise.resolve());
   parseStub.returns(Promise.resolve([]));
@@ -168,19 +170,16 @@ it('should handle switching between videos - requestLanguage', done => {
           expect(fetcher.fetchCaptions.calledWith('fr', 'test-video-id-2'));
           done();
           fetchStub.restore();
-          adapterStub.restore();
           parseStub.restore();
         })
         .catch(err => {
           fetchStub.restore();
-          adapterStub.restore();
           parseStub.restore();
           console.log(err);
         });
     })
     .catch(err => {
       fetchStub.restore();
-      adapterStub.restore();
       parseStub.restore();
       console.log(err);
     });
@@ -195,5 +194,9 @@ TODO
 'should handle loading captions for two videos'
 
 'should not return captions for another video'
+
+'__loadCaptions' tests
+
+TODO - Need to add stub for adapter.getVideoId()?
 
 **/
