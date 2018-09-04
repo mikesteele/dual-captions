@@ -43,6 +43,14 @@ yarn build
 
 You'll need to enable Developer Mode in chrome://extensions to do this. See https://developer.chrome.com/extensions/getstarted#unpacked for more information.
 
+#### Run Tests
+
+Tests are stored in `src/tests`. You can run tests by calling:
+
+```
+yarn test
+```
+
 ### License
 
 MIT

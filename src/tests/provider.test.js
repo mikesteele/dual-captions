@@ -1,5 +1,6 @@
 import expect from 'expect';
 import sinon from 'sinon';
+import assert from 'assert';
 
 import '../../public/content-scripts/init';
 // Create adapter
@@ -218,19 +219,70 @@ it('should handle switching between videos - translate', done => {
     });
 });
 
+it('should not load captions if missing videoId', done => {
+  const originalLoadedCaptions = {...provider.__captions};
+  adapterStub.returns(undefined);
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "Test caption"
+  }], 'en')
+    .then(() => {})
+    .catch(err => {
+      expect(err === `Can't load captions, missing videoId or currentSite`).toEqual(true);
+      assert.deepEqual(provider.__captions, originalLoadedCaptions);
+      done();
+    });
+});
 
-/**
+it('should not load captions if missing currentSite', done => {
+  const originalLoadedCaptions = {...provider.__captions};
+  adapterStub.returns('test-video-id-1');
+  adapter.site = undefined;
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "Test caption"
+  }], 'en')
+    .then(() => {})
+    .catch(err => {
+      expect(err === `Can't load captions, missing videoId or currentSite`).toEqual(true);
+      assert.deepEqual(provider.__captions, originalLoadedCaptions);
+      adapter.site = 'youtube';
+      done();
+    });
+});
 
-TODO
-
-'should handle switching between videos - translate'
-
-'should handle loading captions for two videos'
-
-'should not return captions for another video'
-
-'__loadCaptions' tests
-
-TODO - Need to add stub for adapter.getVideoId()?
-
-**/
+it('should handle switching between videos - loadCaptions', () => {
+  // Let's load captions for two videos
+  adapterStub.returns('test-video-id-1');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "This is a caption from video 1"
+  }], 'en');
+  adapterStub.returns('test-video-id-2');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "This is a caption from video 2"
+  }], 'en');
+  assert.deepEqual(provider.__captions, {
+    'youtube': {
+      'test-video-id-1': {
+        'en': [{
+          "startTime": 1234,
+          "endTime": 1600,
+          "text": "This is a caption from video 1"
+        }]
+      },
+      'test-video-id-2': {
+        'en': [{
+          "startTime": 1234,
+          "endTime": 1600,
+          "text": "This is a caption from video 2"
+        }]
+      }
+    }
+  })
+});
