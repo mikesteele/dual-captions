@@ -9,8 +9,14 @@ class NetflixConfig extends DualCaptionsConfig {
     return 'TODO';
   }
 
+  // TODO - Add test
   getPlayerCurrentTime() {
-    return undefined;
+    const video = document.querySelector('video');
+    if (video) {
+      return video.currentTime;
+    } else {
+      return undefined;
+    }
   }
 
   onPopupOpened() {
