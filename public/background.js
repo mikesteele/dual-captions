@@ -1,3 +1,6 @@
+// To expose the pattern for testing in src/tests/background.test.js
+window.NETFLIX_CAPTION_REQUEST_PATTERN = 'https://*.nflxvideo.net/?o=*&v=*&e=*&t=*';
+
 class BackgroundPage {
   constructor() {
     // Props
@@ -13,7 +16,7 @@ class BackgroundPage {
     chrome.runtime.onMessage.addListener(this._onMessage);
     chrome.webRequest.onBeforeRequest.addListener(
       this._onBeforeYouTubeCaptionRequest, {
-        urls: ['https://www.youtube.com/api/timedtext*']
+        urls: [window.NETFLIX_CAPTION_REQUEST_PATTERN]
       }
     );
     chrome.webRequest.onBeforeRequest.addListener(
