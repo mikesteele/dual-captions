@@ -1,5 +1,6 @@
 import expect from 'expect';
 import sinon from 'sinon';
+import assert from 'assert';
 
 import '../../public/content-scripts/init';
 // Create adapter
@@ -27,6 +28,12 @@ window.DC.translate = sinon.stub().returns(Promise.resolve({
 }));
 
 const provider = window.DC.provider;
+const fetcher = window.DC.fetcher;
+const parser = window.DC.parser;
+const adapter = window.DC.config;
+
+const adapterStub = sinon.stub(adapter, 'getVideoId');
+adapterStub.returns('test-video-id');
 
 const exampleEnglishCaptions = [
   {
@@ -144,4 +151,138 @@ it('should use Google Translate if not useCaptionsFromVideo', done => {
       done();
     })
     .catch(err => { console.log(err)});
+});
+
+it('should handle switching between videos - requestLanguage', done => {
+  const fetchStub = sinon.stub(fetcher, 'fetchCaptions');
+  const parseStub = sinon.stub(parser, 'parse');
+
+  fetchStub.returns(Promise.resolve());
+  parseStub.returns(Promise.resolve([]));
+  adapterStub.returns('test-video-id-1');
+
+  provider.requestLanguage('en')
+    .then(() => {
+      expect(fetcher.fetchCaptions.calledWith('en', 'test-video-id-1'));
+      adapterStub.reset();
+      adapterStub.returns('test-video-id-2');
+      provider.requestLanguage('fr')
+        .then(() => {
+          expect(fetcher.fetchCaptions.calledWith('fr', 'test-video-id-2'));
+          done();
+          fetchStub.restore();
+          parseStub.restore();
+        })
+        .catch(err => {
+          fetchStub.restore();
+          parseStub.restore();
+          console.log(err);
+        });
+    })
+    .catch(err => {
+      fetchStub.restore();
+      parseStub.restore();
+      console.log(err);
+    });
+});
+
+it('should handle switching between videos - translate', done => {
+  // Let's load captions for two videos
+  adapterStub.returns('test-video-id-1');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "This is a caption from video 1"
+  }], 'en');
+  adapterStub.returns('test-video-id-2');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "This is a caption from video 2"
+  }], 'en');
+  adapterStub.returns('test-video-id-1');
+  provider.translate('Test caption', 'en', 1234, true)
+    .then(response1 => {
+      expect(response1.text === 'This is a caption from video 1 ✓').toEqual(true);
+      adapterStub.returns('test-video-id-2');
+      provider.translate('Test caption', 'en', 1234, true)
+        .then(response2 => {
+          expect(response2.text === 'This is a caption from video 2 ✓').toEqual(true);
+          done();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+it('should not load captions if missing videoId', done => {
+  const originalLoadedCaptions = {...provider.__captions};
+  adapterStub.returns(undefined);
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "Test caption"
+  }], 'en')
+    .then(() => {})
+    .catch(err => {
+      expect(err === `Can't load captions, missing videoId or currentSite`).toEqual(true);
+      assert.deepEqual(provider.__captions, originalLoadedCaptions);
+      done();
+    });
+});
+
+it('should not load captions if missing currentSite', done => {
+  const originalLoadedCaptions = {...provider.__captions};
+  adapterStub.returns('test-video-id-1');
+  adapter.site = undefined;
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "Test caption"
+  }], 'en')
+    .then(() => {})
+    .catch(err => {
+      expect(err === `Can't load captions, missing videoId or currentSite`).toEqual(true);
+      assert.deepEqual(provider.__captions, originalLoadedCaptions);
+      adapter.site = 'youtube';
+      done();
+    });
+});
+
+it('should handle switching between videos - loadCaptions', () => {
+  // Let's load captions for two videos
+  adapterStub.returns('test-video-id-1');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "This is a caption from video 1"
+  }], 'en');
+  adapterStub.returns('test-video-id-2');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "This is a caption from video 2"
+  }], 'en');
+  assert.deepEqual(provider.__captions, {
+    'youtube': {
+      'test-video-id-1': {
+        'en': [{
+          "startTime": 1234,
+          "endTime": 1600,
+          "text": "This is a caption from video 1"
+        }]
+      },
+      'test-video-id-2': {
+        'en': [{
+          "startTime": 1234,
+          "endTime": 1600,
+          "text": "This is a caption from video 2"
+        }]
+      }
+    }
+  })
 });

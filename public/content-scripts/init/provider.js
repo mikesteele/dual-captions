@@ -42,14 +42,33 @@ class TranslationProvider {
   }
 
   __loadCaptions(captions, language) {
-    this.__captions[language] = captions;
+    const currentSite = this.adapter.site;
+    const videoId = this.adapter.getVideoId();
+    if (!videoId || !currentSite) {
+      return Promise.reject(`Can't load captions, missing videoId or currentSite`);
+    }
+    if (!this.__captions.hasOwnProperty(currentSite)) {
+      this.__captions[currentSite] = {};
+    }
+    if (!this.__captions[currentSite].hasOwnProperty(videoId)) {
+      this.__captions[currentSite][videoId] = {};
+    }
+    this.__captions[currentSite][videoId][language] = captions;
     return Promise.resolve();
   }
 
   translate(text, language, currentTime, useCaptionsFromVideo) {
     return new Promise((resolve, reject) => {
-      if (useCaptionsFromVideo && currentTime && this.__captions.hasOwnProperty(language)) {
-        const nearestCaption = this.findNearestCaption(this.__captions[language], currentTime);
+      const currentSite = this.adapter.site;
+      const videoId = this.adapter.getVideoId();
+      if (useCaptionsFromVideo
+          && currentTime
+          && currentSite
+          && this.__captions.hasOwnProperty(currentSite)
+          && this.__captions[currentSite].hasOwnProperty(videoId)
+          && this.__captions[currentSite][videoId].hasOwnProperty(language)) {
+        const captions = this.__captions[currentSite][videoId][language];
+        const nearestCaption = this.findNearestCaption(captions, currentTime);
         if (nearestCaption) {
           resolve({
             text: `${nearestCaption.text} ✓`

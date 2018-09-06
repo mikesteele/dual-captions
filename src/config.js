@@ -6,6 +6,8 @@ const config = {
     delayRenderingUntilTranslation: true,
     extraSpace: false
   },
+  defaultSecondLanguage: 'en',
+  defaultUILanguage: 'en',
   secondLanguages: secondLanguages,
   supportedSites: {
     YouTube: 'stable',

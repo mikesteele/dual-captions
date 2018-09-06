@@ -12,7 +12,7 @@ import MainPage from './components/MainPage.jsx';
 import SettingsPage from './components/SettingsPage.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
 
-import { updateStoreFromDC, popupOpened, detectSite } from './actions';
+import { determineState, popupOpened, detectSite } from './actions';
 
 const mapStateToProps = function(state) {
   return {...state};
@@ -24,19 +24,12 @@ const ErrorPageView = connect(mapStateToProps)(ErrorPage);
 
 class App extends Component {
   componentDidMount() {
-    this._inferUILanguage();
-    this.props.dispatch(updateStoreFromDC());
-    this.props.dispatch(popupOpened());
-    this.props.dispatch(detectSite());
-  }
-
-  _inferUILanguage() {
-    const navigatorLocale = window.navigator.language;
-    const navigatorLanguage = navigatorLocale.split('-')[0];
-    this.props.dispatch({
-      type: 'CHANGE_UI_LANGUAGE',
-      payload: navigatorLanguage
-    });
+    this.props.dispatch(determineState())
+      .then(this.props.dispatch(popupOpened()))
+      .then(this.props.dispatch(detectSite()))
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   _onUILanguageSelectChanged(e) {
