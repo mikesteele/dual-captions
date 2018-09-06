@@ -16,6 +16,12 @@ class BackgroundPage {
         urls: ['https://www.youtube.com/api/timedtext*']
       }
     );
+    chrome.webRequest.onBeforeRequest.addListener(
+      this._onBeforeNetflixCaptionRequest, {
+        urls: ['https://*.nflxvideo.net/?o=*&v=*&e=*&t=*']
+        // TODO - Test!!
+      }
+    )
   }
 
   _onBeforeYouTubeCaptionRequest(details) {
@@ -26,6 +32,16 @@ class BackgroundPage {
       this.captionRequestUrls.youtube[videoId] = details.url;
       console.log(`Background - Adding ${details.url} to captionRequestUrls.youtube.${videoId}`);
     }
+  }
+
+  _onBeforeNetflixCaptionRequest(details) {
+    chrome.runtime.sendMessage({
+      type: 'process-netflix-caption-request',
+      payload: details.url
+    }, response => {
+      console.log(response);
+      // TODO - ?
+    });
   }
 
   _onMessage(message, sender, sendResponse) {

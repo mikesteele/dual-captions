@@ -4,12 +4,18 @@ class NetflixConfig extends DualCaptionsConfig {
     this.site = 'netflix';
   }
 
-  // getVideoId & getPlayerCurrentTime are not needed until Netflix native translation support
+  // TODO - Add tests
   getVideoId() {
-    return 'TODO';
+    const videoIdPattern = /watch\/\d+/;
+    const pathname = window.location.pathname;
+    if (videoIdPattern.test(pathname)) {
+      return videoIdPattern.exec(pathname)[1];
+    } else {
+      return undefined;
+    }
   }
 
-  // TODO - Add test
+  // TODO - Add tests
   getPlayerCurrentTime() {
     const video = document.querySelector('video');
     if (video) {
