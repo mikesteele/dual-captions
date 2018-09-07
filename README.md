@@ -9,7 +9,7 @@
 |:-------------:|:-------------:|
 | <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/youtube.png"> | <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/amazon.png"> |
 
-### <a href="https://www.youtube.com/watch?v=E0QQoeUAIpE" target="_blank">Watch video demo</a>
+### <a href="https://www.youtube.com/watch?v=grYMOv9K3kY" target="_blank">Watch video demo</a>
 ### Fast Facts
 
 * Targeted at **language learners** who need what the speaker is saying and the translation in user's native language.
