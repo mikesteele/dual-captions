@@ -2,17 +2,17 @@ import expect from 'expect';
 import sinon from 'sinon';
 import assert from 'assert';
 
-import '../../public/content-scripts/init';
+import '../../public/content-scripts/init/init';
 // Create adapter
-import '../../public/content-scripts/config/init';
-import '../../public/content-scripts/config/youtube';
+import '../../public/content-scripts/init/adapter';
+import '../../public/content-scripts/youtube/adapter';
 // Creater fetcher
 import '../../public/content-scripts/init/fetcher';
 import '../../public/content-scripts/youtube/fetcher';
 // Create parser
 import '../../public/content-scripts/init/parser';
 import '../../public/content-scripts/youtube/parser';
-
+// Create provider
 import '../../public/content-scripts/init/provider';
 
 /**

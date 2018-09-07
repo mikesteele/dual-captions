@@ -5,7 +5,7 @@ import ReduxThunk from 'redux-thunk';
 import * as actions from '../actions';
 import chromeMock from './chrome-mock';
 
-import '../../public/content-scripts/config/test-error';
+import '../../public/content-scripts/test/adapter-with-error';
 
 const store = createStore(reducer,
   applyMiddleware(

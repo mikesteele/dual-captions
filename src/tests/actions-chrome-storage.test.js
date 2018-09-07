@@ -13,9 +13,9 @@ let store;
 let defaultStore;
 
 // Create window.DC
-import '../../public/content-scripts/init';
+import '../../public/content-scripts/init/init';
 // Create adapter
-import '../../public/content-scripts/config/init';
+import '../../public/content-scripts/init/adapter';
 // Creater fetcher
 import '../../public/content-scripts/init/fetcher';
 // Create parser
@@ -24,7 +24,7 @@ import '../../public/content-scripts/init/parser';
 import '../../public/content-scripts/init/provider';
 // Create observer
 import './chrome-mock';
-import '../../public/content-scripts/dual-captions';
+import '../../public/content-scripts/init/observer';
 
 import { ChromeStorageMock } from './chrome-mock';
 
