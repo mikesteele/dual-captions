@@ -28,7 +28,7 @@ import '../../public/content-scripts/init/observer';
 
 import { ChromeStorageMock } from './chrome-mock';
 
-let observer = window.DC.DUAL_CAPTIONS;
+let observer = window.DC.observer;
 
 beforeEach(() => {
   // Reset chrome.storage

@@ -46,7 +46,7 @@ window.chrome = {
     sendMessage: (tabId, message, sendResponse) => {
       console.log('chrome-mock: chrome.tabs.sendMessage called');
       try {
-        window.DC.DUAL_CAPTIONS._onMessage(message, undefined, sendResponse);
+        window.DC.observer._onMessage(message, undefined, sendResponse);
       } catch(e) {
         sendResponse(undefined);
       }

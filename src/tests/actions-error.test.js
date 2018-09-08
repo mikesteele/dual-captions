@@ -17,7 +17,7 @@ it('should throw no-player error on on turnDCOn', (done) => {
   console.log('TEST: should throw no-player error on on turnDCOn');
   store.dispatch(actions.turnDCOn())
     .then(() => {
-      assert(window.DC.DUAL_CAPTIONS.isOn === false);
+      assert(window.DC.observer.isOn === false);
       const state = store.getState();
       assert(state.isOn === false);
       assert(state.hasError === true);

@@ -11,7 +11,7 @@ import '../../public/content-scripts/init/init';
 import '../../public/content-scripts/init/adapter';
 import '../../public/content-scripts/youtube/adapter';
 
-const adapter = window.DC.config;
+const adapter = window.DC.adapter;
 
 it('should respond with `automatic-subtitles` error on onPopupOpened', () => {
   const response = adapter.onPopupOpened();

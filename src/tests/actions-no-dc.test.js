@@ -5,7 +5,7 @@ import ReduxThunk from 'redux-thunk';
 import * as actions from '../actions';
 import chromeMock from './chrome-mock';
 
-delete window.DC.DUAL_CAPTIONS;
+delete window.DC.observer;
 
 const store = createStore(reducer,
   applyMiddleware(

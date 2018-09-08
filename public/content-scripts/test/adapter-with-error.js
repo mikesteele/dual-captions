@@ -1,4 +1,4 @@
-class ErrorTestConfig extends DualCaptionsConfig {
+class TestAdapterWithError extends Adapter {
   constructor() {
     super();
   }
@@ -36,4 +36,4 @@ class ErrorTestConfig extends DualCaptionsConfig {
   }
 }
 
-window.DC.config = new ErrorTestConfig();
+window.DC.adapter = new TestAdapterWithError();

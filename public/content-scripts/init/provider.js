@@ -1,7 +1,7 @@
 class TranslationProvider {
   constructor() {
     // DC
-    this.adapter = window.DC.config;
+    this.adapter = window.DC.adapter;
     this.fetcher = window.DC.fetcher;
     this.parser  = window.DC.parser;
 

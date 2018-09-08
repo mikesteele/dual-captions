@@ -1,4 +1,4 @@
-class AmazonPrimeConfig extends DualCaptionsConfig {
+class AmazonAdapter extends Adapter {
   constructor() {
     super();
     this.site = 'amazon';
@@ -32,4 +32,4 @@ class AmazonPrimeConfig extends DualCaptionsConfig {
   }
 }
 
-window.DC.config = new AmazonPrimeConfig();
+window.DC.adapter = new AmazonAdapter();

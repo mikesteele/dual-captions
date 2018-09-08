@@ -15,7 +15,7 @@ import '../../public/content-scripts/init/provider';
 import './chrome-mock';
 import '../../public/content-scripts/init/observer';
 
-const observer = window.DC.DUAL_CAPTIONS;
+const observer = window.DC.observer;
 const provider = window.DC.provider;
 
 it('should have settingsAreDefault by default', () => {

@@ -15,7 +15,7 @@ it('should change DC secondLanguage on changeDCLanguage', (done) => {
   console.log('TEST: should change DC secondLanguage on changeDCLanguage');
   store.dispatch(actions.changeDCLanguage('fr'))
     .then(() => {
-      assert(window.DC.DUAL_CAPTIONS.secondLanguage === 'fr');
+      assert(window.DC.observer.secondLanguage === 'fr');
       const state = store.getState();
       assert(state.secondLanguage === 'fr');
       done();
@@ -26,7 +26,7 @@ it('should turn DC on on turnDCOn', (done) => {
   console.log('TEST: should turn DC on on turnDCOn');
   store.dispatch(actions.turnDCOn())
     .then(() => {
-      assert(window.DC.DUAL_CAPTIONS.isOn === true);
+      assert(window.DC.observer.isOn === true);
       const state = store.getState();
       assert(state.isOn === true);
       done();
@@ -37,7 +37,7 @@ it('should turn DC off on turnDCOff', (done) => {
   console.log('TEST: should turn DC off on turnDCOff');
   store.dispatch(actions.turnDCOff())
     .then(() => {
-      assert(window.DC.DUAL_CAPTIONS.isOn === false);
+      assert(window.DC.observer.isOn === false);
       const state = store.getState();
       assert(state.isOn === false);
       done();
@@ -55,7 +55,7 @@ it('should apply settings on applyDCSettings', (done) => {
   // TODO - Why aren't these part of the same thunk?
   store.dispatch(actions.applyDCSettings())
     .then(() => {
-      assert(window.DC.DUAL_CAPTIONS.extraSpace === true);
+      assert(window.DC.observer.extraSpace === true);
       done();
     });
 });

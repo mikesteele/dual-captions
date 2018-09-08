@@ -30,7 +30,7 @@ window.DC.translate = sinon.stub().returns(Promise.resolve({
 const provider = window.DC.provider;
 const fetcher = window.DC.fetcher;
 const parser = window.DC.parser;
-const adapter = window.DC.config;
+const adapter = window.DC.adapter;
 
 const adapterStub = sinon.stub(adapter, 'getVideoId');
 adapterStub.returns('test-video-id');

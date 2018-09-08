@@ -1,4 +1,4 @@
-class TestConfig extends DualCaptionsConfig {
+class TestAdapter extends Adapter {
   constructor() {
     super();
   }
@@ -35,4 +35,4 @@ class TestConfig extends DualCaptionsConfig {
   }
 }
 
-window.DC.config = new TestConfig();
+window.DC.adapter = new TestAdapter();
