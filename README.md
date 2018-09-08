@@ -31,6 +31,9 @@ This Chrome Extension creates a MutationObserver which waits for new caption ele
     |-- content-scripts/
        |-- amazon/             Amazon adapter
        |-- init/               Initialization scripts
+          |-- adapter.js       Adapter  - knows what the DOM for this video site looks like
+          |-- observer.js      Observer - watches DOM for new captions
+          |-- provider.js      Provider - provides translations to Observer
        |-- netflix/            Netflix adapter
        |-- stylesheets/        Stylesheets-to-inject
        |-- test/               Test adapters
@@ -48,6 +51,7 @@ This Chrome Extension creates a MutationObserver which waits for new caption ele
     |-- middleware.js          Redux middleware
     |-- reducer.js             Redux reducer
 ````
+
 
 ### Usage
 
