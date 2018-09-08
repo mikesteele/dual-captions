@@ -24,6 +24,31 @@ As someone learning a foreign language, it is helpful for me to see both what th
 
 This Chrome Extension creates a MutationObserver which waits for new caption elements to be added to the DOM. It then translates the text of these captions and adds the translated captions underneath.  If the video has subtitles in the second language, it uses those subtitles as translations and marks them with a ✓. (YouTube only, Netflix & Amazon coming soon)
 
+### File Structure
+
+````
+|-- public/                    Content scripts & background page
+    |-- content-scripts/
+       |-- amazon/             Amazon adapter
+       |-- init/               Initialization scripts
+       |-- netflix/            Netflix adapter
+       |-- stylesheets/        Stylesheets-to-inject
+       |-- test/               Test adapters
+       |-- utils/              Google Translate API, etc
+       |-- youtube/            YouTube adapter, subtitle fetcher, and subtitle parser
+    |-- locales/               UI translation files
+    |-- background.js          Background page
+    |-- manifest.json          Extension manifest
+
+
+|-- src/                       Popup UI
+    |-- components/            React components
+    |-- tests/                 Tests for popup, content scripts, and background page
+    |-- actions.js             Redux thunks
+    |-- middleware.js          Redux middleware
+    |-- reducer.js             Redux reducer
+````
+
 ### Usage
 
 Download on the Google Web Store: https://chrome.google.com/webstore/detail/dual-captions/lpeonmjfimoijceaalocpgjjchocbiap

@@ -7,11 +7,11 @@ const videoPage = fs.readFileSync(path.resolve(__dirname, './assets/youtube/vide
 document.body.innerHTML = videoPage;
 
 // Load adapter
-import '../../public/content-scripts/init';
-import '../../public/content-scripts/config/init';
-import '../../public/content-scripts/config/youtube';
+import '../../public/content-scripts/init/init';
+import '../../public/content-scripts/init/adapter';
+import '../../public/content-scripts/youtube/adapter';
 
-const adapter = window.DC.config;
+const adapter = window.DC.adapter;
 
 const captionsContainer = document.querySelector('.captions-text');
 const newCaption = captionsContainer.firstChild;
