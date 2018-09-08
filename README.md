@@ -39,7 +39,7 @@ This Chrome Extension creates a MutationObserver which waits for new caption ele
        |-- test/               Test adapters
        |-- utils/              Google Translate API, etc
        |-- youtube/            YouTube adapter, subtitle fetcher, and subtitle parser
-    |-- locales/               UI translation files
+    |-- locales/               Popup UI translation files
     |-- background.js          Background page
     |-- manifest.json          Extension manifest
 
