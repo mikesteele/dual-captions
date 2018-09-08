@@ -4,7 +4,7 @@ const path = require('path');
 const exampleFetch = fs.readFileSync(path.resolve(__dirname, './assets/netflix/fetch-en-cc.txt'));
 // TODO - Add tests for fetch-fr.txt
 
-import '../../public/content-scripts/init';
+import '../../public/content-scripts/init/init';
 import '../../public/content-scripts/init/parser';
 import '../../public/content-scripts/netflix/parser';
 
