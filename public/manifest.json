@@ -1,7 +1,7 @@
 {
   "name": "Two Captions for YouTube, Netflix & Amazon",
   "description": "Show subtitles in two languages on Youtube, Netflix & Amazon Video",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "permissions": [
     "tabs",
     "http://*/*",
@@ -22,58 +22,58 @@
   "content_scripts": [{
     "all_frames": false,
     "css": [
-      "content-scripts/config/init.css"
+      "content-scripts/stylesheets/init.css"
     ],
     "js": [
-      "content-scripts/init.js",
-      "content-scripts/google-translate-token.js",
-      "content-scripts/querystring-encode.js",
-      "content-scripts/google-translate-api.js",
-      "content-scripts/config/init.js",
-      "content-scripts/config/youtube.js",
+      "content-scripts/init/init.js",
+      "content-scripts/utils/google-translate-token.js",
+      "content-scripts/utils/querystring-encode.js",
+      "content-scripts/utils/google-translate-api.js",
+      "content-scripts/init/adapter.js",
+      "content-scripts/youtube/adapter.js",
       "content-scripts/init/parser.js",
       "content-scripts/init/fetcher.js",
       "content-scripts/youtube/fetcher.js",
       "content-scripts/youtube/parser.js",
       "content-scripts/init/provider.js",
-      "content-scripts/dual-captions.js"
+      "content-scripts/init/observer.js"
     ],
     "matches": [ "https://www.youtube.com/*" ]
    },{
     "all_frames": false,
     "css": [
-      "content-scripts/config/init.css",
-      "content-scripts/config/netflix.css"
+      "content-scripts/stylesheets/init.css",
+      "content-scripts/stylesheets/netflix.css"
     ],
     "js": [
-      "content-scripts/init.js",
-      "content-scripts/google-translate-token.js",
-      "content-scripts/querystring-encode.js",
-      "content-scripts/google-translate-api.js",
-      "content-scripts/config/init.js",
-      "content-scripts/config/netflix.js",
+      "content-scripts/init/init.js",
+      "content-scripts/utils/google-translate-token.js",
+      "content-scripts/utils/querystring-encode.js",
+      "content-scripts/utils/google-translate-api.js",
+      "content-scripts/init/adapter.js",
+      "content-scripts/netflix/adapter.js",
       "content-scripts/init/parser.js",
       "content-scripts/init/fetcher.js",
       "content-scripts/init/provider.js",
-      "content-scripts/dual-captions.js"
+      "content-scripts/init/observer.js"
     ],
     "matches": [ "https://www.netflix.com/*" ]
    }, {
     "all_frames": false,
     "css": [
-      "content-scripts/config/init.css"
+      "content-scripts/stylesheets/init.css"
     ],
     "js": [
-      "content-scripts/init.js",
-      "content-scripts/google-translate-token.js",
-      "content-scripts/querystring-encode.js",
-      "content-scripts/google-translate-api.js",
-      "content-scripts/config/init.js",
-      "content-scripts/config/amazon-prime.js",
+      "content-scripts/init/init.js",
+      "content-scripts/utils/google-translate-token.js",
+      "content-scripts/utils/querystring-encode.js",
+      "content-scripts/utils/google-translate-api.js",
+      "content-scripts/init/adapter.js",
+      "content-scripts/amazon/adapter.js",
       "content-scripts/init/parser.js",
       "content-scripts/init/fetcher.js",
       "content-scripts/init/provider.js",
-      "content-scripts/dual-captions.js"
+      "content-scripts/init/observer.js"
     ],
     "matches": [ "https://www.amazon.com/*" ]
    }],

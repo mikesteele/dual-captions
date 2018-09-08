@@ -1,4 +1,4 @@
-class ErrorTestConfig extends DualCaptionsConfig {
+class TestAdapter extends Adapter {
   constructor() {
     super();
   }
@@ -10,19 +10,18 @@ class ErrorTestConfig extends DualCaptionsConfig {
 
   // Get the video player element.
   getPlayer() {
-    return null;
+    return document.createElement('div');
   }
 
   // Get the caption window element.
   getCaptionWindow() {
-    return null;
+    return document.createElement('div');
   }
 
   // Get the new caption element from a mutation record.
   // Returns element
   getNewCaption(mutation) {
     return mutation.addedNodes[0];
-    // TODO: Shoudld test if null?
   }
 
   // Apply the appropriate style to the translated caption element.
@@ -36,4 +35,4 @@ class ErrorTestConfig extends DualCaptionsConfig {
   }
 }
 
-window.DC.config = new ErrorTestConfig();
+window.DC.adapter = new TestAdapter();

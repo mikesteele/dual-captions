@@ -1,4 +1,4 @@
-class DualCaptionsConfig {
+class Adapter {
   constructor() {
     this.player = this.getPlayer();
     this.captionWindow = this.getCaptionWindow();
@@ -77,4 +77,4 @@ class DualCaptionsConfig {
   }
 }
 
-window.DualCaptionsConfig = DualCaptionsConfig;
+window.Adapter = Adapter;

@@ -1,4 +1,4 @@
-class DualCaptions {
+class Observer {
   constructor() {
     this.isOn = false;
     this.observer = new window.MutationObserver(this._onMutation.bind(this));
@@ -40,7 +40,7 @@ class DualCaptions {
       case 'detect-site':
       sendResponse({
         ok: true,
-        site: window.DC.config.site
+        site: window.DC.adapter.site
       });
       break;
 
@@ -83,7 +83,7 @@ class DualCaptions {
         });
 
       // 2. Tell adapter that the popup was opened
-      const response = window.DC.config.onPopupOpened();
+      const response = window.DC.adapter.onPopupOpened();
       sendResponse({
         ok: response.ok,
         errorType: response.errorType
@@ -92,7 +92,7 @@ class DualCaptions {
 
       case 'start-observer':
       try {
-        this.observer.observe(window.DC.config.getPlayer(), {
+        this.observer.observe(window.DC.adapter.getPlayer(), {
           childList: true,
           subtree: true
         });
@@ -119,10 +119,10 @@ class DualCaptions {
 
   _onMutation(mutationRecords) {
     mutationRecords.forEach(mutation => {
-      let captionWasAdded = window.DC.config.captionWasAdded(mutation);
+      let captionWasAdded = window.DC.adapter.captionWasAdded(mutation);
       if (captionWasAdded) {
-        const newCaptionOrder = window.DC.config.getNewCaptionOrder();
-        let newCaption = window.DC.config.getNewCaption(mutation);
+        const newCaptionOrder = window.DC.adapter.getNewCaptionOrder();
+        let newCaption = window.DC.adapter.getNewCaption(mutation);
         if (newCaption) {
           this.lastCaption = newCaption.innerText;
           newCaption.classList.add('original-caption');
@@ -132,19 +132,19 @@ class DualCaptions {
           this.provider.translate(
             this.lastCaption,
             this.secondLanguage,
-            window.DC.config.getPlayerCurrentTime(),
+            window.DC.adapter.getPlayerCurrentTime(),
             this.useCaptionsFromVideo
           ).then(translation => {
             if (!this._translationIsInDOM(translation.text)) {
               let translatedCaption = document.createElement('span');
               translatedCaption.innerText = translation.text;
               translatedCaption.setAttribute('__dc-caption__', true);
-              translatedCaption = window.DC.config.styleCaptionElement(translatedCaption, mutation, newCaptionOrder);
+              translatedCaption = window.DC.adapter.styleCaptionElement(translatedCaption, mutation, newCaptionOrder);
               if (this.extraSpace) {
                 let breakElement = this._createBreakElement();
-                window.DC.config.appendToDOM(breakElement);
+                window.DC.adapter.appendToDOM(breakElement);
               }
-              window.DC.config.appendToDOM(translatedCaption);
+              window.DC.adapter.appendToDOM(translatedCaption);
               newCaption.classList.add('translated');
             } else {
               newCaption.classList.add('translated');
@@ -177,5 +177,5 @@ class DualCaptions {
   }
 }
 
-window.DC.DUAL_CAPTIONS = new DualCaptions();
-window.DualCaptions = DualCaptions;
+window.DC.observer = new Observer();
+window.Observer = Observer;

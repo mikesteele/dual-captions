@@ -3,7 +3,7 @@ import exampleFetch from './assets/youtube/fetch';
 import exampleResult from './assets/youtube/result';
 import automaticCaptionsFetch from './assets/youtube/fetch-automatic-subtitles';
 
-import '../../public/content-scripts/init';
+import '../../public/content-scripts/init/init';
 import '../../public/content-scripts/init/parser';
 import '../../public/content-scripts/youtube/parser';
 

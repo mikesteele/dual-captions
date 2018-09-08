@@ -1,4 +1,4 @@
-class NetflixConfig extends DualCaptionsConfig {
+class NetflixAdapter extends Adapter {
   constructor() {
     super();
     this.site = 'netflix';
@@ -164,4 +164,4 @@ class NetflixConfig extends DualCaptionsConfig {
   }
 }
 
-window.DC.config = new NetflixConfig();
+window.DC.adapter = new NetflixAdapter();

@@ -4,10 +4,10 @@ import sinon from 'sinon';
 // FIXME: This file shouldn't create the observer
 
 import './mocks';
-import '../../public/content-scripts/init';
-import '../../public/content-scripts/config/init';
-import '../../public/content-scripts/config/test';
-import '../../public/content-scripts/dual-captions';
+import '../../public/content-scripts/init/init';
+import '../../public/content-scripts/init/adapter';
+import '../../public/content-scripts/test/adapter';
+import '../../public/content-scripts/init/observer';
 
 const mockTabs = [{
   id: 1
@@ -46,7 +46,7 @@ window.chrome = {
     sendMessage: (tabId, message, sendResponse) => {
       console.log('chrome-mock: chrome.tabs.sendMessage called');
       try {
-        window.DC.DUAL_CAPTIONS._onMessage(message, undefined, sendResponse);
+        window.DC.observer._onMessage(message, undefined, sendResponse);
       } catch(e) {
         sendResponse(undefined);
       }

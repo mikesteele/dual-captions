@@ -1,4 +1,4 @@
-class YouTubeConfig extends DualCaptionsConfig {
+class YouTubeAdapter extends Adapter {
   constructor() {
     super();
     this.site = "youtube";
@@ -82,4 +82,4 @@ class YouTubeConfig extends DualCaptionsConfig {
   }
 }
 
-window.DC.config = new YouTubeConfig();
+window.DC.adapter = new YouTubeAdapter();
