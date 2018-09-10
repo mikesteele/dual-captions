@@ -5,6 +5,7 @@ class YouTubeAdapter extends Adapter {
     this.playerId = "movie_player";
     this.captionWindowClass = "ytp-caption-window-bottom";
     this.captionClass = "captions-text";
+    this.secondCaptionWidth = '500px';
   }
 
   getVideoId() {
@@ -74,12 +75,23 @@ class YouTubeAdapter extends Adapter {
 
   // Append the new caption element to the DOM
   appendToDOM(element) {
-    let captionWindow = this.getCaptionWindow();
+    const captionWindow = this.getCaptionWindow();
     if (captionWindow) {
       captionWindow.appendChild(document.createElement('br'));
       captionWindow.appendChild(element);
+      this.repositionCaptionWindow(captionWindow);
     }
   }
+
+  repositionCaptionWindow(captionWindow) {
+    // Resize & move the caption window to the left.
+    const originalWidth = captionWindow.style.width;
+    captionWindow.style.width = `calc(${originalWidth} + 50px)`;
+    captionWindow.style.marginLeft = `calc(((${originalWidth} / 2) + 25px) * -1)`;
+    captionWindow.style.backgroundColor = 'transparent';
+  }
 }
+
+
 
 window.DC.adapter = new YouTubeAdapter();
