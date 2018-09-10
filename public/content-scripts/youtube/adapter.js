@@ -34,7 +34,9 @@ class YouTubeAdapter extends Adapter {
 
   // Returns true if mutation reflects a caption added to the DOM.
   captionWasAdded(mutation) {
-    return mutation.target.classList.contains(this.captionClass) && mutation.addedNodes.length > 0;
+    return mutation.target.classList.contains(this.captionClass)
+           && mutation.target.parentNode.classList.contains(this.captionWindowClass)
+           && mutation.addedNodes.length > 0;
   }
 
   getPlayerCurrentTime() {
