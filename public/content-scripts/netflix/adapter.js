@@ -2,6 +2,17 @@ class NetflixAdapter extends Adapter {
   constructor() {
     super();
     this.site = 'netflix';
+
+    this.addNetflixAPIHook();
+  }
+
+  addNetflixAPIHook() {
+    // Since content_scripts run an in isolated world, we need to expose the global Netflix API via an element attribute
+    // I took inspiration for this from Vue Devtools, which attaches the Vue global on element.__vue__
+    // See https://github.com/vuejs/vue-devtools/blob/dev/shells/chrome/src/detector.js#L31
+    const script = document.createElement('script');
+    script.innerHTML = `document.body.__netflix__ = window.netflix;`;
+    document.body.appendChild(script);
   }
 
   // getVideoId & getPlayerCurrentTime are not needed until Netflix native translation support
@@ -14,8 +25,7 @@ class NetflixAdapter extends Adapter {
   }
 
   getPlayerCurrentCaptionLanguage() {
-    // TODO - This will probably need to be injecting via a <script>
-    // As content_scripts run in an isolated world
+    // TODO - Use document.body.__netflix__ hook
     let videoPlayer, currentSessionId, currentTextTrack;
     try {
       videoPlayer = window.netflix.appContext.state.playerApp.getAPI().videoPlayer;
