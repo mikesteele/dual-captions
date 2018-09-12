@@ -13,6 +13,21 @@ class NetflixAdapter extends Adapter {
     return undefined;
   }
 
+  getPlayerCurrentCaptionLanguage() {
+    let videoPlayer, currentSessionId, currentTextTrack;
+    try {
+      videoPlayer = window.netflix.appContext.state.playerApp.getAPI().videoPlayer;
+      currentSessionId = videoPlayer.getAllPlayerSessionIds()[0]; // TODO - Can there be multiple? What does it mean?
+      currentTextTrack = videoPlayer.getCurrentTextTrackBySessionId(currentSessionId);
+    } catch (e) {
+      console.log(`Couldn't get the video player from the Netflix API`);
+    }
+    if (videoPlayer && currentSessionId && currentTextTrack) {
+      return currentTextTrack.bcp47;
+      // TODO - Compatible with ISO?
+    }
+  }
+
   onPopupOpened() {
     /**
 
