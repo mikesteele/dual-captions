@@ -1,12 +1,21 @@
 import './chrome-mock';
 import '../../public/background';
 
+import sinon from 'sinon';
 import match from 'url-match-patterns';
 
 const background = window.DC_BackgroundPage;
 
 // Default Jest JSDOM has no URLSearchParams support lol
 require('url-polyfill');
+
+jest.useFakeTimers();
+
+it('should set listeners for YouTube and Netflix caption requests', () => {
+  expect(chrome.webRequest.onBeforeRequest.addListener.calledTwice).toEqual(true);
+  expect(chrome.webRequest.onBeforeRequest.addListener.calledWith(background._onBeforeNetflixCaptionRequest)).toEqual(true);
+  expect(chrome.webRequest.onBeforeRequest.addListener.calledWith(background._onBeforeYouTubeCaptionRequest)).toEqual(true);
+});
 
 it('should add new URL to captionRequestUrls', () => {
   const requestUrl = 'https://www.youtube.com/api/timedtext?signature=5E04EAE7C40119386DC85E49AB76E5E8EB917BC2.02D3F51A9098349155BADC241F47C9D52796DDCE&hl=fr_FR&asr_langs=ja%2Cko%2Cru%2Cen%2Cpt%2Cde%2Cfr%2Cnl%2Ces%2Cit&expire=1533629865&v=WBqnzn77MEE&caps=asr&key=yttt1&xorp=True&sparams=asr_langs%2Ccaps%2Cv%2Cxorp%2Cexpire&lang=es&fmt=srv3';
@@ -60,4 +69,53 @@ it('should correctly match Netflix caption requests and ignore others', () => {
   const url = new URL(netflixCaptionRequest);
   url.searchParams.delete('e');
   expect(matches(url.href)).toEqual(false);
+});
+
+it(`shouldn't trigger _onBeforeNetflixCaptionRequest on replay`, () => {
+  // Set up
+  const delayedPromise = new Promise((resolve, reject) => {
+    window.setTimeout(() => {
+      resolve({
+        ok: true
+      })
+    }, 2000);
+    // ^ Since we're using jest.useFakeTimers(), we can fast-forward
+    //   to the Promise being resolved with jest.runAllTimers()
+  });
+  sinon.stub(window, 'sendMessageToActiveTab').returns(delayedPromise);
+  const netflixCaptionRequest = 'https://ipv4-c009-bos001-ix.1.oca.nflxvideo.net/?o=AQGEcOavLssMXe3YasJMNARs9BDCrMSrUV_ZwavCYGePyLsYfOgBIxlr9R80J9lBBNKyghiifjNOnjd9LMuRg93_wXPlUhhR1fXXxJVCMWQZR0wWpsbQZzrbIm4yxStAvXkuTZbm_GI0Bvjc-jYbEeZNprLvcpq-7ouKyvi7lm9WNnx9tCfQgraLN8ndOQDOacv4fDr7-RAHzh1c-3veZNn4eA&v=3&e=1536283465&t=SGlFE7VQbMfhRqbODJy-Bh1gud';
+
+  /**
+   *  1. Intercept a Netflix caption request
+   */
+  background._onBeforeNetflixCaptionRequest({
+    url: netflixCaptionRequest
+  });
+  // Expect that we told the active tab about it
+  expect(window.sendMessageToActiveTab.callCount).toEqual(1);
+  // Expect that it was added to netflixCaptionRequestsInFlight
+  expect(window.netflixCaptionRequestsInFlight).toEqual({[netflixCaptionRequest]: 1});
+  // Reset window.sendMessageToActiveTab
+  window.sendMessageToActiveTab.resetHistory();
+
+  /**
+   *  2. The active tab does a replay, but it shouldn't be acted on.
+   */
+
+   // Replay
+   background._onBeforeNetflixCaptionRequest({
+     url: netflixCaptionRequest
+   });
+   // We shouldn't had sent any message about it, because it's in flight.
+   expect(window.sendMessageToActiveTab.callCount).toEqual(0);
+
+
+   /**
+    *  3. The replay finishes
+    */
+
+   // Fast-forward the delayedPromise
+   jest.runAllTimers();
+
+   // TODO
 });

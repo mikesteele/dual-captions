@@ -20,11 +20,16 @@ class NetflixTranslationProcessor {
         })
         .then(() => {
           console.log('Loaded.');
-          // TODO - Send response?
+          sendResponse({
+            ok: true
+          });
         })
         .catch(err => {
           console.log(err);
-          // TODO - sendResponse?
+          sendResponse({
+            ok: false,
+            error: err
+          });
         })
       break;
     }
@@ -73,7 +78,6 @@ class NetflixTranslationProcessor {
   }
 
   _guessLanguage(text) {
-    console.log(text);
     return new Promise((resolve, reject) => {
       window.DC.translate(text, {
         from: 'auto',

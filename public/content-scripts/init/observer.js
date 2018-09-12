@@ -160,6 +160,8 @@ class Observer {
     this.observer.disconnect();
     this.isOn = false;
   }
+  // TODO - Netflix is having issues with de-deduping
+  // TODO - Test
   _translationIsInDOM(translation) {
     const captions = Array.from(document.querySelectorAll(`[__dc-caption__]`));
     if (captions.length > 0) {

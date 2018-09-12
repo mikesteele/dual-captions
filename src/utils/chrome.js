@@ -17,6 +17,7 @@ export function getActiveTabId() {
   });
 }
 
+// TODO - Rewrite
 export function sendMessageToActiveTab(message) {
   return new Promise((resolve, reject) => {
     getActiveTabId()

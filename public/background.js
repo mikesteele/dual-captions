@@ -1,7 +1,7 @@
 // To expose the pattern for testing in src/tests/background.test.js
 window.NETFLIX_CAPTION_REQUEST_PATTERN = 'https://*.nflxvideo.net/?o=*&v=*&e=*&t=*';
 
-const netflixCaptionRequestsInFlight = {};
+window.netflixCaptionRequestsInFlight = {};
 
 class BackgroundPage {
   constructor() {
@@ -17,16 +17,15 @@ class BackgroundPage {
     // Listeners
     chrome.runtime.onMessage.addListener(this._onMessage);
     chrome.webRequest.onBeforeRequest.addListener(
-      this._onBeforeNetflixCaptionRequest, {
-        urls: [window.NETFLIX_CAPTION_REQUEST_PATTERN]
+      this._onBeforeYouTubeCaptionRequest, {
+        urls: ['https://www.youtube.com/api/timedtext*']
       }
     );
     chrome.webRequest.onBeforeRequest.addListener(
       this._onBeforeNetflixCaptionRequest, {
-        urls: ['https://*.nflxvideo.net/?o=*&v=*&e=*&t=*']
-        // TODO - Test!!
+        urls: [window.NETFLIX_CAPTION_REQUEST_PATTERN]
       }
-    )
+    );
   }
 
   _onBeforeYouTubeCaptionRequest(details) {
@@ -43,13 +42,13 @@ class BackgroundPage {
   }
 
   _onBeforeNetflixCaptionRequest(details) {
-    if (!netflixCaptionRequestsInFlight.hasOwnProperty(details.url)) {
-      netflixCaptionRequestsInFlight[details.url] = 1;
-      sendMessageToActiveTab({
+    if (!window.netflixCaptionRequestsInFlight.hasOwnProperty(details.url)) {
+      window.netflixCaptionRequestsInFlight[details.url] = 1;
+      window.sendMessageToActiveTab({
         type: 'process-netflix-caption-request',
         payload: details.url
       }).then(response => {
-        delete netflixCaptionRequestsInFlight[details.url];
+        delete window.netflixCaptionRequestsInFlight[details.url];
       }).catch(err => {
         console.log(`Couldn't process Netflix caption request. Error: ${err}`);
         // TODO - delete netflixCaptionRequests[details.url]; ?
@@ -75,7 +74,9 @@ class BackgroundPage {
  *
  **/
 
-function getActiveTabId() {
+// TODO - Rewrite
+
+window.getActiveTabId = () => {
   return new Promise((resolve, reject) => {
     if (window.chrome && window.chrome.tabs && window.chrome.tabs.query) {
       window.chrome.tabs.query({
@@ -94,9 +95,9 @@ function getActiveTabId() {
   });
 }
 
-function sendMessageToActiveTab(message) {
+window.sendMessageToActiveTab = (message) => {
   return new Promise((resolve, reject) => {
-    getActiveTabId()
+    window.getActiveTabId()
       .then(tabId => {
         return new Promise(_resolve => {
           window.chrome.tabs.sendMessage(tabId, message, _resolve);
@@ -108,6 +109,7 @@ function sendMessageToActiveTab(message) {
       });
     });
 }
+
 
 
 window.DC_BackgroundPage = new BackgroundPage();
