@@ -14,6 +14,8 @@ class NetflixAdapter extends Adapter {
   }
 
   getPlayerCurrentCaptionLanguage() {
+    // TODO - This will probably need to be injecting via a <script>
+    // As content_scripts run in an isolated world
     let videoPlayer, currentSessionId, currentTextTrack;
     try {
       videoPlayer = window.netflix.appContext.state.playerApp.getAPI().videoPlayer;
