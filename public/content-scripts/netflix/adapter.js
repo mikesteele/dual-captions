@@ -6,7 +6,7 @@ class NetflixAdapter extends Adapter {
 
   // TODO - Add tests
   getVideoId() {
-    const videoIdPattern = /watch\/\d+/;
+    const videoIdPattern = /watch\/(\d+)/;
     const pathname = window.location.pathname;
     if (videoIdPattern.test(pathname)) {
       return videoIdPattern.exec(pathname)[1];

@@ -15,7 +15,7 @@ class NetflixTranslationParser extends TranslationParser {
         tickRate = tt.getAttribute('ttp:tickRate');
       }
       const body = xml.querySelector('body');
-      const captionsContainer = xml.querySelector('div[xml:space="preserve"]');
+      const captionsContainer = body.firstElementChild;
       if (body && captionsContainer && tickRate) {
         for (let i = 0; i < captionsContainer.children.length; i++) {
           const currentChild = captionsContainer.children[i];

@@ -58,6 +58,7 @@ class TranslationProvider {
   }
 
   translate(text, language, currentTime, useCaptionsFromVideo) {
+    // TODO - Once translation done, add to a translation cache
     return new Promise((resolve, reject) => {
       const currentSite = this.adapter.site;
       const videoId = this.adapter.getVideoId();

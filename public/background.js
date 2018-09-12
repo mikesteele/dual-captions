@@ -1,6 +1,8 @@
 // To expose the pattern for testing in src/tests/background.test.js
 window.NETFLIX_CAPTION_REQUEST_PATTERN = 'https://*.nflxvideo.net/?o=*&v=*&e=*&t=*';
 
+const netflixCaptionRequestsInFlight = {};
+
 class BackgroundPage {
   constructor() {
     // Props
@@ -15,7 +17,7 @@ class BackgroundPage {
     // Listeners
     chrome.runtime.onMessage.addListener(this._onMessage);
     chrome.webRequest.onBeforeRequest.addListener(
-      this._onBeforeYouTubeCaptionRequest, {
+      this._onBeforeNetflixCaptionRequest, {
         urls: [window.NETFLIX_CAPTION_REQUEST_PATTERN]
       }
     );
@@ -41,13 +43,18 @@ class BackgroundPage {
   }
 
   _onBeforeNetflixCaptionRequest(details) {
-    chrome.runtime.sendMessage({
-      type: 'process-netflix-caption-request',
-      payload: details.url
-    }, response => {
-      console.log(response);
-      // TODO - ?
-    });
+    if (!netflixCaptionRequestsInFlight.hasOwnProperty(details.url)) {
+      netflixCaptionRequestsInFlight[details.url] = 1;
+      sendMessageToActiveTab({
+        type: 'process-netflix-caption-request',
+        payload: details.url
+      }).then(response => {
+        delete netflixCaptionRequestsInFlight[details.url];
+      }).catch(err => {
+        console.log(`Couldn't process Netflix caption request. Error: ${err}`);
+        // TODO - delete netflixCaptionRequests[details.url]; ?
+      });
+    }
   }
 
   _onMessage(message, sender, sendResponse) {
@@ -61,5 +68,46 @@ class BackgroundPage {
     }
   }
 }
+
+/**
+ *
+ * From src/utils/chrome.js
+ *
+ **/
+
+function getActiveTabId() {
+  return new Promise((resolve, reject) => {
+    if (window.chrome && window.chrome.tabs && window.chrome.tabs.query) {
+      window.chrome.tabs.query({
+        currentWindow: true,
+        active: true
+      }, tabs => {
+        if (tabs && tabs.length > 0) {
+          resolve(tabs[0].id);
+        } else {
+          reject('Could not get active tab ID.');
+        }
+      });
+    } else {
+      reject('window.chrome.tabs.query missing')
+    }
+  });
+}
+
+function sendMessageToActiveTab(message) {
+  return new Promise((resolve, reject) => {
+    getActiveTabId()
+      .then(tabId => {
+        return new Promise(_resolve => {
+          window.chrome.tabs.sendMessage(tabId, message, _resolve);
+        });
+      })
+      .then(resolve)
+      .catch(err => {
+        reject(err);
+      });
+    });
+}
+
 
 window.DC_BackgroundPage = new BackgroundPage();
