@@ -7,6 +7,27 @@ class YouTubeAdapter extends Adapter {
     this.captionClass = "captions-text";
   }
 
+  addYoutubeAPIHook() {
+    // Since content_scripts run in an isolated world, we need to expose the global YouTube API via an element attribute
+    const script = document.createElement('script');
+    script.innerHTML = `document.body.__ytplayer__ = window.ytplayer;`;
+    document.body.appendChild(script);
+  }
+
+  getAvailableCaptionLanguages() {
+  	// TODO - Use document.body.__ytplayer__
+  	try {
+	  const t = JSON.parse(ytplayer.config.args.player_response);
+	  const captionTracks = t.captions.playerCaptionsTracklistRenderer.captionTracks;
+	  const availableLanguages = captionTracks.map(track => {
+	    return track.vssId
+	  });
+	  console.log(availableLanguages);
+	} catch(e) {
+	  console.log(`Couldn't detect available languages from YouTube.`);
+	}
+  }
+
   getVideoId() {
     const url = new URL(window.location.href);
     return url.searchParams.get('v');
