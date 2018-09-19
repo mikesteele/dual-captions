@@ -1,3 +1,4 @@
+import sinon from 'sinon';
 import expect from 'expect';
 const fs = require('fs');
 const path = require('path');
@@ -10,6 +11,9 @@ document.body.innerHTML = videoPage;
 import '../../public/content-scripts/init/init';
 import '../../public/content-scripts/init/adapter';
 import '../../public/content-scripts/youtube/adapter';
+
+// For URLSearchParams
+require('url-polyfill');
 
 const adapter = window.DC.adapter;
 
@@ -73,4 +77,34 @@ it('should correctly respond to onPopupOpened', () => {
   expect(response).toEqual({
     ok: true
   });
+});
+
+it('should correctly get video ID', () => {
+  const exampleYouTubeURL = 'https://www.youtube.com/watch?v=NrJEFrth27Q';
+  // Set window.location.href to example URL
+  Object.defineProperty(window.location, 'href', {
+    writable: true, value: exampleYouTubeURL
+  });
+  expect(adapter.getVideoId()).toEqual('NrJEFrth27Q');
+});
+
+it('should correctly get player current time', () => {
+  const videoElement = adapter.getPlayer().querySelector('video');
+  videoElement.currentTime = 1234;
+  expect(adapter.getPlayerCurrentTime()).toEqual(1234);
+});
+
+it('getPlayerCurrentTime() should return undefined if no player', () => {
+  sinon.stub(adapter, 'getPlayer').returns(null);
+  expect(adapter.getPlayerCurrentTime()).toEqual(undefined);
+  adapter.getPlayer.restore();
+});
+
+it('should correctly style new caption element', () => {
+  let translatedCaption = document.createElement('div');
+  translatedCaption = adapter.styleCaptionElement(translatedCaption, mockMutationRecord);
+  // Translated caption should get the .captions-text class
+  expect(translatedCaption.classList.contains('captions-text')).toEqual(true);
+  // Translated caption should get the same inline styles as the current caption has.
+  expect(translatedCaption.style.cssText === newCaption.style.cssText).toEqual(true);
 });
