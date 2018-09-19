@@ -8,6 +8,10 @@ class AmazonAdapter extends Adapter {
     return document.getElementById('dv-web-player');
   }
 
+  getCaptionWindow() {
+    return document.querySelector('.timedTextBackground');
+  }
+
   // getVideoId & getPlayerCurrentTime are not needed until Amazon native translation support
   getVideoId() {
     return 'TODO';
