@@ -15,6 +15,11 @@ const adapter = window.DC.config;
 
 const captionWindow = adapter.getCaptionWindow();
 const newCaption = captionWindow.firstChild;
+
+// We need a pure new caption because appendToDOM() causes side-effects, like setting __has-original-position__
+// In the future, there really should be seperate render steps, like "beforeRenderCaption()", "renderCaption()", and "afterRenderCaption()"
+const originalNewCaption = newCaption.cloneNode(true);
+
 const mockMutationRecord = {
   addedNodes: [newCaption],
   attributeName: null,
@@ -96,11 +101,15 @@ it('should correctly indentify captionWasAdded', () => {
 });
 
 it('should correctly _saveOriginalPosition', () => {
-  let testCaption = newCaption.cloneNode(true);
-  // TODO - Why doesn't this work? - expect(testCaption.hasAttribute('__has-original-position__')).toEqual(false);
+  const testCaption = originalNewCaption.cloneNode(true);
+  // Sanity tests
+  expect(testCaption.hasAttribute('__has-original-position__')).toEqual(false);
+  expect(testCaption.hasAttribute('__original-top__')).toEqual(false);
+
   adapter._saveOriginalPosition(testCaption);
+  expect(testCaption.hasAttribute('__has-original-position__')).toEqual(true);
   expect(testCaption.hasAttribute('__original-top__')).toEqual(true);
-  // TODO - Why is this null? - expect(testCaption.getAttribute('__original_top__')).toEqual('76.6063%');
+  expect(testCaption.getAttribute('__original-top__')).toEqual('76.6063%');
 });
 
 // TODO - Test makeDcWindow, moveNetflixCaptions, various other helpers
