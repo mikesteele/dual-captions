@@ -7,11 +7,11 @@ const videoPage = fs.readFileSync(path.resolve(__dirname, './assets/netflix/vide
 document.body.innerHTML = videoPage;
 
 // Load adapter
-import '../../public/content-scripts/init';
-import '../../public/content-scripts/config/init';
-import '../../public/content-scripts/config/netflix';
+import '../../public/content-scripts/init/init';
+import '../../public/content-scripts/init/adapter';
+import '../../public/content-scripts/netflix/adapter';
 
-const adapter = window.DC.config;
+const adapter = window.DC.adapter;
 
 const captionWindow = adapter.getCaptionWindow();
 const newCaption = captionWindow.firstChild;
