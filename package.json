@@ -33,11 +33,11 @@
     "collectCoverageFrom": [
       "src/**",
       "public/background.js",
-      "public/content_scripts/amazon/**",
-      "public/content_scripts/init/**",
-      "public/content_scripts/netflix/**",
-      "public/content_scripts/test/**",
-      "public/content_scripts/youtube/**"
+      "public/content-scripts/amazon/**",
+      "public/content-scripts/init/**",
+      "public/content-scripts/netflix/**",
+      "public/content-scripts/test/**",
+      "public/content-scripts/youtube/**"
     ],
     "coverageReporters": [
       "text"
