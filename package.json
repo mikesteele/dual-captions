@@ -26,13 +26,18 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage  --coverageReporters=text-lcov | coveralls",
+    "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**",
-      "public/**"
+      "public/background.js",
+      "public/content_scripts/amazon/**",
+      "public/content_scripts/init/**",
+      "public/content_scripts/netflix/**",
+      "public/content_scripts/test/**",
+      "public/content_scripts/youtube/**"
     ],
     "coverageReporters": [
       "text"
