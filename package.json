@@ -31,6 +31,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
+      "!src/index.js",
       "src/**",
       "public/background.js",
       "public/content-scripts/amazon/**",
