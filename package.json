@@ -1,6 +1,6 @@
 {
   "name": "dual-captions",
-  "version": "1.4.3",
+  "version": "1.4.3.1",
   "private": true,
   "dependencies": {
     "chai": "^4.1.2",
