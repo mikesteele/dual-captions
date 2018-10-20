@@ -41,6 +41,19 @@ class TranslationProvider {
     return nearestCaption;
   }
 
+  getLoadedLanguages() { // TODO - Test
+    const currentSite = this.adapter.site;
+    const videoId = this.adapter.getVideoId();
+    if (currentSite
+        && videoId
+        && this.__captions.hasOwnProperty(currentSite)
+        && this.__captions[currentSite].hasOwnProperty(videoId)) {
+      return Object.keys(this.__captions[currentSite][videoId]);
+    } else {
+      return [];
+    }
+  }
+
   __loadCaptions(captions, language) {
     const currentSite = this.adapter.site;
     const videoId = this.adapter.getVideoId();

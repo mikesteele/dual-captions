@@ -11,7 +11,10 @@ class Observer {
 
     this.provider = window.DC.provider;
 
-    window.chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
+    // Binds
+    this._onMessage = this._onMessage.bind(this);
+
+    window.chrome.runtime.onMessage.addListener(this._onMessage);
   }
   _onMessage(message, sender, sendResponse) {
     switch (message.type) {
@@ -54,7 +57,8 @@ class Observer {
           extraSpace: this.extraSpace,
           useCaptionsFromVideo: this.useCaptionsFromVideo,
           delayRenderingUntilTranslation: this.delayRenderingUntilTranslation
-        }
+        },
+        loadedLanguges: window.DC.provider.getLoadedLanguages() // TODO - Test
       });
       break;
 

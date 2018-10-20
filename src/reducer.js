@@ -2,15 +2,16 @@ import config from './config';
 
 // FIXME - This should all come from the config module
 const initialState = {
-  currentTab: 0,
+  currentTab: 1,
   DC: true,
   detectedSite: 'none',
   hasError: false,
   errorType: '',
   isOn: false,
+  loadedLanguages: [],
   secondLanguage: config.defaultSecondLanguage,
-  uiLanguage: config.defaultUILanguage,
-  settings: config.defaultSettings
+  settings: config.defaultSettings,
+  uiLanguage: config.defaultUILanguage
 };
 
 export default function reducer(state = initialState, action) {
@@ -49,6 +50,11 @@ export default function reducer(state = initialState, action) {
       const detectedSite = action.payload || state.detectSite;
       return {...state,
         detectedSite: detectedSite
+      };
+    case 'CHANGE_LOADED_LANGUAGES': // TODO: Test
+      const loadedLanguages = action.payload || state.loadedLanguages;
+      return {...state,
+        loadedLanguages: loadedLanguages
       };
     case 'HYDRATE_STORE':
       return {...state,

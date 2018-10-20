@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Toggle from 'react-toggle';
 import { changeDCLanguage, turnDCOff, turnDCOn } from '../actions';
 import config from '../config';
 import Hint from './Hint.jsx';
+import Step from './Step.jsx';
 import { translate } from 'react-i18next';
 
 class MainPage extends Component {
@@ -29,40 +30,45 @@ class MainPage extends Component {
     ));
     return (
       <div className='page'>
-        <div className='container'>
-          <div className='step-container'>
-            <div className='step-number'>
-              <span>1</span>
+        <Step stepNumber={1}>
+          <Hint detectedSite={this.props.detectedSite} loadedLanguages={this.props.loadedLanguages}/>
+        </Step>
+        {this.props.detectedSite === 'netflix' && (
+          <Step stepNumber={2}>
+            <div>
+              {/* TODO - Translate */}
+              <div>
+                To use subtitles from this video, select and unselect subtitle languages on Netflix to load them into this app.
+              </div>
+              <br/>
+              {this.props.loadedLanguages.length && (
+                <div>
+                  {/* TODO - Translate */}
+                  Subtitles from the video loaded: {this.props.loadedLanguages.join(',')}
+                </div>
+              )}
             </div>
-            <div className='step-content step-1'>
-              <Hint detectedSite={this.props.detectedSite}/>
-            </div>
-          </div>
-        </div>
-        <div className='container'>
-          <div className='step-container'>
-            <div className='step-number'>
-              <span>2</span>
-            </div>
-            <div className='step-content step-2'>
-              <label>
-                <Toggle
-                  checked={this.props.isOn}
-                  icons={false}
-                  onChange={this._onToggleChanged.bind(this)} />
-                <div>{ this.props.isOn ? this.props.t('on') : this.props.t('off') }</div>
-              </label>
-              <label>
-                <select
-                  value={this.props.secondLanguage}
-                  onChange={this._onSecondLanguageSelectChanged.bind(this)}>
-                  { secondLanguages }
-                </select>
-                <div>{this.props.t('second-subtitle-language')}</div>
-              </label>
-            </div>
-          </div>
-        </div>
+          </Step>
+        )}
+        <Step stepNumber={this.props.detectedSite === 'netflix' ? 3 : 2}>
+          <Fragment>
+            <label>
+              <Toggle
+                checked={this.props.isOn}
+                icons={false}
+                onChange={this._onToggleChanged.bind(this)} />
+              <div>{ this.props.isOn ? this.props.t('on') : this.props.t('off') }</div>
+            </label>
+            <label>
+              <select
+                value={this.props.secondLanguage}
+                onChange={this._onSecondLanguageSelectChanged.bind(this)}>
+                { secondLanguages }
+              </select>
+              <div>{this.props.t('second-subtitle-language')}</div>
+            </label>
+          </Fragment>
+        </Step>
       </div>
     )
   }

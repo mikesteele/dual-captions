@@ -10,6 +10,10 @@ class Adapter {
     return undefined;
   }
 
+  getVideoId() {
+    return undefined;
+  }
+
   // Prevents the appending of the translation from triggering _onMutation()
   _isDCCaption(element) {
     // If it's not an element, it's not a DC caption.
