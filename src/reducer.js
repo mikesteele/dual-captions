@@ -2,7 +2,7 @@ import config from './config';
 
 // FIXME - This should all come from the config module
 const initialState = {
-  currentTab: 1,
+  currentTab: 0,
   DC: true,
   detectedSite: 'none',
   hasError: false,

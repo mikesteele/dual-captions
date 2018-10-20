@@ -40,9 +40,9 @@ class MainPage extends Component {
               <div>
                 To use subtitles from this video, select and unselect subtitle languages on Netflix to load them into this app.
               </div>
-              <br/>
-              {this.props.loadedLanguages.length && (
+              {this.props.loadedLanguages.length > 0 && (
                 <div>
+                  <br/>
                   {/* TODO - Translate */}
                   Subtitles from the video loaded: {this.props.loadedLanguages.join(',')}
                 </div>
