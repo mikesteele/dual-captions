@@ -108,9 +108,23 @@ it('should correctly _guessLanguageOfCaptions', done => {
       // Clean up
       processor._guessLanguage.restore();
       done();
-    })
-
+    });
 });
 
-
-// _guessLanguage tests - TODO
+it('should correctly _guessLanguage', done => {
+  window.DC.translate = sinon.stub().returns(
+    Promise.resolve({
+      text: 'Used Google Translate',
+      from: {
+        language: {
+          iso: 'jp'
+        }
+      }
+    })
+  );
+  processor._guessLanguage('Some text')
+    .then(language => {
+      expect(language).toEqual('jp');
+      done();
+    });
+});
