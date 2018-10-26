@@ -4,7 +4,6 @@ class NetflixAdapter extends Adapter {
     this.site = 'netflix';
   }
 
-  // TODO - Add tests
   getVideoId() {
     const videoIdPattern = /watch\/(\d+)/;
     const pathname = window.location.pathname;
@@ -15,7 +14,6 @@ class NetflixAdapter extends Adapter {
     }
   }
 
-  // TODO - Add tests
   getPlayerCurrentTime() {
     const video = document.querySelector('video');
     if (video) {
