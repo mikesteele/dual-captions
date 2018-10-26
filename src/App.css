@@ -36,7 +36,7 @@ a:hover {
 }
 
 .page label {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .page label div {
@@ -44,17 +44,17 @@ a:hover {
 }
 
 .header {
-  padding-top: 16px;
-  padding-bottom: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .subtitle {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .footer {
-  padding: 16px;
+  padding: 8px;
 }
 
 .header {

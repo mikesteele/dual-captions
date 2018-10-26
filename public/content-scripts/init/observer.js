@@ -59,7 +59,7 @@ class Observer {
           useCaptionsFromVideo: this.useCaptionsFromVideo,
           delayRenderingUntilTranslation: this.delayRenderingUntilTranslation
         },
-        loadedLanguges: window.DC.provider.getLoadedLanguages()
+        loadedLanguges: window.DC.provider.getLoadedLanguages() // TODO - Audit the repo for typos of "languges"
       });
       break;
 

@@ -28,6 +28,7 @@ class MainPage extends Component {
         {config.secondLanguages[language]}
       </option>
     ));
+    const loadedLanguages = this.props.loadedLanguages.map(lang => config.secondLanguages[lang] || lang);
     return (
       <div className='page'>
         <Step stepNumber={1}>
@@ -38,13 +39,13 @@ class MainPage extends Component {
             <div>
               {/* TODO - Translate */}
               <div>
-                To use subtitles from this video, select and unselect subtitle languages on Netflix to load them into this app.
+                Select subtitle languages on Netflix to load them into this app.
               </div>
               {this.props.loadedLanguages.length > 0 && (
                 <div>
                   <br/>
                   {/* TODO - Translate */}
-                  Subtitles from the video loaded: {this.props.loadedLanguages.join(',')}
+                  Languages loaded here: {loadedLanguages.join(', ')}
                 </div>
               )}
             </div>
