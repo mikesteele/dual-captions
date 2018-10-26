@@ -51,7 +51,6 @@ class BackgroundPage {
         delete window.netflixCaptionRequestsInFlight[details.url];
       }).catch(err => {
         console.log(`Couldn't process Netflix caption request. Error: ${err}`);
-        // TODO - delete netflixCaptionRequests[details.url]; ?
       });
     }
   }
@@ -74,7 +73,11 @@ class BackgroundPage {
  *
  **/
 
-// TODO - Rewrite
+// FIXME
+// It's not documented in the Chrome docs, but people online say that
+// you can use chrome.tabs.sendMessage() without current tab ID
+// and the message will be sent to the active tab.
+// Worth investaging in the future.
 
 window.getActiveTabId = () => {
   return new Promise((resolve, reject) => {

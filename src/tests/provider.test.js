@@ -286,3 +286,28 @@ it('should handle switching between videos - loadCaptions', () => {
     }
   })
 });
+
+it('getLoadedLanguages() should return [] if no languages are loaded', () => {
+  adapterStub.returns(null);
+  const loadedLanguages1 = provider.getLoadedLanguages();
+  expect(loadedLanguages1).toEqual([]);
+  adapterStub.returns('test-video-id-1');
+  const loadedLanguages2 = provider.getLoadedLanguages();
+  expect(loadedLanguages2).toEqual([]);
+});
+
+it('should correctly getLoadedLanguages() if languages are loaded', () => {
+  adapterStub.returns('test-video-id-1');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "This is a caption from video 1"
+  }], 'en');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "C'est un caption du 1e video"
+  }], 'fr');
+  const loadedLanguages = provider.getLoadedLanguages();
+  expect(loadedLanguages).toEqual(['en', 'fr']);
+});
