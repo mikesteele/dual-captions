@@ -37,6 +37,7 @@ class TranslationProvider {
   findNearestCaption(translations, currentTime) {
     const nearestCaption = translations.find(translation => {
       return Math.abs(currentTime - translation.startTime) < 0.3;
+      // TODO - return translation.startTime < currentTime && translation.endTime > currentTime
     });
     return nearestCaption;
   }

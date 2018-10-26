@@ -142,7 +142,7 @@ class Observer {
           ).then(translation => {
             if (!this._translationIsInDOM(translation.text)) {
               let translatedCaption = document.createElement('span');
-              translatedCaption.innerHTML = translation.text; // TODO - Test
+              translatedCaption.innerHTML = translation.text; // TODO - Test YouTube & Amazon
               translatedCaption.setAttribute('__dc-caption__', true);
               translatedCaption = window.DC.adapter.styleCaptionElement(translatedCaption, mutation, newCaptionOrder);
               if (this.extraSpace) {
@@ -165,13 +165,13 @@ class Observer {
     this.observer.disconnect();
     this.isOn = false;
   }
-  // TODO - Netflix is having issues with de-deduping
-  // TODO - Test
   _translationIsInDOM(translation) {
     const captions = Array.from(document.querySelectorAll(`[__dc-caption__]`));
     if (captions.length > 0) {
-      const translationsInDOM = captions.map(caption => { return caption.innerHTML  });  // TODO - Test
-      return translationsInDOM.includes(translation);
+      const translationsInDOM = captions.map(caption => { return caption.textContent  });
+      const renderElement = document.createElement('div'); // TODO - Move out of here
+      renderElement.innerHTML = translation;
+      return translationsInDOM.includes(renderElement.textContent);
     } else {
       return false;
     }
