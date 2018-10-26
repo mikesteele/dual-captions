@@ -116,6 +116,4 @@ it(`shouldn't trigger _onBeforeNetflixCaptionRequest on replay`, () => {
 
    // Fast-forward the delayedPromise
    jest.runAllTimers();
-
-   // TODO
 });
