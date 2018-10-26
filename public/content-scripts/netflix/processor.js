@@ -3,7 +3,7 @@ class NetflixTranslationProcessor {
     this._onMessage = this._onMessage.bind(this);
     this._guessLanguageOfCaptions = this._guessLanguageOfCaptions.bind(this);
     this._guessLanguage = this._guessLanguage.bind(this);
-    chrome.runtime.onMessage.addListener(this._onMessage);
+    window.chrome.runtime.onMessage.addListener(this._onMessage);
   }
 
   _onMessage(message, sender, sendResponse) {
@@ -42,14 +42,14 @@ class NetflixTranslationProcessor {
           if (response.ok) {
             return response.text();
           } else {
-            return Promise.reject('TODO - Credentials expired.')
+            return Promise.reject(`Couldn't fetch captions, have credentials expired?`);
           }
         })
         .then(responseText => {
           if (responseText && responseText.length) {
             resolve(responseText);
           } else {
-            reject('TODO');
+            reject(`Couldn't fetch captions, response to replay was empty.`);
           }
         })
         .catch(err => {
@@ -63,7 +63,7 @@ class NetflixTranslationProcessor {
   // We're using Google Translate "detect language" on the median caption.
   _guessLanguageOfCaptions(captions) {
     const renderElement = document.createElement('div');
-    // Since Netflix captions are in HTML, we have to render them in this DocumentFragment to get their innerText.
+    // Since Netflix captions are in HTML, we have to render them in this element to get their innerText.
     return new Promise((resolve, reject) => {
       renderElement.innerHTML = captions[0].text; // TODO - Make the median caption, guess for more captions
       this._guessLanguage(renderElement.innerText)
@@ -84,7 +84,6 @@ class NetflixTranslationProcessor {
         to: 'en'
       })
       .then(response => {
-        // TODO - Test
         resolve(response.from.language.iso);
       })
       .catch(reject);
