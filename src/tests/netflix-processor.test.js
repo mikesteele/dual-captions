@@ -71,8 +71,6 @@ it('should fetch, parse, guess language, and load captions on Netflix caption re
   });
 });
 
-// _guessLanguageOfCaptions tests - TODO
-
 it('should correctly _guessLanguageOfCaptions', done => {
   // FIXME: Use actual captions from tests/assets/netflix
   const captionsToGuess = [
@@ -102,8 +100,8 @@ it('should correctly _guessLanguageOfCaptions', done => {
     .then(result => {
       const { captions, language } = result;
       expect(language).toEqual('fr');
-      // TODO - expect processor._guessLanguage called multiple times
-      // TODO - expect processor._guessLanguage called for median caption
+      // Should guess with the longest caption
+      expect(processor._guessLanguage.calledWith('Il va pleuvoir ce week-end.')).toEqual(true);
 
       // Clean up
       processor._guessLanguage.restore();

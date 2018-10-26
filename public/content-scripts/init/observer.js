@@ -48,6 +48,7 @@ class Observer {
       break;
 
       case 'get-state':
+      // FIXME: Update get-state tests with loadedLanguages when PR #65 goes in
       sendResponse({
         ok: true,
         settingsAreDefault: this.settingsAreDefault,
@@ -58,7 +59,7 @@ class Observer {
           useCaptionsFromVideo: this.useCaptionsFromVideo,
           delayRenderingUntilTranslation: this.delayRenderingUntilTranslation
         },
-        loadedLanguges: window.DC.provider.getLoadedLanguages() // TODO - Test
+        loadedLanguges: window.DC.provider.getLoadedLanguages()
       });
       break;
 

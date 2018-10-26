@@ -60,13 +60,19 @@ class NetflixTranslationProcessor {
 
   // There's no information in the request URL or body about what language these captions are in.
   // So, for now, we have to guess.
-  // We're using Google Translate "detect language" on the median caption.
+  // We're using Google Translate "detect language" on the longest caption.
   _guessLanguageOfCaptions(captions) {
+    // Since Netflix captions are in HTML, we have to render them in this element to get their text content.
     const renderElement = document.createElement('div');
-    // Since Netflix captions are in HTML, we have to render them in this element to get their innerText.
     return new Promise((resolve, reject) => {
-      renderElement.innerHTML = captions[0].text; // TODO - Make the median caption, guess for more captions
-      this._guessLanguage(renderElement.innerText)
+      // Find the longest caption to use to guess
+      const longestCaption = captions.reduce((a, b) => { return a.text.length > b.text.length ? a : b });
+      // The idea here is that the longer the text is, the likelier the guess is to be correct.
+      // This isn't perfect because caption.text includes HTML, but parsing HTML for each caption seems slow.
+      // Could be explored in the future if issues arise.
+      renderElement.innerHTML = longestCaption.text;
+      const textToGuess = renderElement.textContent;
+      this._guessLanguage(textToGuess)
          .then(language => {
            resolve({
              captions: captions,
