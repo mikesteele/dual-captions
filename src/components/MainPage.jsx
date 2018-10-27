@@ -37,15 +37,15 @@ class MainPage extends Component {
         {this.props.detectedSite === 'netflix' && (
           <Step stepNumber={2}>
             <div>
-              {/* TODO - Translate */}
               <div>
-                Select subtitle languages on Netflix to load them into this app.
+                {this.props.t('netflix-step-2-part-1')}
+              </div>
+              <div>
+                {this.props.t('netflix-step-2-part-2')}
               </div>
               {this.props.loadedLanguages.length > 0 && (
                 <div>
-                  <br/>
-                  {/* TODO - Translate */}
-                  Languages loaded here: {loadedLanguages.join(', ')}
+                  {this.props.t('netflix-step-2-part-3')} {loadedLanguages.join(', ')}
                 </div>
               )}
             </div>
