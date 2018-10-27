@@ -1,5 +1,5 @@
 ## dual-captions <br/> Subtitles in two languages for YouTube, Netflix and Amazon Video
-![build](https://travis-ci.com/mikesteele/dual-captions.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/mikesteele/dual-captions/badge.svg?branch=add-coverage)](https://coveralls.io/github/mikesteele/dual-captions?branch=add-coverage)
+![build](https://travis-ci.com/mikesteele/dual-captions.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/mikesteele/dual-captions/badge.svg?branch=master)](https://coveralls.io/github/mikesteele/dual-captions?branch=master)
 
 | Netflix  |
 |:--------:|
