@@ -1,7 +1,7 @@
 {
   "name": "Two Captions for YouTube, Netflix & Amazon",
   "description": "Show subtitles in two languages on Youtube, Netflix & Amazon Video",
-  "version": "1.4.3.1",
+  "version": "1.5.0",
   "permissions": [
     "tabs",
     "http://*/*",
@@ -53,8 +53,10 @@
       "content-scripts/init/adapter.js",
       "content-scripts/netflix/adapter.js",
       "content-scripts/init/parser.js",
+      "content-scripts/netflix/parser.js",
       "content-scripts/init/fetcher.js",
       "content-scripts/init/provider.js",
+      "content-scripts/netflix/processor.js",
       "content-scripts/init/observer.js"
     ],
     "matches": [ "https://www.netflix.com/*" ]

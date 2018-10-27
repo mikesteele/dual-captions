@@ -11,7 +11,10 @@ class Observer {
 
     this.provider = window.DC.provider;
 
-    window.chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
+    // Binds
+    this._onMessage = this._onMessage.bind(this);
+
+    window.chrome.runtime.onMessage.addListener(this._onMessage);
   }
   _onMessage(message, sender, sendResponse) {
     switch (message.type) {
@@ -45,6 +48,7 @@ class Observer {
       break;
 
       case 'get-state':
+      // FIXME: Update get-state tests with loadedLanguages when PR #65 goes in
       sendResponse({
         ok: true,
         settingsAreDefault: this.settingsAreDefault,
@@ -54,7 +58,8 @@ class Observer {
           extraSpace: this.extraSpace,
           useCaptionsFromVideo: this.useCaptionsFromVideo,
           delayRenderingUntilTranslation: this.delayRenderingUntilTranslation
-        }
+        },
+        loadedLanguages: window.DC.provider.getLoadedLanguages()
       });
       break;
 
@@ -137,7 +142,7 @@ class Observer {
           ).then(translation => {
             if (!this._translationIsInDOM(translation.text)) {
               let translatedCaption = document.createElement('span');
-              translatedCaption.innerText = translation.text;
+              translatedCaption.innerHTML = translation.text;
               translatedCaption.setAttribute('__dc-caption__', true);
               translatedCaption = window.DC.adapter.styleCaptionElement(translatedCaption, mutation, newCaptionOrder);
               if (this.extraSpace) {
@@ -163,8 +168,10 @@ class Observer {
   _translationIsInDOM(translation) {
     const captions = Array.from(document.querySelectorAll(`[__dc-caption__]`));
     if (captions.length > 0) {
-      const translationsInDOM = captions.map(caption => { return caption.innerText  });
-      return translationsInDOM.includes(translation);
+      const translationsInDOM = captions.map(caption => { return caption.textContent  });
+      const renderElement = document.createElement('div'); // FIXME - Move out of here
+      renderElement.innerHTML = translation;
+      return translationsInDOM.includes(renderElement.textContent);
     } else {
       return false;
     }

@@ -17,7 +17,7 @@ a:hover {
 }
 .react-tabs__tab:focus {
   box-shadow: none !important;
-  border-color: #aaa !important; 
+  border-color: #aaa !important;
 }
 
 .page {
@@ -26,7 +26,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 200px;
+  min-height: 200px;
   width: 300px;
 }
 
@@ -36,7 +36,7 @@ a:hover {
 }
 
 .page label {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .page label div {
@@ -44,17 +44,17 @@ a:hover {
 }
 
 .header {
-  padding-top: 16px;
-  padding-bottom: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .subtitle {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .footer {
-  padding: 16px;
+  padding: 8px;
 }
 
 .header {
@@ -211,8 +211,6 @@ table {
   flex-direction: column;
   flex-grow: 1;
   line-height: 18px;
-}
-.step-content.step-1,
-.step-content.step-2 {
-  width: 250px;
+  width: 234px;
+  padding: 0 8px;
 }

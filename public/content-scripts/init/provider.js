@@ -34,11 +34,39 @@ class TranslationProvider {
     });
   }
 
-  findNearestCaption(translations, currentTime) {
-    const nearestCaption = translations.find(translation => {
-      return Math.abs(currentTime - translation.startTime) < 0.3;
+  findCaptionForTime(captions, currentTime) {
+    const nearestCaption = captions.find(caption => {
+      return caption.startTime < currentTime && caption.endTime > currentTime;
     });
     return nearestCaption;
+  }
+
+  findCaptionWithStartTime(captions, currentTime) {
+    const nearestCaption = captions.find(caption => {
+      return Math.abs(currentTime - caption.startTime) < 0.3;
+    });
+    return nearestCaption;
+  }
+
+  findCaption(captions, currentTime, captionsMayNotMatchUp) {
+    if (captionsMayNotMatchUp) {
+      return this.findCaptionWithStartTime(captions, currentTime);
+    } else {
+      return this.findCaptionForTime(captions, currentTime);
+    }
+  }
+
+  getLoadedLanguages() {
+    const currentSite = this.adapter.site;
+    const videoId = this.adapter.getVideoId();
+    if (currentSite
+        && videoId
+        && this.__captions.hasOwnProperty(currentSite)
+        && this.__captions[currentSite].hasOwnProperty(videoId)) {
+      return Object.keys(this.__captions[currentSite][videoId]);
+    } else {
+      return [];
+    }
   }
 
   __loadCaptions(captions, language) {
@@ -64,14 +92,14 @@ class TranslationProvider {
       if (useCaptionsFromVideo
           && currentTime
           && currentSite
-          && this.__captions.hasOwnProperty(currentSite)
-          && this.__captions[currentSite].hasOwnProperty(videoId)
-          && this.__captions[currentSite][videoId].hasOwnProperty(language)) {
+          && this.__captions[currentSite]
+          && this.__captions[currentSite][videoId]
+          && this.__captions[currentSite][videoId][language]) {
         const captions = this.__captions[currentSite][videoId][language];
-        const nearestCaption = this.findNearestCaption(captions, currentTime);
-        if (nearestCaption) {
+        const captionToRender = this.findCaption(captions, currentTime, this.adapter.captionsMayNotMatchUp);
+        if (captionToRender) {
           resolve({
-            text: `${nearestCaption.text} ✓`
+            text: `${captionToRender.text} ✓`
           });
         } else {
           this.fallbackProvider

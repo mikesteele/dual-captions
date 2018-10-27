@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<tt xmlns:tt="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:cellResolution="40 19" ttp:pixelAspectRatio="1 1" ttp:tickRate="10000000" ttp:timeBase="media" tts:extent="640px 480px" xmlns="http://www.w3.org/ns/ttml">
+<head>
+<ttp:profile use="http://netflix.com/ttml/profile/dfxp-ls-sdh"/>
+<styling>
+<style tts:color="white" tts:fontFamily="monospaceSansSerif" tts:fontSize="100%" xml:id="bodyStyle"/>
+<style tts:color="white" tts:fontFamily="monospaceSansSerif" tts:fontSize="100%" tts:fontStyle="italic" xml:id="style_0"/>
+</styling>
+<layout>
+<region xml:id="region_00">
+<style tts:textAlign="left"/>
+<style tts:displayAlign="center"/>
+</region>
+<region xml:id="region_01">
+<style tts:textAlign="left"/>
+<style tts:displayAlign="center"/>
+</region>
+<region xml:id="region_02">
+<style tts:textAlign="left"/>
+<style tts:displayAlign="center"/>
+</region>
+</layout>
+</head>
+<body style="bodyStyle">
+<div xml:space="preserve">
+<p begin="55672333t" end="74337666t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="32.50% 79.29%" xml:id="subtitle0">MALE NARRATOR:</p>
+<p begin="55672333t" end="74337666t" region="region_01" tts:extent="40.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle1"><span style="style_0">Twelve years ago,</span></p>
+<p begin="74337666t" end="108341666t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle2"><span style="style_0">a nine-tailed fox</span></p>
+<p begin="74337666t" end="108341666t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle3"><span style="style_0">suddenly appeared.</span></p>
+<p begin="108341666t" end="146339666t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle4"><span style="style_0">Its tails lashed out,</span></p>
+<p begin="108341666t" end="146339666t" region="region_01" tts:extent="72.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle5"><span style="style_0">smashing mountains and sending</span></p>
+<p begin="146339666t" end="177340666t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle6"><span style="style_0">tidal waves crashing</span></p>
+<p begin="146339666t" end="177340666t" region="region_01" tts:extent="32.50% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle7"><span style="style_0">to the shores.</span></p>
+<p begin="177340666t" end="224671333t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle8"><span style="style_0">The ninja rose up</span></p>
+<p begin="177340666t" end="224671333t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle9"><span style="style_0">to defend their villages.</span></p>
+<p begin="224671333t" end="251334666t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle10">Hold the attack and wait</p>
+<p begin="224671333t" end="251334666t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle11">for the fourth Hokage!</p>
+<p begin="251334666t" end="264004000t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle12">It's getting closer!</p>
+<p begin="264004000t" end="282002000t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle13">Don't let it</p>
+<p begin="264004000t" end="282002000t" region="region_01" tts:extent="40.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle14">near the village!</p>
+<p begin="313670333t" end="343003000t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle15">NARRATOR:<span style="style_0"> One shinobi</span></p>
+<p begin="313670333t" end="343003000t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle16"><span style="style_0">faced the nine-tailed fox</span></p>
+<p begin="343003000t" end="361334666t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle17"><span style="style_0">in mortal combat.</span></p>
+<p begin="361334666t" end="395338666t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle18"><span style="style_0">He sacrificed his life</span></p>
+<p begin="361334666t" end="395338666t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle19"><span style="style_0">to capture the beast</span></p>
+<p begin="395338666t" end="422335666t" region="region_00" tts:extent="67.50% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle20"><span style="style_0">and seal it in a human body.</span></p>
+<p begin="422335666t" end="466006000t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle21"><span style="style_0">This ninja was known</span></p>
+<p begin="422335666t" end="466006000t" region="region_01" tts:extent="50.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle22"><span style="style_0">as the Fourth Hokage.</span></p>
+<p begin="497674333t" end="519009000t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle23">[BABY CRYING]</p>
+<p begin="548341666t" end="574337666t" region="region_00" tts:extent="10.00% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle24">[âªâªâª]</p>
+<p begin="612335666t" end="640333666t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle25">[LAUGHING]</p>
+<p begin="640333666t" end="658008000t" region="region_00" tts:extent="12.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle26">MAN 1:</p>
+<p begin="640333666t" end="658008000t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle27">Naruto, come back here!</p>
+<p begin="658008000t" end="674671333t" region="region_00" tts:extent="65.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle28">When I get my hands on you!</p>
+<p begin="674671333t" end="699342666t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle29">MAN 2: You've crossed</p>
+<p begin="674671333t" end="699342666t" region="region_01" tts:extent="65.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle30">the line this time, Naruto!</p>
+<p begin="719342666t" end="735005000t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle31">[LAUGHING CONTINUES]</p>
+<p begin="751334666t" end="768008000t" region="region_00" tts:extent="25.00% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle32">Give it up!</p>
+<p begin="768008000t" end="790667333t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle33">NARUTO: You're just bent</p>
+<p begin="768008000t" end="790667333t" region="region_01" tts:extent="40.00% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle34">because you don't</p>
+<p begin="790667333t" end="811334666t" region="region_00" tts:extent="72.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle35">have the guts to do what I do!</p>
+<p begin="811334666t" end="823003000t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle36">Do you? Losers!</p>
+<p begin="823003000t" end="834004000t" region="region_00" tts:extent="20.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle37">Wannabes!</p>
+<p begin="834004000t" end="858675333t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle38">You'll never catch me!</p>
+<p begin="834004000t" end="858675333t" region="region_01" tts:extent="22.50% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle39">[LAUGHING]</p>
+<p begin="858675333t" end="883670333t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle40">MAN 1: Lord Hokage!</p>
+<p begin="858675333t" end="883670333t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle41">It's an emergency!</p>
+<p begin="883670333t" end="917007000t" region="region_00" tts:extent="72.50% 5.33%" tts:origin="12.50% 79.29%" xml:id="subtitle42">I hope you're not bothering me</p>
+<p begin="883670333t" end="917007000t" region="region_01" tts:extent="40.00% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle43">with some trivia.</p>
+<p begin="917007000t" end="942002000t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle44">And don't tell me</p>
+<p begin="917007000t" end="942002000t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle45">it's Naruto again.</p>
+<p begin="942002000t" end="956339666t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle46">It is Naruto again!</p>
+<p begin="956339666t" end="973336666t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="45.00% 79.29%" xml:id="subtitle47">He climbed onto</p>
+<p begin="956339666t" end="973336666t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle48">the great stone faces!</p>
+<p begin="973336666t" end="997340666t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="32.50% 79.29%" xml:id="subtitle49">He put graffiti</p>
+<p begin="973336666t" end="997340666t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle50">all over the Hokage.</p>
+<p begin="1008341666t" end="1019676333t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle51">[SIGHS]</p>
+<p begin="1096339666t" end="1118008000t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="45.00% 79.29%" xml:id="subtitle52">MAN:</p>
+<p begin="1096339666t" end="1118008000t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle53">Naruto! Hold on!</p>
+<p begin="1142669333t" end="1161001000t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle54">[LAUGHING]</p>
+<p begin="1161001000t" end="1183003000t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle55">That was too easy.</p>
+<p begin="1183003000t" end="1199009000t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle56">Oh yeah, Naruto?</p>
+<p begin="1199009000t" end="1218675333t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle57">[NARUTO SCREAMING]</p>
+<p begin="1241668333t" end="1262669333t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle58">Where'd you come from,</p>
+<p begin="1241668333t" end="1262669333t" region="region_01" tts:extent="30.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle59">Iruka-sensei?</p>
+<p begin="1262669333t" end="1276339666t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle60">What are you doing here?</p>
+<p begin="1276339666t" end="1289676333t" region="region_00" tts:extent="67.50% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle61">No, what are you doing here?</p>
+<p begin="1289676333t" end="1311668333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle62">You're supposed</p>
+<p begin="1289676333t" end="1311668333t" region="region_01" tts:extent="35.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle63">to be in class.</p>
+<p begin="1322669333t" end="1349676333t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle64">IRUKA: I'm at the end of</p>
+<p begin="1322669333t" end="1349676333t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle65">my rope, Naruto.</p>
+<p begin="1349676333t" end="1372002000t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle66">You failed the</p>
+<p begin="1349676333t" end="1372002000t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle67">graduation test last time</p>
+<p begin="1372002000t" end="1384337666t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle68">and the time before that.</p>
+<p begin="1384337666t" end="1402335666t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle69">Tomorrow, you've</p>
+<p begin="1384337666t" end="1402335666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle70">got another chance,</p>
+<p begin="1402335666t" end="1423003000t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="50.00% 79.29%" xml:id="subtitle71">and you're</p>
+<p begin="1402335666t" end="1423003000t" region="region_01" tts:extent="40.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle72">messing up again.</p>
+<p begin="1423003000t" end="1435005000t" region="region_00" tts:extent="10.00% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle73">Hmph!</p>
+<p begin="1444337666t" end="1455338666t" region="region_00" tts:extent="10.00% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle74">Fine!</p>
+<p begin="1455338666t" end="1474004000t" region="region_00" tts:extent="72.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle75">Because you missed it, Naruto,</p>
+<p begin="1474004000t" end="1498341666t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle76">everyone will review</p>
+<p begin="1474004000t" end="1498341666t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle77">the transformation jutsu!</p>
+<p begin="1498341666t" end="1514337666t" region="region_00" tts:extent="20.00% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle78">STUDENTS:</p>
+<p begin="1498341666t" end="1514337666t" region="region_01" tts:extent="7.50% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle79">Aww!</p>
+<p begin="1514337666t" end="1530333666t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle80">All right, Sakura here.</p>
+<p begin="1530333666t" end="1542002000t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle81">Let's do it.</p>
+<p begin="1542002000t" end="1554671333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle82">Transform!</p>
+<p begin="1568675333t" end="1602335666t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="10.00% 79.29%" xml:id="subtitle83">You transformed</p>
+<p begin="1568675333t" end="1602335666t" region="region_01" tts:extent="32.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle84">into me. Good.</p>
+<p begin="1617007000t" end="1637007000t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="50.00% 84.62%" xml:id="subtitle85">Yes! I did it!</p>
+<p begin="1637007000t" end="1658675333t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="22.50% 73.96%" xml:id="subtitle86">I kicked butt!</p>
+<p begin="1637007000t" end="1658675333t" region="region_01" tts:extent="7.50% 5.33%" tts:origin="62.50% 84.62%" xml:id="subtitle87">Yes!</p>
+<p begin="1658675333t" end="1679342666t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle88">Sasuke, did you see that?</p>
+<p begin="1679342666t" end="1701668333t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle89">Next, Sasuke Uchiha.</p>
+<p begin="1740000000t" end="1755338666t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="57.50% 84.62%" xml:id="subtitle90">[TRANSFORMS]</p>
+<p begin="1755338666t" end="1774004000t" region="region_00" tts:extent="20.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle91">Uh, good.</p>
+<p begin="1804337666t" end="1829009000t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle92">Next, Naruto Uzumaki.</p>
+<p begin="1829009000t" end="1852669333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="45.00% 79.29%" xml:id="subtitle93">This is a total</p>
+<p begin="1829009000t" end="1852669333t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle94">waste of time, Naruto.</p>
+<p begin="1852669333t" end="1874671333t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle95">We always pay</p>
+<p begin="1852669333t" end="1874671333t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle96">for your screw-ups.</p>
+<p begin="1874671333t" end="1892669333t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle97">Like I care.</p>
+<p begin="1943336666t" end="1974671333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle98">[IN MIND]:</p>
+<p begin="1943336666t" end="1974671333t" region="region_01" tts:extent="50.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle99"><span style="style_0">Naruto. Do your best.</span></p>
+<p begin="1974671333t" end="1989342666t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="50.00% 84.62%" xml:id="subtitle100">Transform!</p>
+<p begin="2012669333t" end="2043670333t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="32.50% 79.29%" xml:id="subtitle101">[GIRLY VOICE]:</p>
+<p begin="2012669333t" end="2043670333t" region="region_01" tts:extent="20.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle102">Ooh. Heh.</p>
+<p begin="2043670333t" end="2053670333t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle103">Huh?</p>
+<p begin="2053670333t" end="2068675333t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle104">[GROANS AND GAGS]</p>
+<p begin="2082002000t" end="2106339666t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle105">[LAUGHING]</p>
+<p begin="2082002000t" end="2106339666t" region="region_01" tts:extent="15.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle106">Gotcha!</p>
+<p begin="2106339666t" end="2123336666t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle107">That's my sexy jutsu!</p>
+<p begin="2123336666t" end="2144337666t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle108">Cut the stupid tricks!</p>
+<p begin="2144337666t" end="2166006000t" region="region_00" tts:extent="62.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle109">This is your last warning!</p>
+<p begin="2317007000t" end="2342335666t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle110">NARUTO:</p>
+<p begin="2317007000t" end="2342335666t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle111">This sucks. Loser.</p>
+<p begin="2342335666t" end="2364671333t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle112">You're not going home</p>
+<p begin="2342335666t" end="2364671333t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle113">until you've cleaned off</p>
+<p begin="2364671333t" end="2380000000t" region="region_00" tts:extent="65.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle114">every single drop of paint.</p>
+<p begin="2392002000t" end="2405338666t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle115">So what?</p>
+<p begin="2405338666t" end="2434004000t" region="region_00" tts:extent="67.50% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle116">It's not like there's anyone</p>
+<p begin="2405338666t" end="2434004000t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle117">waiting at home for me!</p>
+<p begin="2491334666t" end="2509009000t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="67.50% 84.62%" xml:id="subtitle118">Naruto?</p>
+<p begin="2509009000t" end="2533336666t" region="region_00" tts:extent="70.00% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle119">What do you want now, Sensei?</p>
+<p begin="2533336666t" end="2557007000t" region="region_00" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle120">Well, I was just thinking,</p>
+<p begin="2557007000t" end="2578675333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle121">maybe after you</p>
+<p begin="2557007000t" end="2578675333t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle122">clean this all up,</p>
+<p begin="2578675333t" end="2594337666t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle123">I could take you out</p>
+<p begin="2578675333t" end="2594337666t" region="region_01" tts:extent="35.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle124">for some ramen.</p>
+<p begin="2594337666t" end="2608675333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle125">The good stuff.</p>
+<p begin="2594337666t" end="2608675333t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle126">What do you think?</p>
+<p begin="2631668333t" end="2647674333t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle127">Huh?</p>
+<p begin="2647674333t" end="2670333666t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle128">NARUTO: Now that's some</p>
+<p begin="2647674333t" end="2670333666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle129">serious motivation!</p>
+<p begin="2670333666t" end="2698341666t" region="region_00" tts:extent="77.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle130">I'll have this clean in no time!</p>
+<p begin="2698341666t" end="2726006000t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle131">Enter Naruto Uzumaki!</p>
+<p begin="2748008000t" end="2769009000t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle132">[PEOPLE CHATTERING]</p>
+<p begin="2834671333t" end="2846006000t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle133">Naruto.</p>
+<p begin="2846006000t" end="2856673333t" region="region_00" tts:extent="5.00% 5.33%" tts:origin="50.00% 84.62%" xml:id="subtitle134">Hm?</p>
+<p begin="2856673333t" end="2894337666t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="35.00% 79.29%" xml:id="subtitle135">Why would you do that</p>
+<p begin="2856673333t" end="2894337666t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle136">to the Hokage faces?</p>
+<p begin="2894337666t" end="2919342666t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="32.50% 79.29%" xml:id="subtitle137">I mean, you know who</p>
+<p begin="2894337666t" end="2919342666t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle138">the Hokage are, don't you?</p>
+<p begin="2919342666t" end="2935005000t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle139">'Course I do.</p>
+<p begin="2935005000t" end="2958008000t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle140">[SLURPING]</p>
+<p begin="2985338666t" end="2998341666t" region="region_00" tts:extent="20.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle141">[EXHALES]</p>
+<p begin="2998341666t" end="3015005000t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle142">Everybody knows.</p>
+<p begin="3015005000t" end="3037007000t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle143">They were the greatest</p>
+<p begin="3015005000t" end="3037007000t" region="region_01" tts:extent="70.00% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle144">shinobi of their time, right?</p>
+<p begin="3037007000t" end="3065672333t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle145">The best of the best.</p>
+<p begin="3037007000t" end="3065672333t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle146">Undefeated ninja champs.</p>
+<p begin="3088341666t" end="3110333666t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="32.50% 79.29%" xml:id="subtitle147">And the Fourth</p>
+<p begin="3088341666t" end="3110333666t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle148">Hokage's the one who saved</p>
+<p begin="3110333666t" end="3133670333t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle149">the village from</p>
+<p begin="3110333666t" end="3133670333t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle150">the nine-tailed fox.</p>
+<p begin="3133670333t" end="3147340666t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle151">He was the most amazing.</p>
+<p begin="3147340666t" end="3167340666t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle152">Then why did you--</p>
+<p begin="3167340666t" end="3190667333t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="12.50% 79.29%" xml:id="subtitle153">Because I'm going to be</p>
+<p begin="3167340666t" end="3190667333t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle154">greater than any of them.</p>
+<p begin="3190667333t" end="3201334666t" region="region_00" tts:extent="5.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle155">Me.</p>
+<p begin="3201334666t" end="3234004000t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="55.00% 79.29%" xml:id="subtitle156">Naruto.</p>
+<p begin="3201334666t" end="3234004000t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle157">The next Hokage!</p>
+<p begin="3234004000t" end="3246673333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="47.50% 84.62%" xml:id="subtitle158">A ninja legend!</p>
+<p begin="3246673333t" end="3276339666t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="10.00% 79.29%" xml:id="subtitle159">Then everyone will have</p>
+<p begin="3246673333t" end="3276339666t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle160">to stop disrespecting me</p>
+<p begin="3276339666t" end="3300000000t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="10.00% 79.29%" xml:id="subtitle161">and look up to me.</p>
+<p begin="3276339666t" end="3300000000t" region="region_01" tts:extent="25.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle162">Believe it!</p>
+<p begin="3300000000t" end="3320667333t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle163">[SLURPS]</p>
+<p begin="3300000000t" end="3320667333t" region="region_01" tts:extent="35.00% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle164">Uh, by the way,</p>
+<p begin="3320667333t" end="3352002000t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="35.00% 79.29%" xml:id="subtitle165">I kind of want to ask</p>
+<p begin="3320667333t" end="3352002000t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle166">a little favor, Sensei.</p>
+<p begin="3352002000t" end="3380333666t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="10.00% 73.96%" xml:id="subtitle167">You want another bowl?</p>
+<p begin="3352002000t" end="3380333666t" region="region_01" tts:extent="12.50% 5.33%" tts:origin="65.00% 84.62%" xml:id="subtitle168">Uh-uh.</p>
+<p begin="3380333666t" end="3401334666t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="47.50% 79.29%" xml:id="subtitle169">I want to try on</p>
+<p begin="3380333666t" end="3401334666t" region="region_01" tts:extent="32.50% 5.33%" tts:origin="50.00% 84.62%" xml:id="subtitle170">your headband.</p>
+<p begin="3401334666t" end="3414004000t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="50.00% 84.62%" xml:id="subtitle171">Come on, please?</p>
+<p begin="3414004000t" end="3429342666t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle172">Uh... Oh, this?</p>
+<p begin="3429342666t" end="3448675333t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle173">No way.</p>
+<p begin="3448675333t" end="3465005000t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle174">You can only wear</p>
+<p begin="3448675333t" end="3465005000t" region="region_01" tts:extent="40.00% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle175">the Leaf headband</p>
+<p begin="3465005000t" end="3498008000t" region="region_00" tts:extent="72.50% 5.33%" tts:origin="12.50% 79.29%" xml:id="subtitle176">when you finally graduate from</p>
+<p begin="3465005000t" end="3498008000t" region="region_01" tts:extent="75.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle177">the Academy and become a ninja.</p>
+<p begin="3498008000t" end="3518341666t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle178">You've got to pass</p>
+<p begin="3498008000t" end="3518341666t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle179">the test tomorrow.</p>
+<p begin="3518341666t" end="3537007000t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="55.00% 79.29%" xml:id="subtitle180">NARUTO:</p>
+<p begin="3518341666t" end="3537007000t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle181">That is so uncool!</p>
+<p begin="3537007000t" end="3564671333t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="12.50% 79.29%" xml:id="subtitle182">Hey, is that why you</p>
+<p begin="3537007000t" end="3564671333t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle183">took off your goggles?</p>
+<p begin="3564671333t" end="3586339666t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle184">I want another bowl!</p>
+<p begin="3601001000t" end="3632002000t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle185">IRUKA: We will now start</p>
+<p begin="3601001000t" end="3632002000t" region="region_01" tts:extent="35.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle186">the final exam.</p>
+<p begin="3632002000t" end="3664671333t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle187">When your name is called,</p>
+<p begin="3632002000t" end="3664671333t" region="region_01" tts:extent="67.50% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle188">proceed to the testing room.</p>
+<p begin="3664671333t" end="3700000000t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle189">The final test will</p>
+<p begin="3664671333t" end="3700000000t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle190">be on the clone jutsu.</p>
+<p begin="3700000000t" end="3730000000t" region="region_00" tts:extent="75.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle191">Ugh, that's my worst technique!</p>
+<p begin="3730000000t" end="3760333666t" region="region_00" tts:extent="12.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle192">Great!</p>
+<p begin="3730000000t" end="3760333666t" region="region_01" tts:extent="50.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle193">I'm never gonna pass!</p>
+<p begin="3803003000t" end="3825338666t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle194">[IN MIND]:<span style="style_0"> All right.</span></p>
+<p begin="3803003000t" end="3825338666t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle195"><span style="style_0">Get it together, Naruto.</span></p>
+<p begin="3825338666t" end="3853003000t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle196"><span style="style_0">You can do this.</span></p>
+<p begin="3825338666t" end="3853003000t" region="region_01" tts:extent="25.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle197"><span style="style_0">Believe it.</span></p>
+<p begin="3877340666t" end="3900333666t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle198">Clone jutsu!</p>
+<p begin="3944004000t" end="3964337666t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle199">[STAMMERING]</p>
+<p begin="3988341666t" end="4000333666t" region="region_00" tts:extent="20.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle200">You fail!</p>
+<p begin="4031001000t" end="4048675333t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="57.50% 84.62%" xml:id="subtitle201">Iruka-sensei.</p>
+<p begin="4048675333t" end="4069009000t" region="region_00" tts:extent="20.00% 5.33%" tts:origin="47.50% 79.29%" xml:id="subtitle202">He's off,</p>
+<p begin="4048675333t" end="4069009000t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle203">but his moves weren't bad,</p>
+<p begin="4069009000t" end="4092002000t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle204">and he did hang in there</p>
+<p begin="4069009000t" end="4092002000t" region="region_01" tts:extent="32.50% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle205">and replicate.</p>
+<p begin="4092002000t" end="4107007000t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="35.00% 79.29%" xml:id="subtitle206">This is his third try,</p>
+<p begin="4092002000t" end="4107007000t" region="region_01" tts:extent="25.00% 5.33%" tts:origin="50.00% 84.62%" xml:id="subtitle207">so you know</p>
+<p begin="4107007000t" end="4125338666t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="45.00% 79.29%" xml:id="subtitle208">he really wants</p>
+<p begin="4107007000t" end="4125338666t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle209">to become a ninja.</p>
+<p begin="4125338666t" end="4148008000t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 68.63%" xml:id="subtitle210">We could cut him</p>
+<p begin="4125338666t" end="4148008000t" region="region_01" tts:extent="50.00% 5.33%" tts:origin="22.50% 73.96%" xml:id="subtitle211">a break and pass him.</p>
+<p begin="4125338666t" end="4148008000t" region="region_02" tts:extent="10.00% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle212">Huh?!</p>
+<p begin="4148008000t" end="4176339666t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle213">Mizuki-sensei,</p>
+<p begin="4148008000t" end="4176339666t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle214">the other students</p>
+<p begin="4176339666t" end="4209009000t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="10.00% 79.29%" xml:id="subtitle215">created at least three</p>
+<p begin="4176339666t" end="4209009000t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle216">effective replications.</p>
+<p begin="4220667333t" end="4251668333t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle217">But Naruto could only</p>
+<p begin="4220667333t" end="4251668333t" region="region_01" tts:extent="65.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle218">create one, and look at it.</p>
+<p begin="4251668333t" end="4268675333t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle219">It's pitiful.</p>
+<p begin="4268675333t" end="4288675333t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle220">I can't pass him.</p>
+<p begin="4288675333t" end="4303003000t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle221">[GROWLS]</p>
+<p begin="4319342666t" end="4332335666t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 68.63%" xml:id="subtitle222">BOY 1: See that?</p>
+<p begin="4319342666t" end="4332335666t" region="region_01" tts:extent="30.00% 5.33%" tts:origin="32.50% 79.29%" xml:id="subtitle223">BOY 2: Passed</p>
+<p begin="4319342666t" end="4332335666t" region="region_02" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle224">with flying colors!</p>
+<p begin="4332335666t" end="4348341666t" region="region_00" tts:extent="12.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle225">BOY 1:</p>
+<p begin="4332335666t" end="4348341666t" region="region_01" tts:extent="50.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle226">They called me first!</p>
+<p begin="4368008000t" end="4390000000t" region="region_00" tts:extent="12.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle227">BOY 3:</p>
+<p begin="4368008000t" end="4390000000t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle228">I'm a ninja now.</p>
+<p begin="4390000000t" end="4403670333t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="45.00% 79.29%" xml:id="subtitle229">MAN:</p>
+<p begin="4390000000t" end="4403670333t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle230">I'm proud of you, son.</p>
+<p begin="4403670333t" end="4417674333t" region="region_00" tts:extent="25.00% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle231">We all are.</p>
+<p begin="4417674333t" end="4431668333t" region="region_00" tts:extent="12.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle232">WOMAN:</p>
+<p begin="4417674333t" end="4431668333t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle233">Congratulations!</p>
+<p begin="4460000000t" end="4491334666t" region="region_00" tts:extent="12.50% 5.33%" tts:origin="65.00% 79.29%" xml:id="subtitle234">There.</p>
+<p begin="4460000000t" end="4491334666t" region="region_01" tts:extent="27.50% 5.33%" tts:origin="57.50% 84.62%" xml:id="subtitle235">You see him?</p>
+<p begin="4491334666t" end="4504337666t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle236">It's that boy.</p>
+<p begin="4504337666t" end="4528008000t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle237">I heard he's the</p>
+<p begin="4504337666t" end="4528008000t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle238">only one who failed.</p>
+<p begin="4528008000t" end="4552335666t" region="region_00" tts:extent="10.00% 5.33%" tts:origin="35.00% 79.29%" xml:id="subtitle239">Hmph.</p>
+<p begin="4528008000t" end="4552335666t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle240">Well, it serves him right.</p>
+<p begin="4552335666t" end="4580000000t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle241">Just imagine what would</p>
+<p begin="4552335666t" end="4580000000t" region="region_01" tts:extent="67.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle242">happen if he became a ninja.</p>
+<p begin="4580000000t" end="4599009000t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="55.00% 79.29%" xml:id="subtitle243">I mean,</p>
+<p begin="4580000000t" end="4599009000t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle244">he's the boy who--</p>
+<p begin="4599009000t" end="4628341666t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="10.00% 79.29%" xml:id="subtitle245">Shh. We're not allowed</p>
+<p begin="4599009000t" end="4628341666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle246">to talk about that.</p>
+<p begin="4628341666t" end="4642002000t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle247">[GASPS]</p>
+<p begin="4703336666t" end="4752335666t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle248">Iruka, there's something</p>
+<p begin="4703336666t" end="4752335666t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle249">we need to talk about.</p>
+<p begin="4825005000t" end="4856673333t" region="region_00" tts:extent="70.00% 5.33%" tts:origin="12.50% 79.29%" xml:id="subtitle250">MIZUKI: Iruka-sensei's tough,</p>
+<p begin="4825005000t" end="4856673333t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle251">but he's not against you.</p>
+<p begin="4856673333t" end="4883336666t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle252">NARUTO: Then why?</p>
+<p begin="4856673333t" end="4883336666t" region="region_01" tts:extent="27.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle253">Why only me?</p>
+<p begin="4897007000t" end="4928675333t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle254">He wants you to be</p>
+<p begin="4897007000t" end="4928675333t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle255">strong with all his heart,</p>
+<p begin="4928675333t" end="4961668333t" region="region_00" tts:extent="62.50% 5.33%" tts:origin="10.00% 79.29%" xml:id="subtitle256">but that will never happen</p>
+<p begin="4928675333t" end="4961668333t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle257">if he goes easy on you.</p>
+<p begin="4961668333t" end="4979342666t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle258">He's like you, you know?</p>
+<p begin="4979342666t" end="5002669333t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle259">No parents, no family.</p>
+<p begin="5002669333t" end="5040333666t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle260">But this time, I really</p>
+<p begin="5002669333t" end="5040333666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle261">wanted to graduate.</p>
+<p begin="5040333666t" end="5082335666t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle262">Heh. Then I guess</p>
+<p begin="5040333666t" end="5082335666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle263">I have to tell you.</p>
+<p begin="5082335666t" end="5104671333t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="67.50% 84.62%" xml:id="subtitle264">Huh?</p>
+<p begin="5104671333t" end="5136673333t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle265">It's a secret, but I'm</p>
+<p begin="5104671333t" end="5136673333t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle266">going to let you in on it.</p>
+<p begin="5149676333t" end="5167340666t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle267">[IN MIND]:</p>
+<p begin="5149676333t" end="5167340666t" region="region_01" tts:extent="20.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle268"><span style="style_0">A secret?</span></p>
+<p begin="5199676333t" end="5220000000t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 79.29%" xml:id="subtitle269">LORD HOKAGE:</p>
+<p begin="5199676333t" end="5220000000t" region="region_01" tts:extent="12.50% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle270"><span style="style_0">Iruka.</span></p>
+<p begin="5220000000t" end="5243336666t" region="region_00" tts:extent="12.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle271">IRUKA:</p>
+<p begin="5220000000t" end="5243336666t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle272"><span style="style_0">What is it, Lord Hokage?</span></p>
+<p begin="5243336666t" end="5269009000t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 79.29%" xml:id="subtitle273">LORD HOKAGE:</p>
+<p begin="5243336666t" end="5269009000t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle274"><span style="style_0">I know how you feel.</span></p>
+<p begin="5269009000t" end="5302669333t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle275"><span style="style_0">You grew up just like</span></p>
+<p begin="5269009000t" end="5302669333t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle276"><span style="style_0">Naruto, without knowing</span></p>
+<p begin="5302669333t" end="5328675333t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle277"><span style="style_0">the love</span></p>
+<p begin="5302669333t" end="5328675333t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle278"><span style="style_0">of a mother and father.</span></p>
+<p begin="5328675333t" end="5349009000t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle279"><span style="style_0">The warmth of a family.</span></p>
+<p begin="5370667333t" end="5400333666t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle280">MAN: It's getting closer!</p>
+<p begin="5370667333t" end="5400333666t" region="region_01" tts:extent="72.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle281">Don't let it near the village!</p>
+<p begin="5400333666t" end="5413670333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle282">Let me go!</p>
+<p begin="5413670333t" end="5431334666t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle283">My mom and dad are still</p>
+<p begin="5413670333t" end="5431334666t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle284">fighting back there!</p>
+<p begin="5431334666t" end="5444671333t" region="region_00" tts:extent="25.00% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle285">[SCREAMING]</p>
+<p begin="5457007000t" end="5471001000t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle286"><span style="style_0">[KNOCKING ON DOOR]</span></p>
+<p begin="5471001000t" end="5494004000t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle287">MIZUKI:</p>
+<p begin="5471001000t" end="5494004000t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle288"><span style="style_0">Iruka-sensei, wake up!</span></p>
+<p begin="5494004000t" end="5504337666t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="70.00% 84.62%" xml:id="subtitle289">Huh?</p>
+<p begin="5515005000t" end="5537674333t" region="region_00" tts:extent="10.00% 5.33%" tts:origin="55.00% 79.29%" xml:id="subtitle290">What?</p>
+<p begin="5515005000t" end="5537674333t" region="region_01" tts:extent="25.00% 5.33%" tts:origin="47.50% 84.62%" xml:id="subtitle291">What is it?</p>
+<p begin="5537674333t" end="5565005000t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle292">You need to come to</p>
+<p begin="5537674333t" end="5565005000t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle293">Lord Hokage's right away.</p>
+<p begin="5565005000t" end="5583670333t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle294">It's Naruto.</p>
+<p begin="5583670333t" end="5607340666t" region="region_00" tts:extent="65.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle295">He stole the sacred scroll.</p>
+<p begin="5607340666t" end="5633336666t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle296">You mean</p>
+<p begin="5607340666t" end="5633336666t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle297">the Scroll of Sealing? No!</p>
+<p begin="5654671333t" end="5668008000t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle298">NARUTO:</p>
+<p begin="5654671333t" end="5668008000t" region="region_01" tts:extent="22.50% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle299">Let's see.</p>
+<p begin="5668008000t" end="5717674333t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle300">The first one is</p>
+<p begin="5668008000t" end="5717674333t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle301">multishadow clone jutsu.</p>
+<p begin="5717674333t" end="5737007000t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle302">Ugh, not this again!</p>
+<p begin="5737007000t" end="5755672333t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle303">It's my worst jutsu!</p>
+<p begin="5755672333t" end="5782002000t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle304">Lord Hokage, this is</p>
+<p begin="5755672333t" end="5782002000t" region="region_01" tts:extent="40.00% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle305">not just a prank!</p>
+<p begin="5782002000t" end="5795005000t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle306">This is a serious crime!</p>
+<p begin="5795005000t" end="5814004000t" region="region_00" tts:extent="25.00% 5.33%" tts:origin="35.00% 79.29%" xml:id="subtitle307">That scroll</p>
+<p begin="5795005000t" end="5814004000t" region="region_01" tts:extent="50.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle308">contains secrets that</p>
+<p begin="5814004000t" end="5832335666t" region="region_00" tts:extent="77.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle309">were sealed by the First Hokage!</p>
+<p begin="5832335666t" end="5855672333t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle310">Secrets known only</p>
+<p begin="5832335666t" end="5855672333t" region="region_01" tts:extent="35.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle311">to our village!</p>
+<p begin="5855672333t" end="5868675333t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle312">If it falls into</p>
+<p begin="5855672333t" end="5868675333t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle313">the wrong hands,</p>
+<p begin="5868675333t" end="5893336666t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle314">they could destroy</p>
+<p begin="5868675333t" end="5893336666t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle315">our entire way of life.</p>
+<p begin="5906339666t" end="5941668333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle316">All right.</p>
+<p begin="5906339666t" end="5941668333t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle317">Bring Naruto here at once.</p>
+<p begin="5941668333t" end="5955005000t" region="region_00" tts:extent="20.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle318">ALL: Sir!</p>
+<p begin="6054671333t" end="6075005000t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle319">[IN MIND]:</p>
+<p begin="6054671333t" end="6075005000t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle320"><span style="style_0">Where would he go?</span></p>
+<p begin="6154337666t" end="6180667333t" region="region_00" tts:extent="70.00% 5.33%" tts:origin="12.50% 79.29%" xml:id="subtitle321">[IN MIND]:<span style="style_0"> Now that I've told</span></p>
+<p begin="6154337666t" end="6180667333t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle322"><span style="style_0">everyone what Naruto did,</span></p>
+<p begin="6180667333t" end="6193003000t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle323"><span style="style_0">I can eliminate him.</span></p>
+<p begin="6193003000t" end="6209342666t" region="region_00" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle324"><span style="style_0">They'll be glad he's gone.</span></p>
+<p begin="6209342666t" end="6241001000t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle325"><span style="style_0">And of course, I keep</span></p>
+<p begin="6209342666t" end="6241001000t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle326"><span style="style_0">the scroll for myself.</span></p>
+<p begin="6317007000t" end="6336673333t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle327">[NARUTO PANTING]</p>
+<p begin="6381334666t" end="6398675333t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle328">It's all over.</p>
+<p begin="6398675333t" end="6411668333t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle329">[LAUGHS]</p>
+<p begin="6425338666t" end="6446006000t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="60.00% 84.62%" xml:id="subtitle330">[LAUGHING]</p>
+<p begin="6455338666t" end="6465005000t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle331">Huh?</p>
+<p begin="6465005000t" end="6485672333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="52.50% 79.29%" xml:id="subtitle332">Got me already.</p>
+<p begin="6465005000t" end="6485672333t" region="region_01" tts:extent="17.50% 5.33%" tts:origin="60.00% 84.62%" xml:id="subtitle333">Not bad.</p>
+<p begin="6485672333t" end="6500333666t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle334">You're quick, Sensei.</p>
+<p begin="6500333666t" end="6522002000t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle335">I only had time</p>
+<p begin="6500333666t" end="6522002000t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle336">to learn one technique.</p>
+<p begin="6522002000t" end="6541668333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle337">[IN MIND]:</p>
+<p begin="6522002000t" end="6541668333t" region="region_01" tts:extent="72.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle338"><span style="style_0">He's been out here practicing.</span></p>
+<p begin="6541668333t" end="6570000000t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle339"><span style="style_0">I can tell how hard</span></p>
+<p begin="6541668333t" end="6570000000t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle340"><span style="style_0">he's been working.</span></p>
+<p begin="6570000000t" end="6584671333t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle341">Listen, Iruka-sensei.</p>
+<p begin="6584671333t" end="6600333666t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle342">I'm going to show you</p>
+<p begin="6584671333t" end="6600333666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle343">this amazing jutsu,</p>
+<p begin="6600333666t" end="6614671333t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle344">and you're going</p>
+<p begin="6600333666t" end="6614671333t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle345">to let me graduate.</p>
+<p begin="6614671333t" end="6629676333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle346">Then everything</p>
+<p begin="6614671333t" end="6629676333t" region="region_01" tts:extent="30.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle347">will be okay!</p>
+<p begin="6629676333t" end="6642669333t" region="region_00" tts:extent="12.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle348">That's</p>
+<p begin="6629676333t" end="6642669333t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle349">the way it works, right?</p>
+<p begin="6642669333t" end="6664337666t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle350">Anyone who learns a jutsu</p>
+<p begin="6642669333t" end="6664337666t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle351">from this scroll passes!</p>
+<p begin="6664337666t" end="6687007000t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="45.00% 79.29%" xml:id="subtitle352">Huh?</p>
+<p begin="6664337666t" end="6687007000t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle353">Where'd you get that idea?</p>
+<p begin="6687007000t" end="6717340666t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle354">Mizuki-sensei told me</p>
+<p begin="6687007000t" end="6717340666t" region="region_01" tts:extent="50.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle355">about it. Believe it!</p>
+<p begin="6717340666t" end="6748008000t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle356">He told me where to find</p>
+<p begin="6717340666t" end="6748008000t" region="region_01" tts:extent="70.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle357">the scroll, and this place...</p>
+<p begin="6770000000t" end="6792002000t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle358">[IN MIND]:</p>
+<p begin="6770000000t" end="6792002000t" region="region_01" tts:extent="27.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle359"><span style="style_0">Huh? Mizuki?</span></p>
+<p begin="6792002000t" end="6802002000t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle360">Huh?</p>
+<p begin="6802002000t" end="6815005000t" region="region_00" tts:extent="20.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle361">Look out!</p>
+<p begin="6845005000t" end="6869676333t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="10.00% 79.29%" xml:id="subtitle362">MIZUKI: I see you found</p>
+<p begin="6845005000t" end="6869676333t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle363">our little hideaway.</p>
+<p begin="6869676333t" end="6888341666t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle364">So that's the way</p>
+<p begin="6869676333t" end="6888341666t" region="region_01" tts:extent="25.00% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle365">it is, huh?</p>
+<p begin="6888341666t" end="6899676333t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle366">I should've known.</p>
+<p begin="6926006000t" end="6965672333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle367">MIZUKI: Naruto!</p>
+<p begin="6926006000t" end="6965672333t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle368">Give me the scroll, now!</p>
+<p begin="6965672333t" end="6985338666t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="55.00% 84.62%" xml:id="subtitle369">Wait a minute.</p>
+<p begin="6985338666t" end="7001001000t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle370">What's going on here?</p>
+<p begin="7022335666t" end="7049676333t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle371">Naruto, don't let</p>
+<p begin="7022335666t" end="7049676333t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle372">Mizuki get the scroll!</p>
+<p begin="7049676333t" end="7071334666t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle373">It contains forbidden</p>
+<p begin="7049676333t" end="7071334666t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle374">jutsu that could</p>
+<p begin="7071334666t" end="7086673333t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle375">put this village</p>
+<p begin="7071334666t" end="7086673333t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle376">in grave danger.</p>
+<p begin="7086673333t" end="7117007000t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle377">Mizuki used you to get</p>
+<p begin="7086673333t" end="7117007000t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle378">the scroll for himself,</p>
+<p begin="7117007000t" end="7129009000t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle379">for his own power!</p>
+<p begin="7153003000t" end="7184671333t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle380">Naruto, Iruka's just</p>
+<p begin="7153003000t" end="7184671333t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle381">trying to scare you</p>
+<p begin="7184671333t" end="7207674333t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle382">because he doesn't want</p>
+<p begin="7184671333t" end="7207674333t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle383">you to have the scroll.</p>
+<p begin="7207674333t" end="7236673333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle384">Huh? Uh...</p>
+<p begin="7236673333t" end="7260333666t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle385">Stop lying, Mizuki!</p>
+<p begin="7260333666t" end="7275005000t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle386">Don't let him</p>
+<p begin="7260333666t" end="7275005000t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle387">trick you, Naruto!</p>
+<p begin="7275005000t" end="7310333666t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle388">[LAUGHS] Oh, I'll tell</p>
+<p begin="7275005000t" end="7310333666t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle389">you who's really lying...</p>
+<p begin="7310333666t" end="7323003000t" region="region_00" tts:extent="25.00% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle390">No, Mizuki!</p>
+<p begin="7323003000t" end="7360667333t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle391">They've been lying to you</p>
+<p begin="7323003000t" end="7360667333t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle392">your whole life, Naruto,</p>
+<p begin="7360667333t" end="7390000000t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle393">since the decree</p>
+<p begin="7360667333t" end="7390000000t" region="region_01" tts:extent="30.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle394">12 years ago.</p>
+<p begin="7390000000t" end="7403336666t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle395">What decree?</p>
+<p begin="7403336666t" end="7422669333t" region="region_00" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle396">Everyone knows except you.</p>
+<p begin="7422669333t" end="7441334666t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle397">Iruka's trying to hide it</p>
+<p begin="7422669333t" end="7441334666t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle398">from you even now.</p>
+<p begin="7441334666t" end="7463003000t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle399">He'd do anything</p>
+<p begin="7441334666t" end="7463003000t" region="region_01" tts:extent="32.50% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle400">to shut me up.</p>
+<p begin="7463003000t" end="7480333666t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle401">What is this decree?</p>
+<p begin="7480333666t" end="7504337666t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle402">Why does everyone else</p>
+<p begin="7480333666t" end="7504337666t" region="region_01" tts:extent="32.50% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle403">know about it?</p>
+<p begin="7504337666t" end="7521668333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle404">Don't tell him!</p>
+<p begin="7504337666t" end="7521668333t" region="region_01" tts:extent="35.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle405">It's forbidden!</p>
+<p begin="7521668333t" end="7542335666t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="32.50% 79.29%" xml:id="subtitle406">The decree is</p>
+<p begin="7521668333t" end="7542335666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle407">no one can tell you</p>
+<p begin="7542335666t" end="7573336666t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle408">the nine-tailed fox</p>
+<p begin="7542335666t" end="7573336666t" region="region_01" tts:extent="32.50% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle409">is inside you.</p>
+<p begin="7573336666t" end="7586673333t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle410">[GASPS]</p>
+<p begin="7586673333t" end="7611001000t" region="region_00" tts:extent="65.00% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle411">MIZUKI: The fox spirit that</p>
+<p begin="7586673333t" end="7611001000t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle412">killed Iruka's parents</p>
+<p begin="7611001000t" end="7640333666t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle413">and destroyed our village</p>
+<p begin="7611001000t" end="7640333666t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle414">has taken over your body.</p>
+<p begin="7640333666t" end="7661668333t" region="region_00" tts:extent="67.50% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle415">You are the nine-tailed fox!</p>
+<p begin="7661668333t" end="7672669333t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle416">Stop it!</p>
+<p begin="7672669333t" end="7694337666t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle417">MIZUKI: They've all</p>
+<p begin="7672669333t" end="7694337666t" region="region_01" tts:extent="50.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle418">been sneaking around,</p>
+<p begin="7694337666t" end="7716006000t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle419">hiding things from you</p>
+<p begin="7694337666t" end="7716006000t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle420">your whole life.</p>
+<p begin="7716006000t" end="7739009000t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle421">Didn't you think it was</p>
+<p begin="7716006000t" end="7739009000t" region="region_01" tts:extent="70.00% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle422">strange how they treated you?</p>
+<p begin="7739009000t" end="7779676333t" region="region_00" tts:extent="72.50% 5.33%" tts:origin="12.50% 79.29%" xml:id="subtitle423">Like dirt, like they hated you</p>
+<p begin="7739009000t" end="7779676333t" region="region_01" tts:extent="50.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle424">for just being alive!</p>
+<p begin="7779676333t" end="7798675333t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle425">NARUTO:</p>
+<p begin="7779676333t" end="7798675333t" region="region_01" tts:extent="5.00% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle426">No!</p>
+<p begin="7798675333t" end="7829009000t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle427">No, no, no, no!</p>
+<p begin="7829009000t" end="7848341666t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="72.50% 84.62%" xml:id="subtitle428">Naruto!</p>
+<p begin="7848341666t" end="7879342666t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle429">That's why you will never</p>
+<p begin="7848341666t" end="7879342666t" region="region_01" tts:extent="67.50% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle430">be accepted in this village.</p>
+<p begin="7879342666t" end="7916673333t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle431">Even your beloved sensei</p>
+<p begin="7879342666t" end="7916673333t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle432">hates your guts!</p>
+<p begin="7916673333t" end="7948341666t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="32.50% 79.29%" xml:id="subtitle433">HOKAGE:<span style="style_0"> Iruka,</span></p>
+<p begin="7916673333t" end="7948341666t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle434"><span style="style_0">Naruto never had a mother</span></p>
+<p begin="7948341666t" end="7965672333t" region="region_00" tts:extent="67.50% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle435"><span style="style_0">or a father to care for him.</span></p>
+<p begin="7965672333t" end="7994671333t" region="region_00" tts:extent="65.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle436">He's shut out of everything</p>
+<p begin="7965672333t" end="7994671333t" region="region_01" tts:extent="50.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle437">and doesn't know why.</p>
+<p begin="7994671333t" end="8015672333t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle438">Most people won't</p>
+<p begin="7994671333t" end="8015672333t" region="region_01" tts:extent="40.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle439">even look at him.</p>
+<p begin="8015672333t" end="8042335666t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle440">How would you feel</p>
+<p begin="8015672333t" end="8042335666t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle441">if everywhere you went,</p>
+<p begin="8042335666t" end="8069342666t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="47.50% 79.29%" xml:id="subtitle442">people turned</p>
+<p begin="8042335666t" end="8069342666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle443">their backs on you?</p>
+<p begin="8069342666t" end="8088675333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="50.00% 79.29%" xml:id="subtitle444">That's why</p>
+<p begin="8069342666t" end="8088675333t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle445">he gets in trouble.</p>
+<p begin="8088675333t" end="8105338666t" region="region_00" tts:extent="62.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle446">So people will notice him.</p>
+<p begin="8105338666t" end="8132335666t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle447">It may not show,</p>
+<p begin="8105338666t" end="8132335666t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle448">but he's always thinking</p>
+<p begin="8132335666t" end="8152669333t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle449">about the family</p>
+<p begin="8132335666t" end="8152669333t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle450">he doesn't have.</p>
+<p begin="8152669333t" end="8180333666t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle451">He's hurting inside.</p>
+<p begin="8180333666t" end="8200000000t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle452">Die, Naruto!</p>
+<p begin="8224671333t" end="8243670333t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle453">Naruto, get down!</p>
+<p begin="8307007000t" end="8323336666t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle454">[GROANS]</p>
+<p begin="8383670333t" end="8396006000t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle455">Why?</p>
+<p begin="8407340666t" end="8431668333t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle456">Because we're the same.</p>
+<p begin="8431668333t" end="8470333666t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle457"><span style="style_0">When I lost my parents,</span></p>
+<p begin="8431668333t" end="8470333666t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle458"><span style="style_0">no one seemed to care.</span></p>
+<p begin="8470333666t" end="8491668333t" region="region_00" tts:extent="70.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle459"><span style="style_0">They didn't have time for me.</span></p>
+<p begin="8491668333t" end="8516673333t" region="region_00" tts:extent="70.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle460"><span style="style_0">They just forgot I was there.</span></p>
+<p begin="8516673333t" end="8538008000t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle461"><span style="style_0">My grades dropped.</span></p>
+<p begin="8538008000t" end="8557674333t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle462"><span style="style_0">I became the class clown.</span></p>
+<p begin="8557674333t" end="8602335666t" region="region_00" tts:extent="67.50% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle463"><span style="style_0">I just wanted them to see me</span></p>
+<p begin="8557674333t" end="8602335666t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle464"><span style="style_0">and to know my name.</span></p>
+<p begin="8602335666t" end="8639676333t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle465"><span style="style_0">My schoolwork wasn't good</span></p>
+<p begin="8602335666t" end="8639676333t" region="region_01" tts:extent="72.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle466"><span style="style_0">enough to get their attention,</span></p>
+<p begin="8639676333t" end="8663003000t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle467"><span style="style_0">so I did crazy things.</span></p>
+<p begin="8663003000t" end="8695672333t" region="region_00" tts:extent="70.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle468"><span style="style_0">And then I had to pay for it.</span></p>
+<p begin="8695672333t" end="8714671333t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle469"><span style="style_0">It was hard.</span></p>
+<p begin="8725672333t" end="8753336666t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="47.50% 79.29%" xml:id="subtitle470">I know that's how</p>
+<p begin="8725672333t" end="8753336666t" region="region_01" tts:extent="40.00% 5.33%" tts:origin="47.50% 84.62%" xml:id="subtitle471">you feel, Naruto.</p>
+<p begin="8753336666t" end="8784337666t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle472">You feel lonely</p>
+<p begin="8753336666t" end="8784337666t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle473">and it hurts inside,</p>
+<p begin="8784337666t" end="8813670333t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle474">and I could have been</p>
+<p begin="8784337666t" end="8813670333t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle475">there for you more.</p>
+<p begin="8828341666t" end="8858675333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="52.50% 79.29%" xml:id="subtitle476">I let you down.</p>
+<p begin="8828341666t" end="8858675333t" region="region_01" tts:extent="22.50% 5.33%" tts:origin="60.00% 84.62%" xml:id="subtitle477">I'm sorry.</p>
+<p begin="8858675333t" end="8883336666t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle478">No one should have</p>
+<p begin="8858675333t" end="8883336666t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle479">to suffer that much.</p>
+<p begin="8883336666t" end="8912002000t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="50.00% 79.29%" xml:id="subtitle480">No one should be</p>
+<p begin="8883336666t" end="8912002000t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="50.00% 84.62%" xml:id="subtitle481">alone like that.</p>
+<p begin="8912002000t" end="8953003000t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle482">[LAUGHING]</p>
+<p begin="8912002000t" end="8953003000t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle483">Don't make me laugh!</p>
+<p begin="8953003000t" end="8976673333t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle484">Iruka always hated you!</p>
+<p begin="8976673333t" end="8991668333t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle485">He was orphaned because</p>
+<p begin="8991668333t" end="9013003000t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle486">the nine-tailed fox</p>
+<p begin="8991668333t" end="9013003000t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle487">killed his parents,</p>
+<p begin="9013003000t" end="9034671333t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle488">and that beast is</p>
+<p begin="9013003000t" end="9034671333t" region="region_01" tts:extent="35.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle489">now inside you!</p>
+<p begin="9034671333t" end="9069342666t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle490">He'd say anything to</p>
+<p begin="9034671333t" end="9069342666t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle491">get the scroll from you.</p>
+<p begin="9069342666t" end="9091001000t" region="region_00" tts:extent="12.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle492">IRUKA:</p>
+<p begin="9069342666t" end="9091001000t" region="region_01" tts:extent="15.00% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle493">Naruto!</p>
+<p begin="9102669333t" end="9127007000t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle494">Naruto!</p>
+<p begin="9127007000t" end="9166673333t" region="region_00" tts:extent="67.50% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle495">MIZUKI [LAUGHING]: You know,</p>
+<p begin="9127007000t" end="9166673333t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle496">once he makes up his mind,</p>
+<p begin="9166673333t" end="9186673333t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle497">nothing can change it.</p>
+<p begin="9186673333t" end="9226339666t" region="region_00" tts:extent="67.50% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle498">He's going to use the scroll</p>
+<p begin="9186673333t" end="9226339666t" region="region_01" tts:extent="75.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle499">to take revenge on the village.</p>
+<p begin="9239009000t" end="9258008000t" region="region_00" tts:extent="47.50% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle500">You saw that look in</p>
+<p begin="9239009000t" end="9258008000t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle501">his eye, didn't you?</p>
+<p begin="9258008000t" end="9278675333t" region="region_00" tts:extent="72.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle502">Those are the eyes of a beast.</p>
+<p begin="9296673333t" end="9311334666t" region="region_00" tts:extent="5.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle503">No.</p>
+<p begin="9325672333t" end="9351668333t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle504">Naruto isn't like that!</p>
+<p begin="9368008000t" end="9381668333t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle505">Heh.</p>
+<p begin="9381668333t" end="9395672333t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="55.00% 84.62%" xml:id="subtitle506">You're a joke.</p>
+<p begin="9395672333t" end="9430000000t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle507">As soon as I eliminate</p>
+<p begin="9395672333t" end="9430000000t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle508">Naruto and get the scroll,</p>
+<p begin="9430000000t" end="9449009000t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle509">I'll be back for you.</p>
+<p begin="9449009000t" end="9479676333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle510">[GROANING]</p>
+<p begin="9449009000t" end="9479676333t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle511">I won't let you.</p>
+<p begin="9538675333t" end="9559676333t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle512">LORD HOKAGE [IN MIND]:</p>
+<p begin="9538675333t" end="9559676333t" region="region_01" tts:extent="40.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle513"><span style="style_0">This is not good.</span></p>
+<p begin="9559676333t" end="9580667333t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle514"><span style="style_0">Mizuki has a big mouth.</span></p>
+<p begin="9580667333t" end="9607674333t" region="region_00" tts:extent="65.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle515"><span style="style_0">He made Naruto feel so bad.</span></p>
+<p begin="9607674333t" end="9629676333t" region="region_00" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle516"><span style="style_0">Worse than he's ever felt.</span></p>
+<p begin="9629676333t" end="9657340666t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle517"><span style="style_0">It could unleash</span></p>
+<p begin="9629676333t" end="9657340666t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle518"><span style="style_0">the power inside of him.</span></p>
+<p begin="9657340666t" end="9694004000t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle519"><span style="style_0">If Naruto keeps tampering</span></p>
+<p begin="9657340666t" end="9694004000t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle520"><span style="style_0">with the scroll,</span></p>
+<p begin="9694004000t" end="9725338666t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle521"><span style="style_0">the seal that locks</span></p>
+<p begin="9694004000t" end="9725338666t" region="region_01" tts:extent="67.50% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle522"><span style="style_0">the fox spirit inside of him</span></p>
+<p begin="9725338666t" end="9767007000t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle523"><span style="style_0">could be broken,</span></p>
+<p begin="9725338666t" end="9767007000t" region="region_01" tts:extent="70.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle524"><span style="style_0">and the beast could come out.</span></p>
+<p begin="9767007000t" end="9798008000t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle525"><span style="style_0">If that happens,</span></p>
+<p begin="9767007000t" end="9798008000t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle526"><span style="style_0">I fear for us all.</span></p>
+<p begin="9815672333t" end="9852335666t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle527">Naruto, everything</p>
+<p begin="9815672333t" end="9852335666t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle528">Mizuki said was a lie!</p>
+<p begin="9852335666t" end="9878341666t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle529">Give me the scroll!</p>
+<p begin="9852335666t" end="9878341666t" region="region_01" tts:extent="12.50% 5.33%" tts:origin="60.00% 84.62%" xml:id="subtitle530">Hurry!</p>
+<p begin="9878341666t" end="9902002000t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="45.00% 79.29%" xml:id="subtitle531">He's coming after</p>
+<p begin="9878341666t" end="9902002000t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle532">you to take it away!</p>
+<p begin="9902002000t" end="9916006000t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle533">[GROANS]</p>
+<p begin="9965338666t" end="9977674333t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle534">[GRUNTS]</p>
+<p begin="10048675333t" end="10067007000t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle535">It can't be.</p>
+<p begin="10123336666t" end="10140667333t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle536">How did you know?</p>
+<p begin="10140667333t" end="10191668333t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle537">Naruto, how did you know?</p>
+<p begin="10191668333t" end="10216006000t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle538">That it was me,</p>
+<p begin="10191668333t" end="10216006000t" region="region_01" tts:extent="32.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle539">and not Iruka?</p>
+<p begin="10216006000t" end="10240667333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle540">[LAUGHING]</p>
+<p begin="10240667333t" end="10276006000t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle541">Because I'm Iruka.</p>
+<p begin="10290000000t" end="10304337666t" region="region_00" tts:extent="32.50% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle542">You're a fool.</p>
+<p begin="10304337666t" end="10333670333t" region="region_00" tts:extent="25.00% 5.33%" tts:origin="35.00% 79.29%" xml:id="subtitle543">Why are you</p>
+<p begin="10304337666t" end="10333670333t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle544">protecting that freak?</p>
+<p begin="10333670333t" end="10358675333t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle545">He's the one that</p>
+<p begin="10333670333t" end="10358675333t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle546">wiped out your family.</p>
+<p begin="10358675333t" end="10378008000t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="57.50% 79.29%" xml:id="subtitle547">I don't care</p>
+<p begin="10358675333t" end="10378008000t" region="region_01" tts:extent="30.00% 5.33%" tts:origin="57.50% 84.62%" xml:id="subtitle548">what you say.</p>
+<p begin="10378008000t" end="10402002000t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="32.50% 79.29%" xml:id="subtitle549">You're not getting your</p>
+<p begin="10378008000t" end="10402002000t" region="region_01" tts:extent="50.00% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle550">hands on that scroll.</p>
+<p begin="10402002000t" end="10421334666t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle551">MIZUKI:</p>
+<p begin="10402002000t" end="10421334666t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle552">As if you could stop me.</p>
+<p begin="10421334666t" end="10446339666t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle553">Don't you get it?</p>
+<p begin="10421334666t" end="10446339666t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle554">Naruto is just like me.</p>
+<p begin="10446339666t" end="10471001000t" region="region_00" tts:extent="25.00% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle555">How's that?</p>
+<p begin="10471001000t" end="10509009000t" region="region_00" tts:extent="65.00% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle556">He wants the scroll for his</p>
+<p begin="10471001000t" end="10509009000t" region="region_01" tts:extent="77.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle557">own power and his own vengeance.</p>
+<p begin="10509009000t" end="10525338666t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle558">That's how beasts are.</p>
+<p begin="10525338666t" end="10570000000t" region="region_00" tts:extent="77.50% 5.33%" tts:origin="10.00% 79.29%" xml:id="subtitle559">He'll pour all his rage into the</p>
+<p begin="10525338666t" end="10570000000t" region="region_01" tts:extent="72.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle560">scroll and destroy everything.</p>
+<p begin="10570000000t" end="10591334666t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="57.50% 84.62%" xml:id="subtitle561">You're right.</p>
+<p begin="10591334666t" end="10604337666t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle562">[GASPS]</p>
+<p begin="10616673333t" end="10634671333t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle563">So it's true.</p>
+<p begin="10634671333t" end="10659676333t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle564">Iruka-sensei never</p>
+<p begin="10634671333t" end="10659676333t" region="region_01" tts:extent="35.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle565">believed in me.</p>
+<p begin="10659676333t" end="10683336666t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle566">He thinks I'm some beast!</p>
+<p begin="10683336666t" end="10708341666t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle567">Some kind of freak!</p>
+<p begin="10708341666t" end="10727340666t" region="region_00" tts:extent="12.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle568">IRUKA:</p>
+<p begin="10708341666t" end="10727340666t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle569">That is how beasts are.</p>
+<p begin="10742335666t" end="10771668333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle570">But that's</p>
+<p begin="10742335666t" end="10771668333t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle571">not who Naruto is.</p>
+<p begin="10771668333t" end="10782335666t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle572">He's nothing like that.</p>
+<p begin="10782335666t" end="10814337666t" region="region_00" tts:extent="20.00% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle573">Naruto is</p>
+<p begin="10782335666t" end="10814337666t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle574">one of a kind, works hard,</p>
+<p begin="10814337666t" end="10829342666t" region="region_00" tts:extent="70.00% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle575">puts his whole heart into it.</p>
+<p begin="10829342666t" end="10861668333t" region="region_00" tts:extent="70.00% 5.33%" tts:origin="12.50% 79.29%" xml:id="subtitle576">Sure, he messes up sometimes,</p>
+<p begin="10829342666t" end="10861668333t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle577">and everyone jumps on him.</p>
+<p begin="10861668333t" end="10889009000t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle578">But his suffering</p>
+<p begin="10861668333t" end="10889009000t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle579">only makes him stronger.</p>
+<p begin="10889009000t" end="10919676333t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle580">That's what separates him</p>
+<p begin="10889009000t" end="10919676333t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle581">from being a beast.</p>
+<p begin="10919676333t" end="10933336666t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle582">So you're wrong.</p>
+<p begin="10933336666t" end="10953336666t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle583">He's nothing like</p>
+<p begin="10933336666t" end="10953336666t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle584">the nine-tailed fox.</p>
+<p begin="10953336666t" end="11004671333t" region="region_00" tts:extent="62.50% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle585">He's Naruto Uzumaki of the</p>
+<p begin="10953336666t" end="11004671333t" region="region_01" tts:extent="70.00% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle586">Village Hidden in the Leaves.</p>
+<p begin="11050333666t" end="11061668333t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle587">Huh!</p>
+<p begin="11061668333t" end="11079676333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle588">You really</p>
+<p begin="11061668333t" end="11079676333t" region="region_01" tts:extent="47.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle589">believe that drivel?</p>
+<p begin="11079676333t" end="11103670333t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle590">Iruka, I was going</p>
+<p begin="11079676333t" end="11103670333t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle591">to save you for later,</p>
+<p begin="11103670333t" end="11120333666t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle592">but I changed my mind.</p>
+<p begin="11120333666t" end="11134671333t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle593">You're finished!</p>
+<p begin="11151668333t" end="11171334666t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle594">[IN MIND]:</p>
+<p begin="11151668333t" end="11171334666t" region="region_01" tts:extent="32.50% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle595"><span style="style_0">So this is it.</span></p>
+<p begin="11171334666t" end="11191001000t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle596">[GRUNTS]</p>
+<p begin="11242002000t" end="11259009000t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle597">Naruto!</p>
+<p begin="11282335666t" end="11309009000t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle598">MIZUKI:</p>
+<p begin="11282335666t" end="11309009000t" region="region_01" tts:extent="65.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle599">Not bad, for a little punk.</p>
+<p begin="11309009000t" end="11362335666t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle600">If you ever lay a hand on</p>
+<p begin="11309009000t" end="11362335666t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle601">my sensei, I'll kill you!</p>
+<p begin="11362335666t" end="11376673333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle602">Such big words.</p>
+<p begin="11376673333t" end="11411334666t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="10.00% 79.29%" xml:id="subtitle603">I can completely destroy</p>
+<p begin="11376673333t" end="11411334666t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle604">you with a single move.</p>
+<p begin="11411334666t" end="11434004000t" region="region_00" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle605">Take your best shot, fool.</p>
+<p begin="11434004000t" end="11459676333t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle606">I'll give it back to you</p>
+<p begin="11434004000t" end="11459676333t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle607">a thousand fold!</p>
+<p begin="11459676333t" end="11478341666t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle608">Let's see you try!</p>
+<p begin="11478341666t" end="11502002000t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle609">Show me what you can do,</p>
+<p begin="11478341666t" end="11502002000t" region="region_01" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle610">nine-tailed fox!</p>
+<p begin="11502002000t" end="11527340666t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle611">NARUTO:</p>
+<p begin="11502002000t" end="11527340666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle612">Shadow clone jutsu!</p>
+<p begin="11615672333t" end="11640000000t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle613">[IN MIND]:</p>
+<p begin="11615672333t" end="11640000000t" region="region_01" tts:extent="15.00% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle614"><span style="style_0">Naruto.</span></p>
+<p begin="11640000000t" end="11663670333t" region="region_00" tts:extent="67.50% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle615"><span style="style_0">Those aren't just illusions.</span></p>
+<p begin="11663670333t" end="11676339666t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle616"><span style="style_0">They're solid clones.</span></p>
+<p begin="11676339666t" end="11714337666t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="35.00% 79.29%" xml:id="subtitle617"><span style="style_0">He's mastered</span></p>
+<p begin="11676339666t" end="11714337666t" region="region_01" tts:extent="67.50% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle618"><span style="style_0">an extremely advanced jutsu.</span></p>
+<p begin="11714337666t" end="11744337666t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="45.00% 79.29%" xml:id="subtitle619">Huh?</p>
+<p begin="11714337666t" end="11744337666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="25.00% 84.62%" xml:id="subtitle620">Wha-- What is this?</p>
+<p begin="11744337666t" end="11772002000t" region="region_00" tts:extent="70.00% 5.33%" tts:origin="12.50% 79.29%" xml:id="subtitle621">[INTERPOSING VOICES OF NARUTO</p>
+<p begin="11744337666t" end="11772002000t" region="region_01" tts:extent="35.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle622">CALLING MIZUKI]</p>
+<p begin="11798675333t" end="11829676333t" region="region_00" tts:extent="62.50% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle623">If you're not coming, then</p>
+<p begin="11798675333t" end="11829676333t" region="region_01" tts:extent="72.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle624">we're going to come after you.</p>
+<p begin="11829676333t" end="11845672333t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle625">[WHIMPERING]</p>
+<p begin="11845672333t" end="11863003000t" region="region_00" tts:extent="20.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle626">[SCREAMS]</p>
+<p begin="11863003000t" end="11893336666t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle627">[LANDING BLOWS]</p>
+<p begin="11929342666t" end="11946673333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle628">[GROANING]</p>
+<p begin="11972335666t" end="11985005000t" region="region_00" tts:extent="17.50% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle629">[LAUGHS]</p>
+<p begin="11985005000t" end="12009342666t" region="region_00" tts:extent="12.50% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle630">Sorry,</p>
+<p begin="11985005000t" end="12009342666t" region="region_01" tts:extent="65.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle631">I kind of got carried away.</p>
+<p begin="12009342666t" end="12032669333t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle632">You okay, Iruka-sensei?</p>
+<p begin="12032669333t" end="12053670333t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="60.00% 84.62%" xml:id="subtitle633">Unh. Yeah.</p>
+<p begin="12053670333t" end="12074337666t" region="region_00" tts:extent="22.50% 5.33%" tts:origin="37.50% 79.29%" xml:id="subtitle634">[IN MIND]:</p>
+<p begin="12053670333t" end="12074337666t" region="region_01" tts:extent="30.00% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle635"><span style="style_0">He's amazing.</span></p>
+<p begin="12074337666t" end="12099676333t" region="region_00" tts:extent="45.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle636"><span style="style_0">He wants to surpass</span></p>
+<p begin="12074337666t" end="12099676333t" region="region_01" tts:extent="35.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle637"><span style="style_0">all the Hokage.</span></p>
+<p begin="12099676333t" end="12127674333t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle638"><span style="style_0">And I'm starting</span></p>
+<p begin="12099676333t" end="12127674333t" region="region_01" tts:extent="62.50% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle639"><span style="style_0">to believe he might do it.</span></p>
+<p begin="12149342666t" end="12185005000t" region="region_00" tts:extent="65.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle640">Naruto, come here a minute.</p>
+<p begin="12185005000t" end="12203336666t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle641">I've got something</p>
+<p begin="12185005000t" end="12203336666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="40.00% 84.62%" xml:id="subtitle642">I want to give you.</p>
+<p begin="12203336666t" end="12229676333t" region="region_00" tts:extent="67.50% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle643">[ANIMATED VOICES CHATTERING]</p>
+<p begin="12229676333t" end="12256006000t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle644">You're telling me</p>
+<p begin="12229676333t" end="12256006000t" region="region_01" tts:extent="55.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle645">no one can find Naruto?</p>
+<p begin="12256006000t" end="12270000000t" region="region_00" tts:extent="25.00% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle646">Not a clue.</p>
+<p begin="12270000000t" end="12301668333t" region="region_00" tts:extent="65.00% 5.33%" tts:origin="15.00% 79.29%" xml:id="subtitle647">This is bad news. We've got</p>
+<p begin="12270000000t" end="12301668333t" region="region_01" tts:extent="72.50% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle648">to smoke him out or something.</p>
+<p begin="12301668333t" end="12329342666t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="10.00% 79.29%" xml:id="subtitle649">There's no longer</p>
+<p begin="12301668333t" end="12329342666t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="10.00% 84.62%" xml:id="subtitle650">any need to worry.</p>
+<p begin="12329342666t" end="12359342666t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 79.29%" xml:id="subtitle651">VARIOUS MEN:</p>
+<p begin="12329342666t" end="12359342666t" region="region_01" tts:extent="27.50% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle652">Lord Hokage!</p>
+<p begin="12359342666t" end="12375672333t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle653">The scroll's safe.</p>
+<p begin="12375672333t" end="12399676333t" region="region_00" tts:extent="60.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle654">Naruto will be back soon.</p>
+<p begin="12399676333t" end="12425338666t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle655">NARUTO:</p>
+<p begin="12399676333t" end="12425338666t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle656">Sensei, how much longer?</p>
+<p begin="12425338666t" end="12454004000t" region="region_00" tts:extent="27.50% 5.33%" tts:origin="35.00% 79.29%" xml:id="subtitle657">IRUKA: Okay,</p>
+<p begin="12425338666t" end="12454004000t" region="region_01" tts:extent="65.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle658">you can open your eyes now.</p>
+<p begin="12554337666t" end="12578675333t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle659">Congratulations.</p>
+<p begin="12578675333t" end="12596339666t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle660">You graduate.</p>
+<p begin="12643336666t" end="12670333666t" region="region_00" tts:extent="40.00% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle661">And to celebrate,</p>
+<p begin="12643336666t" end="12670333666t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle662">I have a surprise.</p>
+<p begin="12670333666t" end="12694671333t" region="region_00" tts:extent="35.00% 5.33%" tts:origin="30.00% 79.29%" xml:id="subtitle663">We're going out</p>
+<p begin="12670333666t" end="12694671333t" region="region_01" tts:extent="42.50% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle664">for ramen tonight.</p>
+<p begin="12743336666t" end="12763336666t" region="region_00" tts:extent="7.50% 5.33%" tts:origin="45.00% 84.62%" xml:id="subtitle665">Huh?</p>
+<p begin="12763336666t" end="12776673333t" region="region_00" tts:extent="30.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle666">Iruka-sensei!</p>
+<p begin="12776673333t" end="12795338666t" region="region_00" tts:extent="37.50% 5.33%" tts:origin="50.00% 73.96%" xml:id="subtitle667">Hey, that hurts!</p>
+<p begin="12776673333t" end="12795338666t" region="region_01" tts:extent="35.00% 5.33%" tts:origin="35.00% 84.62%" xml:id="subtitle668">[NARUTO LAUGHS]</p>
+<p begin="12795338666t" end="12834337666t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle669">IRUKA:<span style="style_0"> Naruto, this is</span></p>
+<p begin="12795338666t" end="12834337666t" region="region_01" tts:extent="45.00% 5.33%" tts:origin="27.50% 84.62%" xml:id="subtitle670"><span style="style_0">only the beginning.</span></p>
+<p begin="12834337666t" end="12860667333t" region="region_00" tts:extent="50.00% 5.33%" tts:origin="25.00% 79.29%" xml:id="subtitle671"><span style="style_0">The road gets tougher</span></p>
+<p begin="12834337666t" end="12860667333t" region="region_01" tts:extent="57.50% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle672"><span style="style_0">now that you're a ninja.</span></p>
+<p begin="12860667333t" end="12876339666t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle673"><span style="style_0">But if I told you that,</span></p>
+<p begin="12876339666t" end="12902669333t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="42.50% 79.29%" xml:id="subtitle674"><span style="style_0">I guess</span></p>
+<p begin="12876339666t" end="12902669333t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle675"><span style="style_0">it would ruin the moment,</span></p>
+<p begin="12902669333t" end="12920000000t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle676"><span style="style_0">so I'll tell you later.</span></p>
+<p begin="12920000000t" end="12934004000t" region="region_00" tts:extent="25.00% 5.33%" tts:origin="37.50% 84.62%" xml:id="subtitle677"><span style="style_0">Over ramen.</span></p>
+<p begin="12964004000t" end="12991334666t" region="region_00" tts:extent="10.00% 5.33%" tts:origin="42.50% 84.62%" xml:id="subtitle678">[âªâªâª]</p>
+<p begin="13893336666t" end="13918675333t" region="region_00" tts:extent="15.00% 5.33%" tts:origin="40.00% 79.29%" xml:id="subtitle679">NARUTO:</p>
+<p begin="13893336666t" end="13918675333t" region="region_01" tts:extent="60.00% 5.33%" tts:origin="20.00% 84.62%" xml:id="subtitle680"><span style="style_0">Why are you following me?</span></p>
+<p begin="13918675333t" end="13935672333t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle681"><span style="style_0">You want to become</span></p>
+<p begin="13918675333t" end="13935672333t" region="region_01" tts:extent="40.00% 5.33%" tts:origin="30.00% 84.62%" xml:id="subtitle682"><span style="style_0">the Fifth Hokage?</span></p>
+<p begin="13935672333t" end="13959009000t" region="region_00" tts:extent="70.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle683"><span style="style_0">Listen up, you little shrimp.</span></p>
+<p begin="13959009000t" end="13986673333t" region="region_00" tts:extent="55.00% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle684"><span style="style_0">I don't care if you are</span></p>
+<p begin="13959009000t" end="13986673333t" region="region_01" tts:extent="52.50% 5.33%" tts:origin="22.50% 84.62%" xml:id="subtitle685"><span style="style_0">the Hokage's grandson!</span></p>
+<p begin="13986673333t" end="14023003000t" region="region_00" tts:extent="57.50% 5.33%" tts:origin="20.00% 79.29%" xml:id="subtitle686"><span style="style_0">You can't just snap your</span></p>
+<p begin="13986673333t" end="14023003000t" region="region_01" tts:extent="75.00% 5.33%" tts:origin="12.50% 84.62%" xml:id="subtitle687"><span style="style_0">fingers and become a top ninja!</span></p>
+<p begin="14023003000t" end="14049676333t" region="region_00" tts:extent="52.50% 5.33%" tts:origin="22.50% 79.29%" xml:id="subtitle688"><span style="style_0">You'd better be ready,</span></p>
+<p begin="14023003000t" end="14049676333t" region="region_01" tts:extent="65.00% 5.33%" tts:origin="17.50% 84.62%" xml:id="subtitle689"><span style="style_0">squirt, because if you even</span></p>
+<p begin="14049676333t" end="14082335666t" region="region_00" tts:extent="65.00% 5.33%" tts:origin="17.50% 79.29%" xml:id="subtitle690"><span style="style_0">think about being a Hokage,</span></p>
+<p begin="14049676333t" end="14082335666t" region="region_01" tts:extent="70.00% 5.33%" tts:origin="15.00% 84.62%" xml:id="subtitle691"><span style="style_0">you'll have to beat me first.</span></p>
+<p begin="14082335666t" end="14122669333t" region="region_00" tts:extent="42.50% 5.33%" tts:origin="27.50% 79.29%" xml:id="subtitle692"><span style="style_0">Next time, My Name</span></p>
+<p begin="14082335666t" end="14122669333t" region="region_01" tts:extent="32.50% 5.33%" tts:origin="32.50% 84.62%" xml:id="subtitle693"><span style="style_0">is Konohamaru!</span></p>
+</div>
+</body>
+</tt>

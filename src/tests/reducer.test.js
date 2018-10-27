@@ -1,4 +1,5 @@
 import assert from 'assert';
+import expect from 'expect';
 import reducer from '../reducer.js';
 
 const defaultState = reducer(undefined, {});
@@ -84,4 +85,13 @@ it('should hydrate store on HYDRATE_STORE', () => {
   };
   const nextState = reducer(defaultState, action);
   assert(nextState.isOn === true && nextState.secondLanguage === 'fr' && nextState.settings.extraSpace === true);
+});
+
+it('should change loadedLanguages on CHANGE_LOADED_LANGUAGES', () => {
+  const action = {
+    type: 'CHANGE_LOADED_LANGUAGES',
+    payload: ['en', 'jp']
+  };
+  const nextState = reducer(defaultState, action);
+  expect(nextState.loadedLanguages).toEqual(['en', 'jp'])
 });

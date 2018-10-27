@@ -56,7 +56,6 @@ class YouTubeTranslationParser extends TranslationParser {
         } else {
           reject(`Couldn't parse captions from file`);
         }
-
       } else {
         reject(`Can't parse invalid YouTube caption file`);
       }

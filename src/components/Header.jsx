@@ -14,11 +14,6 @@ class Header extends Component {
                 {t('dual-captions')}
               </div>
             </div>
-            <div className='subtitle'>
-              {t('supports')} YouTube, Netflix &
-              <br/>
-              Amazon Prime Video
-            </div>
           </div>
         )
       }

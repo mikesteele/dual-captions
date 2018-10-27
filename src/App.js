@@ -62,7 +62,7 @@ class App extends Component {
             <SettingsPageView/>
           </TabPanel>
         </Tabs>
-        { this.props.detectedSite === 'youtube' && (
+        { ['youtube', 'netflix'].includes(this.props.detectedSite) && (
           <div style={{padding: '16px'}}>
             {this.props.t('native-subtitles')}
           </div>
