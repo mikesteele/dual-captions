@@ -2,8 +2,18 @@ class Adapter {
   constructor() {
     this.player = this.getPlayer();
     this.captionWindow = this.getCaptionWindow();
+
+    // Used to make sure translations are appended to DOM in order of their original element's insertion
     this.orderCounter = 0;
+
+    // Used by the popup to display site-specific information
+    // Also used by the provider to store & load caption files
     this.site = '';
+
+    // Used by the provider decide whether to use a loaded caption or Google Translate.
+    // Sometimes Google Translate provides a better caption than the loaded one for the current time.
+    // This is because captions can be community-generated, using different windows of time for captions.
+    this.captionsMayNotMatchUp = false;
   }
 
   getPlayerCurrentTime() {

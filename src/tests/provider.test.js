@@ -72,12 +72,12 @@ beforeEach(() => {
   window.DC.translate.resetHistory();
 });
 
-it('findNearestCaption should correctly find nearest caption', () => {
+it('findCaption should correctly find nearest caption', () => {
   const captions = exampleEnglishCaptions;
-  expect(provider.findNearestCaption(captions, 10).text).toEqual('Weather Report');
-  expect(provider.findNearestCaption(captions, 9000).text).toEqual('The weather for today is in the high 80s.');
-  expect(provider.findNearestCaption(captions, 15000).text).toEqual('It will likely rain this weekend.');
-  expect(provider.findNearestCaption(captions, 80000)).toEqual(undefined);
+  expect(provider.findCaption(captions, 10, true).text).toEqual('Weather Report');
+  expect(provider.findCaption(captions, 9000, true).text).toEqual('The weather for today is in the high 80s.');
+  expect(provider.findCaption(captions, 15000, true).text).toEqual('It will likely rain this weekend.');
+  expect(provider.findCaption(captions, 80000, true)).toEqual(undefined);
 });
 
 it('should use captions if language is loaded', done => {

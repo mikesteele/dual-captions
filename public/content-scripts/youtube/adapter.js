@@ -5,6 +5,7 @@ class YouTubeAdapter extends Adapter {
     this.playerId = "movie_player";
     this.captionWindowClass = "ytp-caption-window-bottom";
     this.captionClass = "captions-text";
+    this.captionsMayNotMatchUp = true;
   }
 
   getVideoId() {

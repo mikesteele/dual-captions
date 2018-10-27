@@ -34,12 +34,29 @@ class TranslationProvider {
     });
   }
 
-  findNearestCaption(translations, currentTime) {
-    const nearestCaption = translations.find(translation => {
-      return Math.abs(currentTime - translation.startTime) < 0.3;
-      // TODO - return translation.startTime < currentTime && translation.endTime > currentTime
+  // TODO - Test
+  findCaptionForTime(captions, currentTime) {
+    const nearestCaption = captions.find(caption => {
+      return caption.startTime < currentTime && caption.endTime > currentTime;
     });
     return nearestCaption;
+  }
+
+  // TODO - Test
+  findCaptionWithStartTime(captions, currentTime) {
+    const nearestCaption = captions.find(caption => {
+      return Math.abs(currentTime - caption.startTime) < 0.3;
+    });
+    return nearestCaption;
+  }
+
+  // TODO - Test
+  findCaption(captions, currentTime, captionsMayNotMatchUp) {
+    if (captionsMayNotMatchUp) {
+      return this.findCaptionWithStartTime(captions, currentTime);
+    } else {
+      return this.findCaptionForTime(captions, currentTime);
+    }
   }
 
   getLoadedLanguages() {
@@ -78,14 +95,14 @@ class TranslationProvider {
       if (useCaptionsFromVideo
           && currentTime
           && currentSite
-          && this.__captions.hasOwnProperty(currentSite)
-          && this.__captions[currentSite].hasOwnProperty(videoId)
-          && this.__captions[currentSite][videoId].hasOwnProperty(language)) {
+          && this.__captions[currentSite]
+          && this.__captions[currentSite][videoId]
+          && this.__captions[currentSite][videoId][language]) {
         const captions = this.__captions[currentSite][videoId][language];
-        const nearestCaption = this.findNearestCaption(captions, currentTime);
-        if (nearestCaption) {
+        const captionToRender = this.findCaption(captions, currentTime, this.adapter.captionsMayNotMatchUp);
+        if (captionToRender) {
           resolve({
-            text: `${nearestCaption.text} ✓`
+            text: `${captionToRender.text} ✓`
           });
         } else {
           this.fallbackProvider
