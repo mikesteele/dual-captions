@@ -51,7 +51,7 @@ export default function reducer(state = initialState, action) {
       return {...state,
         detectedSite: detectedSite
       };
-    case 'CHANGE_LOADED_LANGUAGES': // TODO: Test
+    case 'CHANGE_LOADED_LANGUAGES':
       const loadedLanguages = action.payload || state.loadedLanguages;
       return {...state,
         loadedLanguages: loadedLanguages
