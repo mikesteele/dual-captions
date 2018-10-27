@@ -57,9 +57,6 @@ class NetflixTranslationParser extends TranslationParser {
                     && captions[captions.length - 1].endTime   === endTime) {
                   const lastCaption = captions[captions.length - 1];
                   lastCaption.text = `${lastCaption.text}<br/>${currentChild.innerHTML}`;
-                  // TODO - ^ Will be a breaking change to observer creating the new caption element
-                  // TODO -   As it will need to set innerHTML instead of textContent
-                  // TODO -   Probably another good case for moving logic of the observer tbh
                 } else {
                   captions.push({
                     startTime: startTime,

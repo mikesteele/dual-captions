@@ -72,7 +72,16 @@ beforeEach(() => {
   window.DC.translate.resetHistory();
 });
 
-it('findCaption should correctly find nearest caption', () => {
+it('findCaption should correctly find caption within a time range', () => {
+  const captions = exampleEnglishCaptions;
+  expect(provider.findCaption(captions, 15, false).text).toEqual('Weather Report');
+  expect(provider.findCaption(captions, 1000, false).text).toEqual('Weather Report');
+  expect(provider.findCaption(captions, 10000, false).text).toEqual('The weather for today is in the high 80s.');
+  expect(provider.findCaption(captions, 16000, false).text).toEqual('It will likely rain this weekend.');
+  expect(provider.findCaption(captions, 80000, false)).toEqual(undefined);
+});
+
+it('findCaption should correctly find caption with the closest startTime if captionsMayNotMatchUp', () => {
   const captions = exampleEnglishCaptions;
   expect(provider.findCaption(captions, 10, true).text).toEqual('Weather Report');
   expect(provider.findCaption(captions, 9000, true).text).toEqual('The weather for today is in the high 80s.');

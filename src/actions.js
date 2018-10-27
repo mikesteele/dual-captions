@@ -48,10 +48,10 @@ export function determineState() {
         }
 
         // 3. All other settings
-        if (dcState && dcState.hasOwnProperty('loadedLanguges')) {
+        if (dcState && dcState.hasOwnProperty('loadedLanguages')) {
           dispatch({
             type: 'CHANGE_LOADED_LANGUAGES',
-            payload: dcState.loadedLanguges
+            payload: dcState.loadedLanguages
           });
         }
 

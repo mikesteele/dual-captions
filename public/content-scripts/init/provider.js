@@ -34,7 +34,6 @@ class TranslationProvider {
     });
   }
 
-  // TODO - Test
   findCaptionForTime(captions, currentTime) {
     const nearestCaption = captions.find(caption => {
       return caption.startTime < currentTime && caption.endTime > currentTime;
@@ -42,7 +41,6 @@ class TranslationProvider {
     return nearestCaption;
   }
 
-  // TODO - Test
   findCaptionWithStartTime(captions, currentTime) {
     const nearestCaption = captions.find(caption => {
       return Math.abs(currentTime - caption.startTime) < 0.3;
@@ -50,7 +48,6 @@ class TranslationProvider {
     return nearestCaption;
   }
 
-  // TODO - Test
   findCaption(captions, currentTime, captionsMayNotMatchUp) {
     if (captionsMayNotMatchUp) {
       return this.findCaptionWithStartTime(captions, currentTime);
