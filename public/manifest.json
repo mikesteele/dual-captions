@@ -57,7 +57,11 @@
       "content-scripts/init/fetcher.js",
       "content-scripts/init/provider.js",
       "content-scripts/netflix/processor.js",
-      "content-scripts/init/observer.js"
+      "content-scripts/init/observer.js",
+      "content-scripts/init/renderer.js",
+      "content-scripts/init/timed-renderer.js",
+      "content-scripts/init/mutation-renderer.js",
+      "content-scripts/init/controller.js"
     ],
     "matches": [ "https://www.netflix.com/*" ]
    }, {

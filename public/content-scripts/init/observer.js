@@ -1,7 +1,7 @@
 class Observer {
   constructor() {
     this.isOn = false;
-    this.observer = new window.MutationObserver(this._onMutation.bind(this));
+    this.observer = new window.MutationObserver(this._onMutationNew.bind(this));
     this.secondLanguage = 'en';
     this.extraSpace = false;
     this.delayRenderingUntilTranslation = true;
@@ -16,22 +16,43 @@ class Observer {
 
     window.chrome.runtime.onMessage.addListener(this._onMessage);
   }
-  _onMessage(message, sender, sendResponse) {
-    switch (message.type) {
-      case 'change-language':
-      this.secondLanguage = message.payload;
+
+  _onMutationNew() {
+
+  }
+
+  setup() {
+    try {
+      this.observer.observe(window.DC.adapter.getPlayer(), {
+        childList: true,
+        subtree: true
+      });
+      this.isOn = true;
+      /***
+      TODO -
       sendResponse({
         ok: true
       });
-      this.provider.requestLanguage(this.secondLanguage)
-        .then(() => {
-          console.log(`Loaded captions for ${this.secondLanguage}`)
-        })
-        .catch(err => {
-          console.log(`Couldn't load translations for ${this.secondLanguage}: ${err}`);
-        });
-      break;
+      **/
+    } catch(err) {
+      /**
+      TODO -
+      sendResponse({
+        ok: false,
+        errorType: 'no-player'
+      });
+      **/
+    }
+  }
 
+  shutdown() {
+    this._stopObserver();
+  }
+
+  _onMessage(message, sender, sendResponse) {
+    // TODO - Move all to the controller
+    const { controller } = window.DC; // TODO - Remove
+    switch (message.type) {
       case 'change-settings':
       this.settingsAreDefault = false;
       this.extraSpace = message.payload.extraSpace;
@@ -52,8 +73,8 @@ class Observer {
       sendResponse({
         ok: true,
         settingsAreDefault: this.settingsAreDefault,
-        isOn: this.isOn,
-        secondLanguage: this.secondLanguage,
+        isOn: controller.state.isOn,
+        secondLanguage: controller.settings.secondSubtitleLanguage,
         settings: {
           extraSpace: this.extraSpace,
           useCaptionsFromVideo: this.useCaptionsFromVideo,
@@ -73,7 +94,7 @@ class Observer {
       case 'is-on':
       sendResponse({
         ok: true,
-        isOn: this.isOn
+        isOn: controller.state.isOn
       });
       break;
 
@@ -92,31 +113,6 @@ class Observer {
       sendResponse({
         ok: response.ok,
         errorType: response.errorType
-      });
-      break;
-
-      case 'start-observer':
-      try {
-        this.observer.observe(window.DC.adapter.getPlayer(), {
-          childList: true,
-          subtree: true
-        });
-        this.isOn = true;
-        sendResponse({
-          ok: true
-        });
-      } catch(err) {
-        sendResponse({
-          ok: false,
-          errorType: 'no-player'
-        });
-      }
-      break;
-
-      case 'stop-observer':
-      this._stopObserver();
-      sendResponse({
-        ok: true
       });
       break;
     }

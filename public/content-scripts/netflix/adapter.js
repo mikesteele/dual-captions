@@ -23,6 +23,10 @@ class NetflixAdapter extends Adapter {
     }
   }
 
+  getPlayerVideoElement() {
+    return document.querySelector('video');
+  }
+
   onPopupOpened() {
     /**
 
