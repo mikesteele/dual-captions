@@ -59,6 +59,11 @@ class NetflixAdapter extends Adapter {
     return document.querySelector('.player-timedtext');
   }
 
+  getIndependentCaptionWindow() {
+    const video = document.querySelector('video');
+    return video.parentNode;
+  }
+
   // Get the new caption element from a mutation record.
   // Returns element
   getNewCaption(mutation) {
@@ -83,7 +88,7 @@ class NetflixAdapter extends Adapter {
     dcWindow.style.display = 'flex';
     dcWindow.style.flexDirection = 'column';
 
-    const captionWindow = this.getCaptionWindow(); // Do I have the captionWindow in an earlier step?
+    const captionWindow = this.getIndependentCaptionWindow(); // Do I have the captionWindow in an earlier step?
     captionWindow.appendChild(dcWindow);
     return dcWindow;
   }
@@ -106,8 +111,35 @@ class NetflixAdapter extends Adapter {
     if (!dcWindow) {
       dcWindow = this.makeDCWindow();
     }
+
+    // TODO - Support multiple elements in same render?
+
+    // TODO - Move to own function
+    while(dcWindow.lastChild) {
+      dcWindow.removeChild(dcWindow.lastChild);
+    }
+
     dcWindow.appendChild(element);
-    this._repositionNetflixCaptions(dcWindow);
+
+    const netflixCaptions = this.getNetflixCaptions();
+
+    if (netflixCaptions.length) {
+      this._repositionNetflixCaptions(dcWindow, netflixCaptions);
+    } else {
+      this._repositionDCWindowWithPreviousPosition(dcWindow);
+    }
+  }
+
+  // TODO - Rename
+  _repositionDCWindowWithPreviousPosition(dcWindow) {
+    if (this.previousPosition && this.previousPositionAttr) {
+      // TODO - Makes the caption off-set because the new caption window has different dimensions
+      dcWindow.style[this.previousPositionAttr] = this.previousPosition;
+    } else {
+      // TODO - Where should the dcWindow go if no previous position?
+      // TODO - Maybe just hide it?
+      // TODO - There's an issue where DC window gets stuck at the top if previousPositionAttr changes
+    }
   }
 
   // Save the original position (top or bottom) of a caption
@@ -124,9 +156,7 @@ class NetflixAdapter extends Adapter {
   }
 
   // Move Netflix captions up to make room for the new captions
-  _repositionNetflixCaptions(dcWindow) {
-    const netflixCaptions = this.getNetflixCaptions();
-
+  _repositionNetflixCaptions(dcWindow, netflixCaptions) {
     // Values needed to calculate new top/bottoms of Netflix captions
     const netflixCaptionsHeight = netflixCaptions.reduce((sum, caption) => {
       return sum + caption.scrollHeight
@@ -154,8 +184,13 @@ class NetflixAdapter extends Adapter {
 
     if (lastNetflixCaption.hasAttribute('__original-top__')) {
       dcWindow.style.top = `calc(${firstNetflixCaption.getAttribute('__original-top__')} - ${heightDiff}px)`;
+      // TODO - Rework this, "previousPosition" & "previousPositionAttr" aren't great names
+      this.previousPosition = dcWindow.style.top;
+      this.previousPositionAttr = 'top';
     } else if (lastNetflixCaption.hasAttribute('__original-bottom__')) {
       dcWindow.style.bottom = `calc((${lastNetflixCaption.getAttribute('__original-bottom__')})`;
+      this.previousPosition = dcWindow.style.bottom;
+      this.previousPositionAttr = 'bottom';
     }
 
     dcWindow.style.left = `calc(${firstNetflixCaption.style.left} - 150px)`;
