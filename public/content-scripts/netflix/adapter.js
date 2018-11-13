@@ -4,6 +4,13 @@ class NetflixAdapter extends Adapter {
     this.site = 'netflix';
   }
 
+  createTextElement() {
+    // TODO - Add test that adding a text element doesn't trigger _onMutation
+    const textElement = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    textElement.setAttribute('__dc-caption__', true);
+    return textElement;
+  }
+
   getVideoId() {
     const videoIdPattern = /watch\/(\d+)/;
     const pathname = window.location.pathname;
@@ -24,6 +31,7 @@ class NetflixAdapter extends Adapter {
   }
 
   onPopupOpened() {
+    // TODO - New error message
     /**
 
     Chinese and Japanese subtitles use images (.image-based-timed-text) to render, which aren't translatable.
@@ -45,13 +53,31 @@ class NetflixAdapter extends Adapter {
 
   // Returns true if mutation reflects a caption added to the DOM.
   captionWasAdded(mutation) {
-    const captionWindow = this.getCaptionWindow();
-    return mutation.target === captionWindow && mutation.addedNodes.length > 0 && !this._isDCCaption(mutation.addedNodes[0]);
+    if (this.isRenderingImageCaptions()) {
+      const imageCaptionWindow = this.getImageCaptionWindow();
+      return mutation.target === imageCaptionWindow
+        && mutation.addedNodes.length > 0
+        && mutation.addedNodes[0].tagName === 'image';
+    } else {
+      const captionWindow = this.getCaptionWindow();
+      return mutation.target === captionWindow
+        && mutation.addedNodes.length > 0
+        && !this._isDCCaption(mutation.addedNodes[0]);
+    }
+  }
+
+  getImageCaptionWindow() {
+    const imageCaptionWindow = document.querySelector('.image-based-timed-text');
+    if (imageCaptionWindow && imageCaptionWindow.firstChild.tagName === 'svg') {
+      return imageCaptionWindow.firstChild;
+    } else {
+      return null;
+    }
   }
 
   // Get the video player element.
   getPlayer() {
-    return document.querySelector('.VideoContainer');
+    return document.querySelector('.nf-player-container');
   }
 
   // Get the caption window element.
@@ -75,6 +101,11 @@ class NetflixAdapter extends Adapter {
     return document.querySelector('.dual-captions-window');
   }
 
+  // TODO - Should be _isRenderingImageCaptions?
+  isRenderingImageCaptions() {
+    return !!document.querySelector('.image-based-timed-text');
+  }
+
   // Create the DC window
   makeDCWindow() {
     let dcWindow = document.createElement('div');
@@ -90,24 +121,49 @@ class NetflixAdapter extends Adapter {
 
   // Apply the appropriate style to the translated caption element.
   styleCaptionElement(element, mutation, captionOrder) {
-    const realCaption = mutation.target.querySelector('span');
-    const captionStyle = realCaption.style.cssText;
-    element.style = captionStyle;
-    element.style.width = `calc(${realCaption.parentNode.scrollWidth}px + 300px)`;
-    element.style.display = 'block';
-    element.style.textAlign = 'center';
-    element.style.order = captionOrder;
+    if (!this.isRenderingImageCaptions()) {
+      const realCaption = mutation.target.querySelector('span');
+      const captionStyle = realCaption.style.cssText;
+      element.style = captionStyle;
+      element.style.width = `calc(${realCaption.parentNode.scrollWidth}px + 300px)`;
+      element.style.display = 'block';
+      element.style.textAlign = 'center';
+      element.style.order = captionOrder;
+    }
     return element;
   }
 
   // Append the new caption to the DOM
   appendToDOM(element) {
-    let dcWindow = this.getDCWindow();
-    if (!dcWindow) {
-      dcWindow = this.makeDCWindow();
+    if (this.isRenderingImageCaptions()) {
+      /**
+
+      This is will removed in v2, when DC won't use Netflix's caption window to render.
+
+      **/
+      const captionToRender = element.innerHTML;
+      const captionElementToRender = this.createTextElement();
+      const imageCaptionWindow = this.getImageCaptionWindow();
+      captionElementToRender.innerHTML = captionToRender;
+      // TODO - Style
+      const existingImageCaption = imageCaptionWindow.firstChild.tagName === 'image' ? imageCaptionWindow.firstChild : null;
+      captionElementToRender.setAttribute('fill', 'white');
+      captionElementToRender.setAttribute('font-size', '36');
+      if (existingImageCaption) {
+        captionElementToRender.setAttribute('x', parseInt(existingImageCaption.getAttribute('x')));
+        captionElementToRender.setAttribute('y', parseInt(existingImageCaption.getAttribute('y')) + 100);
+      }
+      if (imageCaptionWindow && existingImageCaption) {
+        imageCaptionWindow.appendChild(captionElementToRender);
+      }
+    } else {
+      let dcWindow = this.getDCWindow();
+      if (!dcWindow) {
+        dcWindow = this.makeDCWindow();
+      }
+      dcWindow.appendChild(element);
+      this._repositionNetflixCaptions(dcWindow);
     }
-    dcWindow.appendChild(element);
-    this._repositionNetflixCaptions(dcWindow);
   }
 
   // Save the original position (top or bottom) of a caption
