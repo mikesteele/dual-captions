@@ -72,12 +72,21 @@ beforeEach(() => {
   window.DC.translate.resetHistory();
 });
 
-it('findNearestCaption should correctly find nearest caption', () => {
+it('findCaption should correctly find caption within a time range', () => {
   const captions = exampleEnglishCaptions;
-  expect(provider.findNearestCaption(captions, 10).text).toEqual('Weather Report');
-  expect(provider.findNearestCaption(captions, 9000).text).toEqual('The weather for today is in the high 80s.');
-  expect(provider.findNearestCaption(captions, 15000).text).toEqual('It will likely rain this weekend.');
-  expect(provider.findNearestCaption(captions, 80000)).toEqual(undefined);
+  expect(provider.findCaption(captions, 15, false).text).toEqual('Weather Report');
+  expect(provider.findCaption(captions, 1000, false).text).toEqual('Weather Report');
+  expect(provider.findCaption(captions, 10000, false).text).toEqual('The weather for today is in the high 80s.');
+  expect(provider.findCaption(captions, 16000, false).text).toEqual('It will likely rain this weekend.');
+  expect(provider.findCaption(captions, 80000, false)).toEqual(undefined);
+});
+
+it('findCaption should correctly find caption with the closest startTime if captionsMayNotMatchUp', () => {
+  const captions = exampleEnglishCaptions;
+  expect(provider.findCaption(captions, 10, true).text).toEqual('Weather Report');
+  expect(provider.findCaption(captions, 9000, true).text).toEqual('The weather for today is in the high 80s.');
+  expect(provider.findCaption(captions, 15000, true).text).toEqual('It will likely rain this weekend.');
+  expect(provider.findCaption(captions, 80000, true)).toEqual(undefined);
 });
 
 it('should use captions if language is loaded', done => {
@@ -285,4 +294,29 @@ it('should handle switching between videos - loadCaptions', () => {
       }
     }
   })
+});
+
+it('getLoadedLanguages() should return [] if no languages are loaded', () => {
+  adapterStub.returns(null);
+  const loadedLanguages1 = provider.getLoadedLanguages();
+  expect(loadedLanguages1).toEqual([]);
+  adapterStub.returns('test-video-id-1');
+  const loadedLanguages2 = provider.getLoadedLanguages();
+  expect(loadedLanguages2).toEqual([]);
+});
+
+it('should correctly getLoadedLanguages() if languages are loaded', () => {
+  adapterStub.returns('test-video-id-1');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "This is a caption from video 1"
+  }], 'en');
+  provider.__loadCaptions([{
+    "startTime": 1234,
+    "endTime": 1600,
+    "text": "C'est un caption du 1e video"
+  }], 'fr');
+  const loadedLanguages = provider.getLoadedLanguages();
+  expect(loadedLanguages).toEqual(['en', 'fr']);
 });

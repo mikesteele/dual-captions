@@ -1,3 +1,9 @@
+// FIXME
+// It's not documented in the Chrome docs, but people online say that
+// you can use chrome.tabs.sendMessage() without current tab ID
+// and the message will be sent to the active tab.
+// Worth investaging in the future.
+
 export function getActiveTabId() {
   return new Promise((resolve, reject) => {
     if (window.chrome && window.chrome.tabs && window.chrome.tabs.query) {

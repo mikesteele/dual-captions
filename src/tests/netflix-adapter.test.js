@@ -2,14 +2,14 @@ import expect from 'expect';
 const fs = require('fs');
 const path = require('path');
 
-// Load DOM from snapshot
-const videoPage = fs.readFileSync(path.resolve(__dirname, './assets/netflix/video.txt'));
-document.body.innerHTML = videoPage;
-
 // Load adapter
 import '../../public/content-scripts/init/init';
 import '../../public/content-scripts/init/adapter';
 import '../../public/content-scripts/netflix/adapter';
+
+// Load DOM from snapshot
+const videoPage = fs.readFileSync(path.resolve(__dirname, './assets/netflix/video.txt'));
+document.body.innerHTML = videoPage;
 
 const adapter = window.DC.adapter;
 
@@ -83,21 +83,6 @@ it('should correctly indentify captionWasAdded', () => {
     ...mockMutationRecord,
     target: adapter.getPlayer()
   })).toEqual(false);
-
-  /**
-
-  TODO
-
-  it('shouldn't react to a DC caption being added to DOM')
-
-  const dcCaption = observer.createDcCaption('This is a test');
-  const dcMutationRecord = {
-    ...mockMutationRecord,
-    addedNodes: [dcCaption]
-  }
-  expect(adapter.captionWasAdded(dcMutationRecord)).toEqual(false);
-
-  **/
 });
 
 it('should correctly _saveOriginalPosition', () => {
@@ -111,5 +96,3 @@ it('should correctly _saveOriginalPosition', () => {
   expect(testCaption.hasAttribute('__original-top__')).toEqual(true);
   expect(testCaption.getAttribute('__original-top__')).toEqual('76.6063%');
 });
-
-// TODO - Test makeDcWindow, moveNetflixCaptions, various other helpers

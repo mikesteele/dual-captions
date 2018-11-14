@@ -14,6 +14,7 @@ beforeEach(() => {
       t={key => key}
       isOn={false}
       secondLanguage={'en'}
+      loadedLanguages={[]}
       dispatch={dispatchSpy}
     />
   );
@@ -34,4 +35,3 @@ describe('<MainPage />', () => {
     expect(dispatchSpy.called).to.be.true;
   });
 });
-

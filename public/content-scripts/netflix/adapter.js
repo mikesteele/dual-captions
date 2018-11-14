@@ -4,13 +4,23 @@ class NetflixAdapter extends Adapter {
     this.site = 'netflix';
   }
 
-  // getVideoId & getPlayerCurrentTime are not needed until Netflix native translation support
   getVideoId() {
-    return 'TODO';
+    const videoIdPattern = /watch\/(\d+)/;
+    const pathname = window.location.pathname;
+    if (videoIdPattern.test(pathname)) {
+      return videoIdPattern.exec(pathname)[1];
+    } else {
+      return undefined;
+    }
   }
 
   getPlayerCurrentTime() {
-    return undefined;
+    const video = document.querySelector('video');
+    if (video) {
+      return video.currentTime;
+    } else {
+      return undefined;
+    }
   }
 
   onPopupOpened() {

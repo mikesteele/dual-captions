@@ -13,7 +13,6 @@ const mockTabs = [{
   id: 1
 }];
 
-// TODO - Add tests for this mock
 export class ChromeStorageMock {
   constructor() {
     this.mockStorage = {};
