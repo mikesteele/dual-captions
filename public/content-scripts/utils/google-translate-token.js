@@ -101,10 +101,10 @@ function updateTKK() {
             resolve();
         } else {
             got('https://translate.google.com').then(function (res) {
-                var code = /(TKK='.*';)VERSION/g.exec(res.body);
+                var code = /(tkk:'.*'),experiment/g.exec(res.body);
 
                 if (code) {
-                    eval(code[1]);
+                    eval(`window.TKK = {${code[1]}}.tkk`);
 
                     /* eslint-disable no-undef */
                     if (typeof TKK !== 'undefined') {
