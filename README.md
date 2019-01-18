@@ -1,6 +1,8 @@
 ## dual-captions <br/> Subtitles in two languages for YouTube, Netflix and Amazon Video
 ![build](https://travis-ci.com/mikesteele/dual-captions.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/mikesteele/dual-captions/badge.svg)](https://coveralls.io/github/mikesteele/dual-captions)
 
+### Note: Version 2 is currently being developed <a href="https://github.com/mikesteele/dc2">in a seperate repo</a>. Learn about the motivations for a rewrite in that repo's README.
+
 | Netflix  |
 |:--------:|
 | <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/netflix.png"> |
