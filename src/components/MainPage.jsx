@@ -20,8 +20,7 @@ class MainPage extends Component {
   }
 
   render() {
-    const secondLanguagesKeys = Object.keys(config.secondLanguages);
-    const secondLanguages = secondLanguagesKeys.map(language => (
+    const secondLanguages = this.props.loadedLanguages.map(language => (
       <option
         key={language}
         value={language}>

@@ -66,18 +66,18 @@ export function determineState() {
           });
           resolve();
         } else if (savedStore) {
+          /** TODO - Add back
           dispatch({
             type: 'CHANGE_SECOND_LANGUAGE',
             payload: savedStore.secondLanguage
           });
+          **/
           dispatch({
             type: 'CHANGE_SETTINGS',
             payload: savedStore.settings
           });
           // Inject savedStore settings into observer
-          dispatch(changeDCLanguage(savedStore.secondLanguage))
-            .then(dispatch(applyDCSettings()))
-            .then(resolve);
+          dispatch(applyDCSettings()).then(resolve);
         } else {
           resolve();
         }
