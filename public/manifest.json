@@ -26,9 +26,6 @@
     ],
     "js": [
       "content-scripts/init/init.js",
-      "content-scripts/utils/google-translate-token.js",
-      "content-scripts/utils/querystring-encode.js",
-      "content-scripts/utils/google-translate-api.js",
       "content-scripts/init/adapter.js",
       "content-scripts/youtube/adapter.js",
       "content-scripts/init/parser.js",
@@ -47,9 +44,6 @@
     ],
     "js": [
       "content-scripts/init/init.js",
-      "content-scripts/utils/google-translate-token.js",
-      "content-scripts/utils/querystring-encode.js",
-      "content-scripts/utils/google-translate-api.js",
       "content-scripts/init/adapter.js",
       "content-scripts/netflix/adapter.js",
       "content-scripts/init/parser.js",
@@ -67,9 +61,6 @@
     ],
     "js": [
       "content-scripts/init/init.js",
-      "content-scripts/utils/google-translate-token.js",
-      "content-scripts/utils/querystring-encode.js",
-      "content-scripts/utils/google-translate-api.js",
       "content-scripts/init/adapter.js",
       "content-scripts/amazon/adapter.js",
       "content-scripts/init/parser.js",

@@ -8,12 +8,7 @@ class TranslationProvider {
     // Props
     this.__captions = {};
     this.fallbackProvider = {
-      translate: (text, language, currentTime) => {
-        return window.DC.translate(text, {
-          from: 'auto',
-          to: language
-        });
-      }
+      translate: () => Promise.reject('No fallback provider installed.')
     };
 
     // Methods

@@ -15,8 +15,12 @@ class NetflixTranslationProcessor {
         .then(this._guessLanguageOfCaptions)
         .then(result => {
           const {captions, language} = result;
-          console.log(`processor - Loading captions for ${language}...`);
-          return window.DC.provider.__loadCaptions(captions, language)
+          if (captions && language) {
+            console.log(`processor - Loading captions for ${language}...`);
+            return window.DC.provider.__loadCaptions(captions, language)
+          } else {
+            return Promise.reject(`Can't load captions, didn't get captions or language.`)
+          }
         })
         .then(() => {
           console.log('Loaded.');
@@ -59,41 +63,29 @@ class NetflixTranslationProcessor {
   }
 
   // There's no information in the request URL or body about what language these captions are in.
-  // So, for now, we have to guess.
-  // We're using Google Translate "detect language" on the longest caption.
+  // So, for now, we're prompting the user for the language of the captions.
   _guessLanguageOfCaptions(captions) {
-    // Since Netflix captions are in HTML, we have to render them in this element to get their text content.
-    const renderElement = document.createElement('div');
-    return new Promise((resolve, reject) => {
-      // Find the longest caption to use to guess
-      const longestCaption = captions.reduce((a, b) => { return a.text.length > b.text.length ? a : b });
-      // The idea here is that the longer the text is, the likelier the guess is to be correct.
-      // This isn't perfect because caption.text includes HTML, but parsing HTML for each caption seems slow.
-      // Could be explored in the future if issues arise.
-      renderElement.innerHTML = longestCaption.text;
-      const textToGuess = renderElement.textContent;
-      this._guessLanguage(textToGuess)
-         .then(language => {
-           resolve({
-             captions: captions,
-             language: language
-           });
-         })
-         .catch(reject);
-    });
+    return this._guessLanguage(captions[0].text)
+      .then(language => ({
+        captions: captions,
+        language: language
+      }))
+      .catch(() => {}); // No-op
   }
 
   _guessLanguage(text) {
     return new Promise((resolve, reject) => {
-      window.DC.translate(text, {
-        from: 'auto',
-        to: 'en'
-      })
-      .then(response => {
-        resolve(response.from.language.iso);
-      })
-      .catch(reject);
-    });
+      const result = window.prompt(`
+        What language is this?
+
+        ${text}
+      `);
+      if (result) {
+        resolve(result)
+      } else {
+        reject('Could not guess language');
+      }
+    })
   }
 }
 
