@@ -33,24 +33,19 @@ class MainPage extends Component {
         <Step stepNumber={1}>
           <Hint detectedSite={this.props.detectedSite} loadedLanguages={this.props.loadedLanguages}/>
         </Step>
-        {this.props.detectedSite === 'netflix' && (
-          <Step stepNumber={2}>
+        <Step stepNumber={2}>
+          <div>
             <div>
-              <div>
-                {this.props.t('netflix-step-2-part-1')}
-              </div>
-              <div>
-                {this.props.t('netflix-step-2-part-2')}
-              </div>
-              {this.props.loadedLanguages.length > 0 && (
-                <div>
-                  {this.props.t('netflix-step-2-part-3')} {loadedLanguages.join(', ')}
-                </div>
-              )}
+              {this.props.t('netflix-step-2-part-2')}
             </div>
-          </Step>
-        )}
-        <Step stepNumber={this.props.detectedSite === 'netflix' ? 3 : 2}>
+            {this.props.loadedLanguages.length > 0 && (
+              <div>
+                {this.props.t('netflix-step-2-part-3')} {loadedLanguages.join(', ')}
+              </div>
+            )}
+          </div>
+        </Step>
+        <Step stepNumber={3}>
           <Fragment>
             <label>
               <Toggle

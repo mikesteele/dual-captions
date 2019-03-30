@@ -27,7 +27,6 @@
   "leave-feedback": "Donner un avis",
   "useCaptionsFromVideo": "Utiliser les sous-titres du vidéo (YouTube & Netflix)",
   "native-subtitles": "Si le vidéo a les sous-titres de la deuxième langue, ✓ signifie que ça vient du vidéo.",
-  "netflix-step-2-part-1": "Pour utiliser les sous-titres de Netflix,",
-  "netflix-step-2-part-2": "Sélectionner les sous-titres sur Netflix pour les charger ici.",
+  "netflix-step-2-part-2": "Sélectionner les sous-titres sur le site pour les charger ici.",
   "netflix-step-2-part-3": "Sous-titres chargés:"
 }

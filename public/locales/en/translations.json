@@ -28,7 +28,6 @@
   "useCaptionsFromVideo": "Use captions from video (YouTube & Netflix)",
   "native-subtitles": "If video has captions in second language, ✓ means it's a caption from the video.",
   "turn-off-native-subtitles": "Having issues? You can turn it off in the Settings panel via 'Use captions from video'.",
-  "netflix-step-2-part-1": "To use subtitles from Netflix for second subtitles,",
-  "netflix-step-2-part-2": "Select subtitles on Netflix to load them into this app.",
+  "netflix-step-2-part-2": "Select subtitles on the page to load them into this app.",
   "netflix-step-2-part-3": "Subtitles loaded here:"
 }
