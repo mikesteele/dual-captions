@@ -3,7 +3,7 @@ class TranslationQueue {
     /**
      *  text: string
      *  isResolved: boolean
-     *  callback: (language) => void
+     *  callbacks: [(language) => void]
      *  TODO - URL?
      *  TODO - Language?
      */
@@ -45,13 +45,23 @@ class TranslationQueue {
     }
   }
 
+  // TODO - Rename to requestLanguageFromUser()?
   addToQueue(text) {
     return new Promise((resolve, reject) => {
-      this._queue.push({
-        text: text,
-        isResolved: false,
-        callback: resolve
-      });
+      const isInQueue = this._queue.find(i => i.text === text);
+      if (isInQueue) {
+        if (isInQueue.isResolved) {
+          resolve(isInQueue.language);
+        } else {
+          isInQueue.callbacks.push(resolve);
+        }
+      } else {
+        this._queue.push({
+          text: text,
+          isResolved: false,
+          callbacks: [resolve]
+        })
+      }
       this.updatePopupIcon();
     });
   }
@@ -59,7 +69,8 @@ class TranslationQueue {
   resolveTranslation(index, language) {
     if (this._queue[index] && !this._queue[index].isResolved) {
       this._queue[index].isResolved = true;
-      this._queue[index].callback(language);
+      this._queue[index].language = language;
+      this._queue[index].callbacks.forEach(cb => cb(language));
     }
     this.updatePopupIcon();
   }

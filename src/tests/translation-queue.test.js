@@ -5,12 +5,19 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 
 const queue = window.DC.translationQueue;
+// Stubbing out these two methods that send messages to the background page
+sinon.stub(queue, 'setIconToNormal');
+sinon.stub(queue, 'setIconToHasNotification');
+
+const wait = (amount) => new Promise(resolve => setTimeout(resolve, amount));
+
+beforeEach(() => {
+  queue._queue = [];
+  queue.setIconToNormal.resetHistory();
+  queue.setIconToHasNotification.resetHistory();
+});
 
 it('should pass integration test', done => {
-  // Stubbing out these two methods that send messages to the background page
-  sinon.stub(queue, 'setIconToNormal');
-  sinon.stub(queue, 'setIconToHasNotification');
-
   // <!> This is the last step of the test, expecting the language the popup returned.
   // You should skip reading this until later.
   const successStub = sinon.stub().callsFake(language => {
@@ -62,6 +69,44 @@ it('should pass integration test', done => {
       expect(response.ok).to.be.true;
 
       // ^ Scroll up the successStub callback...
+    });
+  });
+});
+
+it('should handle trying to re-add same request to the queue', done => {
+  const onCatch = err => { throw new Error(err) };
+
+  const stub1 = sinon.stub();
+  const stub2 = sinon.stub();
+  const stub3 = sinon.stub();
+
+  // Request the same string 3 times
+  queue.addToQueue('test').then(stub1).catch(onCatch);
+  queue.addToQueue('test').then(stub2).catch(onCatch);
+  queue.addToQueue('test').then(stub3).catch(onCatch);
+
+  // Should only have one request in queue
+  expect(queue._queue.length).to.equal(1);
+
+  // Simulate resolving it
+  queue.onMessage({
+    type: 'resolve-translation',
+    payload: {
+      index: 0,
+      language: 'jp'
+    }
+  }, null, response => {
+    wait(100).then(() => {
+      // It should've called all three stubs by now.
+      expect(stub1.calledWith('jp')).to.be.true;
+      expect(stub2.calledWith('jp')).to.be.true;
+      expect(stub3.calledWith('jp')).to.be.true;
+
+      // And when we request 'test' again, we should get a cached result
+      queue.addToQueue('test').then(language => {
+        expect(language).to.equal('jp');
+        done();
+      }).catch(onCatch);
     });
   });
 });
