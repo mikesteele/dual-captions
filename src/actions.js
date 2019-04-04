@@ -1,5 +1,22 @@
 import { getActiveTabId, sendMessageToActiveTab, getSavedStore } from './utils/chrome.js';
 
+export const checkLoadedLanguages = () => {
+  return (dispatch) => {
+    sendMessageToActiveTab({
+      type: 'get-state'
+    }).then(state => {
+      if (state && state.hasOwnProperty('loadedLanguages')) {
+        dispatch({
+          type: 'CHANGE_LOADED_LANGUAGES',
+          payload: state.loadedLanguages
+        });
+      }
+    }).catch(err => {
+      console.error(`Couldn\'t check loaded languages: ${err}`);
+    })
+  }
+}
+
 /**
 
 determineState()

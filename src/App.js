@@ -13,7 +13,7 @@ import SettingsPage from './components/SettingsPage.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
 import TranslationQueue from './components/TranslationRequest.jsx';
 
-import { determineState, popupOpened, detectSite } from './actions';
+import { determineState, popupOpened, detectSite, checkLoadedLanguages } from './actions';
 
 const mapStateToProps = function(state) {
   return {...state};
@@ -25,12 +25,17 @@ const ErrorPageView = connect(mapStateToProps)(ErrorPage);
 
 class App extends Component {
   componentDidMount() {
+    window.setInterval(this.checkLoadedLanguages.bind(this), 2 * 1000);
     this.props.dispatch(determineState())
       .then(this.props.dispatch(popupOpened()))
       .then(this.props.dispatch(detectSite()))
       .catch(err => {
         console.log(err);
       });
+  }
+
+  checkLoadedLanguages() {
+    this.props.dispatch(checkLoadedLanguages());
   }
 
   _onUILanguageSelectChanged(e) {
