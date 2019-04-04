@@ -75,22 +75,14 @@ class NetflixTranslationProcessor {
         captions: captions,
         language: language
       }))
-      .catch(() => {}); // No-op
+      .catch(err => {
+        console.error(`Couldn't guess language of captions: ${err}`)
+      });
   }
 
   _guessLanguage(text) {
-    return new Promise((resolve, reject) => {
-      const result = window.prompt(`
-        What language is this?
-
-        ${text}
-      `);
-      if (result) {
-        resolve(result)
-      } else {
-        reject('Could not guess language');
-      }
-    })
+    const translationQueue = window.DC.translationQueue;
+    return translationQueue.addToQueue(text);
   }
 }
 

@@ -107,5 +107,5 @@ class TranslationQueue {
   }
 }
 
-window.DC.translationQueue = new TranslationQueue;
+window.DC.translationQueue = new TranslationQueue();
 window.TranslationQueue = TranslationQueue;

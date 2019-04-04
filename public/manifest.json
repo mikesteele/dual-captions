@@ -26,6 +26,7 @@
     ],
     "js": [
       "content-scripts/init/init.js",
+      "content-scripts/init/translation-queue.js",
       "content-scripts/init/adapter.js",
       "content-scripts/youtube/adapter.js",
       "content-scripts/init/parser.js",
@@ -44,6 +45,7 @@
     ],
     "js": [
       "content-scripts/init/init.js",
+      "content-scripts/init/translation-queue.js",
       "content-scripts/init/adapter.js",
       "content-scripts/netflix/adapter.js",
       "content-scripts/init/parser.js",
@@ -61,6 +63,7 @@
     ],
     "js": [
       "content-scripts/init/init.js",
+      "content-scripts/init/translation-queue.js",
       "content-scripts/init/adapter.js",
       "content-scripts/amazon/adapter.js",
       "content-scripts/init/parser.js",

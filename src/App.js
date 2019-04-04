@@ -11,6 +11,7 @@ import Header from './components/Header.jsx';
 import MainPage from './components/MainPage.jsx';
 import SettingsPage from './components/SettingsPage.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
+import TranslationQueue from './components/TranslationRequest.jsx';
 
 import { determineState, popupOpened, detectSite } from './actions';
 
@@ -49,6 +50,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
+        <TranslationQueue/>
         <Header/>
         <Tabs selectedIndex={this.props.currentTab} onSelect={this._onTabSelected.bind(this)}>
           <TabList>
