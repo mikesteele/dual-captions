@@ -38,6 +38,7 @@ class MainPage extends Component {
             <div>
               {this.props.t('netflix-step-2-part-2')}
             </div>
+            <br/>
             {this.props.loadedLanguages.length > 0 && (
               <div>
                 {this.props.t('netflix-step-2-part-3')} {loadedLanguages.join(', ')}

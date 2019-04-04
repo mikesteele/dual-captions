@@ -69,11 +69,6 @@ class App extends Component {
             <SettingsPageView/>
           </TabPanel>
         </Tabs>
-        { ['youtube', 'netflix'].includes(this.props.detectedSite) && (
-          <div style={{padding: '16px'}}>
-            {this.props.t('native-subtitles')}
-          </div>
-        )}
         <ErrorPageView/>
         <div className='footer'>
           <div>

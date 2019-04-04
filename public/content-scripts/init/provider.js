@@ -84,7 +84,7 @@ class TranslationProvider {
         const captionToRender = this.findCaption(captions, currentTime, this.adapter.captionsMayNotMatchUp);
         if (captionToRender) {
           resolve({
-            text: `${captionToRender.text} ✓`
+            text: captionToRender.text
           });
         } else {
           this.fallbackProvider
