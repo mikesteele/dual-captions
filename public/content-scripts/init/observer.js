@@ -35,8 +35,6 @@ class Observer {
       case 'change-settings':
       this.settingsAreDefault = false;
       this.extraSpace = message.payload.extraSpace;
-      this.delayRenderingUntilTranslation = message.payload.delayRenderingUntilTranslation;
-      this.useCaptionsFromVideo = message.payload.useCaptionsFromVideo;
       sendResponse({ok: true});
       break;
 
@@ -55,9 +53,7 @@ class Observer {
         isOn: this.isOn,
         secondLanguage: this.secondLanguage,
         settings: {
-          extraSpace: this.extraSpace,
-          useCaptionsFromVideo: this.useCaptionsFromVideo,
-          delayRenderingUntilTranslation: this.delayRenderingUntilTranslation
+          extraSpace: this.extraSpace
         },
         loadedLanguages: window.DC.provider.getLoadedLanguages()
       });
