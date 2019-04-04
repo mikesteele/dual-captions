@@ -28,6 +28,16 @@ class MainPage extends Component {
       </option>
     ));
     const loadedLanguages = this.props.loadedLanguages.map(lang => config.secondLanguages[lang] || lang);
+    if (this.props.detectedSite === 'amazon') {
+      // TODO - Translate
+      return (
+        <div className='page'>
+          Sorry, Amazon Video support has been removed in v1.6.0.
+          <br/><br/>
+          Please open an issue if you'd like support added back in v2.
+        </div>
+      );
+    }
     return (
       <div className='page'>
         <Step stepNumber={1}>

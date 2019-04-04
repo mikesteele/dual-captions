@@ -12,7 +12,7 @@
   "beta": "Bêta",
   "beta-explanation": "Vous pouvez voir des bugs si vous utilisez cette extension sur les sites bêtas. Aidez-moi en rapportant les bugs sur GitHub.",
   "supports": "Compatible avec",
-  "no-dc": "Deux Sous-titres n'est pas trouvé sur la page. Est-ce que vous êtes sur YouTube, Netflix, ou Amazon Prime Video? Essayez de rafraîchir.",
+  "no-dc": "Deux Sous-titres n'est pas trouvé sur la page. Est-ce que vous êtes sur YouTube ou Netflix? Essayez de rafraîchir.",
   "no-player": "Le player video n'est pas trouvé sur la page.",
   "generic-hint": "Sur la page, commencez les sous-titres.",
   "youtube-hint": "Sur YouTube, cliquez sur le bouton CC pour commencer les sous-titres.",
