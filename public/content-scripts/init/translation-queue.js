@@ -31,17 +31,30 @@ class TranslationQueue {
 
       case 'resolve-translation':
       const payload = message.payload;
-      if (payload && 'index' in payload && payload.language) {
-        this.resolveTranslation(payload.index, payload.language);
+      const index = this._queue.findIndex(i => i.text === payload.text);
+      if (payload &&
+          payload.text &&
+          payload.language &&
+          index > -1) {
+        this.resolveTranslation(index, payload.language);
         sendResponse({
-          ok: true
+          ok: true,
+          payload: this._queue
         });
       } else {
         sendResponse({
           ok: false,
-          error: 'Missing payload, index or language'
+          error: 'Missing payload, text or language - or text is not in queue'
         });
       }
+      break;
+
+      case 'get-queue':
+      sendResponse({
+        ok: true,
+        payload: this._queue
+      });
+      break;
     }
   }
 
@@ -59,6 +72,7 @@ class TranslationQueue {
         this._queue.push({
           text: text,
           isResolved: false,
+          language: undefined,
           callbacks: [resolve]
         })
       }

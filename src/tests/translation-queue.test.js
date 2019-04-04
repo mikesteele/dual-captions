@@ -44,14 +44,14 @@ it('should pass integration test', done => {
   expect(queue.setIconToHasNotification.calledOnce).to.be.true;
   queue.setIconToHasNotification.resetHistory();
 
-  // The popup should be requesting unresolved requests via 'get-unresolved-requests' on an interval
+  // The popup should be requesting the up-to-date queue via 'get-queue' on an interval
   queue.onMessage({
-    type: 'get-unresolved-requests'
+    type: 'get-queue'
   }, null, response => {
     expect(response.ok).to.be.true;
     expect(response.payload[0]).to.deep.equal({
-      index: 0,
-      text: 'Some test string'
+      text: 'Some test string',
+      isResolved: false
     });
 
     // Sanity test: the addToQueue promise should still be pending
