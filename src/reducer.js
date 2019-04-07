@@ -9,7 +9,7 @@ const initialState = {
   errorType: '',
   isOn: false,
   loadedLanguages: [],
-  secondLanguage: config.defaultSecondLanguage,
+  secondLanguage: 'none',
   settings: config.defaultSettings,
   uiLanguage: config.defaultUILanguage
 };

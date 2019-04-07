@@ -2,7 +2,7 @@ class Observer {
   constructor() {
     this.isOn = false;
     this.observer = new window.MutationObserver(this._onMutation.bind(this));
-    this.secondLanguage = 'en';
+    this.secondLanguage = 'none';
     this.extraSpace = false;
     this.delayRenderingUntilTranslation = true;
     this.useCaptionsFromVideo = true;
@@ -151,6 +151,7 @@ class Observer {
               newCaption.classList.add('translated');
             }
           }).catch(err => {
+            newCaption.classList.add('translated');
             console.log(err);
           });
         }
