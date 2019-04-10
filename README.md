@@ -54,11 +54,6 @@ This Chrome Extension creates a MutationObserver which waits for new caption ele
     |-- reducer.js             Redux reducer
 ````
 
-
-### Usage
-
-Download on the Google Web Store: https://chrome.google.com/webstore/detail/dual-captions/lpeonmjfimoijceaalocpgjjchocbiap
-
 #### Manual Installation
 
 Building the extension locally requires having Node and Yarn installed. See https://nodejs.org/ and https://yarnpkg.com/ for installation steps.
