@@ -33,17 +33,20 @@ class TranslationRequest extends React.Component {
         {config.secondLanguages[language]}
       </option>
     ));
+    const captionAsHtml = { __html: this.props.text };
     return (
-      <div>
-        <div>Trying to load captions...</div>
-        <div>What language is this?</div>
-        <div>{this.props.text}</div>
-        <select
-          value={this.state.selectedLanguage}
-          onChange={this.onLanguageSelectChanged}>
-          { secondLanguages }
-        </select>
-        <button onClick={this.onClickSubmitButton}>Submit</button>
+      <div className='translation-request'>
+        <div className='translation-request-inner'>
+          <div>Trying to load captions...</div>
+          <div>What language is this?</div>
+          <div dangerouslySetInnerHTML={captionAsHtml}/>
+          <select
+            value={this.state.selectedLanguage}
+            onChange={this.onLanguageSelectChanged}>
+            { secondLanguages }
+          </select>
+          <button onClick={this.onClickSubmitButton}>Submit</button>
+        </div>
       </div>
     )
   }
@@ -103,26 +106,30 @@ class TranslationQueue extends React.Component {
   }
 
   render() {
-    // TODO - Don't show all at once
-    const requestModals = this.state.queue.map((request, index) => {
-      if (request.isResolved) {
-        return null;
-      } else {
-        return (
-          <TranslationRequest
-            text={request.text}
-            key={request.text}
-            index={index}
-            onLanguageSelected={this.resolveTranslation.bind(this)}
-          />
-        );
-      }
-    });
-    return (
-      <div>
-        { requestModals }
-      </div>
-    );
+    const hasUnresolvedRequests = this.state.queue.some(i => !i.isResolved);
+    if (hasUnresolvedRequests) {
+      const requestModals = this.state.queue.map((request, index) => {
+        if (request.isResolved) {
+          return null;
+        } else {
+          return (
+            <TranslationRequest
+              text={request.text}
+              key={request.text}
+              index={index}
+              onLanguageSelected={this.resolveTranslation.bind(this)}
+            />
+          );
+        }
+      });
+      return (
+        <div className='translation-queue'>
+          { requestModals }
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
 
