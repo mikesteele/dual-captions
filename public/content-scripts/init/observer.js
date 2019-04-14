@@ -74,16 +74,6 @@ class Observer {
       break;
 
       case 'popup-opened':
-      // 1. Request /en/
-      this.provider.requestLanguage(this.secondLanguage)
-        .then(() => {
-          console.log(`Loaded captions for '${this.secondLanguage}'`)
-        })
-        .catch(err => {
-          console.log(`Couldn't load translations for 'en': ${err}`);
-        });
-
-      // 2. Tell adapter that the popup was opened
       const response = window.DC.adapter.onPopupOpened();
       sendResponse({
         ok: response.ok,

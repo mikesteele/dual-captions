@@ -34,6 +34,7 @@
       "content-scripts/youtube/fetcher.js",
       "content-scripts/youtube/parser.js",
       "content-scripts/init/provider.js",
+      "content-scripts/init/processor.js",
       "content-scripts/init/observer.js"
     ],
     "matches": [ "https://www.youtube.com/*" ]
@@ -52,7 +53,7 @@
       "content-scripts/netflix/parser.js",
       "content-scripts/init/fetcher.js",
       "content-scripts/init/provider.js",
-      "content-scripts/netflix/processor.js",
+      "content-scripts/init/processor.js",
       "content-scripts/init/observer.js"
     ],
     "matches": [ "https://www.netflix.com/*" ]
@@ -69,6 +70,7 @@
       "content-scripts/init/parser.js",
       "content-scripts/init/fetcher.js",
       "content-scripts/init/provider.js",
+      "content-scripts/init/processor.js",
       "content-scripts/init/observer.js"
     ],
     "matches": [ "https://www.amazon.com/*" ]

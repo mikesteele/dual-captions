@@ -1,4 +1,4 @@
-class NetflixTranslationProcessor {
+class TranslationProcessor {
   constructor() {
     this._onMessage = this._onMessage.bind(this);
     this._guessLanguageOfCaptions = this._guessLanguageOfCaptions.bind(this);
@@ -9,12 +9,12 @@ class NetflixTranslationProcessor {
   _onMessage(message, sender, sendResponse) {
     const adapter = window.DC.adapter;
     switch (message.type) {
-      case 'process-netflix-caption-request':
+      case 'process-caption-request':
       const videoId = adapter.getVideoId();
       if (!videoId) {
         return null;
       }
-      console.log('processor - Processing Netflix caption request...');
+      console.log('processor - Processing caption request...');
       this.fetchUrl(message.payload)
         .then(window.DC.parser.parse)
         .then(this._guessLanguageOfCaptions)
@@ -86,4 +86,4 @@ class NetflixTranslationProcessor {
   }
 }
 
-window.DC.processor = new NetflixTranslationProcessor();
+window.DC.processor = new TranslationProcessor();
