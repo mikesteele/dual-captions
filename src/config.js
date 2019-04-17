@@ -4,7 +4,7 @@ const config = {
   defaultSettings: {
     extraSpace: false
   },
-  defaultSecondLanguage: 'en',
+  defaultSecondLanguage: 'none',
   defaultUILanguage: 'en',
   secondLanguages: secondLanguages,
   supportedSites: {
