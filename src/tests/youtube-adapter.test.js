@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Load DOM from snapshot
-const videoPage = fs.readFileSync(path.resolve(__dirname, './assets/youtube/video.txt'));
+const videoPage = fs.readFileSync(path.resolve(__dirname, './assets/youtube/video2.txt'));
 document.body.innerHTML = videoPage;
 
 // Load adapter
@@ -106,5 +106,6 @@ it('should correctly style new caption element', () => {
   // Translated caption should get the .captions-text class
   expect(translatedCaption.classList.contains('captions-text')).toEqual(true);
   // Translated caption should get the same inline styles as the current caption has.
-  expect(translatedCaption.style.cssText === newCaption.style.cssText).toEqual(true);
+  const captionsStyle = document.querySelector('.ytp-caption-segment');
+  expect(translatedCaption.style.cssText === captionsStyle.style.cssText).toEqual(true);
 });
