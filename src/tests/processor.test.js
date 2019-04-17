@@ -29,30 +29,35 @@ sinon.stub(window, 'fetch')
 
 import './chrome-mock';
 import '../../public/content-scripts/init/init';
+import '../../public/content-scripts/init/translation-queue';
 import '../../public/content-scripts/init/adapter';
 import '../../public/content-scripts/netflix/adapter';
 import '../../public/content-scripts/init/parser';
 import '../../public/content-scripts/netflix/parser';
 import '../../public/content-scripts/init/provider';
-import '../../public/content-scripts/netflix/processor';
+import '../../public/content-scripts/init/processor';
 
 const adapter = window.DC.adapter;
 const parser = window.DC.parser;
 const provider = window.DC.provider;
 const processor = window.DC.processor;
+const queue = window.DC.translationQueue;
 
 sinon.stub(adapter, 'getVideoId').returns('test-video-id');
 
-it('should fetch, parse, guess language, and load captions on Netflix caption request', done => {
+it('should fetch, parse, guess language, and load captions on caption request', done => {
   // Spies
   sinon.spy(processor, 'fetchUrl');
   sinon.spy(parser, 'parse');
   sinon.spy(processor, '_guessLanguageOfCaptions');
   sinon.spy(provider, '__loadCaptions');
 
+  // Stub TranslationQueue.addToQueue()
+  sinon.stub(queue, 'addToQueue').returns(Promise.resolve('jp'));
+
   const testCaptionUrl = 'some-netflix-caption-url';
   processor._onMessage({
-    type: 'process-netflix-caption-request',
+    type: 'process-caption-request',
     payload: testCaptionUrl
   }, null, response => {
     expect(response).toEqual({ ok: true });
@@ -66,6 +71,7 @@ it('should fetch, parse, guess language, and load captions on Netflix caption re
     parser.parse.restore();
     processor._guessLanguageOfCaptions.restore();
     provider.__loadCaptions.restore();
+    queue.addToQueue.restore();
 
     done();
   });
@@ -110,19 +116,11 @@ it('should correctly _guessLanguageOfCaptions', done => {
 });
 
 it('should correctly _guessLanguage', done => {
-  window.DC.translate = sinon.stub().returns(
-    Promise.resolve({
-      text: 'Used Google Translate',
-      from: {
-        language: {
-          iso: 'jp'
-        }
-      }
-    })
-  );
+  sinon.stub(queue, 'addToQueue').returns(Promise.resolve('jp'));
   processor._guessLanguage('Some text')
     .then(language => {
       expect(language).toEqual('jp');
+      queue.addToQueue.restore();
       done();
     });
 });

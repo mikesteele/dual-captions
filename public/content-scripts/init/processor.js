@@ -70,7 +70,8 @@ class TranslationProcessor {
   // There's no information in the request URL or body about what language these captions are in.
   // So, for now, we're prompting the user for the language of the captions.
   _guessLanguageOfCaptions(captions) {
-    return this._guessLanguage(captions[0].text)
+    const longestCaption = captions.reduce((a, b) => { return a.text.length > b.text.length ? a : b });
+    return this._guessLanguage(longestCaption.text)
       .then(language => ({
         captions: captions,
         language: language
