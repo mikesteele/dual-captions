@@ -47,8 +47,8 @@ describe('TranslationQueue', () => {
     wait(200).then(() => {
       wrapper.update();
       // Should render the unresolved requests in MOCK_QUEUE
-      expect(wrapper.find({ children: 'This is a test.' }).length).to.equal(1);
-      expect(wrapper.find({ children: 'Ça va?' }).length).to.equal(1);
+      expect(wrapper.find('TranslationRequest').find({ text: 'This is a test.' }).length).to.equal(1);
+      expect(wrapper.find('TranslationRequest').find({ text: 'Ça va?' }).length).to.equal(1);
 
       // But none of the resolved ones
       expect(wrapper.find({ children: 'Ciao!' }).length).to.equal(0);
@@ -67,7 +67,7 @@ describe('TranslationQueue', () => {
 
         // Verify it was resolved in DOM
         wrapper.update();
-        expect(wrapper.find({ children: 'This is a test.' }).length).to.equal(0);
+        expect(wrapper.find('TranslationRequest').find({ text: 'This is a test.' }).length).to.equal(0);
         done();
       });
     });
