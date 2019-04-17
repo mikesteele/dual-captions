@@ -1,5 +1,22 @@
 import { getActiveTabId, sendMessageToActiveTab, getSavedStore } from './utils/chrome.js';
 
+export const checkLoadedLanguages = () => {
+  return (dispatch) => {
+    sendMessageToActiveTab({
+      type: 'get-state'
+    }).then(state => {
+      if (state && state.hasOwnProperty('loadedLanguages')) {
+        dispatch({
+          type: 'CHANGE_LOADED_LANGUAGES',
+          payload: state.loadedLanguages
+        });
+      }
+    }).catch(err => {
+      console.error(`Couldn\'t check loaded languages: ${err}`);
+    })
+  }
+}
+
 /**
 
 determineState()
@@ -67,17 +84,11 @@ export function determineState() {
           resolve();
         } else if (savedStore) {
           dispatch({
-            type: 'CHANGE_SECOND_LANGUAGE',
-            payload: savedStore.secondLanguage
-          });
-          dispatch({
             type: 'CHANGE_SETTINGS',
             payload: savedStore.settings
           });
           // Inject savedStore settings into observer
-          dispatch(changeDCLanguage(savedStore.secondLanguage))
-            .then(dispatch(applyDCSettings()))
-            .then(resolve);
+          dispatch(applyDCSettings()).then(resolve);
         } else {
           resolve();
         }

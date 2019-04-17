@@ -67,7 +67,7 @@ class YouTubeAdapter extends Adapter {
 
   // Apply the appropriate style to the translated caption element.
   styleCaptionElement(element, mutation) {
-    const captionStyle = mutation.target.querySelector('span').style.cssText;
+    const captionStyle = mutation.target.querySelector('.ytp-caption-segment').style.cssText;
     element.style = captionStyle;
     element.classList.add(this.captionClass);
     return element;

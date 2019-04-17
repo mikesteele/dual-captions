@@ -13,7 +13,7 @@
   "beta-explanation": "You may see bugs using this extension on sites that are in beta. Please help the project by reporting bugs on GitHub.",
   "no-chrome": "The app is running locally, so Chrome Extension features will not work.",
   "supports": "Supports",
-  "no-dc": "Dual Captions not found on page. Are you on YouTube, Netflix or Amazon Prime Video? Please try refreshing the page.",
+  "no-dc": "Dual Captions not found on page. Are you on YouTube or Netflix? Please try refreshing the page.",
   "generic-hint": "On the page, start captions.",
   "youtube-hint": "On YouTube, click the CC button to start captions.",
   "netflix-hint": "On Netflix, start captions.",
@@ -28,7 +28,11 @@
   "useCaptionsFromVideo": "Use captions from video (YouTube & Netflix)",
   "native-subtitles": "If video has captions in second language, ✓ means it's a caption from the video.",
   "turn-off-native-subtitles": "Having issues? You can turn it off in the Settings panel via 'Use captions from video'.",
-  "netflix-step-2-part-1": "To use subtitles from Netflix for second subtitles,",
-  "netflix-step-2-part-2": "Select subtitles on Netflix to load them into this app.",
-  "netflix-step-2-part-3": "Subtitles loaded here:"
+  "netflix-step-2-part-2": "Select subtitles on the page to load them into this app.",
+  "netflix-step-2-part-3": "Subtitles loaded here:",
+  "amazon-sorry-1": "Sorry, Amazon Video support has been removed in v1.6.0.",
+  "amazon-sorry-2": "Please open an issue if you'd like support added back in v2.",
+  "translation-request-1": "Trying to load captions...",
+  "translation-request-2": " What language is this?",
+  "submit": "Submit"
 }

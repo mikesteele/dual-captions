@@ -28,19 +28,6 @@ it('should have settingsAreDefault by default', () => {
  *  Message tests
  */
 
-it('should request secondLanguage onPopupOpened', done => {
-  const stub = sinon.stub(provider, 'requestLanguage');
-  stub.returns(Promise.resolve());
-  observer._onMessage({
-    type: 'popup-opened',
-    payload: {}
-  }, null, response => {
-    expect(provider.requestLanguage.calledWith(observer.secondLanguage)).toEqual(true);
-    stub.restore();
-    done();
-  });
-});
-
 it('should respond correctly to change-language', done => {
   // Sanity test
   expect(observer.secondLanguage === 'jp').toEqual(false);
@@ -56,16 +43,11 @@ it('should respond correctly to change-language', done => {
 });
 
 it('should respond correctly to change-settings', done => {
-  // Sanity tests
+  // Sanity test
   expect(observer.extraSpace).toEqual(false);
-  expect(observer.delayRenderingUntilTranslation).toEqual(true);
-  expect(observer.useCaptionsFromVideo).toEqual(true);
-  expect(observer.settingsAreDefault).toEqual(true);
 
   const newSettings = {
-    extraSpace: true,
-    delayRenderingUntilTranslation: false,
-    useCaptionsFromVideo: false
+    extraSpace: true
   }
 
   observer._onMessage({
@@ -73,9 +55,6 @@ it('should respond correctly to change-settings', done => {
     payload: newSettings
   }, null, response => {
     expect(observer.extraSpace).toEqual(true);
-    expect(observer.delayRenderingUntilTranslation).toEqual(false);
-    expect(observer.useCaptionsFromVideo).toEqual(false);
-    expect(observer.settingsAreDefault).toEqual(false);
     expect(response).toEqual({ok: true});
     done();
   });
@@ -103,9 +82,7 @@ it('should respond correctly to get-state', done => {
       isOn: observer.isOn,
       secondLanguage: observer.secondLanguage,
       settings: {
-        extraSpace: observer.extraSpace,
-        useCaptionsFromVideo: observer.useCaptionsFromVideo,
-        delayRenderingUntilTranslation: observer.delayRenderingUntilTranslation
+        extraSpace: observer.extraSpace
       },
       loadedLanguages: []
     });

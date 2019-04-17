@@ -6,7 +6,8 @@ window.chrome = {
       addListener: () => {
         console.log('mocks: Adding listener for window.chrome.runtime.onMessage');
       }
-    }
+    },
+    sendMessage: sinon.stub()
   }
 }
 

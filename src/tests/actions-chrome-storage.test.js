@@ -51,13 +51,13 @@ Sanity tests for observer - can be removed when observer has proper tests.
 
 it(`
   observer should have in state, by default:
-  - secondLanguage = "en"
+  - secondLanguage = "none"
   - settingsAreDefault = true
   `, done => {
   observer._onMessage({
     type: 'get-state'
   }, null, response => {
-    expect(response.secondLanguage).toEqual('en');
+    expect(response.secondLanguage).toEqual('none');
     expect(response.settingsAreDefault).toEqual(true);
     done();
   });
@@ -220,37 +220,17 @@ it(`
 
   // Initial state sanity tests
   const initialState = store.getState();
-  expect(initialState.secondLanguage !== 'ja').toEqual(true);
-  expect(initialState.uiLanguage !== 'fr').toEqual(true);
-  expect(initialState.settings.extraSpace !== true).toEqual(true);
-  expect(initialState.settings.useCaptionsFromVideo !== false).toEqual(true);
-  expect(initialState.settings.delayRenderingUntilTranslation !== false).toEqual(true);
-
-  // Observer sanity tests
-  expect(observer.secondLanguage !== 'ja').toEqual(true);
-  expect(observer.extraSpace !== true).toEqual(true);
-  expect(observer.useCaptionsFromVideo !== false).toEqual(true);
-  expect(observer.delayRenderingUntilTranslation !== false).toEqual(true);
 
   // Test action
   store.dispatch(actions.determineState())
     .then(() => {
       const state = store.getState();
       // It should use settings from saved store
-      expect(state.secondLanguage).toEqual('ja');
-      expect(state.uiLanguage).toEqual('fr');
       expect(state.settings.extraSpace).toEqual(true);
-      expect(state.settings.useCaptionsFromVideo).toEqual(false);
-      expect(state.settings.delayRenderingUntilTranslation).toEqual(false);
 
       // It should inject settings into DC
-      expect(observer.secondLanguage).toEqual('ja');
       expect(observer.extraSpace).toEqual(true);
-      expect(observer.useCaptionsFromVideo).toEqual(false);
-      expect(observer.delayRenderingUntilTranslation).toEqual(false);
       done();
-    }).catch(err => {
-      console.log(`Error: ${err}`);
     });
 });
 

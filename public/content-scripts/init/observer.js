@@ -2,7 +2,7 @@ class Observer {
   constructor() {
     this.isOn = false;
     this.observer = new window.MutationObserver(this._onMutation.bind(this));
-    this.secondLanguage = 'en';
+    this.secondLanguage = 'none';
     this.extraSpace = false;
     this.delayRenderingUntilTranslation = true;
     this.useCaptionsFromVideo = true;
@@ -35,8 +35,6 @@ class Observer {
       case 'change-settings':
       this.settingsAreDefault = false;
       this.extraSpace = message.payload.extraSpace;
-      this.delayRenderingUntilTranslation = message.payload.delayRenderingUntilTranslation;
-      this.useCaptionsFromVideo = message.payload.useCaptionsFromVideo;
       sendResponse({ok: true});
       break;
 
@@ -55,9 +53,7 @@ class Observer {
         isOn: this.isOn,
         secondLanguage: this.secondLanguage,
         settings: {
-          extraSpace: this.extraSpace,
-          useCaptionsFromVideo: this.useCaptionsFromVideo,
-          delayRenderingUntilTranslation: this.delayRenderingUntilTranslation
+          extraSpace: this.extraSpace
         },
         loadedLanguages: window.DC.provider.getLoadedLanguages()
       });
@@ -78,16 +74,6 @@ class Observer {
       break;
 
       case 'popup-opened':
-      // 1. Request /en/
-      this.provider.requestLanguage(this.secondLanguage)
-        .then(() => {
-          console.log(`Loaded captions for '${this.secondLanguage}'`)
-        })
-        .catch(err => {
-          console.log(`Couldn't load translations for 'en': ${err}`);
-        });
-
-      // 2. Tell adapter that the popup was opened
       const response = window.DC.adapter.onPopupOpened();
       sendResponse({
         ok: response.ok,
@@ -155,6 +141,7 @@ class Observer {
               newCaption.classList.add('translated');
             }
           }).catch(err => {
+            newCaption.classList.add('translated');
             console.log(err);
           });
         }

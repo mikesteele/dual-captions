@@ -23,10 +23,6 @@ FIXME
 
 **/
 
-window.DC.translate = sinon.stub().returns(Promise.resolve({
-  text: 'Used Google Translate'
-}));
-
 const provider = window.DC.provider;
 const fetcher = window.DC.fetcher;
 const parser = window.DC.parser;
@@ -69,7 +65,6 @@ const exampleFrenchCaptions = [
 
 beforeEach(() => {
   provider.__captions = {};
-  window.DC.translate.resetHistory();
 });
 
 it('findCaption should correctly find caption within a time range', () => {
@@ -94,48 +89,12 @@ it('should use captions if language is loaded', done => {
   provider.translate('Test', 'en', 10, true)
     .then(translation => {
       expect(translation).toEqual({
-        text: 'Weather Report ✓'
+        text: 'Weather Report'
       });
       done();
     })
     .catch(err => { console.log(err)});
 });
-
-it('should use Google Translate no languages are loaded', done => {
-  provider.translate('Test', 'en', 500, true)
-    .then(translation => {
-      expect(translation).toEqual({
-        text: 'Used Google Translate'
-      });
-      done();
-    })
-    .catch(err => { console.log(err)});
-});
-
-it('should use Google Translate if selected language is not loaded', done => {
-  provider.__loadCaptions(exampleFrenchCaptions, 'fr');
-  provider.translate('Test', 'en', 500, true)
-    .then(translation => {
-      expect(translation).toEqual({
-        text: 'Used Google Translate'
-      });
-      done();
-    })
-    .catch(err => { console.log(err)});
-});
-
-it('should use Google Translate if current time is undefined', done => {
-  provider.__loadCaptions(exampleFrenchCaptions, 'fr');
-  provider.translate('Test', 'fr', undefined, true)
-    .then(translation => {
-      expect(translation).toEqual({
-        text: 'Used Google Translate'
-      });
-      done();
-    })
-    .catch(err => { console.log(err)});
-});
-
 
 it('should support loading two languages', done => {
   provider.__loadCaptions(exampleEnglishCaptions, 'en');
@@ -143,19 +102,7 @@ it('should support loading two languages', done => {
   provider.translate('Test', 'fr', 10, true)
     .then(translation => {
       expect(translation).toEqual({
-        text: 'Météo ✓'
-      });
-      done();
-    })
-    .catch(err => { console.log(err)});
-});
-
-it('should use Google Translate if not useCaptionsFromVideo', done => {
-  provider.__loadCaptions(exampleFrenchCaptions, 'fr');
-  provider.translate('Test', 'fr', 10, false)
-    .then(translation => {
-      expect(translation).toEqual({
-        text: 'Used Google Translate'
+        text: 'Météo'
       });
       done();
     })
@@ -212,11 +159,11 @@ it('should handle switching between videos - translate', done => {
   adapterStub.returns('test-video-id-1');
   provider.translate('Test caption', 'en', 1234, true)
     .then(response1 => {
-      expect(response1.text === 'This is a caption from video 1 ✓').toEqual(true);
+      expect(response1.text === 'This is a caption from video 1').toEqual(true);
       adapterStub.returns('test-video-id-2');
       provider.translate('Test caption', 'en', 1234, true)
         .then(response2 => {
-          expect(response2.text === 'This is a caption from video 2 ✓').toEqual(true);
+          expect(response2.text === 'This is a caption from video 2').toEqual(true);
           done();
         })
         .catch(err => {

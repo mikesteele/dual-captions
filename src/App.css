@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-size: 14px;
+  position: relative;
 }
 
 a {
@@ -213,4 +214,32 @@ table {
   line-height: 18px;
   width: 234px;
   padding: 0 8px;
+}
+
+.translation-request {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.translation-queue {
+  position: absolute;
+  z-index: 1000000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+}
+
+.translation-request-inner {
+  margin: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #aaa;
+  background: white;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 32px;
 }

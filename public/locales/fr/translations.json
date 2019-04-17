@@ -12,7 +12,7 @@
   "beta": "Bêta",
   "beta-explanation": "Vous pouvez voir des bugs si vous utilisez cette extension sur les sites bêtas. Aidez-moi en rapportant les bugs sur GitHub.",
   "supports": "Compatible avec",
-  "no-dc": "Deux Sous-titres n'est pas trouvé sur la page. Est-ce que vous êtes sur YouTube, Netflix, ou Amazon Prime Video? Essayez de rafraîchir.",
+  "no-dc": "Deux Sous-titres n'est pas trouvé sur la page. Est-ce que vous êtes sur YouTube ou Netflix? Essayez de rafraîchir.",
   "no-player": "Le player video n'est pas trouvé sur la page.",
   "generic-hint": "Sur la page, commencez les sous-titres.",
   "youtube-hint": "Sur YouTube, cliquez sur le bouton CC pour commencer les sous-titres.",
@@ -27,7 +27,11 @@
   "leave-feedback": "Donner un avis",
   "useCaptionsFromVideo": "Utiliser les sous-titres du vidéo (YouTube & Netflix)",
   "native-subtitles": "Si le vidéo a les sous-titres de la deuxième langue, ✓ signifie que ça vient du vidéo.",
-  "netflix-step-2-part-1": "Pour utiliser les sous-titres de Netflix,",
-  "netflix-step-2-part-2": "Sélectionner les sous-titres sur Netflix pour les charger ici.",
-  "netflix-step-2-part-3": "Sous-titres chargés:"
+  "netflix-step-2-part-2": "Sélectionner les sous-titres sur le site pour les charger ici.",
+  "netflix-step-2-part-3": "Sous-titres chargés:",
+  "amazon-sorry-1": "Désolé, Amazon Video a été supprimée dans v1.6.0.",
+  "amazon-sorry-2": "Ouvrez un bug sur GitHub si vous voulez Amazon Video dans v2.",
+  "translation-request-1": "J'essaye de charger les sous-titres...",
+  "translation-request-2": "Quel est ce langage?",
+  "submit": "OK"
 }

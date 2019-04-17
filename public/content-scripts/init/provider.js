@@ -8,12 +8,7 @@ class TranslationProvider {
     // Props
     this.__captions = {};
     this.fallbackProvider = {
-      translate: (text, language, currentTime) => {
-        return window.DC.translate(text, {
-          from: 'auto',
-          to: language
-        });
-      }
+      translate: () => Promise.reject('No fallback provider installed.')
     };
 
     // Methods
@@ -21,17 +16,7 @@ class TranslationProvider {
   }
 
   requestLanguage(language) {
-    return new Promise((resolve, reject) => {
-      if (this.__captions.hasOwnProperty(language)) {
-        resolve();
-      } else {
-        this.fetcher.fetchCaptions(language, this.adapter.getVideoId())
-          .then(this.parser.parse)
-          .then(captions => this.__loadCaptions(captions, language))
-          .then(resolve)
-          .catch(reject);
-      }
-    });
+    return Promise.resolve();
   }
 
   findCaptionForTime(captions, currentTime) {
@@ -99,7 +84,7 @@ class TranslationProvider {
         const captionToRender = this.findCaption(captions, currentTime, this.adapter.captionsMayNotMatchUp);
         if (captionToRender) {
           resolve({
-            text: `${captionToRender.text} ✓`
+            text: captionToRender.text
           });
         } else {
           this.fallbackProvider

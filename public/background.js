@@ -1,6 +1,7 @@
 // To expose the pattern for testing in src/tests/background.test.js
 window.NETFLIX_CAPTION_REQUEST_PATTERN = 'https://*.nflxvideo.net/?o=*&v=*&e=*&t=*';
 
+window.youtubeCaptionRequestsInFlight = {};
 window.netflixCaptionRequestsInFlight = {};
 
 class BackgroundPage {
@@ -29,15 +30,16 @@ class BackgroundPage {
   }
 
   _onBeforeYouTubeCaptionRequest(details) {
-    const url = new URL(details.url);
-    const videoId = url.searchParams.get('v');
-
-    if (videoId) {
-      url.searchParams.delete('name');
-      // ^ 'Named' subtitle requests are not supported at this time.
-      // For more information, see https://github.com/mikesteele/dual-captions/issues/57
-      this.captionRequestUrls.youtube[videoId] = url.href;
-      console.log(`Background - Adding ${details.url} to captionRequestUrls.youtube.${videoId}`);
+    if (!window.youtubeCaptionRequestsInFlight.hasOwnProperty(details.url)) {
+      window.youtubeCaptionRequestsInFlight[details.url] = 1;
+      window.sendMessageToActiveTab({
+        type: 'process-caption-request',
+        payload: details.url
+      }).then(response => {
+        delete window.youtubeCaptionRequestsInFlight[details.url];
+      }).catch(err => {
+        console.log(`Couldn't process YouTube caption request. Error: ${err}`);
+      });
     }
   }
 
@@ -45,7 +47,7 @@ class BackgroundPage {
     if (!window.netflixCaptionRequestsInFlight.hasOwnProperty(details.url)) {
       window.netflixCaptionRequestsInFlight[details.url] = 1;
       window.sendMessageToActiveTab({
-        type: 'process-netflix-caption-request',
+        type: 'process-caption-request',
         payload: details.url
       }).then(response => {
         delete window.netflixCaptionRequestsInFlight[details.url];
@@ -62,6 +64,11 @@ class BackgroundPage {
         ok: true,
         captionRequestUrls: this.captionRequestUrls
       });
+      break;
+
+      case 'set-icon':
+      const iconPath = message.payload.hasNotications ? 'icon-notification.png' : 'icon.png';
+      window.chrome.browserAction.setIcon({ path: iconPath, tabId: sender.tab.id });
       break;
     }
   }

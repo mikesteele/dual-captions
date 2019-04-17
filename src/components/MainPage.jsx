@@ -20,8 +20,7 @@ class MainPage extends Component {
   }
 
   render() {
-    const secondLanguagesKeys = Object.keys(config.secondLanguages);
-    const secondLanguages = secondLanguagesKeys.map(language => (
+    const secondLanguages = this.props.loadedLanguages.map(language => (
       <option
         key={language}
         value={language}>
@@ -29,29 +28,33 @@ class MainPage extends Component {
       </option>
     ));
     const loadedLanguages = this.props.loadedLanguages.map(lang => config.secondLanguages[lang] || lang);
+    if (this.props.detectedSite === 'amazon') {
+      return (
+        <div className='page'>
+          {this.props.t('amazon-sorry-1')}
+          <br/><br/>
+          {this.props.t('amazon-sorry-2')}
+        </div>
+      );
+    }
     return (
       <div className='page'>
         <Step stepNumber={1}>
           <Hint detectedSite={this.props.detectedSite} loadedLanguages={this.props.loadedLanguages}/>
         </Step>
-        {this.props.detectedSite === 'netflix' && (
-          <Step stepNumber={2}>
+        <Step stepNumber={2}>
+          <div>
             <div>
-              <div>
-                {this.props.t('netflix-step-2-part-1')}
-              </div>
-              <div>
-                {this.props.t('netflix-step-2-part-2')}
-              </div>
-              {this.props.loadedLanguages.length > 0 && (
-                <div>
-                  {this.props.t('netflix-step-2-part-3')} {loadedLanguages.join(', ')}
-                </div>
-              )}
+              {this.props.t('netflix-step-2-part-2')}
             </div>
-          </Step>
-        )}
-        <Step stepNumber={this.props.detectedSite === 'netflix' ? 3 : 2}>
+            {this.props.loadedLanguages.length > 0 && (
+              <div style={{marginTop: '16px'}}>
+                {this.props.t('netflix-step-2-part-3')} {loadedLanguages.join(', ')}
+              </div>
+            )}
+          </div>
+        </Step>
+        <Step stepNumber={3}>
           <Fragment>
             <label>
               <Toggle
@@ -64,7 +67,8 @@ class MainPage extends Component {
               <select
                 value={this.props.secondLanguage}
                 onChange={this._onSecondLanguageSelectChanged.bind(this)}>
-                { secondLanguages }
+                  <option value='none' key='none'></option>
+                  { secondLanguages }
               </select>
               <div>{this.props.t('second-subtitle-language')}</div>
             </label>
