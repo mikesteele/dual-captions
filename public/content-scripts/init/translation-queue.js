@@ -4,8 +4,6 @@ class TranslationQueue {
      *  text: string
      *  isResolved: boolean
      *  callbacks: [(language) => void]
-     *  TODO - URL?
-     *  TODO - Language?
      */
     this._queue = [];
 
@@ -58,7 +56,6 @@ class TranslationQueue {
     }
   }
 
-  // TODO - Rename to requestLanguageFromUser()?
   addToQueue(text) {
     return new Promise((resolve, reject) => {
       const isInQueue = this._queue.find(i => i.text === text);

@@ -29,5 +29,10 @@
   "native-subtitles": "If video has captions in second language, ✓ means it's a caption from the video.",
   "turn-off-native-subtitles": "Having issues? You can turn it off in the Settings panel via 'Use captions from video'.",
   "netflix-step-2-part-2": "Select subtitles on the page to load them into this app.",
-  "netflix-step-2-part-3": "Subtitles loaded here:"
+  "netflix-step-2-part-3": "Subtitles loaded here:",
+  "amazon-sorry-1": "Sorry, Amazon Video support has been removed in v1.6.0.",
+  "amazon-sorry-2": "Please open an issue if you'd like support added back in v2.",
+  "translation-request-1": "Trying to load captions...",
+  "translation-request-2": " What language is this?",
+  "submit": "Submit"
 }

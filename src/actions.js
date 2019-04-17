@@ -83,12 +83,6 @@ export function determineState() {
           });
           resolve();
         } else if (savedStore) {
-          /** TODO - Add back
-          dispatch({
-            type: 'CHANGE_SECOND_LANGUAGE',
-            payload: savedStore.secondLanguage
-          });
-          **/
           dispatch({
             type: 'CHANGE_SETTINGS',
             payload: savedStore.settings

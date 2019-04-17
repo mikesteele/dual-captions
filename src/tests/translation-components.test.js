@@ -3,7 +3,7 @@ import sinon from 'sinon';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 import './chrome-mock';
-import TranslationQueue from '../components/TranslationRequest.jsx';
+import { TranslationQueue } from '../components/TranslationRequest.jsx';
 
 import '../../public/content-scripts/init/init';
 import '../../public/content-scripts/init/translation-queue';
@@ -40,7 +40,8 @@ describe('TranslationQueue', () => {
     // Mock queue in DC
     dcQueue._queue = MOCK_QUEUE;
 
-    const wrapper = mount(<TranslationQueue/>);
+    const translationsMock = key => key;
+    const wrapper = mount(<TranslationQueue t={translationsMock} />);
     wrapper.update();
 
     // Popup requests queue on mount

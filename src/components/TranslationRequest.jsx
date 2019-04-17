@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 import { sendMessageToActiveTab } from '../utils/chrome';
 import config from '../config';
 
@@ -34,18 +35,19 @@ class TranslationRequest extends React.Component {
       </option>
     ));
     const captionAsHtml = { __html: this.props.text };
+    const t = this.props.t;
     return (
       <div className='translation-request'>
         <div className='translation-request-inner'>
-          <div>Trying to load captions...</div>
-          <div>What language is this?</div>
+          <div>{t('translation-request-1')}</div>
+          <div>{t('translation-request-2')}</div>
           <div dangerouslySetInnerHTML={captionAsHtml}/>
           <select
             value={this.state.selectedLanguage}
             onChange={this.onLanguageSelectChanged}>
             { secondLanguages }
           </select>
-          <button onClick={this.onClickSubmitButton}>Submit</button>
+          <button onClick={this.onClickSubmitButton}>{t('submit')}</button>
         </div>
       </div>
     )
@@ -57,11 +59,10 @@ class TranslationQueue extends React.Component {
     super(props);
     this.state = {
       queue: []
-      // TODO - Add "currentTranslationRequest"
     }
     this.getQueue = this.getQueue.bind(this);
 
-    // For stubbing support via sinon.stub() - TODO - Still need?
+    // For stubbing support via sinon.stub()
     this.sendMessageToActiveTab = sendMessageToActiveTab;
   }
 
@@ -99,8 +100,7 @@ class TranslationQueue extends React.Component {
           queue
         });
       } else {
-        console.error(response.error)
-        // TODO - ?
+        console.error(response.error);
       }
     });
   }
@@ -117,6 +117,7 @@ class TranslationQueue extends React.Component {
               text={request.text}
               key={request.text}
               index={index}
+              t={this.props.t}
               onLanguageSelected={this.resolveTranslation.bind(this)}
             />
           );
@@ -133,4 +134,5 @@ class TranslationQueue extends React.Component {
   }
 }
 
-export default TranslationQueue;
+export { TranslationQueue };
+export default translate()(TranslationQueue);

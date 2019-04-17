@@ -28,5 +28,10 @@
   "useCaptionsFromVideo": "Utiliser les sous-titres du vidéo (YouTube & Netflix)",
   "native-subtitles": "Si le vidéo a les sous-titres de la deuxième langue, ✓ signifie que ça vient du vidéo.",
   "netflix-step-2-part-2": "Sélectionner les sous-titres sur le site pour les charger ici.",
-  "netflix-step-2-part-3": "Sous-titres chargés:"
+  "netflix-step-2-part-3": "Sous-titres chargés:",
+  "amazon-sorry-1": "Désolé, Amazon Video a été supprimée dans v1.6.0.",
+  "amazon-sorry-2": "Ouvrez un bug sur GitHub si vous voulez Amazon Video dans v2.",
+  "translation-request-1": "J'essaye de charger les sous-titres...",
+  "translation-request-2": "Quel est ce langage?",
+  "submit": "OK"
 }
