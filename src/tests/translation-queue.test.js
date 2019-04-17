@@ -49,10 +49,8 @@ it('should pass integration test', done => {
     type: 'get-queue'
   }, null, response => {
     expect(response.ok).to.be.true;
-    expect(response.payload[0]).to.deep.equal({
-      text: 'Some test string',
-      isResolved: false
-    });
+    expect(response.payload[0].text).to.equal('Some test string');
+    expect(response.payload[0].isResolved).to.be.false;
 
     // Sanity test: the addToQueue promise should still be pending
     expect(successStub.called).to.be.false;
@@ -62,7 +60,7 @@ it('should pass integration test', done => {
     queue.onMessage({
       type: 'resolve-translation',
       payload: {
-        index: 0,
+        text: 'Some test string',
         language: 'en'
       }
     }, null, response => {
@@ -92,7 +90,7 @@ it('should handle trying to re-add same request to the queue', done => {
   queue.onMessage({
     type: 'resolve-translation',
     payload: {
-      index: 0,
+      text: 'test',
       language: 'jp'
     }
   }, null, response => {
