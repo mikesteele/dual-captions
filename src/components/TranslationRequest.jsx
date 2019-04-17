@@ -74,13 +74,13 @@ class TranslationQueue extends React.Component {
     this.sendMessageToActiveTab({
       type: 'get-queue'
     }).then(response => {
-      if (response.ok) {
+      if (response && response.ok) {
         this.setState({
           queue: response.payload
         });
       }
     }).catch(err => {
-      console.log(err);
+      // No-op
     });
   }
 

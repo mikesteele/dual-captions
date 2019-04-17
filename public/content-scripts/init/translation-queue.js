@@ -99,13 +99,28 @@ class TranslationQueue {
   }
 
   setIconToNormal() {
-    // TODO - Send message to background page
+    window.chrome.runtime.sendMessage({
+      type: 'set-icon',
+      payload: {
+        hasNotications: false
+      }
+    }, response => {
+      // No-op
+    });
   }
 
   setIconToHasNotification() {
-    // TODO - Send message to background page
+    window.chrome.runtime.sendMessage({
+      type: 'set-icon',
+      payload: {
+        hasNotications: true
+      }
+    }, response => {
+      // No-op
+    });
   }
 }
+
 
 window.DC.translationQueue = new TranslationQueue();
 window.TranslationQueue = TranslationQueue;

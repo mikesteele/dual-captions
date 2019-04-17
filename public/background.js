@@ -65,6 +65,11 @@ class BackgroundPage {
         captionRequestUrls: this.captionRequestUrls
       });
       break;
+
+      case 'set-icon':
+      const iconPath = message.payload.hasNotications ? 'icon-notification.png' : 'icon.png';
+      window.chrome.browserAction.setIcon({ path: iconPath, tabId: sender.tab.id });
+      break;
     }
   }
 }
