@@ -1,30 +1,19 @@
-## dual-captions <br/> Subtitles in two languages for YouTube, Netflix and Amazon Video
+## dual-captions <br/> Subtitles in two languages for YouTube & Netflix
 ![build](https://travis-ci.com/mikesteele/dual-captions.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/mikesteele/dual-captions/badge.svg)](https://coveralls.io/github/mikesteele/dual-captions)
 
 ### ⚠️ Note: Version 2 is currently being developed <a href="https://github.com/mikesteele/dc2">in a seperate repo</a>. Learn about the motivations for a rewrite in that repo's README.
 
-| Netflix  |
-|:--------:|
-| <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/netflix.png"> |
-
-| YouTube      | Amazon        |
+| YouTube      | Netflix       |
 |:-------------:|:-------------:|
-| <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/youtube.png"> | <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/amazon.png"> |
+| <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/youtube.png"> | <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/netflix.png"> |
 
 ### <a href="https://www.youtube.com/watch?v=grYMOv9K3kY" target="_blank">Watch video demo</a>
-### Fast Facts
-
-* Targeted at **language learners** who need what the speaker is saying and the translation in user's native language.
-* 100+ languages supported. 🌎
-* Uses captions from video if available.
-* If second language is unavailable, it uses Google Translate to translate captions into target language.
-* Free! No API key required.
 
 ### Intro
 
 As someone learning a foreign language, it is helpful for me to see both what the speaker is saying and the translation.
 
-This Chrome Extension creates a MutationObserver which waits for new caption elements to be added to the DOM. It then translates the text of these captions and adds the translated captions underneath.  If the video has subtitles in the second language, it uses those subtitles as translations and marks them with a ✓.
+This Chrome Extension listens for caption requests from YouTube & Netflix, replays them, parses their content, and loads them for use as second captions. It also creates a MutationObserver which waits for new caption elements to be added to the DOM. Once it sees a new caption was added, it checks if there's a matching caption that has been loaded, and renders it.
 
 ### File Structure
 
