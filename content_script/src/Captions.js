@@ -144,4 +144,19 @@ class Captions extends React.Component {
   }
 }
 
-export default Captions;
+// Helper for creating a Portal to adapter.fullscreenRoot if fullscreen enabled
+const FullscreenHOC = props => {
+  const {
+    adapter,
+    settings,
+  } = props;
+  if (adapter.fullscreenRoot) {
+    return ReactDOM.createPortal((
+      <Captions {...props}/>
+    ), adapter.fullscreenRoot);
+  } else {
+    return <Captions {...props}/>
+  }
+};
+
+export default FullscreenHOC;
