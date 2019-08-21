@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<tt xmlns:tt="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:tickRate="10000000" ttp:timeBase="media" xmlns="http://www.w3.org/ns/ttml">
+<head>
+<ttp:profile use="http://netflix.com/ttml/profile/dfxp-ls-sdh"/>
+<styling>
+<style tts:backgroundColor="transparent" tts:color="white" tts:fontSize="100%" tts:fontWeight="normal" xml:id="style.default"/>
+<style tts:backgroundColor="transparent" tts:color="white" tts:fontSize="100%" tts:fontStyle="italic" tts:fontWeight="normal" xml:id="style.default_1"/>
+</styling>
+<layout>
+<region tts:displayAlign="after" tts:extent="80.00% 80.00%" tts:origin="10.00% 10.00%" tts:textAlign="center" xml:id="region.after.center"/>
+<region tts:displayAlign="before" tts:extent="80.00% 80.00%" tts:origin="10.00% 10.00%" tts:textAlign="center" xml:id="region.before.center"/>
+</layout>
+</head>
+<body>
+<div xml:space="preserve">
+<p begin="133049582t" end="149732916t" region="region.after.center" style="style.default" xml:id="subtitle0">[car engine revving]</p>
+<p begin="150567082t" end="176843332t" region="region.after.center" style="style.default" xml:id="subtitle1">-[tires screeching]<br/>-[Chase] In just the last few weeks,</p>
+<p begin="177677500t" end="218551666t" region="region.after.center" style="style.default" xml:id="subtitle2">this Carmen Sandiego has managed<br/>to rob millions of euros combined</p>
+<p begin="219385832t" end="253586666t" region="region.after.center" style="style.default" xml:id="subtitle3">from a Swiss bank,<br/>a high-end art gallery in Cairo,</p>
+<p begin="254420832t" end="273606666t" region="region.after.center" style="style.default" xml:id="subtitle4">and a Shanghai amusement park.</p>
+<p begin="274440832t" end="295712082t" region="region.after.center" style="style.default" xml:id="subtitle5">Before vanishing without a trace.</p>
+<p begin="296546250t" end="316983332t" region="region.after.center" style="style.default" xml:id="subtitle6">Headquarters has yet to discern<br/>any pattern</p>
+<p begin="320320000t" end="363279582t" region="region.after.center" style="style.default" xml:id="subtitle7">except that our perpetrator<br/>always wears a scarlet coat and fedora</p>
+<p begin="364113750t" end="379962916t" region="region.after.center" style="style.default" xml:id="subtitle8">and seems to announce her crimes</p>
+<p begin="380797082t" end="409992916t" region="region.after.center" style="style.default" xml:id="subtitle9">by making random<br/>public appearances beforehand.</p>
+<p begin="410827082t" end="445444999t" region="region.after.center" style="style.default" xml:id="subtitle10">[Chase] Such as the nearby cafÃ© sighting<br/>earlier today.</p>
+<p begin="447947499t" end="489655832t" region="region.after.center" style="style.default" xml:id="subtitle11">So we must ask ourselves,<br/>who in the world <span style="style.default_1">is</span> Carmen Sandiego?</p>
+<p begin="490489999t" end="510927082t" region="region.after.center" style="style.default" xml:id="subtitle12">Why would a thief<br/>draw attention to herself</p>
+<p begin="511761249t" end="537620416t" region="region.after.center" style="style.default" xml:id="subtitle13">by leaving clues and wearing bold colors?</p>
+<p begin="539705832t" end="560977082t" region="region.after.center" style="style.default" xml:id="subtitle14">Perhaps stealing's a game to her.</p>
+<p begin="561811250t" end="582248332t" region="region.after.center" style="style.default" xml:id="subtitle15">[scoffs] Ha! The game is over.</p>
+<p begin="583082500t" end="616449166t" region="region.after.center" style="style.default" xml:id="subtitle16">She is in my jurisdiction now,<br/>though I question why.</p>
+<p begin="617283332t" end="644393750t" region="region.after.center" style="style.default" xml:id="subtitle17">Poitiers is rich with medieval history.</p>
+<p begin="645227916t" end="668584582t" region="region.after.center" style="style.default" xml:id="subtitle18">Perhaps she is targeting<br/>a priceless antique</p>
+<p begin="669418750t" end="697780416t" region="region.after.center" style="style.default" xml:id="subtitle19">or historic artifact<br/>from one of its many churches, or--</p>
+<p begin="698614582t" end="707373332t" region="region.after.center" style="style.default" xml:id="subtitle20">[tires screech]</p>
+<p begin="717383332t" end="754503750t" region="region.after.center" style="style.default" xml:id="subtitle21">Ms. Argent, you are an agent of Interpol,<br/>not a museum guide.</p>
+<p begin="756589166t" end="794543750t" region="region.after.center" style="style.default" xml:id="subtitle22">So you may stop sharing dull facts<br/>about boring things.</p>
+<p begin="795377916t" end="823322500t" region="region.after.center" style="style.default" xml:id="subtitle23">You have been on the force<br/>merely a fortnight, have you not?</p>
+<p begin="829995832t" end="844176666t" region="region.after.center" style="style.default" xml:id="subtitle24">You have so much to learn,</p>
+<p begin="846262082t" end="862945416t" region="region.after.center" style="style.default" xml:id="subtitle25">and since you have been assigned<br/>to my department,</p>
+<p begin="863779582t" end="872121249t" region="region.after.center" style="style.default" xml:id="subtitle26">Um, uh...</p>
+<p begin="872955416t" end="907156249t" region="region.after.center" style="style.default" xml:id="subtitle27">I, Chase Devineaux, will be your teacher.</p>
+<p begin="907990416t" end="930512916t" region="region.after.center" style="style.default" xml:id="subtitle28">-Inspector Devineaux, sir--<br/>-Nuh-uh.</p>
+<p begin="932598332t" end="966799166t" region="region.after.center" style="style.default" xml:id="subtitle29">Sit back, watch,<br/>and learn how to catch a thief.</p>
+<p begin="967633332t" end="977643332t" region="region.after.center" style="style.default" xml:id="subtitle30">She's right there!</p>
+<p begin="978477499t" end="987236249t" region="region.after.center" style="style.default" xml:id="subtitle31">Huh?</p>
+<p begin="996412082t" end="1017683332t" region="region.after.center" style="style.default" xml:id="subtitle32">[hook clanks, line whirrs]</p>
+<p begin="1018517499t" end="1032281249t" region="region.after.center" style="style.default" xml:id="subtitle33">La Femme Rouge!</p>
+<p begin="1035200832t" end="1058140416t" region="region.after.center" style="style.default" xml:id="subtitle34">[tires screeching]</p>
+<p begin="1058974582t" end="1075240832t" region="region.after.center" style="style.default" xml:id="subtitle35">[engine revving]</p>
+<p begin="1127376250t" end="1138220416t" region="region.after.center" style="style.default" xml:id="subtitle36">Remain here!</p>
+<p begin="1139054582t" end="1151567082t" region="region.after.center" style="style.default" xml:id="subtitle37">And radio for assistance?</p>
+<p begin="1154486666t" end="1177426250t" region="region.after.center" style="style.default" xml:id="subtitle38">No, the crimson ghost is mine!</p>
+<p begin="1272104166t" end="1289204582t" region="region.after.center" style="style.default" xml:id="subtitle39">On top of the world.</p>
+<p begin="1293375416t" end="1311310000t" region="region.after.center" style="style.default" xml:id="subtitle40">I can see <span style="style.default_1">La CathÃ©drale Saint-Pierre</span><br/>from here.</p>
+<p begin="1312144166t" end="1327576250t" region="region.after.center" style="style.default" xml:id="subtitle41">-[intercom beeps]<br/>-[Player] <span style="style.default_1">Friendly advice?</span></p>
+<p begin="1330912916t" end="1353018332t" region="region.after.center" style="style.default" xml:id="subtitle42"><span style="style.default_1">Save the sightseeing for after the job.</span></p>
+<p begin="1353852500t" end="1380128750t" region="region.after.center" style="style.default" xml:id="subtitle43">[chuckles] Player, glad to hear<br/>you're on board.</p>
+<p begin="1380962916t" end="1402234166t" region="region.after.center" style="style.default" xml:id="subtitle44"><span style="style.default_1">You know I wouldn't miss</span><br/><span style="style.default_1">a night out with you for the world, Red.</span></p>
+<p begin="1407656250t" end="1421837082t" region="region.after.center" style="style.default" xml:id="subtitle45">Let's get this party started.</p>
+<p begin="1424339582t" end="1432681250t" region="region.after.center" style="style.default" xml:id="subtitle46">[knuckles crackle]</p>
+<p begin="1462711250t" end="1488153332t" region="region.after.center" style="style.default" xml:id="subtitle47">[Player] Virtual Paris sure looks lovely<br/>this time of year.</p>
+<p begin="1494409582t" end="1512344166t" region="region.after.center" style="style.default" xml:id="subtitle48">Touring through France,</p>
+<p begin="1514429582t" end="1544876666t" region="region.after.center" style="style.default" xml:id="subtitle49">locking onto your position<br/>over there in Poitiers...</p>
+<p begin="1548213332t" end="1560725832t" region="region.after.center" style="style.default" xml:id="subtitle50"><span style="style.default_1">and we're synced.</span></p>
+<p begin="1561560000t" end="1576575000t" region="region.after.center" style="style.default" xml:id="subtitle51"><span style="style.default_1">If our intel is accurate,</span></p>
+<p begin="1577409166t" end="1621202916t" region="region.after.center" style="style.default" xml:id="subtitle52"><span style="style.default_1">the next stop on your sightseeing tour</span><br/><span style="style.default_1">of historic Poitiers should be...</span></p>
+<p begin="1622037082t" end="1637469166t" region="region.after.center" style="style.default" xml:id="subtitle53"><span style="style.default_1">50 yards dead ahead.</span></p>
+<p begin="1709207499t" end="1734232499t" region="region.after.center" style="style.default" xml:id="subtitle54">-How's my temperature?<br/><span style="style.default_1">-Warm, Red.</span></p>
+<p begin="1778026249t" end="1791372916t" region="region.after.center" style="style.default" xml:id="subtitle55"><span style="style.default_1">Getting warmer.</span></p>
+<p begin="1828910416t" end="1841839999t" region="region.after.center" style="style.default" xml:id="subtitle56">[Player] <span style="style.default_1">You're red hot.</span></p>
+<p begin="2027859166t" end="2036200832t" region="region.after.center" style="style.default" xml:id="subtitle57">[beeps]</p>
+<p begin="2042457082t" end="2062477082t" region="region.after.center" style="style.default" xml:id="subtitle58">-[keyboard clicking]<br/>-[beeping]</p>
+<p begin="2073738332t" end="2092924166t" region="region.after.center" style="style.default" xml:id="subtitle59">Analyzing frequencies.</p>
+<p begin="2093758332t" end="2110858749t" region="region.after.center" style="style.default" xml:id="subtitle60">Decrypting security codes.</p>
+<p begin="2131295832t" end="2146727916t" region="region.after.center" style="style.default" xml:id="subtitle61">Alarm system disabled.</p>
+<p begin="2147562082t" end="2155903750t" region="region.after.center" style="style.default" xml:id="subtitle62">[beeps]</p>
+<p begin="2168833332t" end="2185933750t" region="region.after.center" style="style.default" xml:id="subtitle63">[Player]<span style="style.default_1"> But I'm picking up</span><br/><span style="style.default_1">another signal.</span></p>
+<p begin="2191772916t" end="2205536666t" region="region.after.center" style="style.default" xml:id="subtitle64">Could be a trap.</p>
+<p begin="2209707500t" end="2225139582t" region="region.after.center" style="style.default" xml:id="subtitle65">Let's find out.</p>
+<p begin="2258923332t" end="2272687082t" region="region.after.center" style="style.default" xml:id="subtitle66"><span style="style.default_1">Watch your step, Red.</span></p>
+<p begin="2279360416t" end="2318149166t" region="region.after.center" style="style.default" xml:id="subtitle67">[whirring]</p>
+<p begin="2338169166t" end="2355686666t" region="region.after.center" style="style.default" xml:id="subtitle68">"Watch my step."</p>
+<p begin="2356520832t" end="2365279582t" region="region.after.center" style="style.default" xml:id="subtitle69">[beeps]</p>
+<p begin="2384048332t" end="2394058332t" region="region.after.center" style="style.default" xml:id="subtitle70">[grunts]</p>
+<p begin="2404902500t" end="2419500416t" region="region.after.center" style="style.default" xml:id="subtitle71">[thumping]</p>
+<p begin="2436600832t" end="2453701250t" region="region.after.center" style="style.default" xml:id="subtitle72">Well, this just became<br/>worth a whole lot less.</p>
+<p begin="2454535416t" end="2466630832t" region="region.after.center" style="style.default" xml:id="subtitle73">[rattles]</p>
+<p begin="2576740832t" end="2606770832t" region="region.after.center" style="style.default" xml:id="subtitle74">[elevator creaking]</p>
+<p begin="2607605000t" end="2641805832t" region="region.after.center" style="style.default" xml:id="subtitle75">Why must the elevator<br/>date back two centuries?</p>
+<p begin="2644308332t" end="2667665000t" region="region.after.center" style="style.default" xml:id="subtitle76">[yells] Was no one ever<br/>in a hurry back then?</p>
+<p begin="2671835832t" end="2693941250t" region="region.after.center" style="style.default" xml:id="subtitle77">Okay, who walls up an atrium?</p>
+<p begin="2694775416t" end="2703117082t" region="region.after.center" style="style.default" xml:id="subtitle78">[raps]</p>
+<p begin="2710624582t" end="2728976250t" region="region.after.center" style="style.default" xml:id="subtitle79">[Player] <span style="style.default_1">Anyone who values storage</span><br/><span style="style.default_1">over natural light.</span></p>
+<p begin="2732312916t" end="2754418332t" region="region.after.center" style="style.default" xml:id="subtitle80">He said, a little too knowingly.</p>
+<p begin="2755252500t" end="2789870416t" region="region.after.center" style="style.default" xml:id="subtitle81"><span style="style.default_1">Don't judge.</span><br/><span style="style.default_1">I'm happy here in my dark little cave.</span></p>
+<p begin="2839503332t" end="2852015832t" region="region.after.center" style="style.default" xml:id="subtitle82">You called it, Player.</p>
+<p begin="2860774582t" end="2895392500t" region="region.after.center" style="style.default" xml:id="subtitle83">Right tool for the job. Ah, this works.</p>
+<p begin="2904151250t" end="2916663750t" region="region.after.center" style="style.default" xml:id="subtitle84">[rapid beeping]</p>
+<p begin="2917497916t" end="2928759166t" region="region.after.center" style="style.default" xml:id="subtitle85">[creaking continues]</p>
+<p begin="2931261666t" end="2946693750t" region="region.after.center" style="style.default" xml:id="subtitle86">[elevator bell rings]</p>
+<p begin="2947527916t" end="2955869582t" region="region.after.center" style="style.default" xml:id="subtitle87">[panting]</p>
+<p begin="2993407082t" end="3008422082t" region="region.after.center" style="style.default" xml:id="subtitle88">[gasps, grunts]</p>
+<p begin="3032612916t" end="3045959582t" region="region.after.center" style="style.default" xml:id="subtitle89">[beeps]</p>
+<p begin="3048462082t" end="3056803750t" region="region.after.center" style="style.default" xml:id="subtitle90">Safe cracked.</p>
+<p begin="3083914166t" end="3098095000t" region="region.after.center" style="style.default" xml:id="subtitle91">[lock clicks]</p>
+<p begin="3185265416t" end="3199029166t" region="region.after.center" style="style.default" xml:id="subtitle92">[Carmen] The Eye of Vishnu.</p>
+<p begin="3220717500t" end="3241154582t" region="region.after.center" style="style.default" xml:id="subtitle93">-[gasps]<br/><span style="style.default_1">-What is it, Red?</span></p>
+<p begin="3241988750t" end="3281611666t" region="region.after.center" style="style.default" xml:id="subtitle94">I'm staring at something I thought<br/>I'd never, ever set eyes on again.</p>
+<p begin="3291621666t" end="3302465832t" region="region.after.center" style="style.default" xml:id="subtitle95"><span style="style.default_1">It better be more valuable</span></p>
+<p begin="3303300000t" end="3330410416t" region="region.after.center" style="style.default" xml:id="subtitle96"><span style="style.default_1">than a sparkly blue gemstone</span><br/><span style="style.default_1">the size of my head.</span></p>
+<p begin="3332078750t" end="3346259582t" region="region.after.center" style="style.default" xml:id="subtitle97">Define "valuable."</p>
+<p begin="3348345000t" end="3367113749t" region="region.after.center" style="style.default" xml:id="subtitle98">They say beauty's<br/>in the eye of the beholder.</p>
+<p begin="3372535832t" end="3392972916t" region="region.after.center" style="style.default" xml:id="subtitle99">Are you gonna tell me<br/>what it is, Red, or--</p>
+<p begin="3393807082t" end="3403399999t" region="region.after.center" style="style.default" xml:id="subtitle100">[banging on door]</p>
+<p begin="3406319582t" end="3426756666t" region="region.after.center" style="style.default" xml:id="subtitle101">[Chase] Interpol! Open this door!</p>
+<p begin="3427590832t" end="3455118332t" region="region.after.center" style="style.default" xml:id="subtitle102">-[banging continues]<br/>-<span style="style.default_1">Bag the gem and get out of there already!</span></p>
+<p begin="3462208749t" end="3483897082t" region="region.after.center" style="style.default" xml:id="subtitle103">I said open up!</p>
+<p begin="3506419582t" end="3522685832t" region="region.after.center" style="style.default" xml:id="subtitle104">[groans, panting]</p>
+<p begin="3550213332t" end="3562725832t" region="region.after.center" style="style.default" xml:id="subtitle105">Stop, thief!</p>
+<p begin="3585248332t" end="3593589999t" region="region.after.center" style="style.default" xml:id="subtitle106">[yelps]</p>
+<p begin="3597343749t" end="3608604999t" region="region.after.center" style="style.default" xml:id="subtitle107">[grunts]</p>
+<p begin="3615695416t" end="3626539582t" region="region.after.center" style="style.default" xml:id="subtitle108">On whose authority?</p>
+<p begin="3636132499t" end="3662408749t" region="region.after.center" style="style.default" xml:id="subtitle109">On the authority of, uh...</p>
+<p begin="3663242916t" end="3687850832t" region="region.after.center" style="style.default" xml:id="subtitle110">[Carmen] Inspector Chase<br/>Devineaux, Interpol.</p>
+<p begin="3694107082t" end="3722468749t" region="region.after.center" style="style.default" xml:id="subtitle111">"Chase," huh?<br/>[scoffs] Let's see what's in a name.</p>
+<p begin="3734981249t" end="3743322916t" region="region.after.center" style="style.default" xml:id="subtitle112">[groans]</p>
+<p begin="3752915832t" end="3763342916t" region="region.after.center" style="style.default" xml:id="subtitle113">[grunts]</p>
+<p begin="3813809999t" end="3827990832t" region="region.after.center" style="style.default" xml:id="subtitle114">I order you to stop!</p>
+<p begin="3875538332t" end="3890553332t" region="region.after.center" style="style.default" xml:id="subtitle115">You didn't say for how long.</p>
+<p begin="3896392499t" end="3918914999t" region="region.after.center" style="style.default" xml:id="subtitle116">[Chase groans] It was implied!</p>
+<p begin="3994407082t" end="4010256249t" region="region.after.center" style="style.default" xml:id="subtitle117">[grunts]</p>
+<p begin="4028607916t" end="4041537499t" region="region.after.center" style="style.default" xml:id="subtitle118">[panting]</p>
+<p begin="4106185416t" end="4115361249t" region="region.after.center" style="style.default" xml:id="subtitle119">[shudders] Uh-hh!</p>
+<p begin="4196692499t" end="4210456249t" region="region.after.center" style="style.default" xml:id="subtitle120">-[clatters]<br/>-[gasps]</p>
+<p begin="4240069166t" end="4248410832t" region="region.after.center" style="style.default" xml:id="subtitle121">[grunts]</p>
+<p begin="4251747499t" end="4263008749t" region="region.after.center" style="style.default" xml:id="subtitle122"><span style="style.default_1">Au revoir.</span></p>
+<p begin="4321817500t" end="4338500832t" region="region.after.center" style="style.default" xml:id="subtitle123">[both gasp]</p>
+<p begin="4339335000t" end="4355184166t" region="region.after.center" style="style.default" xml:id="subtitle124">-[crackles]<br/>-[yelps]</p>
+<p begin="4366028332t" end="4390219166t" region="region.after.center" style="style.default" xml:id="subtitle125">-[groaning]<br/>-[roof creaks]</p>
+<p begin="4391053332t" end="4411907500t" region="region.after.center" style="style.default" xml:id="subtitle126">[wind whistling]</p>
+<p begin="4412741666t" end="4429007916t" region="region.after.center" style="style.default" xml:id="subtitle127">-[bangs]<br/>-[gasps]</p>
+<p begin="4429842082t" end="4449027916t" region="region.after.center" style="style.default" xml:id="subtitle128">[car alarm beeping]</p>
+<p begin="4454032916t" end="4472384582t" region="region.after.center" style="style.default" xml:id="subtitle129">[groaning]</p>
+<p begin="4479475000t" end="4498243750t" region="region.after.center" style="style.default" xml:id="subtitle130">Oof!</p>
+<p begin="4499077916t" end="4514510000t" region="region.after.center" style="style.default" xml:id="subtitle131">[alarm continues]</p>
+<p begin="4518263750t" end="4526605416t" region="region.after.center" style="style.default" xml:id="subtitle132">[car lock chirps]</p>
+<p begin="4527439582t" end="4546208332t" region="region.after.center" style="style.default" xml:id="subtitle133">-Did you just--?<br/>-Never mind that!</p>
+<p begin="4548293750t" end="4574570000t" region="region.after.center" style="style.default" xml:id="subtitle134">Where in the world is Carmen Sandiego?</p>
+<p begin="4575404166t" end="4598760832t" region="region.after.center" style="style.default" xml:id="subtitle135">[theme music playing]</p>
+<p begin="4776021250t" end="4784780000t" region="region.before.center" style="style.default" xml:id="subtitle136">[Carmen] My train.</p>
+<p begin="4785614166t" end="4797292500t" region="region.before.center" style="style.default" xml:id="subtitle137">-I'm right on time.<br/>-[intercom beeps]</p>
+<p begin="4798126666t" end="4833995832t" region="region.before.center" style="style.default" xml:id="subtitle138">[Player] <span style="style.default_1">Like you ever aren't.</span><br/><span style="style.default_1">Ticket purchased and uploading.</span></p>
+<p begin="4834830000t" end="4844840000t" region="region.after.center" style="style.default" xml:id="subtitle139">[beeping]</p>
+<p begin="4852764582t" end="4889885000t" region="region.before.center" style="style.default" xml:id="subtitle140">She has to land sometime.<br/>How far can she possibly get?</p>
+<p begin="4899060832t" end="4916161250t" region="region.before.center" style="style.default" xml:id="subtitle141">She is heading for the train station.</p>
+<p begin="4924085832t" end="4953281666t" region="region.before.center" style="style.default" xml:id="subtitle142">Secure the crime scene!<br/>Deduce what was stolen.</p>
+<p begin="4972050416t" end="4991653332t" region="region.after.center" style="style.default" xml:id="subtitle143">[Julia coughing]</p>
+<p begin="5043788750t" end="5057969582t" region="region.after.center" style="style.default" xml:id="subtitle144">[clicks]</p>
+<p begin="5139300832t" end="5154315832t" region="region.after.center" style="style.default" xml:id="subtitle145">[rattling]</p>
+<p begin="5183511666t" end="5196441250t" region="region.after.center" style="style.default" xml:id="subtitle146">-[tires screeching]<br/>-[train horn blaring]</p>
+<p begin="5227722500t" end="5244405832t" region="region.after.center" style="style.default" xml:id="subtitle147">-[groans]<br/>-[glass shatters]</p>
+<p begin="5258586666t" end="5280692082t" region="region.after.center" style="style.default" xml:id="subtitle148">[elevator creaking]</p>
+<p begin="5321983332t" end="5330325000t" region="region.after.center" style="style.default" xml:id="subtitle149">[cell phone ringing]</p>
+<p begin="5341169166t" end="5358686666t" region="region.after.center" style="style.default" xml:id="subtitle150">Inspector. Good news, I hope.</p>
+<p begin="5359520832t" end="5376621250t" region="region.after.center" style="style.default" xml:id="subtitle151">[Chase] <span style="style.default_1">Ms. Argent-- Julia--</span></p>
+<p begin="5377455416t" end="5408319582t" region="region.after.center" style="style.default" xml:id="subtitle152"><span style="style.default_1">you're the smartest person I know,</span><br/><span style="style.default_1">so tell me, please...</span></p>
+<p begin="5411239166t" end="5440017916t" region="region.after.center" style="style.default" xml:id="subtitle153">is it possible for an automobile<br/>to catch a moving train?</p>
+<p begin="5440852082t" end="5455867082t" region="region.after.center" style="style.default" xml:id="subtitle154">Driving aggressively, of course.</p>
+<p begin="5457535416t" end="5490902082t" region="region.after.center" style="style.default" xml:id="subtitle155">Well, I'm really not much<br/>of a math detective,</p>
+<p begin="5491736250t" end="5526354166t" region="region.after.center" style="style.default" xml:id="subtitle156">but I suppose it depends<br/>upon how many stops the train makes</p>
+<p begin="5527188332t" end="5543454582t" region="region.after.center" style="style.default" xml:id="subtitle157">and for how long at each.</p>
+<p begin="5544288750t" end="5582660416t" region="region.after.center" style="style.default" xml:id="subtitle158">Mm-hmm. Then perhaps I shall catch<br/>this Little Red Robbing Hood.</p>
+<p begin="5583494582t" end="5596007082t" region="region.after.center" style="style.default" xml:id="subtitle159">[beeps]</p>
+<p begin="5717378332t" end="5734478750t" region="region.after.center" style="style.default" xml:id="subtitle160">First class. Sweet.</p>
+<p begin="5741986250t" end="5760755000t" region="region.after.center" style="style.default" xml:id="subtitle161">My treat, Red. You earned it.</p>
+<p begin="5799543750t" end="5812473332t" region="region.after.center" style="style.default" xml:id="subtitle162">Well, well.</p>
+<p begin="5817478332t" end="5831659166t" region="region.after.center" style="style.default" xml:id="subtitle163">[whirring]</p>
+<p begin="5837081250t" end="5857101250t" region="region.after.center" style="style.default" xml:id="subtitle164">Blast from the past, eh?</p>
+<p begin="5877121250t" end="5896307082t" region="region.after.center" style="style.default" xml:id="subtitle165">-[static crackles]<br/>-[key beeps]</p>
+<p begin="5897141250t" end="5915910000t" region="region.after.center" style="style.default" xml:id="subtitle166">Red! Carmen!</p>
+<p begin="5949276666t" end="5973884582t" region="region.after.center" style="style.default" xml:id="subtitle167">Dude, seriously? Static cling?</p>
+<p begin="5976387082t" end="6002663332t" region="region.after.center" style="style.default" xml:id="subtitle168">Side effect of the directional EMP.</p>
+<p begin="6003497500t" end="6034361666t" region="region.after.center" style="style.default" xml:id="subtitle169">So you can forget about<br/>reaching for your phone or fancy toys.</p>
+<p begin="6035195832t" end="6043537500t" region="region.after.center" style="style.default" xml:id="subtitle170">They're dead.</p>
+<p begin="6047708332t" end="6081909166t" region="region.after.center" style="style.default" xml:id="subtitle171">I know how an electromagnetic pulse<br/>works, Gray.</p>
+<p begin="6082743332t" end="6107768332t" region="region.after.center" style="style.default" xml:id="subtitle172">You aren't the only one<br/>who passed Dr. Bellum's class.</p>
+<p begin="6119446666t" end="6138632500t" region="region.after.center" style="style.default" xml:id="subtitle173">And you didn't really think<br/>I'd take any of your bait</p>
+<p begin="6139466666t" end="6170330832t" region="region.after.center" style="style.default" xml:id="subtitle174">without checking for a tracking device,<br/>did you, Gray?</p>
+<p begin="6175335832t" end="6204114582t" region="region.after.center" style="style.default" xml:id="subtitle175">That's right, I <span style="style.default_1">wanted</span> you to find me.</p>
+<p begin="6213707500t" end="6235812916t" region="region.after.center" style="style.default" xml:id="subtitle176">It's time we tied up loose ends.</p>
+<p begin="6236647082t" end="6273350416t" region="region.after.center" style="style.default" xml:id="subtitle177">You were the only loose end<br/>until five seconds ago</p>
+<p begin="6274184582t" end="6310053750t" region="region.after.center" style="style.default" xml:id="subtitle178">when I captured<br/>the elusive Carmen Sandiego.</p>
+<p begin="6313807500t" end="6327571250t" region="region.after.center" style="style.default" xml:id="subtitle179">Or should I call you...</p>
+<p begin="6332576250t" end="6347174166t" region="region.after.center" style="style.default" xml:id="subtitle180">"Black Sheep"?</p>
+<p begin="6401812082t" end="6445605832t" region="region.after.center" style="style.default" xml:id="subtitle181">[Brunt] Welcome to VILE<br/>Training Academy for thieves.</p>
+<p begin="6446440000t" end="6507334166t" region="region.after.center" style="style.default" xml:id="subtitle182">V-I-L-E. Valuable Imports, Lavish Exports.</p>
+<p begin="6508168332t" end="6538615416t" region="region.after.center" style="style.default" xml:id="subtitle183">We traffic stolen goods<br/>to the four corners of the globe.</p>
+<p begin="6542369166t" end="6570730832t" region="region.after.center" style="style.default" xml:id="subtitle184">You've each been hand-picked<br/>for our one-year program</p>
+<p begin="6571565000t" end="6608685416t" region="region.after.center" style="style.default" xml:id="subtitle185">due to the extraordinary potential<br/>you've demonstrated.</p>
+<p begin="6611187916t" end="6645388750t" region="region.after.center" style="style.default" xml:id="subtitle186">I am Coach Brunt,<br/>and these are my house rules.</p>
+<p begin="6646222916t" end="6680006666t" region="region.after.center" style="style.default" xml:id="subtitle187">Rule number one--<br/>no contact with the outside world.</p>
+<p begin="6680840832t" end="6717544166t" region="region.after.center" style="style.default" xml:id="subtitle188">That means no<br/>portable electronic devices allowed.</p>
+<p begin="6724217500t" end="6734644582t" region="region.after.center" style="style.default" xml:id="subtitle189">[gasping]</p>
+<p begin="6741734999t" end="6777187082t" region="region.after.center" style="style.default" xml:id="subtitle190">And rule number two-- first names only</p>
+<p begin="6778021249t" end="6809302499t" region="region.after.center" style="style.default" xml:id="subtitle191">until you get assigned your code name.</p>
+<p begin="6812639166t" end="6828905416t" region="region.after.center" style="style.default" xml:id="subtitle192">Ain't that right, Lambkins?</p>
+<p begin="6838915416t" end="6865608749t" region="region.after.center" style="style.default" xml:id="subtitle193">Lambkins? Who knew VILE had a mascot?</p>
+<p begin="6866442916t" end="6884377499t" region="region.after.center" style="style.default" xml:id="subtitle194">[laughs]</p>
+<p begin="6889799582t" end="6906065832t" region="region.after.center" style="style.default" xml:id="subtitle195">[grunts] Whoa!</p>
+<p begin="6908151249t" end="6956949999t" region="region.after.center" style="style.default" xml:id="subtitle196">Only my friends call me "Lambkins."<br/>My code name's Black Sheep.</p>
+<p begin="6958618332t" end="6994487499t" region="region.after.center" style="style.default" xml:id="subtitle197">Do you understand? Nod if you understand.</p>
+<p begin="6995321666t" end="7004914582t" region="region.after.center" style="style.default" xml:id="subtitle198">Uh-huh.</p>
+<p begin="7015758749t" end="7037447082t" region="region.after.center" style="style.default" xml:id="subtitle199">[laughs]</p>
+<p begin="7038281249t" end="7058718332t" region="region.after.center" style="style.default" xml:id="subtitle200">You really schooled me the day we met.</p>
+<p begin="7062054999t" end="7082909166t" region="region.after.center" style="style.default" xml:id="subtitle201">I thought you should know<br/>who you were dealing with.</p>
+<p begin="7092502082t" end="7113356249t" region="region.after.center" style="style.default" xml:id="subtitle202">Well, it seems I still don't know.</p>
+<p begin="7115024582t" end="7147139999t" region="region.after.center" style="style.default" xml:id="subtitle203">The slick red hat, the exotic new name.</p>
+<p begin="7147974166t" end="7168411249t" region="region.after.center" style="style.default" xml:id="subtitle204">Who are you, really?</p>
+<p begin="7172582082t" end="7200109582t" region="region.after.center" style="style.default" xml:id="subtitle205">A professional thief, just like you.</p>
+<p begin="7203029166t" end="7230139582t" region="region.after.center" style="style.default" xml:id="subtitle206">No, you weren't like the rest of us.</p>
+<p begin="7230973749t" end="7257667082t" region="region.after.center" style="style.default" xml:id="subtitle207">How did you ever wind up in crime school?</p>
+<p begin="7265591666t" end="7283109166t" region="region.after.center" style="style.default" xml:id="subtitle208">You want the whole story?</p>
+<p begin="7291450832t" end="7328988332t" region="region.after.center" style="style.default" xml:id="subtitle209">Your clock runs out when we reach Paris.<br/>Make it count.</p>
+<p begin="7346922916t" end="7383626249t" region="region.after.center" style="style.default" xml:id="subtitle210">From what I've been told,<br/>I was found as a baby,</p>
+<p begin="7384877499t" end="7425751666t" region="region.after.center" style="style.default" xml:id="subtitle211">abandoned by the side of a road<br/>just outside Buenos Aires, Argentina.</p>
+<p begin="7438681249t" end="7470796666t" region="region.after.center" style="style.default" xml:id="subtitle212"><span style="style.default_1">A set of Russian nesting dolls</span><br/><span style="style.default_1">were my only belongings.</span></p>
+<p begin="7480389582t" end="7503329166t" region="region.after.center" style="style.default" xml:id="subtitle213"><span style="style.default_1">I was brought to an island paradise</span></p>
+<p begin="7507082916t" end="7535861666t" region="region.after.center" style="style.default" xml:id="subtitle214"><span style="style.default_1">that just happened to be home</span><br/><span style="style.default_1">to a school for thieves.</span></p>
+<p begin="7539198332t" end="7564223332t" region="region.after.center" style="style.default" xml:id="subtitle215"><span style="style.default_1">That's right, VILE Academy.</span></p>
+<p begin="7567559999t" end="7582992082t" region="region.after.center" style="style.default" xml:id="subtitle216"><span style="style.default_1">It was no grade school,</span></p>
+<p begin="7583826249t" end="7620112499t" region="region.after.center" style="style.default" xml:id="subtitle217"><span style="style.default_1">but I was homeschooled</span><br/><span style="style.default_1">by a revolving door of nannies.</span></p>
+<p begin="7623032082t" end="7647222916t" region="region.after.center" style="style.default" xml:id="subtitle218"><span style="style.default_1">Some taught me how to read and write,</span></p>
+<p begin="7649725416t" end="7677669999t" region="region.after.center" style="style.default" xml:id="subtitle219"><span style="style.default_1">and most taught me</span><br/><span style="style.default_1">about the diverse places they were from.</span></p>
+<p begin="7678504166t" end="7703946249t" region="region.after.center" style="style.default" xml:id="subtitle220">Istanbul, not Constantinople!</p>
+<p begin="7707699999t" end="7719795416t" region="region.after.center" style="style.default" xml:id="subtitle221"><span style="style.default_1">Their languages.</span></p>
+<p begin="7720629582t" end="7743569166t" region="region.after.center" style="style.default" xml:id="subtitle222"><span style="style.default_1">Uh, ni hao.</span></p>
+<p begin="7749825416t" end="7764423332t" region="region.after.center" style="style.default" xml:id="subtitle223"><span style="style.default_1">Their cultures.</span></p>
+<p begin="7773599166t" end="7783192082t" region="region.after.center" style="style.default" xml:id="subtitle224"><span style="style.default_1">OlÃ©!</span></p>
+<p begin="7806131666t" end="7861603749t" region="region.after.center" style="style.default" xml:id="subtitle225"><span style="style.default_1">I was found without a note or any ID,</span><br/><span style="style.default_1">so guess who got their code name early.</span></p>
+<p begin="7865774582t" end="7877869999t" region="region.after.center" style="style.default" xml:id="subtitle226">[girl] Hey, Black Sheep.</p>
+<p begin="7878704166t" end="7892467916t" region="region.after.center" style="style.default" xml:id="subtitle227">[boy] What's up, Black Sheep?</p>
+<p begin="7904980416t" end="7919578332t" region="region.after.center" style="style.default" xml:id="subtitle228">Not your pants!</p>
+<p begin="7929588332t" end="7952944999t" region="region.after.center" style="style.default" xml:id="subtitle229"><span style="style.default_1">I got to hang out on campus</span><br/><span style="style.default_1">with the big kids.</span></p>
+<p begin="7968794166t" end="7983392082t" region="region.after.center" style="style.default" xml:id="subtitle230">[squeaking]</p>
+<p begin="7985060416t" end="8009251249t" region="region.after.center" style="style.default" xml:id="subtitle231">-<span style="style.default_1">I was literally the only child</span><br/>-[students yelping]</p>
+<p begin="8010085416t" end="8026351666t" region="region.after.center" style="style.default" xml:id="subtitle232"><span style="style.default_1">on the Isle of VILE...</span></p>
+<p begin="8040949582t" end="8064306249t" region="region.after.center" style="style.default" xml:id="subtitle233"><span style="style.default_1">which meant I got away with murder.</span></p>
+<p begin="8071813749t" end="8087245832t" region="region.after.center" style="style.default" xml:id="subtitle234">-Requesting clearance.<br/>-[beeps]</p>
+<p begin="8125200416t" end="8133542082t" region="region.after.center" style="style.default" xml:id="subtitle235">[woman gasps]</p>
+<p begin="8136044582t" end="8146888749t" region="region.after.center" style="style.default" xml:id="subtitle236">[Carmen laughs]</p>
+<p begin="8147722916t" end="8159401249t" region="region.after.center" style="style.default" xml:id="subtitle237">Why, you--!</p>
+<p begin="8164406249t" end="8173999166t" region="region.after.center" style="style.default" xml:id="subtitle238">[gasps] Uh-oh.</p>
+<p begin="8185677499t" end="8215290416t" region="region.after.center" style="style.default" xml:id="subtitle239"><span style="style.default_1">Sure, the Campus of Crime</span><br/><span style="style.default_1">was no place for children,</span></p>
+<p begin="8217375832t" end="8239481249t" region="region.after.center" style="style.default" xml:id="subtitle240"><span style="style.default_1">but I never once felt</span><br/><span style="style.default_1">like I was in danger.</span></p>
+<p begin="8240315416t" end="8249074166t" region="region.after.center" style="style.default" xml:id="subtitle241">[grunts]</p>
+<p begin="8259501249t" end="8267842916t" region="region.after.center" style="style.default" xml:id="subtitle242">[groans]</p>
+<p begin="8286194582t" end="8317475832t" region="region.after.center" style="style.default" xml:id="subtitle243"><span style="style.default_1">I was part of the family.</span><br/><span style="style.default_1">I had protection.</span></p>
+<p begin="8318309999t" end="8330405416t" region="region.after.center" style="style.default" xml:id="subtitle244">[Brunt] Problem here?</p>
+<p begin="8332907916t" end="8353762082t" region="region.after.center" style="style.default" xml:id="subtitle245">[groans, mutters]</p>
+<p begin="8356681666t" end="8365857499t" region="region.after.center" style="style.default" xml:id="subtitle246">[crackling]</p>
+<p begin="8373364999t" end="8382957916t" region="region.after.center" style="style.default" xml:id="subtitle247">[man] Ugh!</p>
+<p begin="8387962916t" end="8404646249t" region="region.after.center" style="style.default" xml:id="subtitle248">[squeaking]</p>
+<p begin="8463037916t" end="8471796666t" region="region.after.center" style="style.default" xml:id="subtitle249">[beeping]</p>
+<p begin="8472630832t" end="8493484999t" region="region.after.center" style="style.default" xml:id="subtitle250">[Carmen] <span style="style.default_1">I never learned</span><br/><span style="style.default_1">who found me as a baby.</span></p>
+<p begin="8494319166t" end="8520595416t" region="region.after.center" style="style.default" xml:id="subtitle251">Oh, let's get you a cupcake, sugar pie.</p>
+<p begin="8521429582t" end="8553544999t" region="region.after.center" style="style.default" xml:id="subtitle252"><span style="style.default_1">But I always suspected it was Coach Brunt.</span></p>
+<p begin="8621529582t" end="8642800832t" region="region.after.center" style="style.default" xml:id="subtitle253"><span style="style.default_1">The island was my world.</span></p>
+<p begin="8643635000t" end="8667408750t" region="region.after.center" style="style.default" xml:id="subtitle254"><span style="style.default_1">For all I knew, the Earth was square.</span></p>
+<p begin="8693685000t" end="8713287916t" region="region.after.center" style="style.default" xml:id="subtitle255"><span style="style.default_1">There was no right or wrong.</span></p>
+<p begin="8718710000t" end="8746237500t" region="region.after.center" style="style.default" xml:id="subtitle256"><span style="style.default_1">Thievery was a competition, a game.</span></p>
+<p begin="8772930832t" end="8797955832t" region="region.after.center" style="style.default" xml:id="subtitle257"><span style="style.default_1">One I was ready to play for real.</span></p>
+<p begin="8830488332t" end="8857181666t" region="region.after.center" style="style.default" xml:id="subtitle258"><span style="style.default_1">I couldn't bear watching 40 thieves</span><br/><span style="style.default_1">graduate from the academy</span></p>
+<p begin="8858015832t" end="8873030832t" region="region.after.center" style="style.default" xml:id="subtitle259"><span style="style.default_1">year after year.</span></p>
+<p begin="8878035832t" end="8909734166t" region="region.after.center" style="style.default" xml:id="subtitle260"><span style="style.default_1">I wanted to get out there</span><br/><span style="style.default_1">and be one of those thieves already!</span></p>
+<p begin="8911402500t" end="8920161250t" region="region.after.center" style="style.default" xml:id="subtitle261">[cell phone buzzing]</p>
+<p begin="8938512916t" end="8950608332t" region="region.after.center" style="style.default" xml:id="subtitle262">Whoa! [thumps]</p>
+<p begin="8951442500t" end="8980221250t" region="region.after.center" style="style.default" xml:id="subtitle263">[buzzing continues]</p>
+<p begin="8987728750t" end="8996070416t" region="region.after.center" style="style.default" xml:id="subtitle264">[grunts]</p>
+<p begin="9005663332t" end="9017341666t" region="region.after.center" style="style.default" xml:id="subtitle265">[buzzing]</p>
+<p begin="9031939582t" end="9042783750t" region="region.after.center" style="style.default" xml:id="subtitle266">A white hat?</p>
+<p begin="9050291250t" end="9069060000t" region="region.after.center" style="style.default" xml:id="subtitle267">[beeps]</p>
+<p begin="9076567500t" end="9114522082t" region="region.after.center" style="style.default" xml:id="subtitle268">"Better beef up your security. I got in."</p>
+<p begin="9138295832t" end="9174165000t" region="region.after.center" style="style.default" xml:id="subtitle269">"Got in"? Where? Here?</p>
+<p begin="9182506666t" end="9209617082t" region="region.after.center" style="style.default" xml:id="subtitle270">[phone ringing]</p>
+<p begin="9225049166t" end="9247988750t" region="region.after.center" style="style.default" xml:id="subtitle271">-[Player] <span style="style.default_1">Hello?</span><br/>-He-- hello?</p>
+<p begin="9250491250t" end="9259667082t" region="region.after.center" style="style.default" xml:id="subtitle272">Who is this?</p>
+<p begin="9263837916t" end="9290114166t" region="region.after.center" style="style.default" xml:id="subtitle273">-Black Sheep.<br/><span style="style.default_1">-Come on, what's your real name?</span></p>
+<p begin="9290948332t" end="9310134166t" region="region.after.center" style="style.default" xml:id="subtitle274">-Black Sheep.<br/><span style="style.default_1">-Okay.</span></p>
+<p begin="9311802500t" end="9323897916t" region="region.after.center" style="style.default" xml:id="subtitle275">Usernames work.</p>
+<p begin="9324732082t" end="9348505832t" region="region.after.center" style="style.default" xml:id="subtitle276">You can call me... Player.</p>
+<p begin="9349340000t" end="9366857500t" region="region.after.center" style="style.default" xml:id="subtitle277"><span style="style.default_1">Do you really where a white hat?</span></p>
+<p begin="9367691666t" end="9398555832t" region="region.after.center" style="style.default" xml:id="subtitle278">Uh, why? You've never heard<br/>of "white hat hackers"?</p>
+<p begin="9400224166t" end="9408565832t" region="region.after.center" style="style.default" xml:id="subtitle279">That's a thing?</p>
+<p begin="9409400000t" end="9439012916t" region="region.after.center" style="style.default" xml:id="subtitle280"><span style="style.default_1">I have wicked hacking skills,</span><br/><span style="style.default_1">but I use them for good.</span></p>
+<p begin="9439847082t" end="9456113332t" region="region.after.center" style="style.default" xml:id="subtitle281">Okay, that doesn't even make sense.</p>
+<p begin="9459867082t" end="9470294166t" region="region.after.center" style="style.default" xml:id="subtitle282">Sure, it does.</p>
+<p begin="9471128332t" end="9493650832t" region="region.after.center" style="style.default" xml:id="subtitle283">I just hacked through 27 layers<br/>of encryption.</p>
+<p begin="9494485000t" end="9515756250t" region="region.after.center" style="style.default" xml:id="subtitle284">So, who do I inform over there<br/>about the weak link</p>
+<p begin="9516590416t" end="9533273750t" region="region.after.center" style="style.default" xml:id="subtitle285">so you can upgrade your security?</p>
+<p begin="9537027500t" end="9562469582t" region="region.after.center" style="style.default" xml:id="subtitle286">Are you punking me?<br/>Where are you calling from?</p>
+<p begin="9564972082t" end="9589997082t" region="region.after.center" style="style.default" xml:id="subtitle287">-My room in Niagara Falls.<br/>-[Black Sheep gasps]</p>
+<p begin="9590831250t" end="9615856250t" region="region.after.center" style="style.default" xml:id="subtitle288"><span style="style.default_1">-Seriously? Which side of the falls?</span><br/>-Canadian.</p>
+<p begin="9619610000t" end="9635459166t" region="region.after.center" style="style.default" xml:id="subtitle289">You're in Ontario?</p>
+<p begin="9636293332t" end="9659650000t" region="region.after.center" style="style.default" xml:id="subtitle290"><span style="style.default_1">Whoa, you really know your geography.</span></p>
+<p begin="9660484166t" end="9680087082t" region="region.after.center" style="style.default" xml:id="subtitle291">-What's it like there?<br/><span style="style.default_1">-It's all right.</span></p>
+<p begin="9685092082t" end="9713870832t" region="region.after.center" style="style.default" xml:id="subtitle292"><span style="style.default_1">We have computers, and Internet, and...</span></p>
+<p begin="9715956250t" end="9734307916t" region="region.after.center" style="style.default" xml:id="subtitle293"><span style="style.default_1">Hey, where in the world are you?</span></p>
+<p begin="9739730000t" end="9750157082t" region="region.after.center" style="style.default" xml:id="subtitle294">School.</p>
+<p begin="9764337916t" end="9793533750t" region="region.after.center" style="style.default" xml:id="subtitle295"><span style="style.default_1">What kind of school</span><br/><span style="style.default_1">needs 27 layers of encryption?</span></p>
+<p begin="9813136666t" end="9840664166t" region="region.after.center" style="style.default" xml:id="subtitle296">[Carmen] <span style="style.default_1">Making contact with someone</span><br/><span style="style.default_1">from the outside world</span></p>
+<p begin="9841498332t" end="9860684166t" region="region.after.center" style="style.default" xml:id="subtitle297"><span style="style.default_1">was just the push I needed.</span></p>
+<p begin="9864855000t" end="9886126250t" region="region.after.center" style="style.default" xml:id="subtitle298"><span style="style.default_1">It was time to state my case</span></p>
+<p begin="9895719166t" end="9916990416t" region="region.after.center" style="style.default" xml:id="subtitle299"><span style="style.default_1">to the only family I knew.</span></p>
+<p begin="10025015000t" end="10062969582t" region="region.after.center" style="style.default" xml:id="subtitle300">Black Sheep, why have you<br/>requested our audience?</p>
+<p begin="10076316250t" end="10087160416t" region="region.after.center" style="style.default" xml:id="subtitle301">I'm ready.</p>
+<p begin="10087994582t" end="10107180416t" region="region.after.center" style="style.default" xml:id="subtitle302">[scoffs] To enroll?</p>
+<p begin="10112185416t" end="10138044582t" region="region.after.center" style="style.default" xml:id="subtitle303">I know I'm not technically old enough,<br/>Professor Maelstrom,</p>
+<p begin="10138878750t" end="10172662500t" region="region.after.center" style="style.default" xml:id="subtitle304">but I already have what it takes<br/>to be an awesome thief.</p>
+<p begin="10173496666t" end="10186426250t" region="region.after.center" style="style.default" xml:id="subtitle305">Best ever!</p>
+<p begin="10196853332t" end="10225632082t" region="region.after.center" style="style.default" xml:id="subtitle306">[stammers] Um, in-- in my opinion, sir.</p>
+<p begin="10226466250t" end="10237727500t" region="region.after.center" style="style.default" xml:id="subtitle307">[Dr. Bellum] Black Sheep may be young,</p>
+<p begin="10243149582t" end="10276933332t" region="region.after.center" style="style.default" xml:id="subtitle308">but she has had more training<br/>at her age than any recruit,</p>
+<p begin="10277767500t" end="10297787500t" region="region.after.center" style="style.default" xml:id="subtitle309">even if only by osmosis.</p>
+<p begin="10300290000t" end="10332405416t" region="region.after.center" style="style.default" xml:id="subtitle310">Dr. Bellum is right.<br/>Lambsie's got gumption.</p>
+<p begin="10334073750t" end="10358681666t" region="region.after.center" style="style.default" xml:id="subtitle311">I'd say she's ready to run<br/>with the big dogs.</p>
+<p begin="10359515832t" end="10386626250t" region="region.after.center" style="style.default" xml:id="subtitle312">I, for one, am not thrilled<br/>with the notion of having to endure</p>
+<p begin="10387460416t" end="10410817082t" region="region.after.center" style="style.default" xml:id="subtitle313">Black Sheep's lack of manners<br/>in a classroom setting.</p>
+<p begin="10411651250t" end="10447103332t" region="region.after.center" style="style.default" xml:id="subtitle314">-The girl is feral.<br/>-Precisely why she might be overdue</p>
+<p begin="10447937500t" end="10480470000t" region="region.after.center" style="style.default" xml:id="subtitle315">for properly supervised training,<br/>Countess Cleo.</p>
+<p begin="10500907082t" end="10518841666t" region="region.after.center" style="style.default" xml:id="subtitle316">And you, Shadowsan?</p>
+<p begin="10528017500t" end="10574313750t" region="region.after.center" style="style.default" xml:id="subtitle317">We are operating a vocational school,<br/>not a nursery school.</p>
+<p begin="10591831250t" end="10627283332t" region="region.after.center" style="style.default" xml:id="subtitle318">But we've never met a case<br/>for advanced placement until now.</p>
+<p begin="10628117500t" end="10675665000t" region="region.after.center" style="style.default" xml:id="subtitle319">And last time I checked,<br/>majority vote rules.</p>
+<p begin="10703609582t" end="10723212500t" region="region.after.center" style="style.default" xml:id="subtitle320">Black Sheep, you had better be certain</p>
+<p begin="10724046666t" end="10753659582t" region="region.after.center" style="style.default" xml:id="subtitle321">that becoming a professional thief<br/>is what you truly desire,</p>
+<p begin="10756162082t" end="10814970832t" region="region.after.center" style="style.default" xml:id="subtitle322">for if you choose this road,<br/>there will be no turning back.</p>
+<p begin="10836242082t" end="10865437916t" region="region.after.center" style="style.default" xml:id="subtitle323">I want this more than anything,<br/>Instructor Shadowsan.</p>
+<p begin="10867523332t" end="10893799582t" region="region.after.center" style="style.default" xml:id="subtitle324">And I am willing to go<br/>to the end of the line.</p>
+<p begin="10940512916t" end="10954276666t" region="region.after.center" style="style.default" xml:id="subtitle325">[Professor Maelstrom] All in favor?</p>
+<p begin="11132788332t" end="11165737916t" region="region.after.center" style="style.default" xml:id="subtitle326">[sniffles] Our little lamb's<br/>gonna be all grown up!</p>
+<p begin="11240395832t" end="11261667082t" region="region.after.center" style="style.default" xml:id="subtitle327">[Carmen] <span style="style.default_1">I was finally</span><br/><span style="style.default_1">one of the big kids.</span></p>
+<p begin="11272094166t" end="11291697082t" region="region.after.center" style="style.default" xml:id="subtitle328"><span style="style.default_1">One of the 40 thieves.</span></p>
+<p begin="11299621666t" end="11333405416t" region="region.after.center" style="style.default" xml:id="subtitle329"><span style="style.default_1">I'd survived orientation,</span><br/><span style="style.default_1">and I was ready to meet</span></p>
+<p begin="11334239582t" end="11355927916t" region="region.after.center" style="style.default" xml:id="subtitle330"><span style="style.default_1">-my future partners in crime--</span><br/>-[door opens]</p>
+<p begin="11358847500t" end="11375113750t" region="region.after.center" style="style.default" xml:id="subtitle331"><span style="style.default_1">my roommates.</span></p>
+<p begin="11379701666t" end="11394299582t" region="region.after.center" style="style.default" xml:id="subtitle332">Hi, I'm Black Sheep.</p>
+<p begin="11396385000t" end="11424746666t" region="region.after.center" style="style.default" xml:id="subtitle333">-<span style="style.default_1">Hola.</span> I am Antonio.<br/>-Jean Paul. <span style="style.default_1">Bonjour.</span></p>
+<p begin="11425580832t" end="11438927500t" region="region.after.center" style="style.default" xml:id="subtitle334">Sheena.</p>
+<p begin="11464369582t" end="11475213750t" region="region.after.center" style="style.default" xml:id="subtitle335">You.</p>
+<p begin="11498570416t" end="11528183332t" region="region.after.center" style="style.default" xml:id="subtitle336">Feel free to skip ahead.<br/>I was there, too, you know.</p>
+<p begin="11529017500t" end="11552791250t" region="region.after.center" style="style.default" xml:id="subtitle337">Sure, Gray. You were there.</p>
+<p begin="11557796250t" end="11579901666t" region="region.after.center" style="style.default" xml:id="subtitle338">But were you seeing things<br/>from my point of view?</p>
+<p begin="11589494582t" end="11607429166t" region="region.after.center" style="style.default" xml:id="subtitle339">Uh, Black Sheep, was it?</p>
+<p begin="11608263332t" end="11623278332t" region="region.after.center" style="style.default" xml:id="subtitle340">The name's Graham.</p>
+<p begin="11624112500t" end="11660815832t" region="region.after.center" style="style.default" xml:id="subtitle341">Huh, this where you hide your pearls,<br/>little girl?</p>
+<p begin="11662901250t" end="11679584582t" region="region.after.center" style="style.default" xml:id="subtitle342">Please don't touch my stuff.</p>
+<p begin="11683755416t" end="11702524166t" region="region.after.center" style="style.default" xml:id="subtitle343">What, these?</p>
+<p begin="11704192500t" end="11729634582t" region="region.after.center" style="style.default" xml:id="subtitle344">I said keep your paws off.</p>
+<p begin="11747986250t" end="11793031250t" region="region.after.center" style="style.default" xml:id="subtitle345">Uh-uh. Play nice, princess.<br/>We all have to room together.</p>
+<p begin="11799287500t" end="11826397916t" region="region.after.center" style="style.default" xml:id="subtitle346">[scoffs] Probably costume jewelry.</p>
+<p begin="11848086250t" end="11878116250t" region="region.after.center" style="style.default" xml:id="subtitle347">[Carmen] <span style="style.default_1">First day of class,</span><br/><span style="style.default_1">and I was already making friends.</span></p>
+<p begin="11896885000t" end="11913568332t" region="region.after.center" style="style.default" xml:id="subtitle348"><span style="style.default_1">And enemies.</span></p>
+<p begin="11926915000t" end="11945683750t" region="region.after.center" style="style.default" xml:id="subtitle349">[Black Sheep] So, what's your story, Gray?</p>
+<p begin="11947352082t" end="11984472500t" region="region.after.center" style="style.default" xml:id="subtitle350">I was working as a junior electrician<br/>at the Sydney Opera House.</p>
+<p begin="11985306666t" end="12004075416t" region="region.after.center" style="style.default" xml:id="subtitle351">Australia! I knew it!</p>
+<p begin="12004909582t" end="12032854166t" region="region.after.center" style="style.default" xml:id="subtitle352">When one day, a light bulb went off.</p>
+<p begin="12034939582t" end="12068306250t" region="region.after.center" style="style.default" xml:id="subtitle353">I could make a far better living<br/>turning <span style="style.default_1">out</span> the lights,</p>
+<p begin="12069140416t" end="12095833750t" region="region.after.center" style="style.default" xml:id="subtitle354">stealing from the cover of darkness.</p>
+<p begin="12096667916t" end="12107512082t" region="region.after.center" style="style.default" xml:id="subtitle355">Cool.</p>
+<p begin="12112100000t" end="12137542082t" region="region.after.center" style="style.default" xml:id="subtitle356">What about you, kiddo? What's your story?</p>
+<p begin="12139627500t" end="12177165000t" region="region.after.center" style="style.default" xml:id="subtitle357">Uh... Come on, Gray,<br/>don't wanna be late for Stealth 101.</p>
+<p begin="12190094582t" end="12228466250t" region="region.after.center" style="style.default" xml:id="subtitle358">[Shadowsan] Origami, the Japanese art<br/>of paper folding,</p>
+<p begin="12229300416t" end="12272260000t" region="region.after.center" style="style.default" xml:id="subtitle359">is the surest means<br/>of perfecting a nimble touch.</p>
+<p begin="12286023750t" end="12337325000t" region="region.after.center" style="style.default" xml:id="subtitle360">Essential for the successful<br/>picking of pockets.</p>
+<p begin="12351505832t" end="12374445416t" region="region.after.center" style="style.default" xml:id="subtitle361">[Brunt] <span style="style.default_1">The first rule of self-defense--</span></p>
+<p begin="12377365000t" end="12399887500t" region="region.after.center" style="style.default" xml:id="subtitle362">always protect the face.</p>
+<p begin="12407812082t" end="12453691250t" region="region.after.center" style="style.default" xml:id="subtitle363">Unless you wanna be knocked out cold<br/>or wind up with a mug like mine.</p>
+<p begin="12454525416t" end="12475796666t" region="region.after.center" style="style.default" xml:id="subtitle364">[both grunting]</p>
+<p begin="12517087916t" end="12525429582t" region="region.after.center" style="style.default" xml:id="subtitle365">Pop quiz!</p>
+<p begin="12528349166t" end="12561715832t" region="region.after.center" style="style.default" xml:id="subtitle366">One of these two vases<br/>is discount-store-grade garbage.</p>
+<p begin="12565052500t" end="12619273332t" region="region.after.center" style="style.default" xml:id="subtitle367">And the other, genuine Ming,<br/>valued at $300,000.</p>
+<p begin="12621358750t" end="12646800832t" region="region.after.center" style="style.default" xml:id="subtitle368">Which would you steal?</p>
+<p begin="12670157500t" end="12681835832t" region="region.after.center" style="style.default" xml:id="subtitle369">My latest invention--</p>
+<p begin="12687675000t" end="12705609582t" region="region.after.center" style="style.default" xml:id="subtitle370">the Crackle Rod.</p>
+<p begin="12708529166t" end="12724795416t" region="region.after.center" style="style.default" xml:id="subtitle371">Settings can be adjusted here.</p>
+<p begin="12725629582t" end="12760664582t" region="region.after.center" style="style.default" xml:id="subtitle372">-EMP, stun mode, and so on.<br/>-[crackles]</p>
+<p begin="12790694582t" end="12820724582t" region="region.after.center" style="style.default" xml:id="subtitle373">[Gunnar]<br/>To properly execute a bait-and-switch,</p>
+<p begin="12823227082t" end="12857427916t" region="region.after.center" style="style.default" xml:id="subtitle374">the objects should be<br/>of equal weight and size.</p>
+<p begin="12970040416t" end="13001321666t" region="region.after.center" style="style.default" xml:id="subtitle375">And there you have the switch.</p>
+<p begin="13024678332t" end="13048869166t" region="region.after.center" style="style.default" xml:id="subtitle376">-Oh, gross! What is this?<br/>-[chirping]</p>
+<p begin="13063884166t" end="13101421666t" region="region.after.center" style="style.default" xml:id="subtitle377">That, my dear, would be the bait.</p>
+<p begin="13128115000t" end="13137290832t" region="region.after.center" style="style.default" xml:id="subtitle378">[Black Sheep] Player.</p>
+<p begin="13146049582t" end="13186506666t" region="region.after.center" style="style.default" xml:id="subtitle379">School's been really awesome.<br/>I wish you were here!</p>
+<p begin="13187340832t" end="13207777916t" region="region.after.center" style="style.default" xml:id="subtitle380">[Gray] Black Sheep! Come on, mate!</p>
+<p begin="13208612082t" end="13218205000t" region="region.after.center" style="style.default" xml:id="subtitle381">[Player] <span style="style.default_1">Who's that?</span></p>
+<p begin="13219456250t" end="13239059166t" region="region.after.center" style="style.default" xml:id="subtitle382">Gray, from Down Under. [chuckles]</p>
+<p begin="13241561666t" end="13262832916t" region="region.after.center" style="style.default" xml:id="subtitle383">-<span style="style.default_1">He's my best friend.</span><br/>-Oh.</p>
+<p begin="13266169582t" end="13288692082t" region="region.after.center" style="style.default" xml:id="subtitle384">My best <span style="style.default_1">school</span> friend.</p>
+<p begin="13289526250t" end="13325812500t" region="region.after.center" style="style.default" xml:id="subtitle385">Anyway, gotta run.<br/>I'm late for Infiltration 101.</p>
+<p begin="13333737082t" end="13355842500t" region="region.after.center" style="style.default" xml:id="subtitle386">What kind of school do you go to, again?</p>
+<p begin="13365018332t" end="13387540832t" region="region.after.center" style="style.default" xml:id="subtitle387">-[metal rattling]<br/>-Stand tall, class.</p>
+<p begin="13388375000t" end="13403807082t" region="region.after.center" style="style.default" xml:id="subtitle388">Today's goal--</p>
+<p begin="13407977916t" end="13431751666t" region="region.after.center" style="style.default" xml:id="subtitle389">be the first to reach the target.</p>
+<p begin="13522258749t" end="13531851666t" region="region.after.center" style="style.default" xml:id="subtitle390">[whirrs]</p>
+<p begin="13566469582t" end="13578147916t" region="region.after.center" style="style.default" xml:id="subtitle391">[alarm blaring]</p>
+<p begin="13587740832t" end="13609012082t" region="region.after.center" style="style.default" xml:id="subtitle392">[Carmen] <span style="style.default_1">We really honed our skills.</span></p>
+<p begin="13609846249t" end="13639042082t" region="region.after.center" style="style.default" xml:id="subtitle393"><span style="style.default_1">We studied hard and we trained hard.</span></p>
+<p begin="13639876249t" end="13652805832t" region="region.after.center" style="style.default" xml:id="subtitle394">[laughing]</p>
+<p begin="13653639999t" end="13671157499t" region="region.after.center" style="style.default" xml:id="subtitle395">[screaming]</p>
+<p begin="13675745416t" end="13696182499t" region="region.after.center" style="style.default" xml:id="subtitle396">[Carmen] <span style="style.default_1">But we also played hard.</span></p>
+<p begin="13699519166t" end="13721207499t" region="region.after.center" style="style.default" xml:id="subtitle397">[Black Sheep] Here's the skinny.<br/>Every first of December,</p>
+<p begin="13722041666t" end="13747066666t" region="region.after.center" style="style.default" xml:id="subtitle398">she arrives right on schedule.</p>
+<p begin="13757910832t" end="13792528749t" region="region.after.center" style="style.default" xml:id="subtitle399">I'm talking about Cookie Booker,<br/>VILE's bookkeeper.</p>
+<p begin="13797116666t" end="13815885416t" region="region.after.center" style="style.default" xml:id="subtitle400">See that thing she's holding?</p>
+<p begin="13822975832t" end="13851337499t" region="region.after.center" style="style.default" xml:id="subtitle401">It's a hard drive, and it's loaded<br/>with classified information</p>
+<p begin="13852171666t" end="13889292082t" region="region.after.center" style="style.default" xml:id="subtitle402">supplied by VILE operatives<br/>all over the world.</p>
+<p begin="13893462916t" end="13924744166t" region="region.after.center" style="style.default" xml:id="subtitle403">It's way too important<br/>to risk uploading from a remote location,</p>
+<p begin="13925578332t" end="13976462499t" region="region.after.center" style="style.default" xml:id="subtitle404">so they make her do a hand-carry by boat<br/>to avoid radar detection.</p>
+<p begin="13987723749t" end="14014417082t" region="region.after.center" style="style.default" xml:id="subtitle405">Take aim, and bring the rain.</p>
+<p begin="14072808749t" end="14086572499t" region="region.after.center" style="style.default" xml:id="subtitle406">[Cookie yelps]</p>
+<p begin="14104924166t" end="14131617499t" region="region.after.center" style="style.default" xml:id="subtitle407">[laughter]</p>
+<p begin="14186255416t" end="14203772916t" region="region.after.center" style="style.default" xml:id="subtitle408">Vlad, Boris. Hiya.</p>
+<p begin="14209612082t" end="14218787916t" region="region.after.center" style="style.default" xml:id="subtitle409">[chuckles]</p>
+<p begin="14232551666t" end="14253405832t" region="region.after.center" style="style.default" xml:id="subtitle410">I take full responsibility.</p>
+<p begin="14257159582t" end="14310129166t" region="region.after.center" style="style.default" xml:id="subtitle411">Did I not tell you Black Sheep<br/>was immature, impetuous?</p>
+<p begin="14310963332t" end="14337239582t" region="region.after.center" style="style.default" xml:id="subtitle412">-I recommend expulsion.<br/>-[Brunt] Uh...</p>
+<p begin="14346832499t" end="14378947916t" region="region.after.center" style="style.default" xml:id="subtitle413">Isn't that... extreme?</p>
+<p begin="14408143749t" end="14453605832t" region="region.after.center" style="style.default" xml:id="subtitle414">Esteemed faculty, with due respect,<br/>Black Sheep isn't to blame.</p>
+<p begin="14454439999t" end="14484887082t" region="region.after.center" style="style.default" xml:id="subtitle415">-We egged her on.<br/>-What? No, we didn't!</p>
+<p begin="14489892082t" end="14517419582t" region="region.after.center" style="style.default" xml:id="subtitle416">We can't expel<br/>the whole herd of them, can we?</p>
+<p begin="14547866666t" end="14584152916t" region="region.after.center" style="style.default" xml:id="subtitle417">Detention? What, are we in grade school?</p>
+<p begin="14584987082t" end="14607509582t" region="region.after.center" style="style.default" xml:id="subtitle418">[exhales] Thanks for having my back.</p>
+<p begin="14610846249t" end="14632117499t" region="region.after.center" style="style.default" xml:id="subtitle419">I'm going to have your hide.</p>
+<p begin="14632951666t" end="14664649999t" region="region.after.center" style="style.default" xml:id="subtitle420">Hey, can we focus?<br/>These code names aren't naming themselves.</p>
+<p begin="14665484166t" end="14696348332t" region="region.after.center" style="style.default" xml:id="subtitle421">Ooh. I have one for you-- Shocker.</p>
+<p begin="14714282916t" end="14741393332t" region="region.after.center" style="style.default" xml:id="subtitle422">-The Shocksmith?<br/>-Lame.</p>
+<p begin="14745981249t" end="14758493749t" region="region.after.center" style="style.default" xml:id="subtitle423">"Power Failure."</p>
+<p begin="14762664582t" end="14801453332t" region="region.after.center" style="style.default" xml:id="subtitle424">Sorry, mates, nothing quite has<br/>that crackle I'm looking for.</p>
+<p begin="14804789999t" end="14824392916t" region="region.after.center" style="style.default" xml:id="subtitle425">[gasps] That's it!</p>
+<p begin="14830232082t" end="14841493332t" region="region.after.center" style="style.default" xml:id="subtitle426">Get ready.</p>
+<p begin="14846498332t" end="14870689166t" region="region.after.center" style="style.default" xml:id="subtitle427">Graham Crackle.</p>
+<p begin="14872357499t" end="14886121249t" region="region.after.center" style="style.default" xml:id="subtitle428">Dude, really?</p>
+<p begin="14886955416t" end="14900302082t" region="region.after.center" style="style.default" xml:id="subtitle429">We are criminals!</p>
+<p begin="14901136249t" end="14932000416t" region="region.after.center" style="style.default" xml:id="subtitle430">Who would take us seriously<br/>if we had puns for names?</p>
+<p begin="14935337082t" end="14963281666t" region="region.after.center" style="style.default" xml:id="subtitle431">Okay, I'll drop the Graham part.</p>
+<p begin="14969120832t" end="14979130832t" region="region.after.center" style="style.default" xml:id="subtitle432">[crackling]</p>
+<p begin="14979964999t" end="14996648332t" region="region.before.center" style="style.default" xml:id="subtitle433">I'm Crackle.</p>
+<p begin="15001653332t" end="15022924582t" region="region.before.center" style="style.default" xml:id="subtitle434">-Lights out, baby!<br/>-[rod pops]</p>
+<p begin="15050452082t" end="15065049999t" region="region.before.center" style="style.default" xml:id="subtitle435">Le Chevre.</p>
+<p begin="15065884166t" end="15104255832t" region="region.before.center" style="style.default" xml:id="subtitle436">Like the nimble mountain goat,<br/>I take the high ground!</p>
+<p begin="15111763332t" end="15137205416t" region="region.after.center" style="style.default" xml:id="subtitle437">[rumbles]</p>
+<p begin="15152220416t" end="15187672499t" region="region.before.center" style="style.default" xml:id="subtitle438">Like the burrowing mole,<br/>El Topo takes the low!</p>
+<p begin="15223958749t" end="15241893332t" region="region.before.center" style="style.default" xml:id="subtitle439">I've earned my stripes.</p>
+<p begin="15242727499t" end="15267752499t" region="region.before.center" style="style.default" xml:id="subtitle440">Call me "Tigress."</p>
+<p begin="15324475832t" end="15344912916t" region="region.after.center" style="style.default" xml:id="subtitle441">So, who's off to clown college?</p>
+<p begin="15346998332t" end="15363264582t" region="region.after.center" style="style.default" xml:id="subtitle442">Ugh. Him.</p>
+<p begin="15364098749t" end="15382033332t" region="region.after.center" style="style.default" xml:id="subtitle443">The quiet guy from class.</p>
+<p begin="15382867499t" end="15407892499t" region="region.after.center" style="style.default" xml:id="subtitle444">Hello? Code name?</p>
+<p begin="15462113332t" end="15483801666t" region="region.after.center" style="style.default" xml:id="subtitle445">Ugh. He is so weird!</p>
+<p begin="15486304166t" end="15506741249t" region="region.after.center" style="style.default" xml:id="subtitle446">Oh, Mime Bomb!</p>
+<p begin="15589323749t" end="15609343749t" region="region.after.center" style="style.default" xml:id="subtitle447">[Carmen] <span style="style.default_1">The school year came and went.</span></p>
+<p begin="15613931666t" end="15643544582t" region="region.after.center" style="style.default" xml:id="subtitle448"><span style="style.default_1">I couldn't wait to graduate</span><br/><span style="style.default_1">and plot our first caper</span></p>
+<p begin="15644378749t" end="15662313332t" region="region.after.center" style="style.default" xml:id="subtitle449"><span style="style.default_1">as VILE operatives!</span></p>
+<p begin="15668569582t" end="15720704999t" region="region.after.center" style="style.default" xml:id="subtitle450"><span style="style.default_1">We just needed to ace our final exams</span><br/><span style="style.default_1">and we'd be professional thieves.</span></p>
+<p begin="15726961249t" end="15751986249t" region="region.after.center" style="style.default" xml:id="subtitle451">For the first exam, I call...</p>
+<p begin="15760327916t" end="15774091666t" region="region.after.center" style="style.default" xml:id="subtitle452">Tigress.</p>
+<p begin="15782433332t" end="15797448332t" region="region.after.center" style="style.default" xml:id="subtitle453">I got this.</p>
+<p begin="15835819999t" end="15878362499t" region="region.after.center" style="style.default" xml:id="subtitle454">Somewhere in my coat<br/>lies a single dollar bill.</p>
+<p begin="15880864999t" end="15908392499t" region="region.after.center" style="style.default" xml:id="subtitle455">The coat has many pockets.</p>
+<p begin="15911729166t" end="15945929999t" region="region.after.center" style="style.default" xml:id="subtitle456">Locate the target and acquire it...</p>
+<p begin="15948015416t" end="15967201249t" region="region.after.center" style="style.default" xml:id="subtitle457">if you can.</p>
+<p begin="15968035416t" end="16004738749t" region="region.after.center" style="style.default" xml:id="subtitle458">-You have two minutes.<br/>-[beeps]</p>
+<p begin="16105672916t" end="16114431666t" region="region.after.center" style="style.default" xml:id="subtitle459">[grunts]</p>
+<p begin="16332149166t" end="16340490832t" region="region.after.center" style="style.default" xml:id="subtitle460">[snarls]</p>
+<p begin="16363847499t" end="16376359999t" region="region.after.center" style="style.default" xml:id="subtitle461">[grunts]</p>
+<p begin="16408475416t" end="16427661249t" region="region.after.center" style="style.default" xml:id="subtitle462">Mm. Money.</p>
+<p begin="16452686249t" end="16479796666t" region="region.after.center" style="style.default" xml:id="subtitle463">Shadowsan is so gonna call foul.</p>
+<p begin="16494811666t" end="16517334166t" region="region.after.center" style="style.default" xml:id="subtitle464">Unorthodox technique.</p>
+<p begin="16540690832t" end="16560710832t" region="region.after.center" style="style.default" xml:id="subtitle465">But excellent results.</p>
+<p begin="16600750832t" end="16631614999t" region="region.after.center" style="style.default" xml:id="subtitle466">No way!<br/>Shadowsan is totally playing favorites!</p>
+<p begin="16675825832t" end="16689589582t" region="region.after.center" style="style.default" xml:id="subtitle467">[Shadowsan] Black Sheep.</p>
+<p begin="16851834999t" end="16879362499t" region="region.after.center" style="style.default" xml:id="subtitle468">[indistinct chattering]</p>
+<p begin="16906055832t" end="16921904999t" region="region.after.center" style="style.default" xml:id="subtitle469">I swear I hit every pocket.</p>
+<p begin="16922739166t" end="16942759166t" region="region.after.center" style="style.default" xml:id="subtitle470">If there was a dollar in there,<br/>I couldn't find it.</p>
+<p begin="16943593332t" end="16980713749t" region="region.after.center" style="style.default" xml:id="subtitle471">Hey, so you choked a little.<br/>Like that's gonna affect your grade?</p>
+<p begin="16983216249t" end="17028678332t" region="region.after.center" style="style.default" xml:id="subtitle472">You're the finest pickpocket in our class.<br/>Totally in a league of your own.</p>
+<p begin="17035768749t" end="17044110416t" region="region.after.center" style="style.default" xml:id="subtitle473">You think?</p>
+<p begin="17048281249t" end="17064130416t" region="region.after.center" style="style.default" xml:id="subtitle474">I <span style="style.default_1">know.</span></p>
+<p begin="17101667916t" end="17124607499t" region="region.after.center" style="style.default" xml:id="subtitle475">[all cheering]</p>
+<p begin="17125441666t" end="17135451666t" region="region.after.center" style="style.default" xml:id="subtitle476">[El Topo] I don't believe it!</p>
+<p begin="17136285832t" end="17149632499t" region="region.after.center" style="style.default" xml:id="subtitle477">Results are in!</p>
+<p begin="17189672500t" end="17207607082t" region="region.after.center" style="style.default" xml:id="subtitle478">Yes! [whoops]</p>
+<p begin="17240556666t" end="17275591666t" region="region.after.center" style="style.default" xml:id="subtitle479"><span style="style.default_1">-FÃ©licitations, mon ami!</span><br/>-Upward and onward, <span style="style.default_1">mi amigo!</span></p>
+<p begin="17348581250t" end="17359008332t" region="region.after.center" style="style.default" xml:id="subtitle480">Gray?</p>
+<p begin="17366098750t" end="17379445416t" region="region.after.center" style="style.default" xml:id="subtitle481">[stammers] Did-- did you...?</p>
+<p begin="17382365000t" end="17394877500t" region="region.after.center" style="style.default" xml:id="subtitle482">I'm good, but...</p>
+<p begin="17474957500t" end="17489555416t" region="region.after.center" style="style.default" xml:id="subtitle483">I'm really sorry.</p>
+<p begin="17491640832t" end="17502485000t" region="region.after.center" style="style.default" xml:id="subtitle484">Crackle.</p>
+<p begin="17506655832t" end="17530429582t" region="region.after.center" style="style.default" xml:id="subtitle485">Come sit at the big kids' table.</p>
+<p begin="17537520000t" end="17550449582t" region="region.after.center" style="style.default" xml:id="subtitle486">[Black Sheep] Go on, Gray.</p>
+<p begin="17555871666t" end="17568384166t" region="region.after.center" style="style.default" xml:id="subtitle487">I'll be fine.</p>
+<p begin="17573806250t" end="17611343750t" region="region.after.center" style="style.default" xml:id="subtitle488">Aw. Looks like someone needs<br/>to turn in their stealth suit.</p>
+<p begin="17616765832t" end="17636368750t" region="region.after.center" style="style.default" xml:id="subtitle489">Come on, let's go plot a caper.</p>
+<p begin="17734800416t" end="17748564166t" region="region.after.center" style="style.default" xml:id="subtitle490">[keys jingling]</p>
+<p begin="17749398332t" end="17766081666t" region="region.after.center" style="style.default" xml:id="subtitle491">Looking for these?</p>
+<p begin="17785684582t" end="17804870416t" region="region.after.center" style="style.default" xml:id="subtitle492">Playing games? Typical.</p>
+<p begin="17805704582t" end="17824056250t" region="region.after.center" style="style.default" xml:id="subtitle493">No game. I want a do-over.</p>
+<p begin="17824890416t" end="17870352500t" region="region.after.center" style="style.default" xml:id="subtitle494">And you will have it next year,<br/>once you redo your coursework.</p>
+<p begin="17872437916t" end="17916648750t" region="region.after.center" style="style.default" xml:id="subtitle495">You're not hearing me.<br/>Put on the coat. I want a do-over <span style="style.default_1">now.</span></p>
+<p begin="17918317082t" end="17967950000t" region="region.after.center" style="style.default" xml:id="subtitle496">We do not bend policy for other students,<br/>so we really must stop doing it for you.</p>
+<p begin="17968784166t" end="17993392082t" region="region.after.center" style="style.default" xml:id="subtitle497">Good night, Black Sheep.</p>
+<p begin="18000065416t" end="18020502500t" region="region.after.center" style="style.default" xml:id="subtitle498">The coat was empty, wasn't it?</p>
+<p begin="18027592916t" end="18061376666t" region="region.after.center" style="style.default" xml:id="subtitle499">Are you accusing<br/>a VILE instructor of cheating?</p>
+<p begin="18063045000t" end="18076808750t" region="region.after.center" style="style.default" xml:id="subtitle500">[stammers] S-Sorry.</p>
+<p begin="18083065000t" end="18112260832t" region="region.after.center" style="style.default" xml:id="subtitle501">It's just I know I'm as good<br/>as anyone in my class.</p>
+<p begin="18113095000t" end="18142707916t" region="region.after.center" style="style.default" xml:id="subtitle502">Better, even.<br/>And I know you know it, too!</p>
+<p begin="18144376250t" end="18193175000t" region="region.after.center" style="style.default" xml:id="subtitle503">And you also happen to be unruly,<br/>undisciplined, and a prankster!</p>
+<p begin="18200265416t" end="18246561666t" region="region.after.center" style="style.default" xml:id="subtitle504">I would strongly urge that you find a way<br/>to get those qualities in check</p>
+<p begin="18247395832t" end="18284516250t" region="region.after.center" style="style.default" xml:id="subtitle505">since they seem to be holding you back.</p>
+<p begin="18317048750t" end="18347912916t" region="region.after.center" style="style.default" xml:id="subtitle506">No. Nothing's holding me back.</p>
+<p begin="18348747082t" end="18363345000t" region="region.after.center" style="style.default" xml:id="subtitle507">Not anymore.</p>
+<p begin="18506404582t" end="18518500000t" region="region.after.center" style="style.default" xml:id="subtitle508">[helicopter blades whirring]</p>
+<p begin="18560208332t" end="18570218332t" region="region.after.center" style="style.default" xml:id="subtitle509">[groans]</p>
+<p begin="18571052500t" end="18585233332t" region="region.after.center" style="style.default" xml:id="subtitle510">[gate clanging]</p>
+<p begin="18683247916t" end="18715363332t" region="region.after.center" style="style.default" xml:id="subtitle511">[Gray] Our first crime caper,<br/>where it all gets real!</p>
+<p begin="18732046666t" end="18745810416t" region="region.after.center" style="style.default" xml:id="subtitle512">School's out, boys.</p>
+<p begin="18746644582t" end="18763745000t" region="region.after.center" style="style.default" xml:id="subtitle513">Time to strut our stuff.</p>
+<p begin="18764579166t" end="18777091666t" region="region.after.center" style="style.default" xml:id="subtitle514">[engine revving]</p>
+<p begin="18836317500t" end="18851332500t" region="region.after.center" style="style.default" xml:id="subtitle515">[Gray] Bye-bye, Black Sheep.</p>
+<p begin="18905136250t" end="18930995416t" region="region.after.center" style="style.default" xml:id="subtitle516">[theme music playing]</p>
+</div>
+</body>
+</tt>

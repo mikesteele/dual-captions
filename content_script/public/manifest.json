@@ -1,0 +1,36 @@
+{
+  "name": "dc-awareness",
+  "description": "TODO",
+  "version": "0.4.1",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "storage",
+    "webRequest"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "TODO",
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "all_frames": false,
+    "js": [
+      "static/js/main.js"
+    ],
+    "matches": [
+      "https://www.youtube.com/*",
+      "https://www.netflix.com/*"
+    ]
+   }],
+  "icons": {
+    "16": "icon.png"
+  },
+  "manifest_version": 2
+}
