@@ -39,7 +39,9 @@ class WithPopper extends React.Component {
         }
       }
     );
-    this.props.sideEffectCallback();
+    if (this.props.sideEffectCallback) {
+      this.props.sideEffectCallback();
+    }
   }
 
   canAttachToTarget() {
