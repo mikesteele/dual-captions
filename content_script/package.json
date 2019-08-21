@@ -1,6 +1,6 @@
 {
-  "name": "dc2",
-  "version": "0.8.0",
+  "name": "dual-captions-content_script",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "franc": "^4.1.0",
