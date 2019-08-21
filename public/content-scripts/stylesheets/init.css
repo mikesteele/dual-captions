@@ -1,7 +1,0 @@
-.original-caption {
-  filter: opacity(0) !important;
-}
-
-.original-caption.translated {
-  filter: opacity(1) !important;
-}
