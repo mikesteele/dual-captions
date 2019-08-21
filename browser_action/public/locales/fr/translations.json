@@ -33,5 +33,7 @@
   "amazon-sorry-2": "Ouvrez un bug sur GitHub si vous voulez Amazon Video dans v2.",
   "translation-request-1": "J'essaye de charger les sous-titres...",
   "translation-request-2": "Quel est ce langage?",
-  "submit": "OK"
+  "submit": "OK",
+  "v2-welcome": "Bienvenue à v2!",
+  "v2-whats-new": "Changements"
 }

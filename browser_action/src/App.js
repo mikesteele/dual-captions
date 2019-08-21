@@ -53,14 +53,15 @@ class App extends Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
       <div className='App'>
         <TranslationQueue/>
         <Header/>
         <Tabs selectedIndex={this.props.currentTab} onSelect={this._onTabSelected.bind(this)}>
           <TabList>
-            <Tab>{this.props.t('main')}</Tab>
-            <Tab>{this.props.t('settings')}</Tab>
+            <Tab>{t('main')}</Tab>
+            <Tab>{t('settings')}</Tab>
           </TabList>
           <TabPanel>
             <MainPageView/>
@@ -70,6 +71,18 @@ class App extends Component {
           </TabPanel>
         </Tabs>
         <ErrorPageView/>
+        <div>
+          <br/>
+          <b>{t('v2-welcome')}</b>
+          <br/>
+          <a
+            href="https://github.com/mikesteele/dual-captions/releases"
+            rel='noopener noreferrer'
+            target='_blank'>
+            {t('v2-whats-new')}
+          </a>
+          <br/>
+        </div>
         <div className='footer'>
           <div>
             <div className='ui-icon'/>
@@ -83,19 +96,19 @@ class App extends Component {
               href='https://chrome.google.com/webstore/detail/two-captions-for-youtube/lpeonmjfimoijceaalocpgjjchocbiap'
               rel='noopener noreferrer'
               target='_blank'>
-              {this.props.t('leave-feedback')}
+              {t('leave-feedback')}
             </a>
             <a
               href='https://github.com/mikesteele/dual-captions/issues'
               rel='noopener noreferrer'
               target='_blank'>
-              {this.props.t('report-a-bug')}
+              {t('report-a-bug')}
             </a>
             <a
               href='https://github.com/mikesteele/dual-captions/'
               rel='noopener noreferrer'
               target='_blank'>
-              {this.props.t('view-on-github')}
+              {t('view-on-github')}
             </a>
           </div>
         </div>

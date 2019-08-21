@@ -34,5 +34,7 @@
   "amazon-sorry-2": "Please open an issue if you'd like support added back in v2.",
   "translation-request-1": "Trying to load captions...",
   "translation-request-2": " What language is this?",
-  "submit": "Submit"
+  "submit": "Submit",
+  "v2-welcome": "Welcome to v2!",
+  "v2-whats-new": "What's new?"
 }
