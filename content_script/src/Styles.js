@@ -2,8 +2,7 @@ import React from 'react'
 
 const Styles = () => {
   const styles = `
-    .dc-window {
-      position: absolute;
+    .dc-popper {
       z-index: 10000;
     }
 

@@ -49,4 +49,16 @@ describe('Netflix parser', () => {
         .catch(err => { console.error(err) });
     });
   });
+
+  it('should correctly parse - one span br', done => {
+    const captionFile = fs.readFileSync(path.resolve(__dirname, '../assets/netflix/caption-file-one-span-br.txt'));
+    makeParser(parser => {
+      parser.parse(captionFile, currentSite)
+        .then(result => {
+          expect(result[441].text, 'should handle break').to.equal("If she mentions things that make her sad\nor heartbroken and cries,");
+          done();
+        })
+        .catch(err => { console.error(err) });
+    });
+  });
 });

@@ -5,13 +5,12 @@ class PopupMessageHandler extends React.Component {
     super(props);
     this.onMessage = this.onMessage.bind(this);
 
-    // TODO - What should be default settings?
-    // TODO - Need settingsAreDefault?
     this.state = {
       settings: {
-        isOn: true, // TODO - Switch to false in final version
+        isOn: false,
         extraSpace: false,
-        secondSubtitleLanguage: 'en'
+        secondSubtitleLanguage: 'none',
+        settingsAreDefault: true,
       }
     }
 
@@ -34,8 +33,9 @@ class PopupMessageHandler extends React.Component {
     this.setState(state => ({
       settings: {
         ...state.settings,
-        [setting]: value
-      }
+        [setting]: value,
+        settingsAreDefault: false,
+      },
     }));
   }
 
@@ -70,21 +70,6 @@ class PopupMessageHandler extends React.Component {
       })
       break;
 
-      case 'get-state':
-      sendResponse({
-        ok: true,
-        settingsAreDefault: true, // TODO
-        isOn: this.state.settings.isOn,
-        secondLanguage: this.state.settings.secondLanguage, // TODO
-        settings: {
-          extraSpace: true, // TODO
-          useCaptionsFromVideo: true, // TODO - Deprecate this setting
-          delayRenderingUntilTranslation: true // TODO - Deprecate this setting
-        },
-        loadedLanguages: [] // TODO - Pass provider, then use this.props.provider.loadedLanguages
-      });
-      break;
-
       // TODO - Should deprecate
       case 'is-on':
       sendResponse({
@@ -108,6 +93,20 @@ class PopupMessageHandler extends React.Component {
       sendResponse({
         ok: true
       });
+      break;
+
+      case "popup-opened":
+      const { adapter } = this.props;
+      if (adapter.error) {
+        sendResponse({
+          ok: false,
+          errorType: adapter.error,
+        });
+      } else {
+        sendResponse({
+          ok: true,
+        });
+      }
       break;
 
       default:

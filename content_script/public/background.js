@@ -1,105 +1,93 @@
-window.getActiveTabId = () => {
-  return new Promise((resolve, reject) => {
-    if (window.chrome && window.chrome.tabs && window.chrome.tabs.query) {
-      window.chrome.tabs.query({
-        currentWindow: true,
-        active: true
-      }, tabs => {
-        if (tabs && tabs.length > 0) {
-          resolve(tabs[0].id);
-        } else {
-          reject('Could not get active tab ID.');
-        }
-      });
-    } else {
-      reject('window.chrome.tabs.query missing');
-    }
-  });
-}
-
-window.sendMessageToActiveTab = (message) => {
-  return new Promise((resolve, reject) => {
-    window.getActiveTabId()
-      .then(tabId => {
-        return new Promise(_resolve => {
-          window.chrome.tabs.sendMessage(tabId, message, _resolve);
-        });
-      })
-      .then(resolve)
-      .catch(err => {
-        reject(err);
-      });
-  });
-}
-
 class BackgroundPage {
   constructor() {
     // Properties
-    this.captionRequestsInFlight = {};
+    this.captionRequestsInFlight = {}; // TODO - Still need?
     this.netflixCaptionRequestPattern = 'https://*.nflxvideo.net/?o=*&v=*&e=*&t=*';
     this.youtubeCaptionRequestPattern = 'https://www.youtube.com/api/timedtext*';
+    this.pendingMessagesForTabId = {} // tabId: [Messages]
 
     // Binds
     this.onTabUpdated = this.onTabUpdated.bind(this);
     this.onBeforeNetflixCaptionRequest = this.onBeforeNetflixCaptionRequest.bind(this);
     this.onBeforeYouTubeCaptionRequest = this.onBeforeYouTubeCaptionRequest.bind(this);
-
-    // TODO - Need window.chrome?
+    this.sendMessageToTabId = this.sendMessageToTabId.bind(this);
+    this.onMessage = this.onMessage.bind(this);
+    this.sendPendingMessages = this.sendPendingMessages.bind(this);
 
     // Listeners
-    chrome.webRequest.onBeforeRequest.addListener(
+    window.chrome.webRequest.onBeforeRequest.addListener(
       this.onBeforeYouTubeCaptionRequest, {
         urls: [this.youtubeCaptionRequestPattern]
       }
     );
-    chrome.webRequest.onBeforeRequest.addListener(
+    window.chrome.webRequest.onBeforeRequest.addListener(
       this.onBeforeNetflixCaptionRequest, {
         urls: [this.netflixCaptionRequestPattern]
       }
     );
-    chrome.tabs.onUpdated.addListener(this.onTabUpdated);
+    window.chrome.tabs.onUpdated.addListener(this.onTabUpdated);
+    window.chrome.runtime.onMessage.addListener(this.onMessage);
+  }
+
+  sendPendingMessages(tabId) {
+    if (tabId in this.pendingMessagesForTabId) {
+      this.pendingMessagesForTabId[tabId].forEach(message => {
+        window.chrome.tabs.sendMessage(tabId, message, () => {});
+      });
+      delete this.pendingMessagesForTabId[tabId];
+    }
+
+  }
+
+  sendMessageToTabId(tabId, message) {
+    if (!tabId) {
+      return null;
+    } else if (tabId in this.pendingMessagesForTabId) {
+      this.pendingMessagesForTabId[tabId].push(message);
+    } else {
+      this.pendingMessagesForTabId[tabId] = [message];
+    }
+  }
+
+  onMessage(message, sender, sendResponse) {
+    switch (message.type) {
+      case 'get-pending-messages':
+      if (sender.tab && sender.tab.id) {
+        this.sendPendingMessages(sender.tab.id);
+        sendResponse({ ok: true });
+      }
+      break;
+    }
   }
 
   onBeforeNetflixCaptionRequest(details) {
-    // TODO - Do you get requesting tabId in details?
+    const tabId = details.tabId;
     if (!(details.url in this.captionRequestsInFlight)) {
-      this.captionRequestsInFlight[details.url] = 1;
-      window.sendMessageToActiveTab({
+      this.captionRequestsInFlight[details.url] = true;
+      this.sendMessageToTabId(tabId, {
         type: 'process-caption-request',
-        payload: details.url,
-        site: 'netflix' // Pass site so a DC instance can ignore if site doesn't match
-      }).then(response => {
-        // TODO - delete this.captionRequestsInFlight[details.url];
-      }).catch(err => {
-        console.log(`Couldn't process Netflix caption request. Error: ${err}`);
+        payload: details.url
       });
     }
   }
 
   onBeforeYouTubeCaptionRequest(details) {
-    // TODO - Do you get requesting tabId in details?
+    const tabId = details.tabId;
     if (!(details.url in this.captionRequestsInFlight)) {
-      this.captionRequestsInFlight[details.url] = 1;
-      window.sendMessageToActiveTab({
+      this.captionRequestsInFlight[details.url] = true;
+      this.sendMessageToTabId(tabId, {
         type: 'process-caption-request',
-        payload: details.url,
-        site: 'youtube' // Pass site so a DC instance can ignore if site doesn't match
-      }).then(response => {
-        // TODO - delete this.captionRequestsInFlight[details.url];
-      }).catch(err => {
-        console.log(`Couldn't process YouTube caption request. Error: ${err}`);
+        payload: details.url
       });
     }
   }
 
   onTabUpdated(tabId, changeInfo, tab) {
     if (tabId && changeInfo.url) {
-      // TODO - Could optimize?
+      // Let content scripts know the URL changed
       window.chrome.tabs.sendMessage(tabId, {
-        type: 'tab-updated-url'
-      }, response => {
-        // TODO - Need to do anything? Probably not.
-      });
+        type: 'tab-updated-url' // TODO - Test
+      }, () => {});
     }
   }
 }

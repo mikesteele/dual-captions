@@ -6,6 +6,7 @@ import Parser from './Parser';
 import PopupMessageHandler from './PopupMessageHandler';
 import Provider from './Provider';
 import Captions from './Captions';
+import TranslationQueue from './TranslationQueue';
 import { NetflixAdapterCreator } from './adapters/netflix';
 import { YoutubeAdapterCreator } from './adapters/youtube';
 import InjectedStyles from './Styles';
@@ -34,26 +35,31 @@ class App extends React.Component {
             return (
               <ConnectedAdapter site={site}>
                 {(adapter) => (
-                  <Parser>
-                    {(parser) => (
-                      <PopupMessageHandler adapter={adapter}>
-                        {(settings) => (
-                          <Provider
-                            adapter={adapter}
-                            parser={parser}
-                            settings={settings}>
-                            {(currentCaptionToRender) => (
-                              <Captions
-                                adapter={adapter}
-                                currentCaptionToRender={currentCaptionToRender}
-                                settings={settings}
-                              />
-                            )}
-                          </Provider>
-                        )}
-                      </PopupMessageHandler>
-                    )}
-                  </Parser>
+                  <TranslationQueue>
+                  {(queue) => (
+                    <Parser>
+                      {(parser) => (
+                        <PopupMessageHandler adapter={adapter}>
+                          {(settings) => (
+                            <Provider
+                              adapter={adapter}
+                              parser={parser}
+                              settings={settings}
+                              queue={queue}>
+                              {(currentCaptionToRender) => (
+                                <Captions
+                                  adapter={adapter}
+                                  currentCaptionToRender={currentCaptionToRender}
+                                  settings={settings}
+                                />
+                              )}
+                            </Provider>
+                          )}
+                        </PopupMessageHandler>
+                      )}
+                    </Parser>
+                  )}
+                  </TranslationQueue>
                 )}
               </ConnectedAdapter>
             );

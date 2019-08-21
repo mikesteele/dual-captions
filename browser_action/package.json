@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cd build/static/js && cp *.js main.js && ls",
     "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
   },

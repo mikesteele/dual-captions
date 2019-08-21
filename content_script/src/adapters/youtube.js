@@ -2,23 +2,34 @@ export const YoutubeAdapterCreator = () => {
   let caption;
   let captionWindow;
   let video;
+  let error = null;
   video = document.querySelector('video');
   captionWindow = document.querySelector('.ytp-caption-window-bottom') || document.querySelector('.caption-window');
-  caption = document.querySelector('.captions-text > span');
+  caption = document.querySelector('.ytp-caption-segment');
+
+  const automaticCaptions = document.querySelector('.ytp-caption-window-rollup');
+  if (automaticCaptions) {
+    // Automatic captions (.ytp-caption-window-rollup) aren't supported.
+    error = 'automatic-subtitles';
+  };
+
   return {
-    canRenderInCaptionWindow: true,
+    canRenderInCaptionWindow: false,
     captionWindow: captionWindow ? captionWindow : null,
     captionWindowPosition: captionWindow ? captionWindow.style.cssText : null,
-    captionWindowStyle: { textAlign: 'center', width: '700px' },
+    captionWindowStyle: {
+      textAlign: 'center'
+    },
     captionStyle: caption ? {
-      background: caption.style.background,
-      backgroundColor: caption.style.backgroundColor,
-      color: caption.style.color,
+      background: 'black',
+      color: 'white',
       fontFamily: caption.style.fontFamily,
-      fontSize: caption.style.fontSize
+      fontSize: caption.style.fontSize,
+      padding: '4px',
     } : null,
     captionClassName: 'captions-text',
-    video: video ? video : null
+    video: video ? video : null,
+    error: error,
   };
 }
 

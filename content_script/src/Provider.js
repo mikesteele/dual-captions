@@ -1,5 +1,6 @@
 import React from 'react';
-import translate from './GoogleTranslate';
+import { iso639_3to1 } from './utils/i18n';
+const franc = require('franc');
 
 class Provider extends React.Component {
   constructor(props) {
@@ -12,8 +13,17 @@ class Provider extends React.Component {
     this.canUseCaptionsFromVideo = this.canUseCaptionsFromVideo.bind(this);
     this.guessLanguage = this.guessLanguage.bind(this);
     this.guessLanguageOfCaptions = this.guessLanguageOfCaptions.bind(this);
+    this.getLoadedLanguages = this.getLoadedLanguages.bind(this);
+  }
+
+  componentDidMount() {
     if (global.chrome && global.chrome.runtime && global.chrome.runtime.onMessage) {
       global.chrome.runtime.onMessage.addListener(this.onMessage);
+      global.setInterval(() => {
+        global.chrome.runtime.sendMessage({
+          type: 'get-pending-messages'
+        }, () => {});
+      }, 1000);
     }
   }
 
@@ -43,14 +53,27 @@ class Provider extends React.Component {
     if (captionToRender) {
       return captionToRender.text;
     } else {
-      return null;
+      return '';
+    }
+  }
+
+  getLoadedLanguages() {
+    const currentSite = this.props.adapter.site;
+    const videoId = this.props.adapter.videoId;
+    if (currentSite
+        && videoId
+        && this.state.captions.hasOwnProperty(currentSite)
+        && this.state.captions[currentSite].hasOwnProperty(videoId)) {
+      return Object.keys(this.state.captions[currentSite][videoId]);
+    } else {
+      return [];
     }
   }
 
   guessLanguageOfCaptions(captions) {
     return new Promise((resolve, reject) => {
-      const longestCaption = captions.reduce((a, b) => { return a.text.length > b.text.length ? a : b });
-      this.guessLanguage(longestCaption.text)
+      const allText = captions.reduce((sum, currentCaption) => currentCaption.text + ' ' + sum, '');
+      this.guessLanguage(allText)
          .then(language => {
            resolve({
              captions: captions,
@@ -63,14 +86,17 @@ class Provider extends React.Component {
 
   guessLanguage(text) {
     return new Promise((resolve, reject) => {
-      translate(text, {
-        from: 'auto',
-        to: 'en'
-      })
-      .then(response => {
-        resolve(response.from.language.iso);
-      })
-      .catch(reject);
+      const result = franc(text);
+      if (result) {
+        const isoCode = iso639_3to1[result];
+        if (isoCode) {
+          resolve(isoCode);
+        } else {
+          reject(`Could not convert franc result. Result: ${result}`);
+        }
+      } else {
+        reject(`Could not detect language. Text: ${text}`);
+      }
     });
   }
 
@@ -127,8 +153,22 @@ class Provider extends React.Component {
         });
       break;
 
-      default:
+      case 'get-state':
+      const { settings } = this.props;
+      const loadedLanguages = this.getLoadedLanguages();
+      sendResponse({
+        ok: true,
+        settingsAreDefault: settings.settingsAreDefault,
+        isOn: settings.isOn,
+        secondLanguage: settings.secondSubtitleLanguage,
+        settings: {
+          extraSpace: settings.extraSpace,
+        },
+        loadedLanguages: loadedLanguages,
+      });
+      break;
 
+      default:
       break;
     }
   }
@@ -157,11 +197,13 @@ class Provider extends React.Component {
   }
 
   render() {
-    let currentCaptionToRender = null;
-    if (this.canUseCaptionsFromVideo()) {
+    let currentCaptionToRender = '';
+
+    if (this.props.adapter.providerInDebugMode) {
+      currentCaptionToRender = 'In debug mode...';
+    } else if (this.canUseCaptionsFromVideo()) {
       currentCaptionToRender = this.getCaptionToRender();
     }
-
     return this.props.children(currentCaptionToRender);
   }
 };

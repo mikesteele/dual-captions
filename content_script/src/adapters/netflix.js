@@ -7,14 +7,13 @@ const DefaultCaptionStyle = {
 };
 
 export const NetflixAdapterCreator = () => {
-  // TODO - Differeniate between props that apply to the DC elements. and those that reference the DOM
-  // Eg. dcCaptionStyle, dcCaptionWindowStyle
-  let canRenderInCaptionWindow = true;
-  let captionStyle = DefaultCaptionStyle;
+  let canRenderInCaptionWindow = false;
+  let captionStyle = null;
   let captionWindow = null;
   let captionWindowPosition = null;
   let captionWindowStyle = { textAlign: 'center', width: '700px' };
   let video = document.querySelector('video') || null;
+  const defaultCaptionStyle = DefaultCaptionStyle;
 
   let isRenderingImageSubtitles = !!document.querySelector('.image-based-timed-text image');
 
@@ -50,6 +49,7 @@ export const NetflixAdapterCreator = () => {
     captionWindowPosition,
     captionWindowStyle,
     captionStyle,
+    defaultCaptionStyle,
     video
   };
 };

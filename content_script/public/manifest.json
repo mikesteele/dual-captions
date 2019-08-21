@@ -1,7 +1,7 @@
 {
-  "name": "dc-awareness",
+  "name": "dc2",
   "description": "TODO",
-  "version": "0.4.1",
+  "version": "0.8.0",
   "permissions": [
     "tabs",
     "http://*/*",
@@ -17,12 +17,12 @@
   "browser_action": {
     "default_title": "TODO",
     "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_popup": "index.html"
   },
   "content_scripts": [{
     "all_frames": false,
     "js": [
-      "static/js/main.js"
+      "bundle.js"
     ],
     "matches": [
       "https://www.youtube.com/*",
@@ -30,7 +30,9 @@
     ]
    }],
   "icons": {
-    "16": "icon.png"
+    "16": "icon.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
   },
   "manifest_version": 2
 }
