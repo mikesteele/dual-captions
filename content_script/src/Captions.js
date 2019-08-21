@@ -11,6 +11,23 @@ class Captions extends React.Component {
     this.previousPosition = null;
     this.previousCaptionStyle = null;
     this.previousCaptionWindowStyle = null;
+    this.addHoverToCaptionWindow = this.addHoverToCaptionWindow.bind(this);
+    this.removeHoverFromCaptionWindow = this.removeHoverFromCaptionWindow.bind(this);
+  }
+
+  addHoverToCaptionWindow() {
+    const {
+      adapter
+    } = this.props;
+    if (adapter.captionWindow) {
+      adapter.captionWindow.addEventListener('click', () => {
+        alert('hi');
+      });
+    }
+  }
+
+  removeHoverFromCaptionWindow() {
+    // TODO
   }
 
   onPopperPositionChanged(position) {
@@ -107,7 +124,10 @@ class Captions extends React.Component {
       return (
         <Popper
           target={captionWindow}
-          onPositionChanged={this.onPopperPositionChanged}>
+          onPositionChanged={this.onPopperPositionChanged}
+          sideEffectCallback={this.addHoverToCaptionWindow}
+          sideEffectCleanUpCallback={this.removeHoverFromCaptionWindow}
+        >
           {
             shouldRenderCaptionWindow ? (
               <div {...captionWindowProps}>

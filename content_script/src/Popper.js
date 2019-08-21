@@ -13,6 +13,9 @@ class WithPopper extends React.Component {
     console.log('Creating new Popper.');
     if (this.popper) {
       this.popper.destroy();
+      if (this.props.sideEffectCleanUpCallback) {
+        this.props.sideEffectCleanUpCallback();
+      }
     }
     this.popper = new Popper(
       this.props.target,
@@ -36,6 +39,7 @@ class WithPopper extends React.Component {
         }
       }
     );
+    this.props.sideEffectCallback();
   }
 
   canAttachToTarget() {
@@ -51,6 +55,9 @@ class WithPopper extends React.Component {
   componentWillUnmount() {
     if (this.popper) {
       this.popper.destroy();
+      if (this.props.sideEffectCleanUpCallback) {
+        this.props.sideEffectCleanUpCallback();
+      }
     }
   }
 
