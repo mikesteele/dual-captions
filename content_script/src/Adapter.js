@@ -88,6 +88,7 @@ class Adapter extends React.Component {
     const onPopupOpened = () => { console.log('TODO') };
     let fullscreenRoot = null;
     let error = null;
+    let smallTextSize = null;
     if (awareness) {
       const { video } = awareness;
       playerCurrentTime = video && video.currentTime;
@@ -103,6 +104,7 @@ class Adapter extends React.Component {
       defaultCaptionStyle = awareness.defaultCaptionStyle;
       error = awareness.error;
       fullscreenRoot = awareness.fullscreenRoot;
+      smallTextSize = awareness.smallTextSize;
     }
     const adapter = {
       canRenderInCaptionWindow,
@@ -117,6 +119,7 @@ class Adapter extends React.Component {
       providerInDebugMode,
       videoId,
       onPopupOpened,
+      smallTextSize,
       site,
       time,
       providerInDebugMode,

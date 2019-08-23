@@ -15,6 +15,7 @@ export const NetflixAdapterCreator = () => {
   let video = document.querySelector('video') || null;
   let fullscreenRoot = document.querySelector('.nfp.AkiraPlayer');
   const defaultCaptionStyle = DefaultCaptionStyle;
+  let smallTextSize = '22px';
 
   let isRenderingImageSubtitles = !!document.querySelector('.image-based-timed-text image');
 
@@ -52,6 +53,7 @@ export const NetflixAdapterCreator = () => {
     captionStyle,
     defaultCaptionStyle,
     fullscreenRoot,
+    smallTextSize,
     video
   };
 };

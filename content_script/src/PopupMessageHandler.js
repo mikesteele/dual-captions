@@ -12,7 +12,8 @@ class PopupMessageHandler extends React.Component {
         secondSubtitleLanguage: 'none',
         settingsAreDefault: true,
         customColorsEnabled: false,
-        customTextColor: '#FFFFFF'
+        customTextColor: '#FFFFFF',
+        smallText: false
       }
     }
 
@@ -54,7 +55,8 @@ class PopupMessageHandler extends React.Component {
       const {
         extraSpace,
         customTextColor,
-        customColorsEnabled
+        customColorsEnabled,
+        smallText
       } = message.payload;
 
       const {
@@ -68,6 +70,9 @@ class PopupMessageHandler extends React.Component {
       }
       if (settings.customColorsEnabled !== customColorsEnabled) {
         this.changeSetting('customColorsEnabled', customColorsEnabled);
+      }
+      if (settings.smallText !== smallText) {
+        this.changeSetting('smallText', smallText);
       }
       break;
 
