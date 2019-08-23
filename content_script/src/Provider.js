@@ -163,6 +163,8 @@ class Provider extends React.Component {
         secondLanguage: settings.secondSubtitleLanguage,
         settings: {
           extraSpace: settings.extraSpace,
+          customColorsEnabled: settings.customColorsEnabled,
+          customTextColor: settings.customTextColor
         },
         loadedLanguages: loadedLanguages,
       });

@@ -2,7 +2,9 @@ import { default as secondLanguages } from './languages';
 
 const config = {
   defaultSettings: {
-    extraSpace: false
+    extraSpace: false,
+    customColorsEnabled: false,
+    customTextColor: '#FFFFFF'
   },
   defaultSecondLanguage: 'none',
   defaultUILanguage: 'en',

@@ -36,5 +36,7 @@
   "translation-request-2": " What language is this?",
   "submit": "Submit",
   "v2-welcome": "Welcome to v2!",
-  "v2-whats-new": "What's new?"
+  "v2-whats-new": "What's new?",
+  "customColorsEnabled": "Custom colors",
+  "customTextColor": "Text color"
 }

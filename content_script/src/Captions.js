@@ -60,6 +60,14 @@ class Captions extends React.Component {
     if (settings.extraSpace) {
       captionProps.className = 'extra-space';
     }
+    if (settings.customColorsEnabled) {
+      if (settings.customTextColor) {
+        captionProps.style = {
+          ...captionProps.style,
+          color: settings.customTextColor
+        }
+      }
+    }
 
     // Replace \n's with <br/> elements
     const captionToRender = currentCaptionToRender.split('\n').map(sentence => (

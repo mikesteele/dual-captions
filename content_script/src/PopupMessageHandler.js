@@ -11,6 +11,8 @@ class PopupMessageHandler extends React.Component {
         extraSpace: false,
         secondSubtitleLanguage: 'none',
         settingsAreDefault: true,
+        customColorsEnabled: false,
+        customTextColor: '#FFFFFF'
       }
     }
 
@@ -49,9 +51,23 @@ class PopupMessageHandler extends React.Component {
       break;
 
       case 'change-settings':
-      const { extraSpace } = message.payload;
-      if (this.state.settings.extraSpace !== extraSpace) {
+      const {
+        extraSpace,
+        customTextColor,
+        customColorsEnabled
+      } = message.payload;
+
+      const {
+        settings
+      } = this.state;
+      if (settings.extraSpace !== extraSpace) {
         this.changeSetting('extraSpace', extraSpace);
+      }
+      if (settings.customTextColor !== customTextColor) {
+        this.changeSetting('customTextColor', customTextColor);
+      }
+      if (settings.customColorsEnabled !== customColorsEnabled) {
+        this.changeSetting('customColorsEnabled', customColorsEnabled);
       }
       break;
 
