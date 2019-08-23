@@ -37,6 +37,6 @@
   "submit": "Submit",
   "v2-welcome": "Welcome to v2!",
   "v2-whats-new": "What's new?",
-  "colorSubtitleEnabled": "Custom colors",
-  "textColor": "Text Color"
+  "customColorsEnabled": "Custom colors",
+  "customTextColor": "Text color"
 }

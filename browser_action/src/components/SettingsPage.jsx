@@ -28,7 +28,7 @@ class SettingsPage extends Component {
     const checkboxSettings = [
       'delayRenderingUntilTranslation',
       'extraSpace',
-      'colorSubtitleEnabled'
+      'customColorsEnabled'
     ];
     const defaultSettings = Object.keys(config.defaultSettings);
     const settings = defaultSettings.map(setting => (
@@ -44,25 +44,17 @@ class SettingsPage extends Component {
             </label>
           </div>
         )}
-        { setting === 'colorSubtitleEnabled' && (
+        { setting === 'customColorsEnabled' && (
           <div
             className='colors-container'
-            hidden={!this.props.settings.colorSubtitleEnabled}>
+            hidden={!this.props.settings.customColorsEnabled}>
             <label>
               <input
                 type='color'
-                value={this.props.settings.colorSubtitleBackgroundColor}
-                onChange={this._onColorInputChange.bind(this, 'colorSubtitleBackgroundColor')}
+                value={this.props.settings.customTextColor}
+                onChange={this._onColorInputChange.bind(this, 'customTextColor')}
               />
-              <span>{this.props.t('backgroundColor')}</span>
-            </label>
-            <label>
-              <input
-                type='color'
-                value={this.props.settings.colorSubtitleTextColor}
-                onChange={this._onColorInputChange.bind(this, 'colorSubtitleTextColor')}
-              />
-              <span>{this.props.t('textColor')}</span>
+              <span>{this.props.t('customTextColor')}</span>
             </label>
           </div>
         )}
