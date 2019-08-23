@@ -29,7 +29,8 @@ class SettingsPage extends Component {
       'delayRenderingUntilTranslation',
       'extraSpace',
       'customColorsEnabled',
-      'smallText'
+      'smallText',
+      'hotKeyEnabled'
     ];
     const defaultSettings = Object.keys(config.defaultSettings);
     const settings = defaultSettings.map(setting => (

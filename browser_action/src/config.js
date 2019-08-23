@@ -5,7 +5,8 @@ const config = {
     extraSpace: false,
     customColorsEnabled: false,
     customTextColor: '#FFFFFF',
-    smallText: false
+    smallText: false,
+    hotKeyEnabled: true
   },
   defaultSecondLanguage: 'none',
   defaultUILanguage: 'en',

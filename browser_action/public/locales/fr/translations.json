@@ -38,5 +38,6 @@
   "v2-whats-new": "Changements",
   "customColorsEnabled": "Coleur différent",
   "customTextColor": "Couleur du texte",
-  "smallText": "Petit texte"
+  "smallText": "Petit texte",
+  "hotKeyEnabled": "Allumer / éteindre avec Option/Alt + D"
 }
