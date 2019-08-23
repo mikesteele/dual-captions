@@ -68,6 +68,12 @@ class Captions extends React.Component {
         }
       }
     }
+    if (settings.smallText && adapter.smallTextSize) {
+      captionProps.style = {
+        ...captionProps.style,
+        fontSize: adapter.smallTextSize
+      }
+    }
 
     // Replace \n's with <br/> elements
     const captionToRender = currentCaptionToRender.split('\n').map(sentence => (

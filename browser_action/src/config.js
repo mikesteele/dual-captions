@@ -4,7 +4,8 @@ const config = {
   defaultSettings: {
     extraSpace: false,
     customColorsEnabled: false,
-    customTextColor: '#FFFFFF'
+    customTextColor: '#FFFFFF',
+    smallText: false
   },
   defaultSecondLanguage: 'none',
   defaultUILanguage: 'en',

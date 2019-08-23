@@ -6,6 +6,7 @@ export const YoutubeAdapterCreator = () => {
   video = document.querySelector('video');
   captionWindow = document.querySelector('.ytp-caption-window-bottom') || document.querySelector('.caption-window');
   caption = document.querySelector('.ytp-caption-segment');
+  let smallTextSize = '14px';
 
   const automaticCaptions = document.querySelector('.ytp-caption-window-rollup');
   if (automaticCaptions) {
@@ -30,6 +31,7 @@ export const YoutubeAdapterCreator = () => {
     captionClassName: 'captions-text',
     video: video ? video : null,
     error: error,
+    smallTextSize: smallTextSize
   };
 }
 

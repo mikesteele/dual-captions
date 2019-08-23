@@ -28,7 +28,8 @@ class SettingsPage extends Component {
     const checkboxSettings = [
       'delayRenderingUntilTranslation',
       'extraSpace',
-      'customColorsEnabled'
+      'customColorsEnabled',
+      'smallText'
     ];
     const defaultSettings = Object.keys(config.defaultSettings);
     const settings = defaultSettings.map(setting => (
