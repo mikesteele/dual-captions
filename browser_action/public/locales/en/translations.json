@@ -39,5 +39,6 @@
   "v2-whats-new": "What's new?",
   "customColorsEnabled": "Custom colors",
   "customTextColor": "Text color",
-  "smallText": "Small text"
+  "smallText": "Small text",
+  "hotKeyEnabled": "Turn on/off with Option/Alt + D"
 }

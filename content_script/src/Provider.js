@@ -165,7 +165,8 @@ class Provider extends React.Component {
           extraSpace: settings.extraSpace,
           customColorsEnabled: settings.customColorsEnabled,
           customTextColor: settings.customTextColor,
-          smallText: settings.smallText
+          smallText: settings.smallText,
+          hotKeyEnabled: settings.hotKeyEnabled
         },
         loadedLanguages: loadedLanguages,
       });
