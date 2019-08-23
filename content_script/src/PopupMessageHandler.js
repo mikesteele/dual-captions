@@ -11,6 +11,8 @@ class PopupMessageHandler extends React.Component {
         extraSpace: false,
         secondSubtitleLanguage: 'none',
         settingsAreDefault: true,
+        customColorsEnabled: false,
+        customTextColor: '#FFFFFF'
       }
     }
 
