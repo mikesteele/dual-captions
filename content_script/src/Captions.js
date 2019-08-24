@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import WithPopper from './Popper';
+import WithPopper, { StickyPopper } from './Popper';
+import { CSSTransition } from 'react-transition-group';
 
 const Popper = WithPopper;
 
@@ -158,6 +159,41 @@ class Captions extends React.Component {
   }
 }
 
+const ActionsPane = props => {
+  const {
+    adapter,
+    settings
+  } = props;
+
+  const shouldRenderHeartAction = settings.mouseIsActive && adapter.captionWindow;
+
+  const heartAction = (
+    <StickyPopper target={adapter.captionWindow}>
+      <div style={{
+        width: '50px',
+        height: '50px',
+        backgroundColor: 'red'
+      }}/>
+    </StickyPopper>
+  );
+
+  // TODO - This transition doesn't look great, I'd just scrap fade ins.
+  const pane = (
+    <CSSTransition in={shouldRenderHeartAction} classNames="dc-fade" timeout={1000}>
+      <div className={'action-pane'}>
+        { heartAction }
+      </div>
+    </CSSTransition>
+  );
+
+  return (
+    <React.Fragment>
+      { pane }
+      <FullscreenHOC {...props}/>
+    </React.Fragment>
+  );
+}
+
 // Helper for creating a Portal to adapter.fullscreenRoot if fullscreen enabled
 const FullscreenHOC = props => {
   const {
@@ -173,4 +209,4 @@ const FullscreenHOC = props => {
   }
 };
 
-export default FullscreenHOC;
+export default ActionsPane;

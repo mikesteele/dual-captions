@@ -7,7 +7,8 @@
     "popper.js": "^1.14.6",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "1.0.10"
+    "react-scripts": "1.0.10",
+    "react-transition-group": "^4.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
