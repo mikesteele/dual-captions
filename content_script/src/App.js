@@ -9,6 +9,7 @@ import Captions from './Captions';
 import TranslationQueue from './TranslationQueue';
 import { NetflixAdapterCreator } from './adapters/netflix';
 import { YoutubeAdapterCreator } from './adapters/youtube';
+import EdxAdapter from './adapters/edx';
 import InjectedStyles from './Styles';
 import withTimer from './with-timer';
 
@@ -25,6 +26,8 @@ class App extends React.Component {
               // TODO - Should have an HOC to pass site
             } else if (site === 'youtube') {
               ConnectedAdapter = withTimer(Adapter, YoutubeAdapterCreator);
+            } else if (site === 'edx') {
+              ConnectedAdapter = withTimer(Adapter, EdxAdapter);
             } else if (site === null) {
               return (
                 <div/>
