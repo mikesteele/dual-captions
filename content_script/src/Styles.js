@@ -27,7 +27,7 @@ const Styles = () => {
     }
 
     .action-pane {
-      transition: filter 1000ms;
+      transition: filter 300ms;
       width: 100%;
       height: 100%;
       position: absolute;

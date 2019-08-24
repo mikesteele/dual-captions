@@ -165,8 +165,6 @@ const ActionsPane = props => {
     settings
   } = props;
 
-  const shouldRenderHeartAction = settings.mouseIsActive && adapter.captionWindow;
-
   const heartAction = (
     <StickyPopper target={adapter.captionWindow}>
       <div style={{
@@ -179,7 +177,7 @@ const ActionsPane = props => {
 
   // TODO - This transition doesn't look great, I'd just scrap fade ins.
   const pane = (
-    <CSSTransition in={shouldRenderHeartAction} classNames="dc-fade" timeout={1000}>
+    <CSSTransition in={settings.mouseIsActive} classNames="dc-fade" timeout={300}>
       <div className={'action-pane'}>
         { heartAction }
       </div>
