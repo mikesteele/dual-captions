@@ -4,12 +4,14 @@ class BackgroundPage {
     this.captionRequestsInFlight = {}; // TODO - Still need?
     this.netflixCaptionRequestPattern = 'https://*.nflxvideo.net/?o=*&v=*&e=*&t=*';
     this.youtubeCaptionRequestPattern = 'https://www.youtube.com/api/timedtext*';
+    this.edxCaptionRequestPattern = 'https://courses.edx.org/*/translation/*';
     this.pendingMessagesForTabId = {} // tabId: [Messages]
 
     // Binds
     this.onTabUpdated = this.onTabUpdated.bind(this);
     this.onBeforeNetflixCaptionRequest = this.onBeforeNetflixCaptionRequest.bind(this);
     this.onBeforeYouTubeCaptionRequest = this.onBeforeYouTubeCaptionRequest.bind(this);
+    this.onBeforeEdxCaptionRequest = this.onBeforeEdxCaptionRequest.bind(this);
     this.sendMessageToTabId = this.sendMessageToTabId.bind(this);
     this.onMessage = this.onMessage.bind(this);
     this.sendPendingMessages = this.sendPendingMessages.bind(this);
@@ -23,6 +25,11 @@ class BackgroundPage {
     window.chrome.webRequest.onBeforeRequest.addListener(
       this.onBeforeNetflixCaptionRequest, {
         urls: [this.netflixCaptionRequestPattern]
+      }
+    );
+    window.chrome.webRequest.onBeforeRequest.addListener(
+      this.onBeforeEdxCaptionRequest, {
+        urls: [this.edxCaptionRequestPattern]
       }
     );
     window.chrome.tabs.onUpdated.addListener(this.onTabUpdated);
@@ -72,6 +79,18 @@ class BackgroundPage {
   }
 
   onBeforeYouTubeCaptionRequest(details) {
+    const tabId = details.tabId;
+    if (!(details.url in this.captionRequestsInFlight)) {
+      this.captionRequestsInFlight[details.url] = true;
+      this.sendMessageToTabId(tabId, {
+        type: 'process-caption-request',
+        payload: details.url
+      });
+    }
+  }
+
+
+  onBeforeEdxCaptionRequest(details) {
     const tabId = details.tabId;
     if (!(details.url in this.captionRequestsInFlight)) {
       this.captionRequestsInFlight[details.url] = true;

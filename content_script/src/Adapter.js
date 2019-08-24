@@ -35,6 +35,8 @@ class Adapter extends React.Component {
       videoId = this.detectNetflixVideoId();
     } else if (this.props.site === 'youtube') {
       videoId = this.detectYoutubeVideoId(); // TODO - Audit repo for Youtube vs YouTube
+    } else if (this.props.site === 'edx') {
+      videoId = this.detectEdxVideoId();
     }
     if (videoId !== this.state.videoId) {
       // TODO - There are probably other places where I'm setting state unnecessarily
@@ -58,6 +60,12 @@ class Adapter extends React.Component {
     const url = new URL(window.location.href);
     const videoId = url.searchParams.get('v');
     return videoId ? videoId : null;
+  }
+
+  // TODO - Move videoId to adapter
+  detectEdxVideoId() {
+    // TODO - Doesn't work with mulitple videos on same page
+    return window.location.href;
   }
 
   onMessage(message, sender, sendResponse) {

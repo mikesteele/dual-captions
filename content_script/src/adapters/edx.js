@@ -6,8 +6,7 @@ const EdxAdapter = () => {
   return {
     canRenderInCaptionWindow,
     captionWindow,
-    video,
-    providerInDebugMode: true // TODO - Remove
+    video
   }
 }
 
