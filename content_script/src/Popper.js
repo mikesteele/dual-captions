@@ -28,7 +28,7 @@ class WithPopper extends React.Component {
             this.props.onPositionChanged(data.styles);
           }
         },
-        placement: 'bottom',
+        placement: this.props.placement,
         modifiers: {
           flip: {
             enabled: false
@@ -71,6 +71,10 @@ class WithPopper extends React.Component {
       </div>
     );
   }
+}
+
+WithPopper.defaultProps = {
+  placement: 'bottom'
 }
 
 class StickyPopper extends React.Component {

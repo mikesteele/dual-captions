@@ -216,7 +216,10 @@ const HeartHOC = props => {
     settings
   } = props;
   const heart = (
-    <StickyPopper target={adapter.captionWindow}>
+    <StickyPopper
+      target={adapter.captionWindow}
+      placement='right'
+    >
       <Heart
         favorites={settings.favorites}
         firstCaptionText="todo"
