@@ -73,4 +73,42 @@ class WithPopper extends React.Component {
   }
 }
 
+class StickyPopper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.previousPosition = null;
+    this.onPositionChanged = this.onPositionChanged.bind(this);
+  }
+
+  onPositionChanged(position) {
+    this.previousPosition = position;
+  }
+
+  render() {
+    const {
+      children,
+      target
+    } = this.props;
+    if (target) {
+      return (
+        <WithPopper
+          {...this.props}
+          onPositionChanged={this.onPositionChanged}
+        >
+          { children }
+        </WithPopper>
+      );
+    } else if (this.previousPosition) {
+      return (
+        <div className='dc-popper' style={this.previousPosition}>
+          { children }
+        </div>
+      )
+    } else {
+      return null;
+    }
+  }
+}
+
+export { StickyPopper };
 export default WithPopper;

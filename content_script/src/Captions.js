@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import WithPopper from './Popper';
+import WithPopper, { StickyPopper } from './Popper';
 
 const Popper = WithPopper;
 
@@ -166,11 +166,72 @@ const FullscreenHOC = props => {
   } = props;
   if (adapter.fullscreenRoot) {
     return ReactDOM.createPortal((
-      <Captions {...props}/>
+      <HeartHOC {...props}/>
     ), adapter.fullscreenRoot);
   } else {
-    return <Captions {...props}/>
+    return <HeartHOC {...props}/>
   }
 };
+
+const Heart = props => {
+  const {
+    favorites,
+    firstCaptionText,
+    secondCaptionText,
+    addToFavorites,
+    removeFromFavorites
+  } = props;
+  let style = {
+    fontSize: '24px',
+    color: 'white',
+    background: 'black'
+  }
+  let onClick = () => {
+    addToFavorites(firstCaptionText, secondCaptionText);
+  };
+  const isFavorited = favorites.some(pair => (
+    pair[0] === firstCaptionText &&
+    pair[1] === secondCaptionText
+  ));
+
+  if (isFavorited) {
+    style.background = 'red';
+    onClick = () => {
+      removeFromFavorites(firstCaptionText, secondCaptionText);
+    }
+  }
+  return (
+    <div
+      style={style}
+      onClick={onClick}
+    >
+      {'&hearts;'}
+    </div>
+  )
+}
+
+const HeartHOC = props => {
+  const {
+    adapter,
+    settings
+  } = props;
+  const heart = (
+    <StickyPopper target={adapter.captionWindow}>
+      <Heart
+        favorites={settings.favorites}
+        firstCaptionText="todo"
+        secondCaptionText="todo"
+        addToFavorites={settings.addToFavorites}
+        removeFromFavorites={() => {}}
+      />
+    </StickyPopper>
+  );
+  return (
+    <React.Fragment>
+      { heart }
+      <Captions {...props}/>
+    </React.Fragment>
+  )
+}
 
 export default FullscreenHOC;

@@ -2,6 +2,7 @@ import React from 'react';
 
 const D_KEY_CODE = 68;
 const ALT_KEY_CODE = 18;
+const B_KEY_CODE = 66;
 
 class PopupMessageHandler extends React.Component {
   constructor(props) {
@@ -18,15 +19,18 @@ class PopupMessageHandler extends React.Component {
         customTextColor: '#FFFFFF',
         smallText: false,
         hotKeyEnabled: true
-      }
+      },
+      favorites: []
     }
 
     this.changeSetting = this.changeSetting.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
+    this.addToFavorites = this.addToFavorites.bind(this);
 
     this.altKeyPressed = false;
     this.dKeyPressed = false;
+    this.bKeyPressed = false;
   }
 
   componentDidMount() {
@@ -47,9 +51,65 @@ class PopupMessageHandler extends React.Component {
     if (e.keyCode === ALT_KEY_CODE) {
       this.altKeyPressed = true;
     }
+    if (e.keyCode === B_KEY_CODE) {
+      this.bKeyPressed = true;
+    }
     if (this.dKeyPressed && this.altKeyPressed && settings.hotKeyEnabled) {
       this.changeSetting('isOn', !settings.isOn);
     }
+    if (this.bKeyPressed && this.altKeyPressed) {
+      // TODO - this.onClickFavoriteButton();
+    }
+  }
+
+  getSavedFavorites() {
+    return new Promise((resolve, reject) => {
+      window.chrome.storage.local.get('__DC_favorites__', result => {
+        if (result.__DC_favorites__) {
+          resolve(result.__DC_favorites__);
+        } else {
+          reject('No saved favorites');
+        }
+      });
+    });
+  }
+
+  // TODO - Remove
+  updateLocalFavorites() {
+    this.getSavedFavorites().then(favorites => {
+      this.setState({
+        favorites
+      });
+    });
+  }
+
+  addToFavorites(text1, text2) {
+    return new Promise((resolve, reject) => {
+      if (window.chrome && window.chrome.storage && window.chrome.storage.local) {
+        // Try to get old favorites
+        let newFavorites = [[text1, text2]];
+        window.chrome.storage.local.get('__DC_favorites__', result => {
+          if (result.__DC_favorites__) {
+            newFavorites = [
+              ...newFavorites,
+              ...result.__DC_favorites__
+            ];
+          }
+          window.chrome.storage.local.set({
+            __DC_favorites__: newFavorites
+          }, () => {
+            this.setState({
+              favorites: newFavorites
+            }, () => {
+              alert(this.state.favorites)
+              resolve();
+            });
+          });
+        });
+      } else {
+        reject(`Can't add to favorites, no window.chrome.storage.local`);
+      }
+    });
   }
 
   onKeyUp(e) {
@@ -58,6 +118,9 @@ class PopupMessageHandler extends React.Component {
     }
     if (e.keyCode === ALT_KEY_CODE) {
       this.altKeyPressed = false;
+    }
+    if (e.keyCode === B_KEY_CODE) {
+      this.bKeyPressed = false;
     }
   }
 
@@ -178,7 +241,11 @@ class PopupMessageHandler extends React.Component {
 
   render() {
     const settings = this.state.settings;
-    return this.props.children(settings);
+    return this.props.children({
+      ...settings,
+      favorites: this.state.favorites,
+      addToFavorites: this.addToFavorites
+    });
   }
 }
 
