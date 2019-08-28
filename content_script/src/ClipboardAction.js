@@ -54,11 +54,15 @@ class ClipboardAction extends React.Component {
   }
 
   render() {
-    const { adapter, settings } = this.props;
+    const { adapter, settings, secondCaptionText } = this.props;
     const { isAnimating, isHoveredOver } = this.state;
 
     // It appears when the mouse is active or is being hovered over
-    const isVisible = settings.mouseIsActive || isHoveredOver;
+    const shouldAppear = settings.mouseIsActive || isHoveredOver;
+
+    const canCopy = !!secondCaptionText; // TODO - && !!firstCaptionText;
+
+    const isVisible = shouldAppear && canCopy && settings.isOn;
 
     return (
       <StickyPopper
@@ -82,6 +86,8 @@ class ClipboardAction extends React.Component {
           { settings.mouseIsActive ? 'mouse active' : 'mouse inactive' }
           <br/>
           { isHoveredOver ? 'hovered' : 'not hovered' }
+          <br/>
+          <div id="dc-debug"/>
         </div>
       </StickyPopper>
     )

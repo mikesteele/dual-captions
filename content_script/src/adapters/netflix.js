@@ -28,6 +28,10 @@ export const NetflixAdapterCreator = () => {
     }) : null;
   } else {
     captionWindow = document.querySelector('.player-timedtext-text-container') || null;
+    if (captionWindow && captionWindow.children.length === 0) {
+      console.log('here');
+      captionWindow = null;
+    }
     if (captionWindow) {
       captionWindowPosition = captionWindow.style.cssText;
       let caption = captionWindow.querySelector('span');

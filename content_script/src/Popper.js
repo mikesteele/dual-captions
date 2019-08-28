@@ -1,6 +1,26 @@
 import React from 'react';
 import Popper from 'popper.js';
 
+const isZero = (val) => val === '0' || val === '0px';
+
+const shouldRejectTransform = transform => {
+  let result = false;
+  let work = transform.split('(');
+  if (work.length === 2) {
+    work = work[1].split(')');
+    if (work.length === 2) {
+      work = work[0].split(', ');
+      if (work.length === 3) {
+        if (isZero(work[0]) || isZero(work[1])) {
+          console.log(`debug - rejecting update ${transform}`);
+          result = true;
+        }
+      }
+    }
+  }
+  return result;
+}
+
 class StickyPopper extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +29,11 @@ class StickyPopper extends React.Component {
   }
 
   onPositionChanged(position) {
-    this.previousPosition = position;
+    if(!shouldRejectTransform(position.transform)) {
+      this.previousPosition = position;
+    } else {
+      console.log(`debug - rejecting saving ${position.transform}`);
+    }
   }
 
   render() {
@@ -53,6 +77,7 @@ class WithPopper extends React.Component {
     console.log('Creating new Popper.');
     if (this.popper) {
       this.popper.destroy();
+      document.getElementById('dc-debug').innerHTML = 'destroy';
     }
     this.popper = new Popper(
       this.props.target,
@@ -72,10 +97,24 @@ class WithPopper extends React.Component {
         modifiers: {
           flip: {
             enabled: false
+          },
+          applyStyle: {
+            fn: (data, options) => {
+              if (shouldRejectTransform(data.styles.transform)) {
+                return data;
+              }
+
+              data.instance.popper.style = {
+                ...data.styles
+              };
+
+              return data;
+            }
           }
         }
       }
     );
+    document.getElementById('dc-debug').innerHTML = 'create';
   }
 
   canAttachToTarget() {
@@ -98,8 +137,9 @@ class WithPopper extends React.Component {
     if (prevProps.target !== this.props.target && this.canAttachToTarget()) {
       this.createPopper();
     } else {
-      if (this.popper) {
+      if (this.popper && this.props.target) {
         this.popper.scheduleUpdate();
+        document.getElementById('dc-debug').innerHTML = this.props.target.style.bottom;
       }
     }
   }
