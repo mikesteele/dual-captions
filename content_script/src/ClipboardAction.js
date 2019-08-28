@@ -5,11 +5,26 @@ class ClipboardAction extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isAnimating: false
+      isAnimating: false,
+      isHoveredOver: false
     }
     this.copyCaptionsToClipboard = this.copyCaptionsToClipboard.bind(this);
     this.playAnimation = this.playAnimation.bind(this);
+    this.onMouseOut = this.onMouseOut.bind(this);
+    this.onMouseOver = this.onMouseOver.bind(this);
     this.animationTimeout = null;
+  }
+
+  onMouseOver() {
+    this.setState({
+      isHoveredOver: true
+    });
+  }
+
+  onMouseOut() {
+    this.setState({
+      isHoveredOver: false
+    });
   }
 
   playAnimation() {
@@ -39,15 +54,34 @@ class ClipboardAction extends React.Component {
   }
 
   render() {
-    const { adapter } = this.props;
-    const { isAnimating } = this.state;
+    const { adapter, settings } = this.props;
+    const { isAnimating, isHoveredOver } = this.state;
+
+    // It appears when the mouse is active or is being hovered over
+    const isVisible = settings.mouseIsActive || isHoveredOver;
+
     return (
       <StickyPopper
         target={adapter.captionWindow}
         placement='left'
       >
-        <div onClick={this.copyCaptionsToClipboard}>
+        <div
+          onClick={this.copyCaptionsToClipboard}
+          style={{
+            padding: '24px',
+            fontSize: '24px',
+            background: 'red',
+            filter: isVisible ? 'opacity(1)' : 'opacity(0)',
+            transition: 'filter 200ms'
+          }}
+          onMouseOver={this.onMouseOver}
+          onMouseOut={this.onMouseOut}
+        >
           { isAnimating ? 'checkmark' : 'clipboard' }
+          <br/>
+          { settings.mouseIsActive ? 'mouse active' : 'mouse inactive' }
+          <br/>
+          { isHoveredOver ? 'hovered' : 'not hovered' }
         </div>
       </StickyPopper>
     )

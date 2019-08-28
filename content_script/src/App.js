@@ -5,7 +5,7 @@ import Adapter from './Adapter';
 import Parser from './Parser';
 import PopupMessageHandler from './PopupMessageHandler';
 import Provider from './Provider';
-import Captions from './Captions';
+import Captions, { FullscreenHOC } from './Captions';
 import TranslationQueue from './TranslationQueue';
 import { NetflixAdapterCreator } from './adapters/netflix';
 import { YoutubeAdapterCreator } from './adapters/youtube';
@@ -48,7 +48,7 @@ class App extends React.Component {
                               settings={settings}
                               queue={queue}>
                               {(currentCaptionToRender) => (
-                                <React.Fragment>
+                                <FullscreenHOC adapter={adapter}>
                                   <Captions
                                     adapter={adapter}
                                     currentCaptionToRender={currentCaptionToRender}
@@ -59,7 +59,7 @@ class App extends React.Component {
                                     secondCaptionText={currentCaptionToRender}
                                     settings={settings}
                                   />
-                                </React.Fragment>
+                                </FullscreenHOC>
                               )}
                             </Provider>
                           )}
