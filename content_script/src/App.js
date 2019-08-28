@@ -11,6 +11,7 @@ import { NetflixAdapterCreator } from './adapters/netflix';
 import { YoutubeAdapterCreator } from './adapters/youtube';
 import InjectedStyles from './Styles';
 import withTimer from './with-timer';
+import ClipboardAction from './ClipboardAction';
 
 class App extends React.Component {
   render() {
@@ -47,11 +48,18 @@ class App extends React.Component {
                               settings={settings}
                               queue={queue}>
                               {(currentCaptionToRender) => (
-                                <Captions
-                                  adapter={adapter}
-                                  currentCaptionToRender={currentCaptionToRender}
-                                  settings={settings}
-                                />
+                                <React.Fragment>
+                                  <Captions
+                                    adapter={adapter}
+                                    currentCaptionToRender={currentCaptionToRender}
+                                    settings={settings}
+                                  />
+                                  <ClipboardAction
+                                    adapter={adapter}
+                                    secondCaptionText={currentCaptionToRender}
+                                    settings={settings}
+                                  />
+                                </React.Fragment>
                               )}
                             </Provider>
                           )}
