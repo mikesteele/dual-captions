@@ -40,7 +40,9 @@ class ClipboardAction extends React.Component {
   }
 
   copyCaptionsToClipboard() {
-    navigator.clipboard.writeText('TODO')
+    const { adapter, secondCaptionText } = this.props;
+    const firstCaptionText = adapter.captionText;
+    navigator.clipboard.writeText(`${firstCaptionText}\n${secondCaptionText}`)
       .then(this.playAnimation)
       .catch(err => {
         console.error(`Couldn't copy to clipboard: ${err}`);
@@ -54,11 +56,15 @@ class ClipboardAction extends React.Component {
   }
 
   render() {
-    const { adapter, settings } = this.props;
+    const { adapter, settings, secondCaptionText } = this.props;
     const { isAnimating, isHoveredOver } = this.state;
+
+    const firstCaptionText = adapter.captionText;
 
     // It appears when the mouse is active or is being hovered over
     const isVisible = settings.mouseIsActive || isHoveredOver;
+
+    const shouldShow = isVisible && settings.isOn && firstCaptionText && secondCaptionText;
 
     return (
       <StickyPopper
@@ -68,20 +74,20 @@ class ClipboardAction extends React.Component {
         <div
           onClick={this.copyCaptionsToClipboard}
           style={{
-            padding: '24px',
-            fontSize: '24px',
-            background: 'red',
-            filter: isVisible ? 'opacity(1)' : 'opacity(0)',
-            transition: 'filter 200ms'
+            filter: shouldShow ? 'opacity(1)' : 'opacity(0)',
+            transition: 'filter 200ms',
+            pointerEvents: shouldShow ? 'auto' : 'none'
           }}
           onMouseOver={this.onMouseOver}
           onMouseOut={this.onMouseOut}
         >
-          { isAnimating ? 'checkmark' : 'clipboard' }
-          <br/>
-          { settings.mouseIsActive ? 'mouse active' : 'mouse inactive' }
-          <br/>
-          { isHoveredOver ? 'hovered' : 'not hovered' }
+          <div style={{
+            padding: '24px',
+            fontSize: '24px',
+            background: 'red',
+          }}>
+            Here!
+          </div>
         </div>
       </StickyPopper>
     )
