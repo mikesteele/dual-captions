@@ -14,6 +14,8 @@ class ClipboardAction extends React.Component {
     this.onMouseOut = this.onMouseOut.bind(this);
     this.onMouseOver = this.onMouseOver.bind(this);
     this.animationTimeout = null;
+
+    this.buttonRef = React.createRef();
   }
 
   onMouseOver() {
@@ -68,37 +70,59 @@ class ClipboardAction extends React.Component {
     const shouldShow = isVisible && settings.isOn && (firstCaptionText || secondCaptionText);
 
     return (
-      <StickyPopper
-        target={adapter.playerControls}
-        placement='top-start'
-      >
-        <div
-          onClick={this.copyCaptionsToClipboard}
-          style={{
-            filter: shouldShow ? 'opacity(1)' : 'opacity(0)',
-            transition: 'filter 200ms',
-            pointerEvents: shouldShow ? 'auto' : 'none'
-          }}
-          onMouseOver={this.onMouseOver}
-          onMouseOut={this.onMouseOut}
+      <React.Fragment>
+        <StickyPopper
+          target={adapter.playerControls}
+          placement='top-start'
         >
-          <div style={{
-            padding: '24px',
-            fontSize: '36px',
-            background: 'black',
-            color: 'white',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '50px',
-            height: '50px',
-            transition: 'box-shadow 200ms',
-            boxShadow: isHoveredOver ? '0px 0px 20px 0px rgba(0,0,0,0.75)' : 'none'
-          }}>
-            { isAnimating ? <MdAssignmentTurnedIn/> : <MdAssignment/> }
+          <div
+            onClick={this.copyCaptionsToClipboard}
+            style={{
+              filter: shouldShow ? 'opacity(1)' : 'opacity(0)',
+              transition: 'filter 200ms',
+              pointerEvents: shouldShow ? 'auto' : 'none'
+            }}
+            onMouseOver={this.onMouseOver}
+            onMouseOut={this.onMouseOut}
+          >
+            <div
+              style={{
+                padding: '24px',
+                fontSize: '36px',
+                background: 'black',
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '50px',
+                height: '50px',
+                transition: 'box-shadow 200ms',
+                boxShadow: isHoveredOver ? '0px 0px 20px 0px rgba(0,0,0,0.75)' : 'none'
+              }}
+              ref={this.buttonRef}
+            >
+              { isAnimating ? <MdAssignmentTurnedIn/> : <MdAssignment/> }
+            </div>
           </div>
-        </div>
-      </StickyPopper>
+        </StickyPopper>
+        { isHoveredOver && (
+          <StickyPopper
+            target={this.buttonRef.current}
+            placement='bottom'
+          >
+            <div
+              style={{
+                background: 'black',
+                color: 'white',
+                padding: '8px',
+                fontSize: '24px'
+              }}
+            >
+              { isAnimating ? 'Copied!' : 'Copy captions to clipboard' }
+            </div>
+          </StickyPopper>
+        )}
+      </React.Fragment>
     )
   }
 }
