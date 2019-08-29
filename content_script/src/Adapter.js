@@ -90,6 +90,7 @@ class Adapter extends React.Component {
     let error = null;
     let smallTextSize = null;
     let captionText = '';
+    let playerControls = null;
     if (awareness) {
       const { video } = awareness;
       playerCurrentTime = video && video.currentTime;
@@ -107,6 +108,7 @@ class Adapter extends React.Component {
       fullscreenRoot = awareness.fullscreenRoot;
       smallTextSize = awareness.smallTextSize;
       captionText = awareness.captionText;
+      playerControls = awareness.playerControls;
     }
     const adapter = {
       canRenderInCaptionWindow,
@@ -122,6 +124,7 @@ class Adapter extends React.Component {
       providerInDebugMode,
       videoId,
       onPopupOpened,
+      playerControls,
       smallTextSize,
       site,
       time,

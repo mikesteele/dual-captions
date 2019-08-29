@@ -17,6 +17,7 @@ export const NetflixAdapterCreator = () => {
   const defaultCaptionStyle = DefaultCaptionStyle;
   let smallTextSize = '22px';
   let captionText = '';
+  let playerControls = document.querySelector('.PlayerControlsNeo__bottom-controls');
 
   let isRenderingImageSubtitles = !!document.querySelector('.image-based-timed-text image');
 
@@ -56,6 +57,7 @@ export const NetflixAdapterCreator = () => {
     captionStyle,
     defaultCaptionStyle,
     fullscreenRoot,
+    playerControls,
     smallTextSize,
     video
   };

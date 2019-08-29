@@ -1,5 +1,6 @@
 import React from 'react';
 import { StickyPopper } from './Popper';
+import { MdAssignment, MdAssignmentTurnedIn } from 'react-icons/md';
 
 class ClipboardAction extends React.Component {
   constructor(props) {
@@ -64,12 +65,12 @@ class ClipboardAction extends React.Component {
     // It appears when the mouse is active or is being hovered over
     const isVisible = settings.mouseIsActive || isHoveredOver;
 
-    const shouldShow = isVisible && settings.isOn && firstCaptionText && secondCaptionText;
+    const shouldShow = isVisible && settings.isOn && (firstCaptionText || secondCaptionText);
 
     return (
       <StickyPopper
-        target={adapter.captionWindow}
-        placement='left'
+        target={adapter.playerControls}
+        placement='top-start'
       >
         <div
           onClick={this.copyCaptionsToClipboard}
@@ -83,10 +84,18 @@ class ClipboardAction extends React.Component {
         >
           <div style={{
             padding: '24px',
-            fontSize: '24px',
-            background: 'red',
+            fontSize: '36px',
+            background: 'black',
+            color: 'white',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '50px',
+            height: '50px',
+            transition: 'box-shadow 200ms',
+            boxShadow: isHoveredOver ? '0px 0px 20px 0px rgba(0,0,0,0.75)' : 'none'
           }}>
-            Here!
+            { isAnimating ? <MdAssignmentTurnedIn/> : <MdAssignment/> }
           </div>
         </div>
       </StickyPopper>
