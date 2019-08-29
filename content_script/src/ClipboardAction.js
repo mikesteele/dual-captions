@@ -67,7 +67,7 @@ class ClipboardAction extends React.Component {
     // It appears when the mouse is active or is being hovered over
     const isVisible = settings.mouseIsActive || isHoveredOver;
 
-    const shouldShow = isVisible && settings.isOn && (firstCaptionText || secondCaptionText);
+    const shouldShow = isVisible && settings.isOn;
 
     return (
       <React.Fragment>
