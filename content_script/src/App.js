@@ -12,6 +12,21 @@ import { YoutubeAdapterCreator } from './adapters/youtube';
 import InjectedStyles from './Styles';
 import withTimer from './with-timer';
 import ClipboardAction from './ClipboardAction';
+import Rewind, { Fade } from './Rewind';
+import { StickyPopper } from './Popper';
+
+const Actions = props => {
+  const { adapter, settings } = props;
+  const shouldShow = settings.mouseIsActive && settings.isOn;
+  return (
+    <StickyPopper
+      target={adapter.playerControls}
+      placement='top-start'
+    >
+      <Rewind settings={settings} />
+    </StickyPopper>
+  );
+}
 
 class App extends React.Component {
   render() {
@@ -54,9 +69,9 @@ class App extends React.Component {
                                     currentCaptionToRender={currentCaptionToRender}
                                     settings={settings}
                                   />
-                                  <ClipboardAction
+                                  <Actions
                                     adapter={adapter}
-                                    secondCaptionText={currentCaptionToRender}
+                                    currentCaptionToRender={currentCaptionToRender}
                                     settings={settings}
                                   />
                                 </FullscreenHOC>
