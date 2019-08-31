@@ -47,8 +47,8 @@ class ActionButton extends React.Component {
       <Fade in={shouldShow}>
         <div
           style={{
-            padding: '24px',
-            fontSize: '36px',
+            padding: '8px',
+            fontSize: '24px',
             background: 'black',
             color: 'white',
             display: 'flex',
@@ -58,7 +58,8 @@ class ActionButton extends React.Component {
             height: '50px',
             borderRadius: '50%',
             transition: 'box-shadow 200ms',
-            boxShadow: isHoveredOver ? '0px 0px 20px 0px rgba(0,0,0,0.75)' : 'none'
+            boxShadow: isHoveredOver ? '0px 0px 20px 0px rgba(0,0,0,0.75)' : 'none',
+            cursor: 'pointer'
           }}
           ref={this.buttonRef}
           onClick={onClick}
@@ -70,14 +71,16 @@ class ActionButton extends React.Component {
         {isHoveredOver && (
           <StickyPopper
             target={this.buttonRef.current}
-            placement='bottom'
+            placement='right'
           >
             <div
               style={{
                 background: 'black',
                 color: 'white',
-                padding: '8px',
-                fontSize: '24px'
+                padding: '16px',
+                fontSize: '16px',
+                whiteSpace: 'nowrap',
+                marginLeft: '16px'
               }}
             >
               { tooltipText }
