@@ -98,7 +98,7 @@ class WithPopper extends React.Component {
     if (prevProps.target !== this.props.target && this.canAttachToTarget()) {
       this.createPopper();
     } else {
-      if (this.popper) {
+      if (this.popper && !this.props.dontUpdate) {
         this.popper.scheduleUpdate();
       }
     }
@@ -114,7 +114,8 @@ class WithPopper extends React.Component {
 }
 
 WithPopper.defaultProps = {
-  placement: 'bottom'
+  placement: 'bottom',
+  dontUpdate: false
 }
 
 export { StickyPopper };

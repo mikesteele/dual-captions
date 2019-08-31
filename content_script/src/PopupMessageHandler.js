@@ -50,7 +50,7 @@ class PopupMessageHandler extends React.Component {
     }
     this.idleTimer = window.setTimeout(() => {
       this.changeSetting('mouseIsActive', false);
-    }, 3 * 1000);
+    }, 2500);
   }
 
   onKeyDown(e) {

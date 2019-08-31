@@ -12,18 +12,26 @@ import { YoutubeAdapterCreator } from './adapters/youtube';
 import InjectedStyles from './Styles';
 import withTimer from './with-timer';
 import ClipboardAction from './ClipboardAction';
-import Rewind, { Fade } from './Rewind';
 import { StickyPopper } from './Popper';
 
 const Actions = props => {
-  const { adapter, settings } = props;
+  const { adapter, settings, currentCaptionToRender } = props;
   const shouldShow = settings.mouseIsActive && settings.isOn;
   return (
     <StickyPopper
       target={adapter.playerControls}
       placement='top-start'
+      dontUpdate
     >
-      <Rewind settings={settings} />
+      <div style={{
+        padding: '8px'
+      }}>
+        <ClipboardAction
+          adapter={adapter}
+          settings={settings}
+          currentCaptionToRender={currentCaptionToRender}
+        />
+      </div>
     </StickyPopper>
   );
 }
