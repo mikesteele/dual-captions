@@ -7,6 +7,8 @@ export const YoutubeAdapterCreator = () => {
   captionWindow = document.querySelector('.ytp-caption-window-bottom') || document.querySelector('.caption-window');
   caption = document.querySelector('.ytp-caption-segment');
   let smallTextSize = '14px';
+  let captionText = captionWindow ? captionWindow.innerText : '';
+  let playerControls = document.querySelector('.ytp-chrome-bottom');
 
   const automaticCaptions = document.querySelector('.ytp-caption-window-rollup');
   if (automaticCaptions) {
@@ -31,7 +33,9 @@ export const YoutubeAdapterCreator = () => {
     captionClassName: 'captions-text',
     video: video ? video : null,
     error: error,
-    smallTextSize: smallTextSize
+    smallTextSize: smallTextSize,
+    captionText: captionText,
+    playerControls: playerControls
   };
 }
 

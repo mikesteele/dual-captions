@@ -1,12 +1,13 @@
 {
   "name": "dual-captions-content_script",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "private": true,
   "dependencies": {
     "franc": "^4.1.0",
     "popper.js": "^1.14.6",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-icons": "^3.7.0",
     "react-scripts": "1.0.10"
   },
   "scripts": {

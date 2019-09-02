@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
+import packageJson from '../package.json';
 
 import './App.css';
 import 'react-toggle/style.css';
@@ -73,7 +74,7 @@ class App extends Component {
         <ErrorPageView/>
         <div>
           <br/>
-          <b>{t('v2-welcome')}</b>
+          <b>{t('v2-welcome')}{packageJson.version}</b>
           <br/>
           <a
             href="https://github.com/mikesteele/dual-captions/releases"

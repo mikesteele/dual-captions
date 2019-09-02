@@ -17,16 +17,19 @@ class PopupMessageHandler extends React.Component {
         customColorsEnabled: false,
         customTextColor: '#FFFFFF',
         smallText: false,
-        hotKeyEnabled: true
+        hotKeyEnabled: true,
+        mouseIsActive: false
       }
     }
 
     this.changeSetting = this.changeSetting.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
+    this.onMouseMove = this.onMouseMove.bind(this);
 
     this.altKeyPressed = false;
     this.dKeyPressed = false;
+    this.idleTimer = null;
   }
 
   componentDidMount() {
@@ -35,6 +38,19 @@ class PopupMessageHandler extends React.Component {
     }
     document.body.addEventListener('keydown', this.onKeyDown);
     document.body.addEventListener('keyup', this.onKeyUp);
+    document.body.addEventListener('mousemove', this.onMouseMove);
+  }
+
+  onMouseMove() {
+    if (!this.state.settings.mouseIsActive) {
+      this.changeSetting('mouseIsActive', true);
+    }
+    if (this.idleTimer) {
+      window.clearTimeout(this.idleTimer);
+    }
+    this.idleTimer = window.setTimeout(() => {
+      this.changeSetting('mouseIsActive', false);
+    }, 2500);
   }
 
   onKeyDown(e) {

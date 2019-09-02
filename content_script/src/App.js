@@ -5,12 +5,36 @@ import Adapter from './Adapter';
 import Parser from './Parser';
 import PopupMessageHandler from './PopupMessageHandler';
 import Provider from './Provider';
-import Captions from './Captions';
+import Captions, { FullscreenHOC } from './Captions';
 import TranslationQueue from './TranslationQueue';
 import { NetflixAdapterCreator } from './adapters/netflix';
 import { YoutubeAdapterCreator } from './adapters/youtube';
 import InjectedStyles from './Styles';
 import withTimer from './with-timer';
+import ClipboardAction from './ClipboardAction';
+import { StickyPopper } from './Popper';
+
+const Actions = props => {
+  const { adapter, settings, currentCaptionToRender } = props;
+  const shouldShow = settings.mouseIsActive && settings.isOn;
+  return (
+    <StickyPopper
+      target={adapter.playerControls}
+      placement='top-start'
+      dontUpdate
+    >
+      <div style={{
+        padding: '8px'
+      }}>
+        <ClipboardAction
+          adapter={adapter}
+          settings={settings}
+          currentCaptionToRender={currentCaptionToRender}
+        />
+      </div>
+    </StickyPopper>
+  );
+}
 
 class App extends React.Component {
   render() {
@@ -47,11 +71,18 @@ class App extends React.Component {
                               settings={settings}
                               queue={queue}>
                               {(currentCaptionToRender) => (
-                                <Captions
-                                  adapter={adapter}
-                                  currentCaptionToRender={currentCaptionToRender}
-                                  settings={settings}
-                                />
+                                <FullscreenHOC adapter={adapter}>
+                                  <Captions
+                                    adapter={adapter}
+                                    currentCaptionToRender={currentCaptionToRender}
+                                    settings={settings}
+                                  />
+                                  <Actions
+                                    adapter={adapter}
+                                    currentCaptionToRender={currentCaptionToRender}
+                                    settings={settings}
+                                  />
+                                </FullscreenHOC>
                               )}
                             </Provider>
                           )}
