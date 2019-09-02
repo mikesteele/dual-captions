@@ -21,7 +21,7 @@ const Actions = props => {
     <StickyPopper
       target={adapter.playerControls}
       placement='top-start'
-      dontUpdate
+      updateInfrequently
     >
       <div style={{
         padding: '8px'
