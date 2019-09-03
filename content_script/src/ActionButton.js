@@ -37,12 +37,12 @@ class ActionButton extends React.Component {
   }
 
   render() {
-    const { onClick, tooltipText, children, settings, adapter } = this.props;
+    const { onClick, tooltipText, children, settings, adapter, alsoShowIf } = this.props;
     const { isHoveredOver } = this.state;
 
     const shouldShow = adapter.videoId && // Prevent showing action buttons on non-video pages
                        settings.isOn &&
-                       (settings.mouseIsActive || isHoveredOver);
+                       (settings.mouseIsActive || isHoveredOver || alsoShowIf);
 
     return (
       <Fade in={shouldShow}>
