@@ -14,6 +14,7 @@ class ClipboardAction extends React.Component {
     }
     this.copyCaptionsToClipboard = this.copyCaptionsToClipboard.bind(this);
     this.playAnimation = this.playAnimation.bind(this);
+    
     this.animationTimeout = null;
 
     this.onKeyDown = this.onKeyDown.bind(this);
