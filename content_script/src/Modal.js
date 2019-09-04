@@ -21,7 +21,10 @@ const Modal = props => {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    transition: "filter 200ms"
+    transition: "filter 200ms",
+    zIndex: '10000',
+    top: '0',
+    left: '0'
   };
 
   const innerStyles = {
