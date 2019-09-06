@@ -7,10 +7,6 @@ const Modal = props => {
     onClose();
   };
 
-  const onClickInner = e => {
-    e.stopPropagation();
-  };
-
   const outerStyles = {
     position: "fixed",
     width: "100%",
