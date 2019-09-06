@@ -60,7 +60,8 @@ class ActionButton extends React.Component {
             borderRadius: '50%',
             transition: 'box-shadow 200ms',
             boxShadow: isHoveredOver ? '0px 0px 20px 0px rgba(0,0,0,0.75)' : 'none',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            margin: '8px 0'
           }}
           ref={this.buttonRef}
           onClick={onClick}

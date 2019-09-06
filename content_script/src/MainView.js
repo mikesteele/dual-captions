@@ -1,30 +1,7 @@
 import React, { Fragment } from 'react';
-import Modal from './Modal';
 import Captions from './Captions';
 import Actions from './Actions';
-
-class ViewFlagsModal extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const {
-      isOpen,
-      onClose
-    } = this.props;
-    return (
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-      >
-        <div>
-          Hi
-        </div>
-      </Modal>
-    )
-  }
-}
+import ViewFlagsModal from './ViewFlagsModal';
 
 class MainView extends React.Component {
   constructor(props) {
@@ -74,6 +51,7 @@ class MainView extends React.Component {
         <ViewFlagsModal
           isOpen={viewFlagsModalIsOpen}
           onClose={this.onCloseViewFlagsModal}
+          settings={settings}
         />
       </Fragment>
     )

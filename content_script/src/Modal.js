@@ -27,15 +27,9 @@ const Modal = props => {
     left: '0'
   };
 
-  const innerStyles = {
-    display: "inline-block"
-  };
-
   return (
     <div style={outerStyles} onClick={onClickOuter}>
-      <div style={innerStyles} onClick={onClickInner}>
-        {children}
-      </div>
+      {children}
     </div>
   );
 };
