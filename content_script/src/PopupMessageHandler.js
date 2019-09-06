@@ -47,6 +47,13 @@ class PopupMessageHandler extends React.Component {
     document.body.addEventListener('keydown', this.onKeyDown);
     document.body.addEventListener('keyup', this.onKeyUp);
     document.body.addEventListener('mousemove', this.onMouseMove);
+    this.getSavedFavorites().then(savedFavorites => {
+      this.setState({
+        favorites: savedFavorites
+      });
+    }).catch(err => {
+      console.log(`Couldn't get saved favorites on mount. Error: ${err}`);
+    });
   }
 
   onMouseMove() {
@@ -131,17 +138,19 @@ class PopupMessageHandler extends React.Component {
     });
   }
 
-  removeFromFavorites(text1, text2) {
+  // captionsToRemove is Array(Array(String))
+  removeFromFavorites(captionsToRemove) {
     this.getSavedFavorites().then(savedFavorites => {
-      let newFavorites = savedFavorites;
-      const index = savedFavorites.findIndex(pair => {
-        return pair[0] === text1 && pair[1] === text2;
+      captionsToRemove.forEach(captions => {
+        const [text1, text2] = captions;
+        const index = savedFavorites.findIndex(pair => {
+          return pair[0] === text1 && pair[1] === text2;
+        });
+        if (index >= 0) {
+          savedFavorites.splice(index, 1);
+        }
       });
-      if (index >= 0) {
-        savedFavorites.splice(index, 1);
-        newFavorites = savedFavorites;
-      }
-      this.setSavedFavorites(newFavorites).then(() => {
+      this.setSavedFavorites(savedFavorites).then(() => {
         this.getSavedFavorites().then(favorites => {
           this.setState({
             favorites

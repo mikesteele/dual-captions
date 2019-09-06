@@ -38,7 +38,7 @@ class FlagAction extends React.Component {
     if (isFavorited) {
       tooltipText = 'Remove from bookmarks'
       onClick = () => {
-        removeFromFavorites(firstCaptionText, secondCaptionText);
+        removeFromFavorites([[firstCaptionText, secondCaptionText]]);
       }
       icon = (
         <MdBookmark />
