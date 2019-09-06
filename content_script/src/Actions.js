@@ -2,6 +2,7 @@ import React from 'react';
 import { StickyPopper } from './Popper';
 import ViewFlagsAction from './ViewFlagsAction';
 import ClipboardAction from './ClipboardAction';
+import FlagAction from './FlagAction';
 
 const Actions = props => {
   const {
@@ -24,6 +25,11 @@ const Actions = props => {
           adapter={adapter}
           settings={settings}
           openViewFlagsModal={openViewFlagsModal}
+        />
+        <FlagAction
+          adapter={adapter}
+          settings={settings}
+          currentCaptionToRender={currentCaptionToRender}
         />
         <ClipboardAction
           adapter={adapter}

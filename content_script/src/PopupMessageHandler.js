@@ -29,6 +29,9 @@ class PopupMessageHandler extends React.Component {
     this.onKeyUp = this.onKeyUp.bind(this);
     this.onMouseMove = this.onMouseMove.bind(this);
     this.addToFavorites = this.addToFavorites.bind(this);
+    this.removeFromFavorites = this.removeFromFavorites.bind(this);
+    this.getSavedFavorites = this.getSavedFavorites.bind(this);
+    this.setSavedFavorites = this.setSavedFavorites.bind(this);
 
     this.altKeyPressed = false;
     this.dKeyPressed = false;
@@ -89,6 +92,16 @@ class PopupMessageHandler extends React.Component {
     });
   }
 
+  setSavedFavorites(favorites) {
+    return new Promise((resolve, _) => {
+      window.chrome.storage.local.set({
+        __DC_favorites__: favorites
+      }, () => {
+        resolve();
+      });
+    });
+  }
+
   // TODO - Remove
   updateLocalFavorites() {
     this.getSavedFavorites().then(favorites => {
@@ -99,31 +112,46 @@ class PopupMessageHandler extends React.Component {
   }
 
   addToFavorites(text1, text2) {
-    return new Promise((resolve, reject) => {
-      if (window.chrome && window.chrome.storage && window.chrome.storage.local) {
-        // Try to get old favorites
-        let newFavorites = [[text1, text2]];
-        window.chrome.storage.local.get('__DC_favorites__', result => {
-          if (result.__DC_favorites__) {
-            newFavorites = [
-              ...newFavorites,
-              ...result.__DC_favorites__
-            ];
-          }
-          window.chrome.storage.local.set({
-            __DC_favorites__: newFavorites
+    this.getSavedFavorites().then(savedFavorites => {
+      const newFavorites = [
+        ...savedFavorites,
+        [text1, text2]
+      ];
+      this.setSavedFavorites(newFavorites).then(() => {
+        this.getSavedFavorites().then(favorites => {
+          this.setState({
+            favorites
           }, () => {
-            this.setState({
-              favorites: newFavorites
-            }, () => {
-              alert(this.state.favorites)
-              resolve();
-            });
+            console.log('Set favorites:' + JSON.stringify(favorites, 2, ' '));
           });
         });
-      } else {
-        reject(`Can't add to favorites, no window.chrome.storage.local`);
+      });
+    }).catch(err => {
+      console.error(`Couldn't save favorites. Error: ${err}`);
+    });
+  }
+
+  removeFromFavorites(text1, text2) {
+    this.getSavedFavorites().then(savedFavorites => {
+      let newFavorites = savedFavorites;
+      const index = savedFavorites.findIndex(pair => {
+        return pair[0] === text1 && pair[1] === text2;
+      });
+      if (index >= 0) {
+        savedFavorites.splice(index, 1);
+        newFavorites = savedFavorites;
       }
+      this.setSavedFavorites(newFavorites).then(() => {
+        this.getSavedFavorites().then(favorites => {
+          this.setState({
+            favorites
+          }, () => {
+            console.log('Set favorites:' + JSON.stringify(favorites, 2, ' '));
+          });
+        });
+      });
+    }).catch(err => {
+      console.error(`Couldn't save favorites. Error: ${err}`);
     });
   }
 
@@ -259,7 +287,8 @@ class PopupMessageHandler extends React.Component {
     return this.props.children({
       ...settings,
       favorites: this.state.favorites,
-      addToFavorites: this.addToFavorites
+      addToFavorites: this.addToFavorites,
+      removeFromFavorites: this.removeFromFavorites
     });
   }
 }
