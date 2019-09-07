@@ -3,7 +3,7 @@ import ActionButton from './ActionButton';
 import Modal from './Modal';
 import { MdBook } from 'react-icons/md';
 
-class ViewFlagsAction extends React.Component {
+class ViewBookmarksAction extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -12,7 +12,7 @@ class ViewFlagsAction extends React.Component {
     return (
       <Fragment>
         <ActionButton
-          onClick={this.props.openViewFlagsModal}
+          onClick={this.props.openViewBookmarksModal}
           tooltipText='View all bookmarks'
           settings={this.props.settings}
           adapter={this.props.adapter}
@@ -24,4 +24,4 @@ class ViewFlagsAction extends React.Component {
   }
 }
 
-export default ViewFlagsAction;
+export default ViewBookmarksAction;

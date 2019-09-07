@@ -4,7 +4,7 @@ import Modal from './Modal';
 import { MdBookmarkBorder, MdBookmark } from 'react-icons/md';
 import HotKey from './HotKey';
 
-class FlagAction extends React.Component {
+class BookmarkAction extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -62,4 +62,4 @@ class FlagAction extends React.Component {
   }
 }
 
-export default FlagAction;
+export default BookmarkAction;

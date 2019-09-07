@@ -1,28 +1,28 @@
 import React, { Fragment } from 'react';
 import Captions from './Captions';
 import Actions from './Actions';
-import ViewFlagsModal from './ViewFlagsModal';
+import ViewBookmarksModal from './ViewBookmarksModal';
 
 class MainView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewFlagsModalIsOpen: false
+      viewBookmarksModalIsOpen: false
     }
 
-    this.openViewFlagsModal = this.openViewFlagsModal.bind(this);
-    this.onCloseViewFlagsModal = this.onCloseViewFlagsModal.bind(this);
+    this.openViewBookmarksModal = this.openViewBookmarksModal.bind(this);
+    this.onCloseViewBookmarksModal = this.onCloseViewBookmarksModal.bind(this);
   }
 
-  openViewFlagsModal() {
+  openViewBookmarksModal() {
     this.setState({
-      viewFlagsModalIsOpen: true
+      viewBookmarksModalIsOpen: true
     });
   }
 
-  onCloseViewFlagsModal() {
+  onCloseViewBookmarksModal() {
     this.setState({
-      viewFlagsModalIsOpen: false
+      viewBookmarksModalIsOpen: false
     });
   }
 
@@ -33,7 +33,7 @@ class MainView extends React.Component {
       currentCaptionToRender
     } = this.props;
     const {
-      viewFlagsModalIsOpen
+      viewBookmarksModalIsOpen
     } = this.state;
     return (
       <Fragment>
@@ -46,13 +46,13 @@ class MainView extends React.Component {
           adapter={adapter}
           currentCaptionToRender={currentCaptionToRender}
           settings={settings}
-          openViewFlagsModal={this.openViewFlagsModal}
+          openViewBookmarksModal={this.openViewBookmarksModal}
         />
-        <ViewFlagsModal
+        <ViewBookmarksModal
           adapter={adapter}
           currentCaptionToRender={currentCaptionToRender}
-          isOpen={viewFlagsModalIsOpen}
-          onClose={this.onCloseViewFlagsModal}
+          isOpen={viewBookmarksModalIsOpen}
+          onClose={this.onCloseViewBookmarksModal}
           settings={settings}
         />
       </Fragment>

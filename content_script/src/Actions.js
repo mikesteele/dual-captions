@@ -1,15 +1,15 @@
 import React from 'react';
 import { StickyPopper } from './Popper';
-import ViewFlagsAction from './ViewFlagsAction';
+import ViewBookmarksAction from './ViewBookmarksAction';
 import ClipboardAction from './ClipboardAction';
-import FlagAction from './FlagAction';
+import BookmarkAction from './BookmarkAction';
 
 const Actions = props => {
   const {
     adapter,
     settings,
     currentCaptionToRender,
-    openViewFlagsModal
+    openViewBookmarksModal
   } = props;
   const shouldShow = settings.mouseIsActive && settings.isOn;
   return (
@@ -21,12 +21,12 @@ const Actions = props => {
       <div style={{
         padding: '8px'
       }}>
-        <ViewFlagsAction
+        <ViewBookmarksAction
           adapter={adapter}
           settings={settings}
-          openViewFlagsModal={openViewFlagsModal}
+          openViewBookmarksModal={openViewBookmarksModal}
         />
-        <FlagAction
+        <BookmarkAction
           adapter={adapter}
           settings={settings}
           currentCaptionToRender={currentCaptionToRender}

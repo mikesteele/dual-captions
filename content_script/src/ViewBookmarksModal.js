@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Modal from './Modal';
 import { MdClose, MdCheckBoxOutlineBlank, MdCheckBox, MdBookmark, MdBookmarkBorder } from 'react-icons/md';
-import FlagAction from './FlagAction';
+import BookmarkAction from './BookmarkAction';
 
 const Button = props => {
   const style = {
@@ -31,7 +31,7 @@ const Button = props => {
 }
 
 
-class ViewFlagsModal extends React.Component {
+class ViewBookmarksModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -127,25 +127,21 @@ class ViewFlagsModal extends React.Component {
       display: 'flex',
       justifyContent: 'space-between'
     }
-    const rowStyle = {
-      borderTop: '1px solid white',
-      borderBottom: '1px solid white',
-      padding: '16px'
-    }
     const tableStyle = {
       overflow: 'auto',
       borderRadius: '4px'
     }
-    const rowContainerStyle = {
-
-    }
     const evenRowStyles = {
       padding: '16px',
-      backgroundColor: '#202020'
+      backgroundColor: '#202020',
+      display: 'flex',
+      alignItems: 'center'
     }
     const oddRowStyles = {
       padding: '16px',
-      backgroundColor: '#151515'
+      backgroundColor: '#151515',
+      display: 'flex',
+      alignItems: 'center'
     }
     const onClickContainer = e => {
       e.stopPropagation();
@@ -153,7 +149,8 @@ class ViewFlagsModal extends React.Component {
     const iconStyle = {
       color: '#bb86fc',
       fontSize: '24px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      paddingRight: '16px'
     };
     const buttonGroupStyles = {
       marginTop: '32px'
@@ -172,7 +169,7 @@ class ViewFlagsModal extends React.Component {
           <span onClick={onClose} style={{cursor: 'pointer'}}><MdClose /></span>
         </div>
         <div style={tableStyle}>
-          <div style={rowContainerStyle}>
+          <div>
             {settings.bookmarks.map((caption, index) => {
               const rowStyle = index % 2 === 0 ? evenRowStyles : oddRowStyles;
               const isSelected = selectedCaptions.some(pair => {
@@ -189,8 +186,10 @@ class ViewFlagsModal extends React.Component {
                   <div onClick={onClick} style={iconStyle}>
                     {icon}
                   </div>
-                  <div>{caption[0]}</div>
-                  <div>{caption[1]}</div>
+                  <div>
+                    <div style={{marginBottom: '8px'}}>{caption[0]}</div>
+                    <div>{caption[1]}</div>
+                  </div>
                 </div>
               );
             })}
@@ -249,4 +248,4 @@ class ViewFlagsModal extends React.Component {
   }
 }
 
-export default ViewFlagsModal;
+export default ViewBookmarksModal;

@@ -13,7 +13,7 @@ import InjectedStyles from './Styles';
 import withTimer from './with-timer';
 import ClipboardAction from './ClipboardAction';
 import { StickyPopper } from './Popper';
-import ViewFlagsAction from './ViewFlagsAction';
+import ViewBookmarksAction from './ViewBookmarksAction';
 import Modal from './Modal';
 import MainView from './MainView';
 
