@@ -1,5 +1,6 @@
 import React from 'react';
 import Popper from 'popper.js';
+const throttle = require('lodash.throttle');
 
 class StickyPopper extends React.Component {
   constructor(props) {
@@ -43,6 +44,8 @@ class WithPopper extends React.Component {
     super(props);
     this.canAttachToTarget = this.canAttachToTarget.bind(this);
     this.createPopper = this.createPopper.bind(this);
+    this.scheduleUpdate = this.scheduleUpdate.bind(this);
+    this.throttledScheduleUpdate = throttle(this.scheduleUpdate, 1000 * 5);
     this.popper = null;
   }
 
@@ -94,12 +97,20 @@ class WithPopper extends React.Component {
     }
   }
 
+  scheduleUpdate() {
+    if (this.popper) {
+      this.popper.scheduleUpdate();
+    }
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.target !== this.props.target && this.canAttachToTarget()) {
       this.createPopper();
     } else {
-      if (this.popper && !this.props.dontUpdate) {
-        this.popper.scheduleUpdate();
+      if (this.props.updateInfrequently) {
+        this.throttledScheduleUpdate();
+      } else if (!this.props.dontUpdate) {
+        this.scheduleUpdate();
       }
     }
   }
@@ -115,7 +126,8 @@ class WithPopper extends React.Component {
 
 WithPopper.defaultProps = {
   placement: 'bottom',
-  dontUpdate: false
+  dontUpdate: false,
+  updateInfrequently: false
 }
 
 export { StickyPopper };
