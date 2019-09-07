@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import ActionButton from './ActionButton';
 import Modal from './Modal';
 import { MdBookmarkBorder, MdBookmark } from 'react-icons/md';
+import HotKey from './HotKey';
 
 class FlagAction extends React.Component {
   constructor(props) {
@@ -52,6 +53,7 @@ class FlagAction extends React.Component {
           tooltipText={tooltipText}
           settings={settings}
           adapter={adapter}
+          hotKeyCode={65} // A
         >
           { icon }
         </ActionButton>

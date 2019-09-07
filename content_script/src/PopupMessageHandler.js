@@ -2,7 +2,6 @@ import React from 'react';
 
 const D_KEY_CODE = 68;
 const ALT_KEY_CODE = 18;
-const B_KEY_CODE = 66;
 
 class PopupMessageHandler extends React.Component {
   constructor(props) {
@@ -35,7 +34,6 @@ class PopupMessageHandler extends React.Component {
 
     this.altKeyPressed = false;
     this.dKeyPressed = false;
-    this.bKeyPressed = false;
 
     this.idleTimer = null;
   }
@@ -78,13 +76,9 @@ class PopupMessageHandler extends React.Component {
     if (e.keyCode === ALT_KEY_CODE) {
       this.altKeyPressed = true;
     }
-    if (e.keyCode === B_KEY_CODE) {
-      this.bKeyPressed = true;
-    }
     if (this.dKeyPressed && this.altKeyPressed && settings.hotKeyEnabled) {
       this.changeSetting('isOn', !settings.isOn);
     }
-    // TODO - Add Alt + B hotkey handler
   }
 
   getSavedFavorites() {
@@ -170,9 +164,6 @@ class PopupMessageHandler extends React.Component {
     }
     if (e.keyCode === ALT_KEY_CODE) {
       this.altKeyPressed = false;
-    }
-    if (e.keyCode === B_KEY_CODE) {
-      this.bKeyPressed = false;
     }
   }
 
