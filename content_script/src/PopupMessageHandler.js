@@ -20,17 +20,17 @@ class PopupMessageHandler extends React.Component {
         hotKeyEnabled: true,
         mouseIsActive: false
       },
-      favorites: []
+      bookmarks: []
     }
 
     this.changeSetting = this.changeSetting.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
     this.onMouseMove = this.onMouseMove.bind(this);
-    this.addToFavorites = this.addToFavorites.bind(this);
-    this.removeFromFavorites = this.removeFromFavorites.bind(this);
-    this.getSavedFavorites = this.getSavedFavorites.bind(this);
-    this.setSavedFavorites = this.setSavedFavorites.bind(this);
+    this.addToBookmarks = this.addToBookmarks.bind(this);
+    this.removeFromBookmarks = this.removeFromBookmarks.bind(this);
+    this.getSavedBookmarks = this.getSavedBookmarks.bind(this);
+    this.setSavedBookmarks = this.setSavedBookmarks.bind(this);
 
     this.altKeyPressed = false;
     this.dKeyPressed = false;
@@ -45,12 +45,12 @@ class PopupMessageHandler extends React.Component {
     document.body.addEventListener('keydown', this.onKeyDown);
     document.body.addEventListener('keyup', this.onKeyUp);
     document.body.addEventListener('mousemove', this.onMouseMove);
-    this.getSavedFavorites().then(savedFavorites => {
+    this.getSavedBookmarks().then(savedBookmarks => {
       this.setState({
-        favorites: savedFavorites
+        bookmarks: savedBookmarks
       });
     }).catch(err => {
-      console.log(`Couldn't get saved favorites on mount. Error: ${err}`);
+      console.log(`Couldn't get saved bookmarks on mount. Error: ${err}`);
     });
   }
 
@@ -81,80 +81,72 @@ class PopupMessageHandler extends React.Component {
     }
   }
 
-  getSavedFavorites() {
+  getSavedBookmarks() {
     return new Promise((resolve, reject) => {
-      window.chrome.storage.local.get('__DC_favorites__', result => {
-        if (result.__DC_favorites__) {
-          resolve(result.__DC_favorites__);
+      window.chrome.storage.local.get('__DC_bookmarks__', result => {
+        if (result.__DC_bookmarks__) {
+          resolve(result.__DC_bookmarks__);
         } else {
-          reject('No saved favorites');
+          console.log('No saved bookmarks');
+          resolve([]);
         }
       });
     });
   }
 
-  setSavedFavorites(favorites) {
+  setSavedBookmarks(bookmarks) {
     return new Promise((resolve, _) => {
       window.chrome.storage.local.set({
-        __DC_favorites__: favorites
+        __DC_bookmarks__: bookmarks
       }, () => {
         resolve();
       });
     });
   }
 
-  // TODO - Remove
-  updateLocalFavorites() {
-    this.getSavedFavorites().then(favorites => {
-      this.setState({
-        favorites
-      });
-    });
-  }
-
-  addToFavorites(text1, text2) {
-    this.getSavedFavorites().then(savedFavorites => {
-      const newFavorites = [
-        ...savedFavorites,
+  addToBookmarks(text1, text2) {
+    this.getSavedBookmarks().then(savedBookmarks => {
+      const newBookmarks = [
+        ...savedBookmarks,
         [text1, text2]
       ];
-      this.setSavedFavorites(newFavorites).then(() => {
-        this.getSavedFavorites().then(favorites => {
+      this.setSavedBookmarks(newBookmarks).then(() => {
+        this.getSavedBookmarks().then(bookmarks => {
           this.setState({
-            favorites
+            bookmarks
           }, () => {
-            console.log('Set favorites:' + JSON.stringify(favorites, 2, ' '));
+            console.log('Set bookmarks:' + JSON.stringify(bookmarks, 2, ' '));
           });
         });
       });
     }).catch(err => {
-      console.error(`Couldn't save favorites. Error: ${err}`);
+      console.error(`Couldn't save bookmarks. Error: ${err}`);
     });
   }
 
   // captionsToRemove is Array(Array(String))
-  removeFromFavorites(captionsToRemove) {
-    this.getSavedFavorites().then(savedFavorites => {
+  removeFromBookmarks(captionsToRemove) {
+    this.getSavedBookmarks().then(savedBookmarks => {
       captionsToRemove.forEach(captions => {
         const [text1, text2] = captions;
-        const index = savedFavorites.findIndex(pair => {
+        const index = savedBookmarks.findIndex(pair => {
           return pair[0] === text1 && pair[1] === text2;
         });
         if (index >= 0) {
-          savedFavorites.splice(index, 1);
+          savedBookmarks.splice(index, 1);
         }
       });
-      this.setSavedFavorites(savedFavorites).then(() => {
-        this.getSavedFavorites().then(favorites => {
+      this.setSavedBookmarks(savedBookmarks).then(() => {
+        this.getSavedBookmarks().then(bookmarks => {
           this.setState({
-            favorites
+            bookmarks
           }, () => {
-            console.log('Set favorites:' + JSON.stringify(favorites, 2, ' '));
+            console.log('Set bookmarks:' + JSON.stringify(bookmarks, 2, ' '));
           });
         });
       });
     }).catch(err => {
-      console.error(`Couldn't save favorites. Error: ${err}`);
+      console.error(`Couldn't save bookmarks. Error: ${err}`);
     });
   }
 
@@ -286,9 +278,9 @@ class PopupMessageHandler extends React.Component {
     const settings = this.state.settings;
     return this.props.children({
       ...settings,
-      favorites: this.state.favorites,
-      addToFavorites: this.addToFavorites,
-      removeFromFavorites: this.removeFromFavorites
+      bookmarks: this.state.bookmarks,
+      addToBookmarks: this.addToBookmarks,
+      removeFromBookmarks: this.removeFromBookmarks
     });
   }
 }

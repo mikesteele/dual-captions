@@ -49,6 +49,8 @@ class MainView extends React.Component {
           openViewFlagsModal={this.openViewFlagsModal}
         />
         <ViewFlagsModal
+          adapter={adapter}
+          currentCaptionToRender={currentCaptionToRender}
           isOpen={viewFlagsModalIsOpen}
           onClose={this.onCloseViewFlagsModal}
           settings={settings}

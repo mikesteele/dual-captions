@@ -13,7 +13,7 @@ class ViewFlagsAction extends React.Component {
       <Fragment>
         <ActionButton
           onClick={this.props.openViewFlagsModal}
-          tooltipText='View all flags'
+          tooltipText='View all bookmarks'
           settings={this.props.settings}
           adapter={this.props.adapter}
         >

@@ -16,30 +16,30 @@ class FlagAction extends React.Component {
       currentCaptionToRender
     } = this.props;
     const {
-      favorites,
-      addToFavorites,
-      removeFromFavorites
+      bookmarks,
+      addToBookmarks,
+      removeFromBookmarks
     } = settings;
 
     const firstCaptionText = adapter.captionText || '';
     const secondCaptionText = currentCaptionToRender || '';
-    const isFavorited = favorites.some(pair => (
+    const isBookmarked = bookmarks.some(pair => (
       pair[0] === firstCaptionText &&
       pair[1] === secondCaptionText
     ));
 
     let tooltipText = 'Bookmark caption';
     let onClick = () => {
-      addToFavorites(firstCaptionText, secondCaptionText);
+      addToBookmarks(firstCaptionText, secondCaptionText);
     };
     let icon = (
       <MdBookmarkBorder />
     );
 
-    if (isFavorited) {
+    if (isBookmarked) {
       tooltipText = 'Remove from bookmarks'
       onClick = () => {
-        removeFromFavorites([[firstCaptionText, secondCaptionText]]);
+        removeFromBookmarks([[firstCaptionText, secondCaptionText]]);
       }
       icon = (
         <MdBookmark />

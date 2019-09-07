@@ -9,6 +9,10 @@ const Styles = () => {
     .extra-space {
       margin-top: 16px;
     }
+
+    .dc-button:active {
+      filter: brightness(0.5);
+    }
   `;
   return (
     <style>{styles}</style>
