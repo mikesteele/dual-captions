@@ -13,28 +13,9 @@ import InjectedStyles from './Styles';
 import withTimer from './with-timer';
 import ClipboardAction from './ClipboardAction';
 import { StickyPopper } from './Popper';
-
-const Actions = props => {
-  const { adapter, settings, currentCaptionToRender } = props;
-  const shouldShow = settings.mouseIsActive && settings.isOn;
-  return (
-    <StickyPopper
-      target={adapter.playerControls}
-      placement='top-start'
-      dontUpdate
-    >
-      <div style={{
-        padding: '8px'
-      }}>
-        <ClipboardAction
-          adapter={adapter}
-          settings={settings}
-          currentCaptionToRender={currentCaptionToRender}
-        />
-      </div>
-    </StickyPopper>
-  );
-}
+import ViewBookmarksAction from './ViewBookmarksAction';
+import Modal from './Modal';
+import MainView from './MainView';
 
 class App extends React.Component {
   render() {
@@ -72,15 +53,10 @@ class App extends React.Component {
                               queue={queue}>
                               {(currentCaptionToRender) => (
                                 <FullscreenHOC adapter={adapter}>
-                                  <Captions
+                                  <MainView
                                     adapter={adapter}
-                                    currentCaptionToRender={currentCaptionToRender}
                                     settings={settings}
-                                  />
-                                  <Actions
-                                    adapter={adapter}
                                     currentCaptionToRender={currentCaptionToRender}
-                                    settings={settings}
                                   />
                                 </FullscreenHOC>
                               )}

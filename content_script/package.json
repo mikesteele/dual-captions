@@ -1,9 +1,10 @@
 {
   "name": "dual-captions-content_script",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "private": true,
   "dependencies": {
     "franc": "^4.1.0",
+    "lodash.throttle": "^4.1.1",
     "popper.js": "^1.14.6",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",

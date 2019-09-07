@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { StickyPopper } from './Popper';
+import HotKey from './HotKey';
 
 const Fade = props => (
   <div
@@ -21,7 +22,23 @@ class ActionButton extends React.Component {
     }
     this.onMouseOut = this.onMouseOut.bind(this);
     this.onMouseOver = this.onMouseOver.bind(this);
+    this.animate = this.animate.bind(this);
     this.buttonRef = React.createRef();
+  }
+
+  animate() {
+    if (this.animationTimeout) {
+      window.clearTimeout(this.animationTimeout);
+    }
+    this.setState({
+      isAnimating: true
+    }, () => {
+      this.animationTimeout = window.setTimeout(() => {
+        this.setState({
+          isAnimating: false
+        })
+      }, 200);
+    });
   }
 
   onMouseOver() {
@@ -37,60 +54,72 @@ class ActionButton extends React.Component {
   }
 
   render() {
-    const { onClick, tooltipText, children, settings, adapter } = this.props;
-    const { isHoveredOver } = this.state;
+    const { onClick, tooltipText, children, settings, adapter, hotKeyCode } = this.props;
+    const { isHoveredOver, isAnimating } = this.state;
 
     const shouldShow = adapter.videoId && // Prevent showing action buttons on non-video pages
                        settings.isOn &&
-                       (settings.mouseIsActive || isHoveredOver);
+                       (settings.mouseIsActive || isHoveredOver || isAnimating);
 
     return (
-      <Fade in={shouldShow}>
-        <div
-          style={{
-            padding: '8px',
-            fontSize: '24px',
-            background: 'black',
-            color: 'white',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '50px',
-            height: '50px',
-            borderRadius: '50%',
-            transition: 'box-shadow 200ms',
-            boxShadow: isHoveredOver ? '0px 0px 20px 0px rgba(0,0,0,0.75)' : 'none',
-            cursor: 'pointer'
-          }}
-          ref={this.buttonRef}
-          onClick={onClick}
-          onMouseOver={this.onMouseOver}
-          onMouseOut={this.onMouseOut}
-        >
-          { children }
-        </div>
-        {isHoveredOver && (
-          <StickyPopper
-            target={this.buttonRef.current}
-            placement='right'
-            dontUpdate
-          >
-            <div
-              style={{
-                background: 'black',
-                color: 'white',
-                padding: '16px',
-                fontSize: '16px',
-                whiteSpace: 'nowrap',
-                marginLeft: '16px',
-                borderRadius: '2px'
-              }}
-            >
-              { tooltipText }
-            </div>
-          </StickyPopper>
+      <Fragment>
+        {hotKeyCode && (
+          <HotKey
+            callback={() => {
+              onClick();
+              this.animate();
+            }}
+            hotKeyCode={hotKeyCode}
+          />
         )}
-      </Fade>
+        <Fade in={shouldShow}>
+          <div
+            style={{
+              padding: '8px',
+              fontSize: '24px',
+              background: 'black',
+              color: 'white',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '50px',
+              height: '50px',
+              borderRadius: '50%',
+              transition: 'box-shadow 200ms',
+              boxShadow: isHoveredOver ? '0px 0px 20px 0px rgba(0,0,0,0.75)' : 'none',
+              cursor: 'pointer',
+              margin: '8px 0'
+            }}
+            ref={this.buttonRef}
+            onClick={onClick}
+            onMouseOver={this.onMouseOver}
+            onMouseOut={this.onMouseOut}
+          >
+            { children }
+          </div>
+          {isHoveredOver && (
+            <StickyPopper
+              target={this.buttonRef.current}
+              placement='right'
+              dontUpdate
+            >
+              <div
+                style={{
+                  background: 'black',
+                  color: 'white',
+                  padding: '16px',
+                  fontSize: '16px',
+                  whiteSpace: 'nowrap',
+                  marginLeft: '16px',
+                  borderRadius: '2px'
+                }}
+              >
+                { tooltipText }
+              </div>
+            </StickyPopper>
+          )}
+        </Fade>
+      </Fragment>
     );
   }
 }

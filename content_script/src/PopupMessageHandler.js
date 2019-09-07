@@ -19,16 +19,22 @@ class PopupMessageHandler extends React.Component {
         smallText: false,
         hotKeyEnabled: true,
         mouseIsActive: false
-      }
+      },
+      bookmarks: []
     }
 
     this.changeSetting = this.changeSetting.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
     this.onMouseMove = this.onMouseMove.bind(this);
+    this.addToBookmarks = this.addToBookmarks.bind(this);
+    this.removeFromBookmarks = this.removeFromBookmarks.bind(this);
+    this.getSavedBookmarks = this.getSavedBookmarks.bind(this);
+    this.setSavedBookmarks = this.setSavedBookmarks.bind(this);
 
     this.altKeyPressed = false;
     this.dKeyPressed = false;
+
     this.idleTimer = null;
   }
 
@@ -39,6 +45,13 @@ class PopupMessageHandler extends React.Component {
     document.body.addEventListener('keydown', this.onKeyDown);
     document.body.addEventListener('keyup', this.onKeyUp);
     document.body.addEventListener('mousemove', this.onMouseMove);
+    this.getSavedBookmarks().then(savedBookmarks => {
+      this.setState({
+        bookmarks: savedBookmarks
+      });
+    }).catch(err => {
+      console.log(`Couldn't get saved bookmarks on mount. Error: ${err}`);
+    });
   }
 
   onMouseMove() {
@@ -66,6 +79,75 @@ class PopupMessageHandler extends React.Component {
     if (this.dKeyPressed && this.altKeyPressed && settings.hotKeyEnabled) {
       this.changeSetting('isOn', !settings.isOn);
     }
+  }
+
+  getSavedBookmarks() {
+    return new Promise((resolve, reject) => {
+      window.chrome.storage.local.get('__DC_bookmarks__', result => {
+        if (result.__DC_bookmarks__) {
+          resolve(result.__DC_bookmarks__);
+        } else {
+          console.log('No saved bookmarks');
+          resolve([]);
+        }
+      });
+    });
+  }
+
+  setSavedBookmarks(bookmarks) {
+    return new Promise((resolve, _) => {
+      window.chrome.storage.local.set({
+        __DC_bookmarks__: bookmarks
+      }, () => {
+        resolve();
+      });
+    });
+  }
+
+  addToBookmarks(text1, text2) {
+    this.getSavedBookmarks().then(savedBookmarks => {
+      const newBookmarks = [
+        ...savedBookmarks,
+        [text1, text2]
+      ];
+      this.setSavedBookmarks(newBookmarks).then(() => {
+        this.getSavedBookmarks().then(bookmarks => {
+          this.setState({
+            bookmarks
+          }, () => {
+            console.log('Set bookmarks:' + JSON.stringify(bookmarks, 2, ' '));
+          });
+        });
+      });
+    }).catch(err => {
+      console.error(`Couldn't save bookmarks. Error: ${err}`);
+    });
+  }
+
+  // captionsToRemove is Array(Array(String))
+  removeFromBookmarks(captionsToRemove) {
+    this.getSavedBookmarks().then(savedBookmarks => {
+      captionsToRemove.forEach(captions => {
+        const [text1, text2] = captions;
+        const index = savedBookmarks.findIndex(pair => {
+          return pair[0] === text1 && pair[1] === text2;
+        });
+        if (index >= 0) {
+          savedBookmarks.splice(index, 1);
+        }
+      });
+      this.setSavedBookmarks(savedBookmarks).then(() => {
+        this.getSavedBookmarks().then(bookmarks => {
+          this.setState({
+            bookmarks
+          }, () => {
+            console.log('Set bookmarks:' + JSON.stringify(bookmarks, 2, ' '));
+          });
+        });
+      });
+    }).catch(err => {
+      console.error(`Couldn't save bookmarks. Error: ${err}`);
+    });
   }
 
   onKeyUp(e) {
@@ -194,7 +276,12 @@ class PopupMessageHandler extends React.Component {
 
   render() {
     const settings = this.state.settings;
-    return this.props.children(settings);
+    return this.props.children({
+      ...settings,
+      bookmarks: this.state.bookmarks,
+      addToBookmarks: this.addToBookmarks,
+      removeFromBookmarks: this.removeFromBookmarks
+    });
   }
 }
 
