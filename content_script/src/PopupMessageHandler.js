@@ -83,7 +83,7 @@ class PopupMessageHandler extends React.Component {
 
   getSavedBookmarks() {
     return new Promise((resolve, reject) => {
-      window.chrome.storage.local.get('__DC_bookmarks__', result => {
+      window.chrome.storage.sync.get('__DC_bookmarks__', result => {
         if (result.__DC_bookmarks__) {
           resolve(result.__DC_bookmarks__);
         } else {
@@ -96,7 +96,7 @@ class PopupMessageHandler extends React.Component {
 
   setSavedBookmarks(bookmarks) {
     return new Promise((resolve, _) => {
-      window.chrome.storage.local.set({
+      window.chrome.storage.sync.set({
         __DC_bookmarks__: bookmarks
       }, () => {
         resolve();
