@@ -104,7 +104,7 @@ class WithPopper extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.target !== this.props.target && this.canAttachToTarget()) {
+    if (prevProps.target !== this.props.target && this.canAttachToTarget() && !this.props.dontUpdate) {
       this.createPopper();
     } else {
       if (this.props.updateInfrequently) {

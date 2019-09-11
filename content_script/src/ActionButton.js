@@ -97,27 +97,25 @@ class ActionButton extends React.Component {
           >
             { children }
           </div>
-          {isHoveredOver && (
-            <StickyPopper
-              target={this.buttonRef.current}
-              placement='right'
-              dontUpdate
+          <StickyPopper
+            target={this.buttonRef.current}
+            placement='right'
+          >
+            <div
+              style={{
+                background: 'black',
+                color: 'white',
+                padding: '16px',
+                fontSize: '16px',
+                whiteSpace: 'nowrap',
+                marginLeft: '16px',
+                borderRadius: '2px',
+                display: isHoveredOver ? 'inline-block' : 'none'
+              }}
             >
-              <div
-                style={{
-                  background: 'black',
-                  color: 'white',
-                  padding: '16px',
-                  fontSize: '16px',
-                  whiteSpace: 'nowrap',
-                  marginLeft: '16px',
-                  borderRadius: '2px'
-                }}
-              >
-                { tooltipText }
-              </div>
-            </StickyPopper>
-          )}
+              { tooltipText }
+            </div>
+          </StickyPopper>
         </Fade>
       </Fragment>
     );
