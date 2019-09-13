@@ -10,7 +10,6 @@ class PopupMessageHandler extends React.Component {
 
     this.state = {
       settings: {
-        isOn: false,
         extraSpace: false,
         secondSubtitleLanguage: 'none',
         settingsAreDefault: true,
@@ -77,7 +76,7 @@ class PopupMessageHandler extends React.Component {
       this.altKeyPressed = true;
     }
     if (this.dKeyPressed && this.altKeyPressed && settings.hotKeyEnabled) {
-      this.changeSetting('isOn', !settings.isOn);
+      // FIXME: Add hotKey back
     }
   }
 
@@ -178,6 +177,9 @@ class PopupMessageHandler extends React.Component {
   }
 
   onMessage(message, sender, sendResponse) {
+    const {
+      settings
+    } = this.state;
     if (!message.type) return;
     switch (message.type) {
 
@@ -194,10 +196,6 @@ class PopupMessageHandler extends React.Component {
         smallText,
         hotKeyEnabled
       } = message.payload;
-
-      const {
-        settings
-      } = this.state;
       if (settings.extraSpace !== extraSpace) {
         this.changeSetting('extraSpace', extraSpace);
       }
@@ -218,7 +216,7 @@ class PopupMessageHandler extends React.Component {
       case 'detect-site':
       sendResponse({
         ok: true,
-        site: this.props.adapter.site
+        site: this.props.site
       });
       break;
 
@@ -230,43 +228,29 @@ class PopupMessageHandler extends React.Component {
       })
       break;
 
-      // TODO - Should deprecate
-      case 'is-on':
+      // TODO - Deprecate
+      case "popup-opened":
       sendResponse({
         ok: true,
-        isOn: this.state.settings.isOn
       });
       break;
 
-      case 'start-observer':
-      // TODO - Rename this message.type to 'turn-on'
-      // TODO - If this.props.adapter.error ...
-      this.changeSetting('isOn', true);
+      case 'get-state':
+      const { provider, isOn } = this.props;
       sendResponse({
-        ok: true
+        ok: true,
+        settingsAreDefault: settings.settingsAreDefault,
+        isOn: isOn,
+        secondLanguage: settings.secondSubtitleLanguage,
+        settings: {
+          extraSpace: settings.extraSpace,
+          customColorsEnabled: settings.customColorsEnabled,
+          customTextColor: settings.customTextColor,
+          smallText: settings.smallText,
+          hotKeyEnabled: settings.hotKeyEnabled
+        },
+        loadedLanguages: provider.loadedLanguages,
       });
-      break;
-
-      case 'stop-observer':
-      // TODO - Rename this message.type to 'turn-off'
-      this.changeSetting('isOn', false);
-      sendResponse({
-        ok: true
-      });
-      break;
-
-      case "popup-opened":
-      const { adapter } = this.props;
-      if (adapter.error) {
-        sendResponse({
-          ok: false,
-          errorType: adapter.error,
-        });
-      } else {
-        sendResponse({
-          ok: true,
-        });
-      }
       break;
 
       default:

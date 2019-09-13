@@ -15,10 +15,12 @@ export default function withTimer(WrappedComponent, AdapterCreator) {
           time: Date.now()
         });
       }, 100);
+      console.log('Starting timer...');
     }
 
     componentWillUnmount() {
       clearInterval(this.timer);
+      console.log('Stopping timer...');
     }
 
     render() {

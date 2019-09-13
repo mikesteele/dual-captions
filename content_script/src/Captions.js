@@ -21,7 +21,8 @@ class Captions extends React.Component {
     const {
       adapter,
       settings,
-      currentCaptionToRender
+      currentCaptionToRender,
+      isOn
     } = this.props;
 
     const {
@@ -29,7 +30,7 @@ class Captions extends React.Component {
       captionWindow
     } = adapter;
 
-    if (!settings.isOn) {
+    if (!isOn) {
       return null;
     }
 

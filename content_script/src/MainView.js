@@ -30,23 +30,37 @@ class MainView extends React.Component {
     const {
       adapter,
       settings,
-      currentCaptionToRender
+      provider,
+      isOn,
+      videoId
     } = this.props;
     const {
       viewBookmarksModalIsOpen
     } = this.state;
+
+    let currentCaptionToRender = '';
+    if (adapter.providerInDebugMode) {
+      currentCaptionToRender = 'In debug mode...';
+    } else {
+      currentCaptionToRender = provider.getCaptionToRender(adapter.playerCurrentTime, settings.secondLanguage);
+    }
+
     return (
       <Fragment>
         <Captions
           adapter={adapter}
           currentCaptionToRender={currentCaptionToRender}
           settings={settings}
+          isOn={isOn}
+          videoId={videoId}
         />
         <Actions
           adapter={adapter}
           currentCaptionToRender={currentCaptionToRender}
           settings={settings}
           openViewBookmarksModal={this.openViewBookmarksModal}
+          isOn={isOn}
+          videoId={videoId}
         />
         <ViewBookmarksModal
           adapter={adapter}
@@ -54,6 +68,8 @@ class MainView extends React.Component {
           isOpen={viewBookmarksModalIsOpen}
           onClose={this.onCloseViewBookmarksModal}
           settings={settings}
+          isOn={isOn}
+          videoId={videoId}
         />
       </Fragment>
     )

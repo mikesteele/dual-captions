@@ -14,6 +14,7 @@ class Provider extends React.Component {
     this.guessLanguage = this.guessLanguage.bind(this);
     this.guessLanguageOfCaptions = this.guessLanguageOfCaptions.bind(this);
     this.getLoadedLanguages = this.getLoadedLanguages.bind(this);
+    this.getCaptionToRender = this.getCaptionToRender.bind(this);
   }
 
   componentDidMount() {
@@ -27,11 +28,14 @@ class Provider extends React.Component {
     }
   }
 
-  canUseCaptionsFromVideo() {
-    const currentSite = this.props.adapter.site;
-    const videoId = this.props.adapter.videoId;
-    const secondSubtitleLanguage = this.props.settings.secondSubtitleLanguage;
+  canUseCaptionsFromVideo(secondSubtitleLanguage) {
+    const {
+      site,
+      videoId
+    } = this.props;
+    const currentSite = site;
     if (this.state.captions
+      && secondSubtitleLanguage
       && this.state.captions[currentSite]
       && this.state.captions[currentSite][videoId]
       && this.state.captions[currentSite][videoId][secondSubtitleLanguage]) {
@@ -41,25 +45,33 @@ class Provider extends React.Component {
     }
   }
 
-  getCaptionToRender() {
-    const currentSite = this.props.adapter.site;
-    const videoId = this.props.adapter.videoId;
-    const secondSubtitleLanguage = this.props.settings.secondSubtitleLanguage;
-    const currentTime = this.props.adapter.playerCurrentTime;
-    const captions = this.state.captions[currentSite][videoId][secondSubtitleLanguage];
-    let captionToRender = captions.find(caption => {
-      return caption.startTime < currentTime && currentTime < caption.endTime;
-    });
-    if (captionToRender) {
-      return captionToRender.text;
+  getCaptionToRender(currentTime, secondSubtitleLanguage) {
+    if (this.canUseCaptionsFromVideo(secondSubtitleLanguage)) {
+      const {
+        site,
+        videoId
+      } = this.props;
+      const currentSite = site;
+      const captions = this.state.captions[currentSite][videoId][secondSubtitleLanguage];
+      let captionToRender = captions.find(caption => {
+        return caption.startTime < currentTime && currentTime < caption.endTime;
+      });
+      if (captionToRender) {
+        return captionToRender.text;
+      } else {
+        return '';
+      }
     } else {
       return '';
     }
   }
 
   getLoadedLanguages() {
-    const currentSite = this.props.adapter.site;
-    const videoId = this.props.adapter.videoId;
+    const {
+      site,
+      videoId
+    } = this.props;
+    const currentSite = site;
     if (currentSite
         && videoId
         && this.state.captions.hasOwnProperty(currentSite)
@@ -103,8 +115,11 @@ class Provider extends React.Component {
   loadCaptions(captions, language) {
     // TODO - Don't allow loading captions if null videoId
     return new Promise((resolve, reject) => {
-      const currentSite = this.props.adapter.site;
-      const videoId = this.props.adapter.videoId;
+      const {
+        site,
+        videoId
+      } = this.props;
+      const currentSite = site;
       this.setState(state => {
         let nextState = {...state};
         if (state.captions[currentSite] && state.captions[currentSite][videoId]) {
@@ -131,7 +146,7 @@ class Provider extends React.Component {
       case 'process-caption-request':
       // TODO - Bail out if message.site doesn't match
       this.fetchUrl(message.payload)
-        .then(captionFile => this.props.parser.parse(captionFile, this.props.adapter.site))
+        .then(captionFile => this.props.parser.parse(captionFile, this.props.site))
         .then(this.guessLanguageOfCaptions)
         .then(result => {
           const {captions, language} = result;
@@ -151,25 +166,6 @@ class Provider extends React.Component {
             error: err
           });
         });
-      break;
-
-      case 'get-state':
-      const { settings } = this.props;
-      const loadedLanguages = this.getLoadedLanguages();
-      sendResponse({
-        ok: true,
-        settingsAreDefault: settings.settingsAreDefault,
-        isOn: settings.isOn,
-        secondLanguage: settings.secondSubtitleLanguage,
-        settings: {
-          extraSpace: settings.extraSpace,
-          customColorsEnabled: settings.customColorsEnabled,
-          customTextColor: settings.customTextColor,
-          smallText: settings.smallText,
-          hotKeyEnabled: settings.hotKeyEnabled
-        },
-        loadedLanguages: loadedLanguages,
-      });
       break;
 
       default:
@@ -201,14 +197,10 @@ class Provider extends React.Component {
   }
 
   render() {
-    let currentCaptionToRender = '';
-
-    if (this.props.adapter.providerInDebugMode) {
-      currentCaptionToRender = 'In debug mode...';
-    } else if (this.canUseCaptionsFromVideo()) {
-      currentCaptionToRender = this.getCaptionToRender();
-    }
-    return this.props.children(currentCaptionToRender);
+    return this.props.children({
+      getCaptionToRender: this.getCaptionToRender,
+      loadedLanguages: this.getLoadedLanguages()
+    });
   }
 };
 
