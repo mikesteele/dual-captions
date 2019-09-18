@@ -49,6 +49,8 @@ class ClipboardAction extends React.Component {
         tooltipText={this.state.isAnimating ? 'Copied' : 'Copy captions to clipboard'}
         settings={this.props.settings}
         adapter={this.props.adapter}
+        isOn={this.props.isOn}
+        videoId={this.props.videoId}
       >
         <MdAssignment />
       </ActionButton>

@@ -9,9 +9,10 @@ const Actions = props => {
     adapter,
     settings,
     currentCaptionToRender,
-    openViewBookmarksModal
+    openViewBookmarksModal,
+    isOn,
+    videoId
   } = props;
-  const shouldShow = settings.mouseIsActive && settings.isOn;
   return (
     <StickyPopper
       target={adapter.playerControls}
@@ -25,16 +26,22 @@ const Actions = props => {
           adapter={adapter}
           settings={settings}
           openViewBookmarksModal={openViewBookmarksModal}
+          isOn={isOn}
+          videoId={videoId}
         />
         <BookmarkAction
           adapter={adapter}
           settings={settings}
           currentCaptionToRender={currentCaptionToRender}
+          isOn={isOn}
+          videoId={videoId}
         />
         <ClipboardAction
           adapter={adapter}
           settings={settings}
           currentCaptionToRender={currentCaptionToRender}
+          isOn={isOn}
+          videoId={videoId}
         />
       </div>
     </StickyPopper>

@@ -13,7 +13,9 @@ class BookmarkAction extends React.Component {
     const {
       settings,
       adapter,
-      currentCaptionToRender
+      currentCaptionToRender,
+      isOn,
+      videoId
     } = this.props;
     const {
       bookmarks,
@@ -54,6 +56,8 @@ class BookmarkAction extends React.Component {
           settings={settings}
           adapter={adapter}
           hotKeyCode={65} // A
+          isOn={isOn}
+          videoId={videoId}
         >
           { icon }
         </ActionButton>

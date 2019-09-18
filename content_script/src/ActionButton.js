@@ -54,11 +54,12 @@ class ActionButton extends React.Component {
   }
 
   render() {
-    const { onClick, tooltipText, children, settings, adapter, hotKeyCode } = this.props;
+    const { onClick, tooltipText, children, settings, adapter, hotKeyCode, isOn, videoId } = this.props;
     const { isHoveredOver, isAnimating } = this.state;
 
-    const shouldShow = adapter.videoId && // Prevent showing action buttons on non-video pages
-                       settings.isOn &&
+    // TODO - Not working, hover over or isAnimating
+    const shouldShow = videoId &&
+                       isOn &&
                        (settings.mouseIsActive || isHoveredOver || isAnimating);
 
     return (

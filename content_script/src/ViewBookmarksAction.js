@@ -16,6 +16,8 @@ class ViewBookmarksAction extends React.Component {
           tooltipText='View all bookmarks'
           settings={this.props.settings}
           adapter={this.props.adapter}
+          isOn={this.props.isOn}
+          videoId={this.props.videoId}
         >
           <MdBook />
         </ActionButton>
