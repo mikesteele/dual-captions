@@ -14,6 +14,7 @@ export const NetflixAdapterCreator = () => {
   let captionWindowStyle = { textAlign: 'center', width: '700px' };
   let video = document.querySelector('video') || null;
   let fullscreenRoot = document.querySelector('.nfp.AkiraPlayer');
+  let fullscreenRootSelector = '.nfp.AkiraPlayer';
   const defaultCaptionStyle = DefaultCaptionStyle;
   let smallTextSize = '22px';
   let captionText = '';
@@ -62,6 +63,7 @@ export const NetflixAdapterCreator = () => {
     captionStyle,
     defaultCaptionStyle,
     fullscreenRoot,
+    fullscreenRootSelector,
     playerControls,
     playerCurrentTime,
     smallTextSize,
