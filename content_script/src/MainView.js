@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import Captions from './Captions';
 import Actions from './Actions';
 import ViewBookmarksModal from './ViewBookmarksModal';
-import SettingsView from './WIP';
 import { StickyPopper } from './Popper';
 
 class MainView extends React.Component {
@@ -73,12 +72,6 @@ class MainView extends React.Component {
           isOn={isOn}
           videoId={videoId}
         />
-        <StickyPopper
-          target={adapter.playerControls}
-          placement='top-end'
-          updateInfrequently>
-          <SettingsView/>
-        </StickyPopper>
       </Fragment>
     )
   }

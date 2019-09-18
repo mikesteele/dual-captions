@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import ActionButton from './ActionButton';
 import Modal from './Modal';
-import { MdBookmarkBorder, MdBookmark } from 'react-icons/md';
+import MdBookmarkBorder from 'react-icons/lib/md/bookmark-outline';
+import MdBookmark from 'react-icons/lib/md/bookmark';
 import HotKey from './HotKey';
 
 class BookmarkAction extends React.Component {

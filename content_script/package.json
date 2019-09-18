@@ -1,6 +1,6 @@
 {
   "name": "dual-captions-content_script",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": true,
   "dependencies": {
     "franc": "^4.1.0",
@@ -8,14 +8,16 @@
     "popper.js": "^1.14.6",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-icons": "^3.7.0",
-    "react-scripts": "1.0.10"
+    "react-icons": "2.2.7",
+    "react-scripts": "1.0.10",
+    "source-map-explorer": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && cd build/static/js && cp *.js main.js && ls",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": "react-app"

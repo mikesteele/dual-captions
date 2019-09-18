@@ -1,7 +1,11 @@
 import React, { Fragment } from 'react';
 import Modal from './Modal';
-import { MdClose, MdCheckBoxOutlineBlank, MdCheckBox, MdBookmark, MdBookmarkBorder } from 'react-icons/md';
 import BookmarkAction from './BookmarkAction';
+import MdClose from 'react-icons/lib/md/close';
+import MdCheckBoxOutlineBlank from 'react-icons/lib/md/check-box-outline-blank';
+import MdCheckBox from 'react-icons/lib/md/check-box';
+import MdBookmarkBorder from 'react-icons/lib/md/bookmark-outline';
+import MdBookmark from 'react-icons/lib/md/bookmark';
 
 const Button = props => {
   const style = {

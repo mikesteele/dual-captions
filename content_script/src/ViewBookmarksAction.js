@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import ActionButton from './ActionButton';
 import Modal from './Modal';
-import { MdBook } from 'react-icons/md';
+import MdBook from 'react-icons/lib/md/book';
 
 class ViewBookmarksAction extends React.Component {
   constructor(props) {

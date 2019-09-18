@@ -1,7 +1,7 @@
 import React from 'react';
 import ActionButton from './ActionButton';
 import { StickyPopper } from './Popper';
-import { MdAssignment } from 'react-icons/md';
+import MdAssignment from 'react-icons/lib/md/assignment';
 
 class ClipboardAction extends React.Component {
   constructor(props) {
