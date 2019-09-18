@@ -1,13 +1,11 @@
 import React from 'react';
 import ErrorBoundary from './ErrorBoundary';
 import Site from './Site';
-import Adapter from './Adapter';
 import Parser from './Parser';
 import PopupMessageHandler from './PopupMessageHandler';
 import Provider from './Provider';
 import Captions, { FullscreenHOC } from './Captions';
 import InjectedStyles from './Styles';
-import withTimer from './with-timer';
 import ClipboardAction from './ClipboardAction';
 import { StickyPopper } from './Popper';
 import ViewBookmarksAction from './ViewBookmarksAction';
