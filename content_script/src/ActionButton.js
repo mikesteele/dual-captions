@@ -57,7 +57,6 @@ class ActionButton extends React.Component {
     const { onClick, tooltipText, children, settings, adapter, hotKeyCode, isOn, videoId } = this.props;
     const { isHoveredOver, isAnimating } = this.state;
 
-    // TODO - Not working, hover over or isAnimating
     const shouldShow = videoId &&
                        isOn &&
                        (settings.mouseIsActive || isHoveredOver || isAnimating);
