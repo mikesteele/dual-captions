@@ -6,8 +6,6 @@ import Parser from './Parser';
 import PopupMessageHandler from './PopupMessageHandler';
 import Provider from './Provider';
 import Captions, { FullscreenHOC } from './Captions';
-import { NetflixAdapterCreator } from './adapters/netflix';
-import { YoutubeAdapterCreator } from './adapters/youtube';
 import InjectedStyles from './Styles';
 import withTimer from './with-timer';
 import ClipboardAction from './ClipboardAction';
@@ -17,6 +15,7 @@ import Modal from './Modal';
 import MainView from './MainView';
 import VideoId from './VideoId';
 import IsOn from './IsOn';
+import NewAdapter from './NewAdapter';
 
 class App extends React.Component {
   render() {
@@ -43,21 +42,8 @@ class App extends React.Component {
                           >
                             {(settings) => {
                               if (isOn) {
-                                let ConnectedAdapter;
-                                if (site ===  'netflix') {
-                                  ConnectedAdapter = withTimer(Adapter, NetflixAdapterCreator);
-                                  // TODO - Should have an HOC to pass site
-                                } else if (site === 'youtube') {
-                                  ConnectedAdapter = withTimer(Adapter, YoutubeAdapterCreator);
-                                } else if (site === null) {
-                                  return (
-                                    <div/>
-                                  );
-                                } else {
-                                  throw new Error(`No adapter found for site: ${site}`); // TODO - Doesn't get caught by ErrorBoundary
-                                }
                                 return (
-                                  <ConnectedAdapter site={site}>
+                                  <NewAdapter site={site}>
                                     {(adapter) => (
                                       <FullscreenHOC adapter={adapter}>
                                         <MainView
@@ -69,7 +55,7 @@ class App extends React.Component {
                                         />
                                       </FullscreenHOC>
                                     )}
-                                  </ConnectedAdapter>
+                                  </NewAdapter>
                                 );
                               } else {
                                 return null;
