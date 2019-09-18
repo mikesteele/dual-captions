@@ -1,11 +1,6 @@
 import { render } from "preact";
-
-const test = (
-  <div dc-root='true'>
-    <h2>Hi!</h2>
-  </div>
-);
+import App from './components/App';
 
 if (typeof window !== "undefined") {
-  render(test, document.body);
+  render(<App />, document.body);
 }
