@@ -9,12 +9,17 @@ export const YoutubeAdapterCreator = () => {
   let smallTextSize = '14px';
   let captionText = captionWindow ? captionWindow.innerText : '';
   let playerControls = document.querySelector('.ytp-chrome-bottom');
+  let playerCurrentTime = null;
 
   const automaticCaptions = document.querySelector('.ytp-caption-window-rollup');
   if (automaticCaptions) {
     // Automatic captions (.ytp-caption-window-rollup) aren't supported.
     error = 'automatic-subtitles';
   };
+
+  if (video) {
+    playerCurrentTime = video.currentTime;
+  }
 
   return {
     canRenderInCaptionWindow: false,
@@ -35,7 +40,8 @@ export const YoutubeAdapterCreator = () => {
     error: error,
     smallTextSize: smallTextSize,
     captionText: captionText,
-    playerControls: playerControls
+    playerControls: playerControls,
+    playerCurrentTime: playerCurrentTime
   };
 }
 

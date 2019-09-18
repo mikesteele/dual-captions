@@ -13,7 +13,7 @@ class NewAdapter extends React.Component {
   componentDidMount() {
     this.timer = setInterval(() => {
       this.setState({
-        time: Date.now();
+        time: Date.now()
       });
     }, 100);
     console.log('Starting timer...');
