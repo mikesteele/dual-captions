@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Captions from './Captions';
 import Actions from './Actions';
 import ViewBookmarksModal from './ViewBookmarksModal';
+import SettingControls from './SettingControls';
 
 class MainView extends React.Component {
   constructor(props) {
@@ -67,6 +68,13 @@ class MainView extends React.Component {
           currentCaptionToRender={currentCaptionToRender}
           isOpen={viewBookmarksModalIsOpen}
           onClose={this.onCloseViewBookmarksModal}
+          settings={settings}
+          isOn={isOn}
+          videoId={videoId}
+        />
+        <SettingControls
+          adapter={adapter}
+          currentCaptionToRender={currentCaptionToRender}
           settings={settings}
           isOn={isOn}
           videoId={videoId}
