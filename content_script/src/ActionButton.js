@@ -1,18 +1,7 @@
 import React, { Fragment } from 'react';
 import { StickyPopper } from './Popper';
 import HotKey from './HotKey';
-
-const Fade = props => (
-  <div
-    style={{
-      filter: props.in ? 'opacity(1)' : 'opacity(0)',
-      transition: 'filter 200ms',
-      pointerEvents: props.in ? 'auto' : 'none'
-    }}
-  >
-    { props.children }
-  </div>
-);
+import Fade from './Fade';
 
 class ActionButton extends React.Component {
   constructor(props) {

@@ -4,6 +4,9 @@ import { MdEdit, MdPlay } from 'react-icons/md';
 // import MdEdit from 'react-icons/lib/md/edit';
 import { FaPlay } from 'react-icons/fa';
 // TODO - import FaPlay from
+import Fade from './Fade';
+
+const title = str => str.replace(/^\w/, c => c.toUpperCase());
 
 const ActionTooltip = props => (
   <div
@@ -18,7 +21,10 @@ const ActionTooltip = props => (
       fontSize: "20px",
       lineHeight: "24px",
       position: "relative",
-      margin: "32px"
+      margin: "32px",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "200px"
     }}
   >
     {props.children}
@@ -27,12 +33,13 @@ const ActionTooltip = props => (
         position: "absolute",
         height: "100%",
         top: 0,
-        right: "-24px",
+        left: "-24px",
         fontSize: "32px",
         lineHeight: "32px",
         display: "flex",
         alignItems: "center",
-        color: "#202020"
+        color: "#202020",
+        transform: "scaleX(-1)"
       }}
     >
       <FaPlay />
@@ -168,73 +175,74 @@ class SettingControls extends React.Component {
   renderMaterial() {
     const { adapter, settings } = this.props;
     return (
-      <StickyPopper
-        target={adapter.playerControls}
-        placement="top-end"
-        updateInfrequently
+      <div
+        style={{
+          background: "#0d0d0d",
+          color: "#E1E1E1",
+          boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.5)",
+          display: "inline-flex",
+          padding: "32px",
+          borderRadius: "8px",
+          fontFamily: "sans-serif",
+          fontSize: "20px",
+          lineHeight: "24px",
+          flexDirection: "column",
+          alignItems: "center"
+        }}
       >
         <div
           style={{
-            background: "#0d0d0d",
-            color: "#E1E1E1",
-            boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.5)",
-            display: "inline-flex",
-            padding: "32px",
-            borderRadius: "8px",
-            fontFamily: "sans-serif",
-            fontSize: "20px",
-            lineHeight: "24px",
-            flexDirection: "column",
-            alignItems: "center"
+            fontSize: '16px',
+            marginBottom: '8px',
+            lineHeight: '20px'
           }}
         >
+          Second subtitle language
+        </div>
+        <div
+          style={{
+            fontSize: "16px",
+            padding: "8px 16px",
+            background: "#913bfa",
+            marginTop: "4px",
+            textAlign: "center",
+            borderRadius: "4px",
+            width: 124,
+            position: "relative",
+            cursor: "pointer"
+          }}
+          onClick={this.openActionTooltip}
+          ref={this.selectRef}
+        >
+          {SUPPORTED_LANGUAGES[settings.secondSubtitleLanguage] ||
+            title(settings.secondSubtitleLanguage)}
           <div
             style={{
-              fontSize: '16px',
-              marginBottom: '8px',
-              lineHeight: '20px'
+              position: "absolute",
+              right: 8,
+              top: 10
             }}
           >
-            Second subtitle language
-          </div>
-          <div
-            style={{
-              fontSize: "16px",
-              padding: "8px 16px",
-              background: "#913bfa",
-              marginTop: "4px",
-              textAlign: "center",
-              borderRadius: "4px",
-              width: 124,
-              position: "relative",
-              cursor: "pointer"
-            }}
-            onClick={this.openActionTooltip}
-            ref={this.selectRef}
-          >
-            {SUPPORTED_LANGUAGES[settings.secondSubtitleLanguage] ||
-              settings.secondSubtitleLanguage}
-            <div
-              style={{
-                position: "absolute",
-                right: 8,
-                top: 10
-              }}
-            >
-              <MdEdit />
-            </div>
+            <MdEdit />
           </div>
         </div>
-      </StickyPopper>
+      </div>
     );
   }
 
   renderActionTooltip() {
+    const { provider, settings, site } = this.props;
+    let currentSite = '';
+    if (site === 'youtube') {
+      currentSite = 'YouTube';
+    } else if (site === 'netflix') {
+      currentSite = 'Netflix';
+    }
+    const langsToRender = ['none', ...provider.loadedLanguages];
     return (
       <StickyPopper
         target={this.selectRef ? this.selectRef.current : null}
-        placement="left"
-        updateInfrequently
+        placement="right"
       >
         <ActionTooltip>
           <div
@@ -245,32 +253,31 @@ class SettingControls extends React.Component {
           >
             <div
               style={{
-                marginBottom: "40px"
+                marginBottom: provider.loadedLanguages.length > 0 ? "40px" : "0px"
               }}
             >
-              <div
-                style={{
-                  fontSize: "20px",
-                  padding: "8px 16px",
-                  background: "#454545",
-                  textAlign: "center",
-                  borderRadius: "4px"
-                }}
-              >
-                Italian
-              </div>
-              <div
-                style={{
-                  fontSize: "20px",
-                  padding: "8px 16px",
-                  background: "#913bfa",
-                  marginTop: "4px",
-                  textAlign: "center",
-                  borderRadius: "4px"
-                }}
-              >
-                English
-              </div>
+              {provider.loadedLanguages.length > 0 && langsToRender.map(lang => (
+                 <div
+                   style={{
+                     fontSize: "20px",
+                     padding: "8px 16px",
+                     background: "#454545",
+                     textAlign: "center",
+                     borderRadius: "4px",
+                     marginBottom: "8px",
+                     cursor: "pointer"
+                   }}
+                   key={lang}
+                   onClick={() => {
+                     settings.changeSetting('secondSubtitleLanguage', lang);
+                     this.setState({
+                       actionTooltopOpen: false
+                     });
+                   }}
+                 >
+                   {SUPPORTED_LANGUAGES[lang] || title(lang)}
+                 </div>
+              ))}
             </div>
             <div>
               <div
@@ -283,7 +290,7 @@ class SettingControls extends React.Component {
               >
                 Load languages by
                 <br />
-                selecting them on Netflix.
+                selecting them on {currentSite}.
               </div>
               <div
                 style={{
@@ -292,7 +299,8 @@ class SettingControls extends React.Component {
                   background: "#913bfa",
                   marginTop: "4px",
                   textAlign: "center",
-                  borderRadius: "4px"
+                  borderRadius: "4px",
+                  display: "none" // TODO
                 }}
               >
                 Show me how
@@ -306,10 +314,17 @@ class SettingControls extends React.Component {
 
   render() {
     const { adapter, settings, currentCaptionToRender, isOn, videoId } = this.props;
+    const { isHoveredOver, actionTooltopOpen } = this.state;
+    const shouldShowMaterial = videoId &&
+                       isOn &&
+                       settings.mouseIsActive;
+    const shouldShowTooltip = actionTooltopOpen && videoId;
     return (
       <Fragment>
+      <Fade in={shouldShowMaterial}>
         { this.renderMaterial() }
-        { this.state.actionTooltopOpen && this.renderActionTooltip()}
+      </Fade>
+      { shouldShowTooltip && this.renderActionTooltip() }
       </Fragment>
     );
   }

@@ -264,7 +264,8 @@ class PopupMessageHandler extends React.Component {
       ...settings,
       bookmarks: this.state.bookmarks,
       addToBookmarks: this.addToBookmarks,
-      removeFromBookmarks: this.removeFromBookmarks
+      removeFromBookmarks: this.removeFromBookmarks,
+      changeSetting: this.changeSetting
     });
   }
 }
