@@ -74,7 +74,6 @@ class VideoId extends React.Component {
   }
 
   render() {
-    console.log(this.state.videoId);
     return this.props.children(this.state.videoId);
   }
 }

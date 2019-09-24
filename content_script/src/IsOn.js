@@ -22,6 +22,7 @@ class IsOn extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    // Always on in development mode
     if (prevProps.site !== 'development' && this.props.site === 'development' && !this.state.isOn) {
       this.setState({
         isOn: true
@@ -62,7 +63,6 @@ class IsOn extends React.Component {
   }
 
   render() {
-    console.log(this.state.isOn);
     return this.props.children(this.state.isOn);
   }
 }
