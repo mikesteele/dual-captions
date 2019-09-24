@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { StickyPopper } from './Popper';
-import { MdEdit, MdPlay } from 'react-icons/md';
+import { MdEdit, MdPlay, MdClose } from 'react-icons/md';
 // import MdEdit from 'react-icons/lib/md/edit';
 import { FaPlay } from 'react-icons/fa';
 // TODO - import FaPlay from
@@ -28,6 +28,24 @@ const ActionTooltip = props => (
     }}
   >
     {props.children}
+    <div
+      style={{
+        width: 24,
+        marginLeft: 2,
+        fontSize: 20,
+        lineHeight: 20,
+        height: 20,
+        display: 'inline-flex',
+        flexDirection: 'column'
+      }}
+    >
+      <MdClose
+        onClick={props.onClickClose}
+        style={{
+          cursor: 'pointer'
+        }}
+       />
+    </div>
     <div
       style={{
         position: "absolute",
@@ -244,7 +262,13 @@ class SettingControls extends React.Component {
         target={this.selectRef ? this.selectRef.current : null}
         placement="right"
       >
-        <ActionTooltip>
+        <ActionTooltip
+          onClickClose={() => {
+            this.setState({
+              actionTooltopOpen: false
+            });
+          }}
+        >
           <div
             style={{
               display: "flex",

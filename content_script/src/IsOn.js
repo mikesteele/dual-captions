@@ -21,6 +21,14 @@ class IsOn extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.site !== 'development' && this.props.site === 'development' && !this.state.isOn) {
+      this.setState({
+        isOn: true
+      });
+    }
+  }
+
   onMessage(message, sender, sendResponse) {
     if (!message.type) return;
     switch (message.type) {
@@ -54,6 +62,7 @@ class IsOn extends React.Component {
   }
 
   render() {
+    console.log(this.state.isOn);
     return this.props.children(this.state.isOn);
   }
 }
