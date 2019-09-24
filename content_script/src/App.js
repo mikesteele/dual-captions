@@ -20,10 +20,10 @@ class App extends React.Component {
     return (
       <ErrorBoundary>
         <InjectedStyles/>
-        <IsOn>
-          {(isOn) => (
           <Site>
             {(site) => (
+            <IsOn site={site}>
+              {(isOn) => (
               <VideoId site={site}>
                 {(videoId) => (
                   <Parser site={site}>
@@ -50,6 +50,7 @@ class App extends React.Component {
                                           provider={provider}
                                           isOn={true}
                                           videoId={videoId}
+                                          site={site}
                                         />
                                       </FullscreenHOC>
                                     )}
@@ -67,9 +68,9 @@ class App extends React.Component {
                 )}
               </VideoId>
             )}
-          </Site>
+          </IsOn>
           )}
-        </IsOn>
+        </Site>
       </ErrorBoundary>
     );
   }

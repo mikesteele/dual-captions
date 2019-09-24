@@ -44,6 +44,8 @@ class VideoId extends React.Component {
       videoId = this.detectNetflixVideoId();
     } else if (this.props.site === 'youtube') {
       videoId = this.detectYoutubeVideoId(); // TODO - Audit repo for Youtube vs YouTube
+    } else if (this.props.site === 'development') {
+      videoId = 'development';
     }
     if (videoId !== this.state.videoId) {
       // TODO - There are probably other places where I'm setting state unnecessarily

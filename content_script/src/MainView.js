@@ -3,6 +3,7 @@ import Captions from './Captions';
 import Actions from './Actions';
 import ViewBookmarksModal from './ViewBookmarksModal';
 
+
 class MainView extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +33,8 @@ class MainView extends React.Component {
       settings,
       provider,
       isOn,
-      videoId
+      videoId,
+      site
     } = this.props;
     const {
       viewBookmarksModalIsOpen
@@ -61,6 +63,8 @@ class MainView extends React.Component {
           openViewBookmarksModal={this.openViewBookmarksModal}
           isOn={isOn}
           videoId={videoId}
+          provider={provider}
+          site={site}
         />
         <ViewBookmarksModal
           adapter={adapter}
