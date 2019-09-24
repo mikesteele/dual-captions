@@ -23,7 +23,7 @@ const ActionTooltip = props => (
       position: "relative",
       margin: "32px",
       justifyContent: "center",
-      alignItems: "center",
+      alignItems: "flex-start",
       width: "200px"
     }}
   >
@@ -31,12 +31,11 @@ const ActionTooltip = props => (
     <div
       style={{
         width: 24,
-        marginLeft: 2,
+        marginLeft: 24,
         fontSize: 20,
         lineHeight: 20,
         height: 20,
         display: 'inline-flex',
-        flexDirection: 'column'
       }}
     >
       <MdClose
