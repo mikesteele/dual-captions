@@ -5,64 +5,9 @@ import { MdEdit, MdPlay, MdClose } from 'react-icons/md';
 import { FaPlay } from 'react-icons/fa';
 // TODO - import FaPlay from
 import Fade from './Fade';
+import Tooltip from './Tooltip'
 
 const title = str => str.replace(/^\w/, c => c.toUpperCase());
-
-const ActionTooltip = props => (
-  <div
-    style={{
-      backgroundColor: "#202020",
-      color: "#E1E1E1",
-      boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.5)",
-      display: "inline-flex",
-      padding: "16px",
-      borderRadius: "8px",
-      fontFamily: "sans-serif",
-      fontSize: "20px",
-      lineHeight: "24px",
-      position: "relative",
-      margin: "32px",
-      justifyContent: "center",
-      alignItems: "flex-start",
-      width: "200px"
-    }}
-  >
-    {props.children}
-    <div
-      style={{
-        width: 24,
-        marginLeft: 24,
-        fontSize: 20,
-        lineHeight: 20,
-        height: 20,
-        display: 'inline-flex',
-      }}
-    >
-      <MdClose
-        onClick={props.onClickClose}
-        style={{
-          cursor: 'pointer'
-        }}
-       />
-    </div>
-    <div
-      style={{
-        position: "absolute",
-        height: "100%",
-        top: 0,
-        left: "-24px",
-        fontSize: "32px",
-        lineHeight: "32px",
-        display: "flex",
-        alignItems: "center",
-        color: "#202020",
-        transform: "scaleX(-1)"
-      }}
-    >
-      <FaPlay />
-    </div>
-  </div>
-);
 
 const SUPPORTED_LANGUAGES = {
   af: "Afrikaans",
@@ -261,7 +206,8 @@ class SettingControls extends React.Component {
         target={this.selectRef ? this.selectRef.current : null}
         placement="right"
       >
-        <ActionTooltip
+        <Tooltip
+          placement="right"
           onClickClose={() => {
             this.setState({
               actionTooltopOpen: false
@@ -330,7 +276,7 @@ class SettingControls extends React.Component {
               </div>
             </div>
           </div>
-        </ActionTooltip>
+        </Tooltip>
       </StickyPopper>
     );
   }
