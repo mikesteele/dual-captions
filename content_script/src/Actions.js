@@ -14,7 +14,8 @@ const Actions = props => {
     isOn,
     videoId,
     provider,
-    site
+    site,
+    openLoadingTutorial
   } = props;
   return (
     <StickyPopper
@@ -54,6 +55,7 @@ const Actions = props => {
           videoId={videoId}
           provider={provider}
           site={site}
+          openLoadingTutorial={openLoadingTutorial}
         />
       </div>
     </StickyPopper>

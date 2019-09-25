@@ -5,8 +5,7 @@ import { MdEdit, MdPlay, MdClose } from 'react-icons/md';
 import { FaPlay } from 'react-icons/fa';
 // TODO - import FaPlay from
 import Fade from './Fade';
-import Tooltip from './Tooltip'
-
+import Tooltip from './Tooltip';
 const title = str => str.replace(/^\w/, c => c.toUpperCase());
 
 const SUPPORTED_LANGUAGES = {
@@ -120,7 +119,8 @@ class SettingControls extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      actionTooltopOpen: false
+      actionTooltopOpen: false,
+      showLoadingTutorial: false
     }
     this.selectRef = React.createRef();
     this.openActionTooltip = this.openActionTooltip.bind(this);
@@ -193,7 +193,7 @@ class SettingControls extends React.Component {
   }
 
   renderActionTooltip() {
-    const { provider, settings, site } = this.props;
+    const { provider, settings, site, openLoadingTutorial } = this.props;
     let currentSite = '';
     if (site === 'youtube') {
       currentSite = 'YouTube';
@@ -269,8 +269,9 @@ class SettingControls extends React.Component {
                   marginTop: "4px",
                   textAlign: "center",
                   borderRadius: "4px",
-                  display: "none" // TODO
+                  cursor: "pointer",
                 }}
+                onClick={openLoadingTutorial}
               >
                 Show me how
               </div>
@@ -283,17 +284,17 @@ class SettingControls extends React.Component {
 
   render() {
     const { adapter, settings, currentCaptionToRender, isOn, videoId } = this.props;
-    const { isHoveredOver, actionTooltopOpen } = this.state;
+    const { isHoveredOver, actionTooltopOpen, showLoadingTutorial } = this.state;
     const shouldShowMaterial = videoId &&
                        isOn &&
                        settings.mouseIsActive;
     const shouldShowTooltip = actionTooltopOpen && videoId;
     return (
       <Fragment>
-      <Fade in={shouldShowMaterial}>
-        { this.renderMaterial() }
-      </Fade>
-      { shouldShowTooltip && this.renderActionTooltip() }
+        <Fade in={shouldShowMaterial}>
+          { this.renderMaterial() }
+        </Fade>
+        { shouldShowTooltip && this.renderActionTooltip() }
       </Fragment>
     );
   }

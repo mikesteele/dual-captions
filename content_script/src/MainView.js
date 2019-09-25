@@ -2,17 +2,31 @@ import React, { Fragment } from 'react';
 import Captions from './Captions';
 import Actions from './Actions';
 import ViewBookmarksModal from './ViewBookmarksModal';
-
+import LoadingTutorial from './LoadingTutorial';
 
 class MainView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      showLoadingTutorial: false,
       viewBookmarksModalIsOpen: false
     }
 
     this.openViewBookmarksModal = this.openViewBookmarksModal.bind(this);
     this.onCloseViewBookmarksModal = this.onCloseViewBookmarksModal.bind(this);
+    this.openLoadingTutorial = this.openLoadingTutorial.bind(this);
+  }
+
+  openLoadingTutorial() {
+    this.setState({
+      showLoadingTutorial: true
+    });
+  }
+
+  closeLoadingTutorial() {
+    this.setState({
+      showLoadingTutorial: false
+    });
   }
 
   openViewBookmarksModal() {
@@ -37,7 +51,8 @@ class MainView extends React.Component {
       site
     } = this.props;
     const {
-      viewBookmarksModalIsOpen
+      viewBookmarksModalIsOpen,
+      showLoadingTutorial
     } = this.state;
 
     let currentCaptionToRender = '';
@@ -65,6 +80,7 @@ class MainView extends React.Component {
           videoId={videoId}
           provider={provider}
           site={site}
+          openLoadingTutorial={this.openLoadingTutorial}
         />
         <ViewBookmarksModal
           adapter={adapter}
@@ -75,6 +91,9 @@ class MainView extends React.Component {
           isOn={isOn}
           videoId={videoId}
         />
+        {showLoadingTutorial && (
+          <LoadingTutorial adapter={adapter}/>
+        )}
       </Fragment>
     )
   }
