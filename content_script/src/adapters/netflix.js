@@ -53,6 +53,13 @@ export const NetflixAdapterCreator = () => {
     playerCurrentTime = video.currentTime;
   }
 
+  const loadingTutorialSteps = [{
+    node: document.querySelector('button.button-nfplayerSubtitles'),
+    placement: 'top',
+    isVisible: !document.querySelector('.PlayerControlsNeo__bottom-controls--faded'),
+    label: 'Step 1'
+  }];
+
   return {
     canRenderInCaptionWindow,
     captionText,
@@ -62,6 +69,7 @@ export const NetflixAdapterCreator = () => {
     captionStyle,
     defaultCaptionStyle,
     fullscreenRoot,
+    loadingTutorialSteps,
     playerControls,
     playerCurrentTime,
     smallTextSize,

@@ -47,7 +47,6 @@ const Tooltip = props => {
         fontSize: "20px",
         lineHeight: "24px",
         position: "relative",
-        margin: "32px",
         justifyContent: "center",
         alignItems: "flex-start",
         width: "200px"
