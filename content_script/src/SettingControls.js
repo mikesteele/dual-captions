@@ -215,7 +215,7 @@ class SettingControls extends React.Component {
             lineHeight: '20px'
           }}
         >
-          {translate('fr', 'second-subtitle-language')}
+          {translate(settings.uiLanguage, 'second-subtitle-language')}
         </div>
         <div
           style={{

@@ -1,4 +1,5 @@
 import React from 'react';
+import { getSavedStore } from './utils/chrome';
 
 const D_KEY_CODE = 68;
 const ALT_KEY_CODE = 18;
@@ -17,7 +18,8 @@ class PopupMessageHandler extends React.Component {
         customTextColor: '#FFFFFF',
         smallText: false,
         hotKeyEnabled: true,
-        mouseIsActive: false
+        mouseIsActive: false,
+        uiLanguage: 'en'
       },
       bookmarks: []
     }
@@ -51,6 +53,13 @@ class PopupMessageHandler extends React.Component {
     }).catch(err => {
       console.log(`Couldn't get saved bookmarks on mount. Error: ${err}`);
     });
+    this.getSavedUILanguage().then(uiLanguage => {
+      if (uiLanguage) {
+        this.changeSetting('uiLanguage', uiLanguage);
+      }
+    }).catch(err => {
+      console.log(`Couldn't get saved UI language on mount. Error: ${err}`);
+    })
   }
 
   onMouseMove() {
@@ -78,6 +87,14 @@ class PopupMessageHandler extends React.Component {
     if (this.dKeyPressed && this.altKeyPressed && settings.hotKeyEnabled) {
       // FIXME: Add hotKey back
     }
+  }
+
+  getSavedUILanguage() {
+    return new Promise((resolve, reject) => {
+      getSavedStore().then(store => {
+        resolve(store.uiLanguage);
+      }).catch(reject);
+    });
   }
 
   getSavedBookmarks() {
@@ -250,6 +267,13 @@ class PopupMessageHandler extends React.Component {
           hotKeyEnabled: settings.hotKeyEnabled
         },
         loadedLanguages: provider.loadedLanguages,
+      });
+      break;
+
+      case 'change-ui-language':
+      this.changeSetting('uiLanguage', message.payload);
+      sendResponse({
+        ok: true
       });
       break;
 
