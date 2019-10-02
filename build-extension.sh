@@ -7,12 +7,15 @@ rm -rf build/
 cd browser_action
 yarn
 yarn build
+yarn link
 
 # Build content_script
 cd ..
 cd content_script
+yarn link dual-captions-browser-action
 yarn
 yarn build
+
 
 # Create extension
 cd ..

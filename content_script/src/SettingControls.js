@@ -5,6 +5,7 @@ import { MdEdit, MdPlay, MdClose } from 'react-icons/md';
 import { FaPlay } from 'react-icons/fa';
 // TODO - import FaPlay from
 import Fade from './Fade';
+import translate from './utils/translate';
 
 const title = str => str.replace(/^\w/, c => c.toUpperCase());
 
@@ -214,7 +215,7 @@ class SettingControls extends React.Component {
             lineHeight: '20px'
           }}
         >
-          Second subtitle language
+          {translate('fr', 'second-subtitle-language')}
         </div>
         <div
           style={{
