@@ -30,6 +30,10 @@ cd content_script
 yarn test
 ```
 
+### Thanks
+
+* tamama9527 (https://github.com/tamama9527) for Traditional Chinese support for the UI
+
 ### License
 
 MIT
