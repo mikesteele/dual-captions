@@ -32,7 +32,7 @@ yarn test
 
 ### Thanks
 
-* tamama9527 (https://github.com/tamama9527) for Traditional Chinese support for the UI
+* tamama9527 (https://github.com/tamama9527) for Traditional Chinese translations for the UI
 
 ### License
 
