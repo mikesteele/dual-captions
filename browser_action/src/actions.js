@@ -17,6 +17,20 @@ export const checkLoadedLanguages = () => {
   }
 }
 
+export const changeUILanguage = uiLanguage => dispatch => {
+  sendMessageToActiveTab({
+    type: 'change-ui-language',
+    payload: uiLanguage
+  }).then(() => {
+    dispatch({
+      type: 'CHANGE_UI_LANGUAGE',
+      payload: uiLanguage
+    });
+  }).catch(() => {
+    console.log('Cannot send message to active tab to change UI language.')
+  });
+}
+
 /**
 
 determineState()
