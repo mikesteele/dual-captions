@@ -40,5 +40,7 @@
   "customColorsEnabled": "Custom colors",
   "customTextColor": "Text color",
   "smallText": "Small text",
-  "hotKeyEnabled": "Turn on/off with Option/Alt + D"
+  "hotKeyEnabled": "Turn on/off with Option/Alt + D",
+  "bookmark-caption": "Bookmark caption",
+  "remove-from-bookmarks": "Remove from bookmarks"
 }

@@ -39,5 +39,7 @@
   "customColorsEnabled": "Coleur différent",
   "customTextColor": "Couleur du texte",
   "smallText": "Petit texte",
-  "hotKeyEnabled": "Allumer / éteindre avec Option/Alt + D"
+  "hotKeyEnabled": "Allumer / éteindre avec Option/Alt + D",
+  "bookmark-caption": "Enregistrer le sous-titre",
+  "remove-from-bookmarks": "Supprimer le sous-titre"
 }
