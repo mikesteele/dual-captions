@@ -87,6 +87,7 @@ class App extends Component {
             <select value={this.props.uiLanguage} onChange={this._onUILanguageSelectChanged.bind(this)}>
               <option value='en'>English</option>
               <option value='fr'>Français</option>
+              <option value='zh-tw'>中文 (繁體)</option>
             </select>
           </div>
           <div>
