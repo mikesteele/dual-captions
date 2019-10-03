@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - "8.9.3"
 script:
-  - cd browser_action && yarn && yarn test && cd .. && cd content_script && yarn && yarn test && cd ..
+  - chmod u+x ./build-extension.sh && ./build-extension.sh && cd browser_action && yarn test && cd .. && cd content_script && yarn test && cd ..
