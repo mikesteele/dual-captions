@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import ActionButton from './ActionButton';
 import Modal from './Modal';
 import { MdBook } from 'react-icons/md';
+import translate from './utils/translate';
 
 class ViewBookmarksAction extends React.Component {
   constructor(props) {
@@ -9,15 +10,23 @@ class ViewBookmarksAction extends React.Component {
   }
 
   render() {
+    const {
+      openViewBookmarksModal,
+      settings,
+      adapter,
+      isOn,
+      videoId
+    } = this.props;
+    const t = key => translate(settings.uiLanguage, key);
     return (
       <Fragment>
         <ActionButton
-          onClick={this.props.openViewBookmarksModal}
-          tooltipText='View all bookmarks'
-          settings={this.props.settings}
-          adapter={this.props.adapter}
-          isOn={this.props.isOn}
-          videoId={this.props.videoId}
+          onClick={openViewBookmarksModal}
+          tooltipText={t('view-all-bookmarks')}
+          settings={settings}
+          adapter={adapter}
+          isOn={isOn}
+          videoId={videoId}
         >
           <MdBook />
         </ActionButton>
