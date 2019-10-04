@@ -42,5 +42,10 @@
   "smallText": "Small text",
   "hotKeyEnabled": "Turn on/off with Option/Alt + D",
   "bookmark-caption": "Bookmark caption",
-  "remove-from-bookmarks": "Remove from bookmarks"
+  "remove-from-bookmarks": "Remove from bookmarks",
+  "copy-captions-to-clipboard": "Copy captions to clipboard",
+  "copied": "Copied",
+  "load-hint-youtube": "Load languages by selecting them on YouTube",
+  "load-hint-netflix": "Load languages by selecting them on Netflix",
+  "load-hint-development": "Load languages by selecting them on [Site]"
 }

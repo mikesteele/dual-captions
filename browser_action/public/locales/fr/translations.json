@@ -41,5 +41,10 @@
   "smallText": "Petit texte",
   "hotKeyEnabled": "Allumer / éteindre avec Option/Alt + D",
   "bookmark-caption": "Enregistrer le sous-titre",
-  "remove-from-bookmarks": "Supprimer le sous-titre"
+  "remove-from-bookmarks": "Supprimer le sous-titre",
+  "copy-captions-to-clipboard": "Copier au presse-papiers",
+  "copied": "Copié",
+  "load-hint-youtube": "Sélectionner les sous-titres sur YouTube pour les charger ici.",
+  "load-hint-netflix": "Sélectionner les sous-titres sur Netflix pour les charger ici.",
+  "load-hint-development": "Sélectionner les sous-titres sur [Site] pour les charger ici."
 }
