@@ -2,6 +2,7 @@ import React from 'react';
 import ActionButton from './ActionButton';
 import { StickyPopper } from './Popper';
 import { MdAssignment } from 'react-icons/md';
+import translate from './utils/translate';
 
 class ClipboardAction extends React.Component {
   constructor(props) {
@@ -43,10 +44,18 @@ class ClipboardAction extends React.Component {
   }
 
   render() {
+    const {
+      adapter,
+      settings,
+      isOn,
+      videoId
+    } = this.props;
+    const { isAnimating } = this.state;
+    const t = key => translate(settings.uiLanguage, key);
     return (
       <ActionButton
         onClick={this.copyCaptionsToClipboard}
-        tooltipText={this.state.isAnimating ? 'Copied' : 'Copy captions to clipboard'}
+        tooltipText={this.state.isAnimating ? t('copied') : t('copy-captions-to-clipboard')}
         settings={this.props.settings}
         adapter={this.props.adapter}
         isOn={this.props.isOn}

@@ -40,5 +40,19 @@
   "customColorsEnabled": "自定義顏色",
   "customTextColor": "字體顏色",
   "smallText": "縮小字體",
-  "hotKeyEnabled": "使用 Option/Alt + D 來開啟或關閉"
+  "hotKeyEnabled": "使用 Option/Alt + D 來開啟或關閉",
+  "bookmark-caption": "",
+  "remove-from-bookmarks": "",
+  "copy-captions-to-clipboard": "",
+  "copied": "",
+  "load-hint-youtube": "在頁面中選擇字幕讓app載入",
+  "load-hint-netflix": "在頁面中選擇字幕讓app載入",
+  "load-hint-development": "在頁面中選擇字幕讓app載入",
+  "view-all-bookmarks": "",
+  "bookmarks": "",
+  "bookmarks-explanation-1": "",
+  "bookmarks-explanation-2": "",
+  "bookmarks-explanation-3": "",
+  "copy-to-clipboard": "",
+  "delete": ""
 }

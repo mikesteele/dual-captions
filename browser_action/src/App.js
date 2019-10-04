@@ -14,7 +14,7 @@ import SettingsPage from './components/SettingsPage.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
 import TranslationQueue from './components/TranslationRequest.jsx';
 
-import { determineState, popupOpened, detectSite, checkLoadedLanguages } from './actions';
+import { determineState, popupOpened, detectSite, checkLoadedLanguages, changeUILanguage } from './actions';
 
 const mapStateToProps = function(state) {
   return {...state};
@@ -40,10 +40,7 @@ class App extends Component {
   }
 
   _onUILanguageSelectChanged(e) {
-    this.props.dispatch({
-      type: 'CHANGE_UI_LANGUAGE',
-      payload: e.target.value
-    });
+    this.props.dispatch(changeUILanguage(e.target.value));
   }
 
   _onTabSelected(tabIndex) {

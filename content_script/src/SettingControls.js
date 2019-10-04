@@ -5,6 +5,7 @@ import { MdEdit, MdPlay, MdClose } from 'react-icons/md';
 import { FaPlay } from 'react-icons/fa';
 // TODO - import FaPlay from
 import Fade from './Fade';
+import translate from './utils/translate';
 
 const title = str => str.replace(/^\w/, c => c.toUpperCase());
 
@@ -191,6 +192,7 @@ class SettingControls extends React.Component {
 
   renderMaterial() {
     const { adapter, settings } = this.props;
+    const t = key => translate(settings.uiLanguage, key);
     return (
       <div
         style={{
@@ -214,7 +216,7 @@ class SettingControls extends React.Component {
             lineHeight: '20px'
           }}
         >
-          Second subtitle language
+          {t('second-subtitle-language')}
         </div>
         <div
           style={{
@@ -249,6 +251,7 @@ class SettingControls extends React.Component {
 
   renderActionTooltip() {
     const { provider, settings, site } = this.props;
+    const t = key => translate(settings.uiLanguage, key);
     let currentSite = '';
     if (site === 'youtube') {
       currentSite = 'YouTube';
@@ -311,22 +314,7 @@ class SettingControls extends React.Component {
                   marginBottom: "8px"
                 }}
               >
-                Load languages by
-                <br />
-                selecting them on {currentSite}.
-              </div>
-              <div
-                style={{
-                  fontSize: "16px",
-                  padding: "8px 16px",
-                  background: "#913bfa",
-                  marginTop: "4px",
-                  textAlign: "center",
-                  borderRadius: "4px",
-                  display: "none" // TODO
-                }}
-              >
-                Show me how
+                {t(`load-hint-${site}`)}
               </div>
             </div>
           </div>

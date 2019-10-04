@@ -39,5 +39,19 @@
   "customColorsEnabled": "Coleur différent",
   "customTextColor": "Couleur du texte",
   "smallText": "Petit texte",
-  "hotKeyEnabled": "Allumer / éteindre avec Option/Alt + D"
+  "hotKeyEnabled": "Allumer / éteindre avec Option/Alt + D",
+  "bookmark-caption": "Enregistrer le sous-titre",
+  "remove-from-bookmarks": "Supprimer le sous-titre",
+  "copy-captions-to-clipboard": "Copier au presse-papiers",
+  "copied": "Copié",
+  "load-hint-youtube": "Sélectionner les sous-titres sur YouTube pour les charger ici.",
+  "load-hint-netflix": "Sélectionner les sous-titres sur Netflix pour les charger ici.",
+  "load-hint-development": "Sélectionner les sous-titres sur [Site] pour les charger ici.",
+  "view-all-bookmarks": "Voir tous les sous-titres enregistrés",
+  "bookmarks": "Sous-titres enregistrés",
+  "bookmarks-explanation-1": "Utiliser cet bouton d'enregistrer les deux sous-titres.",
+  "bookmarks-explanation-2": "Vous pouvez utiliser Alt/Option + A.",
+  "bookmarks-explanation-3": "Les sous-titres enregistrés montreront ici.",
+  "copy-to-clipboard": "Copier au presse-papiers",
+  "delete": "Supprimer"
 }

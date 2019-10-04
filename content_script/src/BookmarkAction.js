@@ -3,6 +3,7 @@ import ActionButton from './ActionButton';
 import Modal from './Modal';
 import { MdBookmarkBorder, MdBookmark } from 'react-icons/md';
 import HotKey from './HotKey';
+import translate from './utils/translate';
 
 class BookmarkAction extends React.Component {
   constructor(props) {
@@ -23,6 +24,8 @@ class BookmarkAction extends React.Component {
       removeFromBookmarks
     } = settings;
 
+    const t = (key) => translate(settings.uiLanguage, key);
+
     const firstCaptionText = adapter.captionText || '';
     const secondCaptionText = currentCaptionToRender || '';
     const isBookmarked = bookmarks.some(pair => (
@@ -30,7 +33,7 @@ class BookmarkAction extends React.Component {
       pair[1] === secondCaptionText
     ));
 
-    let tooltipText = 'Bookmark caption';
+    let tooltipText = t('bookmark-caption');
     let onClick = () => {
       addToBookmarks(firstCaptionText, secondCaptionText);
     };
@@ -39,7 +42,7 @@ class BookmarkAction extends React.Component {
     );
 
     if (isBookmarked) {
-      tooltipText = 'Remove from bookmarks'
+      tooltipText = t('remove-from-bookmarks');
       onClick = () => {
         removeFromBookmarks([[firstCaptionText, secondCaptionText]]);
       }

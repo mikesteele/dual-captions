@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Modal from './Modal';
 import { MdClose, MdCheckBoxOutlineBlank, MdCheckBox, MdBookmark, MdBookmarkBorder } from 'react-icons/md';
 import BookmarkAction from './BookmarkAction';
+import translate from './utils/translate';
 
 const Button = props => {
   const style = {
@@ -162,10 +163,12 @@ class ViewBookmarksModal extends React.Component {
 
     const hasSavedCaptions = settings.bookmarks.length > 0;
 
+    const t = key => translate(settings.uiLanguage, key);
+
     const hasSavedCaptionsModalBody = (
       <Fragment>
         <div style={headingStyle}>
-          <span>Bookmarks</span>
+          <span>{t('bookmarks')}</span>
           <span onClick={onClose} style={{cursor: 'pointer'}}><MdClose /></span>
         </div>
         <div style={tableStyle}>
@@ -197,10 +200,10 @@ class ViewBookmarksModal extends React.Component {
         </div>
         <div style={buttonGroupStyles}>
           <Button onClick={onClickClipboardButton} disabled={buttonsAreDisabled}>
-            Copy to clipboard
+            {t('copy-to-clipboard')}
           </Button>
           <Button onClick={onClickRemoveButton} disabled={buttonsAreDisabled}>
-            Delete
+            {t('delete')}
           </Button>
         </div>
       </Fragment>
@@ -209,7 +212,7 @@ class ViewBookmarksModal extends React.Component {
     const noSavedCaptionsModalBody = (
       <Fragment>
         <div style={headingStyle}>
-          <span>Bookmarks</span>
+          <span>{t('bookmarks')}</span>
           <span onClick={onClose} style={{cursor: 'pointer'}}><MdClose /></span>
         </div>
         <div style={{
@@ -217,20 +220,20 @@ class ViewBookmarksModal extends React.Component {
           lineHeight: '32px'
         }}>
           <div>
-            <span>Use the bookmark action&nbsp;</span>
+            <span>{t('bookmarks-explanation-1')}</span>
             <span style={{
               padding: '4px',
               border: '1px solid white',
               borderRadius: '50%',
               display: 'inline-flex',
-              flexDirection: 'column'
+              flexDirection: 'column',
+              marginLeft: 16,
             }}>
               <MdBookmarkBorder/>
             </span>
-            <span>&nbsp;to save captions for later.</span>
           </div>
-          <div>You can also use the hot key Alt/Option + A.</div>
-          <div>Captions you save will show here.</div>
+          <div>{t('bookmarks-explanation-2')}</div>
+          <div>{t('bookmarks-explanation-3')}</div>
         </div>
       </Fragment>
     );

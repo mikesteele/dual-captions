@@ -53,7 +53,13 @@ export const NetflixAdapterCreator = () => {
     playerCurrentTime = video.currentTime;
   }
 
+  const actionPanelFixedPosition = {
+    bottom: '160px',
+    left: '16px'
+  };
+
   return {
+    actionPanelFixedPosition,
     canRenderInCaptionWindow,
     captionText,
     captionWindow,
