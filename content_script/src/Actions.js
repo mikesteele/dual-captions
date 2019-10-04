@@ -5,6 +5,34 @@ import ClipboardAction from './ClipboardAction';
 import BookmarkAction from './BookmarkAction';
 import SettingControls from './SettingControls';
 
+const PopperOrFixedPosition = props => {
+  const {
+    adapter,
+    children
+  } = props;
+  if (adapter.actionPanelFixedPosition) {
+    return (
+      <div style={{
+        position: 'fixed',
+        zIndex: '10000',
+        ...adapter.actionPanelFixedPosition
+      }}>
+        {children}
+      </div>
+    )
+  } else {
+    return (
+      <StickyPopper
+        target={adapter.playerControls}
+        placement='top-start'
+        updateInfrequently
+      >
+        {children}
+      </StickyPopper>
+    );
+  }
+}
+
 const Actions = props => {
   const {
     adapter,
@@ -17,11 +45,7 @@ const Actions = props => {
     site
   } = props;
   return (
-    <StickyPopper
-      target={adapter.playerControls}
-      placement='top-start'
-      updateInfrequently
-    >
+    <PopperOrFixedPosition adapter={adapter}>
       <div style={{
         padding: '8px'
       }}>
@@ -56,7 +80,7 @@ const Actions = props => {
           site={site}
         />
       </div>
-    </StickyPopper>
+    </PopperOrFixedPosition>
   );
 }
 
