@@ -48,7 +48,8 @@ const Actions = props => {
   return (
     <PopperOrFixedPosition adapter={adapter}>
       <div style={{
-        padding: '8px'
+        padding: '8px',
+        marginBottom: '160px'
       }}>
         <ViewBookmarksAction
           adapter={adapter}
