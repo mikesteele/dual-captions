@@ -108,26 +108,6 @@ class ViewBookmarksModal extends React.Component {
     const {
       selectedCaptions
     } = this.state;
-    const containerStyle = {
-      width: '50%',
-      height: '50%',
-      background: '#0d0d0d',
-      color: '#E1E1E1',
-      boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.5)',
-      padding: '32px',
-      fontSize: '16px',
-      lineHeight: '20px',
-      borderRadius: '8px',
-      display: 'flex',
-      flexDirection: 'column'
-    }
-    const headingStyle = {
-      fontSize: '24px',
-      lineHeight: '28px',
-      marginBottom: '32px',
-      display: 'flex',
-      justifyContent: 'space-between'
-    }
     const tableStyle = {
       overflow: 'auto',
       borderRadius: '4px'
@@ -167,10 +147,6 @@ class ViewBookmarksModal extends React.Component {
 
     const hasSavedCaptionsModalBody = (
       <Fragment>
-        <div style={headingStyle}>
-          <span>{t('bookmarks')}</span>
-          <span onClick={onClose} style={{cursor: 'pointer'}}><MdClose /></span>
-        </div>
         <div style={tableStyle}>
           <div>
             {settings.bookmarks.map((caption, index) => {
@@ -211,10 +187,6 @@ class ViewBookmarksModal extends React.Component {
 
     const noSavedCaptionsModalBody = (
       <Fragment>
-        <div style={headingStyle}>
-          <span>{t('bookmarks')}</span>
-          <span onClick={onClose} style={{cursor: 'pointer'}}><MdClose /></span>
-        </div>
         <div style={{
           fontSize: '20px',
           lineHeight: '32px'
@@ -242,10 +214,9 @@ class ViewBookmarksModal extends React.Component {
       <Modal
         isOpen={isOpen}
         onClose={onClose}
+        title={t('bookmarks')}
       >
-        <div style={containerStyle} onClick={onClickContainer}>
-          { hasSavedCaptions ? hasSavedCaptionsModalBody : noSavedCaptionsModalBody }
-        </div>
+        { hasSavedCaptions ? hasSavedCaptionsModalBody : noSavedCaptionsModalBody }
       </Modal>
     )
   }

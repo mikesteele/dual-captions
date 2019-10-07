@@ -326,16 +326,11 @@ class SettingControls extends React.Component {
   render() {
     const { adapter, settings, currentCaptionToRender, isOn, videoId } = this.props;
     const { isHoveredOver, actionTooltopOpen } = this.state;
-    const shouldShowMaterial = videoId &&
-                       isOn &&
-                       settings.mouseIsActive;
     const shouldShowTooltip = actionTooltopOpen && videoId;
     return (
       <Fragment>
-      <Fade in={shouldShowMaterial}>
         { this.renderMaterial() }
-      </Fade>
-      { shouldShowTooltip && this.renderActionTooltip() }
+        { shouldShowTooltip && this.renderActionTooltip() }
       </Fragment>
     );
   }
