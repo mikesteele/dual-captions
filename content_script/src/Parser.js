@@ -8,6 +8,8 @@ const Parser = (props) => {
       return NetflixParser.parse(captionFile);
     } else if (site === 'youtube') {
       return YoutubeParser.parse(captionFile);
+    } else if (site === 'development') {
+      return NetflixParser.parse(captionFile);
     } else {
       return Promise.reject('Site not supported.'); // TODO
     }

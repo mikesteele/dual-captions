@@ -14,6 +14,7 @@ import MainView from './MainView';
 import VideoId from './VideoId';
 import IsOn from './IsOn';
 import NewAdapter from './NewAdapter';
+import CaptionVisualizer from './debug/CaptionVisualizer';
 
 class App extends React.Component {
   render() {
@@ -44,6 +45,7 @@ class App extends React.Component {
                                   <NewAdapter site={site}>
                                     {(adapter) => (
                                       <FullscreenHOC adapter={adapter}>
+                                        <CaptionVisualizer parser={parser} />
                                         <MainView
                                           adapter={adapter}
                                           settings={settings}
