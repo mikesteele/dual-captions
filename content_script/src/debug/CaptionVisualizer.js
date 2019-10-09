@@ -2,7 +2,7 @@ import React from 'react';
 import enCaptionFile from './assets/homes-en-cc';
 import frCaptionFile from './assets/homes-fr';
 
-const SCALE = 10;
+const SCALE = 100;
 const scale = num => num * SCALE;
 
 const Viewer = props => {
@@ -11,19 +11,19 @@ const Viewer = props => {
     return null;
   }
   const beginPadding = captions[0].startTime;
+  const format = caption => `
+    ${caption.text}\n
+    ${caption.startTime}\n
+    ${caption.endTime}\n
+  `;
   return (
     <div style={{
       height: 50,
       background: 'white',
       marginBottom: 50,
-      display: 'flex'
+      display: 'flex',
+      position: 'relative'
     }}>
-      <div style={{
-        width: scale(beginPadding),
-        background: 'aqua',
-        height: 50,
-        flex: 'none'
-      }}/>
       {captions.map((caption, i) => {
         if (i < captions.length - 1) {
           return (
@@ -32,12 +32,13 @@ const Viewer = props => {
               style={{
                 background: 'pink',
                 height: 50,
+                position: 'absolute',
+                left: scale(caption.startTime),
                 width: scale(caption.endTime - caption.startTime),
-                marginRight: scale(captions[i + 1].startTime - caption.endTime),
                 flex: 'none',
                 border: '1px solid green'
               }}
-              onMouseOver={() => setFeaturedCaption(caption.text)}
+              onMouseOver={() => setFeaturedCaption(format(caption))}
               onMouseOut={() => setFeaturedCaption('')}
             />
           );
