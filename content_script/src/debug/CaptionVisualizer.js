@@ -1,6 +1,7 @@
 import React from 'react';
 import enCaptionFile from './assets/homes-en-cc';
 import frCaptionFile from './assets/homes-fr';
+import optimize from './optimize';
 
 const SCALE = 100;
 const scale = num => num * SCALE;
@@ -11,10 +12,11 @@ const Viewer = props => {
     return null;
   }
   const beginPadding = captions[0].startTime;
-  const format = caption => `
+  const format = (caption, i) => `
     ${caption.text}\n
     ${caption.startTime}\n
     ${caption.endTime}\n
+    ${i}
   `;
   return (
     <div style={{
@@ -30,7 +32,7 @@ const Viewer = props => {
             <div
               key={i}
               style={{
-                background: 'pink',
+                background: caption.adjusted ? 'green' : 'pink',
                 height: 50,
                 position: 'absolute',
                 left: scale(caption.startTime),
@@ -38,7 +40,7 @@ const Viewer = props => {
                 flex: 'none',
                 border: '1px solid green'
               }}
-              onMouseOver={() => setFeaturedCaption(format(caption))}
+              onMouseOver={() => setFeaturedCaption(format(caption, i))}
               onMouseOut={() => setFeaturedCaption('')}
             />
           );
@@ -77,6 +79,7 @@ class CaptionVisualizer extends React.Component {
     const setFeaturedCaption = s => this.setState({
       featuredCaption: s
     });
+    const optimizedCaptions = optimize(frCaptions, enCaptions);
     return (
       <div>
         {featuredCaption && (
@@ -89,8 +92,9 @@ class CaptionVisualizer extends React.Component {
             {featuredCaption}
           </div>
         )}
-        <Viewer setFeaturedCaption={setFeaturedCaption} captions={enCaptions}/>
         <Viewer setFeaturedCaption={setFeaturedCaption} captions={frCaptions}/>
+        <Viewer setFeaturedCaption={setFeaturedCaption} captions={enCaptions}/>
+        <Viewer setFeaturedCaption={setFeaturedCaption} captions={optimizedCaptions}/>
       </div>
     )
   }
