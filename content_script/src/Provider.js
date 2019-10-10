@@ -1,13 +1,23 @@
 import React from 'react';
 import { iso639_3to1 } from './utils/i18n';
+import optimize from './debug/optimize';
 const franc = require('franc');
+const set = require('lodash/set');
 
 class Provider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       captions: {},
-      translations: {}
+      translations: {},
+      /*
+        optimizedCaptions: {
+          firstCaptionLang: {
+            secondCaptionLang: Captions
+          }
+        }
+      */
+      optimizedCaptions: {}
     }
     this.onMessage = this.onMessage.bind(this);
     this.canUseCaptionsFromVideo = this.canUseCaptionsFromVideo.bind(this);
@@ -132,6 +142,20 @@ class Provider extends React.Component {
           nextState.captions[currentSite] = {};
           nextState.captions[currentSite][videoId] = {};
           nextState.captions[currentSite][videoId][language] = captions;
+        }
+        // Create optimized captions
+        if (Object.keys(nextState.captions[currentSite][videoId]).length > 1) {
+          Object.keys(nextState.captions[currentSite][videoId]).forEach(firstLang => {
+            Object.keys(nextState.captions[currentSite][videoId]).forEach(secondLang => {
+              if (firstLang !== secondLang) {
+                const firstLangCaptions = nextState.captions[currentSite][videoId][firstLang];
+                const secondLangCaptions = nextState.captions[currentSite][videoId][secondLang];
+                const optimizedCaptions = optimize(firstLangCaptions, secondLangCaptions);
+                // FIXME - Netflix videoId being a number causes weirdness w/ lodash.set
+                nextState = set(nextState, ['optimizedCaptions', currentSite, videoId, firstLang, secondLang], optimizedCaptions);
+              }
+            });
+          });
         }
         return nextState;
       }, () => {

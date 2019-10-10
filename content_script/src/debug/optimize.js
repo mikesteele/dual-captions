@@ -1,4 +1,3 @@
-
 // Top value: 1
 const BUFFER = 0.5;
 
