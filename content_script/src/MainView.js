@@ -3,6 +3,7 @@ import Captions from './Captions';
 import Actions from './Actions';
 import ViewBookmarksModal from './ViewBookmarksModal';
 import SettingsModal from './SettingsModal';
+import SettingSpecificStyles from './SettingSpecificStyles';
 
 class MainView extends React.Component {
   constructor(props) {
@@ -103,6 +104,10 @@ class MainView extends React.Component {
           videoId={videoId}
           provider={provider}
           site={site}
+        />
+        <SettingSpecificStyles
+          adapter={adapter}
+          settings={settings}
         />
       </Fragment>
     )

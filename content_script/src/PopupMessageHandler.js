@@ -19,7 +19,8 @@ class PopupMessageHandler extends React.Component {
         smallText: false,
         hotKeyEnabled: true,
         mouseIsActive: false,
-        uiLanguage: 'en'
+        uiLanguage: 'en',
+        fixedCaptions: false
       },
       bookmarks: []
     }

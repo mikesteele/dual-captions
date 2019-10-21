@@ -168,6 +168,11 @@ const SettingsModal = props => {
       />
       <CheckboxControl
         settings={settings}
+        settingKey='fixedCaptions'
+        label={t('fixedCaptions')}
+      />
+      <CheckboxControl
+        settings={settings}
         settingKey='customColorsEnabled'
         label={t('customColorsEnabled')}
       />
