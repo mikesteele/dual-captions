@@ -22,7 +22,6 @@ export const YoutubeAdapterCreator = () => {
   }
 
   return {
-    canRenderInCaptionWindow: false,
     captionWindow: captionWindow ? captionWindow : null,
     captionWindowPosition: captionWindow ? captionWindow.style.cssText : null,
     captionWindowStyle: {

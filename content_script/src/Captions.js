@@ -26,7 +26,6 @@ class Captions extends React.Component {
     } = this.props;
 
     const {
-      canRenderInCaptionWindow,
       captionWindow
     } = adapter;
 
@@ -86,39 +85,25 @@ class Captions extends React.Component {
 
     const shouldRenderCaptionWindow = currentCaptionToRender !== '';
 
-    if (captionWindow && canRenderInCaptionWindow) {
-      /**
-       *
-       *  If we can render in the caption window, we'll create a Portal.
-       *  We also render a hidden Popper to capture the last position, so if the caption window disappears,
-       *  we can render captions in the last position it was.
-       *
-       */
-      const portal = ReactDOM.createPortal((
-        <React.Fragment>
-          <div {...captionProps}>
-            { captionToRender }
-          </div>
-        </React.Fragment>
-      ), captionWindow);
-      const previousPosition = (
-        <Popper
-          target={captionWindow}
-          onPositionChanged={this.onPopperPositionChanged}>
-          <div {...captionWindowProps} style={{visibility: 'hidden'}}>
+    if (settings.fixedCaptions) {
+      return shouldRenderCaptionWindow ? (
+        <div className='dc-popper' style={{
+          width: '100%',
+          textAlign: 'center',
+          position: 'fixed',
+          bottom: '100px',
+          left: '0'
+        }}>
+          <div {...captionWindowProps}>
             <div {...captionProps}>
               { captionToRender }
             </div>
           </div>
-        </Popper>
+        </div>
+      ) : (
+        <div/>
       );
-      return (
-        <React.Fragment>
-          { portal }
-          { previousPosition } {/* Position tracker */}
-       </React.Fragment>
-      );
-    } else if (captionWindow && !canRenderInCaptionWindow) {
+    } else if (captionWindow && !settings.fixedCaptions) {
       return (
         <Popper
           target={captionWindow}
@@ -141,7 +126,6 @@ class Captions extends React.Component {
        *  If the caption window isn't in the DOM, but we have a caption to render,
        *  we use the last known position of the second captions.
        */
-      // TODO - Write test to be sure classes passed by Popper (eg. 'dc-popper') are passed when using previous position
       return shouldRenderCaptionWindow ? (
         <div className='dc-popper' style={this.previousPosition}>
           <div {...captionWindowProps}>
