@@ -23,8 +23,10 @@ class FixedCaptionStyles extends React.Component {
         .player-timedtext-text-container.dc-modified {
           filter: opacity(1) !important;
           position: fixed !important;
-          top: 10px !important;
-          left: 10px !important;
+          bottom: 160px !important;
+          left: 0px !important;
+          width: 100% !important;
+          text-align: center !important;
         }
 
         .ytp-caption-window-bottom {
