@@ -39,7 +39,8 @@ const Modal = props => {
     lineHeight: '20px',
     borderRadius: '8px',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    minHeight: '400px'
   };
 
   const headingStyle = {
