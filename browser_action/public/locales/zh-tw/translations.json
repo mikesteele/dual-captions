@@ -54,5 +54,6 @@
   "bookmarks-explanation-2": "你也可以使用快捷鍵 Alt/Option + A。",
   "bookmarks-explanation-3": "你保存的字幕會在這裡顯示",
   "copy-to-clipboard": "複製到剪貼簿",
-  "delete": "刪除"
+  "delete": "刪除",
+  "video-speed": "播放速度"
 }

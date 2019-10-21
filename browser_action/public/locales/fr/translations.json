@@ -53,5 +53,6 @@
   "bookmarks-explanation-2": "Vous pouvez utiliser Alt/Option + A.",
   "bookmarks-explanation-3": "Les sous-titres enregistrés montreront ici.",
   "copy-to-clipboard": "Copier au presse-papiers",
-  "delete": "Supprimer"
+  "delete": "Supprimer",
+  "video-speed": "Vitesse de lecture"
 }
