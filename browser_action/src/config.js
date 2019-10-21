@@ -6,7 +6,8 @@ const config = {
     customColorsEnabled: false,
     customTextColor: '#FFFFFF',
     smallText: false,
-    hotKeyEnabled: true
+    hotKeyEnabled: true,
+    useOptimizedCaptions: false
   },
   defaultSecondLanguage: 'none',
   defaultUILanguage: 'en',

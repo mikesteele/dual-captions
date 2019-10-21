@@ -2,6 +2,7 @@ import React from 'react';
 import { iso639_3to1 } from './utils/i18n';
 import optimize from './debug/optimize';
 const franc = require('franc');
+const get = require('lodash/get');
 const set = require('lodash/set');
 
 class Provider extends React.Component {
@@ -55,7 +56,33 @@ class Provider extends React.Component {
     }
   }
 
-  getCaptionToRender(currentTime, secondSubtitleLanguage) {
+  getCaptionToRender(currentTime, secondSubtitleLanguage, useOptimizedCaptions) {
+    if (useOptimizedCaptions) {
+      const {
+        site,
+        videoId
+      } = this.props;
+      const currentSite = site;
+      const firstLang = 'en'; // FIXME
+      const optimizedCaptions = get(this.state, ['optimizedCaptions', currentSite, videoId, firstLang, secondSubtitleLanguage]);
+      console.log(get(this.state, ['optimizedCaptions', currentSite, videoId, firstLang, secondSubtitleLanguage]));
+      console.log(get(this.state, ['optimizedCaptions', currentSite, videoId, firstLang]));
+      console.log(get(this.state, ['optimizedCaptions', currentSite, videoId]));
+      console.log(get(this.state, ['optimizedCaptions', currentSite]));
+      console.log(get(this.state, ['optimizedCaptions']));
+      if (optimizedCaptions) {
+        let captionToRender = optimizedCaptions.find(caption => {
+          return caption.startTime < currentTime && currentTime < caption.endTime;
+        });
+        if (captionToRender) {
+          return `${captionToRender.text} ${captionToRender.adjusted ? '- a' : ''}`;
+        } else {
+          return '';
+        }
+      } else {
+        return '';
+      }
+    }
     if (this.canUseCaptionsFromVideo(secondSubtitleLanguage)) {
       const {
         site,

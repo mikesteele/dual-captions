@@ -60,7 +60,7 @@ class MainView extends React.Component {
     if (adapter.providerInDebugMode) {
       currentCaptionToRender = 'In debug mode...';
     } else {
-      currentCaptionToRender = provider.getCaptionToRender(adapter.playerCurrentTime, settings.secondSubtitleLanguage);
+      currentCaptionToRender = provider.getCaptionToRender(adapter.playerCurrentTime, settings.secondSubtitleLanguage, settings.useOptimizedCaptions);
     }
 
     return (
