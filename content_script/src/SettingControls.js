@@ -198,7 +198,7 @@ class SettingControls extends React.Component {
         style={{
           color: "#E1E1E1",
           display: "inline-flex",
-          padding: "32px",
+          padding: "16px",
           borderRadius: "8px",
           fontFamily: "sans-serif",
           fontSize: "20px",

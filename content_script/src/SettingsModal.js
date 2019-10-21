@@ -3,6 +3,61 @@ import Modal from './Modal';
 import SettingControls from './SettingControls';
 import translate from './utils/translate';
 import { FaPlay } from 'react-icons/fa';
+import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
+
+const TextColorControl = props => {
+  const { settings } = props;
+  const t = key => translate(settings.uiLanguage, key);
+  const wrapperStyles = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginBottom: '16px'
+  };
+  const onChange = e => {
+    settings.changeSetting('customTextColor', e.target.value);
+  }
+  return (
+    <div style={wrapperStyles}>
+      <div>{t('customTextColor')}</div>
+      <input
+        type='color'
+        value={settings.customTextColor}
+        onChange={onChange}
+      />
+    </div>
+  )
+}
+
+const CheckboxControl = props => {
+  const {
+    settings,
+    settingKey,
+    label
+  } = props;
+  const wrapperStyles = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginBottom: '16px'
+  };
+  const iconStyles = {
+    color: '#913bfa',
+    fontSize: '32px',
+    cursor: 'pointer'
+  };
+  const isChecked = settings[settingKey];
+  const icon = isChecked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />;
+  const onClick = () => {
+    settings.changeSetting(settingKey, !isChecked);
+  }
+  return (
+    <div style={wrapperStyles}>
+      <div>{label}</div>
+      <div style={iconStyles} onClick={onClick}>
+        {icon}
+      </div>
+    </div>
+  )
+}
 
 const VideoSpeedControl = props => {
   const { adapter, settings } = props;
@@ -17,7 +72,8 @@ const VideoSpeedControl = props => {
   }
   const wrapperStyles = {
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginBottom: '16px'
   }
   const selectStyles = {
     appearance: 'none',
@@ -100,6 +156,26 @@ const SettingsModal = props => {
         adapter={adapter}
         settings={settings}
       />
+      <CheckboxControl
+        settings={settings}
+        settingKey='smallText'
+        label={t('smallText')}
+      />
+      <CheckboxControl
+        settings={settings}
+        settingKey='extraSpace'
+        label={t('extraSpace')}
+      />
+      <CheckboxControl
+        settings={settings}
+        settingKey='customColorsEnabled'
+        label={t('customColorsEnabled')}
+      />
+      {settings.customColorsEnabled && (
+        <TextColorControl
+          settings={settings}
+        />
+      )}
     </Modal>
   )
 }
