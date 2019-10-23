@@ -4,6 +4,7 @@ import ViewBookmarksAction from './ViewBookmarksAction';
 import ClipboardAction from './ClipboardAction';
 import BookmarkAction from './BookmarkAction';
 import SettingsAction from './SettingsAction';
+import UILanguageAction from './UILanguageAction';
 
 const PopperOrFixedPosition = props => {
   const {
@@ -73,6 +74,13 @@ const Actions = props => {
           videoId={videoId}
         />
         <SettingsAction
+          adapter={adapter}
+          settings={settings}
+          isOn={isOn}
+          videoId={videoId}
+          openSettingsModal={openSettingsModal}
+        />
+        <UILanguageAction
           adapter={adapter}
           settings={settings}
           isOn={isOn}
