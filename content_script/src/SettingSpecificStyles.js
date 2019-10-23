@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FixedCaptionStyles extends React.Component {
+class ApplySettingSpecificStyles extends React.Component {
   componentWillUnmount() {
     const { adapter } = this.props;
     if (adapter.captionWindow) {
@@ -9,35 +9,31 @@ class FixedCaptionStyles extends React.Component {
   }
 
   render() {
-    const { adapter } = this.props;
+    const { adapter, settings } = this.props;
     if (adapter.captionWindow) {
       adapter.captionWindow.classList.add('dc-modified');
+    }
+    let rules = `
+        filter: opacity(1) !important;
+    `;
+    if (settings.fixedCaptions) {
+      rules = rules + `
+        position: fixed !important;
+        bottom: 160px !important;
+        left: 0px !important;
+        width: 100% !important;
+        text-align: center !important;
+      `;
     }
     return (
       <style>
       {`
-        .player-timedtext-text-container {
+        ${adapter.captionWindowSelector} {
           filter: opacity(0) !important;
         }
 
-        .player-timedtext-text-container.dc-modified {
-          filter: opacity(1) !important;
-          position: fixed !important;
-          bottom: 160px !important;
-          left: 0px !important;
-          width: 100% !important;
-          text-align: center !important;
-        }
-
-        .ytp-caption-window-bottom {
-          filter: opacity(0) !important;
-        }
-
-        .ytp-caption-window-bottom.dc-modified {
-          filter: opacity(1) !important;
-          position: fixed !important;
-          top: 10px !important;
-          left: 10px !important;
+        ${adapter.captionWindowSelector}.dc-modified {
+          ${rules}
         }
       `}
       </style>
@@ -49,11 +45,14 @@ const SettingSpecificStyles = props => {
   const { settings, adapter } = props;
   if (settings.fixedCaptions) {
     return (
-      <FixedCaptionStyles adapter={adapter} />
+      <ApplySettingSpecificStyles
+        adapter={adapter}
+        settings={settings}
+      />
     );
   } else {
     return null;
   }
-}
+};
 
 export default SettingSpecificStyles;

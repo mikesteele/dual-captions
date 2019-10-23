@@ -20,7 +20,7 @@ class PopupMessageHandler extends React.Component {
         hotKeyEnabled: true,
         mouseIsActive: false,
         uiLanguage: 'en',
-        fixedCaptions: false
+        fixedCaptionsEnabled: false
       },
       bookmarks: []
     }
@@ -284,9 +284,15 @@ class PopupMessageHandler extends React.Component {
   }
 
   render() {
+    const { site, children } = this.props;
     const settings = this.state.settings;
-    return this.props.children({
+    const siteSpecificSettings = {
+      // Fixed captions only works on Netflix, for now
+      fixedCaptions: settings.fixedCaptionsEnabled && site === 'netflix'
+    }
+    return children({
       ...settings,
+      ...siteSpecificSettings,
       bookmarks: this.state.bookmarks,
       addToBookmarks: this.addToBookmarks,
       removeFromBookmarks: this.removeFromBookmarks,

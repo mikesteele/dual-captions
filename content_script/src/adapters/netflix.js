@@ -56,11 +56,14 @@ export const NetflixAdapterCreator = () => {
     left: '16px'
   };
 
+  const captionWindowSelector = '.player-timedtext-text-container';
+
   return {
     actionPanelFixedPosition,
     captionText,
     captionWindow,
     captionWindowPosition,
+    captionWindowSelector,
     captionWindowStyle,
     captionStyle,
     defaultCaptionStyle,
