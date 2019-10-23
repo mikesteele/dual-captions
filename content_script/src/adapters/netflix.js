@@ -9,7 +9,6 @@ const DefaultCaptionStyle = {
 export const NetflixAdapterCreator = () => {
   let captionStyle = null;
   let captionWindow = null;
-  let captionWindowPosition = null;
   let captionWindowStyle = { textAlign: 'center' }; // TODO - Width 700px need?
   let video = document.querySelector('video') || null;
   let fullscreenRoot = document.querySelector('.nfp.AkiraPlayer');
@@ -18,19 +17,39 @@ export const NetflixAdapterCreator = () => {
   let captionText = '';
   let playerControls = document.querySelector('.PlayerControlsNeo__bottom-controls');
   let playerCurrentTime = null;
+  let captionWindowSelector = '.player-timedtext-text-container';
+  let captionWindowForFixedPosition = null;
+  let firstCaptionsFixedPositionRules = `
+    position: fixed !important;
+    bottom: 200px !important;
+    left: 0px !important;
+    width: 100% !important;
+    text-align: center !important;
+  `;
+  let secondCaptionsFixedPosition = {
+    position: 'fixed',
+    bottom: '140px',
+    left:  '0px',
+    width: '100%',
+    textAlign: 'center'
+  };
 
   let isRenderingImageSubtitles = !!document.querySelector('.image-based-timed-text image');
 
   if (isRenderingImageSubtitles) {
-    captionWindow = document.querySelector('.image-based-timed-text image') || null;
-    captionWindowPosition = captionWindow ? JSON.stringify({
-      x: captionWindow.getAttribute('x'),
-      y: captionWindow.getAttribute('y')
-    }) : null;
+    captionWindow = document.querySelector('.image-based-timed-text image');
+    // captionWindow and captionWindowSelector don't match here
+    // because we want the Popper to attach to one DOM node (the <image>)
+    // and to fix position of another (the image-based-timed-text container)
+    captionWindowForFixedPosition = document.querySelector('.image-based-timed-text');
+    captionWindowSelector = '.image-based-timed-text';
+    firstCaptionsFixedPositionRules = `
+      bottom: 200px !important;
+      left: 0px !important;
+    `
   } else {
     captionWindow = document.querySelector('.player-timedtext-text-container') || null;
     if (captionWindow) {
-      captionWindowPosition = captionWindow.style.cssText;
       let caption = captionWindow.querySelector('span');
       if (caption) {
         captionStyle = {
@@ -56,20 +75,20 @@ export const NetflixAdapterCreator = () => {
     left: '16px'
   };
 
-  const captionWindowSelector = '.player-timedtext-text-container';
-
   return {
     actionPanelFixedPosition,
     captionText,
     captionWindow,
-    captionWindowPosition,
+    captionWindowForFixedPosition,
     captionWindowSelector,
     captionWindowStyle,
     captionStyle,
     defaultCaptionStyle,
+    firstCaptionsFixedPositionRules,
     fullscreenRoot,
     playerControls,
     playerCurrentTime,
+    secondCaptionsFixedPosition,
     smallTextSize,
     video
   };

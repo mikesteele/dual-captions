@@ -21,6 +21,11 @@ export const YoutubeAdapterCreator = () => {
     playerCurrentTime = video.currentTime;
   }
 
+  // Fixed position for YouTube is TODO
+  const firstCaptionsFixedPositionRules = '';
+  const secondCaptionsFixedPosition = {};
+
+
   return {
     captionWindow: captionWindow ? captionWindow : null,
     captionWindowPosition: captionWindow ? captionWindow.style.cssText : null,
@@ -40,7 +45,9 @@ export const YoutubeAdapterCreator = () => {
     smallTextSize: smallTextSize,
     captionText: captionText,
     playerControls: playerControls,
-    playerCurrentTime: playerCurrentTime
+    playerCurrentTime: playerCurrentTime,
+    firstCaptionsFixedPositionRules,
+    secondCaptionsFixedPosition
   };
 }
 

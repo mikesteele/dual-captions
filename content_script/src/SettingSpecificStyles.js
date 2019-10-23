@@ -3,33 +3,43 @@ import React from 'react';
 class ApplySettingSpecificStyles extends React.Component {
   componentWillUnmount() {
     const { adapter } = this.props;
-    if (adapter.captionWindow) {
+    if (adapter.captionWindowForFixedPosition) {
+      adapter.captionWindowForFixedPosition.classList.remove('dc-modified');
+    } else if (adapter.captionWindow) {
       adapter.captionWindow.classList.remove('dc-modified');
     }
   }
 
   render() {
     const { adapter, settings } = this.props;
-    if (adapter.captionWindow) {
-      adapter.captionWindow.classList.add('dc-modified');
+    if (adapter.captionWindowForFixedPosition) {
+      if (!adapter.captionWindowForFixedPosition.classList.contains('dc-modified')) {
+        // Force layout
+        let scrollWidth = adapter.captionWindowForFixedPosition.scrollWidth;
+        adapter.captionWindowForFixedPosition.classList.add('dc-modified');
+        scrollWidth = adapter.captionWindowForFixedPosition.scrollWidth;
+      }
+    } else if (adapter.captionWindow) {
+      if (!adapter.captionWindow.classList.contains('dc-modified')) {
+        // Force layout
+        let scrollWidth = adapter.captionWindow.scrollWidth;
+        adapter.captionWindow.classList.add('dc-modified');
+        scrollWidth = adapter.captionWindow.scrollWidth;
+      }
     }
     let rules = `
         filter: opacity(1) !important;
     `;
     if (settings.fixedCaptions) {
-      rules = rules + `
-        position: fixed !important;
-        bottom: 160px !important;
-        left: 0px !important;
-        width: 100% !important;
-        text-align: center !important;
-      `;
+      rules = rules + adapter.firstCaptionsFixedPositionRules;
     }
     return (
       <style>
       {`
         ${adapter.captionWindowSelector} {
           filter: opacity(0) !important;
+          transition: filter 200ms;
+          transition-delay: 200ms;
         }
 
         ${adapter.captionWindowSelector}.dc-modified {

@@ -91,7 +91,7 @@ class Captions extends React.Component {
           width: '100%',
           textAlign: 'center',
           position: 'fixed',
-          bottom: '100px',
+          bottom: '140px',
           left: '0'
         }}>
           <div {...captionWindowProps}>
