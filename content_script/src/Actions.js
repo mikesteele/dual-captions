@@ -4,6 +4,7 @@ import ViewBookmarksAction from './ViewBookmarksAction';
 import ClipboardAction from './ClipboardAction';
 import BookmarkAction from './BookmarkAction';
 import SettingsAction from './SettingsAction';
+import RewindAction from './RewindAction';
 
 const PopperOrFixedPosition = props => {
   const {
@@ -78,6 +79,9 @@ const Actions = props => {
           isOn={isOn}
           videoId={videoId}
           openSettingsModal={openSettingsModal}
+        />
+        <RewindAction
+          adapter={adapter}
         />
       </div>
     </PopperOrFixedPosition>

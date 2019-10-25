@@ -1,8 +1,9 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { MdClose } from "react-icons/md";
 
 const Modal = props => {
-  const { isOpen, onClose, children, title } = props;
+  const { isOpen, onClose, children, title, withPortal } = props;
 
   const onClickOuter = () => {
     onClose();
@@ -51,7 +52,7 @@ const Modal = props => {
     justifyContent: 'space-between'
   };
 
-  return (
+  const modal = (
     <div style={outerStyles} onClick={onClickOuter}>
       <div style={innerStyles} onClick={onClickInner}>
         <div style={headingStyle}>
@@ -62,6 +63,12 @@ const Modal = props => {
       </div>
     </div>
   );
+
+  if (withPortal) {
+    return ReactDOM.createPortal(modal, withPortal);
+  } else {
+    return modal;
+  }
 };
 
 export default Modal;
