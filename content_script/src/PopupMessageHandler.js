@@ -76,6 +76,10 @@ class PopupMessageHandler extends React.Component {
 
   onKeyDown(e) {
     const {
+      isOn,
+      changeIsOn
+    } = this.props;
+    const {
       settings
     } = this.state;
     if (e.keyCode === D_KEY_CODE) {
@@ -85,7 +89,7 @@ class PopupMessageHandler extends React.Component {
       this.altKeyPressed = true;
     }
     if (this.dKeyPressed && this.altKeyPressed && settings.hotKeyEnabled) {
-      // FIXME: Add hotKey back
+      changeIsOn(!isOn);
     }
   }
 
