@@ -7,6 +7,7 @@ class IsOn extends React.Component {
       isOn: false
     }
     this.onMessage = this.onMessage.bind(this);
+    this.changeIsOn = this.changeIsOn.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +29,12 @@ class IsOn extends React.Component {
         isOn: true
       });
     }
+  }
+
+  changeIsOn(isOn) {
+    this.setState({
+      isOn
+    });
   }
 
   onMessage(message, sender, sendResponse) {
@@ -63,7 +70,7 @@ class IsOn extends React.Component {
   }
 
   render() {
-    return this.props.children(this.state.isOn);
+    return this.props.children(this.state.isOn, this.changeIsOn);
   }
 }
 

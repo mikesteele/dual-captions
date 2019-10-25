@@ -23,7 +23,7 @@ class App extends React.Component {
           <Site>
             {(site) => (
             <IsOn site={site}>
-              {(isOn) => (
+              {(isOn, changeIsOn) => (
               <VideoId site={site}>
                 {(videoId) => (
                   <Parser site={site}>
@@ -37,6 +37,7 @@ class App extends React.Component {
                             site={site}
                             provider={provider}
                             isOn={isOn}
+                            changeIsOn={changeIsOn}
                           >
                             {(settings) => {
                               if (isOn) {
