@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "franc": "^4.1.0",
+    "lodash.isequal": "^4.5.0",
     "lodash.throttle": "^4.1.1",
     "popper.js": "^1.14.6",
     "react": "^16.6.3",

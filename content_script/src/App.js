@@ -14,6 +14,7 @@ import MainView from './MainView';
 import VideoId from './VideoId';
 import IsOn from './IsOn';
 import NewAdapter from './NewAdapter';
+import AdapterAndMainView from './AdapterAndMainView'
 
 class App extends React.Component {
   render() {
@@ -42,20 +43,13 @@ class App extends React.Component {
                             {(settings) => {
                               if (isOn) {
                                 return (
-                                  <NewAdapter site={site}>
-                                    {(adapter) => (
-                                      <FullscreenHOC adapter={adapter}>
-                                        <MainView
-                                          adapter={adapter}
-                                          settings={settings}
-                                          provider={provider}
-                                          isOn={true}
-                                          videoId={videoId}
-                                          site={site}
-                                        />
-                                      </FullscreenHOC>
-                                    )}
-                                  </NewAdapter>
+                                  <AdapterAndMainView
+                                    site={site}
+                                    provider={provider}
+                                    settings={settings}
+                                    isOn={true}
+                                    videoId={videoId}
+                                  />
                                 );
                               } else {
                                 return null;

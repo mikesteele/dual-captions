@@ -22,7 +22,11 @@ class Captions extends React.Component {
       adapter,
       settings,
       currentCaptionToRender,
-      isOn
+      isOn,
+      captionStyle,
+      captionWindowStyle,
+      defaultCaptionStyle,
+      settingsExtraSpace
     } = this.props;
 
     const {
@@ -34,31 +38,31 @@ class Captions extends React.Component {
       return null;
     }
 
-    if (adapter.captionStyle) {
-      this.previousCaptionStyle = adapter.captionStyle;
+    if (captionStyle) {
+      this.previousCaptionStyle = captionStyle;
     }
     if (adapter.captionWindowStyle) {
-      this.previousCaptionWindowStyle = adapter.captionWindowStyle;
+      this.previousCaptionWindowStyle = captionWindowStyle;
     }
 
     const captionWindowProps = {};
-    if (adapter.captionWindowStyle) {
+    if (captionWindowStyle) {
       captionWindowProps.style = {
-        ...adapter.captionWindowStyle
+        ...captionWindowStyle
       };
     } else if (this.previousCaptionWindowStyle) {
       captionWindowProps.style = {...this.previousCaptionWindowStyle};
     }
 
     const captionProps = {};
-    if (adapter.captionStyle) {
-      captionProps.style = {...adapter.captionStyle};
+    if (captionStyle) {
+      captionProps.style = {...captionStyle};
     } else if (this.previousCaptionStyle) {
       captionProps.style = {...this.previousCaptionStyle};
-    } else if (adapter.defaultCaptionStyle) {
-      captionProps.style = {...adapter.defaultCaptionStyle};
+    } else if (defaultCaptionStyle) {
+      captionProps.style = {...defaultCaptionStyle};
     }
-    if (settings.extraSpace) {
+    if (settingsExtraSpace) {
       captionProps.className = 'extra-space';
     }
     if (settings.customColorsEnabled) {

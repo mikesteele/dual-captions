@@ -5,6 +5,11 @@ import translate from './utils/translate';
 import { FaPlay } from 'react-icons/fa';
 import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
 
+const Other = () => {
+  console.log('rendering');
+  return null;
+}
+
 const TextColorControl = props => {
   const { settings } = props;
   const t = key => translate(settings.uiLanguage, key);
@@ -30,9 +35,10 @@ const TextColorControl = props => {
 
 const CheckboxControl = props => {
   const {
-    settings,
+    changeSetting,
     settingKey,
-    label
+    label,
+    isChecked
   } = props;
   const wrapperStyles = {
     display: 'flex',
@@ -44,17 +50,18 @@ const CheckboxControl = props => {
     fontSize: '32px',
     cursor: 'pointer'
   };
-  const isChecked = settings[settingKey];
   const icon = isChecked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />;
   const onClick = () => {
-    settings.changeSetting(settingKey, !isChecked);
+    changeSetting(settingKey, !isChecked);
   }
+  console.log('renreding')
   return (
     <div style={wrapperStyles}>
       <div>{label}</div>
       <div style={iconStyles} onClick={onClick}>
         {icon}
       </div>
+      <Other/>
     </div>
   )
 }
@@ -157,19 +164,22 @@ const SettingsModal = props => {
         settings={settings}
       />
       <CheckboxControl
-        settings={settings}
+        changeSetting={settings.changeSetting}
         settingKey='smallText'
         label={t('smallText')}
+        isChecked={settings['smallText']}
       />
       <CheckboxControl
-        settings={settings}
+        changeSetting={settings.changeSetting}
         settingKey='extraSpace'
         label={t('extraSpace')}
+        isChecked={settings['extraSpace']}
       />
       <CheckboxControl
-        settings={settings}
+        changeSetting={settings.changeSetting}
         settingKey='customColorsEnabled'
         label={t('customColorsEnabled')}
+        isChecked={settings['customColorsEnabled']}
       />
       {settings.customColorsEnabled && (
         <TextColorControl
@@ -180,4 +190,5 @@ const SettingsModal = props => {
   )
 }
 
+export { CheckboxControl };
 export default SettingsModal;
