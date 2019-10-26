@@ -81,7 +81,10 @@ const Actions = props => {
           openSettingsModal={openSettingsModal}
         />
         <RewindAction
+          site={site}
           adapter={adapter}
+          settings={settings}
+          provider={provider}
         />
       </div>
     </PopperOrFixedPosition>

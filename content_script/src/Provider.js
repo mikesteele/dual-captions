@@ -15,6 +15,7 @@ class Provider extends React.Component {
     this.guessLanguageOfCaptions = this.guessLanguageOfCaptions.bind(this);
     this.getLoadedLanguages = this.getLoadedLanguages.bind(this);
     this.getCaptionToRender = this.getCaptionToRender.bind(this);
+    this.getTimeForPreviousCaption = this.getTimeForPreviousCaption.bind(this);
   }
 
   componentDidMount() {
@@ -196,10 +197,44 @@ class Provider extends React.Component {
     });
   }
 
+  getTimeForPreviousCaption(currentTime, secondSubtitleLanguage) {
+    const currentCaption = this.getCaptionToRender(currentTime, secondSubtitleLanguage);
+    if (currentCaption) {
+      const {
+        site,
+        videoId
+      } = this.props;
+      const currentSite = site;
+      const captions = this.state.captions[currentSite][videoId][secondSubtitleLanguage];
+      const i = captions.findIndex(c => c.text === currentCaption);
+      if (i > 0) {
+        return captions[i - 1].startTime;
+      } else {
+        return null;
+      }
+    } else if (this.canUseCaptionsFromVideo(secondSubtitleLanguage)) {
+      const {
+        site,
+        videoId
+      } = this.props;
+      const currentSite = site;
+      const captions = this.state.captions[currentSite][videoId][secondSubtitleLanguage];
+      const i = captions.findIndex(c => c.startTime > currentTime);
+      if (i !== -1) {
+        return captions[i - 1].startTime;
+      } else {
+        return null;
+      }
+    } else {
+      return null;
+    }
+  }
+
   render() {
     return this.props.children({
       getCaptionToRender: this.getCaptionToRender,
-      loadedLanguages: this.getLoadedLanguages()
+      loadedLanguages: this.getLoadedLanguages(),
+      getTimeForPreviousCaption: this.getTimeForPreviousCaption
     });
   }
 };
