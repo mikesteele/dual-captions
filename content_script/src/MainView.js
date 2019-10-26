@@ -3,6 +3,7 @@ import Captions from './Captions';
 import Actions from './Actions';
 import ViewBookmarksModal from './ViewBookmarksModal';
 import SettingsModal from './SettingsModal';
+import ErrorModal from './ErrorModal';
 
 class MainView extends React.Component {
   constructor(props) {

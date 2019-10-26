@@ -3,34 +3,7 @@ import Modal from './Modal';
 import { MdClose, MdCheckBoxOutlineBlank, MdCheckBox, MdBookmark, MdBookmarkBorder } from 'react-icons/md';
 import BookmarkAction from './BookmarkAction';
 import translate from './utils/translate';
-
-const Button = props => {
-  const style = {
-    backgroundColor: '#bb86fc',
-    color: 'white',
-    cursor: props.disabled ? 'not-allowed' : 'pointer',
-    transition: '200ms',
-    display: 'inline-block',
-    padding: '16px',
-    borderRadius: '4px',
-    margin: '8px'
-  }
-
-  if (props.disabled) {
-    style.filter = 'brightness(0.5)';
-  }
-
-  return (
-    <div
-      class='dc-button'
-      style={style}
-      onClick={props.onClick}
-    >
-      { props.children }
-    </div>
-  )
-}
-
+import Button from './Button';
 
 class ViewBookmarksModal extends React.Component {
   constructor(props) {
