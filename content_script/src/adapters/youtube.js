@@ -10,6 +10,7 @@ export const YoutubeAdapterCreator = () => {
   let captionText = captionWindow ? captionWindow.innerText : '';
   let playerControls = document.querySelector('.ytp-chrome-bottom');
   let playerCurrentTime = null;
+  const isFullscreen = !!document.fullscreenElement;
 
   const automaticCaptions = document.querySelector('.ytp-caption-window-rollup');
   if (automaticCaptions) {
@@ -41,7 +42,8 @@ export const YoutubeAdapterCreator = () => {
     smallTextSize: smallTextSize,
     captionText: captionText,
     playerControls: playerControls,
-    playerCurrentTime: playerCurrentTime
+    playerCurrentTime: playerCurrentTime,
+    isFullscreen: isFullscreen
   };
 }
 

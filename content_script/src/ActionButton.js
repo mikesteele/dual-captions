@@ -50,6 +50,22 @@ class ActionButton extends React.Component {
                        isOn &&
                        (settings.mouseIsActive || isHoveredOver || isAnimating);
 
+    const fullscreenActionButtonStyles = {
+      fontSize: '24px',
+      padding: '8px',
+      width: '50px',
+      height: '50px'
+    };
+
+    const notFullscreenActionButtonStyles = {
+      fontSize: '18px',
+      padding: '6px',
+      width: '40px',
+      height: '40px'
+    }
+
+    const actionButtonStyles = adapter.isFullscreen ? fullscreenActionButtonStyles : notFullscreenActionButtonStyles;
+
     return (
       <Fragment>
         {hotKeyCode && (
@@ -64,20 +80,17 @@ class ActionButton extends React.Component {
         <Fade in={shouldShow}>
           <div
             style={{
-              padding: '8px',
-              fontSize: '24px',
               background: 'black',
               color: 'white',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '50px',
-              height: '50px',
               borderRadius: '50%',
               transition: 'box-shadow 200ms',
               boxShadow: isHoveredOver ? '0px 0px 20px 0px rgba(0,0,0,0.75)' : 'none',
               cursor: 'pointer',
-              margin: '8px 0'
+              margin: '8px 0',
+              ...actionButtonStyles
             }}
             ref={this.buttonRef}
             onClick={onClick}
@@ -97,10 +110,10 @@ class ActionButton extends React.Component {
                   background: 'black',
                   color: 'white',
                   padding: '16px',
-                  fontSize: '16px',
+                  fontSize: '14px',
                   whiteSpace: 'nowrap',
                   marginLeft: '16px',
-                  borderRadius: '2px'
+                  borderRadius: '4px'
                 }}
               >
                 { tooltipText }
