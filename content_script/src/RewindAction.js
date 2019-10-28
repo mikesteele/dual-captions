@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import HotKey from './HotKey';
 import ErrorModal from './ErrorModal';
+import ActionButton from './ActionButton';
 
 class RewindAction extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class RewindAction extends React.Component {
   }
 
   rewindToLastCaption() {
-    const { adapter, provider, settings, site } = this.props;
+    const { adapter, provider, settings, site, isOn, videoId } = this.props;
     if (site !== 'youtube') {
       // Only works on YouTube, because setting video.currentTime on the Netflix player throws an error.
       this.setState({
@@ -42,12 +43,29 @@ class RewindAction extends React.Component {
   render() {
     const { adapter } = this.props;
     const { errorModalIsOpen, errorMessage } = this.state;
+    const { provider, settings, site, isOn, videoId } = this.props;
+    const t = key => key;
     return (
       <Fragment>
-        <HotKey
-          hotKeyCode={71}
-          callback={this.rewindToLastCaption}
-        />
+        {site !== 'youtube' && (
+          <HotKey
+            hotKeyCode={71}
+            callback={this.rewindToLastCaption}
+          />
+        )}
+        {site === 'youtube' && (
+          <ActionButton
+            onClick={this.rewindToLastCaption}
+            tooltipText={t('rewind')}
+            settings={settings}
+            adapter={adapter}
+            isOn={isOn}
+            videoId={videoId}
+            hotKeyCode={71}
+          >
+          R
+          </ActionButton>
+        )}
         <ErrorModal
           isOpen={errorModalIsOpen}
           onClose={() => {

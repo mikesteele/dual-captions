@@ -85,6 +85,9 @@ const Actions = props => {
           adapter={adapter}
           settings={settings}
           provider={provider}
+          settings={settings}
+          isOn={isOn}
+          videoId={videoId}
         />
       </div>
     </PopperOrFixedPosition>
