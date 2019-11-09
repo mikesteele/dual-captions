@@ -150,6 +150,10 @@ class ViewBookmarksModal extends React.Component {
         <div style={tableStyle}>
           <div>
             {settings.bookmarks.map((caption, index) => {
+              // TODO - Remove this & just dump local storage
+              if (typeof(caption[0]) !== 'string' || typeof(caption[1]) !== 'string') {
+                return null;
+              }
               const rowStyle = index % 2 === 0 ? evenRowStyles : oddRowStyles;
               const isSelected = selectedCaptions.some(pair => {
                 return pair[0] === caption[0] && pair[1] === caption[1];
@@ -160,13 +164,20 @@ class ViewBookmarksModal extends React.Component {
               } : () => {
                 this.selectCaption(caption[0], caption[1]);
               };
+              const isImageCaption = /^blob:/.test(caption[0]);
+              const firstCaption = isImageCaption ? (
+                // Render the blob URL created by adapter.getCaptionText()
+                <img src={caption[0]}/>
+              ) : (
+                <div style={{marginBottom: '8px'}}>{caption[0]}</div>
+              )
               return (
                 <div style={rowStyle} key={`${caption[0]}|${caption[1]}`}>
                   <div onClick={onClick} style={iconStyle}>
                     {icon}
                   </div>
                   <div>
-                    <div style={{marginBottom: '8px'}}>{caption[0]}</div>
+                    {firstCaption}
                     <div>{caption[1]}</div>
                   </div>
                 </div>

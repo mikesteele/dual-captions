@@ -8,6 +8,14 @@ import translate from './utils/translate';
 class BookmarkAction extends React.Component {
   constructor(props) {
     super(props);
+    // Image subtitles on Netflix can be bookmarked as blob URLs.
+    this.objectURLsToRevokeOnUnmount = [];
+  }
+
+  componentWillUnmount() {
+    this.objectURLsToRevokeOnUnmount.forEach(url => {
+      window.URL.revokeObjectURL(url);
+    })
   }
 
   render() {
@@ -26,7 +34,7 @@ class BookmarkAction extends React.Component {
 
     const t = (key) => translate(settings.uiLanguage, key);
 
-    const firstCaptionText = adapter.captionText || '';
+    let firstCaptionText = adapter.captionText || '';
     const secondCaptionText = currentCaptionToRender || '';
     const isBookmarked = bookmarks.some(pair => (
       pair[0] === firstCaptionText &&
@@ -35,7 +43,14 @@ class BookmarkAction extends React.Component {
 
     let tooltipText = t('bookmark-caption');
     let onClick = () => {
-      addToBookmarks(firstCaptionText, secondCaptionText);
+      if (adapter.getCaptionText) {
+        adapter.getCaptionText(captionText => {
+          this.objectURLsToRevokeOnUnmount.push(captionText);
+          addToBookmarks(captionText, secondCaptionText);
+        });
+      } else {
+        addToBookmarks(firstCaptionText, secondCaptionText);
+      }
     };
     let icon = (
       <MdBookmarkBorder />
