@@ -167,7 +167,11 @@ class ViewBookmarksModal extends React.Component {
               const isImageCaption = /^blob:/.test(caption[0]);
               const firstCaption = isImageCaption ? (
                 // Render the blob URL created by adapter.getCaptionText()
-                <img src={caption[0]}/>
+                <img src={caption[0]} onError={() => {
+                  // Blob URLs will be revoked when the window unloads
+                  // So if previously saved images 404, we remove them.
+                  settings.removeFromBookmarks([caption]);
+                }}/>
               ) : (
                 <div style={{marginBottom: '8px'}}>{caption[0]}</div>
               )
