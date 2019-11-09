@@ -4,6 +4,11 @@ import Actions from './Actions';
 import ViewBookmarksModal from './ViewBookmarksModal';
 import SettingsModal from './SettingsModal';
 
+const Other = () => {
+  console.log('rendering');
+  return null;
+}
+
 class MainView extends React.Component {
   constructor(props) {
     super(props);
@@ -49,7 +54,8 @@ class MainView extends React.Component {
       provider,
       isOn,
       videoId,
-      site
+      site,
+      playerCurrentTime
     } = this.props;
     const {
       settingsModalIsOpen,
@@ -60,7 +66,7 @@ class MainView extends React.Component {
     if (adapter.providerInDebugMode) {
       currentCaptionToRender = 'In debug mode...';
     } else {
-      currentCaptionToRender = provider.getCaptionToRender(adapter.playerCurrentTime, settings.secondSubtitleLanguage);
+      currentCaptionToRender = provider.getCaptionToRender(playerCurrentTime, settings.secondSubtitleLanguage);
     }
 
     return (
@@ -104,6 +110,7 @@ class MainView extends React.Component {
           provider={provider}
           site={site}
         />
+        <Other/>
       </Fragment>
     )
   }

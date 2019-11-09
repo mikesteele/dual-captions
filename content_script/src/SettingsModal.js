@@ -5,11 +5,6 @@ import translate from './utils/translate';
 import { FaPlay } from 'react-icons/fa';
 import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
 
-const Other = () => {
-  console.log('rendering');
-  return null;
-}
-
 const TextColorControl = props => {
   const { settings } = props;
   const t = key => translate(settings.uiLanguage, key);
@@ -61,7 +56,6 @@ const CheckboxControl = props => {
       <div style={iconStyles} onClick={onClick}>
         {icon}
       </div>
-      <Other/>
     </div>
   )
 }

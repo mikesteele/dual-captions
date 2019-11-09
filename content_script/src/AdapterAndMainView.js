@@ -42,9 +42,14 @@ class AdapterAndMainView extends React.Component {
       videoId,
       site
     } = this.props;
+    const {
+      playerCurrentTime,
+      ...adapter
+    } = this.state;
     return (
       <MainView
-        adapter={{...this.state}}
+        playerCurrentTime={playerCurrentTime}
+        adapter={adapter}
         provider={provider}
         settings={settings}
         isOn={true}
