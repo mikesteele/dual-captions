@@ -21,10 +21,9 @@ export const YoutubeAdapterCreator = () => {
     playerCurrentTime = video.currentTime;
   }
 
-  // Fixed position for YouTube is TODO
-  const firstCaptionsFixedPositionRules = '';
-  const secondCaptionsFixedPosition = {};
-
+  // Fixed position for YouTube is not supported at this time
+  const firstCaptionsFixedPositionRules = null;
+  const secondCaptionsFixedPosition = null;
 
   return {
     captionWindow: captionWindow ? captionWindow : null,

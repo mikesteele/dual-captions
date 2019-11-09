@@ -84,16 +84,10 @@ class Captions extends React.Component {
     ));
 
     const shouldRenderCaptionWindow = currentCaptionToRender !== '';
-
-    if (settings.fixedCaptions) {
+    const fixedCaptionsEnabled = settings.fixedCaptions && adapter.secondCaptionsFixedPosition && adapter.firstCaptionsFixedPositionRules;
+    if (fixedCaptionsEnabled) {
       return shouldRenderCaptionWindow ? (
-        <div className='dc-popper' style={{
-          width: '100%',
-          textAlign: 'center',
-          position: 'fixed',
-          bottom: '140px',
-          left: '0'
-        }}>
+        <div className='dc-popper' style={adapter.secondCaptionsFixedPosition}>
           <div {...captionWindowProps}>
             <div {...captionProps}>
               { captionToRender }
@@ -103,7 +97,7 @@ class Captions extends React.Component {
       ) : (
         <div/>
       );
-    } else if (captionWindow && !settings.fixedCaptions) {
+    } else if (captionWindow) {
       return (
         <Popper
           target={captionWindow}

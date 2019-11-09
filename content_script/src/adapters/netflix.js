@@ -9,7 +9,7 @@ const DefaultCaptionStyle = {
 export const NetflixAdapterCreator = () => {
   let captionStyle = null;
   let captionWindow = null;
-  let captionWindowStyle = { textAlign: 'center' }; // TODO - Width 700px need?
+  let captionWindowStyle = { textAlign: 'center', width: '700px' };
   let video = document.querySelector('video') || null;
   let fullscreenRoot = document.querySelector('.nfp.AkiraPlayer');
   const defaultCaptionStyle = DefaultCaptionStyle;
@@ -18,36 +18,34 @@ export const NetflixAdapterCreator = () => {
   let playerControls = document.querySelector('.PlayerControlsNeo__bottom-controls');
   let playerCurrentTime = null;
   let captionWindowSelector = '.player-timedtext-text-container';
-  let captionWindowForFixedPosition = null;
-  let firstCaptionsFixedPositionRules = `
-    position: fixed !important;
-    bottom: 200px !important;
-    left: 0px !important;
-    width: 100% !important;
-    text-align: center !important;
-  `;
-  let secondCaptionsFixedPosition = {
-    position: 'fixed',
-    bottom: '140px',
-    left:  '0px',
-    width: '100%',
-    textAlign: 'center'
-  };
+  let firstCaptionsFixedPositionRules = null;
+  let secondCaptionsFixedPosition = null;
 
   let isRenderingImageSubtitles = !!document.querySelector('.image-based-timed-text image');
 
   if (isRenderingImageSubtitles) {
     captionWindow = document.querySelector('.image-based-timed-text image');
-    // captionWindow and captionWindowSelector don't match here
-    // because we want the Popper to attach to one DOM node (the <image>)
-    // and to fix position of another (the image-based-timed-text container)
-    captionWindowForFixedPosition = document.querySelector('.image-based-timed-text');
-    captionWindowSelector = '.image-based-timed-text';
+  } else {
     firstCaptionsFixedPositionRules = `
+      position: fixed !important;
       bottom: 200px !important;
       left: 0px !important;
-    `
-  } else {
+      width: 100% !important;
+      text-align: center !important;
+
+      /* TODO - remove */
+      background: red;
+      color: blue;
+    `;
+    secondCaptionsFixedPosition = {
+      position: 'fixed',
+      bottom: '140px',
+      left:  '0px',
+      width: '100%',
+      textAlign: 'center',
+      color: 'green', // TODO - Remove
+      background: 'purple' // TODO - Remove
+    };
     captionWindow = document.querySelector('.player-timedtext-text-container') || null;
     if (captionWindow) {
       let caption = captionWindow.querySelector('span');
@@ -79,7 +77,6 @@ export const NetflixAdapterCreator = () => {
     actionPanelFixedPosition,
     captionText,
     captionWindow,
-    captionWindowForFixedPosition,
     captionWindowSelector,
     captionWindowStyle,
     captionStyle,

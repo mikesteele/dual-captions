@@ -287,7 +287,8 @@ class PopupMessageHandler extends React.Component {
     const { site, children } = this.props;
     const settings = this.state.settings;
     const siteSpecificSettings = {
-      // Fixed captions only works on Netflix, for now
+      // Fixed captions only works on Netflix,
+      // And doesn't currently work with "image subtitle" languages (Chinese, Japanese...)
       fixedCaptions: settings.fixedCaptionsEnabled && site === 'netflix'
     }
     return children({
