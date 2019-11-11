@@ -46,6 +46,41 @@ class ViewBookmarksModal extends React.Component {
     this.removeSelectedCaptions = this.removeSelectedCaptions.bind(this);
   }
 
+  componentDidMount() {
+    const { settings } = this.props;
+
+    // Check for any revoked image captions
+    const promises = settings.bookmarks.map(bookmark => {
+      return new Promise((resolve, reject) => {
+        if (/^blob:/.test(bookmark[0])) {
+          const image = new Image();
+          image.onload = () => {
+            // Image resolved, don't remove
+            resolve(null);
+          }
+          image.onerror = () => {
+            // Image 404'd, remove
+            resolve(bookmark);
+          }
+          image.src = bookmark[0];
+        } else {
+          // Not an image bookmark, don't remove
+          resolve(null);
+        }
+      });
+    });
+    Promise.all(promises).then(results => {
+      const bookmarksToRemove = results.filter(i => !!i);
+      if (bookmarksToRemove.length > 0) {
+        console.log(`Removing revoked bookmarks:`);
+        console.log(bookmarksToRemove);
+        settings.removeFromBookmarks(bookmarksToRemove);
+      }
+    }).catch(err => {
+      console.error(`Could not check for revoked image bookmarks, error: ${err}`);
+    })
+  }
+
   copySelectedCaptionsToClipboard() {
     const {
       selectedCaptions
@@ -150,8 +185,8 @@ class ViewBookmarksModal extends React.Component {
         <div style={tableStyle}>
           <div>
             {settings.bookmarks.map((caption, index) => {
-              // TODO - Remove this & just dump local storage
               if (typeof(caption[0]) !== 'string' || typeof(caption[1]) !== 'string') {
+                // Invalid saved bookmark
                 return null;
               }
               const rowStyle = index % 2 === 0 ? evenRowStyles : oddRowStyles;
@@ -167,11 +202,7 @@ class ViewBookmarksModal extends React.Component {
               const isImageCaption = /^blob:/.test(caption[0]);
               const firstCaption = isImageCaption ? (
                 // Render the blob URL created by adapter.getCaptionText()
-                <img src={caption[0]} onError={() => {
-                  // Blob URLs will be revoked when the window unloads
-                  // So if previously saved images 404, we remove them.
-                  settings.removeFromBookmarks([caption]);
-                }}/>
+                <img src={caption[0]}/>
               ) : (
                 <div style={{marginBottom: '8px'}}>{caption[0]}</div>
               )
