@@ -1,4 +1,6 @@
 import React from 'react';
+import _get from 'lodash/get';
+import _set from 'lodash/set';
 import { iso639_3to1 } from './utils/i18n';
 const franc = require('franc');
 
@@ -6,8 +8,7 @@ class Provider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      captions: {},
-      translations: {}
+      captions: {}
     }
     this.onMessage = this.onMessage.bind(this);
     this.canUseCaptionsFromVideo = this.canUseCaptionsFromVideo.bind(this);
@@ -15,6 +16,15 @@ class Provider extends React.Component {
     this.guessLanguageOfCaptions = this.guessLanguageOfCaptions.bind(this);
     this.getLoadedLanguages = this.getLoadedLanguages.bind(this);
     this.getCaptionToRender = this.getCaptionToRender.bind(this);
+    this.getTranslationToRender = this.getTranslationToRender.bind(this);
+
+    // Schema:
+    // {
+    //   secondSubtitleLanguage: {
+    //     captionText: translation
+    //   }
+    // }
+    this.translations = {};
   }
 
   componentDidMount() {
@@ -59,6 +69,26 @@ class Provider extends React.Component {
       if (captionToRender) {
         return captionToRender.text;
       } else {
+        return '';
+      }
+    } else {
+      return '';
+    }
+  }
+
+  getTranslationToRender(captionText, secondSubtitleLanguage) {
+    if (captionText && secondSubtitleLanguage !== 'none') {
+      if (_get(this.translations, [secondSubtitleLanguage, captionText])) {
+        return _get(this.translations, [secondSubtitleLanguage, captionText]);
+      } else {
+        // Prevent calling Google Translate again
+        _set(this.translations, [secondSubtitleLanguage, captionText], 'Loading...');
+        console.log('Calling google translate');
+        console.log(captionText);
+        console.log(secondSubtitleLanguage);
+        window.setTimeout(() => {
+          _set(this.translations, [secondSubtitleLanguage, captionText], `${captionText} :-)`);
+        }, 300);
         return '';
       }
     } else {
@@ -199,7 +229,8 @@ class Provider extends React.Component {
   render() {
     return this.props.children({
       getCaptionToRender: this.getCaptionToRender,
-      loadedLanguages: this.getLoadedLanguages()
+      loadedLanguages: this.getLoadedLanguages(),
+      getTranslationToRender: this.getTranslationToRender
     });
   }
 };

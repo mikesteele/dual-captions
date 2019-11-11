@@ -12,14 +12,15 @@ class PopupMessageHandler extends React.Component {
     this.state = {
       settings: {
         extraSpace: false,
-        secondSubtitleLanguage: 'none',
+        secondSubtitleLanguage: 'fr', // TODO - Make none
         settingsAreDefault: true,
         customColorsEnabled: false,
         customTextColor: '#FFFFFF',
         smallText: false,
         hotKeyEnabled: true,
         mouseIsActive: false,
-        uiLanguage: 'en'
+        uiLanguage: 'en',
+        useGoogleTranslate: true // TODO - Make false
       },
       bookmarks: []
     }
