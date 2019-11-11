@@ -26,7 +26,8 @@
     ],
     "matches": [
       "https://www.youtube.com/*",
-      "https://www.netflix.com/*"
+      "https://www.netflix.com/*",
+      "https://courses.edx.org/*"
     ]
    }],
   "icons": {

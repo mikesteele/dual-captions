@@ -46,6 +46,8 @@ class VideoId extends React.Component {
       videoId = this.detectYoutubeVideoId(); // TODO - Audit repo for Youtube vs YouTube
     } else if (this.props.site === 'development') {
       videoId = 'development';
+    } else if (this.props.site === 'edx') {
+      videoId = window.location.href; // TODO - How can I improve this?
     }
     if (videoId !== this.state.videoId) {
       // TODO - There are probably other places where I'm setting state unnecessarily

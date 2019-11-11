@@ -2,6 +2,7 @@ import React from 'react';
 import { NetflixAdapterCreator } from './adapters/netflix';
 import { YoutubeAdapterCreator } from './adapters/youtube';
 import { DevelopmentAdapterCreator } from './adapters/development';
+import { EdxAdapterCreator } from './adapters/edx';
 
 class NewAdapter extends React.Component {
   constructor(props) {
@@ -38,6 +39,9 @@ class NewAdapter extends React.Component {
     }
     if (site === 'development') {
       adapter = DevelopmentAdapterCreator();
+    }
+    if (site === 'edx') {
+      adapter = EdxAdapterCreator();
     }
     return this.props.children(adapter);
   }

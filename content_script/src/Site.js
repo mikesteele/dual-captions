@@ -22,6 +22,10 @@ class Site extends React.Component {
       this.setState({
         site: 'development'
       });
+    } else if (currentURL.includes('edx')) {
+      this.setState({
+        site: 'edx'
+      });
     }
   }
 
