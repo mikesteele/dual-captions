@@ -1,3 +1,6 @@
+import React from 'react';
+
+const css = `
 .App {
   text-align: center;
   font-size: 14px;
@@ -274,3 +277,19 @@ label {
 .settings-page > div {
   margin-bottom: 8px;
 }
+
+body {
+  font-family: sans-serif;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+}`;
+
+const Styles = () => (
+  <style>
+    {css}
+  </style>
+);
+
+export default Styles;
