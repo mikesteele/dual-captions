@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { connect } from 'react-redux';
-import { translate } from 'react-i18next';
 import packageJson from '../../package.json';
 import './i18n';
 
@@ -22,6 +21,8 @@ import ReduxThunk from 'redux-thunk';
 import { i18nMiddleware, loggingMiddleware, storageMiddleware } from './middleware';
 
 import { determineState, popupOpened, detectSite, checkLoadedLanguages, changeUILanguage } from './actions';
+
+import translate from './translate.js';
 
 const mapStateToProps = function(state) {
   return {...state};
@@ -58,7 +59,8 @@ class App extends Component {
   }
 
   render() {
-    const { t } = this.props;
+    const { uiLanguage } = this.props;
+    const t = key => translate(uiLanguage, key);
     return (
       <div className='App'>
         <Styles/>
@@ -124,7 +126,7 @@ class App extends Component {
   }
 }
 
-const TranslatedApp = translate()(connect(mapStateToProps)(App));
+const ConnectedApp = connect(mapStateToProps)(App);
 
 const store = createStore(reducer,
   applyMiddleware(
@@ -137,7 +139,7 @@ const store = createStore(reducer,
 
 const ClassicApp = () => (
   <Provider store={store}>
-    <TranslatedApp/>
+    <ConnectedApp />
   </Provider>
 );
 
