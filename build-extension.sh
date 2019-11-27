@@ -6,8 +6,9 @@ rm -rf build/
 # Build browser_action
 cd browser_action
 yarn
-yarn build
 yarn link
+yarn link dual-captions-browser-action
+yarn build
 
 # Build content_script
 cd ..
