@@ -3,20 +3,24 @@
 # Clean
 rm -rf build/
 
+# Link translations
+cd translations
+yarn link
+
 # Build browser_action
+cd ..
 cd browser_action
 yarn
-yarn link
-yarn link dual-captions-browser-action
+yarn link dual-captions-translations
 yarn build
+yarn link
 
 # Build content_script
 cd ..
 cd content_script
-yarn link dual-captions-browser-action
+yarn link dual-captions-translations
 yarn
 yarn build
-
 
 # Create extension
 cd ..

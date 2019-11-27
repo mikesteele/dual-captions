@@ -1,6 +1,6 @@
-const en = require('dual-captions-browser-action/public/locales/en/translations.json');
-const fr = require('dual-captions-browser-action/public/locales/fr/translations.json');
-const zhTw = require('dual-captions-browser-action/public/locales/zh-tw/translations.json');
+const en = require('dual-captions-translations/en.json');
+const fr = require('dual-captions-translations/fr.json');
+const zhTw = require('dual-captions-translations/zh-tw.json');
 
 const locales = {
   en,
