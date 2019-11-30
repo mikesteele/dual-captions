@@ -26,7 +26,7 @@ class BookmarkAction extends React.Component {
 
     const t = (key) => translate(settings.uiLanguage, key);
 
-    let firstCaptionText = adapter.captionText || '';
+    const firstCaptionText = adapter.captionText || '';
     const secondCaptionText = currentCaptionToRender || '';
     const isBookmarked = bookmarks.some(pair => (
       pair[0] === firstCaptionText &&
