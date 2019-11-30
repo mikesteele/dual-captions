@@ -54,5 +54,6 @@
   "bookmarks-explanation-3": "Les sous-titres enregistrés montreront ici.",
   "copy-to-clipboard": "Copier au presse-papiers",
   "delete": "Supprimer",
-  "video-speed": "Vitesse de lecture"
+  "video-speed": "Vitesse de lecture",
+  "hideActionPanel": "Cacher le panneau d'action"
 }

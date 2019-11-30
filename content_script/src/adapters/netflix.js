@@ -6,6 +6,25 @@ const DefaultCaptionStyle = {
   textShadow: 'rgb(0, 0, 0) 0px 0px 7px'
 };
 
+const getBlobOfImageCaptions = callback => {
+  const captionWindow = document.querySelector('.image-based-timed-text image');
+  if (captionWindow) {
+    const width = Number(captionWindow.getAttribute('width'));
+    const height = Number(captionWindow.getAttribute('height'));
+    const canvas = document.createElement('canvas');
+    if (width && height) {
+      canvas.width = width;
+      canvas.height = height;
+    }
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(captionWindow, 0, 0);
+    canvas.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      callback(url);
+    });
+  }
+}
+
 export const NetflixAdapterCreator = () => {
   let canRenderInCaptionWindow = false;
   let captionStyle = null;
@@ -19,6 +38,7 @@ export const NetflixAdapterCreator = () => {
   let captionText = '';
   let playerControls = document.querySelector('.PlayerControlsNeo__bottom-controls');
   let playerCurrentTime = null;
+  let getCaptionBlob = null;
 
   let isRenderingImageSubtitles = !!document.querySelector('.image-based-timed-text image');
 
@@ -29,6 +49,7 @@ export const NetflixAdapterCreator = () => {
       x: captionWindow.getAttribute('x'),
       y: captionWindow.getAttribute('y')
     }) : null;
+    getCaptionBlob = getBlobOfImageCaptions;
   } else {
     captionWindow = document.querySelector('.player-timedtext-text-container') || null;
     if (captionWindow) {
@@ -68,6 +89,7 @@ export const NetflixAdapterCreator = () => {
     captionStyle,
     defaultCaptionStyle,
     fullscreenRoot,
+    getCaptionBlob,
     playerControls,
     playerCurrentTime,
     smallTextSize,

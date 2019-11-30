@@ -72,38 +72,42 @@ class MainView extends React.Component {
           isOn={isOn}
           videoId={videoId}
         />
-        <Actions
-          adapter={adapter}
-          currentCaptionToRender={currentCaptionToRender}
-          settings={settings}
-          openViewBookmarksModal={this.openViewBookmarksModal}
-          isOn={isOn}
-          videoId={videoId}
-          provider={provider}
-          site={site}
-          openSettingsModal={this.openSettingsModal}
-        />
-        <ViewBookmarksModal
-          adapter={adapter}
-          currentCaptionToRender={currentCaptionToRender}
-          isOpen={viewBookmarksModalIsOpen}
-          onClose={this.onCloseViewBookmarksModal}
-          settings={settings}
-          isOn={isOn}
-          videoId={videoId}
-        />
-        <SettingsModal
-          adapter={adapter}
-          currentCaptionToRender={currentCaptionToRender}
-          isOpen={settingsModalIsOpen}
-          onClose={this.closeSettingsModal}
-          openSettingsModal={settingsModalIsOpen}
-          settings={settings}
-          isOn={isOn}
-          videoId={videoId}
-          provider={provider}
-          site={site}
-        />
+        {!settings.hideActionPanel && (
+          <Fragment>
+            <Actions
+              adapter={adapter}
+              currentCaptionToRender={currentCaptionToRender}
+              settings={settings}
+              openViewBookmarksModal={this.openViewBookmarksModal}
+              isOn={isOn}
+              videoId={videoId}
+              provider={provider}
+              site={site}
+              openSettingsModal={this.openSettingsModal}
+            />
+            <ViewBookmarksModal
+              adapter={adapter}
+              currentCaptionToRender={currentCaptionToRender}
+              isOpen={viewBookmarksModalIsOpen}
+              onClose={this.onCloseViewBookmarksModal}
+              settings={settings}
+              isOn={isOn}
+              videoId={videoId}
+            />
+            <SettingsModal
+              adapter={adapter}
+              currentCaptionToRender={currentCaptionToRender}
+              isOpen={settingsModalIsOpen}
+              onClose={this.closeSettingsModal}
+              openSettingsModal={settingsModalIsOpen}
+              settings={settings}
+              isOn={isOn}
+              videoId={videoId}
+              provider={provider}
+              site={site}
+            />
+          </Fragment>
+        )}
       </Fragment>
     )
   }
