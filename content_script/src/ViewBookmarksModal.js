@@ -201,7 +201,7 @@ class ViewBookmarksModal extends React.Component {
               };
               const isImageCaption = /^blob:/.test(caption[0]);
               const firstCaption = isImageCaption ? (
-                // Render the blob URL created by adapter.getCaptionText()
+                // Render the blob URL created by adapter.getCaptionBlob()
                 <img src={caption[0]}/>
               ) : (
                 <div style={{marginBottom: '8px'}}>{caption[0]}</div>
