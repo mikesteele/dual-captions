@@ -55,5 +55,6 @@
   "bookmarks-explanation-3": "Captions you save will show here.",
   "copy-to-clipboard": "Copy to clipboard",
   "delete": "Delete",
-  "video-speed": "Video speed"
+  "video-speed": "Video speed",
+  "hideActionPanel": "Hide action panel"
 }

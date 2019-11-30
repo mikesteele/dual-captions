@@ -19,7 +19,8 @@ class PopupMessageHandler extends React.Component {
         smallText: false,
         hotKeyEnabled: true,
         mouseIsActive: false,
-        uiLanguage: 'en'
+        uiLanguage: 'en',
+        hideActionPanel: false
       },
       bookmarks: []
     }
@@ -215,7 +216,8 @@ class PopupMessageHandler extends React.Component {
         customTextColor,
         customColorsEnabled,
         smallText,
-        hotKeyEnabled
+        hotKeyEnabled,
+        hideActionPanel
       } = message.payload;
       if (settings.extraSpace !== extraSpace) {
         this.changeSetting('extraSpace', extraSpace);
@@ -231,6 +233,9 @@ class PopupMessageHandler extends React.Component {
       }
       if (settings.hotKeyEnabled !== hotKeyEnabled) {
         this.changeSetting('hotKeyEnabled', hotKeyEnabled);
+      }
+      if (settings.hideActionPanel !== hideActionPanel) {
+        this.changeSetting('hideActionPanel', hideActionPanel);
       }
       break;
 
@@ -268,7 +273,8 @@ class PopupMessageHandler extends React.Component {
           customColorsEnabled: settings.customColorsEnabled,
           customTextColor: settings.customTextColor,
           smallText: settings.smallText,
-          hotKeyEnabled: settings.hotKeyEnabled
+          hotKeyEnabled: settings.hotKeyEnabled,
+          hideActionPanel: settings.hideActionPanel
         },
         loadedLanguages: provider.loadedLanguages,
       });
