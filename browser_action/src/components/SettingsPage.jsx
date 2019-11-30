@@ -30,7 +30,8 @@ class SettingsPage extends Component {
       'extraSpace',
       'customColorsEnabled',
       'smallText',
-      'hotKeyEnabled'
+      'hotKeyEnabled',
+      'hideActionPanel'
     ];
     const defaultSettings = Object.keys(config.defaultSettings);
     const settings = defaultSettings.map(setting => (
