@@ -12,6 +12,7 @@ yarn link
 # Build background_page
 cd ..
 cd background_page
+yarn link dual-captions-site-integrations
 yarn
 yarn build
 

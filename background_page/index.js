@@ -1,30 +1,36 @@
+const Integrations = require('dual-captions-site-integrations').integrations;
+
 class BackgroundPage {
   constructor() {
     // Properties
-    this.captionRequestsInFlight = {}; // TODO - Still need?
-    this.netflixCaptionRequestPattern = 'https://*.nflxvideo.net/?o=*&v=*&e=*&t=*';
-    this.youtubeCaptionRequestPattern = 'https://www.youtube.com/api/timedtext*';
-    this.pendingMessagesForTabId = {} // tabId: [Messages]
+    this.captionRequestsInFlight = {};
+    this.pendingMessagesForTabId = {}; // tabId: [Messages]
 
     // Binds
     this.onTabUpdated = this.onTabUpdated.bind(this);
-    this.onBeforeNetflixCaptionRequest = this.onBeforeNetflixCaptionRequest.bind(this);
-    this.onBeforeYouTubeCaptionRequest = this.onBeforeYouTubeCaptionRequest.bind(this);
     this.sendMessageToTabId = this.sendMessageToTabId.bind(this);
     this.onMessage = this.onMessage.bind(this);
     this.sendPendingMessages = this.sendPendingMessages.bind(this);
 
-    // Listeners
-    window.chrome.webRequest.onBeforeRequest.addListener(
-      this.onBeforeYouTubeCaptionRequest, {
-        urls: [this.youtubeCaptionRequestPattern]
-      }
-    );
-    window.chrome.webRequest.onBeforeRequest.addListener(
-      this.onBeforeNetflixCaptionRequest, {
-        urls: [this.netflixCaptionRequestPattern]
-      }
-    );
+    // Set up listeners for integration caption requests
+    Integrations.forEach(integration => {
+      const onBeforeRequest = (details) => {
+        const tabId = details.tabId;
+        if (!(details.url in this.captionRequestsInFlight)) {
+          this.captionRequestsInFlight[details.url] = true;
+          this.sendMessageToTabId(tabId, {
+            type: 'process-caption-request',
+            payload: details.url
+          });
+        }
+      };
+      window.chrome.webRequest.onBeforeRequest.addListener(
+        onBeforeRequest, {
+          urls: [integration.captionRequestPattern]
+        }
+      );
+    });
+
     window.chrome.tabs.onUpdated.addListener(this.onTabUpdated);
     window.chrome.runtime.onMessage.addListener(this.onMessage);
   }
@@ -57,28 +63,6 @@ class BackgroundPage {
         sendResponse({ ok: true });
       }
       break;
-    }
-  }
-
-  onBeforeNetflixCaptionRequest(details) {
-    const tabId = details.tabId;
-    if (!(details.url in this.captionRequestsInFlight)) {
-      this.captionRequestsInFlight[details.url] = true;
-      this.sendMessageToTabId(tabId, {
-        type: 'process-caption-request',
-        payload: details.url
-      });
-    }
-  }
-
-  onBeforeYouTubeCaptionRequest(details) {
-    const tabId = details.tabId;
-    if (!(details.url in this.captionRequestsInFlight)) {
-      this.captionRequestsInFlight[details.url] = true;
-      this.sendMessageToTabId(tabId, {
-        type: 'process-caption-request',
-        payload: details.url
-      });
     }
   }
 

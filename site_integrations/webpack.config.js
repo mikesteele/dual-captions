@@ -15,6 +15,5 @@ module.exports = {
         presets: ['@babel/preset-env']
       }
     }]
-   },
-  externals: [ /^(?!\.|\/).+/i, ]
+  }
 }
