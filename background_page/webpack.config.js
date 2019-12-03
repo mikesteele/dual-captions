@@ -1,11 +1,11 @@
 const webpack = require('webpack');
 
 module.exports = {
-  target: 'node',
+  target: 'web',
   entry: './index.js',
   output: {
     filename: 'index.js',
-    libraryTarget: 'commonjs'
+    libraryTarget: 'window'
   },
   module: {
     rules: [{
