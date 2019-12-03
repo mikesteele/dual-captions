@@ -23,6 +23,7 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "@babel/register": "^7.0.0"
+    "@babel/register": "^7.0.0",
+    "lodash": "^4.17.15"
   }
 }
