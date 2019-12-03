@@ -4,7 +4,8 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest"
   },
   "author": "",
   "license": "MIT",
@@ -16,6 +17,8 @@
     "babel-loader": "^8.0.4",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-polyfill": "^6.26.0",
+    "chai": "^4.2.0",
+    "jest": "^24.9.0",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2"
   },
