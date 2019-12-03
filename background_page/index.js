@@ -92,7 +92,4 @@ class BackgroundPage {
   }
 }
 
-// TODO - Remove
-console.log(`I'm the new background page!`);
-
 window.background = new BackgroundPage();
