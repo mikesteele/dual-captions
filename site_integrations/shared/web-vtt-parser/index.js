@@ -2,7 +2,9 @@ const chunk = require('lodash/chunk');
 
 const WebVttParser = captionFile => {
   return new Promise((resolve, reject) => {
-    const lines = captionFile.split('\n');
+    // Remove any extra lines, while making sure the last chunk has a new line
+    const fixedFile = `${captionFile.trim()}\n`;
+    const lines = fixedFile.split('\n');
     if (!lines[0].includes('WEBVTT')) {
       reject('VttParser - Expected first line to include WEBVTT');
     }
