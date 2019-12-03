@@ -45,4 +45,4 @@ mkdir build
 cp -r browser_action/build/* build/
 cp content_script/build/static/js/main.js build/bundle.js
 cp background_page/dist/index.js build/background.js
-cp manifest/manifest.json build/manifest.json
+cp manifest/build/manifest.json build/manifest.json

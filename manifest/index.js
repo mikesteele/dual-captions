@@ -41,4 +41,8 @@ manifest.content_scripts[0].matches = Integrations.map(i => {
   return i.injectPattern || null
 }).filter(p => !!p);
 
-fs.writeFileSync('./manifest.json', JSON.stringify(manifest, 4, ' '));
+if (!fs.existsSync("build")) {
+  fs.mkdirSync("build");
+}
+
+fs.writeFileSync('./build/manifest.json', JSON.stringify(manifest, 4, ' '));
