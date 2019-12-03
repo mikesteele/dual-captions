@@ -1,17 +1,10 @@
-const NetflixIntegration = {
-  siteId: 'netflix',
-  captionRequestPattern: 'https://*.nflxvideo.net/?o=*&v=*&e=*&t=*',
-  injectPattern: 'https://www.netflix.com/*'
-}
-
-const YouTubeIntegration = {
-  siteId: 'youtube',
-  captionRequestPattern: 'https://www.youtube.com/api/timedtext*',
-  injectPattern: 'https://www.youtube.com/*'
-}
+const NetflixIntegration = require('./netflix');
+const YouTubeIntegration = require('./youtube');
 
 const DevelopmentIntegration = {
-  siteId: 'development'
+  siteId: 'development',
+  detectSite: url => url.includes('localhost'),
+  detectVideoId: () => 'development'
 }
 
 module.exports = {

@@ -34,6 +34,7 @@ yarn link
 cd ..
 cd content_script
 yarn link dual-captions-browser-action
+yarn link dual-captions-site-integrations
 yarn
 yarn build
 
