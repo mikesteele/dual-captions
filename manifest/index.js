@@ -1,7 +1,11 @@
-{
+const fs = require('fs');
+const Integrations = require('dual-captions-site-integrations').integrations;
+const packageJson = require('./package');
+
+const manifest = {
   "name": "Two Captions for YouTube & Netflix",
   "description": "Show subtitles in two languages on Youtube & Netflix",
-  "version": "2.3.0",
+  "version": packageJson.version,
   "permissions": [
     "tabs",
     "http://*/*",
@@ -23,10 +27,6 @@
     "all_frames": false,
     "js": [
       "bundle.js"
-    ],
-    "matches": [
-      "https://www.youtube.com/*",
-      "https://www.netflix.com/*"
     ]
    }],
   "icons": {
@@ -35,4 +35,10 @@
     "128": "icon-128.png"
   },
   "manifest_version": 2
-}
+};
+
+manifest.content_scripts[0].matches = Integrations.map(i => {
+  return i.injectPattern || null
+}).filter(p => !!p);
+
+fs.writeFileSync('./manifest.json', JSON.stringify(manifest, 4, ' '));

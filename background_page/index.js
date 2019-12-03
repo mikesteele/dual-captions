@@ -14,21 +14,23 @@ class BackgroundPage {
 
     // Set up listeners for integration caption requests
     Integrations.forEach(integration => {
-      const onBeforeRequest = (details) => {
-        const tabId = details.tabId;
-        if (!(details.url in this.captionRequestsInFlight)) {
-          this.captionRequestsInFlight[details.url] = true;
-          this.sendMessageToTabId(tabId, {
-            type: 'process-caption-request',
-            payload: details.url
-          });
-        }
-      };
-      window.chrome.webRequest.onBeforeRequest.addListener(
-        onBeforeRequest, {
-          urls: [integration.captionRequestPattern]
-        }
-      );
+      if (integration.captionRequestPattern) {
+        const onBeforeRequest = (details) => {
+          const tabId = details.tabId;
+          if (!(details.url in this.captionRequestsInFlight)) {
+            this.captionRequestsInFlight[details.url] = true;
+            this.sendMessageToTabId(tabId, {
+              type: 'process-caption-request',
+              payload: details.url
+            });
+          }
+        };
+        window.chrome.webRequest.onBeforeRequest.addListener(
+          onBeforeRequest, {
+            urls: [integration.captionRequestPattern]
+          }
+        );  
+      }
     });
 
     window.chrome.tabs.onUpdated.addListener(this.onTabUpdated);
