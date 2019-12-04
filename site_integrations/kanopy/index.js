@@ -1,3 +1,4 @@
+const KanopyAdapter = require('./adapter');
 const WebVttParser = require('../shared/web-vtt-parser');
 
 const KanopyIntegration = {
@@ -14,7 +15,8 @@ const KanopyIntegration = {
       return null;
     }
   },
-  parser: WebVttParser
+  parser: WebVttParser,
+  adapter: KanopyAdapter
 };
 
 module.exports = KanopyIntegration;
