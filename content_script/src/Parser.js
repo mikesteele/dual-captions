@@ -1,5 +1,3 @@
-import NetflixParser from './parsers/netflix';
-import YoutubeParser from './parsers/youtube';
 import { getIntegrationForSite } from './utils/integrations';
 
 const Parser = (props) => {

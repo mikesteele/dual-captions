@@ -1,3 +1,4 @@
+const YouTubeAdapter = require('./adapter');
 const YouTubeParser = require('./parser');
 
 const YouTubeIntegration = {
@@ -10,7 +11,8 @@ const YouTubeIntegration = {
     const videoId = url.searchParams.get('v');
     return videoId ? videoId : null;
   },
-  parser: YouTubeParser
+  parser: YouTubeParser,
+  adapter: YouTubeAdapter
 }
 
 module.exports = YouTubeIntegration;
