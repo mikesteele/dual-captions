@@ -1,3 +1,4 @@
+const NetflixAdapter = require('./adapter');
 const NetflixParser = require('./parser');
 
 const NetflixIntegration = {
@@ -14,7 +15,8 @@ const NetflixIntegration = {
       return null;
     }
   },
-  parser: NetflixParser
+  parser: NetflixParser,
+  adapter: NetflixAdapter
 }
 
 module.exports = NetflixIntegration;
