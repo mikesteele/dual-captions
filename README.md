@@ -1,9 +1,9 @@
-## dual-captions <br/> Subtitles in two languages for YouTube & Netflix
+## dual-captions <br/> Subtitles in two languages for YouTube, Netflix & Kanopy
 ![build](https://travis-ci.com/mikesteele/dual-captions.svg?branch=master)
 
-| YouTube      | Netflix       |
-|:-------------:|:-------------:|
-| <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/youtube.png"> | <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/netflix.png"> |
+### <a href="https://github.com/mikesteele/dual-captions/releases">View latest release notes</a>
+
+***
 
 #### Manual Installation
 
