@@ -4,6 +4,10 @@ const KanopyAdapter = () => {
   const captionWindow = document.querySelector('.vjs-text-track-display > div > div > div');
   const video = document.querySelector('video');
 
+
+  const isFullscreen = document.fullscreenElement && fullscreenRoot && document.fullscreenElement === fullscreenRoot;
+  const smallTextSize = isFullscreen ? '18px' : '12px';
+
   let playerCurrentTime = null;
   if (video) {
     playerCurrentTime = video.currentTime;
@@ -25,6 +29,7 @@ const KanopyAdapter = () => {
     fullscreenRoot,
     playerControls,
     playerCurrentTime,
+    smallTextSize,
     video
   };
 };
