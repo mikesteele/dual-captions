@@ -1,7 +1,7 @@
-const parse = (captionFile) => {
+const NetflixParser = (captionFile) => {
   return new Promise((resolve, reject) => {
     const captions = [];
-    const domParser = new DOMParser();  // TODO - Move to class instance
+    const domParser = new DOMParser();
     const xml = domParser.parseFromString(captionFile, 'text/xml');
     const tt = xml.querySelector('tt');
     let tickRate;
@@ -96,4 +96,4 @@ const parse = (captionFile) => {
   });
 };
 
-export default { parse };
+module.exports = NetflixParser;

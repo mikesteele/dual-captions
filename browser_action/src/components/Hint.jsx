@@ -6,14 +6,19 @@ class Hint extends Component {
     return (
       <I18n namespace='translations'>
       {
-        (t) => (
-          <div className="hint">
-            { this.props.detectedSite === 'netflix' && <div>{t('netflix-hint')}</div> }
-            { this.props.detectedSite === 'youtube' && <div>{t('youtube-hint')}</div> }
-            { this.props.detectedSite === 'amazon'  && <div>{t('amazon-hint')}</div> }
-            { this.props.detectedSite === 'none'    && <div>{t('generic-hint')}</div> }
-          </div>
-        )
+        (t) => {
+          let hint = t('generic-hint');
+          if (this.props.detectedSite === 'netflix') {
+            hint = t('netflix-hint');
+          } else if (this.props.detectedSite === 'youtube') {
+            hint = t('youtube-hint');
+          }
+          return (
+            <div className="hint">
+               <div>{hint}</div>
+            </div>
+          );
+        }
       }
       </I18n>
     )

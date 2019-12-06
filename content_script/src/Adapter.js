@@ -1,7 +1,5 @@
 import React from 'react';
-import { NetflixAdapterCreator } from './adapters/netflix';
-import { YoutubeAdapterCreator } from './adapters/youtube';
-import { DevelopmentAdapterCreator } from './adapters/development';
+import { getIntegrationForSite } from './utils/integrations';
 
 class NewAdapter extends React.Component {
   constructor(props) {
@@ -30,14 +28,9 @@ class NewAdapter extends React.Component {
       site
     } = this.props;
     let adapter = {};
-    if (site === 'youtube') {
-      adapter = YoutubeAdapterCreator();
-    }
-    if (site === 'netflix') {
-      adapter = NetflixAdapterCreator();
-    }
-    if (site === 'development') {
-      adapter = DevelopmentAdapterCreator();
+    const integration = getIntegrationForSite(site);
+    if (integration && integration.adapter) {
+      adapter = integration.adapter();
     }
     return this.props.children(adapter);
   }

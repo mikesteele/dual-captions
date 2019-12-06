@@ -1,13 +1,11 @@
-import NetflixParser from './parsers/netflix';
-import YoutubeParser from './parsers/youtube';
+import { getIntegrationForSite } from './utils/integrations';
 
 const Parser = (props) => {
   const { site } = props;
   const parse = (captionFile) => {
-    if (site === 'netflix') {
-      return NetflixParser.parse(captionFile);
-    } else if (site === 'youtube') {
-      return YoutubeParser.parse(captionFile);
+    const integration = getIntegrationForSite(site);
+    if (integration && integration.parser) {
+      return integration.parser(captionFile);
     } else {
       return Promise.reject('Site not supported.'); // TODO
     }

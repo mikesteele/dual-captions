@@ -1,7 +1,7 @@
-const parse = (captionFile) => {
+const YouTubeParser = (captionFile) => {
   return new Promise((resolve, reject) => {
     let captions = [];
-    const domParser = new DOMParser(); // TODO - Move to class instance
+    const domParser = new DOMParser();
     const xml = domParser.parseFromString(captionFile, 'text/xml');
     const body = xml.querySelector('body');
     const timedtext = xml.querySelector('timedtext');
@@ -51,4 +51,4 @@ const parse = (captionFile) => {
   });
 }
 
-export default { parse };
+module.exports = YouTubeParser;
