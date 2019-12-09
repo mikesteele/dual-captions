@@ -23,8 +23,11 @@ const KanopyAdapter = () => {
     };
   }
 
+  const captionText = captionWindow ? captionWindow.textContent : '';
+
   return {
     captionStyle,
+    captionText, // TODO - Test
     captionWindow,
     fullscreenRoot,
     playerControls,
