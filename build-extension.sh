@@ -32,7 +32,7 @@ yarn link
 
 # Build content_script
 cd ..
-cd content_script_webpack
+cd content_script
 yarn link dual-captions-browser-action
 yarn link dual-captions-site-integrations
 yarn
@@ -43,6 +43,6 @@ yarn build
 cd ..
 mkdir build
 cp -r browser_action/build/* build/
-cp content_script_webpack/dist/index.js build/bundle.js
+cp content_script/build/static/js/main.js build/bundle.js
 cp background_page/dist/index.js build/background.js
 cp manifest/build/manifest.json build/manifest.json
