@@ -3,7 +3,13 @@
 # Clean
 rm -rf build/
 
+# Link API keys
+cd api_keys
+yarn
+yarn link
+
 # Build site_integrations
+cd ..
 cd site_integrations
 yarn
 yarn build
@@ -35,6 +41,7 @@ cd ..
 cd content_script
 yarn link dual-captions-browser-action
 yarn link dual-captions-site-integrations
+yarn link dual-captions-api-keys
 yarn
 yarn build
 
