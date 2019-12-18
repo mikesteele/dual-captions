@@ -4,6 +4,16 @@ import { getSavedStore } from './utils/chrome';
 const D_KEY_CODE = 68;
 const ALT_KEY_CODE = 18;
 
+// From https://stackoverflow.com/questions/3665115/how-to-create-a-file-in-memory-for-user-to-download-but-not-through-server
+const downloadStringAsFile = str => {
+  const a = window.document.createElement('a');
+  a.href = window.URL.createObjectURL(new Blob([str], {type: 'text/plain;charset=utf-8;'}));
+  a.download = 'subtitles.srt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
 class PopupMessageHandler extends React.Component {
   constructor(props) {
     super(props);
@@ -285,6 +295,8 @@ class PopupMessageHandler extends React.Component {
       sendResponse({
         ok: true
       });
+      // TODO - Temporary - remove
+      downloadStringAsFile('works!');
       break;
 
       default:

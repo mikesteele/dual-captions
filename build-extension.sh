@@ -26,6 +26,7 @@ yarn build
 # Build browser_action
 cd ..
 cd browser_action
+yarn link dual-captions-site-integrations
 yarn
 yarn build
 yarn link
