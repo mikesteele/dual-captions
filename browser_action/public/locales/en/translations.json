@@ -58,5 +58,7 @@
   "copy-to-clipboard": "Copy to clipboard",
   "delete": "Delete",
   "video-speed": "Video speed",
-  "hideActionPanel": "Hide action panel"
+  "hideActionPanel": "Hide action panel",
+  "download-subtitles": "Download subtitles as an SRT file:",
+  "tools": "Tools"
 }
