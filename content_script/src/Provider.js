@@ -195,6 +195,10 @@ class Provider extends React.Component {
             });
           });
       } else {
+        console.error(`Provider - Couldn't download subtitles for requested language.`);
+        // For debugging w/ end user in case of issue
+        console.log(this.state);
+        console.log(this.props);
         sendResponse({
           ok: false
         });
