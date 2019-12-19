@@ -80,6 +80,7 @@ const SUPPORTED_LANGUAGES = {
   ca: "Catalan",
   ceb: "Cebuano",
   ny: "Chichewa",
+  zh: "Chinese",
   "zh-cn": "Chinese Simplified",
   "zh-tw": "Chinese Traditional",
   co: "Corsican",
