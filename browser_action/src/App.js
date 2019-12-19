@@ -13,6 +13,7 @@ import MainPage from './components/MainPage.jsx';
 import SettingsPage from './components/SettingsPage.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
 import TranslationQueue from './components/TranslationRequest.jsx';
+import ToolsPage from './components/ToolsPage.jsx';
 
 import { determineState, popupOpened, detectSite, checkLoadedLanguages, changeUILanguage } from './actions';
 
@@ -23,6 +24,7 @@ const mapStateToProps = function(state) {
 const MainPageView = connect(mapStateToProps)(MainPage);
 const SettingsPageView = connect(mapStateToProps)(SettingsPage);
 const ErrorPageView = connect(mapStateToProps)(ErrorPage);
+const ToolsPageView = connect(mapStateToProps)(ToolsPage);
 
 class App extends Component {
   componentDidMount() {
@@ -52,6 +54,7 @@ class App extends Component {
 
   render() {
     const { t } = this.props;
+    const showToolsPage = this.props.loadedLanguages.length > 0;
     return (
       <div className='App'>
         <TranslationQueue/>
@@ -60,6 +63,9 @@ class App extends Component {
           <TabList>
             <Tab>{t('main')}</Tab>
             <Tab>{t('settings')}</Tab>
+            {showToolsPage && (
+              <Tab>{t('tools')}</Tab>
+            )}
           </TabList>
           <TabPanel>
             <MainPageView/>
@@ -67,6 +73,11 @@ class App extends Component {
           <TabPanel>
             <SettingsPageView/>
           </TabPanel>
+          {showToolsPage && (
+            <TabPanel>
+              <ToolsPageView/>
+            </TabPanel>
+          )}
         </Tabs>
         <ErrorPageView/>
         <div>
