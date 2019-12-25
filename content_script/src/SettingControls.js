@@ -294,7 +294,7 @@ class SettingControls extends React.Component {
                    }}
                    key={lang}
                    onClick={() => {
-                     settings.changeSetting('secondSubtitleLanguage', lang);
+                     settings.changeSetting('secondSubtitleLanguage', lang, true);
                      this.setState({
                        actionTooltopOpen: false
                      });

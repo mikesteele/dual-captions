@@ -14,7 +14,7 @@ const TextColorControl = props => {
     marginBottom: '16px'
   };
   const onChange = e => {
-    settings.changeSetting('customTextColor', e.target.value);
+    settings.changeSetting('customTextColor', e.target.value, true);
   }
   return (
     <div style={wrapperStyles}>
@@ -47,7 +47,7 @@ const CheckboxControl = props => {
   const isChecked = settings[settingKey];
   const icon = isChecked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />;
   const onClick = () => {
-    settings.changeSetting(settingKey, !isChecked);
+    settings.changeSetting(settingKey, !isChecked, true);
   }
   return (
     <div style={wrapperStyles}>
