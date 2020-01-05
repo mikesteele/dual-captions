@@ -1,7 +1,14 @@
+const fixCaptionFile = captionFile => {
+  // Trim each line
+  const trimmedFile = captionFile.split('\n').map(line => line.trim()).join('\n').trim();
+  // Remove any extra lines, while making sure the last chunk has two new lines
+  const fixedFile = `${trimmedFile}\n\n`;
+  return fixedFile;
+};
+
 const SrtParser = captionFile => {
   return new Promise((resolve, reject) => {
-    // Remove any extra lines, while making sure the last chunk has two new lines
-    const fixedFile = `${captionFile.trim()}\n\n`;
+    const fixedFile = fixCaptionFile(captionFile);
     const chunks = fixedFile.split('\n\n');
     const captions = [];
     chunks.forEach(chunk => {

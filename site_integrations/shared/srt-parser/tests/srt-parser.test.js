@@ -42,4 +42,29 @@ describe('SrtParser', () => {
       })
       .catch(err =>  console.log(err));
   });
+  it('should handle whitespace in chunk breaks', done => {
+    const SRT_FILE_WITH_WHITESPACE = [
+      '1',
+      '00:02:17,440 --> 00:02:20,375',
+      'Senator, we\'re making',
+      'our final approach into Coruscant.',
+      'Hooray!',
+      '               ',
+      '2',
+      '00:02:20,476 --> 00:02:22,501',
+      'Very good, Lieutenant.',
+      '    '
+    ].join('\n');
+    SrtParser(SRT_FILE_WITH_WHITESPACE)
+      .then(captions => {
+        expect(captions[0].text).to.equal(SRT_CAPTIONS[0].text);
+        expect(captions[0].startTime).to.equal(SRT_CAPTIONS[0].startTime);
+        expect(captions[0].endTime).to.equal(SRT_CAPTIONS[0].endTime);
+        expect(captions[1].text).to.equal(SRT_CAPTIONS[1].text);
+        expect(captions[1].startTime).to.equal(SRT_CAPTIONS[1].startTime);
+        expect(captions[1].endTime).to.equal(SRT_CAPTIONS[1].endTime);
+        done();
+      })
+      .catch(err =>  console.log(err));
+  });
 });
