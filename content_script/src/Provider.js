@@ -1,6 +1,18 @@
 import React from 'react';
 import { iso639_3to1 } from './utils/i18n';
+import _get from 'lodash/get';
 const franc = require('franc');
+const SrtEncoder = require('dual-captions-site-integrations').encoders.SrtEncoder;
+
+// From https://stackoverflow.com/questions/3665115/how-to-create-a-file-in-memory-for-user-to-download-but-not-through-server
+const downloadStringAsFile = (str, fileName) => {
+  const a = window.document.createElement('a');
+  a.href = window.URL.createObjectURL(new Blob([str], {type: 'text/plain;charset=utf-8;'}));
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
 
 class Provider extends React.Component {
   constructor(props) {
@@ -166,6 +178,31 @@ class Provider extends React.Component {
             error: err
           });
         });
+      break;
+
+      case 'download-subtitles':
+      const captionsToDownload = _get(this.state.captions, [this.props.site, this.props.videoId, message.payload]);
+      if (captionsToDownload) {
+        SrtEncoder(captionsToDownload)
+          .then(srtFile => {
+            const fileName = `${message.payload}-subtitles-for-${this.props.site}-${this.props.videoId}.srt`;
+            downloadStringAsFile(srtFile, fileName);
+          })
+          .catch(err => {
+            console.error(err);
+            sendResponse({
+              ok: false
+            });
+          });
+      } else {
+        console.error(`Provider - Couldn't download subtitles for requested language.`);
+        // For debugging w/ end user in case of issue
+        console.log(this.state);
+        console.log(this.props);
+        sendResponse({
+          ok: false
+        });
+      }
       break;
 
       default:

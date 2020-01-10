@@ -80,6 +80,7 @@ const SUPPORTED_LANGUAGES = {
   ca: "Catalan",
   ceb: "Cebuano",
   ny: "Chichewa",
+  zh: "Chinese",
   "zh-cn": "Chinese Simplified",
   "zh-tw": "Chinese Traditional",
   co: "Corsican",
@@ -293,7 +294,7 @@ class SettingControls extends React.Component {
                    }}
                    key={lang}
                    onClick={() => {
-                     settings.changeSetting('secondSubtitleLanguage', lang);
+                     settings.changeSetting('secondSubtitleLanguage', lang, true);
                      this.setState({
                        actionTooltopOpen: false
                      });

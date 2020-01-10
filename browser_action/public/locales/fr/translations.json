@@ -57,5 +57,7 @@
   "copy-to-clipboard": "Copier au presse-papiers",
   "delete": "Supprimer",
   "video-speed": "Vitesse de lecture",
-  "hideActionPanel": "Cacher le panneau d'action"
+  "hideActionPanel": "Cacher le panneau d'action",
+  "download-subtitles": "Télécharger sous-titres (.SRT):",
+  "tools": "Outils"
 }
