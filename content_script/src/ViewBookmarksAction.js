@@ -15,7 +15,6 @@ class ViewBookmarksAction extends React.Component {
       settings,
       adapter,
       isOn,
-      videoId
     } = this.props;
     const t = key => translate(settings.uiLanguage, key);
     return (
@@ -26,7 +25,6 @@ class ViewBookmarksAction extends React.Component {
           settings={settings}
           adapter={adapter}
           isOn={isOn}
-          videoId={videoId}
         >
           <MdBook />
         </ActionButton>

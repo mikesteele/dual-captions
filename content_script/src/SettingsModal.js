@@ -131,7 +131,6 @@ const SettingsModal = props => {
     isOpen,
     onClose,
     provider,
-    videoId,
     site,
     isOn,
     currentCaptionToRender
@@ -148,7 +147,6 @@ const SettingsModal = props => {
         currentCaptionToRender={currentCaptionToRender}
         settings={settings}
         isOn={isOn}
-        videoId={videoId}
         provider={provider}
         site={site}
       />

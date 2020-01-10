@@ -323,9 +323,9 @@ class SettingControls extends React.Component {
   }
 
   render() {
-    const { adapter, settings, currentCaptionToRender, isOn, videoId } = this.props;
+    const { adapter, settings, currentCaptionToRender, isOn } = this.props;
     const { isHoveredOver, actionTooltopOpen } = this.state;
-    const shouldShowTooltip = actionTooltopOpen && videoId;
+    const shouldShowTooltip = actionTooltopOpen && adapter.video;
     return (
       <Fragment>
         { this.renderMaterial() }

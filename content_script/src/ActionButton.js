@@ -43,10 +43,10 @@ class ActionButton extends React.Component {
   }
 
   render() {
-    const { onClick, tooltipText, children, settings, adapter, hotKeyCode, isOn, videoId } = this.props;
+    const { onClick, tooltipText, children, settings, adapter, hotKeyCode, isOn } = this.props;
     const { isHoveredOver, isAnimating } = this.state;
 
-    const shouldShow = videoId &&
+    const shouldShow = adapter.playerControls &&
                        isOn &&
                        (settings.mouseIsActive || isHoveredOver || isAnimating);
 

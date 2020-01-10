@@ -50,7 +50,6 @@ class App extends React.Component {
                                           settings={settings}
                                           provider={provider}
                                           isOn={true}
-                                          videoId={videoId}
                                           site={site}
                                         />
                                       </FullscreenHOC>

@@ -8,7 +8,6 @@ const SettingsAction = props => {
     settings,
     adapter,
     isOn,
-    videoId,
     openSettingsModal
   } = props;
   const t = key => translate(settings.uiLanguage, key);
@@ -19,7 +18,6 @@ const SettingsAction = props => {
       settings={settings}
       adapter={adapter}
       isOn={isOn}
-      videoId={videoId}
     >
       <MdSettings />
     </ActionButton>

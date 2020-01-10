@@ -40,7 +40,6 @@ const Actions = props => {
     currentCaptionToRender,
     openViewBookmarksModal,
     isOn,
-    videoId,
     provider,
     site,
     openSettingsModal
@@ -56,27 +55,23 @@ const Actions = props => {
           settings={settings}
           openViewBookmarksModal={openViewBookmarksModal}
           isOn={isOn}
-          videoId={videoId}
         />
         <BookmarkAction
           adapter={adapter}
           settings={settings}
           currentCaptionToRender={currentCaptionToRender}
           isOn={isOn}
-          videoId={videoId}
         />
         <ClipboardAction
           adapter={adapter}
           settings={settings}
           currentCaptionToRender={currentCaptionToRender}
           isOn={isOn}
-          videoId={videoId}
         />
         <SettingsAction
           adapter={adapter}
           settings={settings}
           isOn={isOn}
-          videoId={videoId}
           openSettingsModal={openSettingsModal}
         />
       </div>

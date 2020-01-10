@@ -48,7 +48,6 @@ class ClipboardAction extends React.Component {
       adapter,
       settings,
       isOn,
-      videoId
     } = this.props;
     const { isAnimating } = this.state;
     const t = key => translate(settings.uiLanguage, key);
@@ -59,7 +58,6 @@ class ClipboardAction extends React.Component {
         settings={this.props.settings}
         adapter={this.props.adapter}
         isOn={this.props.isOn}
-        videoId={this.props.videoId}
       >
         <MdAssignment />
       </ActionButton>

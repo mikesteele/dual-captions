@@ -48,7 +48,6 @@ class MainView extends React.Component {
       settings,
       provider,
       isOn,
-      videoId,
       site
     } = this.props;
     const {
@@ -70,7 +69,6 @@ class MainView extends React.Component {
           currentCaptionToRender={currentCaptionToRender}
           settings={settings}
           isOn={isOn}
-          videoId={videoId}
         />
         {!settings.hideActionPanel && (
           <Fragment>
@@ -80,7 +78,6 @@ class MainView extends React.Component {
               settings={settings}
               openViewBookmarksModal={this.openViewBookmarksModal}
               isOn={isOn}
-              videoId={videoId}
               provider={provider}
               site={site}
               openSettingsModal={this.openSettingsModal}
@@ -92,7 +89,6 @@ class MainView extends React.Component {
               onClose={this.onCloseViewBookmarksModal}
               settings={settings}
               isOn={isOn}
-              videoId={videoId}
             />
             <SettingsModal
               adapter={adapter}
@@ -102,7 +98,6 @@ class MainView extends React.Component {
               openSettingsModal={settingsModalIsOpen}
               settings={settings}
               isOn={isOn}
-              videoId={videoId}
               provider={provider}
               site={site}
             />
