@@ -2,6 +2,7 @@ const NetflixIntegration = require('./netflix');
 const YouTubeIntegration = require('./youtube');
 const DevelopmentIntegration = require('./development');
 const KanopyIntegration = require('./kanopy');
+const AmazonIntegration = require('./amazon');
 const SrtEncoder = require('./shared/srt-encoder');
 
 module.exports = {
@@ -9,7 +10,8 @@ module.exports = {
     NetflixIntegration,
     YouTubeIntegration,
     DevelopmentIntegration,
-    KanopyIntegration
+    KanopyIntegration,
+    AmazonIntegration
   ],
   encoders: {
     SrtEncoder

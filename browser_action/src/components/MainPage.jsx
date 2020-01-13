@@ -28,15 +28,6 @@ class MainPage extends Component {
       </option>
     ));
     const loadedLanguages = this.props.loadedLanguages.map(lang => config.secondLanguages[lang] || lang);
-    if (this.props.detectedSite === 'amazon') {
-      return (
-        <div className='page'>
-          {this.props.t('amazon-sorry-1')}
-          <br/><br/>
-          {this.props.t('amazon-sorry-2')}
-        </div>
-      );
-    }
     return (
       <div className='page'>
         <Step stepNumber={1}>
