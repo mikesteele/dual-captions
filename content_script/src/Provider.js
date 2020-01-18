@@ -3,6 +3,7 @@ import { iso639_3to1 } from './utils/i18n';
 import _get from 'lodash/get';
 const franc = require('franc');
 const SrtEncoder = require('dual-captions-site-integrations').encoders.SrtEncoder;
+const SrtParser = require('dual-captions-site-integrations').parsers.SrtParser;
 
 // From https://stackoverflow.com/questions/3665115/how-to-create-a-file-in-memory-for-user-to-download-but-not-through-server
 const downloadStringAsFile = (str, fileName) => {
@@ -159,6 +160,29 @@ class Provider extends React.Component {
       // TODO - Bail out if message.site doesn't match
       this.fetchUrl(message.payload)
         .then(captionFile => this.props.parser.parse(captionFile, this.props.site))
+        .then(this.guessLanguageOfCaptions)
+        .then(result => {
+          const {captions, language} = result;
+          return this.loadCaptions(captions, language);
+        })
+        .then(() => {
+          console.log('Loaded.');
+          console.log(this.state);
+          sendResponse({
+            ok: true
+          });
+        })
+        .catch(err => {
+          console.log(err);
+          sendResponse({
+            ok: false,
+            error: err
+          });
+        });
+      break;
+
+      case 'process-caption-file':
+      SrtParser(message.payload)
         .then(this.guessLanguageOfCaptions)
         .then(result => {
           const {captions, language} = result;

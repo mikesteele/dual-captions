@@ -3,6 +3,7 @@ import React from 'react'
 const Styles = () => {
   const styles = `
     .dc-popper {
+      pointer-events: none;
       z-index: 10000;
     }
 

@@ -274,3 +274,12 @@ label {
 .settings-page > div {
   margin-bottom: 8px;
 }
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.tools-page-spacer {
+  margin-bottom: 24px;
+}

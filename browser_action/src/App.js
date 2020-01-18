@@ -54,7 +54,6 @@ class App extends Component {
 
   render() {
     const { t } = this.props;
-    const showToolsPage = this.props.loadedLanguages.length > 0;
     return (
       <div className='App'>
         <TranslationQueue/>
@@ -63,9 +62,7 @@ class App extends Component {
           <TabList>
             <Tab>{t('main')}</Tab>
             <Tab>{t('settings')}</Tab>
-            {showToolsPage && (
-              <Tab>{t('tools')}</Tab>
-            )}
+            <Tab>{t('tools')}</Tab>
           </TabList>
           <TabPanel>
             <MainPageView/>
@@ -73,11 +70,9 @@ class App extends Component {
           <TabPanel>
             <SettingsPageView/>
           </TabPanel>
-          {showToolsPage && (
-            <TabPanel>
-              <ToolsPageView/>
-            </TabPanel>
-          )}
+          <TabPanel>
+            <ToolsPageView/>
+          </TabPanel>
         </Tabs>
         <ErrorPageView/>
         <div>
