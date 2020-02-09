@@ -1,0 +1,1501 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+
+  } ],
+  "wsWinStyles": [ {
+
+  }, {
+    "juJustifCode": 2
+  } ],
+  "wpWinPositions": [ {
+
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 10
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 28
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 26
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 21
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 25
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 35
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 31
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 7
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 36
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 59
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 46
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 20
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 9
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 27
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 55
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 37
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 33
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 69
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 17
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 15
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 66
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 91
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 60
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 49
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 16
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 74
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 86
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 65
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 32
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 48
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 77
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 75
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 61
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 85
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 14
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 83
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 24
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 67
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 32
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 5
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 44
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 93
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 38
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 23
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 19
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 71
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 62
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 58
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 80
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 34
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 47
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 22
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 52
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 99
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 76
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 73
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 40
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 68
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 45
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 57
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 78
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 18
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 54
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 39
+  }, {
+    "apPoint": 7,
+    "ahHorPos": 50,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 13
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 63
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 51
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 81
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 3,
+    "avVerPos": 100,
+    "rcRows": 1,
+    "ccCols": 42
+  } ],
+  "events": [ {
+    "tStartMs": 964,
+    "dDurationMs": 3993,
+    "segs": [ {
+      "utf8": "VALIDATION"
+    } ],
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 11770,
+    "dDurationMs": 3070,
+    "segs": [ {
+      "utf8": "2 HOURS FREE WITH VALIDATION"
+    } ],
+    "wpWinPosId": 2,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 20316,
+    "dDurationMs": 2485,
+    "segs": [ {
+      "utf8": "VALIDATION"
+    } ],
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 29690,
+    "dDurationMs": 2625,
+    "segs": [ {
+      "utf8": "I'm here to get validated."
+    } ],
+    "wpWinPosId": 3,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 32930,
+    "dDurationMs": 4699,
+    "segs": [ {
+      "utf8": "Yeo. You are awesome."
+    } ],
+    "wpWinPosId": 4,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 38137,
+    "dDurationMs": 948,
+    "segs": [ {
+      "utf8": "Excuse me?"
+    } ],
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 39124,
+    "dDurationMs": 1912,
+    "segs": [ {
+      "utf8": "You have an amazing face."
+    } ],
+    "wpWinPosId": 5,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 41036,
+    "dDurationMs": 1000,
+    "segs": [ {
+      "utf8": "You've gon a powerful features man."
+    } ],
+    "wpWinPosId": 6,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 42036,
+    "dDurationMs": 2000,
+    "segs": [ {
+      "utf8": "Have anyone ever tell you that?"
+    } ],
+    "wpWinPosId": 7,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 44036,
+    "dDurationMs": 1687,
+    "segs": [ {
+      "utf8": "Um, no."
+    } ],
+    "wpWinPosId": 8,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 45723,
+    "dDurationMs": 3497,
+    "segs": [ {
+      "utf8": "Then listen. You look a little down."
+    } ],
+    "wpWinPosId": 9,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 49220,
+    "dDurationMs": 3997,
+    "segs": [ {
+      "utf8": "And it may seem like sometimes people don't understand you."
+    } ],
+    "wpWinPosId": 10,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 53217,
+    "dDurationMs": 2816,
+    "segs": [ {
+      "utf8": "But some day man, some day"
+    } ],
+    "wpWinPosId": 3,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 56033,
+    "dDurationMs": 3000,
+    "segs": [ {
+      "utf8": "people will gonna see you what you really are."
+    } ],
+    "wpWinPosId": 11,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 59033,
+    "dDurationMs": 2167,
+    "segs": [ {
+      "utf8": "You really think so?"
+    } ],
+    "wpWinPosId": 12,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 61338,
+    "dDurationMs": 5532,
+    "segs": [ {
+      "utf8": "Absolutely. You are great!"
+    } ],
+    "wpWinPosId": 3,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 67538,
+    "dDurationMs": 1428,
+    "segs": [ {
+      "utf8": "VALIDATED"
+    } ],
+    "wpWinPosId": 13,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 69520,
+    "dDurationMs": 1489,
+    "segs": [ {
+      "utf8": "I need a validation please."
+    } ],
+    "wpWinPosId": 14,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 71088,
+    "dDurationMs": 5462,
+    "segs": [ {
+      "utf8": "You, you are great ma'm. You have a amazing cheekbones!"
+    } ],
+    "wpWinPosId": 15,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 79550,
+    "dDurationMs": 1353,
+    "segs": [ {
+      "utf8": "Really?"
+    } ],
+    "wpWinPosId": 8,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 83017,
+    "dDurationMs": 4382,
+    "segs": [ {
+      "utf8": "Sir! Yes. We have a situation. Where?"
+    } ],
+    "wpWinPosId": 16,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 92059,
+    "dDurationMs": 3963,
+    "segs": [ {
+      "utf8": "What the hell is going on?"
+    } ],
+    "wpWinPosId": 3,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 97669,
+    "dDurationMs": 2704,
+    "segs": [ {
+      "utf8": "You've been through it. You know."
+    } ],
+    "wpWinPosId": 17,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 100379,
+    "dDurationMs": 2684,
+    "segs": [ {
+      "utf8": "You have so much life experiences that other people don't appreciate,"
+    } ],
+    "wpWinPosId": 18,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 103140,
+    "dDurationMs": 1444,
+    "segs": [ {
+      "utf8": "... but you know!"
+    } ],
+    "wpWinPosId": 19,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 104645,
+    "dDurationMs": 1088,
+    "segs": [ {
+      "utf8": "Bless you dear."
+    } ],
+    "wpWinPosId": 20,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 105902,
+    "dDurationMs": 1725,
+    "segs": [ {
+      "utf8": "VALIDATED"
+    } ],
+    "wpWinPosId": 13,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 107688,
+    "dDurationMs": 3156,
+    "segs": [ {
+      "utf8": "There're not patronising the shop, they're just coming to see him!"
+    } ],
+    "wpWinPosId": 21,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 110937,
+    "dDurationMs": 7799,
+    "segs": [ {
+      "utf8": "Oh Sir,heading great shapes, you're gust? Not for long. I do actually,but.... Yeah. Thanks!"
+    } ],
+    "wpWinPosId": 22,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 120619,
+    "dDurationMs": 4229,
+    "segs": [ {
+      "utf8": "Young man, we're running a business here. Not a social club."
+    } ],
+    "wpWinPosId": 23,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 124895,
+    "dDurationMs": 5227,
+    "segs": [ {
+      "utf8": "That is a fantastic suit. It really flatters you!"
+    } ],
+    "wpWinPosId": 24,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 132965,
+    "dDurationMs": 2396,
+    "segs": [ {
+      "utf8": "Do you think so?"
+    } ],
+    "wpWinPosId": 25,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 136099,
+    "dDurationMs": 4171,
+    "segs": [ {
+      "utf8": "You guys work so hard. You are the backbone that keeps this place running."
+    } ],
+    "wpWinPosId": 26,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 140378,
+    "dDurationMs": 4134,
+    "segs": [ {
+      "utf8": "I always felt like no one really appreciated. Yeah, I mean our terms are so stressful,"
+    } ],
+    "wpWinPosId": 27,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 144559,
+    "dDurationMs": 3294,
+    "segs": [ {
+      "utf8": "... and it seems like most of the times people just don't see it."
+    } ],
+    "wpWinPosId": 28,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 147884,
+    "dDurationMs": 3207,
+    "segs": [ {
+      "utf8": "No, what you do is so important."
+    } ],
+    "wpWinPosId": 29,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 151353,
+    "dDurationMs": 3411,
+    "segs": [ {
+      "utf8": "You know? I bet the boss would love to meet you."
+    } ],
+    "wpWinPosId": 30,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 154949,
+    "dDurationMs": 5318,
+    "segs": [ {
+      "utf8": "You are great. You provide hundreds of jobs, sustaining hundreds of families,"
+    } ],
+    "wpWinPosId": 31,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 160313,
+    "dDurationMs": 1523,
+    "segs": [ {
+      "utf8": "...that's huge!"
+    } ],
+    "wpWinPosId": 20,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 162036,
+    "dDurationMs": 4716,
+    "segs": [ {
+      "utf8": "That's so good to hear. Most times I feel like people don't recognise that."
+    } ],
+    "wpWinPosId": 32,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 167014,
+    "dDurationMs": 2614,
+    "segs": [ {
+      "utf8": "I'm just a big bad man in the hell."
+    } ],
+    "wpWinPosId": 6,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 169736,
+    "dDurationMs": 3158,
+    "segs": [ {
+      "utf8": "Not at all. You give."
+    } ],
+    "wpWinPosId": 4,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 173903,
+    "dDurationMs": 4319,
+    "segs": [ {
+      "utf8": "You know, I know some people who'd probably like to meet you."
+    } ],
+    "wpWinPosId": 33,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 179329,
+    "dDurationMs": 3761,
+    "segs": [ {
+      "utf8": "Mr. President, no matter what people say about you, you still got a great golf swing."
+    } ],
+    "wpWinPosId": 34,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 183090,
+    "dDurationMs": 953,
+    "segs": [ {
+      "utf8": "God bless you."
+    } ],
+    "wpWinPosId": 35,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 184043,
+    "dDurationMs": 1049,
+    "segs": [ {
+      "utf8": "You do!"
+    } ],
+    "wpWinPosId": 8,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 185092,
+    "dDurationMs": 4416,
+    "segs": [ {
+      "utf8": "You have a fantastic mustache. I bet programer of Saddam look at you and get envious."
+    } ],
+    "wpWinPosId": 34,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 189523,
+    "dDurationMs": 1395,
+    "segs": [ {
+      "utf8": "I'm not kidding."
+    } ],
+    "wpWinPosId": 25,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 190979,
+    "dDurationMs": 1084,
+    "segs": [ {
+      "utf8": "Thank you."
+    } ],
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 192063,
+    "dDurationMs": 2675,
+    "segs": [ {
+      "utf8": "You're welcome!"
+    } ],
+    "wpWinPosId": 20,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 205094,
+    "dDurationMs": 5646,
+    "segs": [ {
+      "utf8": "Hugh Newman, a man who's changing the world with free parking and free compliments."
+    } ],
+    "wpWinPosId": 36,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 214039,
+    "dDurationMs": 2311,
+    "segs": [ {
+      "utf8": "Your licence is expired sir."
+    } ],
+    "wpWinPosId": 2,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 217062,
+    "dDurationMs": 4735,
+    "segs": [ {
+      "utf8": "That is why you're great at what you do. You are so thorough."
+    } ],
+    "wpWinPosId": 33,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 222483,
+    "dDurationMs": 2848,
+    "segs": [ {
+      "utf8": "Really? Do you think so?"
+    } ],
+    "wpWinPosId": 37,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 225478,
+    "dDurationMs": 1973,
+    "segs": [ {
+      "utf8": "Hugh, what is your secret?"
+    } ],
+    "wpWinPosId": 3,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 227528,
+    "dDurationMs": 2033,
+    "segs": [ {
+      "utf8": "I just love to see people smile!"
+    } ],
+    "wpWinPosId": 29,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 229776,
+    "dDurationMs": 3646,
+    "segs": [ {
+      "utf8": "So you going to do what you gotta do. I'm not going to kidding you."
+    } ],
+    "wpWinPosId": 38,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 233684,
+    "dDurationMs": 4182,
+    "segs": [ {
+      "utf8": "Smile smile smile\nOh Lordy, smile, smile... smile!"
+    } ],
+    "wpWinPosId": 39,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 238190,
+    "dDurationMs": 3351,
+    "segs": [ {
+      "utf8": "It seems there is no one Hugh Newman cannot make smile."
+    } ],
+    "wpWinPosId": 15,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 241695,
+    "dDurationMs": 1392,
+    "segs": [ {
+      "utf8": "Next!"
+    } ],
+    "wpWinPosId": 40,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 271139,
+    "dDurationMs": 5429,
+    "segs": [ {
+      "utf8": "No one smiles in their driver's license photo, sir. It's not allowed."
+    } ],
+    "wpWinPosId": 18,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 279016,
+    "dDurationMs": 1800,
+    "segs": [ {
+      "utf8": "Next!"
+    } ],
+    "wpWinPosId": 40,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 282036,
+    "dDurationMs": 5942,
+    "segs": [ {
+      "utf8": "You are amazing. You are so efficient. Next!"
+    } ],
+    "wpWinPosId": 41,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 288882,
+    "dDurationMs": 5561,
+    "segs": [ {
+      "utf8": "Victoria? Oh, that's a beautiful name. Next!"
+    } ],
+    "wpWinPosId": 41,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 296320,
+    "dDurationMs": 5363,
+    "segs": [ {
+      "utf8": "You take such a good care of your equipment. Oh, they're lucky to have you. We're closed,sir."
+    } ],
+    "wpWinPosId": 42,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 301899,
+    "dDurationMs": 12352,
+    "segs": [ {
+      "utf8": "Victoria? I just wanna see your smile.\nGoodnight, sir."
+    } ],
+    "wpWinPosId": 43,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 315020,
+    "dDurationMs": 6123,
+    "segs": [ {
+      "utf8": "Where do I go for...\nWe don't validate, sir."
+    } ],
+    "wpWinPosId": 44,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 326606,
+    "dDurationMs": 3038,
+    "segs": [ {
+      "utf8": "WAIT HERE FOR PHOTO"
+    } ],
+    "wpWinPosId": 45,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 330290,
+    "dDurationMs": 6640,
+    "segs": [ {
+      "utf8": "Next!\nThey match your eyes, sort of..."
+    } ],
+    "wpWinPosId": 39,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 337038,
+    "dDurationMs": 3930,
+    "segs": [ {
+      "utf8": "Oh, you have the most beautiful eyes that I have ever seen. Next!"
+    } ],
+    "wpWinPosId": 28,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 341407,
+    "dDurationMs": 5377,
+    "segs": [ {
+      "utf8": "You eat healthy too. So you take good care of yourself. That's awesome."
+    } ],
+    "wpWinPosId": 46,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 347015,
+    "dDurationMs": 4162,
+    "segs": [ {
+      "utf8": "You're also a great pet owner. You given a full hours of walk."
+    } ],
+    "wpWinPosId": 47,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 351254,
+    "dDurationMs": 4989,
+    "segs": [ {
+      "utf8": "Most people wouldn't take the time of it. But you care! Oh, only you care."
+    } ],
+    "wpWinPosId": 26,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 358861,
+    "dDurationMs": 7549,
+    "segs": [ {
+      "utf8": "Have you ever smiled? Yes. When? When I was a little girl."
+    } ],
+    "wpWinPosId": 48,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 366410,
+    "dDurationMs": 7036,
+    "segs": [ {
+      "utf8": "Oh, I bet you have a beautiful smile. What happened to it?"
+    } ],
+    "wpWinPosId": 48,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 373446,
+    "dDurationMs": 9370,
+    "segs": [ {
+      "utf8": "Next! Look like anyone you know? Next! There's colour and black and white. Next!"
+    } ],
+    "wpWinPosId": 49,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 399007,
+    "dDurationMs": 12000,
+    "segs": [ {
+      "utf8": "Next! I just wanted to see your smile. I'm sorry. Next!"
+    } ],
+    "wpWinPosId": 15,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 411720,
+    "dDurationMs": 4918,
+    "segs": [ {
+      "utf8": "I'm here to get validated, please!"
+    } ],
+    "wpWinPosId": 50,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 417038,
+    "dDurationMs": 8466,
+    "segs": [ {
+      "utf8": "You're...okay, I guess. Okay? Did you say okay?"
+    } ],
+    "wpWinPosId": 51,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 425642,
+    "dDurationMs": 10209,
+    "segs": [ {
+      "utf8": "Yeah, you're fine. Don't you have anything else to say? What's the point..."
+    } ],
+    "wpWinPosId": 32,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 463054,
+    "dDurationMs": 5998,
+    "segs": [ {
+      "utf8": "Hey, excuse me,excuse me... could you take our picture?"
+    } ],
+    "wpWinPosId": 15,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 470964,
+    "dDurationMs": 4069,
+    "segs": [ {
+      "utf8": "Thanks, we really appreciated it. It's our first time here!"
+    } ],
+    "wpWinPosId": 10,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 477074,
+    "dDurationMs": 3947,
+    "segs": [ {
+      "utf8": "Smile. ..."
+    } ],
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 481021,
+    "dDurationMs": 2387,
+    "segs": [ {
+      "utf8": "It's not a real smile."
+    } ],
+    "wpWinPosId": 52,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 484068,
+    "dDurationMs": 1980,
+    "segs": [ {
+      "utf8": "Do you guys love each other?"
+    } ],
+    "wpWinPosId": 2,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 486048,
+    "dDurationMs": 5954,
+    "segs": [ {
+      "utf8": "You're on vacation travelling the world? Yeah, that's great!"
+    } ],
+    "wpWinPosId": 23,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 492002,
+    "dDurationMs": 3094,
+    "segs": [ {
+      "utf8": "Wish I could travel the world with the woman I love."
+    } ],
+    "wpWinPosId": 53,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 495096,
+    "dDurationMs": 8941,
+    "segs": [ {
+      "utf8": "Wish I could have someone take our picture. I'd really smile. You guys have every reasons to smile."
+    } ],
+    "wpWinPosId": 54,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 504037,
+    "dDurationMs": 11966,
+    "segs": [ {
+      "utf8": "You're gorgeous! You're in the time of your lifes! And you guys ...are great!"
+    } ],
+    "wpWinPosId": 31,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 516003,
+    "dDurationMs": 3256,
+    "segs": [ {
+      "utf8": "Hold it right there."
+    } ],
+    "wpWinPosId": 12,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 519259,
+    "dDurationMs": 1804,
+    "segs": [ {
+      "utf8": "Now that is a smile."
+    } ],
+    "wpWinPosId": 12,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 521063,
+    "dDurationMs": 4286,
+    "segs": [ {
+      "utf8": "And one more, one more right there! Oh, that's excellent! One more,one more!"
+    } ],
+    "wpWinPosId": 55,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 525349,
+    "dDurationMs": 2937,
+    "segs": [ {
+      "utf8": "Beautiful, beautiful! You're looking each other?"
+    } ],
+    "wpWinPosId": 30,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 528286,
+    "dDurationMs": 4286,
+    "segs": [ {
+      "utf8": "Oh fantastic! What do you love most about your life?"
+    } ],
+    "wpWinPosId": 53,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 532572,
+    "dDurationMs": 4148,
+    "segs": [ {
+      "utf8": "Um, she accepts me, despite knowing."
+    } ],
+    "wpWinPosId": 9,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 537043,
+    "dDurationMs": 3030,
+    "segs": [ {
+      "utf8": "Where did you meet? On jury duty."
+    } ],
+    "wpWinPosId": 17,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 540073,
+    "dDurationMs": 4678,
+    "segs": [ {
+      "utf8": "Oh, served your country met the love of your lives. You guys are awesome!"
+    } ],
+    "wpWinPosId": 56,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 545074,
+    "dDurationMs": 3992,
+    "segs": [ {
+      "utf8": "Beautiful, beautiful, nice meeting you. Thank you so much. Okay, bye!"
+    } ],
+    "wpWinPosId": 18,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 549066,
+    "dDurationMs": 4875,
+    "segs": [ {
+      "utf8": "Excuse me? You get the most sincere smiles at the people that I've ever see."
+    } ],
+    "wpWinPosId": 55,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 553941,
+    "dDurationMs": 4709,
+    "segs": [ {
+      "utf8": "You wanna get extra money, shooting stuff like this?"
+    } ],
+    "wpWinPosId": 53,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 560841,
+    "dDurationMs": 4994,
+    "segs": [ {
+      "utf8": "Pardon me folks, sorry to interrupt. You're beautiful couples."
+    } ],
+    "wpWinPosId": 47,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 566050,
+    "dDurationMs": 5641,
+    "segs": [ {
+      "utf8": "You're modles? No. Would you like to be?"
+    } ],
+    "wpWinPosId": 57,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 571768,
+    "dDurationMs": 4116,
+    "segs": [ {
+      "utf8": "You have two the most beautiful eyes that I've ever seen. Excuse me?"
+    } ],
+    "wpWinPosId": 58,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 575946,
+    "dDurationMs": 2210,
+    "segs": [ {
+      "utf8": "Your eyes! They're gorgeous. You're gorgeous!"
+    } ],
+    "wpWinPosId": 59,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 578232,
+    "dDurationMs": 5800,
+    "segs": [ {
+      "utf8": "And your dress matches your eyes. It's perfect! May I...?"
+    } ],
+    "wpWinPosId": 60,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 584555,
+    "dDurationMs": 6476,
+    "segs": [ {
+      "utf8": "Okey. What do you love most in all the world? My daughter. She has the most wonderful smiles."
+    } ],
+    "wpWinPosId": 42,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 615958,
+    "dDurationMs": 2948,
+    "segs": [ {
+      "utf8": "Hello, I need three-ten cleaning. Hugh Newman."
+    } ],
+    "wpWinPosId": 11,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 619060,
+    "dDurationMs": 6013,
+    "segs": [ {
+      "utf8": "Hello dear, could you just put your driver's licence onto your wee deck? Sure."
+    } ],
+    "wpWinPosId": 61,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 625073,
+    "dDurationMs": 2011,
+    "segs": [ {
+      "utf8": "Hey! - Hey, man. -"
+    } ],
+    "wpWinPosId": 62,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 639071,
+    "dDurationMs": 6972,
+    "segs": [ {
+      "utf8": "How did you... You're smiling... but she.. did you...?"
+    } ],
+    "wpWinPosId": 63,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 659028,
+    "dDurationMs": 4025,
+    "segs": [ {
+      "utf8": "Excuse me, sir, where is Victoria?"
+    } ],
+    "wpWinPosId": 50,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 663053,
+    "dDurationMs": 6271,
+    "segs": [ {
+      "utf8": "She dosen't work here. She was fired. Fired? Why?"
+    } ],
+    "wpWinPosId": 24,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 670050,
+    "dDurationMs": 1592,
+    "segs": [ {
+      "utf8": "She was smiling..."
+    } ],
+    "wpWinPosId": 62,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 675442,
+    "dDurationMs": 3922,
+    "segs": [ {
+      "utf8": "Look at that. She did these. Look at that, they're all smiling. Look at that,"
+    } ],
+    "wpWinPosId": 31,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 679364,
+    "dDurationMs": 3196,
+    "segs": [ {
+      "utf8": "those picture sucks, with lots of smile"
+    } ],
+    "wpWinPosId": 64,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 682560,
+    "dDurationMs": 3000,
+    "segs": [ {
+      "utf8": "Do you heard of that. They are sucks."
+    } ],
+    "wpWinPosId": 16,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 685560,
+    "dDurationMs": 1192,
+    "segs": [ {
+      "utf8": "Where is she?"
+    } ],
+    "wpWinPosId": 65,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 725787,
+    "dDurationMs": 1700,
+    "segs": [ {
+      "utf8": "PASSPORT PHOTO"
+    } ],
+    "wpWinPosId": 35,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 727579,
+    "dDurationMs": 3489,
+    "segs": [ {
+      "utf8": "You are awesome. You are gonna have so much fun on this trip..."
+    } ],
+    "wpWinPosId": 66,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 731068,
+    "dDurationMs": 2812,
+    "segs": [ {
+      "utf8": "The stories you're gonna tell people then you get back will be amazing."
+    } ],
+    "wpWinPosId": 46,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 733911,
+    "dDurationMs": 3098,
+    "segs": [ {
+      "utf8": "I can't wait. I've always wanted to see Paris."
+    } ],
+    "wpWinPosId": 11,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 761027,
+    "dDurationMs": 6497,
+    "segs": [ {
+      "utf8": "I don't understand...I tried everything. What happened?"
+    } ],
+    "wpWinPosId": 15,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 768078,
+    "dDurationMs": 5743,
+    "segs": [ {
+      "utf8": "When I was a little girl, my mother got very sick, and she stayed that way."
+    } ],
+    "wpWinPosId": 32,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 774083,
+    "dDurationMs": 5763,
+    "segs": [ {
+      "utf8": "And over the years she just got so sad that she forgot how to smile"
+    } ],
+    "wpWinPosId": 38,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 780081,
+    "dDurationMs": 8829,
+    "segs": [ {
+      "utf8": "And seeing her like that, I couldn't smile either. And I didn't for years."
+    } ],
+    "wpWinPosId": 26,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 791001,
+    "dDurationMs": 7775,
+    "segs": [ {
+      "utf8": "But the one day, a young man came up to her, and told her how beautiful she was."
+    } ],
+    "wpWinPosId": 49,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 799068,
+    "dDurationMs": 7245,
+    "segs": [ {
+      "utf8": "So beautiful that he wanted to take her picture. He made her smile."
+    } ],
+    "wpWinPosId": 38,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 806405,
+    "dDurationMs": 5337,
+    "segs": [ {
+      "utf8": "And suddenly after all those years, she got better."
+    } ],
+    "wpWinPosId": 67,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 824018,
+    "dDurationMs": 5081,
+    "segs": [ {
+      "utf8": "I knew it was you. I looked everywhere for you, but I couldn't find you anywhere."
+    } ],
+    "wpWinPosId": 68,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 829099,
+    "dDurationMs": 7988,
+    "segs": [ {
+      "utf8": "I went to every garage in town, I payed every fee they had, but I could't find you."
+    } ],
+    "wpWinPosId": 36,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 837087,
+    "dDurationMs": 15393,
+    "segs": [ {
+      "utf8": "You paid for parking? For me? Yes. Because you are great. You, are amazing."
+    } ],
+    "wpWinPosId": 32,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 854033,
+    "dDurationMs": 3974,
+    "segs": [ {
+      "utf8": "No one has ever says that about me before."
+    } ],
+    "wpWinPosId": 69,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 883131,
+    "dDurationMs": 1948,
+    "segs": [ {
+      "utf8": "VALIDATION"
+    } ],
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 885734,
+    "dDurationMs": 2092,
+    "segs": [ {
+      "utf8": "THE END"
+    } ],
+    "wpWinPosId": 8,
+    "wsWinStyleId": 1
+  } ]
+}
