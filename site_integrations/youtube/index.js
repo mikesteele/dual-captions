@@ -1,5 +1,5 @@
 const YouTubeAdapter = require('./adapter');
-const YouTubeParser = require('./parser');
+const YouTubeJSONParser = require('./parsers/JSONParser');
 
 const YouTubeIntegration = {
   siteId: 'youtube',
@@ -11,7 +11,7 @@ const YouTubeIntegration = {
     const videoId = url.searchParams.get('v');
     return videoId ? videoId : null;
   },
-  parser: YouTubeParser,
+  parser: YouTubeJSONParser,
   adapter: YouTubeAdapter
 }
 

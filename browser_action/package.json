@@ -1,6 +1,6 @@
 {
   "name": "dual-captions-browser-action",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "private": true,
   "dependencies": {
     "chai": "^4.1.2",
