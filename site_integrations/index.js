@@ -4,6 +4,7 @@ const DevelopmentIntegration = require('./development');
 const KanopyIntegration = require('./kanopy');
 const SrtParser = require('./shared/srt-parser');
 const SrtEncoder = require('./shared/srt-encoder');
+const processSrtFile = require('./shared/process-srt-file');
 
 module.exports = {
   integrations: [
@@ -17,5 +18,8 @@ module.exports = {
   },
   parsers: {
     SrtParser
+  },
+  helpers: {
+    processSrtFile
   }
 };

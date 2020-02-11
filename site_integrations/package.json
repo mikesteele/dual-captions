@@ -24,6 +24,8 @@
   },
   "dependencies": {
     "@babel/register": "^7.0.0",
+    "iconv-lite": "^0.5.1",
+    "jschardet": "^2.1.1",
     "lodash": "^4.17.15"
   }
 }
