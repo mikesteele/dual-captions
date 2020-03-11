@@ -21,7 +21,7 @@ const YouTubeAdapter = () => {
     playerCurrentTime = video.currentTime;
   }
 
-  const moveCaptionWindowSelector = '.caption-window';
+  const moveCaptionWindowSelectors = ['.caption-window', '.ytp-caption-window-bottom'];
 
   return {
     canRenderInCaptionWindow: false,
@@ -44,7 +44,7 @@ const YouTubeAdapter = () => {
     captionText: captionText,
     playerControls: playerControls,
     playerCurrentTime: playerCurrentTime,
-    moveCaptionWindowSelector: moveCaptionWindowSelector
+    moveCaptionWindowSelectors: moveCaptionWindowSelectors
   };
 };
 

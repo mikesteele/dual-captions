@@ -79,6 +79,8 @@ const NetflixAdapter = () => {
     left: '16px'
   };
 
+  const moveCaptionWindowSelectors = ['.image-based-timed-text image', '.player-timedtext-text-container'];
+
   return {
     actionPanelFixedPosition,
     canRenderInCaptionWindow,
@@ -90,6 +92,7 @@ const NetflixAdapter = () => {
     defaultCaptionStyle,
     fullscreenRoot,
     getCaptionBlob,
+    moveCaptionWindowSelectors,
     playerControls,
     playerCurrentTime,
     smallTextSize,
