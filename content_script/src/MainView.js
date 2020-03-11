@@ -3,6 +3,7 @@ import Captions from './Captions';
 import Actions from './Actions';
 import ViewBookmarksModal from './ViewBookmarksModal';
 import SettingsModal from './SettingsModal';
+import MoveCaptionWindowStyles from './MoveCaptionWindowStyles';
 
 class MainView extends React.Component {
   constructor(props) {
@@ -65,6 +66,7 @@ class MainView extends React.Component {
 
     return (
       <Fragment>
+        <MoveCaptionWindowStyles adapter={adapter} />
         <Captions
           adapter={adapter}
           currentCaptionToRender={currentCaptionToRender}
