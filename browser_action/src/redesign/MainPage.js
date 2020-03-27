@@ -114,7 +114,7 @@ class MainPage extends React.Component {
           </button>
         </Dialog>
         <List
-          renderHeader={() => 'Main'}
+          renderHeader={() => 'Dual Captions v2.3.4'}
           extra=" "
           >
           <List.Item
@@ -147,6 +147,27 @@ class MainPage extends React.Component {
               disabled={false}
             >
               <List.Item arrow="horizontal">Second Subtitle Language</List.Item>
+            </Picker>
+            <Picker
+              data={[0, 0, 0]}
+              onOk={e => {
+                this.setState({
+                  isLanguagePickerOpen: false,
+                })
+              }}
+              onDismiss={() => {
+                this.setState({
+                  isLanguagePickerOpen: false,
+                })
+              }}
+              okText="Ok"
+              value={[0, 0, 0]}
+              extra="🇺🇸"
+              dismissText="Dismiss"
+              title="UI Lang"
+              disabled={false}
+            >
+              <List.Item arrow="horizontal">UI Language</List.Item>
             </Picker>
           </div>
         </List>

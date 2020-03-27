@@ -18,8 +18,8 @@ import { determineState, popupOpened, detectSite, checkLoadedLanguages, changeUI
 
 
 // Redesign
-//
 import MainPage from './redesign/MainPage';
+import Footer from './redesign/Footer';
 
 const mapStateToProps = function(state) {
   return {...state};
@@ -72,6 +72,7 @@ class App extends Component {
     return (
       <div className='App'>
         <MainPage />
+        <Footer />
       </div>
     );
   }
