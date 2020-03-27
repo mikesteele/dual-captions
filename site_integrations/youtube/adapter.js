@@ -22,6 +22,7 @@ const YouTubeAdapter = () => {
   }
 
   const moveCaptionWindowSelectors = ['.caption-window', '.ytp-caption-window-bottom'];
+  const moveCaptionWindowRelative = true;
 
   return {
     canRenderInCaptionWindow: false,
@@ -44,6 +45,7 @@ const YouTubeAdapter = () => {
     captionText: captionText,
     playerControls: playerControls,
     playerCurrentTime: playerCurrentTime,
+    moveCaptionWindowRelative: moveCaptionWindowRelative,
     moveCaptionWindowSelectors: moveCaptionWindowSelectors
   };
 };

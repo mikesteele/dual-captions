@@ -23,10 +23,17 @@ const KanopyAdapter = () => {
     };
   }
 
+  const moveCaptionWindowSelectors = ['.vjs-text-track-display > div > div > div'];
+  const moveCaptionWindowAdditionalRules = ['display: inline-block !important;'];
+  const moveCaptionWindowRelative = true;
+
   return {
     captionStyle,
     captionWindow,
     fullscreenRoot,
+    moveCaptionWindowAdditionalRules,
+    moveCaptionWindowRelative,
+    moveCaptionWindowSelectors,
     playerControls,
     playerCurrentTime,
     smallTextSize,

@@ -2,13 +2,21 @@ import React from 'react';
 
 const MoveCaptionWindowStyles = props => {
   const { adapter } = props;
+  let additionalRules = '';
+  let transformAmount = '-80px';
+  if (adapter && adapter.moveCaptionWindowRelative) {
+    transformAmount = '-120%';
+  }
+  if (adapter && adapter.moveCaptionWindowAdditionalRules) {
+    additionalRules = adapter.moveCaptionWindowAdditionalRules.join('');
+  }
   if (adapter && adapter.moveCaptionWindowSelectors) {
     let styles = '';
-    console.log(adapter.moveCaptionWindowSelectors)
     adapter.moveCaptionWindowSelectors.forEach(selector => {
       const style = `
         ${selector} {
-          transform: translateY(-80px);
+          transform: translateY(${transformAmount});
+          ${additionalRules}
         }
       `;
       styles = styles + style;

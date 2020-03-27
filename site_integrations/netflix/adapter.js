@@ -80,6 +80,8 @@ const NetflixAdapter = () => {
   };
 
   const moveCaptionWindowSelectors = ['.image-based-timed-text image', '.player-timedtext-text-container'];
+  // On Netflix, the image subtitle element is as big as the screen, so it needs to be moved by a pixel amount.
+  const moveCaptionWindowRelative = isRenderingImageSubtitles ? false : true;
 
   return {
     actionPanelFixedPosition,
@@ -92,6 +94,7 @@ const NetflixAdapter = () => {
     defaultCaptionStyle,
     fullscreenRoot,
     getCaptionBlob,
+    moveCaptionWindowRelative,
     moveCaptionWindowSelectors,
     playerControls,
     playerCurrentTime,
