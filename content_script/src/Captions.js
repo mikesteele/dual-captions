@@ -136,6 +136,23 @@ class Captions extends React.Component {
           }
         </Popper>
       );
+    } else if (adapter.captionWindowFixedPosition) {
+      /**
+       *  The Disney+ adapter uses a fixed position for its caption window.
+       *  This is because the host captions are rendered via <video> textTracks
+       *  and they don't move.
+       */
+      return shouldRenderCaptionWindow ? (
+        <div className='dc-popper' style={adapter.captionWindowFixedPosition}>
+          <div {...captionWindowProps}>
+            <div {...captionProps}>
+              { captionToRender }
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div/>
+      );
     } else if (this.previousPosition) {
       /**
        *  If the caption window isn't in the DOM, but we have a caption to render,
