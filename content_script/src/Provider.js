@@ -1,6 +1,7 @@
 import React from 'react';
 import { iso639_3to1 } from './utils/i18n';
 import _get from 'lodash/get';
+import { getIntegrationForSite } from './utils/integrations';
 const franc = require('franc');
 const SrtEncoder = require('dual-captions-site-integrations').encoders.SrtEncoder;
 
@@ -27,6 +28,7 @@ class Provider extends React.Component {
     this.guessLanguageOfCaptions = this.guessLanguageOfCaptions.bind(this);
     this.getLoadedLanguages = this.getLoadedLanguages.bind(this);
     this.getCaptionToRender = this.getCaptionToRender.bind(this);
+    this.maybeProcessCaptions = this.maybeProcessCaptions.bind(this);
   }
 
   componentDidMount() {
@@ -152,6 +154,30 @@ class Provider extends React.Component {
     });
   }
 
+  maybeProcessCaptions(result) {
+    const { site, videoId } = this.props;
+    const { language } = result;
+    let captions = result.captions;
+    const integration = getIntegrationForSite(site);
+    if (integration && integration.captionProcessor) {
+      /**
+       *  This processing step is for Disney+, where
+       *  captions are sent in chunks.
+       *
+       *  Its captionProcessor joins a chunk into
+       *  the pre-existing captions.
+       */
+      const existingCaptions = _get(this.state, `captions.${site}.${videoId}.${language}`) || [];
+      // TODO - Will this ^ ever be out of date due to asynchronous nature of setState?
+      // Perhaps a case for stateful Integration.captionProcessor...
+      captions = integration.captionProcessor(existingCaptions, captions);
+    }
+    return Promise.resolve({
+      captions,
+      language
+    });
+  }
+
   onMessage(message, sender, sendResponse) {
     if (!message.type) return;
     switch (message.type) {
@@ -160,6 +186,7 @@ class Provider extends React.Component {
       this.fetchUrl(message.payload)
         .then(captionFile => this.props.parser.parse(captionFile, this.props.site))
         .then(this.guessLanguageOfCaptions)
+        .then(this.maybeProcessCaptions)
         .then(result => {
           const {captions, language} = result;
           return this.loadCaptions(captions, language);

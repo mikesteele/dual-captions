@@ -1,5 +1,6 @@
 const DisneyPlusParser = require('./parser');
 const DisneyPlusAdapter = require('./adapter');
+const DisneyPlusCaptionProcessor = require('./caption-processor');
 
 const DisneyPlusIntegration = {
   siteId: 'disneyplus',
@@ -17,7 +18,8 @@ const DisneyPlusIntegration = {
   injectPattern: 'https://www.disneyplus.com/*',
   captionRequestPattern: 'https://*.dssott.com/*/disney/*/seg_*.vtt',
   parser: DisneyPlusParser,
-  adapter: DisneyPlusAdapter
+  adapter: DisneyPlusAdapter,
+  captionProcessor: DisneyPlusCaptionProcessor
 }
 
 module.exports = DisneyPlusIntegration;

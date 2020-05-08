@@ -8,9 +8,10 @@ const DisneyPlusAdapter = () => {
    */
   const captionWindow = null;
   const captionWindowFixedPosition = {
-    bottom: 100,
+    bottom: 20,
     left: 0,
-    position: 'fixed'
+    position: 'fixed',
+    width: '100%'
   }
   const captionWindowStyle = {
     width: '100%',
@@ -42,8 +43,7 @@ const DisneyPlusAdapter = () => {
     captionWindowFixedPosition,
     captionWindowStyle,
     playerCurrentTime,
-    video,
-    providerInDebugMode: true
+    video
   };
 };
 
