@@ -1,9 +1,14 @@
-const chunk = require('lodash/chunk');
 const timeStringToSeconds = require('../shared/web-vtt-parser/utils').timeStringToSeconds;
+
+// Ex. "<i>Hey!</i>" => "Hey!"
+const stripOutHTML = (str) => {
+  const el = document.createElement('div');
+  el.innerHTML = str;
+  return el.textContent;
+}
 
 const DisneyPlusParser = (captionFile) => {
   return new Promise((resolve, reject) => {
-    // Remove any extra lines, while making sure the last chunk has a new line
     const fixedFile = `${captionFile.trim()}\n`;
     const lines = fixedFile.split('\n');
     if (!lines[0].includes('WEBVTT')) {
@@ -36,7 +41,7 @@ const DisneyPlusParser = (captionFile) => {
           reject(`DisneyPlusParser - Couldn't parse times`);
         }
       } else if (currentLine.trim() !== '') {
-        currentText.push(currentLine);
+        currentText.push(stripOutHTML(currentLine));
       } else if (currentLine.trim() === '') {
         if (currentText.length > 0 &&
             currentEndTime !== null &&
