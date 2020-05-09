@@ -3,6 +3,7 @@ const KanopyAdapter = () => {
   const fullscreenRoot = document.getElementById('player');
   const captionWindow = document.querySelector('.vjs-text-track-display > div > div > div');
   const video = document.querySelector('video');
+  const captionText = captionWindow ? captionWindow.textContent : '';
 
 
   const isFullscreen = document.fullscreenElement && fullscreenRoot && document.fullscreenElement === fullscreenRoot;
@@ -28,6 +29,7 @@ const KanopyAdapter = () => {
   const moveCaptionWindowRelative = true;
 
   return {
+    captionText,
     captionStyle,
     captionWindow,
     fullscreenRoot,
