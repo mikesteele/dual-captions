@@ -1,4 +1,6 @@
-const YouTubeParser = (captionFile) => {
+// Became legacy on 2/9/20 (I think?)
+
+const YouTubeLegacyXMLParser = (captionFile) => {
   return new Promise((resolve, reject) => {
     let captions = [];
     const domParser = new DOMParser();
@@ -51,4 +53,4 @@ const YouTubeParser = (captionFile) => {
   });
 }
 
-module.exports = YouTubeParser;
+module.exports = YouTubeLegacyXMLParser;
