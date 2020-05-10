@@ -11,7 +11,8 @@ const DisneyPlusAdapter = () => {
     bottom: 20,
     left: 0,
     position: 'fixed',
-    width: '100%'
+    width: '100%',
+    background: 'black'
   }
   const captionWindowStyle = {
     width: '100%',
@@ -36,12 +37,15 @@ const DisneyPlusAdapter = () => {
     left: '16px'
   };
 
+  const fullscreenRoot = document.getElementById('app_body_content');
+
   return {
     actionPanelFixedPosition,
     captionText,
     captionWindow,
     captionWindowFixedPosition,
     captionWindowStyle,
+    fullscreenRoot,
     playerCurrentTime,
     video
   };
