@@ -1,3 +1,4 @@
+const franc = require('franc');
 const Integrations = require('dual-captions-site-integrations').integrations;
 
 class BackgroundPage {
@@ -29,7 +30,7 @@ class BackgroundPage {
           onBeforeRequest, {
             urls: [integration.captionRequestPattern]
           }
-        );  
+        );
       }
     });
 
@@ -64,6 +65,12 @@ class BackgroundPage {
         this.sendPendingMessages(sender.tab.id);
         sendResponse({ ok: true });
       }
+      break;
+
+      case 'detect-language':
+      console.log(`Detecting ${message.payload}`);
+      const result = franc(message.payload);
+      sendResponse(result);
       break;
     }
   }

@@ -3,7 +3,6 @@
   "version": "2.4.4",
   "private": true,
   "dependencies": {
-    "franc": "^4.1.0",
     "lodash.throttle": "^4.1.1",
     "popper.js": "^1.14.6",
     "react": "^16.6.3",

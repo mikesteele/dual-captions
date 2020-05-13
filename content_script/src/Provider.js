@@ -1,7 +1,7 @@
 import React from 'react';
 import { iso639_3to1 } from './utils/i18n';
 import _get from 'lodash/get';
-const franc = require('franc');
+
 const SrtEncoder = require('dual-captions-site-integrations').encoders.SrtEncoder;
 
 // From https://stackoverflow.com/questions/3665115/how-to-create-a-file-in-memory-for-user-to-download-but-not-through-server
@@ -110,17 +110,21 @@ class Provider extends React.Component {
 
   guessLanguage(text) {
     return new Promise((resolve, reject) => {
-      const result = franc(text);
-      if (result) {
-        const isoCode = iso639_3to1[result];
-        if (isoCode) {
-          resolve(isoCode);
+      global.chrome.runtime.sendMessage({
+        type: 'detect-language',
+        payload: text
+      }, result => {
+        if (result) {
+          const isoCode = iso639_3to1[result];
+          if (isoCode) {
+            resolve(isoCode);
+          } else {
+            reject(`Could not convert franc result. Result: ${result}`);
+          }
         } else {
-          reject(`Could not convert franc result. Result: ${result}`);
+          reject(`Could not detect language. Text: ${text}`);
         }
-      } else {
-        reject(`Could not detect language. Text: ${text}`);
-      }
+      });
     });
   }
 
