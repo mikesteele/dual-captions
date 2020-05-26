@@ -16,7 +16,8 @@ class StickyPopper extends React.Component {
   render() {
     const {
       children,
-      target
+      target,
+      noPointerEvents
     } = this.props;
     if (target) {
       return (
@@ -28,8 +29,9 @@ class StickyPopper extends React.Component {
         </WithPopper>
       );
     } else if (this.previousPosition) {
+      const className = noPointerEvents ? 'dc-z-index dc-no-pointer-events' : 'dc-z-index';
       return (
-        <div className='dc-popper' style={this.previousPosition}>
+        <div className={className} style={this.previousPosition}>
           { children }
         </div>
       )
@@ -116,8 +118,10 @@ class WithPopper extends React.Component {
   }
 
   render() {
+    const { noPointerEvents } = this.props;
+    const className = noPointerEvents ? 'dc-z-index dc-no-pointer-events' : 'dc-z-index';
     return (
-      <div className='dc-popper' ref={(ref) => this.popperPosition = ref}>
+      <div className={className} ref={(ref) => this.popperPosition = ref}>
         {this.props.children}
       </div>
     );
@@ -127,7 +131,8 @@ class WithPopper extends React.Component {
 WithPopper.defaultProps = {
   placement: 'bottom',
   dontUpdate: false,
-  updateInfrequently: false
+  updateInfrequently: false,
+  noPointerEvents: false,
 }
 
 export { StickyPopper };

@@ -32,7 +32,7 @@ const YouTubeAdapter = () => {
       textAlign: 'center'
     },
     captionStyle: caption ? {
-      background: 'black',
+      background: caption.style.background,
       color: 'white',
       fontFamily: caption.style.fontFamily,
       fontSize: caption.style.fontSize,

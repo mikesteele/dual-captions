@@ -103,6 +103,7 @@ class Captions extends React.Component {
       ), captionWindow);
       const previousPosition = (
         <Popper
+          noPointerEvents
           target={captionWindow}
           onPositionChanged={this.onPopperPositionChanged}>
           <div {...captionWindowProps} style={{visibility: 'hidden'}}>
@@ -121,6 +122,7 @@ class Captions extends React.Component {
     } else if (captionWindow && !canRenderInCaptionWindow) {
       return (
         <Popper
+          noPointerEvents
           target={captionWindow}
           onPositionChanged={this.onPopperPositionChanged}>
           {
@@ -136,14 +138,30 @@ class Captions extends React.Component {
           }
         </Popper>
       );
+    } else if (adapter.captionWindowFixedPosition) {
+      /**
+       *  The Disney+ adapter uses a fixed position for its caption window.
+       *  This is because the host captions are rendered via <video> textTracks
+       *  and they don't move.
+       */
+      return shouldRenderCaptionWindow ? (
+        <div className='dc-popper' style={adapter.captionWindowFixedPosition}>
+          <div {...captionWindowProps}>
+            <div {...captionProps}>
+              { captionToRender }
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div/>
+      );
     } else if (this.previousPosition) {
       /**
        *  If the caption window isn't in the DOM, but we have a caption to render,
        *  we use the last known position of the second captions.
        */
-      // TODO - Write test to be sure classes passed by Popper (eg. 'dc-popper') are passed when using previous position
       return shouldRenderCaptionWindow ? (
-        <div className='dc-popper' style={this.previousPosition}>
+        <div className='dc-z-index dc-no-pointer-events' style={this.previousPosition}>
           <div {...captionWindowProps}>
             <div {...captionProps}>
               { captionToRender }
