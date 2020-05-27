@@ -10,6 +10,7 @@ yarn build
 yarn link
 
 # Build site_integrations
+cd ..
 cd site_integrations
 yarn
 yarn build
