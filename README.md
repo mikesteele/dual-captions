@@ -28,6 +28,9 @@ yarn test
 
 cd content_script
 yarn test
+
+cd site_integrations
+yarn test
 ```
 
 ### Thanks
