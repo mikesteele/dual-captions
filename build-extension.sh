@@ -3,6 +3,12 @@
 # Clean
 rm -rf build/
 
+# Build translations
+cd translations
+yarn
+yarn build
+yarn link
+
 # Build site_integrations
 cd site_integrations
 yarn
@@ -27,6 +33,7 @@ yarn build
 cd ..
 cd browser_action
 yarn link dual-captions-site-integrations
+yarn link dual-captions-translations
 yarn
 yarn build
 yarn link
