@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { translate } from 'react-i18next';
+import connectAndLocalize from '../connectAndLocalize';
 
 /**
 
@@ -41,4 +41,4 @@ class ErrorPage extends Component {
 }
 
 export { ErrorPage };
-export default translate()(ErrorPage);
+export default connectAndLocalize(ErrorPage);

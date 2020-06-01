@@ -1,6 +1,6 @@
 import React from 'react';
 import config from '../config';
-import { translate } from 'react-i18next';
+import connectAndLocalize from '../connectAndLocalize';
 import { sendMessageToActiveTab } from '../utils/chrome';
 
 const Link = props => (
@@ -43,4 +43,4 @@ const ToolsPage = props => {
   )
 }
 
-export default translate()(ToolsPage);
+export default connectAndLocalize(ToolsPage);

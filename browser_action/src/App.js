@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { connect } from 'react-redux';
-import { translate } from 'react-i18next';
+import connectAndLocalize from './connectAndLocalize';
 import packageJson from '../package.json';
 
 import './App.css';
@@ -20,11 +19,6 @@ import { determineState, popupOpened, detectSite, checkLoadedLanguages, changeUI
 const mapStateToProps = function(state) {
   return {...state};
 }
-
-const MainPageView = connect(mapStateToProps)(MainPage);
-const SettingsPageView = connect(mapStateToProps)(SettingsPage);
-const ErrorPageView = connect(mapStateToProps)(ErrorPage);
-const ToolsPageView = connect(mapStateToProps)(ToolsPage);
 
 class App extends Component {
   componentDidMount() {
@@ -68,18 +62,18 @@ class App extends Component {
             )}
           </TabList>
           <TabPanel>
-            <MainPageView/>
+            <MainPage/>
           </TabPanel>
           <TabPanel>
-            <SettingsPageView/>
+            <SettingsPage/>
           </TabPanel>
           {showToolsPage && (
             <TabPanel>
-              <ToolsPageView/>
+              <ToolsPage/>
             </TabPanel>
           )}
         </Tabs>
-        <ErrorPageView/>
+        <ErrorPage/>
         <div>
           <br/>
           <b>{t('v2-welcome')}{packageJson.version}</b>
@@ -127,4 +121,4 @@ class App extends Component {
   }
 }
 
-export default translate()(connect(mapStateToProps)(App));
+export default connectAndLocalize(App);

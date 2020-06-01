@@ -4,7 +4,7 @@ import { changeDCLanguage, turnDCOff, turnDCOn } from '../actions';
 import config from '../config';
 import Hint from './Hint.jsx';
 import Step from './Step.jsx';
-import { translate } from 'react-i18next';
+import connectAndLocalize from '../connectAndLocalize';
 
 class MainPage extends Component {
   _onToggleChanged(e) {
@@ -80,4 +80,4 @@ class MainPage extends Component {
 }
 
 export { MainPage };
-export default translate()(MainPage);
+export default connectAndLocalize(MainPage);

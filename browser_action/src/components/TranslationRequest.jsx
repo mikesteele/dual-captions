@@ -1,5 +1,5 @@
 import React from 'react';
-import { translate } from 'react-i18next';
+import connectAndLocalize from '../connectAndLocalize';
 import { sendMessageToActiveTab } from '../utils/chrome';
 import config from '../config';
 
@@ -135,4 +135,4 @@ class TranslationQueue extends React.Component {
 }
 
 export { TranslationQueue };
-export default translate()(TranslationQueue);
+export default connectAndLocalize(TranslationQueue);

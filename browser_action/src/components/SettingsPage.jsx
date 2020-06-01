@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import config from '../config';
 import { applyDCSettings } from '../actions';
-import { translate } from 'react-i18next';
+import connectAndLocalize from '../connectAndLocalize';
 
 class SettingsPage extends Component {
   _onSettingChecked(setting, e) {
@@ -74,4 +74,4 @@ class SettingsPage extends Component {
 }
 
 export { SettingsPage };
-export default translate()(SettingsPage);
+export default connectAndLocalize(SettingsPage);

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-const translate = require('dual-captions-translations').translate;
+import connectAndLocalize from '../connectAndLocalize';
 
 class Header extends Component {
   render() {
-    const t = key => translate(this.props.uiLanguage, key);
+    const { t } = this.props;
     return (
       <div>
         <div className='header'>
@@ -18,4 +17,4 @@ class Header extends Component {
   }
 };
 
-export default connect(state => ({...state}))(Header);
+export default connectAndLocalize(Header);
