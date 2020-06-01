@@ -37,12 +37,11 @@ yarn link dual-captions-site-integrations
 yarn link dual-captions-translations
 yarn
 yarn build
-yarn link
 
 # Build content_script
 cd ..
 cd content_script
-yarn link dual-captions-browser-action
+yarn link dual-captions-translations
 yarn link dual-captions-site-integrations
 yarn
 yarn build
