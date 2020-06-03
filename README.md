@@ -17,7 +17,7 @@ Why not?
 
 * It is fragile to inject code into the host site bundle.
 * It is fragile to rely on internal APIs that may change.
-* Tiny adapters allow us to fix host site changes quickly.
+* Adapters that only rely on DOM selectors allow us to fix host site changes quickly.
 * Tiny adapters allow for many websites to be supported.
 
 The adapter API is still a work in progress and will be documented in the future. 
