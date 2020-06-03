@@ -22,6 +22,8 @@ Why not?
 
 The adapter API is still a work in progress and will be documented in the future. 
 
+This "hands off" approach has UX trade-offs, like requiring the user select a language on the host site to have the caption file requested. I believe long-term stability is more important than UX.
+
 ### Manual Installation
 
 Building the extension locally requires having Node and Yarn installed. See https://nodejs.org/ and https://yarnpkg.com/ for installation steps.
