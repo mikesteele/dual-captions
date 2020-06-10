@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import config from '../config';
-import { applyDCSettings } from '../actions';
+import config from '../../config';
+import { applyDCSettings } from '../../actions';
 import { translate } from 'react-i18next';
 
 class SettingsPage extends Component {

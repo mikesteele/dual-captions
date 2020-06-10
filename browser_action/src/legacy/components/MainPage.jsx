@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Toggle from 'react-toggle';
-import { changeDCLanguage, turnDCOff, turnDCOn } from '../actions';
-import config from '../config';
+import { changeDCLanguage, turnDCOff, turnDCOn } from '../../actions';
+import config from '../../config';
 import Hint from './Hint.jsx';
 import Step from './Step.jsx';
 import { translate } from 'react-i18next';

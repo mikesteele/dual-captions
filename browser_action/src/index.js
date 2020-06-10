@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
-import './i18n';
+import './legacy/i18n';
 import reducer from './reducer';
 import ReduxThunk from 'redux-thunk';
 import { i18nMiddleware, loggingMiddleware, storageMiddleware } from './middleware';

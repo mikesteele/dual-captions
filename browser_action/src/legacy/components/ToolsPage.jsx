@@ -1,7 +1,7 @@
 import React from 'react';
-import config from '../config';
+import config from '../../config';
 import { translate } from 'react-i18next';
-import { sendMessageToActiveTab } from '../utils/chrome';
+import { sendMessageToActiveTab } from '../../utils/chrome';
 
 const Link = props => (
   <button {...props} style={{

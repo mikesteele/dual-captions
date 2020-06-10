@@ -63,11 +63,19 @@ export function determineState() {
         console.log(savedStore);
 
         // 1. Chrome.storage settings
-        if (savedStore && savedStore.uiLanguage) {
-          dispatch({
-            type: 'CHANGE_UI_LANGUAGE',
-            payload: savedStore.uiLanguage
-          });
+        if (savedStore) {
+          if (savedStore.uiLanguage) {
+            dispatch({
+              type: 'CHANGE_UI_LANGUAGE',
+              payload: savedStore.uiLanguage
+            });
+          }
+          if (savedStore.isRedesign) {
+            dispatch({
+              type: 'CHANGE_IS_REDESIGN',
+              payload: savedStore.isRedesign
+            });
+          }
         }
 
         // 2. Observer-only settings
@@ -338,6 +346,15 @@ export function applyDCSettings() {
           // Unable to get active tab ID
           resolve();
         });
+    });
+  }
+}
+
+export function switchAppDesign(isRedesign) {
+  return function (dispatch) {
+    dispatch({
+      type: 'CHANGE_IS_REDESIGN',
+      payload: isRedesign,
     });
   }
 }

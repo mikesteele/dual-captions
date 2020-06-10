@@ -11,7 +11,8 @@ const initialState = {
   loadedLanguages: [],
   secondLanguage: 'none',
   settings: config.defaultSettings,
-  uiLanguage: config.defaultUILanguage
+  uiLanguage: config.defaultUILanguage,
+  isRedesign: false,
 };
 
 export default function reducer(state = initialState, action) {
@@ -60,6 +61,10 @@ export default function reducer(state = initialState, action) {
       return {...state,
         ...action.payload
       };
+    case 'CHANGE_IS_REDESIGN':
+      return {...state,
+        isRedesign: action.payload,
+      }
     default:
       return state;
   }

@@ -274,3 +274,8 @@ label {
 .settings-page > div {
   margin-bottom: 8px;
 }
+
+.new-link {
+  color: #2980b9;
+  cursor: pointer;
+}

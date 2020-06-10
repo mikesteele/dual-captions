@@ -1,7 +1,7 @@
 import React from 'react';
 import { translate } from 'react-i18next';
-import { sendMessageToActiveTab } from '../utils/chrome';
-import config from '../config';
+import { sendMessageToActiveTab } from '../../utils/chrome';
+import config from '../../config';
 
 class TranslationRequest extends React.Component {
   constructor(props) {
