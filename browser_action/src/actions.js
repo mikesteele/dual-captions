@@ -70,6 +70,7 @@ export function determineState() {
               payload: savedStore.uiLanguage
             });
           }
+          // TODO - This won't work if isRedesign is default true, change to string?
           if (savedStore.isRedesign) {
             dispatch({
               type: 'CHANGE_IS_REDESIGN',
