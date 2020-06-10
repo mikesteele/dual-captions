@@ -12,7 +12,7 @@ const initialState = {
   secondLanguage: 'none',
   settings: config.defaultSettings,
   uiLanguage: config.defaultUILanguage,
-  isRedesign: false,
+  isRedesign: true, // TODO - Revert
 };
 
 export default function reducer(state = initialState, action) {

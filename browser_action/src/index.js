@@ -8,6 +8,7 @@ import './legacy/i18n';
 import reducer from './reducer';
 import ReduxThunk from 'redux-thunk';
 import { i18nMiddleware, loggingMiddleware, storageMiddleware } from './middleware';
+import 'antd-mobile/dist/antd-mobile.css';
 
 const store = createStore(reducer,
   applyMiddleware(

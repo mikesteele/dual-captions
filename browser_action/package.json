@@ -3,6 +3,7 @@
   "version": "2.5.0",
   "private": true,
   "dependencies": {
+    "antd-mobile": "^2.3.1",
     "chai": "^4.1.2",
     "coveralls": "^3.0.2",
     "enzyme": "^3.3.0",
