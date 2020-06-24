@@ -1,6 +1,7 @@
 ## dual-captions <br/> Subtitles in two languages for YouTube, Netflix, Disney+ & Kanopy
 ![build](https://travis-ci.com/mikesteele/dual-captions.svg?branch=master)
 
+### <a href="https://chrome.google.com/webstore/detail/two-captions-for-youtube/lpeonmjfimoijceaalocpgjjchocbiap/related">Download on Chrome Web Store</a>
 ### <a href="https://github.com/mikesteele/dual-captions/releases">View latest release notes</a>
 
 ***
