@@ -49,23 +49,17 @@
   "load-hint-youtube": "在頁面中選擇字幕讓app載入",
   "load-hint-netflix": "在頁面中選擇字幕讓app載入",
   "load-hint-development": "在頁面中選擇字幕讓app載入",
-<<<<<<< HEAD
-=======
+
   "load-hint-kanopy": "在頁面中選擇字幕讓app載入",
->>>>>>> master
   "view-all-bookmarks": "檢視所有書籤",
   "bookmarks": "書籤",
   "bookmarks-explanation-1": "使用書籤功能來保存字幕，方便之後觀看",
   "bookmarks-explanation-2": "你也可以使用快捷鍵 Alt/Option + A。",
   "bookmarks-explanation-3": "你保存的字幕會在這裡顯示",
   "copy-to-clipboard": "複製到剪貼簿",
-<<<<<<< HEAD
-  "delete": "刪除"
-=======
   "delete": "刪除",
   "video-speed": "播放速度",
   "hideActionPanel": "隱藏動作面板",
   "download-subtitles": "下載字幕並儲存成SRT檔案：",
   "tools": "工具"
->>>>>>> master
 }
