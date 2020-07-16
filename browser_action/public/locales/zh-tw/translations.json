@@ -64,8 +64,8 @@
 =======
   "delete": "刪除",
   "video-speed": "播放速度",
-  "hideActionPanel": "Hide action panel",
-  "download-subtitles": "Download subtitles as an SRT file:",
-  "tools": "Tools"
+  "hideActionPanel": "隱藏動作面板",
+  "download-subtitles": "下載字幕並儲存成SRT檔案：",
+  "tools": "工具"
 >>>>>>> master
 }
