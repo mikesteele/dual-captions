@@ -1,11 +1,16 @@
 import React from "react";
+import { MdClose } from "react-icons/md";
 
 const Modal = props => {
-  const { isOpen, onClose, children } = props;
+  const { isOpen, onClose, children, title } = props;
 
   const onClickOuter = () => {
     onClose();
   };
+
+  const onClickInner = e => {
+    e.stopPropagation();
+  }
 
   const outerStyles = {
     position: "fixed",
@@ -23,9 +28,38 @@ const Modal = props => {
     left: '0'
   };
 
+  const innerStyles = {
+    width: '50%',
+    height: '50%',
+    background: '#0d0d0d',
+    color: '#E1E1E1',
+    boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.5)',
+    padding: '32px',
+    fontSize: '16px',
+    lineHeight: '20px',
+    borderRadius: '8px',
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '400px'
+  };
+
+  const headingStyle = {
+    fontSize: '24px',
+    lineHeight: '28px',
+    marginBottom: '32px',
+    display: 'flex',
+    justifyContent: 'space-between'
+  };
+
   return (
     <div style={outerStyles} onClick={onClickOuter}>
-      {children}
+      <div style={innerStyles} onClick={onClickInner}>
+        <div style={headingStyle}>
+          <span>{title}</span>
+          <span onClick={onClose} style={{cursor: 'pointer'}}><MdClose /></span>
+        </div>
+        {children}
+      </div>
     </div>
   );
 };

@@ -1,0 +1,11 @@
+{
+  "name": "dual-captions-manifest-creator",
+  "version": "2.5.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node index.js"
+  },
+  "author": "",
+  "license": "MIT"
+}

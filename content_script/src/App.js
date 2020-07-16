@@ -13,7 +13,7 @@ import Modal from './Modal';
 import MainView from './MainView';
 import VideoId from './VideoId';
 import IsOn from './IsOn';
-import NewAdapter from './NewAdapter';
+import Adapter from './Adapter';
 
 class App extends React.Component {
   render() {
@@ -23,7 +23,7 @@ class App extends React.Component {
           <Site>
             {(site) => (
             <IsOn site={site}>
-              {(isOn) => (
+              {(isOn, changeIsOn) => (
               <VideoId site={site}>
                 {(videoId) => (
                   <Parser site={site}>
@@ -37,11 +37,12 @@ class App extends React.Component {
                             site={site}
                             provider={provider}
                             isOn={isOn}
+                            changeIsOn={changeIsOn}
                           >
                             {(settings) => {
                               if (isOn) {
                                 return (
-                                  <NewAdapter site={site}>
+                                  <Adapter site={site}>
                                     {(adapter) => (
                                       <FullscreenHOC adapter={adapter}>
                                         <MainView
@@ -54,7 +55,7 @@ class App extends React.Component {
                                         />
                                       </FullscreenHOC>
                                     )}
-                                  </NewAdapter>
+                                  </Adapter>
                                 );
                               } else {
                                 return null;

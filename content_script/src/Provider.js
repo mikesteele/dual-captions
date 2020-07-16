@@ -1,6 +1,19 @@
 import React from 'react';
 import { iso639_3to1 } from './utils/i18n';
+import _get from 'lodash/get';
+import { getIntegrationForSite } from './utils/integrations';
 const franc = require('franc');
+const SrtEncoder = require('dual-captions-site-integrations').encoders.SrtEncoder;
+
+// From https://stackoverflow.com/questions/3665115/how-to-create-a-file-in-memory-for-user-to-download-but-not-through-server
+const downloadStringAsFile = (str, fileName) => {
+  const a = window.document.createElement('a');
+  a.href = window.URL.createObjectURL(new Blob([str], {type: 'text/plain;charset=utf-8;'}));
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
 
 class Provider extends React.Component {
   constructor(props) {
@@ -15,6 +28,7 @@ class Provider extends React.Component {
     this.guessLanguageOfCaptions = this.guessLanguageOfCaptions.bind(this);
     this.getLoadedLanguages = this.getLoadedLanguages.bind(this);
     this.getCaptionToRender = this.getCaptionToRender.bind(this);
+    this.maybeProcessCaptions = this.maybeProcessCaptions.bind(this);
   }
 
   componentDidMount() {
@@ -140,6 +154,30 @@ class Provider extends React.Component {
     });
   }
 
+  maybeProcessCaptions(result) {
+    const { site, videoId } = this.props;
+    const { language } = result;
+    let captions = result.captions;
+    const integration = getIntegrationForSite(site);
+    if (integration && integration.captionProcessor) {
+      /**
+       *  This processing step is for Disney+, where
+       *  captions are sent in chunks.
+       *
+       *  Its captionProcessor joins a chunk into
+       *  the pre-existing captions.
+       */
+      const existingCaptions = _get(this.state, `captions.${site}.${videoId}.${language}`) || [];
+      // TODO - Will this ^ ever be out of date due to asynchronous nature of setState?
+      // Perhaps a case for stateful Integration.captionProcessor...
+      captions = integration.captionProcessor(existingCaptions, captions);
+    }
+    return Promise.resolve({
+      captions,
+      language
+    });
+  }
+
   onMessage(message, sender, sendResponse) {
     if (!message.type) return;
     switch (message.type) {
@@ -148,6 +186,7 @@ class Provider extends React.Component {
       this.fetchUrl(message.payload)
         .then(captionFile => this.props.parser.parse(captionFile, this.props.site))
         .then(this.guessLanguageOfCaptions)
+        .then(this.maybeProcessCaptions)
         .then(result => {
           const {captions, language} = result;
           return this.loadCaptions(captions, language);
@@ -166,6 +205,31 @@ class Provider extends React.Component {
             error: err
           });
         });
+      break;
+
+      case 'download-subtitles':
+      const captionsToDownload = _get(this.state.captions, [this.props.site, this.props.videoId, message.payload]);
+      if (captionsToDownload) {
+        SrtEncoder(captionsToDownload)
+          .then(srtFile => {
+            const fileName = `${message.payload}-subtitles-for-${this.props.site}-${this.props.videoId}.srt`;
+            downloadStringAsFile(srtFile, fileName);
+          })
+          .catch(err => {
+            console.error(err);
+            sendResponse({
+              ok: false
+            });
+          });
+      } else {
+        console.error(`Provider - Couldn't download subtitles for requested language.`);
+        // For debugging w/ end user in case of issue
+        console.log(this.state);
+        console.log(this.props);
+        sendResponse({
+          ok: false
+        });
+      }
       break;
 
       default:

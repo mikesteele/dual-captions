@@ -1,4 +1,5 @@
 import React from 'react';
+const Integrations = require('dual-captions-site-integrations').integrations;
 
 class Site extends React.Component {
   constructor(props) {
@@ -10,17 +11,10 @@ class Site extends React.Component {
 
   componentDidMount() {
     const currentURL = window.location.href;
-    if (currentURL.includes('netflix')) {
+    const detectedIntegration = Integrations.find(i => i.detectSite(currentURL));
+    if (detectedIntegration) {
       this.setState({
-        site: 'netflix'
-      });
-    } else if (currentURL.includes('youtube')) {
-      this.setState({
-        site: 'youtube'
-      });
-    } else if (currentURL.includes('localhost')) {
-      this.setState({
-        site: 'development'
+        site: detectedIntegration.siteId
       });
     }
   }

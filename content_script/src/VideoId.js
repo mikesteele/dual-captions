@@ -1,4 +1,5 @@
 import React from 'react';
+import { getIntegrationForSite } from './utils/integrations';
 
 class VideoId extends React.Component {
   constructor(props) {
@@ -8,16 +9,6 @@ class VideoId extends React.Component {
     };
     this.detectVideoId = this.detectVideoId.bind(this);
     this.onMessage = this.onMessage.bind(this);
-  }
-
-  detectNetflixVideoId() {
-    const videoIdPattern = /watch\/(\d+)/;
-    const pathname = window.location.pathname;
-    if (videoIdPattern.test(pathname)) {
-      return videoIdPattern.exec(pathname)[1];
-    } else {
-      return null;
-    }
   }
 
   onMessage(message, sender, sendResponse) {
@@ -32,26 +23,16 @@ class VideoId extends React.Component {
     }
   }
 
-  detectYoutubeVideoId() {
-    const url = new URL(window.location.href);
-    const videoId = url.searchParams.get('v');
-    return videoId ? videoId : null;
-  }
-
   detectVideoId() {
     let videoId = null;
-    if (this.props.site === 'netflix') {
-      videoId = this.detectNetflixVideoId();
-    } else if (this.props.site === 'youtube') {
-      videoId = this.detectYoutubeVideoId(); // TODO - Audit repo for Youtube vs YouTube
-    } else if (this.props.site === 'development') {
-      videoId = 'development';
-    }
-    if (videoId !== this.state.videoId) {
-      // TODO - There are probably other places where I'm setting state unnecessarily
-      this.setState({
-        videoId
-      });
+    const integration = getIntegrationForSite(this.props.site);
+    if (integration) {
+      videoId = integration.detectVideoId();
+      if (videoId !== this.state.videoId) {
+        this.setState({
+          videoId
+        });
+      }
     }
   }
 

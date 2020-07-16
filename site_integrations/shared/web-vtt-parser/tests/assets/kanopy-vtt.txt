@@ -1,0 +1,4014 @@
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:17470,LOCAL:00:00:00.000
+
+1
+00:02:00.080 --> 00:02:04.915
+THE UMBRELLAS OF CHERBOURG
+
+2
+00:03:25.320 --> 00:03:30.235
+PART ONE –THE DEPARTURE
+
+3
+00:03:54.320 --> 00:03:56.151
+Is it ready?
+
+4
+00:03:58.440 --> 00:04:01.989
+The engine still knocks when it’s cold, but that’s normal.
+
+5
+00:04:04.920 --> 00:04:06.478
+Thanks.
+
+6
+00:04:29.360 --> 00:04:30.839
+Foucher!
+
+7
+00:04:32.120 --> 00:04:34.429
+Can you stay an extra hour?
+
+8
+00:04:35.760 --> 00:04:37.955
+Not tonight,
+
+9
+00:04:38.080 --> 00:04:40.435
+but I think Pierre’s free.
+
+10
+00:04:40.600 --> 00:04:44.149
+Pierre, can you stay tonight?
+
+11
+00:04:45.680 --> 00:04:50.707
+Check the ignition on this gentleman’s Mercedes.
+
+12
+00:04:57.920 --> 00:05:00.150
+You coming to the game?
+
+13
+00:05:00.320 --> 00:05:01.912
+No, I can’t.
+
+14
+00:05:02.320 --> 00:05:03.992
+You going?
+
+15
+00:05:04.400 --> 00:05:05.879
+Sure am.
+
+16
+00:05:11.280 --> 00:05:15.239
+Aubin asked me to stay late – no way!
+
+17
+00:05:15.400 --> 00:05:18.312
+Tonight’s special. I’m going to the theater.
+
+18
+00:05:18.480 --> 00:05:20.391
+What are they performing?
+
+19
+00:05:20.560 --> 00:05:22.232
+Carmen.
+
+20
+00:05:27.560 --> 00:05:29.551
+I don’t like opera.
+
+21
+00:05:29.800 --> 00:05:31.597
+Movies are better.
+
+22
+00:05:32.920 --> 00:05:35.388
+I’m going dancing tonight.
+
+23
+00:05:37.680 --> 00:05:39.750
+Give me a smoke.
+
+24
+00:05:40.760 --> 00:05:43.752
+All that singing gives me a pain.
+
+25
+00:05:45.240 --> 00:05:46.753
+I like movies better.
+
+26
+00:05:46.920 --> 00:05:48.911
+You said that already.
+
+27
+00:05:51.920 --> 00:05:54.070
+See you guys later.
+
+28
+00:05:55.640 --> 00:05:58.393
+See you tomorrow.
+
+29
+00:06:35.240 --> 00:06:38.869
+My love, oh, my love.
+
+30
+00:06:39.360 --> 00:06:42.591
+Geneviève, my little Geneviève.
+
+31
+00:06:42.760 --> 00:06:44.637
+Guy, I love you.
+
+32
+00:06:46.600 --> 00:06:48.591
+You smell like gasoline.
+
+33
+00:06:50.240 --> 00:06:53.391
+It’s a perfume like any other.
+
+34
+00:06:53.520 --> 00:06:57.718
+Guy, I love you.
+
+35
+00:06:58.760 --> 00:07:00.955
+A customer. I have to run.
+
+36
+00:07:01.080 --> 00:07:04.356
+See you at 8:00 in front of the theater.
+
+37
+00:07:11.480 --> 00:07:14.677
+I thought about you all day.
+
+38
+00:07:14.840 --> 00:07:18.674
+If you like, we could go dancing later.
+
+39
+00:07:18.840 --> 00:07:20.671
+If you wish.
+
+40
+00:07:28.520 --> 00:07:30.112
+May I help you?
+
+41
+00:07:30.240 --> 00:07:31.832
+An umbrella.
+
+42
+00:07:35.720 --> 00:07:37.039
+Where were you?
+
+43
+00:07:37.840 --> 00:07:40.229
+Just across the street.
+
+44
+00:07:42.159 --> 00:07:48.030
+Do you know exactly what you’d like?
+
+45
+00:07:49.400 --> 00:07:52.437
+An umbrella. A black umbrella.
+
+46
+00:07:52.600 --> 00:07:56.388
+Geneviève, show the gentleman the umbrellas.
+
+47
+00:08:18.240 --> 00:08:19.912
+Is that you, Guy?
+
+48
+00:08:20.160 --> 00:08:22.230
+Good evening, Aunt Elise.
+
+49
+00:08:23.040 --> 00:08:25.634
+Good evening, my boy.
+
+50
+00:08:35.400 --> 00:08:37.470
+How are your legs?
+
+51
+00:08:38.000 --> 00:08:40.594
+Fine, my boy.
+
+52
+00:08:41.679 --> 00:08:43.750
+What are you up to?
+
+53
+00:08:44.760 --> 00:08:46.352
+I’m hungry.
+
+54
+00:08:47.880 --> 00:08:50.269
+You’ll spoil your appetite.
+
+55
+00:08:50.520 --> 00:08:52.750
+I do as I please.
+
+56
+00:08:55.960 --> 00:09:00.112
+Calm down and talk to me.
+
+57
+00:09:00.960 --> 00:09:03.190
+I don’t have much time.
+
+58
+00:09:06.640 --> 00:09:09.598
+You seem very nervous.
+
+59
+00:09:10.000 --> 00:09:11.672
+I’m going out.
+
+60
+00:09:11.800 --> 00:09:12.994
+Alone?
+
+61
+00:09:13.240 --> 00:09:16.118
+That’s none of your business.
+
+62
+00:09:16.480 --> 00:09:18.596
+I think it is.
+
+63
+00:09:18.760 --> 00:09:20.512
+With a girl.
+
+64
+00:09:20.680 --> 00:09:22.272
+Do you love her?
+
+65
+00:09:22.440 --> 00:09:23.634
+Maybe.
+
+66
+00:09:23.800 --> 00:09:25.313
+Tell me the truth.
+
+67
+00:09:25.440 --> 00:09:26.953
+Yes, I love her.
+
+68
+00:09:27.160 --> 00:09:29.037
+What’s wrong? Are you crying?
+
+69
+00:09:29.160 --> 00:09:32.197
+- Don’t be silly. - Yes, you are.
+
+70
+00:09:33.440 --> 00:09:35.829
+Is it because you’re all alone?
+
+71
+00:09:36.760 --> 00:09:39.718
+I’m not alone. I have my books.
+
+72
+00:09:39.960 --> 00:09:42.952
+Madeleine’s coming to give me my shot.
+
+73
+00:09:43.080 --> 00:09:46.709
+She’ll keep me company. - What is it, then?
+
+74
+00:09:46.840 --> 00:09:50.389
+Maybe happiness makes me sad.
+
+75
+00:09:50.720 --> 00:09:52.153
+That’s silly.
+
+76
+00:09:53.280 --> 00:09:56.238
+You big brute, you’re messing up my hair.
+
+77
+00:10:00.560 --> 00:10:03.074
+Good evening, Guy.
+
+78
+00:10:03.240 --> 00:10:05.151
+Good evening, Madeleine.
+
+79
+00:10:07.240 --> 00:10:08.832
+You look sad.
+
+80
+00:10:09.840 --> 00:10:13.310
+You seem happy.
+
+81
+00:10:15.640 --> 00:10:17.198
+Does it show?
+
+82
+00:10:37.560 --> 00:10:39.118
+I had a terrible time.
+
+83
+00:10:39.280 --> 00:10:42.397
+- Doing what? - Persuading Mother.
+
+84
+00:10:42.560 --> 00:10:44.551
+It was getting late,
+
+85
+00:10:44.760 --> 00:10:47.752
+and still no sign of the seamstress.
+
+86
+00:10:48.560 --> 00:10:49.788
+Look.
+
+87
+00:10:50.640 --> 00:10:51.959
+Careful.
+
+88
+00:10:52.080 --> 00:10:55.868
+It’s still full of pins.
+
+89
+00:11:58.240 --> 00:11:59.912
+You know...
+
+90
+00:12:00.040 --> 00:12:03.112
+I think she suspects something.
+
+91
+00:12:03.920 --> 00:12:05.273
+Who?
+
+92
+00:12:05.600 --> 00:12:07.113
+Mother.
+
+93
+00:12:07.240 --> 00:12:11.279
+When I said I was going to the theater with Cécile...
+
+94
+00:12:12.840 --> 00:12:16.628
+she gave me a funny look.
+
+95
+00:12:17.000 --> 00:12:19.833
+- What kind of a look? - Like this.
+
+96
+00:12:20.000 --> 00:12:23.436
+She knows very well that Cécile hates the theater,
+
+97
+00:12:23.560 --> 00:12:25.676
+and since I’m a very bad liar –
+
+98
+00:12:25.840 --> 00:12:27.398
+That’s what you say.
+
+99
+00:12:27.520 --> 00:12:30.956
+No, I assure you, I’m very clumsy at it.
+
+100
+00:12:31.080 --> 00:12:33.799
+I stammered and blushed
+
+101
+00:12:33.920 --> 00:12:36.798
+and immediately changed the subject.
+
+102
+00:12:41.520 --> 00:12:43.511
+Something squeezed.
+
+103
+00:12:44.040 --> 00:12:45.678
+Something what?
+
+104
+00:12:45.880 --> 00:12:47.552
+Lemonade.
+
+105
+00:12:47.720 --> 00:12:49.278
+Same for me.
+
+106
+00:13:01.680 --> 00:13:03.193
+Do you love me?
+
+107
+00:13:05.680 --> 00:13:07.910
+A mambo! Come on.
+
+108
+00:13:10.080 --> 00:13:12.116
+I should have changed shoes.
+
+109
+00:13:28.440 --> 00:13:31.000
+We’ll have children.
+
+110
+00:13:31.400 --> 00:13:34.517
+I’ll call my daughter Françoise.
+
+111
+00:13:34.720 --> 00:13:36.153
+And if it’s a boy?
+
+112
+00:13:36.360 --> 00:13:38.351
+It’ll be a girl.
+
+113
+00:13:38.480 --> 00:13:42.553
+We’ve always had girls in the family.
+
+114
+00:13:49.280 --> 00:13:50.679
+One o’clock!
+
+115
+00:13:50.800 --> 00:13:53.189
+If Mother isn’t asleep,
+
+116
+00:13:53.600 --> 00:13:56.751
+I’ll never hear the end of it.
+
+117
+00:13:56.920 --> 00:14:00.276
+I should wear makeup, don’t you think?
+
+118
+00:14:00.440 --> 00:14:04.149
+No, you’re lovely as you are.
+
+119
+00:14:04.760 --> 00:14:06.716
+A little bit here.
+
+120
+00:14:06.880 --> 00:14:07.756
+Where?
+
+121
+00:14:07.920 --> 00:14:08.830
+There.
+
+122
+00:14:16.160 --> 00:14:19.118
+We’ll sell umbrellas.
+
+123
+00:14:19.640 --> 00:14:22.438
+No, not umbrellas.
+
+124
+00:14:22.960 --> 00:14:24.791
+We’ll sell the shop.
+
+125
+00:14:24.960 --> 00:14:28.396
+We’ll buy a gas station.
+
+126
+00:14:28.560 --> 00:14:30.676
+Why? What an idea!
+
+127
+00:14:31.320 --> 00:14:35.279
+All white, with an office. You’ll see.
+
+128
+00:14:35.400 --> 00:14:38.949
+You’ll smell like gasoline all day.
+
+129
+00:14:39.120 --> 00:14:40.951
+It’ll be heaven!
+
+130
+00:14:42.000 --> 00:14:44.639
+We’ll be very happy.
+
+131
+00:14:45.120 --> 00:14:48.396
+And we’ll always be in love.
+
+132
+00:14:56.840 --> 00:14:58.956
+Oh, my love.
+
+133
+00:14:59.080 --> 00:15:00.752
+You haven’t told your mother?
+
+134
+00:15:00.920 --> 00:15:02.273
+Not yet.
+
+135
+00:15:02.400 --> 00:15:04.630
+Why? You’re a coward.
+
+136
+00:15:05.360 --> 00:15:08.830
+You mustn’t be angry.
+
+137
+00:15:08.960 --> 00:15:12.236
+I know what she’ll say.
+
+138
+00:15:12.360 --> 00:15:13.713
+What?
+
+139
+00:15:14.160 --> 00:15:18.517
+"My little girl, you’re crazy. Thinking of marriage at your age!"
+
+140
+00:15:19.400 --> 00:15:22.153
+My little girl, you’re crazy. Thinking of marriage at 16!
+
+141
+00:15:22.280 --> 00:15:24.077
+- Seventeen. - In love!
+
+142
+00:15:24.200 --> 00:15:26.350
+Am I too ugly or too stupid?
+
+143
+00:15:26.520 --> 00:15:29.239
+No, you’re not ugly. You’re no beauty queen,
+
+144
+00:15:29.360 --> 00:15:31.555
+but you’re not ugly or dumb.
+
+145
+00:15:31.680 --> 00:15:33.830
+The thing is, you have plenty of time.
+
+146
+00:15:34.000 --> 00:15:36.355
+You think you’re in love,
+
+147
+00:15:36.520 --> 00:15:39.717
+but love is different.
+
+148
+00:15:40.200 --> 00:15:42.953
+You don’t just fall in love
+
+149
+00:15:43.400 --> 00:15:46.676
+with some face
+
+150
+00:15:47.120 --> 00:15:49.998
+you’ve seen in the street.
+
+151
+00:15:52.040 --> 00:15:57.273
+It’s a young man I’ve met several times,
+
+152
+00:15:57.440 --> 00:16:00.193
+and he loves me.
+
+153
+00:16:01.360 --> 00:16:04.397
+We want to get married.
+
+154
+00:16:05.720 --> 00:16:08.154
+Have you nothing to say?
+
+155
+00:16:09.520 --> 00:16:11.715
+I’m flabbergasted!
+
+156
+00:16:11.880 --> 00:16:16.351
+I went to the theater with him last night.
+
+157
+00:16:16.560 --> 00:16:19.632
+Wonderful! So you lied to me,
+
+158
+00:16:19.840 --> 00:16:23.310
+and you admit it without a speck of shame.
+
+159
+00:16:23.440 --> 00:16:27.399
+There’s no shame in wanting to get married.
+
+160
+00:16:27.720 --> 00:16:29.836
+At your age there is.
+
+161
+00:16:29.960 --> 00:16:31.996
+No, I didn’t mean that.
+
+162
+00:16:33.400 --> 00:16:36.756
+You’re just a little girl.
+
+163
+00:16:37.720 --> 00:16:40.792
+You know nothing.
+
+164
+00:16:42.840 --> 00:16:47.072
+What little you’ve told me certainly doesn’t help.
+
+165
+00:16:47.240 --> 00:16:49.754
+When I married your father, I knew nothing.
+
+166
+00:16:49.920 --> 00:16:51.911
+That’s nothing to brag about.
+
+167
+00:16:52.040 --> 00:16:55.191
+- The hardware store, please. - Next door.
+
+168
+00:16:55.920 --> 00:16:57.433
+How old is he?
+
+169
+00:16:57.560 --> 00:16:59.073
+Twenty.
+
+170
+00:16:59.200 --> 00:17:04.115
+So of course he hasn’t done his military service.
+
+171
+00:17:07.720 --> 00:17:10.632
+He lives with his godmother,
+
+172
+00:17:11.040 --> 00:17:14.919
+the lady who raised him.
+
+173
+00:17:16.119 --> 00:17:18.111
+I’m all he has,
+
+174
+00:17:18.280 --> 00:17:20.191
+and you’ll see,
+
+175
+00:17:20.440 --> 00:17:23.318
+he’s very handsome.
+
+176
+00:17:24.640 --> 00:17:26.596
+I’ll see nothing of the kind.
+
+177
+00:17:26.720 --> 00:17:28.039
+But Mother...
+
+178
+00:17:28.480 --> 00:17:30.630
+Go upstairs now.
+
+179
+00:17:30.760 --> 00:17:35.834
+It’s time to fix lunch.
+
+180
+00:17:56.760 --> 00:17:58.239
+Dear God!
+
+181
+00:17:58.680 --> 00:17:59.999
+Geneviève!
+
+182
+00:18:00.840 --> 00:18:02.159
+We’re ruined!
+
+183
+00:18:02.880 --> 00:18:04.836
+You always exaggerate.
+
+184
+00:18:05.160 --> 00:18:09.039
+80,000 francs due by the 15th – you think that’s funny?
+
+185
+00:18:09.440 --> 00:18:11.510
+And if you don’t pay?
+
+186
+00:18:11.640 --> 00:18:13.517
+They’ll seize our property.
+
+187
+00:18:13.680 --> 00:18:15.989
+- I’ll get a job. - What sort of job?
+
+188
+00:18:16.160 --> 00:18:17.991
+Anything.
+
+189
+00:18:18.120 --> 00:18:20.350
+At the post office or city hall?
+
+190
+00:18:20.480 --> 00:18:22.118
+Why not?
+
+191
+00:18:26.680 --> 00:18:30.878
+You know, if I get married,
+
+192
+00:18:31.040 --> 00:18:35.113
+Guy and I will work, and we’ll help you.
+
+193
+00:18:35.360 --> 00:18:37.191
+My little girl,
+
+194
+00:18:37.440 --> 00:18:40.557
+getting married is out of the question.
+
+195
+00:18:40.720 --> 00:18:43.712
+Don’t put those there. You can see you’re in my way.
+
+196
+00:18:46.080 --> 00:18:48.355
+Anyway, does he have a good job?
+
+197
+00:18:48.520 --> 00:18:51.956
+Can he support you and raise children?
+
+198
+00:18:52.560 --> 00:18:55.677
+He’s not rich. We’ll live modestly,
+
+199
+00:18:55.840 --> 00:18:59.753
+and we won’t have children right away.
+
+200
+00:18:59.880 --> 00:19:02.155
+No, but one at least.
+
+201
+00:19:03.200 --> 00:19:06.590
+Anyway, he won’t be paying my taxes.
+
+202
+00:19:06.720 --> 00:19:09.553
+There isn’t a penny left in the till.
+
+203
+00:19:09.720 --> 00:19:11.438
+Sell your jewels.
+
+204
+00:19:11.560 --> 00:19:12.675
+Never!
+
+205
+00:19:12.880 --> 00:19:15.394
+What good are they? You don’t even look at them.
+
+206
+00:19:15.560 --> 00:19:17.755
+What if there’s an emergency?
+
+207
+00:19:18.000 --> 00:19:22.073
+Isn’t what’s happening an emergency?
+
+208
+00:19:22.320 --> 00:19:26.074
+Impossible! If I sold my jewels...
+
+209
+00:19:26.480 --> 00:19:30.359
+I’d feel stripped and naked.
+
+210
+00:19:30.640 --> 00:19:32.471
+Then find something else.
+
+211
+00:19:32.600 --> 00:19:34.750
+Something else? We have nothing.
+
+212
+00:19:34.920 --> 00:19:36.956
+Then sell the shop.
+
+213
+00:19:37.120 --> 00:19:39.429
+Foolish girl! What would we live on?
+
+214
+00:19:39.600 --> 00:19:43.036
+Well, I guess jewels are just jewels.
+
+215
+00:19:47.480 --> 00:19:50.040
+Should I try a new hairstyle?
+
+216
+00:19:51.720 --> 00:19:53.438
+My engagement ring.
+
+217
+00:19:55.960 --> 00:19:57.598
+It’s atrocious.
+
+218
+00:20:00.120 --> 00:20:01.599
+This bracelet...
+
+219
+00:20:04.280 --> 00:20:06.271
+I would never wear it.
+
+220
+00:20:08.920 --> 00:20:11.275
+No one would want that.
+
+221
+00:20:12.480 --> 00:20:14.311
+What about your necklace?
+
+222
+00:20:14.560 --> 00:20:16.198
+You think?
+
+223
+00:20:16.640 --> 00:20:20.269
+That’d be a crime. No, I’ll never part with it.
+
+224
+00:20:20.760 --> 00:20:24.469
+- It’s probably fake anyway. - Come now!
+
+225
+00:20:24.640 --> 00:20:27.837
+I guess it’s not that pretty after all.
+
+226
+00:20:29.160 --> 00:20:32.948
+This afternoon we’ll go see Mr. Dubourg.
+
+227
+00:20:33.120 --> 00:20:36.590
+Then I’ll have my hair done.
+
+228
+00:20:51.160 --> 00:20:53.116
+What a beauty!
+
+229
+00:20:53.880 --> 00:20:55.996
+Truly marvelous.
+
+230
+00:20:56.200 --> 00:20:57.474
+Isn’t it?
+
+231
+00:20:57.840 --> 00:21:00.673
+A very impressive stone...
+
+232
+00:21:01.920 --> 00:21:07.358
+if I may say so.
+
+233
+00:21:07.680 --> 00:21:09.557
+Here I have
+
+234
+00:21:10.240 --> 00:21:13.949
+rubies, sapphires, and emeralds.
+
+235
+00:21:14.360 --> 00:21:17.033
+Ali Baba’s cave.
+
+236
+00:21:18.520 --> 00:21:21.034
+The jewels...
+
+237
+00:21:21.160 --> 00:21:24.391
+of Sleeping Beauty.
+
+238
+00:21:25.040 --> 00:21:28.919
+Hello, Mrs. Emery. Hello, Miss Geneviève.
+
+239
+00:21:30.840 --> 00:21:34.230
+Hello, Mr. Dubourg.
+
+240
+00:21:34.560 --> 00:21:37.711
+- If you wouldn’t mind...? - Please.
+
+241
+00:21:38.520 --> 00:21:41.398
+The young lady...
+
+242
+00:21:42.840 --> 00:21:46.549
+has become a beautiful young woman.
+
+243
+00:21:47.200 --> 00:21:49.668
+It’s been such a long time...
+
+244
+00:21:51.080 --> 00:21:53.719
+since I had the pleasure.
+
+245
+00:21:54.560 --> 00:21:57.597
+But what can I do for you?
+
+246
+00:21:58.480 --> 00:22:02.234
+You may speak frankly.
+
+247
+00:22:02.840 --> 00:22:06.913
+We’re in a very difficult situation.
+
+248
+00:22:07.320 --> 00:22:10.517
+Geneviève’s grown now and helps me all she can.
+
+249
+00:22:10.960 --> 00:22:12.996
+It has nothing to do with her.
+
+250
+00:22:13.120 --> 00:22:15.680
+But I have heavy expenses, and I thought –
+
+251
+00:22:16.080 --> 00:22:19.038
+Well, I have a payment to meet,
+
+252
+00:22:19.240 --> 00:22:22.550
+and if I don’t, the consequences will be dire.
+
+253
+00:22:22.760 --> 00:22:26.150
+So I come to you as to my savior.
+
+254
+00:22:28.760 --> 00:22:31.593
+I hesitated a long time, but Geneviève,
+
+255
+00:22:31.720 --> 00:22:34.518
+the very voice of wisdom and reason,
+
+256
+00:22:34.640 --> 00:22:36.870
+convinced me.
+
+257
+00:22:37.040 --> 00:22:38.678
+It breaks my heart
+
+258
+00:22:38.880 --> 00:22:41.997
+to be forced to give up
+
+259
+00:22:42.200 --> 00:22:45.510
+this piece of jewelry, which for me represents –
+
+260
+00:22:48.440 --> 00:22:50.749
+I understand, dear madame,
+
+261
+00:22:50.920 --> 00:22:53.036
+but my business entails great risks,
+
+262
+00:22:53.160 --> 00:22:55.469
+and I’m already overextended.
+
+263
+00:22:55.640 --> 00:22:59.474
+At best I can put your necklace up for sale,
+
+264
+00:22:59.600 --> 00:23:04.151
+but for much less than its true worth.
+
+265
+00:23:05.880 --> 00:23:09.429
+I can’t buy it myself.
+
+266
+00:23:10.320 --> 00:23:13.437
+Couldn’t you at least give me an advance?
+
+267
+00:23:13.560 --> 00:23:17.314
+As I said, there’s nothing I can do.
+
+268
+00:23:25.920 --> 00:23:27.831
+Don’t insist, Mother.
+
+269
+00:23:29.640 --> 00:23:31.676
+This is a disaster!
+
+270
+00:23:33.200 --> 00:23:38.991
+Excuse me, but I’m interested. I’ll buy your jewelry.
+
+271
+00:23:39.200 --> 00:23:42.158
+I can help you out of your predicament.
+
+272
+00:23:42.640 --> 00:23:44.835
+Allow me to introduce myself.
+
+273
+00:23:45.120 --> 00:23:49.511
+Roland Cassard, diamond merchant.
+
+274
+00:23:49.640 --> 00:23:50.834
+But sir –
+
+275
+00:23:50.960 --> 00:23:52.951
+Don’t worry, madame.
+
+276
+00:23:54.280 --> 00:23:57.272
+I’m not a philanthropist.
+
+277
+00:23:57.920 --> 00:24:01.799
+I’ll easily sell this necklace
+
+278
+00:24:01.960 --> 00:24:05.236
+in Paris or London,
+
+279
+00:24:05.400 --> 00:24:08.597
+where my business takes me quite often.
+
+280
+00:24:09.160 --> 00:24:12.277
+I don’t know if I should.
+
+281
+00:24:13.120 --> 00:24:15.839
+Please. I’m serious.
+
+282
+00:24:16.760 --> 00:24:20.548
+I’m ashamed, yet delighted at the same time.
+
+283
+00:24:20.680 --> 00:24:23.717
+I don’t have the cash on me at the moment.
+
+284
+00:24:24.400 --> 00:24:26.197
+I can write you a check.
+
+285
+00:24:26.400 --> 00:24:27.879
+There’s no hurry.
+
+286
+00:24:28.040 --> 00:24:30.759
+Why don’t you stop by tomorrow
+
+287
+00:24:30.880 --> 00:24:33.758
+at my shop,
+
+288
+00:24:34.320 --> 00:24:37.630
+the Umbrellas of Cherbourg?
+
+289
+00:24:38.560 --> 00:24:41.711
+I’m always there.
+
+290
+00:24:42.800 --> 00:24:45.189
+Until tomorrow, then.
+
+291
+00:25:02.600 --> 00:25:04.272
+What time is it?
+
+292
+00:25:04.920 --> 00:25:06.717
+6:15.
+
+293
+00:25:07.000 --> 00:25:10.117
+Why hasn’t he come by yet?
+
+294
+00:25:10.360 --> 00:25:12.351
+Perhaps he’s a crook.
+
+295
+00:25:12.920 --> 00:25:15.115
+Perhaps he was leading you on.
+
+296
+00:25:15.400 --> 00:25:16.833
+You’re imagining things.
+
+297
+00:25:17.000 --> 00:25:18.877
+What’s the matter with you?
+
+298
+00:25:19.040 --> 00:25:20.598
+Nothing, Mother.
+
+299
+00:25:21.200 --> 00:25:23.191
+Then stop pacing.
+
+300
+00:25:24.480 --> 00:25:27.233
+Where are you going? - To see Guy.
+
+301
+00:25:27.360 --> 00:25:31.239
+I forbid you to see that boy. Stay here.
+
+302
+00:25:31.400 --> 00:25:34.392
+I wouldn’t want to be disrespectful...
+
+303
+00:25:34.840 --> 00:25:36.432
+Glad to hear it!
+
+304
+00:25:36.600 --> 00:25:39.319
+- but I’m going. - You’ll stay here!
+
+305
+00:25:42.960 --> 00:25:45.633
+Besides, Mr. Cassard will be here soon,
+
+306
+00:25:45.840 --> 00:25:48.513
+and I’d like you to be here.
+
+307
+00:25:48.680 --> 00:25:50.796
+- Why? - Because!
+
+308
+00:25:51.200 --> 00:25:55.830
+If he’s a crook, as you say, we’d better deal with him together.
+
+309
+00:25:55.960 --> 00:25:59.032
+You think we’re clever enough?
+
+310
+00:25:59.400 --> 00:26:01.709
+I don’t know, but stay here.
+
+311
+00:26:01.880 --> 00:26:03.472
+I can’t.
+
+312
+00:26:03.640 --> 00:26:07.235
+Don’t go. I don’t want you to leave.
+
+313
+00:26:24.680 --> 00:26:26.272
+I’d given up waiting.
+
+314
+00:26:26.400 --> 00:26:28.834
+- Are you crying? - It’s nothing.
+
+315
+00:26:29.000 --> 00:26:31.673
+Sometimes I don’t have the courage
+
+316
+00:26:31.840 --> 00:26:35.276
+to face my troubles and my debts.
+
+317
+00:26:35.800 --> 00:26:38.598
+Haven’t I come to help you?
+
+318
+00:26:38.840 --> 00:26:40.717
+It’s most kind of you.
+
+319
+00:26:41.960 --> 00:26:45.032
+I saw Miss Geneviève go by.
+
+320
+00:26:45.480 --> 00:26:47.118
+I’d have liked to –
+
+321
+00:26:47.240 --> 00:26:48.878
+She’s gone out.
+
+322
+00:26:49.040 --> 00:26:52.999
+The life we lead is so sad for a young girl...
+
+323
+00:26:53.120 --> 00:26:55.395
+this dreary shop.
+
+324
+00:26:56.200 --> 00:26:58.714
+I can no longer keep her entertained,
+
+325
+00:26:58.840 --> 00:27:02.355
+and I fear she’ll become depressed.
+
+326
+00:27:02.520 --> 00:27:04.556
+She’s bored here.
+
+327
+00:27:08.240 --> 00:27:10.310
+Would you care for some tea?
+
+328
+00:27:10.800 --> 00:27:12.438
+I’d love some.
+
+329
+00:27:16.040 --> 00:27:19.077
+We just had a terrible fight about you.
+
+330
+00:27:19.280 --> 00:27:20.599
+About me?
+
+331
+00:27:20.720 --> 00:27:24.872
+She wanted to go out. I didn’t want her to, and we quarreled.
+
+332
+00:27:25.080 --> 00:27:27.833
+We’ve been so lonely since my husband died.
+
+333
+00:27:28.040 --> 00:27:29.678
+Perhaps you should –
+
+334
+00:27:30.240 --> 00:27:33.152
+I don’t know – take her to a show.
+
+335
+00:27:33.280 --> 00:27:34.838
+Perhaps.
+
+336
+00:27:41.440 --> 00:27:43.908
+Can you come to dinner tomorrow?
+
+337
+00:27:44.080 --> 00:27:46.958
+Geneviève would be happy to see you.
+
+338
+00:27:47.720 --> 00:27:51.759
+No, that’s impossible. I must leave tonight.
+
+339
+00:27:52.720 --> 00:27:56.918
+I’m going back to Paris, and tomorrow I’m off to London.
+
+340
+00:27:57.360 --> 00:28:00.591
+Here’s the money I promised you.
+
+341
+00:28:01.280 --> 00:28:04.909
+Give Geneviève my best regards,
+
+342
+00:28:05.160 --> 00:28:07.754
+and I shall not fail...
+
+343
+00:28:08.600 --> 00:28:11.592
+to come visit you...
+
+344
+00:28:12.760 --> 00:28:16.673
+next time I’m in town.
+
+345
+00:28:41.320 --> 00:28:44.756
+I was so afraid I wouldn’t find you.
+
+346
+00:28:44.920 --> 00:28:48.799
+I’m so happy to be with you.
+
+347
+00:28:49.560 --> 00:28:53.030
+I’m laughing because I realize
+
+348
+00:28:53.160 --> 00:28:57.517
+how foolish I am when I’m alone.
+
+349
+00:28:58.120 --> 00:29:01.999
+I talked to Mother about our getting married.
+
+350
+00:29:02.240 --> 00:29:05.038
+She said I was crazy, of course,
+
+351
+00:29:05.200 --> 00:29:10.558
+and forbade me to see you tonight.
+
+352
+00:29:11.080 --> 00:29:14.914
+I was so afraid.
+
+353
+00:29:16.840 --> 00:29:19.673
+I’d rather go anywhere,
+
+354
+00:29:19.840 --> 00:29:22.274
+and never see Mother again,
+
+355
+00:29:22.400 --> 00:29:24.914
+than lose you.
+
+356
+00:29:29.480 --> 00:29:33.678
+We’ll get married in secret.
+
+357
+00:29:34.200 --> 00:29:38.955
+Oh, none of that matters anymore.
+
+358
+00:29:39.080 --> 00:29:42.197
+There’s no hurry now.
+
+359
+00:29:43.360 --> 00:29:47.512
+I got my draft notice this morning,
+
+360
+00:29:47.680 --> 00:29:51.355
+and I’ll be gone for two years.
+
+361
+00:29:53.320 --> 00:29:57.313
+So we’ll discuss getting married later.
+
+362
+00:29:57.920 --> 00:30:01.913
+With the war in Algeria right now,
+
+363
+00:30:02.320 --> 00:30:07.235
+I won’t be back for a long time.
+
+364
+00:30:12.760 --> 00:30:17.390
+But I’ll never be able
+
+365
+00:30:17.600 --> 00:30:20.717
+to live without you.
+
+366
+00:30:21.000 --> 00:30:24.231
+I just won’t make it.
+
+367
+00:30:24.560 --> 00:30:28.075
+Don’t go or I’ll die.
+
+368
+00:30:28.560 --> 00:30:32.075
+I’ll hide you
+
+369
+00:30:32.240 --> 00:30:36.074
+and keep you with me,
+
+370
+00:30:36.400 --> 00:30:42.396
+but don’t leave me, my love.
+
+371
+00:30:44.760 --> 00:30:50.437
+You know that’s impossible.
+
+372
+00:30:50.560 --> 00:30:54.348
+I’ll never leave you.
+
+373
+00:30:54.480 --> 00:31:00.077
+My love, I have to go.
+
+374
+00:31:00.400 --> 00:31:03.676
+I want you to know
+
+375
+00:31:04.160 --> 00:31:08.119
+I think only of you,
+
+376
+00:31:08.280 --> 00:31:13.991
+and I know you’ll wait for me.
+
+377
+00:31:18.280 --> 00:31:20.350
+Two years!
+
+378
+00:31:20.520 --> 00:31:23.671
+Two years of our lives!
+
+379
+00:31:26.800 --> 00:31:31.191
+Please don’t cry.
+
+380
+00:31:34.480 --> 00:31:39.156
+Two years – no, I’ll never manage.
+
+381
+00:31:40.000 --> 00:31:43.436
+Try to be calm. We have so little time left.
+
+382
+00:31:43.760 --> 00:31:48.276
+So little time, my love, and we mustn’t waste it.
+
+383
+00:31:51.600 --> 00:31:55.309
+We must try to be happy
+
+384
+00:31:55.840 --> 00:31:59.753
+and treasure from our last moments together
+
+385
+00:31:59.880 --> 00:32:03.873
+a beautiful memory,
+
+386
+00:32:04.120 --> 00:32:09.672
+a memory to help us go on living.
+
+387
+00:32:09.880 --> 00:32:15.876
+I’m so afraid when I’m alone.
+
+388
+00:32:16.000 --> 00:32:19.675
+We’ll be reunited and stronger than ever.
+
+389
+00:32:19.800 --> 00:32:23.190
+You’ll meet other women
+
+390
+00:32:23.320 --> 00:32:26.517
+and forget me.
+
+391
+00:32:26.880 --> 00:32:29.838
+I will love you
+
+392
+00:32:29.960 --> 00:32:34.829
+to my dying day.
+
+393
+00:32:35.880 --> 00:32:37.791
+Guy, I love you.
+
+394
+00:32:37.920 --> 00:32:41.196
+Don’t leave me.
+
+395
+00:32:50.960 --> 00:32:55.795
+My love, don’t leave me.
+
+396
+00:32:58.840 --> 00:33:00.432
+Come.
+
+397
+00:33:03.080 --> 00:33:05.799
+Come, my love.
+
+398
+00:33:06.120 --> 00:33:08.270
+Oh, my love!
+
+399
+00:33:34.080 --> 00:33:35.957
+Is that you, Guy?
+
+400
+00:33:36.920 --> 00:33:39.593
+Good evening, Aunt Elise.
+
+401
+00:33:39.720 --> 00:33:41.597
+Are you in bed?
+
+402
+00:33:43.120 --> 00:33:45.429
+I don’t feel too well.
+
+403
+00:33:53.560 --> 00:33:56.074
+Is there anything you want?
+
+404
+00:33:56.800 --> 00:33:58.836
+No, nothing.
+
+405
+00:33:59.240 --> 00:34:01.834
+I just need to rest.
+
+406
+00:34:03.440 --> 00:34:07.035
+Good night, my child.
+
+407
+00:34:24.280 --> 00:34:26.271
+I’m afraid.
+
+408
+00:34:31.199 --> 00:34:32.713
+I love you.
+
+409
+00:34:53.120 --> 00:34:54.917
+Where have you been?
+
+410
+00:34:55.320 --> 00:34:56.911
+With Guy.
+
+411
+00:35:01.960 --> 00:35:03.712
+What did you do?
+
+412
+00:35:16.680 --> 00:35:19.194
+He’s leaving.
+
+413
+00:35:19.320 --> 00:35:21.880
+He’ll be gone for two years.
+
+414
+00:35:22.000 --> 00:35:24.958
+I can’t live without him.
+
+415
+00:35:25.080 --> 00:35:27.036
+I’ll simply die.
+
+416
+00:35:27.160 --> 00:35:29.071
+Stop your crying.
+
+417
+00:35:29.480 --> 00:35:31.516
+Look at me.
+
+418
+00:35:32.040 --> 00:35:34.998
+People only die of love in the movies.
+
+419
+00:35:35.200 --> 00:35:38.237
+It’s too cruel.
+
+420
+00:35:42.840 --> 00:35:45.513
+Being separated is cruel,
+
+421
+00:35:45.640 --> 00:35:46.868
+that’s true.
+
+422
+00:35:47.320 --> 00:35:51.711
+But time sets things right.
+
+423
+00:35:52.360 --> 00:35:54.351
+You speak of love,
+
+424
+00:35:54.480 --> 00:35:56.948
+but what do you know of love?
+
+425
+00:35:57.680 --> 00:36:01.673
+Are you sure of your feelings?
+
+426
+00:36:02.360 --> 00:36:08.151
+Mother, can’t you see how unhappy I am?
+
+427
+00:36:10.200 --> 00:36:13.237
+I know, darling, I know.
+
+428
+00:36:13.520 --> 00:36:18.992
+I too have loved and struggled and suffered.
+
+429
+00:36:19.120 --> 00:36:22.032
+You should listen to me. - I do listen.
+
+430
+00:36:22.200 --> 00:36:25.749
+Isn’t it better to wait?
+
+431
+00:36:26.600 --> 00:36:29.034
+Two years from now
+
+432
+00:36:29.160 --> 00:36:32.550
+you may have forgotten Guy completely.
+
+433
+00:36:33.240 --> 00:36:38.712
+No, I’ll never forget him.
+
+434
+00:36:38.880 --> 00:36:43.192
+If you still love him when he returns, you’ll see.
+
+435
+00:36:43.600 --> 00:36:47.479
+You must believe me and calm down
+
+436
+00:36:48.040 --> 00:36:51.430
+and forget about this whole matter.
+
+437
+00:36:53.960 --> 00:36:55.916
+Have you had dinner?
+
+438
+00:36:56.240 --> 00:36:57.798
+Yes, Mother.
+
+439
+00:36:59.800 --> 00:37:01.711
+Have some fruit.
+
+440
+00:37:03.800 --> 00:37:08.032
+You need to get your mind off things, go out and have fun.
+
+441
+00:37:08.320 --> 00:37:10.629
+It’s not so hard.
+
+442
+00:37:17.680 --> 00:37:21.514
+You’re young and pretty, with a quick wit.
+
+443
+00:37:21.640 --> 00:37:26.077
+You’ll make friends your age... or maybe older.
+
+444
+00:37:26.200 --> 00:37:29.829
+Mr. Cassard came by this evening.
+
+445
+00:37:30.000 --> 00:37:32.753
+He was sorry he missed you.
+
+446
+00:37:32.880 --> 00:37:37.158
+I’m sure he could give you some good advice.
+
+447
+00:37:37.320 --> 00:37:41.552
+I can do without his advice, thank you.
+
+448
+00:37:41.680 --> 00:37:45.514
+You’re wrong. I think he’s just the kind of man –
+
+449
+00:37:45.680 --> 00:37:48.240
+Stop going on about that guy.
+
+450
+00:37:50.200 --> 00:37:52.555
+You look terrible.
+
+451
+00:37:53.040 --> 00:37:55.156
+Leave me alone, Mother.
+
+452
+00:37:55.280 --> 00:37:57.271
+At least give me a kiss.
+
+453
+00:37:57.400 --> 00:38:00.392
+Trust me. You’ll see.
+
+454
+00:38:19.680 --> 00:38:23.150
+Look at me, my boy.
+
+455
+00:38:23.720 --> 00:38:25.870
+I don’t know
+
+456
+00:38:26.040 --> 00:38:31.034
+if I’ll still be alive when you return.
+
+457
+00:38:31.720 --> 00:38:34.154
+But Elise!
+
+458
+00:38:34.400 --> 00:38:38.109
+No, no "buts." I’ve had a good life.
+
+459
+00:38:38.280 --> 00:38:42.068
+I can leave this world without regret.
+
+460
+00:38:42.280 --> 00:38:43.872
+This is nonsense.
+
+461
+00:38:44.000 --> 00:38:45.399
+Right, Madeleine?
+
+462
+00:38:46.560 --> 00:38:50.075
+Of course. She’s doing better already.
+
+463
+00:38:50.400 --> 00:38:54.393
+I’ll meet death before you do.
+
+464
+00:38:55.400 --> 00:38:58.949
+Joining the army doesn’t mean going to war.
+
+465
+00:38:59.640 --> 00:39:03.235
+Before you go, I want you to know
+
+466
+00:39:03.400 --> 00:39:07.029
+that everything I have will be yours.
+
+467
+00:39:07.440 --> 00:39:10.238
+Don’t forget about me.
+
+468
+00:39:10.440 --> 00:39:14.149
+Write me from time to time.
+
+469
+00:39:14.640 --> 00:39:18.269
+Madeleine will keep you informed.
+
+470
+00:39:19.480 --> 00:39:22.677
+Farewell, my child.
+
+471
+00:40:21.000 --> 00:40:23.195
+My love...
+
+472
+00:40:23.560 --> 00:40:26.358
+I’ll wait for you
+
+473
+00:40:26.480 --> 00:40:29.597
+all my life.
+
+474
+00:40:29.720 --> 00:40:32.314
+I’ll think only of you.
+
+475
+00:40:32.480 --> 00:40:34.994
+Stay, don’t go,
+
+476
+00:40:35.200 --> 00:40:38.272
+I beg you.
+
+477
+00:40:39.040 --> 00:40:43.033
+Stay, my love.
+
+478
+00:40:43.400 --> 00:40:47.518
+It’s not time yet.
+
+479
+00:40:47.640 --> 00:40:51.030
+I’m leaving now.
+
+480
+00:40:51.280 --> 00:40:54.829
+Don’t watch me go.
+
+481
+00:41:05.480 --> 00:41:07.835
+I can’t.
+
+482
+00:41:09.400 --> 00:41:12.870
+I just can’t.
+
+483
+00:41:31.920 --> 00:41:33.911
+My love.
+
+484
+00:41:34.040 --> 00:41:36.759
+I love you.
+
+485
+00:42:37.680 --> 00:42:42.913
+PART TWO – THE ABSENCE
+
+486
+00:43:04.000 --> 00:43:05.319
+Well?
+
+487
+00:43:05.440 --> 00:43:07.078
+Well what?
+
+488
+00:43:07.360 --> 00:43:09.999
+You’re pale as a ghost.
+
+489
+00:43:13.840 --> 00:43:16.149
+What did the doctor say?
+
+490
+00:43:17.240 --> 00:43:18.992
+Nothing, really.
+
+491
+00:43:19.200 --> 00:43:21.953
+That I should rest.
+
+492
+00:43:24.080 --> 00:43:27.993
+You didn’t need to see a doctor for that.
+
+493
+00:43:28.160 --> 00:43:31.709
+I could have told you that myself.
+
+494
+00:43:31.840 --> 00:43:33.319
+What else?
+
+495
+00:43:33.440 --> 00:43:36.273
+He gave me a prescription.
+
+496
+00:43:36.560 --> 00:43:39.518
+Sedatives, tonics – just stuff.
+
+497
+00:43:40.320 --> 00:43:44.996
+"Just stuff"? Then it can’t be very serious.
+
+498
+00:43:45.120 --> 00:43:47.918
+You know, if the shop were doing better,
+
+499
+00:43:48.040 --> 00:43:51.077
+I’d be the happiest woman in the world.
+
+500
+00:43:54.120 --> 00:43:56.395
+It’s freezing.
+
+501
+00:43:58.880 --> 00:44:01.713
+You know whom I met in town?
+
+502
+00:44:01.880 --> 00:44:04.155
+Guess. You don’t want to?
+
+503
+00:44:04.280 --> 00:44:07.636
+Roland Cassard. Have you nothing to say?
+
+504
+00:44:07.760 --> 00:44:10.513
+What do you want me to say?
+
+505
+00:44:10.680 --> 00:44:12.716
+He’s so incredibly nice!
+
+506
+00:44:12.920 --> 00:44:16.037
+We talked for over an hour this morning.
+
+507
+00:44:16.240 --> 00:44:19.312
+He’s back from the U.S.A. What a man!
+
+508
+00:44:19.560 --> 00:44:23.872
+He told me a thousand stories. I invited him to dinner.
+
+509
+00:44:31.480 --> 00:44:33.118
+What’s the matter?
+
+510
+00:44:33.320 --> 00:44:36.198
+Nothing. I’m just tired.
+
+511
+00:44:37.880 --> 00:44:41.156
+That’s no reason to sulk like that.
+
+512
+00:44:41.360 --> 00:44:44.272
+You may be fatigued, but you’re not dying.
+
+513
+00:44:44.440 --> 00:44:46.954
+It’s not the fatigue that saddens me.
+
+514
+00:44:47.120 --> 00:44:49.270
+It’s the silence.
+
+515
+00:44:49.400 --> 00:44:54.235
+Guy left two months ago, and he’s only written once.
+
+516
+00:44:54.360 --> 00:44:56.920
+Don’t start that again.
+
+517
+00:44:57.480 --> 00:45:01.189
+If I knew where he was, I could write to him.
+
+518
+00:45:02.480 --> 00:45:06.712
+I’m sure they’ve sent him somewhere dangerous
+
+519
+00:45:06.920 --> 00:45:08.638
+where he’s risking his life.
+
+520
+00:45:08.800 --> 00:45:10.233
+It’s much simpler.
+
+521
+00:45:10.360 --> 00:45:11.952
+Simpler how?
+
+522
+00:45:12.280 --> 00:45:13.349
+He’s forgotten you.
+
+523
+00:45:13.520 --> 00:45:15.431
+You don’t know what you’re saying!
+
+524
+00:45:15.760 --> 00:45:18.718
+If he were thinking of you, he would write.
+
+525
+00:45:18.960 --> 00:45:22.316
+One can always write, no matter the distance.
+
+526
+00:45:28.480 --> 00:45:30.948
+It’s nothing.
+
+527
+00:45:31.560 --> 00:45:33.994
+I got so scared.
+
+528
+00:45:34.160 --> 00:45:37.311
+I suddenly saw Guy laughing
+
+529
+00:45:37.640 --> 00:45:40.029
+with another woman.
+
+530
+00:45:41.480 --> 00:45:43.391
+Come sit down.
+
+531
+00:45:43.840 --> 00:45:46.991
+I’ll close the shop.
+
+532
+00:45:55.320 --> 00:45:57.550
+You’re hiding something.
+
+533
+00:45:57.720 --> 00:45:59.278
+No, I’m not.
+
+534
+00:46:00.680 --> 00:46:02.875
+It’s serious, isn’t it?
+
+535
+00:46:06.800 --> 00:46:10.839
+I’m pregnant, Mother.
+
+536
+00:46:10.960 --> 00:46:14.475
+This is horrible! Pregnant by Guy?
+
+537
+00:46:15.000 --> 00:46:17.309
+How could this happen?
+
+538
+00:46:17.440 --> 00:46:20.955
+The usual way, I assure you.
+
+539
+00:46:21.080 --> 00:46:24.072
+Stop joking. This is serious.
+
+540
+00:46:24.200 --> 00:46:26.270
+What are we going to do?
+
+541
+00:46:26.640 --> 00:46:28.949
+What do you mean?
+
+542
+00:46:30.040 --> 00:46:32.793
+- With the child. - We’ll bring it up.
+
+543
+00:46:32.920 --> 00:46:35.957
+- What will we say? - To whom?
+
+544
+00:46:36.080 --> 00:46:39.152
+I don’t know. Our neighbors, our friends.
+
+545
+00:46:39.320 --> 00:46:41.788
+We have no friends,
+
+546
+00:46:41.920 --> 00:46:45.515
+and you never speak to the neighbors.
+
+547
+00:46:46.720 --> 00:46:49.439
+And Roland Cassard is coming to dinner!
+
+548
+00:46:50.160 --> 00:46:53.869
+We’ll have to welcome him and put on a good front.
+
+549
+00:46:54.080 --> 00:46:57.152
+With the way you look – and pregnant!
+
+550
+00:46:57.320 --> 00:46:59.390
+You needn’t tell him.
+
+551
+00:46:59.600 --> 00:47:01.158
+Be quiet.
+
+552
+00:47:01.280 --> 00:47:06.195
+I tremble just thinking about it.
+
+553
+00:47:06.960 --> 00:47:10.635
+Go upstairs and lie down.
+
+554
+00:47:12.640 --> 00:47:15.313
+I feel just fine.
+
+555
+00:47:16.280 --> 00:47:19.477
+Don’t argue. Obey me.
+
+556
+00:47:24.360 --> 00:47:27.432
+I’ll fix dinner myself.
+
+557
+00:47:27.880 --> 00:47:29.552
+Don’t worry.
+
+558
+00:47:59.280 --> 00:48:03.159
+Perhaps you need some rest.
+
+559
+00:48:03.280 --> 00:48:09.037
+Yes, Geneviève’s been overdoing it lately.
+
+560
+00:48:09.400 --> 00:48:11.470
+She’s a bit pale.
+
+561
+00:48:11.640 --> 00:48:16.156
+Why don’t you go live in the country?
+
+562
+00:48:16.600 --> 00:48:21.230
+The situation we find ourselves in
+
+563
+00:48:21.440 --> 00:48:25.115
+is such that, at least for the time being,
+
+564
+00:48:25.240 --> 00:48:27.959
+we can’t get away.
+
+565
+00:48:28.280 --> 00:48:31.317
+Geneviève wouldn’t go alone,
+
+566
+00:48:31.480 --> 00:48:36.270
+and I can’t leave the shop.
+
+567
+00:48:37.040 --> 00:48:38.837
+There’s no way out.
+
+568
+00:48:39.080 --> 00:48:43.676
+It seems you two can’t be separated.
+
+569
+00:48:44.160 --> 00:48:48.836
+We’ve practically never been parted.
+
+570
+00:48:50.800 --> 00:48:53.314
+I haven’t found the bean.
+
+571
+00:48:53.520 --> 00:48:55.988
+I found it.
+
+572
+00:48:56.360 --> 00:49:01.798
+You must pick a king and make a wish.
+
+573
+00:49:01.920 --> 00:49:04.480
+I have no choice.
+
+574
+00:49:05.960 --> 00:49:08.190
+You are my king.
+
+575
+00:49:08.520 --> 00:49:10.192
+Thank you, Geneviève.
+
+576
+00:49:10.400 --> 00:49:12.868
+Put this crown on.
+
+577
+00:49:14.360 --> 00:49:18.751
+Do as he asks, Geneviève, and put it on.
+
+578
+00:49:31.040 --> 00:49:33.713
+You look like
+
+579
+00:49:33.880 --> 00:49:37.998
+a Virgin with Child I saw in Antwerp.
+
+580
+00:49:42.040 --> 00:49:44.600
+My cheeks are burning.
+
+581
+00:49:44.880 --> 00:49:48.668
+How funny! I think I drank too much.
+
+582
+00:49:54.520 --> 00:49:56.750
+I’ll leave you now.
+
+583
+00:49:56.880 --> 00:49:59.075
+I’m not feeling too well.
+
+584
+00:49:59.200 --> 00:50:01.236
+Then I’ll be going.
+
+585
+00:50:01.400 --> 00:50:06.952
+Please, let’s you and I chat a bit longer.
+
+586
+00:50:13.800 --> 00:50:16.917
+Good night, my darling.
+
+587
+00:50:29.000 --> 00:50:30.956
+I’m really worried.
+
+588
+00:50:31.120 --> 00:50:34.795
+Geneviève is sad and reserved and keeps to herself.
+
+589
+00:50:34.960 --> 00:50:39.272
+I admit I may not always be tactful and understanding enough.
+
+590
+00:50:39.440 --> 00:50:42.034
+I’m always afraid of hurting her.
+
+591
+00:50:42.160 --> 00:50:44.958
+I don’t want to sound ridiculous,
+
+592
+00:50:45.200 --> 00:50:51.116
+and my feelings could seem insincere.
+
+593
+00:50:51.440 --> 00:50:55.592
+I wouldn’t want you to misinterpret
+
+594
+00:50:55.720 --> 00:50:57.711
+what I’m suggesting,
+
+595
+00:50:57.880 --> 00:51:00.917
+for my only desire
+
+596
+00:51:01.040 --> 00:51:03.429
+is to bring happiness.
+
+597
+00:51:04.800 --> 00:51:07.951
+I don’t know if I’ve made myself clear.
+
+598
+00:51:08.120 --> 00:51:11.476
+To be honest, I don’t understand.
+
+599
+00:51:20.920 --> 00:51:23.514
+Since the beginning of dinner
+
+600
+00:51:23.680 --> 00:51:27.673
+I’ve been trying to broach a subject that’s on my mind,
+
+601
+00:51:27.840 --> 00:51:31.833
+but my shyness got the better of my feelings.
+
+602
+00:51:32.600 --> 00:51:36.149
+I came to ask for Geneviève’s hand.
+
+603
+00:51:36.800 --> 00:51:38.950
+I know I’m terribly clumsy.
+
+604
+00:51:39.080 --> 00:51:40.798
+Not at all,
+
+605
+00:51:40.920 --> 00:51:43.354
+but this is so unexpected.
+
+606
+00:51:43.720 --> 00:51:47.030
+Geneviève is still a child in my eyes,
+
+607
+00:51:47.160 --> 00:51:51.836
+and the suddenness of your request is a bit unsettling.
+
+608
+00:51:52.400 --> 00:51:57.793
+You see, I don’t know Geneviève’s feelings for you.
+
+609
+00:51:58.120 --> 00:52:02.318
+She’s only spoken of you in friendly terms.
+
+610
+00:52:02.680 --> 00:52:08.357
+I wouldn’t want to pressure her in any way.
+
+611
+00:52:09.040 --> 00:52:14.273
+We know nothing about you.
+
+612
+00:52:17.760 --> 00:52:19.955
+Once, years ago...
+
+613
+00:52:20.560 --> 00:52:23.154
+I loved a woman.
+
+614
+00:52:24.520 --> 00:52:27.353
+She didn’t love me.
+
+615
+00:52:28.560 --> 00:52:30.994
+Her name was Lola.
+
+616
+00:52:31.120 --> 00:52:34.078
+This was years ago.
+
+617
+00:52:34.640 --> 00:52:36.471
+I was disappointed
+
+618
+00:52:36.600 --> 00:52:39.160
+and tried to forget her.
+
+619
+00:52:40.440 --> 00:52:43.193
+I left France...
+
+620
+00:52:44.480 --> 00:52:49.600
+and traveled to the ends of the earth.
+
+621
+00:52:49.920 --> 00:52:55.836
+But life held no allure for me.
+
+622
+00:52:56.680 --> 00:53:00.070
+Then, by chance. . .
+
+623
+00:53:00.440 --> 00:53:03.876
+our paths crossed.
+
+624
+00:53:05.760 --> 00:53:07.955
+The moment...
+
+625
+00:53:08.480 --> 00:53:11.392
+I saw Geneviève...
+
+626
+00:53:12.440 --> 00:53:15.318
+I knew I’d been waiting for her.
+
+627
+00:53:16.520 --> 00:53:19.193
+Ever since I met her,
+
+628
+00:53:19.320 --> 00:53:23.029
+life’s taken on new meaning.
+
+629
+00:53:24.440 --> 00:53:27.955
+I see her constantly before me.
+
+630
+00:53:28.440 --> 00:53:31.955
+I live only for her
+
+631
+00:53:32.360 --> 00:53:35.432
+and think only of her.
+
+632
+00:53:35.760 --> 00:53:38.593
+I wanted...
+
+633
+00:53:40.440 --> 00:53:43.671
+to speak to you frankly.
+
+634
+00:53:44.640 --> 00:53:48.155
+Please don’t be offended.
+
+635
+00:53:48.520 --> 00:53:51.478
+Of course, I wouldn’t think
+
+636
+00:53:51.640 --> 00:53:55.349
+of influencing Geneviève.
+
+637
+00:53:55.760 --> 00:53:57.751
+Geneviève...
+
+638
+00:53:58.280 --> 00:54:01.590
+is free.
+
+639
+00:54:13.280 --> 00:54:17.319
+Tomorrow I go back to Amsterdam for three months.
+
+640
+00:54:17.480 --> 00:54:22.793
+Upon my return, Geneviève can give me her answer.
+
+641
+00:54:23.200 --> 00:54:26.510
+I don’t know what to say.
+
+642
+00:54:27.080 --> 00:54:29.594
+No need to say a thing.
+
+643
+00:54:29.760 --> 00:54:34.038
+Geneviève will decide for herself.
+
+644
+00:54:57.560 --> 00:55:00.393
+- You’re not asleep? - You can see I’m not.
+
+645
+00:55:01.560 --> 00:55:05.075
+Roland Cassard asked me for your hand.
+
+646
+00:55:06.440 --> 00:55:08.635
+I was listening.
+
+647
+00:55:09.560 --> 00:55:13.314
+You didn’t tell him I was pregnant?
+
+648
+00:55:13.680 --> 00:55:17.229
+I didn’t dare.
+
+649
+00:56:00.960 --> 00:56:03.758
+I’m very proud of you.
+
+650
+00:56:03.920 --> 00:56:07.799
+François is a pretty name for a boy.
+
+651
+00:56:07.960 --> 00:56:10.076
+Time passes slowly here.
+
+652
+00:56:10.240 --> 00:56:13.391
+All leaves have been suspended,
+
+653
+00:56:13.560 --> 00:56:16.199
+and I don’t know...
+
+654
+00:56:17.080 --> 00:56:21.312
+whether I’ll be returning to France anytime soon.
+
+655
+00:56:21.480 --> 00:56:24.870
+My love, I know you’re waiting for me.
+
+656
+00:56:26.640 --> 00:56:29.677
+Last night one of our patrols
+
+657
+00:56:29.800 --> 00:56:32.997
+fell into an ambush.
+
+658
+00:56:33.160 --> 00:56:35.276
+Three soldiers were killed.
+
+659
+00:56:35.440 --> 00:56:37.715
+All the same, I don ’t think
+
+660
+00:56:37.840 --> 00:56:41.515
+that there ’s any great danger here.
+
+661
+00:56:42.640 --> 00:56:47.395
+But it’s strange how sun and death
+
+662
+00:56:47.720 --> 00:56:51.269
+travel together.
+
+663
+00:56:56.760 --> 00:56:59.558
+Geneviève, come and eat, darling.
+
+664
+00:57:25.360 --> 00:57:27.828
+"Dear Mr. Cassard,
+
+665
+00:57:27.960 --> 00:57:30.997
+Mother and I
+
+666
+00:57:31.120 --> 00:57:35.511
+greatly appreciated your postcard."
+
+667
+00:58:40.160 --> 00:58:42.754
+I find all those people ridiculous.
+
+668
+00:58:42.920 --> 00:58:44.911
+I hate carnival.
+
+669
+00:58:45.080 --> 00:58:47.594
+Don’t be bitter, my darling.
+
+670
+00:58:49.360 --> 00:58:51.954
+It’s incredible how big you are!
+
+671
+00:58:52.360 --> 00:58:56.512
+You’re carrying in front. It will be a boy – or twins.
+
+672
+00:58:56.640 --> 00:58:59.074
+No, everything’s normal.
+
+673
+00:58:59.480 --> 00:59:01.675
+I feel wonderful.
+
+674
+00:59:01.800 --> 00:59:04.792
+You’re like me. I was delighted, and never sick.
+
+675
+00:59:04.960 --> 00:59:08.270
+The day before you were born, I was up on a ladder,
+
+676
+00:59:08.480 --> 00:59:11.199
+changing the wallpaper in the shop.
+
+677
+00:59:13.480 --> 00:59:15.869
+Has the mailman come?
+
+678
+00:59:16.400 --> 00:59:19.073
+There was nothing but bills
+
+679
+00:59:19.640 --> 00:59:22.279
+and some advertising.
+
+680
+00:59:22.640 --> 00:59:25.598
+Why? Are you still waiting?
+
+681
+00:59:30.600 --> 00:59:32.989
+In his last letter he wrote
+
+682
+00:59:33.200 --> 00:59:37.239
+that he was sad he wouldn’t see me pregnant.
+
+683
+00:59:37.640 --> 00:59:41.315
+Perhaps it’s just as well. I look awful.
+
+684
+00:59:41.440 --> 00:59:45.479
+A pregnant woman is always beautiful, sweetheart.
+
+685
+00:59:48.360 --> 00:59:49.952
+That’s true.
+
+686
+00:59:50.320 --> 00:59:52.550
+Look at this.
+
+687
+00:59:53.200 --> 00:59:57.716
+A little top, and I saw pretty rompers at the department store.
+
+688
+00:59:57.840 --> 00:59:59.990
+Admit you’re pleased.
+
+689
+01:00:00.240 --> 01:00:03.516
+I’d be more pleased if the child had a father,
+
+690
+01:00:03.680 --> 01:00:05.875
+and if you had a husband.
+
+691
+01:00:06.920 --> 01:00:09.309
+Guy will come back.
+
+692
+01:00:10.760 --> 01:00:13.718
+Guy... or someone else.
+
+693
+01:00:14.960 --> 01:00:19.112
+Absence is a funny thing.
+
+694
+01:00:20.080 --> 01:00:24.631
+It feels like Guy’s been gone for years.
+
+695
+01:00:25.160 --> 01:00:27.151
+When I look at this picture,
+
+696
+01:00:27.280 --> 01:00:29.794
+I forget what he really looks like.
+
+697
+01:00:30.200 --> 01:00:34.239
+And when I think of him, it’s this picture I see.
+
+698
+01:00:34.560 --> 01:00:38.872
+It’s all I have left of him.
+
+699
+01:00:48.400 --> 01:00:51.073
+You mustn’t smoke. Be reasonable.
+
+700
+01:01:01.280 --> 01:01:02.872
+What’s that?
+
+701
+01:01:03.040 --> 01:01:05.031
+A postcard from Hamburg
+
+702
+01:01:05.160 --> 01:01:07.116
+from Roland Cassard.
+
+703
+01:01:07.320 --> 01:01:10.392
+- For me? - For us. You can read it.
+
+704
+01:01:11.120 --> 01:01:13.873
+He says he’ll be back soon.
+
+705
+01:01:14.520 --> 01:01:17.751
+He asks if you’ve thought it over.
+
+706
+01:01:17.920 --> 01:01:20.798
+I don’t think there’s any hurry.
+
+707
+01:01:21.280 --> 01:01:24.556
+No, but you should give it some thought.
+
+708
+01:01:24.960 --> 01:01:27.520
+I am, Mother.
+
+709
+01:01:27.640 --> 01:01:30.791
+A man comes along who’s rich and refined
+
+710
+01:01:31.040 --> 01:01:33.474
+and smitten with you, and I think –
+
+711
+01:01:35.000 --> 01:01:36.956
+What are you doing?
+
+712
+01:01:37.480 --> 01:01:39.311
+Aren’t you feeling well?
+
+713
+01:01:39.440 --> 01:01:41.237
+I’m fine.
+
+714
+01:01:41.440 --> 01:01:45.115
+- You’re eating? - I can’t help it. I’m always hungry.
+
+715
+01:01:45.960 --> 01:01:50.112
+He’s not a womanizer or a smooth talker on the prowl,
+
+716
+01:01:50.240 --> 01:01:54.392
+but a man who’s lived and suffered.
+
+717
+01:01:55.080 --> 01:01:58.834
+I know, Mother, but spare me the sales pitch.
+
+718
+01:01:58.960 --> 01:02:02.748
+You talk about him like he’s one of your umbrellas.
+
+719
+01:02:03.120 --> 01:02:05.554
+Because he’ll protect you!
+
+720
+01:02:05.680 --> 01:02:06.954
+Very funny!
+
+721
+01:02:07.080 --> 01:02:10.595
+If you can’t take a little joke, you’re in sad shape.
+
+722
+01:02:12.200 --> 01:02:15.795
+Guy may have been your ideal,
+
+723
+01:02:16.040 --> 01:02:18.679
+but what future does he offer you?
+
+724
+01:02:19.440 --> 01:02:22.830
+You know I was wooed once too
+
+725
+01:02:23.000 --> 01:02:25.878
+by a young man who was not your father.
+
+726
+01:02:26.000 --> 01:02:28.992
+You’d have done better to marry him.
+
+727
+01:02:29.160 --> 01:02:31.037
+You’re right.
+
+728
+01:02:31.160 --> 01:02:34.596
+But try to understand that I want you to be happy
+
+729
+01:02:34.720 --> 01:02:38.030
+and not waste your life like I wasted mine.
+
+730
+01:02:38.160 --> 01:02:41.357
+Don’t worry about my life, Mother.
+
+731
+01:02:41.680 --> 01:02:45.150
+I have no intention whatsoever
+
+732
+01:02:45.440 --> 01:02:48.034
+of wasting it.
+
+733
+01:02:49.960 --> 01:02:53.475
+Do you think Cassard will want to marry me
+
+734
+01:02:53.600 --> 01:02:56.353
+when he sees I’ve been knocked up?
+
+735
+01:02:56.520 --> 01:02:58.033
+Watch your language!
+
+736
+01:02:58.200 --> 01:03:00.111
+All deformed and swollen up!
+
+737
+01:03:00.240 --> 01:03:03.232
+Neither you nor I had the courage
+
+738
+01:03:03.400 --> 01:03:06.597
+to tell him the truth.
+
+739
+01:03:06.920 --> 01:03:10.549
+At least now it will show!
+
+740
+01:03:14.760 --> 01:03:17.718
+Do you think he’ll take me like this?
+
+741
+01:03:17.880 --> 01:03:20.030
+If he refuses me as I am,
+
+742
+01:03:20.200 --> 01:03:22.430
+it means he doesn’t have
+
+743
+01:03:22.600 --> 01:03:24.716
+deep feelings for me.
+
+744
+01:03:24.880 --> 01:03:28.236
+If, by some extraordinary chance, he accepts me,
+
+745
+01:03:28.360 --> 01:03:31.397
+I’ll have no reason to doubt him,
+
+746
+01:03:31.560 --> 01:03:34.711
+and I’d be a fool to turn him away.
+
+747
+01:03:35.400 --> 01:03:38.233
+So you see, I’ve been thinking it over,
+
+748
+01:03:38.440 --> 01:03:41.591
+but this is all so difficult.
+
+749
+01:03:49.280 --> 01:03:54.400
+Why is absence
+
+750
+01:03:54.600 --> 01:03:58.593
+so heavy to bear?
+
+751
+01:04:01.560 --> 01:04:07.317
+Why is Guy growing so distant?
+
+752
+01:04:09.640 --> 01:04:15.954
+I would have died for him.
+
+753
+01:04:18.320 --> 01:04:24.031
+So why aren’t I dead?
+
+754
+01:04:44.400 --> 01:04:45.469
+Look.
+
+755
+01:04:45.600 --> 01:04:47.352
+What is it?
+
+756
+01:04:47.520 --> 01:04:49.192
+It’s for you.
+
+757
+01:04:49.840 --> 01:04:52.434
+Roland sent it.
+
+758
+01:04:52.760 --> 01:04:55.832
+I can’t accept it.
+
+759
+01:04:57.920 --> 01:05:00.150
+Do as you like.
+
+760
+01:05:18.880 --> 01:05:22.634
+We’ll bring this child up together.
+
+761
+01:05:23.160 --> 01:05:26.277
+It will be our child.
+
+762
+01:05:26.840 --> 01:05:29.434
+Please say yes.
+
+763
+01:05:30.279 --> 01:05:33.352
+Geneviève...
+
+764
+01:05:34.680 --> 01:05:37.558
+I don’t want all this...
+
+765
+01:05:38.680 --> 01:05:42.275
+to cause you the slightest grief.
+
+766
+01:05:43.279 --> 01:05:45.794
+I love you...
+
+767
+01:05:46.320 --> 01:05:49.437
+Geneviève.
+
+768
+01:06:00.279 --> 01:06:02.396
+She accepts your offer,
+
+769
+01:06:02.560 --> 01:06:08.635
+seeing how you’re not put off by the situation she’s in.
+
+770
+01:06:08.840 --> 01:06:10.876
+But don’t rush her.
+
+771
+01:06:11.040 --> 01:06:13.349
+She’s so fragile
+
+772
+01:06:13.560 --> 01:06:15.710
+that the slightest false step
+
+773
+01:06:15.880 --> 01:06:18.792
+could compromise everything.
+
+774
+01:07:35.680 --> 01:07:40.674
+PART THREE – THE RETURN
+
+775
+01:08:31.200 --> 01:08:33.555
+NEW OWNER
+
+776
+01:08:36.600 --> 01:08:39.433
+Madeleine told me everything.
+
+777
+01:08:39.880 --> 01:08:41.950
+Why didn’t you say anything?
+
+778
+01:08:42.080 --> 01:08:43.718
+I didn’t want to.
+
+779
+01:08:43.880 --> 01:08:46.712
+I thought you knew.
+
+780
+01:08:47.399 --> 01:08:49.755
+Didn’t you suspect anything?
+
+781
+01:08:49.920 --> 01:08:51.716
+Of course.
+
+782
+01:08:51.840 --> 01:08:56.868
+The last few months her letters weren’t the same.
+
+783
+01:08:57.399 --> 01:09:00.631
+She didn’t answer my questions.
+
+784
+01:09:01.559 --> 01:09:04.279
+She wrote without conviction.
+
+785
+01:09:04.720 --> 01:09:08.474
+But to marry another man!
+
+786
+01:09:09.279 --> 01:09:13.193
+I just thought she was mad at me, but I didn’t know why.
+
+787
+01:09:13.359 --> 01:09:16.238
+Then there was the hospital
+
+788
+01:09:16.760 --> 01:09:19.558
+and my letters that went unanswered.
+
+789
+01:09:23.399 --> 01:09:26.073
+Nothing’s changed here.
+
+790
+01:09:26.240 --> 01:09:28.117
+I have.
+
+791
+01:09:28.240 --> 01:09:30.800
+Now I can go
+
+792
+01:09:31.760 --> 01:09:33.751
+since you’ve come back.
+
+793
+01:09:33.920 --> 01:09:38.277
+I’d have been unhappy not to see you again.
+
+794
+01:09:39.559 --> 01:09:41.551
+Don’t talk nonsense.
+
+795
+01:09:41.760 --> 01:09:45.036
+Now make yourself useful, my boy.
+
+796
+01:09:45.479 --> 01:09:48.756
+Get me a little herb tea.
+
+797
+01:09:49.680 --> 01:09:51.591
+Everything’s ready
+
+798
+01:09:51.760 --> 01:09:53.398
+in the kitchen.
+
+799
+01:09:53.520 --> 01:09:57.115
+There’s water in the kettle.
+
+800
+01:09:59.080 --> 01:10:01.434
+Does your leg hurt?
+
+801
+01:10:01.559 --> 01:10:04.199
+I limp a bit now.
+
+802
+01:10:08.440 --> 01:10:13.514
+It’s like having a barometer in my knee.
+
+803
+01:10:14.040 --> 01:10:16.110
+Especially when it rains.
+
+804
+01:10:16.280 --> 01:10:19.750
+The hospital was the worst part of all.
+
+805
+01:10:20.480 --> 01:10:22.789
+But how did it happen?
+
+806
+01:10:23.480 --> 01:10:26.995
+Returning one night from maneuvers...
+
+807
+01:10:27.160 --> 01:10:30.709
+we were attacked with hand grenades.
+
+808
+01:10:30.840 --> 01:10:32.831
+It was a common occurrence.
+
+809
+01:10:36.040 --> 01:10:37.268
+And Madeleine?
+
+810
+01:10:37.440 --> 01:10:39.635
+She’ll be here soon.
+
+811
+01:10:39.920 --> 01:10:42.832
+She’s been very good to me.
+
+812
+01:10:43.840 --> 01:10:46.638
+She’s not married yet?
+
+813
+01:10:47.720 --> 01:10:50.154
+You know how sensible she is.
+
+814
+01:10:54.040 --> 01:10:57.919
+Put this over there on the table.
+
+815
+01:11:02.920 --> 01:11:05.673
+What will you do now?
+
+816
+01:11:07.240 --> 01:11:09.196
+Work...
+
+817
+01:11:09.320 --> 01:11:12.551
+or maybe live off my pension.
+
+818
+01:11:12.760 --> 01:11:17.276
+Aubin promised to take you back at the garage.
+
+819
+01:11:18.040 --> 01:11:20.076
+You liked it there.
+
+820
+01:11:20.200 --> 01:11:23.875
+Oh, there, or some other garage.
+
+821
+01:11:24.000 --> 01:11:27.515
+We’ll see. I have time. There’s no hurry.
+
+822
+01:11:32.800 --> 01:11:37.827
+The child she was expecting – you know anything about it?
+
+823
+01:11:37.960 --> 01:11:42.636
+No, Geneviève left right after the wedding.
+
+824
+01:11:43.400 --> 01:11:45.994
+Mrs. Emery stayed
+
+825
+01:11:46.400 --> 01:11:49.631
+in Cherbourg a month or two.
+
+826
+01:11:50.360 --> 01:11:53.511
+Then she sold the shop.
+
+827
+01:11:54.920 --> 01:11:58.071
+I think they’re in Paris.
+
+828
+01:12:10.160 --> 01:12:13.072
+You haven’t changed.
+
+829
+01:12:13.400 --> 01:12:15.709
+I’m happy
+
+830
+01:12:16.000 --> 01:12:19.549
+that you’re back.
+
+831
+01:13:08.160 --> 01:13:09.559
+Foucher!
+
+832
+01:13:11.880 --> 01:13:13.438
+The boss wants you.
+
+833
+01:13:15.640 --> 01:13:16.868
+Shit!
+
+834
+01:13:26.000 --> 01:13:28.468
+Did you service this gentleman’s car?
+
+835
+01:13:30.240 --> 01:13:32.879
+A complete checkup on the 26th, right?
+
+836
+01:13:34.400 --> 01:13:38.075
+It threw two rods this morning. The engine has to be rebuilt!
+
+837
+01:13:38.200 --> 01:13:40.839
+A brand new engine – without a drop of oil!
+
+838
+01:13:40.960 --> 01:13:44.430
+I’m not accusing anyone, but those are the facts.
+
+839
+01:13:44.559 --> 01:13:47.597
+- Did you check the oil gauge? - Of course.
+
+840
+01:13:47.760 --> 01:13:50.957
+- You forgot to tighten the plug. - I know my job!
+
+841
+01:13:51.080 --> 01:13:52.991
+Change your tone of voice,
+
+842
+01:13:53.160 --> 01:13:54.832
+and apologize to the gentleman!
+
+843
+01:13:55.280 --> 01:13:57.396
+I have nothing to apologize for!
+
+844
+01:13:57.520 --> 01:13:59.795
+You don’t give a damn about your work now.
+
+845
+01:13:59.920 --> 01:14:03.799
+Why don’t you buy new overalls and shave before coming to work?
+
+846
+01:14:03.960 --> 01:14:06.758
+I’ve had enough! I’ll find another job!
+
+847
+01:14:10.200 --> 01:14:13.033
+Ever since that jerk got out of the service
+
+848
+01:14:13.200 --> 01:14:15.714
+he’s been acting like a hoodlum.
+
+849
+01:14:19.200 --> 01:14:21.270
+What’s gotten into you?
+
+850
+01:14:21.480 --> 01:14:23.198
+I’m quitting.
+
+851
+01:14:23.640 --> 01:14:27.030
+I got into it with Aubin and quit before he could fire me.
+
+852
+01:14:27.200 --> 01:14:28.519
+What will you do?
+
+853
+01:14:28.640 --> 01:14:30.756
+Live off my pension.
+
+854
+01:15:06.920 --> 01:15:08.751
+A dry white wine.
+
+855
+01:15:16.920 --> 01:15:18.592
+Another one.
+
+856
+01:15:23.520 --> 01:15:25.397
+Take it out of this.
+
+857
+01:15:26.760 --> 01:15:29.115
+You don’t have change?
+
+858
+01:15:29.520 --> 01:15:32.910
+You’re all the same with your big bills.
+
+859
+01:15:33.240 --> 01:15:34.798
+What’s it to you?
+
+860
+01:15:34.960 --> 01:15:36.757
+Do your job and lay off.
+
+861
+01:15:36.880 --> 01:15:38.598
+Oh, yeah?
+
+862
+01:15:38.800 --> 01:15:40.518
+Drop it.
+
+863
+01:16:14.320 --> 01:16:16.197
+What are you looking for?
+
+864
+01:16:16.320 --> 01:16:17.230
+Nothing.
+
+865
+01:16:17.400 --> 01:16:19.436
+Then move your ass.
+
+866
+01:16:19.559 --> 01:16:21.551
+You’re in the way.
+
+867
+01:16:58.360 --> 01:16:59.952
+Cognac.
+
+868
+01:17:09.920 --> 01:17:11.956
+Want to dance?
+
+869
+01:17:14.559 --> 01:17:16.550
+Leave me alone.
+
+870
+01:17:35.400 --> 01:17:37.630
+Something wrong, baby?
+
+871
+01:17:42.760 --> 01:17:45.832
+Come with me, if you’d like.
+
+872
+01:17:47.320 --> 01:17:49.629
+You’re really
+
+873
+01:17:49.760 --> 01:17:52.911
+a sweet girl.
+
+874
+01:17:56.480 --> 01:17:58.675
+Bye, Madame Germaine.
+
+875
+01:18:01.440 --> 01:18:03.077
+Bye, Jenny.
+
+876
+01:18:32.920 --> 01:18:35.673
+You can call me Geneviève
+
+877
+01:18:35.800 --> 01:18:37.791
+if you’d like.
+
+878
+01:18:42.480 --> 01:18:46.473
+You’re going to say I remind you of someone.
+
+879
+01:18:49.680 --> 01:18:51.955
+Good-bye, Jenny.
+
+880
+01:18:53.040 --> 01:18:55.600
+Come back anytime.
+
+881
+01:19:14.360 --> 01:19:16.510
+Sorry, Madeleine.
+
+882
+01:19:18.040 --> 01:19:20.235
+I didn’t have my key.
+
+883
+01:19:23.440 --> 01:19:25.317
+What’s the matter?
+
+884
+01:19:25.440 --> 01:19:28.318
+Elise died
+
+885
+01:19:28.520 --> 01:19:30.556
+last night.
+
+886
+01:19:57.559 --> 01:20:02.680
+I can’t stay
+
+887
+01:20:03.240 --> 01:20:06.152
+in this apartment any longer.
+
+888
+01:20:06.320 --> 01:20:08.470
+It makes me too sad.
+
+889
+01:20:08.600 --> 01:20:11.717
+I want to leave soon.
+
+890
+01:20:11.880 --> 01:20:14.713
+But where will you go?
+
+891
+01:20:14.840 --> 01:20:16.751
+I don’t know.
+
+892
+01:20:16.920 --> 01:20:19.388
+You have no family.
+
+893
+01:20:19.559 --> 01:20:23.269
+Don’t you want to stay here?
+
+894
+01:20:23.400 --> 01:20:26.631
+- Why? - To help me.
+
+895
+01:20:26.840 --> 01:20:30.549
+I’ll be all alone.
+
+896
+01:20:31.760 --> 01:20:34.877
+You don’t need anyone.
+
+897
+01:20:35.280 --> 01:20:39.239
+I do. I need you, Madeleine.
+
+898
+01:20:40.800 --> 01:20:45.954
+Why not just admit you don’t like being alone?
+
+899
+01:20:48.400 --> 01:20:52.678
+I don’t see how I could help.
+
+900
+01:20:52.800 --> 01:20:56.713
+I have no influence over you.
+
+901
+01:20:58.320 --> 01:21:00.754
+That’s not true.
+
+902
+01:21:05.800 --> 01:21:09.793
+I don’t like what you’ve become.
+
+903
+01:21:09.960 --> 01:21:13.839
+- What’s that? - An idle loafer.
+
+904
+01:21:13.960 --> 01:21:17.316
+You’re sad and bitter.
+
+905
+01:21:17.640 --> 01:21:20.393
+You’ve changed a lot.
+
+906
+01:21:20.680 --> 01:21:22.716
+It’s not my fault.
+
+907
+01:21:22.840 --> 01:21:27.709
+Nothing’s made sense ever since I came back.
+
+908
+01:21:27.920 --> 01:21:31.276
+I don’t believe I can help you.
+
+909
+01:21:32.120 --> 01:21:35.237
+You’re too far away.
+
+910
+01:21:35.360 --> 01:21:38.830
+What if I asked you to try
+
+911
+01:21:38.960 --> 01:21:41.679
+despite everything?
+
+912
+01:21:41.840 --> 01:21:46.152
+I’d stay without a moment’s hesitation.
+
+913
+01:21:47.200 --> 01:21:50.112
+I’m asking you now.
+
+914
+01:21:50.400 --> 01:21:54.075
+Then I’ll try.
+
+915
+01:22:39.080 --> 01:22:41.309
+I’m a little late.
+
+916
+01:22:42.160 --> 01:22:44.913
+The lawyer took forever,
+
+917
+01:22:45.200 --> 01:22:47.873
+and I stopped by the garage.
+
+918
+01:22:48.680 --> 01:22:51.717
+Everything’s all settled.
+
+919
+01:22:52.040 --> 01:22:54.076
+Poor Elise.
+
+920
+01:22:54.559 --> 01:22:57.632
+Nothing will be left of her.
+
+921
+01:22:57.760 --> 01:23:00.593
+Oh, no. Just the opposite.
+
+922
+01:23:01.240 --> 01:23:04.038
+She’ll be part of all we do.
+
+923
+01:23:07.720 --> 01:23:10.712
+- Are you happy? - Very.
+
+924
+01:23:11.000 --> 01:23:13.878
+And I owe it all to you.
+
+925
+01:23:14.480 --> 01:23:17.074
+It’s true, and you know it.
+
+926
+01:23:20.880 --> 01:23:23.916
+And you? Are you happy?
+
+927
+01:23:24.320 --> 01:23:28.108
+Oh, I’m not unhappy.
+
+928
+01:23:30.240 --> 01:23:32.196
+I wanted to say –
+
+929
+01:23:32.360 --> 01:23:35.670
+I mean, I’ve been thinking that if you wanted
+
+930
+01:23:35.800 --> 01:23:37.950
+to share my life...
+
+931
+01:23:38.480 --> 01:23:42.758
+if I weren’t too much of a burden...
+
+932
+01:23:43.440 --> 01:23:45.590
+and – Are you crying?
+
+933
+01:23:45.720 --> 01:23:47.597
+No.
+
+934
+01:23:50.040 --> 01:23:52.315
+Did I say the wrong thing?
+
+935
+01:23:52.960 --> 01:23:54.632
+Not at all.
+
+936
+01:23:54.840 --> 01:23:57.991
+It makes me so happy,
+
+937
+01:23:58.320 --> 01:24:01.153
+yet at the same time it scares me.
+
+938
+01:24:01.280 --> 01:24:03.271
+You’re scared of me?
+
+939
+01:24:03.440 --> 01:24:06.238
+No, I mean... that is...
+
+940
+01:24:06.360 --> 01:24:08.316
+you understand.
+
+941
+01:24:09.960 --> 01:24:13.635
+Have you stopped thinking about Geneviève?
+
+942
+01:24:14.040 --> 01:24:17.157
+Are you sure you really love me?
+
+943
+01:24:17.360 --> 01:24:20.318
+I’m not scared, but I do wonder
+
+944
+01:24:20.520 --> 01:24:24.195
+if you’re not acting out of despair.
+
+945
+01:24:24.320 --> 01:24:27.039
+No, you’re entirely wrong.
+
+946
+01:24:27.559 --> 01:24:30.791
+I don’t want to think about Geneviève anymore.
+
+947
+01:24:31.040 --> 01:24:34.032
+I assure you I’ve forgotten everything.
+
+948
+01:24:34.360 --> 01:24:37.830
+I want to be happy with you.
+
+949
+01:24:38.160 --> 01:24:41.072
+Madeleine, don’t cry.
+
+950
+01:24:41.320 --> 01:24:44.232
+I don’t have much ambition,
+
+951
+01:24:44.520 --> 01:24:48.513
+but if I could make this dream come true...
+
+952
+01:24:49.600 --> 01:24:54.151
+of being happy with a woman
+
+953
+01:24:54.440 --> 01:24:59.468
+in a life we’ve chosen
+
+954
+01:24:59.880 --> 01:25:03.429
+together...
+
+955
+01:25:23.240 --> 01:25:24.958
+All done.
+
+956
+01:25:26.160 --> 01:25:27.752
+It’s beautiful.
+
+957
+01:25:27.920 --> 01:25:29.558
+You think so?
+
+958
+01:25:36.440 --> 01:25:38.510
+Your hands are cold.
+
+959
+01:25:42.720 --> 01:25:45.393
+I’m going out for a while.
+
+960
+01:25:46.240 --> 01:25:48.071
+Whatever you like.
+
+961
+01:25:49.200 --> 01:25:53.193
+Our little boy wants to see the toys in the shop windows.
+
+962
+01:25:53.320 --> 01:25:56.437
+He’s been talking about it for a week.
+
+963
+01:25:57.080 --> 01:26:00.868
+We’ll go quickly before dinner.
+
+964
+01:26:02.400 --> 01:26:04.914
+Stop that, François.
+
+965
+01:26:05.480 --> 01:26:07.391
+You’ll make us deaf.
+
+966
+01:26:10.120 --> 01:26:14.032
+I got you a lovely Christmas present.
+
+967
+01:26:14.160 --> 01:26:15.513
+What is it?
+
+968
+01:26:15.640 --> 01:26:18.518
+It’s a surprise. You’ll see.
+
+969
+01:26:25.200 --> 01:26:27.395
+Cover up well.
+
+970
+01:26:28.480 --> 01:26:30.835
+I love you, Guy.
+
+971
+01:26:38.040 --> 01:26:40.952
+François, come put your coat on.
+
+972
+01:26:47.800 --> 01:26:51.634
+Say hi to Santa Claus for me.
+
+973
+01:27:00.480 --> 01:27:02.311
+See you in a while.
+
+974
+01:27:23.000 --> 01:27:25.833
+Françoise, stop that.
+
+975
+01:27:28.160 --> 01:27:31.152
+The horn is not a toy.
+
+976
+01:27:46.920 --> 01:27:48.751
+It’s cold.
+
+977
+01:27:49.200 --> 01:27:52.476
+Come in the office.
+
+978
+01:28:18.559 --> 01:28:21.916
+It’s better in here.
+
+979
+01:28:31.240 --> 01:28:35.472
+This is my first time back in Cherbourg
+
+980
+01:28:36.080 --> 01:28:38.992
+since I got married.
+
+981
+01:28:40.400 --> 01:28:43.312
+I went to pick up my daughter
+
+982
+01:28:43.440 --> 01:28:46.557
+at my mother-in-law’s in Anjou.
+
+983
+01:28:51.520 --> 01:28:53.875
+On my way back to Paris
+
+984
+01:28:54.000 --> 01:28:57.390
+I decided to make a detour.
+
+985
+01:28:58.360 --> 01:29:01.511
+I never thought I’d run into you.
+
+986
+01:29:02.440 --> 01:29:05.432
+As fate would have it...
+
+987
+01:29:07.080 --> 01:29:09.719
+Fill it up, ma’am?
+
+988
+01:29:11.960 --> 01:29:13.473
+Yes, fill it up.
+
+989
+01:29:13.640 --> 01:29:15.471
+Super or regular?
+
+990
+01:29:15.600 --> 01:29:17.477
+It doesn’t matter.
+
+991
+01:29:18.360 --> 01:29:21.636
+Whichever you prefer. Super?
+
+992
+01:29:28.200 --> 01:29:30.270
+It’s a pretty tree.
+
+993
+01:29:30.400 --> 01:29:32.595
+Did you decorate it?
+
+994
+01:29:32.760 --> 01:29:37.038
+No, my wife did. It’s mostly for the kid.
+
+995
+01:29:40.520 --> 01:29:42.272
+Of course.
+
+996
+01:29:44.280 --> 01:29:46.111
+Are you in mourning?
+
+997
+01:29:46.240 --> 01:29:49.232
+Mother died last autumn.
+
+998
+01:29:57.480 --> 01:30:00.153
+What did you name her?
+
+999
+01:30:00.280 --> 01:30:02.271
+Françoise.
+
+1000
+01:30:02.640 --> 01:30:05.791
+She’s so much like you.
+
+1001
+01:30:06.640 --> 01:30:09.234
+Do you want to see her?
+
+1002
+01:30:14.520 --> 01:30:17.318
+I think you can go now.
+
+1003
+01:30:26.360 --> 01:30:28.794
+Are you doing well?

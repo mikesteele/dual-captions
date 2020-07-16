@@ -46,6 +46,41 @@ class ViewBookmarksModal extends React.Component {
     this.removeSelectedCaptions = this.removeSelectedCaptions.bind(this);
   }
 
+  componentDidMount() {
+    const { settings } = this.props;
+
+    // Check for any revoked image captions
+    const promises = settings.bookmarks.map(bookmark => {
+      return new Promise((resolve, reject) => {
+        if (/^blob:/.test(bookmark[0])) {
+          const image = new Image();
+          image.onload = () => {
+            // Image resolved, don't remove
+            resolve(null);
+          }
+          image.onerror = () => {
+            // Image 404'd, remove
+            resolve(bookmark);
+          }
+          image.src = bookmark[0];
+        } else {
+          // Not an image bookmark, don't remove
+          resolve(null);
+        }
+      });
+    });
+    Promise.all(promises).then(results => {
+      const bookmarksToRemove = results.filter(i => !!i);
+      if (bookmarksToRemove.length > 0) {
+        console.log(`Removing revoked bookmarks:`);
+        console.log(bookmarksToRemove);
+        settings.removeFromBookmarks(bookmarksToRemove);
+      }
+    }).catch(err => {
+      console.error(`Could not check for revoked image bookmarks, error: ${err}`);
+    })
+  }
+
   copySelectedCaptionsToClipboard() {
     const {
       selectedCaptions
@@ -108,26 +143,6 @@ class ViewBookmarksModal extends React.Component {
     const {
       selectedCaptions
     } = this.state;
-    const containerStyle = {
-      width: '50%',
-      height: '50%',
-      background: '#0d0d0d',
-      color: '#E1E1E1',
-      boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.5)',
-      padding: '32px',
-      fontSize: '16px',
-      lineHeight: '20px',
-      borderRadius: '8px',
-      display: 'flex',
-      flexDirection: 'column'
-    }
-    const headingStyle = {
-      fontSize: '24px',
-      lineHeight: '28px',
-      marginBottom: '32px',
-      display: 'flex',
-      justifyContent: 'space-between'
-    }
     const tableStyle = {
       overflow: 'auto',
       borderRadius: '4px'
@@ -167,13 +182,13 @@ class ViewBookmarksModal extends React.Component {
 
     const hasSavedCaptionsModalBody = (
       <Fragment>
-        <div style={headingStyle}>
-          <span>{t('bookmarks')}</span>
-          <span onClick={onClose} style={{cursor: 'pointer'}}><MdClose /></span>
-        </div>
         <div style={tableStyle}>
           <div>
             {settings.bookmarks.map((caption, index) => {
+              if (typeof(caption[0]) !== 'string' || typeof(caption[1]) !== 'string') {
+                // Invalid saved bookmark
+                return null;
+              }
               const rowStyle = index % 2 === 0 ? evenRowStyles : oddRowStyles;
               const isSelected = selectedCaptions.some(pair => {
                 return pair[0] === caption[0] && pair[1] === caption[1];
@@ -184,13 +199,20 @@ class ViewBookmarksModal extends React.Component {
               } : () => {
                 this.selectCaption(caption[0], caption[1]);
               };
+              const isImageCaption = /^blob:/.test(caption[0]);
+              const firstCaption = isImageCaption ? (
+                // Render the blob URL created by adapter.getCaptionBlob()
+                <img src={caption[0]}/>
+              ) : (
+                <div style={{marginBottom: '8px'}}>{caption[0]}</div>
+              )
               return (
                 <div style={rowStyle} key={`${caption[0]}|${caption[1]}`}>
                   <div onClick={onClick} style={iconStyle}>
                     {icon}
                   </div>
                   <div>
-                    <div style={{marginBottom: '8px'}}>{caption[0]}</div>
+                    {firstCaption}
                     <div>{caption[1]}</div>
                   </div>
                 </div>
@@ -211,10 +233,6 @@ class ViewBookmarksModal extends React.Component {
 
     const noSavedCaptionsModalBody = (
       <Fragment>
-        <div style={headingStyle}>
-          <span>{t('bookmarks')}</span>
-          <span onClick={onClose} style={{cursor: 'pointer'}}><MdClose /></span>
-        </div>
         <div style={{
           fontSize: '20px',
           lineHeight: '32px'
@@ -242,10 +260,9 @@ class ViewBookmarksModal extends React.Component {
       <Modal
         isOpen={isOpen}
         onClose={onClose}
+        title={t('bookmarks')}
       >
-        <div style={containerStyle} onClick={onClickContainer}>
-          { hasSavedCaptions ? hasSavedCaptionsModalBody : noSavedCaptionsModalBody }
-        </div>
+        { hasSavedCaptions ? hasSavedCaptionsModalBody : noSavedCaptionsModalBody }
       </Modal>
     )
   }

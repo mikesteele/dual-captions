@@ -2,8 +2,12 @@ import React from 'react'
 
 const Styles = () => {
   const styles = `
-    .dc-popper {
+    .dc-z-index {
       z-index: 10000;
+    }
+
+    .dc-no-pointer-events {
+      pointer-events: none;
     }
 
     .extra-space {

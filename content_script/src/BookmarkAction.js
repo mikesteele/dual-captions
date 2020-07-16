@@ -35,7 +35,13 @@ class BookmarkAction extends React.Component {
 
     let tooltipText = t('bookmark-caption');
     let onClick = () => {
-      addToBookmarks(firstCaptionText, secondCaptionText);
+      if (adapter.getCaptionBlob) {
+        adapter.getCaptionBlob(captionText => {
+          addToBookmarks(captionText, secondCaptionText);
+        });
+      } else {
+        addToBookmarks(firstCaptionText, secondCaptionText);
+      }
     };
     let icon = (
       <MdBookmarkBorder />

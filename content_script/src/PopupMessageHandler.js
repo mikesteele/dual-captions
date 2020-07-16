@@ -19,7 +19,8 @@ class PopupMessageHandler extends React.Component {
         smallText: false,
         hotKeyEnabled: true,
         mouseIsActive: false,
-        uiLanguage: 'en'
+        uiLanguage: 'en',
+        hideActionPanel: false
       },
       bookmarks: []
     }
@@ -55,7 +56,7 @@ class PopupMessageHandler extends React.Component {
     });
     this.getSavedUILanguage().then(uiLanguage => {
       if (uiLanguage) {
-        this.changeSetting('uiLanguage', uiLanguage);
+        this.changeSetting('uiLanguage', uiLanguage, false);
       }
     }).catch(err => {
       console.log(`Couldn't get saved UI language on mount. Error: ${err}`);
@@ -64,17 +65,21 @@ class PopupMessageHandler extends React.Component {
 
   onMouseMove() {
     if (!this.state.settings.mouseIsActive) {
-      this.changeSetting('mouseIsActive', true);
+      this.changeSetting('mouseIsActive', true, false);
     }
     if (this.idleTimer) {
       window.clearTimeout(this.idleTimer);
     }
     this.idleTimer = window.setTimeout(() => {
-      this.changeSetting('mouseIsActive', false);
+      this.changeSetting('mouseIsActive', false, false);
     }, 2500);
   }
 
   onKeyDown(e) {
+    const {
+      isOn,
+      changeIsOn
+    } = this.props;
     const {
       settings
     } = this.state;
@@ -85,7 +90,7 @@ class PopupMessageHandler extends React.Component {
       this.altKeyPressed = true;
     }
     if (this.dKeyPressed && this.altKeyPressed && settings.hotKeyEnabled) {
-      // FIXME: Add hotKey back
+      changeIsOn(!isOn);
     }
   }
 
@@ -183,14 +188,20 @@ class PopupMessageHandler extends React.Component {
     document.body.removeEventListener('keyup', this.onKeyUp);
   }
 
-  changeSetting(setting, value) {
-    this.setState(state => ({
-      settings: {
-        ...state.settings,
-        [setting]: value,
-        settingsAreDefault: false,
-      },
-    }));
+  changeSetting(setting, value, settingsAreNoLongerDefault) {
+    this.setState(state => {
+      let settingsAreDefault = state.settings.settingsAreDefault;
+      if (settingsAreDefault && settingsAreNoLongerDefault) {
+        settingsAreDefault = false;
+      }
+      return {
+        settings: {
+          ...state.settings,
+          [setting]: value,
+          settingsAreDefault,
+        }
+      };
+    });
   }
 
   onMessage(message, sender, sendResponse) {
@@ -202,7 +213,7 @@ class PopupMessageHandler extends React.Component {
 
       // TODO - Should deprecate
       case 'change-language':
-      this.changeSetting('secondSubtitleLanguage', message.payload);
+      this.changeSetting('secondSubtitleLanguage', message.payload, true);
       break;
 
       case 'change-settings':
@@ -211,22 +222,26 @@ class PopupMessageHandler extends React.Component {
         customTextColor,
         customColorsEnabled,
         smallText,
-        hotKeyEnabled
+        hotKeyEnabled,
+        hideActionPanel
       } = message.payload;
       if (settings.extraSpace !== extraSpace) {
-        this.changeSetting('extraSpace', extraSpace);
+        this.changeSetting('extraSpace', extraSpace, true);
       }
       if (settings.customTextColor !== customTextColor) {
-        this.changeSetting('customTextColor', customTextColor);
+        this.changeSetting('customTextColor', customTextColor, true);
       }
       if (settings.customColorsEnabled !== customColorsEnabled) {
-        this.changeSetting('customColorsEnabled', customColorsEnabled);
+        this.changeSetting('customColorsEnabled', customColorsEnabled, true);
       }
       if (settings.smallText !== smallText) {
-        this.changeSetting('smallText', smallText);
+        this.changeSetting('smallText', smallText, true);
       }
       if (settings.hotKeyEnabled !== hotKeyEnabled) {
-        this.changeSetting('hotKeyEnabled', hotKeyEnabled);
+        this.changeSetting('hotKeyEnabled', hotKeyEnabled, true);
+      }
+      if (settings.hideActionPanel !== hideActionPanel) {
+        this.changeSetting('hideActionPanel', hideActionPanel, true);
       }
       break;
 
@@ -264,14 +279,15 @@ class PopupMessageHandler extends React.Component {
           customColorsEnabled: settings.customColorsEnabled,
           customTextColor: settings.customTextColor,
           smallText: settings.smallText,
-          hotKeyEnabled: settings.hotKeyEnabled
+          hotKeyEnabled: settings.hotKeyEnabled,
+          hideActionPanel: settings.hideActionPanel
         },
         loadedLanguages: provider.loadedLanguages,
       });
       break;
 
       case 'change-ui-language':
-      this.changeSetting('uiLanguage', message.payload);
+      this.changeSetting('uiLanguage', message.payload, true);
       sendResponse({
         ok: true
       });

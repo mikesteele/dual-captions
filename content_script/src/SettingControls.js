@@ -80,6 +80,7 @@ const SUPPORTED_LANGUAGES = {
   ca: "Catalan",
   ceb: "Cebuano",
   ny: "Chichewa",
+  zh: "Chinese",
   "zh-cn": "Chinese Simplified",
   "zh-tw": "Chinese Traditional",
   co: "Corsican",
@@ -196,11 +197,9 @@ class SettingControls extends React.Component {
     return (
       <div
         style={{
-          background: "#0d0d0d",
           color: "#E1E1E1",
-          boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.5)",
           display: "inline-flex",
-          padding: "32px",
+          padding: "16px",
           borderRadius: "8px",
           fontFamily: "sans-serif",
           fontSize: "20px",
@@ -295,7 +294,7 @@ class SettingControls extends React.Component {
                    }}
                    key={lang}
                    onClick={() => {
-                     settings.changeSetting('secondSubtitleLanguage', lang);
+                     settings.changeSetting('secondSubtitleLanguage', lang, true);
                      this.setState({
                        actionTooltopOpen: false
                      });
@@ -326,16 +325,11 @@ class SettingControls extends React.Component {
   render() {
     const { adapter, settings, currentCaptionToRender, isOn, videoId } = this.props;
     const { isHoveredOver, actionTooltopOpen } = this.state;
-    const shouldShowMaterial = videoId &&
-                       isOn &&
-                       settings.mouseIsActive;
     const shouldShowTooltip = actionTooltopOpen && videoId;
     return (
       <Fragment>
-      <Fade in={shouldShowMaterial}>
         { this.renderMaterial() }
-      </Fade>
-      { shouldShowTooltip && this.renderActionTooltip() }
+        { shouldShowTooltip && this.renderActionTooltip() }
       </Fragment>
     );
   }
