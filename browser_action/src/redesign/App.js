@@ -13,14 +13,15 @@ const wrapper = css`
   padding: 3px;
   height: 600px;
   background: #f5f5f9;
+  color: rgba(20, 20, 20, 1);
 `;
 
 const header = css`
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
-  line-height: 12px;
-  padding: 8px;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 14px;
 `;
 
 const controls = css`

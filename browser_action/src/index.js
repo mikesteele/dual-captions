@@ -34,7 +34,9 @@ class App extends React.Component {
     this.props.dispatch(determineState())
       .then(this.props.dispatch(popupOpened()))
       .then(this.props.dispatch(detectSite()))
-      .then(() => this.setState({ isLoaded: true }))
+      .then(() => {
+        setTimeout(() => this.setState({ isLoaded: true }), 200);
+      })
       .catch(err => {
         console.log(err);
       });
