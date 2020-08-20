@@ -10,7 +10,7 @@ import 'react-toggle/style.css';
 
 const wrapper = css`
   width: 300px;
-  padding: 12px;
+  padding: 0px 12px;
   height: 600px;
   background: #f5f5f9;
   color: rgba(20, 20, 20, 1);
@@ -215,6 +215,7 @@ class App extends React.Component {
                 icons={false}
                 onChange={this._onToggleChanged}
               />
+              {/* TODO - Needs ERROR!! */}
             </div>
           </div>
           <div className={controls}>
