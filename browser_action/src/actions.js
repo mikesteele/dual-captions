@@ -69,6 +69,12 @@ export function determineState() {
             payload: savedStore.uiLanguage
           });
         }
+        if (savedStore && !savedStore.isRedesign) {
+          dispatch({
+            type: 'CHANGE_IS_REDESIGN',
+            payload: savedStore.isRedesign
+          });
+        }
 
         // 2. Observer-only settings
         if (dcState && dcState.hasOwnProperty('isOn')) {

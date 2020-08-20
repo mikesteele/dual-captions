@@ -1,0 +1,131 @@
+import React, { Component } from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { connect } from 'react-redux';
+import { translate } from 'react-i18next';
+import packageJson from '../../package.json';
+
+import './App.css';
+import 'react-toggle/style.css';
+import 'react-tabs/style/react-tabs.css';
+
+import Header from './Header.jsx';
+import MainPage from './MainPage.jsx';
+import SettingsPage from './SettingsPage.jsx';
+import ErrorPage from './ErrorPage.jsx';
+import TranslationQueue from './TranslationRequest.jsx';
+import ToolsPage from './ToolsPage.jsx';
+
+import { determineState, popupOpened, detectSite, checkLoadedLanguages, changeUILanguage } from '../actions';
+
+const mapStateToProps = function(state) {
+  return {...state};
+}
+
+const MainPageView = connect(mapStateToProps)(MainPage);
+const SettingsPageView = connect(mapStateToProps)(SettingsPage);
+const ErrorPageView = connect(mapStateToProps)(ErrorPage);
+const ToolsPageView = connect(mapStateToProps)(ToolsPage);
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this._switchToNewDesign = this._switchToNewDesign.bind(this);
+  }
+  
+  _onUILanguageSelectChanged(e) {
+    this.props.dispatch(changeUILanguage(e.target.value));
+  }
+
+  _onTabSelected(tabIndex) {
+    this.props.dispatch({
+      type: 'CHANGE_CURRENT_TAB',
+      payload: tabIndex
+    });
+  }
+
+  _switchToNewDesign() {
+    this.props.dispatch({
+      type: 'CHANGE_IS_REDESIGN',
+      payload: true
+    });
+  }
+
+  render() {
+    const { t } = this.props;
+    const showToolsPage = this.props.loadedLanguages.length > 0;
+    return (
+      <div className='App'>
+        <TranslationQueue/>
+        <Header/>
+        <Tabs selectedIndex={this.props.currentTab} onSelect={this._onTabSelected.bind(this)}>
+          <TabList>
+            <Tab>{t('main')}</Tab>
+            <Tab>{t('settings')}</Tab>
+            {showToolsPage && (
+              <Tab>{t('tools')}</Tab>
+            )}
+          </TabList>
+          <TabPanel>
+            <MainPageView/>
+          </TabPanel>
+          <TabPanel>
+            <SettingsPageView/>
+          </TabPanel>
+          {showToolsPage && (
+            <TabPanel>
+              <ToolsPageView/>
+            </TabPanel>
+          )}
+        </Tabs>
+        <ErrorPageView/>
+        <div>
+          <br/>
+          <b>{t('v2-welcome')}{packageJson.version}</b>
+          <br/>
+          <a
+            href="https://github.com/mikesteele/dual-captions/releases"
+            rel='noopener noreferrer'
+            target='_blank'>
+            {t('v2-whats-new')}
+          </a>
+          <br/>
+        </div>
+        <div className='footer'>
+          <div>
+            <div className='ui-icon'/>
+            <select value={this.props.uiLanguage} onChange={this._onUILanguageSelectChanged.bind(this)}>
+              <option value='en'>English</option>
+              <option value='fr'>Français</option>
+              <option value='zh-tw'>中文 (繁體)</option>
+            </select>
+          </div>
+          <div>
+            <a
+              href='https://chrome.google.com/webstore/detail/two-captions-for-youtube/lpeonmjfimoijceaalocpgjjchocbiap'
+              rel='noopener noreferrer'
+              target='_blank'>
+              {t('leave-feedback')}
+            </a>
+            <a
+              href='https://github.com/mikesteele/dual-captions/issues'
+              rel='noopener noreferrer'
+              target='_blank'>
+              {t('report-a-bug')}
+            </a>
+            <a
+              href='https://github.com/mikesteele/dual-captions/'
+              rel='noopener noreferrer'
+              target='_blank'>
+              {t('view-on-github')}
+            </a>
+          </div>
+          <button onClick={this._switchToNewDesign}>
+            Switch to new design
+          </button>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default translate()(connect(mapStateToProps)(App));

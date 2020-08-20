@@ -6,7 +6,7 @@ import Hint from './Hint.jsx';
 import Step from './Step.jsx';
 import { translate } from 'react-i18next';
 
-class MainPage extends Component {
+class MainPage extends Component {  
   _onToggleChanged(e) {
     if (e.target.checked) {
       this.props.dispatch(turnDCOn());
