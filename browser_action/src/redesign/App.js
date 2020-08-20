@@ -9,8 +9,8 @@ import { connect } from 'react-redux';
 import 'react-toggle/style.css';
 
 const wrapper = css`
-  width: 294px;
-  padding: 3px;
+  width: 300px;
+  padding: 12px;
   height: 600px;
   background: #f5f5f9;
   color: rgba(20, 20, 20, 1);
@@ -27,7 +27,7 @@ const header = css`
 const controls = css`
   display: flex;
   flex-direction: column;
-  margin: 8px 0;
+  margin: 16px 0;
   background: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
   border-radius: 8px;
