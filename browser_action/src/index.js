@@ -25,7 +25,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoaded: false
+      isLoaded: true // TODO - Revert
     }
   };
 
