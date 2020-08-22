@@ -21,6 +21,9 @@ const YouTubeAdapter = () => {
     playerCurrentTime = video.currentTime;
   }
 
+  const moveCaptionWindowSelectors = ['.caption-window', '.ytp-caption-window-bottom'];
+  const moveCaptionWindowRelative = true;
+
   return {
     canRenderInCaptionWindow: false,
     captionWindow: captionWindow ? captionWindow : null,
@@ -29,7 +32,7 @@ const YouTubeAdapter = () => {
       textAlign: 'center'
     },
     captionStyle: caption ? {
-      background: 'black',
+      background: caption.style.background,
       color: 'white',
       fontFamily: caption.style.fontFamily,
       fontSize: caption.style.fontSize,
@@ -41,7 +44,9 @@ const YouTubeAdapter = () => {
     smallTextSize: smallTextSize,
     captionText: captionText,
     playerControls: playerControls,
-    playerCurrentTime: playerCurrentTime
+    playerCurrentTime: playerCurrentTime,
+    moveCaptionWindowRelative: moveCaptionWindowRelative,
+    moveCaptionWindowSelectors: moveCaptionWindowSelectors
   };
 };
 
