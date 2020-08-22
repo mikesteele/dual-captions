@@ -4,6 +4,8 @@
 ### <a href="https://chrome.google.com/webstore/detail/two-captions-for-youtube/lpeonmjfimoijceaalocpgjjchocbiap/related">Download on Chrome Web Store</a>
 ### <a href="https://github.com/mikesteele/dual-captions/releases">View latest release notes</a>
 
+<img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/screenshot-final.png" width="100%" />
+
 ***
 
 ### How does it work?
