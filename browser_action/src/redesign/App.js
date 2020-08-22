@@ -1,20 +1,20 @@
 import React, { Fragment } from 'react';
 import { css } from 'emotion';
-import Toggle from 'react-toggle';
 import config from '../config';
 import { applyDCSettings, changeDCLanguage, changeUILanguage, turnDCOff, turnDCOn } from '../actions';
 import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Modal, Select } from 'antd';
-import 'react-toggle/style.css';
+import { Modal, Select, Icon, Switch } from 'antd';
 import cn from 'classnames';
+import packageJson from '../../package.json';
 const { Option } = Select;
+
 
 const wrapper = css`
   width: 100%;
   padding: 0px 12px;
   height: 600px;
-  background: #f5f5f9;
+  background: rgba(245,245,245,1);
   color: rgba(20, 20, 20, 1);
 `;
 
@@ -24,7 +24,7 @@ const sourceSansPro = css`
 
 const header = css`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 14px;
   line-height: 14px;
   padding: 14px;
@@ -93,7 +93,7 @@ const colorInputClip = css`
   height: 24px;
   border: solid 4px #ddd;
   border-radius: 24px;
-  margin-right: 16px;
+  margin-right: 8px;
 `;
 
 const flexEnd = css`
@@ -109,12 +109,39 @@ const uiIcon = css`
   width: 24px;
 `;
 
+const hintWrapper = css`
+  padding: 16px 0;
+  clear: both;
+`;
+
+const hintButton = css`
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  color: white;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 8px;
+`;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this._switchBackToOldDesign = this._switchBackToOldDesign.bind(this);
-    this._onToggleChanged = this._onToggleChanged.bind(this);
+    this._onSwitchChanged = this._onSwitchChanged.bind(this);
     this._onUILanguageSelectChanged = this._onUILanguageSelectChanged.bind(this);
+    this._showHint = this._showHint.bind(this);
+    this._onSecondLanguageSelectChanged = this._onSecondLanguageSelectChanged.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -131,7 +158,11 @@ class App extends React.Component {
         });
       }
       Modal.error({
-        content: t(errorType),
+        content: (
+          <div className={hintWrapper}>
+            {t(errorType)}
+          </div>
+        ),
         onOk: onOk,
         className: cn({
           [sourceSansPro]: !isChinese
@@ -140,37 +171,20 @@ class App extends React.Component {
     }
   }
 
-  _onToggleChanged(e) {
-    if (e.target.checked) {
-      this.props.dispatch(turnDCOn());
-    } else {
-      this.props.dispatch(turnDCOff());
-    }
+  _onSecondLanguageSelectChanged(value) {
+    this.props.dispatch(changeDCLanguage(value));
   }
 
-  _onSecondLanguageSelectChanged(e) {
-    this.props.dispatch(changeDCLanguage(e.target.value));
-  }
-
-  _onSettingChecked(setting, e) {
+  _onSettingChecked(setting, checked) {
     this.props.dispatch({
       type: 'CHANGE_SETTINGS',
       payload: {
-        [setting]: e.target.checked
+        [setting]: checked
       }
     });
     this.props.dispatch(applyDCSettings());
   }
 
-  _onColorInputChange(setting, e) {
-    this.props.dispatch({
-      type: 'CHANGE_SETTINGS',
-      payload: {
-        [setting]: e.target.value
-      }
-    });
-    this.props.dispatch(applyDCSettings());
-  }
 
   _switchBackToOldDesign() {
     this.props.dispatch({
@@ -179,8 +193,8 @@ class App extends React.Component {
     });
   }
 
-  _onToggleChanged(e) {
-    if (e.target.checked) {
+  _onSwitchChanged(checked) {
+    if (checked) {
       this.props.dispatch(turnDCOn());
     } else {
       this.props.dispatch(turnDCOff());
@@ -201,8 +215,33 @@ class App extends React.Component {
     this.props.dispatch(changeUILanguage(value));
   }
 
+  _showHint() {
+    const { detectedSite, t, uiLanguage } = this.props;
+    const isChinese = uiLanguage === 'zh-tw';
+    let step1 = t('generic-hint');
+    if (detectedSite === 'netflix') {
+      step1 = t('netflix-hint');
+    } else if (detectedSite === 'youtube') {
+      step1 = t('youtube-hint');
+    }
+    const step2 = t('netflix-step-2-part-2')
+    const hint = (
+      <div className={hintWrapper}>
+        1. {step1}
+        <br/>
+        2. {step2}
+      </div>
+    );
+    Modal.info({
+      content: hint,
+      className: cn({
+        [sourceSansPro]: !isChinese
+      })
+    });
+  }
+
   render() {
-    const { t, isOn, settings, uiLanguage } = this.props;
+    const { t, isOn, settings, uiLanguage, loadedLanguages, secondLanguage } = this.props;
     const checkboxSettings = [
       'delayRenderingUntilTranslation',
       'extraSpace',
@@ -230,7 +269,7 @@ class App extends React.Component {
                   />
                 </div>
               )}
-              <Toggle
+              <Switch
                 icons={false}
                 checked={settings[setting]}
                 onChange={this._onSettingChecked.bind(this, setting)}
@@ -239,12 +278,18 @@ class App extends React.Component {
           </div>
         );
       });
+
+    const secondLanguages = loadedLanguages.map(language => (
+      <Option
+        key={language}
+        value={language}>
+        {config.secondLanguages[language]}
+      </Option>
+    ));
     return (
       <div className={cn(wrapper, { [sourceSansPro]: !isChinese })}>
         <div className={header}>
-          <div>{"<-"}</div>
-          Dual Captions v2.1
-          <div>{"?"}</div>
+          Dual Captions v{packageJson.version}
         </div>
         <div>
           <div className={controls}>
@@ -252,24 +297,27 @@ class App extends React.Component {
               <div className={controlLabel}>
                 { isOn ? t('on') : t('off') }
               </div>
-              <Toggle
+              <Switch
                 checked={isOn}
                 icons={false}
-                onChange={this._onToggleChanged}
+                onChange={this._onSwitchChanged}
               />
-              {/* TODO - Needs ERROR!! */}
             </div>
           </div>
           <div className={controls}>
             <div className={controlWrapper}>
-              <div className={controlLabel}>Second Subtitle Language</div>
+              <div className={controlLabel}>{t('second-subtitle-language')}</div>
               <div className={flexEnd}>
-                <Select defaultValue="lucy" style={{ width: 100 }} onChange={() => {}}>
-                  <Option value="jack">Jack</Option>
-                  <Option value="lucy">Lucy</Option>
-                  <Option value="disabled" disabled>
-                    Disabled
-                  </Option>
+                <button className={hintButton} onClick={this._showHint} type='button'>
+                  ?
+                </button>
+                <Select
+                  value={secondLanguage}
+                  style={{ width: 100 }}
+                  onChange={this._onSecondLanguageSelectChanged}
+                >
+                  <Option value='none'>None</Option>
+                  {secondLanguages}
                 </Select>
               </div>
             </div>
@@ -292,12 +340,12 @@ class App extends React.Component {
             </div>
           </div>
         </div>
-        <button onClick={this._switchBackToOldDesign}>
-          Switch back to old design
-        </button>
         <div className={flexbox}>
           Star on GitHub | What's new? <br/>
         </div>
+        <button onClick={this._switchBackToOldDesign}>
+          Switch back to old design
+        </button>
       </div>
     );
   }
