@@ -377,7 +377,7 @@ class App extends React.Component {
         </div>
         <div className={cn(flexbox, oldDesign)}>
           <a href="javascript:void(0)" className={link} onClick={this._switchBackToOldDesign}>
-            Switch back to old design
+            {t('switch-to-old-design')}
           </a>
         </div>
       </div>

@@ -60,5 +60,7 @@
   "video-speed": "播放速度",
   "hideActionPanel": "Hide action panel",
   "download-subtitles": "Download subtitles as an SRT file:",
-  "tools": "Tools"
+  "tools": "Tools",
+  "switch-to-old-design": "Switch back to old design",
+  "switch-to-new-design": "Switch to new design"
 }

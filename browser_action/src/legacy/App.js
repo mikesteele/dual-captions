@@ -91,7 +91,7 @@ class App extends Component {
           <br/>
         </div>
         <button onClick={this._switchToNewDesign}>
-          Switch to new design
+          {t('switch-to-new-design')}
         </button>
         <div className='footer'>
           <div>

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
-import App from './App';
+import App from './legacy/App';
 import reducer from './reducer';
 
 const store = createStore(reducer,
