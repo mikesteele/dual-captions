@@ -6,3 +6,5 @@ html, body {
   width: 324px;
   height: 500px;
 }
+
+@import '~antd/dist/antd.css';

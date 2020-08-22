@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "ant-design": "^1.0.0",
+    "antd": "3.26.18",
     "antd-mobile": "^2.3.1",
     "chai": "^4.1.2",
     "coveralls": "^3.0.2",

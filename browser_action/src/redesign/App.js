@@ -5,15 +5,17 @@ import config from '../config';
 import { applyDCSettings, changeDCLanguage, turnDCOff, turnDCOn } from '../actions';
 import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
+import { Modal } from 'antd';
 
 import 'react-toggle/style.css';
 
 const wrapper = css`
-  width: 300px;
+  width: 100%;
   padding: 0px 12px;
   height: 600px;
   background: #f5f5f9;
   color: rgba(20, 20, 20, 1);
+  font-family: 'Source Sans Pro', sans-serif;
 `;
 
 const header = css`
@@ -101,6 +103,25 @@ class App extends React.Component {
     super(props);
     this._switchBackToOldDesign = this._switchBackToOldDesign.bind(this);
     this._onToggleChanged = this._onToggleChanged.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { dispatch, errorType, t, hasError } = this.props;
+    if (!prevProps.hasError && hasError) {
+      const onOk = () => {
+        dispatch({
+          type: 'CHANGE_ERROR',
+          payload: {
+            hasError: false,
+            errorType: ''
+          }
+        });
+      }
+      Modal.error({
+        content: t(errorType),
+        onOk: onOk
+      });
+    }
   }
 
   _onToggleChanged(e) {
