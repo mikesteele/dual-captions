@@ -11,7 +11,8 @@ const initialState = {
   loadedLanguages: [],
   secondLanguage: 'none',
   settings: config.defaultSettings,
-  uiLanguage: config.defaultUILanguage
+  uiLanguage: config.defaultUILanguage,
+  isRedesign: true,
 };
 
 export default function reducer(state = initialState, action) {
@@ -59,6 +60,10 @@ export default function reducer(state = initialState, action) {
     case 'HYDRATE_STORE':
       return {...state,
         ...action.payload
+      };
+    case 'CHANGE_IS_REDESIGN':
+      return {...state,
+        isRedesign: action.payload
       };
     default:
       return state;

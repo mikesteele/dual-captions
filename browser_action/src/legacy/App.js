@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
-import packageJson from '../package.json';
+import packageJson from '../../package.json';
 
 import './App.css';
 import 'react-toggle/style.css';
 import 'react-tabs/style/react-tabs.css';
 
-import Header from './components/Header.jsx';
-import MainPage from './components/MainPage.jsx';
-import SettingsPage from './components/SettingsPage.jsx';
-import ErrorPage from './components/ErrorPage.jsx';
-import TranslationQueue from './components/TranslationRequest.jsx';
-import ToolsPage from './components/ToolsPage.jsx';
+import Header from './Header.jsx';
+import MainPage from './MainPage.jsx';
+import SettingsPage from './SettingsPage.jsx';
+import ErrorPage from './ErrorPage.jsx';
+import TranslationQueue from './TranslationRequest.jsx';
+import ToolsPage from './ToolsPage.jsx';
 
-import { determineState, popupOpened, detectSite, checkLoadedLanguages, changeUILanguage } from './actions';
+import { determineState, popupOpened, detectSite, checkLoadedLanguages, changeUILanguage } from '../actions';
 
 const mapStateToProps = function(state) {
   return {...state};
@@ -27,18 +27,9 @@ const ErrorPageView = connect(mapStateToProps)(ErrorPage);
 const ToolsPageView = connect(mapStateToProps)(ToolsPage);
 
 class App extends Component {
-  componentDidMount() {
-    window.setInterval(this.checkLoadedLanguages.bind(this), 2 * 1000);
-    this.props.dispatch(determineState())
-      .then(this.props.dispatch(popupOpened()))
-      .then(this.props.dispatch(detectSite()))
-      .catch(err => {
-        console.log(err);
-      });
-  }
-
-  checkLoadedLanguages() {
-    this.props.dispatch(checkLoadedLanguages());
+  constructor(props) {
+    super(props);
+    this._switchToNewDesign = this._switchToNewDesign.bind(this);
   }
 
   _onUILanguageSelectChanged(e) {
@@ -49,6 +40,13 @@ class App extends Component {
     this.props.dispatch({
       type: 'CHANGE_CURRENT_TAB',
       payload: tabIndex
+    });
+  }
+
+  _switchToNewDesign() {
+    this.props.dispatch({
+      type: 'CHANGE_IS_REDESIGN',
+      payload: true
     });
   }
 
@@ -92,6 +90,9 @@ class App extends Component {
           </a>
           <br/>
         </div>
+        <button onClick={this._switchToNewDesign}>
+          {t('switch-to-new-design')}
+        </button>
         <div className='footer'>
           <div>
             <div className='ui-icon'/>

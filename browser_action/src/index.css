@@ -1,7 +1,11 @@
-body {
+html, body {
   font-family: sans-serif;
   font-size: 12px;
   margin: 0;
   padding: 0;
-  width: 300px;
+  width: 350px;
+  height: 525px;
+  overflow-y: scroll;
 }
+
+@import '~antd/dist/antd.css';

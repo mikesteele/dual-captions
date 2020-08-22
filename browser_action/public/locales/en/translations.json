@@ -20,7 +20,7 @@
   "amazon-hint": "On Amazon, start captions.",
   "kanopy-hint": "On Kanopy, start captions.",
   "report-a-bug": "Report a bug",
-  "view-on-github": "View on GitHub",
+  "view-on-github": "Star on GitHub",
   "no-player": "Video player not found on page. Are you on a video?",
   "delayRenderingUntilTranslation": "Delay rendering (Recommended)",
   "image-subtitles": "Sorry, subtitles in Chinese and Japanese on Netflix are not supported at this time. However, Chinese and Japanese captions will work on YouTube.",
@@ -60,5 +60,7 @@
   "video-speed": "Video speed",
   "hideActionPanel": "Hide action panel",
   "download-subtitles": "Download subtitles as an SRT file:",
-  "tools": "Tools"
+  "tools": "Tools",
+  "switch-to-old-design": "Switch back to old design",
+  "switch-to-new-design": "Switch to new design"
 }
