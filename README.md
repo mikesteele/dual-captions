@@ -1,8 +1,8 @@
 ## dual-captions <br/> Subtitles in two languages for YouTube, Netflix, Disney+ & Kanopy
 ![build](https://travis-ci.com/mikesteele/dual-captions.svg?branch=master)
 
-### <a href="https://chrome.google.com/webstore/detail/two-captions-for-youtube/lpeonmjfimoijceaalocpgjjchocbiap/related">Download on Chrome Web Store</a>
-### <a href="https://github.com/mikesteele/dual-captions/releases">View latest release notes</a>
+### :arrow_down: <a href="https://chrome.google.com/webstore/detail/two-captions-for-youtube/lpeonmjfimoijceaalocpgjjchocbiap/related">Download on Chrome Web Store</a>
+### :closed_book: <a href="https://github.com/mikesteele/dual-captions/releases">View latest release notes</a>
 
 <img src="https://raw.githubusercontent.com/mikesteele/dual-captions-gifs/master/screenshot-final.png" width="100%" />
 
@@ -10,7 +10,9 @@
 
 ### How does it work?
 
-This extension works by intercepting caption file requests, parsing them, and rendering them onto the page.
+#### Site integrations
+
+This extension works by intercepting caption file requests, parsing them, and rendering them onto the page. 
 
 The extension runs an adapter on the host site repeatedly to get up-to-date information about the state of the host. Adapters are functions that use DOM queries. You can find them in `site_integrations`.
 
@@ -26,6 +28,10 @@ Why not?
 The adapter API is still a work in progress and will be documented in the future. 
 
 This "hands off" approach has UX trade-offs, like requiring the user select a language on the host site to have the caption file requested. I believe long-term stability is more important than UX.
+
+#### Saving settings across sessions
+
+Since `browser_action`s cannot persist any data after they are closed, this extension uses Redux middleware to store the user's settings with `chrome.storage` on any change. When the popup is re-opened, the store is re-hydrated with the user's saved store settings, and settings are injected into the `content_script`.
 
 ### Manual Installation
 
