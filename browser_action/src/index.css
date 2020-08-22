@@ -4,7 +4,8 @@ html, body {
   margin: 0;
   padding: 0;
   width: 350px;
-  height: 500px;
+  height: 525px;
+  overflow-y: scroll;
 }
 
 @import '~antd/dist/antd.css';

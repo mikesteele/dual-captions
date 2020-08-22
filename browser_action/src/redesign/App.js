@@ -4,7 +4,7 @@ import config from '../config';
 import { applyDCSettings, changeDCLanguage, changeUILanguage, turnDCOff, turnDCOn } from '../actions';
 import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Modal, Select, Icon, Switch } from 'antd';
+import { Modal, Select, Icon, Switch, Button } from 'antd';
 import cn from 'classnames';
 import packageJson from '../../package.json';
 const { Option } = Select;
@@ -13,7 +13,7 @@ const { Option } = Select;
 const wrapper = css`
   width: 100%;
   padding: 0px 12px;
-  height: 600px;
+  height: 525px;
   background: rgba(245,245,245,1);
   color: rgba(20, 20, 20, 1);
 `;
@@ -132,6 +132,24 @@ const hintButton = css`
   border-radius: 50%;
   cursor: pointer;
   margin-right: 8px;
+`;
+
+const link = css`
+  font-size: 14px;
+  line-height: 14px;
+  height: 14px;
+`;
+
+const bullet = css`
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  margin: 4px 8px 0 8px;
+`;
+
+const oldDesign = css`
+  margin-top: 8px;
 `;
 
 class App extends React.Component {
@@ -341,11 +359,27 @@ class App extends React.Component {
           </div>
         </div>
         <div className={flexbox}>
-          Star on GitHub | What's new? <br/>
+          <a
+            href='https://github.com/mikesteele/dual-captions/'
+            rel='noopener noreferrer'
+            className={link}
+            target='_blank'>
+            {t('view-on-github')}
+          </a>
+          <div className={bullet} />
+          <a
+            href='https://github.com/mikesteele/dual-captions/releases'
+            rel='noopener noreferrer'
+            className={link}
+            target='_blank'>
+            {t('v2-whats-new')}
+          </a>
         </div>
-        <button onClick={this._switchBackToOldDesign}>
-          Switch back to old design
-        </button>
+        <div className={cn(flexbox, oldDesign)}>
+          <a href="javascript:void(0)" className={link} onClick={this._switchBackToOldDesign}>
+            Switch back to old design
+          </a>
+        </div>
       </div>
     );
   }

@@ -31,7 +31,7 @@ class App extends Component {
     super(props);
     this._switchToNewDesign = this._switchToNewDesign.bind(this);
   }
-  
+
   _onUILanguageSelectChanged(e) {
     this.props.dispatch(changeUILanguage(e.target.value));
   }
@@ -90,6 +90,9 @@ class App extends Component {
           </a>
           <br/>
         </div>
+        <button onClick={this._switchToNewDesign}>
+          Switch to new design
+        </button>
         <div className='footer'>
           <div>
             <div className='ui-icon'/>
@@ -119,9 +122,6 @@ class App extends Component {
               {t('view-on-github')}
             </a>
           </div>
-          <button onClick={this._switchToNewDesign}>
-            Switch to new design
-          </button>
         </div>
       </div>
     );
