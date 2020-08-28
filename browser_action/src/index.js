@@ -10,6 +10,20 @@ import reducer from './reducer';
 import ReduxThunk from 'redux-thunk';
 import { i18nMiddleware, loggingMiddleware, storageMiddleware } from './middleware';
 import { determineState, popupOpened, detectSite, checkLoadedLanguages, changeUILanguage } from './actions';
+import { css } from 'emotion';
+import cn from 'classnames';
+
+const wrapper = css`
+  width: 350px;
+  height: 525px;
+  overflow-y: scroll;
+  opacity: 0;
+  transition: opacity 200ms;
+`;
+
+const loaded = css`
+  opacity: 1 !important;
+`;
 
 
 const store = createStore(reducer,
@@ -25,13 +39,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoaded: false,
+      isLoaded: true, // TODO - Revert
     }
   };
 
   componentDidMount() {
     window.setInterval(this.checkLoadedLanguages.bind(this), 2 * 1000);
     this.props.dispatch(determineState())
+      .then(isSavedStore => {
+        this.setState({
+          isFirstLaunch: !isSavedStore
+        });
+        return Promise.resolve();
+      })
       .then(this.props.dispatch(popupOpened()))
       .then(this.props.dispatch(detectSite()))
       .then(() => {
@@ -48,18 +68,15 @@ class App extends React.Component {
 
   render() {
     const { isRedesign } = this.props;
-    const { isLoaded } = this.state;
-    if (isLoaded && isRedesign) {
-      return (
-        <RedesignApp />
-      );
-    } else if (isLoaded && !isRedesign) {
-      return (
-        <LegacyApp />
-      );
-    } else {
-      return null;
-    }
+    const { isLoaded, isFirstLaunch } = this.state;
+    // TODO - isFirstLaunch={isFirstLaunch}
+    let app = isRedesign ? <RedesignApp isFirstLaunch /> : <LegacyApp />;
+    // TODO - Remove fade or pass isLoaded?
+    return (
+      <div className={cn(wrapper, {[loaded]: isLoaded})}>
+        {app}
+      </div>
+    );
   }
 };
 

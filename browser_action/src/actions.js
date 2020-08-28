@@ -101,16 +101,19 @@ export function determineState() {
             type: 'CHANGE_SETTINGS',
             payload: dcState.settings
           });
-          resolve();
+          resolve(!!savedStore);
         } else if (savedStore) {
           dispatch({
             type: 'CHANGE_SETTINGS',
             payload: savedStore.settings
           });
           // Inject savedStore settings into observer
-          dispatch(applyDCSettings()).then(resolve);
+          dispatch(applyDCSettings()).then(() => {
+            resolve(!!savedStore);
+          });
         } else {
-          resolve();
+          // TODO - Dispatch dummy action to create savedStore?
+          resolve(!!savedStore);
         }
       });
     });

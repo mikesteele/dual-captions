@@ -1,0 +1,14 @@
+.fancy-header-wrapper {
+  height: 20px;
+  overflow: hidden;
+}
+
+.fancy-header-enter {
+  transform: translateY(-50px);
+  transition: transform 200ms;
+}
+
+.fancy-header-enter-done {
+  transform: translateY(0px);
+  transition: transform 200ms;
+}
