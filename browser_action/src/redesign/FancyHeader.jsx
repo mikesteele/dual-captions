@@ -21,11 +21,8 @@ class FancyHeader extends React.Component {
       if (prevState.currentIndex < allSites.length) {
         return {
           currentIndex: prevState.currentIndex + 1,
+          isDone: prevState.currentIndex + 1 === allSites.length
         };
-      } else {
-        return {
-          isDone: true,
-        }
       };
     });
   }

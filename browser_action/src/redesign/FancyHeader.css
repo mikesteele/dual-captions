@@ -39,6 +39,7 @@
   margin-top: -22px;
   padding: 4px 0;
   transition: margin-top 200ms;
+  white-space: nowrap;
 }
 
 .fancy-header-enter-done {
@@ -47,4 +48,5 @@
   margin-top: 0px;
   padding: 4px 0;
   transition: margin-top 200ms;
+  white-space: nowrap;
 }
