@@ -20,6 +20,7 @@
     "react-scripts": "1.0.14",
     "react-tabs": "^2.2.2",
     "react-toggle": "^4.0.2",
+    "react-transition-group": "^4.4.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
     "sinon": "^5.0.7",
