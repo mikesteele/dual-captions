@@ -6,6 +6,8 @@ import packageJson from '../../package.json';
 
 const allSites = ['for YouTube', 'for Kanopy', 'for Netflix', 'for Disney+', `v${packageJson.version}`];
 
+// TODO - Not working for Chinese
+
 class FancyHeader extends React.Component {
   constructor(props) {
     super(props);
