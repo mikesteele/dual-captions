@@ -7,9 +7,7 @@ import { connect } from 'react-redux';
 import { Modal, Select, Icon, Switch, Button } from 'antd';
 import cn from 'classnames';
 import packageJson from '../../package.json';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import FancyHeader from './FancyHeader';
-
 const { Option } = Select;
 
 
@@ -309,10 +307,13 @@ class App extends React.Component {
     ));
     return (
       <div className={cn(wrapper, { [sourceSansPro]: !isChinese })}>
-        <div>{isFirstLaunch && <FancyHeader />}</div>
-        <div className={header}>
-          Dual Captions v{packageJson.version}
-        </div>
+        {isFirstLaunch ? (
+          <FancyHeader />
+        ) : (
+          <div className={header}>
+            Dual Captions v{packageJson.version}
+          </div>
+        )}
         <div>
           <div className={controls}>
             <div className={controlWrapper}>
