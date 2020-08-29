@@ -8,6 +8,7 @@
   width: 155px;
   transition: width 200ms;
   padding: 14px 0;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .fancy-header-done.fancy-header-wrapper {
