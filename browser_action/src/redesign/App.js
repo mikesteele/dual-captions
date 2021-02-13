@@ -4,7 +4,7 @@ import config from '../config';
 import { applyDCSettings, changeDCLanguage, changeUILanguage, turnDCOff, turnDCOn } from '../actions';
 import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Modal, Select, Icon, Switch, Button } from 'antd';
+import { Modal, Select, Icon, Switch, Button, Slider } from 'antd';
 import cn from 'classnames';
 import packageJson from '../../package.json';
 const { Option } = Select;
@@ -301,7 +301,14 @@ class App extends React.Component {
       <div className={controlWrapper}>
         <div className={controlLabel}>{t('customTextSize')}</div>
         <div className={flexEnd}>
-          <input value={settings['customTextSize']} onChange={this._onColorInputChange.bind(this, 'customTextSize')}/>
+          <Slider
+            value={settings['customTextSize']}
+            tipFormatter={null}
+            min={0}
+            max={2}
+            step={0.01}
+            onChange={this._onSettingChecked.bind(this,'customTextSize')}
+          />
         </div>
       </div>
     );

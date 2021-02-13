@@ -9,3 +9,7 @@ html, body {
 }
 
 @import '~antd/dist/antd.css';
+
+.ant-slider {
+  width: 128px;
+}

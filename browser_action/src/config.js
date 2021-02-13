@@ -5,7 +5,6 @@ const config = {
     extraSpace: false,
     customColorsEnabled: false,
     customTextColor: '#FFFFFF',
-    smallText: false,
     hotKeyEnabled: true,
     hideActionPanel: false,
     customTextSize: 1
