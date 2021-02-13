@@ -297,6 +297,17 @@ class App extends React.Component {
         );
       });
 
+    const textControl = (
+      <div className={controlWrapper}>
+        <div className={controlLabel}>{t('customTextSize')}</div>
+        <div className={flexEnd}>
+          <input value={settings['customTextSize']} onChange={this._onColorInputChange.bind(this, 'customTextSize')}/>
+        </div>
+      </div>
+    );
+
+    controlElements.push(textControl);
+
     const secondLanguages = loadedLanguages.map(language => (
       <Option
         key={language}

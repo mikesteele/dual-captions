@@ -7,7 +7,8 @@ const config = {
     customTextColor: '#FFFFFF',
     smallText: false,
     hotKeyEnabled: true,
-    hideActionPanel: false
+    hideActionPanel: false,
+    customTextSize: 1
   },
   defaultSecondLanguage: 'none',
   defaultUILanguage: 'en',

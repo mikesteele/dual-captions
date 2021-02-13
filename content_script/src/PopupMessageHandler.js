@@ -20,7 +20,8 @@ class PopupMessageHandler extends React.Component {
         hotKeyEnabled: true,
         mouseIsActive: false,
         uiLanguage: 'en',
-        hideActionPanel: false
+        hideActionPanel: false,
+        customTextSize: 1,
       },
       bookmarks: []
     }
@@ -205,6 +206,7 @@ class PopupMessageHandler extends React.Component {
   }
 
   onMessage(message, sender, sendResponse) {
+    console.log('message', message);
     const {
       settings
     } = this.state;
@@ -223,7 +225,8 @@ class PopupMessageHandler extends React.Component {
         customColorsEnabled,
         smallText,
         hotKeyEnabled,
-        hideActionPanel
+        hideActionPanel,
+        customTextSize
       } = message.payload;
       if (settings.extraSpace !== extraSpace) {
         this.changeSetting('extraSpace', extraSpace, true);
@@ -243,6 +246,9 @@ class PopupMessageHandler extends React.Component {
       if (settings.hideActionPanel !== hideActionPanel) {
         this.changeSetting('hideActionPanel', hideActionPanel, true);
       }
+      if (settings.customTextSize !== customTextSize) {
+       this.changeSetting('customTextSize', customTextSize, true);
+     }
       break;
 
       case 'detect-site':
@@ -280,7 +286,8 @@ class PopupMessageHandler extends React.Component {
           customTextColor: settings.customTextColor,
           smallText: settings.smallText,
           hotKeyEnabled: settings.hotKeyEnabled,
-          hideActionPanel: settings.hideActionPanel
+          hideActionPanel: settings.hideActionPanel,
+          textSize: settings.textSize
         },
         loadedLanguages: provider.loadedLanguages,
       });
