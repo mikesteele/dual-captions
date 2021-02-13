@@ -61,5 +61,6 @@
   "download-subtitles": "Télécharger sous-titres (.SRT):",
   "tools": "Outils",
   "switch-to-old-design": "Switch back to old design",
-  "switch-to-new-design": "Switch to new design"
+  "switch-to-new-design": "Switch to new design",
+  "customTextSize": "Taille du texte"
 }

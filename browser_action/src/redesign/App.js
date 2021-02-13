@@ -274,7 +274,7 @@ class App extends React.Component {
       .map(setting => {
         const showColorTool = settings['customColorsEnabled'] && setting === 'customColorsEnabled';
         return (
-          <div className={controlWrapper}>
+          <div className={controlWrapper} key={setting}>
             <div className={controlLabel}>{t(setting)}</div>
             <div className={flexEnd}>
               {showColorTool && (
@@ -298,13 +298,13 @@ class App extends React.Component {
       });
 
     const textControl = (
-      <div className={controlWrapper}>
+      <div className={controlWrapper} key='customTextSize'>
         <div className={controlLabel}>{t('customTextSize')}</div>
         <div className={flexEnd}>
           <Slider
             value={settings['customTextSize']}
             tipFormatter={null}
-            min={0}
+            min={0.01}
             max={2}
             step={0.01}
             onChange={this._onSettingChecked.bind(this,'customTextSize')}
@@ -312,8 +312,6 @@ class App extends React.Component {
         </div>
       </div>
     );
-
-    // TODO - Slider doesn't initiaze to DC value correctly
 
     controlElements.push(textControl);
 

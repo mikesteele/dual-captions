@@ -62,5 +62,6 @@
   "download-subtitles": "下載字幕並儲存成SRT檔案：",
   "tools": "工具",
   "switch-to-old-design": "Switch back to old design",
-  "switch-to-new-design": "Switch to new design"
+  "switch-to-new-design": "Switch to new design",
+  "customTextSize": "Text size"
 }

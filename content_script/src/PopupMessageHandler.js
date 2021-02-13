@@ -287,7 +287,7 @@ class PopupMessageHandler extends React.Component {
           smallText: settings.smallText,
           hotKeyEnabled: settings.hotKeyEnabled,
           hideActionPanel: settings.hideActionPanel,
-          textSize: settings.textSize
+          customTextSize: settings.customTextSize
         },
         loadedLanguages: provider.loadedLanguages,
       });
