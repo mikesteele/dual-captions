@@ -313,6 +313,8 @@ class App extends React.Component {
       </div>
     );
 
+    // TODO - Slider doesn't initiaze to DC value correctly
+
     controlElements.push(textControl);
 
     const secondLanguages = loadedLanguages.map(language => (
