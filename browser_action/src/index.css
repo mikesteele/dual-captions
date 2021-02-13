@@ -13,3 +13,17 @@ html, body {
 .ant-slider {
   width: 128px !important;
 }
+
+.ant-slider-rail {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+
+.ant-slider-track {
+  background-color: #1890ff !important;
+}
+
+
+.ant-slider-handle {
+  border-color: #1890ff !important;
+}
