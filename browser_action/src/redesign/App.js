@@ -4,7 +4,7 @@ import config from '../config';
 import { applyDCSettings, changeDCLanguage, changeUILanguage, turnDCOff, turnDCOn } from '../actions';
 import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Modal, Select, Icon, Switch, Button } from 'antd';
+import { Modal, Select, Icon, Switch, Button, Slider } from 'antd';
 import cn from 'classnames';
 import packageJson from '../../package.json';
 const { Option } = Select;
@@ -274,7 +274,7 @@ class App extends React.Component {
       .map(setting => {
         const showColorTool = settings['customColorsEnabled'] && setting === 'customColorsEnabled';
         return (
-          <div className={controlWrapper}>
+          <div className={controlWrapper} key={setting}>
             <div className={controlLabel}>{t(setting)}</div>
             <div className={flexEnd}>
               {showColorTool && (
@@ -296,6 +296,24 @@ class App extends React.Component {
           </div>
         );
       });
+
+    const textControl = (
+      <div className={controlWrapper} key='customTextSize'>
+        <div className={controlLabel}>{t('customTextSize')}</div>
+        <div className={flexEnd}>
+          <Slider
+            value={settings['customTextSize']}
+            tipFormatter={null}
+            min={0.01}
+            max={2}
+            step={0.01}
+            onChange={this._onSettingChecked.bind(this,'customTextSize')}
+          />
+        </div>
+      </div>
+    );
+
+    controlElements.push(textControl);
 
     const secondLanguages = loadedLanguages.map(language => (
       <Option

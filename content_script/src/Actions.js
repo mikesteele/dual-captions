@@ -3,7 +3,6 @@ import { StickyPopper } from './Popper';
 import ViewBookmarksAction from './ViewBookmarksAction';
 import ClipboardAction from './ClipboardAction';
 import BookmarkAction from './BookmarkAction';
-import SettingsAction from './SettingsAction';
 
 const PopperOrFixedPosition = props => {
   const {
@@ -42,8 +41,7 @@ const Actions = props => {
     isOn,
     videoId,
     provider,
-    site,
-    openSettingsModal
+    site
   } = props;
   return (
     <PopperOrFixedPosition adapter={adapter}>
@@ -71,13 +69,6 @@ const Actions = props => {
           currentCaptionToRender={currentCaptionToRender}
           isOn={isOn}
           videoId={videoId}
-        />
-        <SettingsAction
-          adapter={adapter}
-          settings={settings}
-          isOn={isOn}
-          videoId={videoId}
-          openSettingsModal={openSettingsModal}
         />
       </div>
     </PopperOrFixedPosition>

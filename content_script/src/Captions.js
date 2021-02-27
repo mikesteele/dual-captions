@@ -69,10 +69,10 @@ class Captions extends React.Component {
         }
       }
     }
-    if (settings.smallText && adapter.smallTextSize) {
+    if (settings.customTextSize) {
       captionProps.style = {
         ...captionProps.style,
-        fontSize: adapter.smallTextSize
+        transform: `scale(${settings.customTextSize})`,
       }
     }
 
