@@ -59,6 +59,7 @@ class ActionButton extends React.Component {
               this.animate();
             }}
             hotKeyCode={hotKeyCode}
+            settings={settings}
           />
         )}
         <Fade in={shouldShow}>

@@ -62,5 +62,8 @@
   "tools": "Outils",
   "switch-to-old-design": "Switch back to old design",
   "switch-to-new-design": "Switch to new design",
-  "customTextSize": "Taille du texte"
+  "customTextSize": "Taille du texte",
+  "useHotKeys": "Enable keyboard shortcuts",
+  "on-off-hot-key": "Turn on/off: Alt/Option + D",
+  "bookmark-hot-key": "Bookmark current captions: Alt/Option + A"
 }

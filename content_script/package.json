@@ -1,6 +1,6 @@
 {
   "name": "dual-captions-content_script",
-  "version": "2.6.1",
+  "version": "2.6.2",
   "private": true,
   "dependencies": {
     "franc": "^4.1.0",

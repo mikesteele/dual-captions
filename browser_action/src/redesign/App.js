@@ -160,6 +160,7 @@ class App extends React.Component {
     this._onUILanguageSelectChanged = this._onUILanguageSelectChanged.bind(this);
     this._showHint = this._showHint.bind(this);
     this._onSecondLanguageSelectChanged = this._onSecondLanguageSelectChanged.bind(this);
+    this._showHotkeyInfo = this._showHotkeyInfo.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -258,6 +259,24 @@ class App extends React.Component {
     });
   }
 
+  _showHotkeyInfo() {
+    const { uiLanguage, t } = this.props;
+    const isChinese = uiLanguage === 'zh-tw';
+    const content = (
+      <div className={hintWrapper}>
+        {t('on-off-hot-key')}
+        <br/>
+        {t('bookmark-hot-key')}
+      </div>
+    );
+    Modal.info({
+      content,
+      className: cn({
+        [sourceSansPro]: !isChinese
+      })
+    });
+  }
+
   render() {
     const { t, isOn, settings, uiLanguage, loadedLanguages, secondLanguage } = this.props;
     const checkboxSettings = [
@@ -265,7 +284,8 @@ class App extends React.Component {
       'extraSpace',
       'customColorsEnabled',
       'smallText',
-      'hideActionPanel'
+      'hideActionPanel',
+      'useHotKeys'
     ];
     const isChinese = uiLanguage === 'zh-tw';
     const defaultSettings = Object.keys(config.defaultSettings);
@@ -273,10 +293,16 @@ class App extends React.Component {
       .filter(setting => checkboxSettings.includes(setting))
       .map(setting => {
         const showColorTool = settings['customColorsEnabled'] && setting === 'customColorsEnabled';
+        const showHotkeyInfoButton = setting === 'useHotKeys';
         return (
           <div className={controlWrapper} key={setting}>
             <div className={controlLabel}>{t(setting)}</div>
             <div className={flexEnd}>
+              {showHotkeyInfoButton && (
+                <button className={hintButton} onClick={this._showHotkeyInfo} type='button'>
+                  ?
+                </button>
+              )}
               {showColorTool && (
                 <div className={colorInputClip}>
                   <input

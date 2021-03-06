@@ -22,6 +22,7 @@ class PopupMessageHandler extends React.Component {
         uiLanguage: 'en',
         hideActionPanel: false,
         customTextSize: 1,
+        useHotKeys: true
       },
       bookmarks: []
     }
@@ -90,7 +91,7 @@ class PopupMessageHandler extends React.Component {
     if (e.keyCode === ALT_KEY_CODE) {
       this.altKeyPressed = true;
     }
-    if (this.dKeyPressed && this.altKeyPressed && settings.hotKeyEnabled) {
+    if (this.dKeyPressed && this.altKeyPressed && settings.useHotKeys) {
       changeIsOn(!isOn);
     }
   }
@@ -226,7 +227,8 @@ class PopupMessageHandler extends React.Component {
         smallText,
         hotKeyEnabled,
         hideActionPanel,
-        customTextSize
+        customTextSize,
+        useHotKeys
       } = message.payload;
       if (settings.extraSpace !== extraSpace) {
         this.changeSetting('extraSpace', extraSpace, true);
@@ -247,8 +249,11 @@ class PopupMessageHandler extends React.Component {
         this.changeSetting('hideActionPanel', hideActionPanel, true);
       }
       if (settings.customTextSize !== customTextSize) {
-       this.changeSetting('customTextSize', customTextSize, true);
-     }
+        this.changeSetting('customTextSize', customTextSize, true);
+      }
+      if (settings.useHotKeys !== useHotKeys) {
+        this.changeSetting('useHotKeys', useHotKeys, true);
+      }
       break;
 
       case 'detect-site':
@@ -290,6 +295,7 @@ class PopupMessageHandler extends React.Component {
           customTextSize: settings.customTextSize
         },
         loadedLanguages: provider.loadedLanguages,
+        useHotKeys: settings.useHotKeys
       });
       break;
 

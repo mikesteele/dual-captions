@@ -21,14 +21,15 @@ class HotKey extends React.Component {
   }
 
   onKeyDown(e) {
-    if (e.keyCode === this.props.hotKeyCode) {
+    const { settings, hotKeyCode, callback } = this.props;
+    if (e.keyCode === hotKeyCode) {
       this.hotKeyPressed = true;
     }
     if (e.keyCode === ALT_KEY_CODE) {
       this.altKeyPressed = true;
     }
-    if (this.hotKeyPressed && this.altKeyPressed && this.props.callback) {
-      this.props.callback();
+    if (this.hotKeyPressed && this.altKeyPressed && callback && settings.useHotKeys) {
+      callback();
     }
   }
 
