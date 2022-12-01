@@ -1,3 +1,11 @@
+## This project is now archived (12/1/22)
+
+When I created this project, it was just for myself to learn French on YouTube. I never imagined it would reach over 30,000 installs and over 200 stars. Thank you for your support over the years. 
+
+I cannot commit to maintaining this project going forward due to other priorities in my personal life. Thank you for understanding. The code will be kept up so that others can create and maintain forks if they choose to.
+
+-- Mike
+
 ## dual-captions <br/> Subtitles in two languages for YouTube, Netflix, Disney+ & Kanopy
 ![build](https://travis-ci.com/mikesteele/dual-captions.svg?branch=master)
 
